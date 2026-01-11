@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Gemini's Home</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* 暗色背景层1: 深色渐变基底 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(10, 10, 30, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(20, 10, 30, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(15, 15, 25, 0.3) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(5, 5, 16, 0.3) 0%, rgba(10, 10, 21, 0.2) 50%, rgba(15, 15, 32, 0.2) 100%);
+            z-index: -2;
+        }
+
+        /* 暗色背景层2: 网格纹理 */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* 图片背景层 */
+        .bg-images {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -4;
+            overflow: hidden;
+        }
+
+        .bg-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .bg-image.active {
+            opacity: 0.85;
+        }
+
+        .bg-image:nth-child(1) {
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80');
+            filter: brightness(0.6) contrast(1.2) saturate(1.3) hue-rotate(200deg);
+        }
+
+        .bg-image:nth-child(2) {
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80');
+            filter: brightness(0.55) contrast(1.3) saturate(1.2) hue-rotate(180deg);
+        }
+
+        .bg-image:nth-child(3) {
+            background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1920&q=80');
+            filter: brightness(0.6) contrast(1.2) saturate(1.3) hue-rotate(220deg);
+        }
+
+        .bg-image:nth-child(4) {
+            background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80');
+            filter: brightness(0.55) contrast(1.3) saturate(1.2) hue-rotate(190deg);
+        }
+
+        .bg-image:nth-child(5) {
+            background-image: url('https://images.unsplash.com/photo-1464802686167-b939a6910659?w=1920&q=80');
+            filter: brightness(0.6) contrast(1.2) saturate(1.3) hue-rotate(210deg);
+        }
+
+        /* 动态光晕效果 */
+        .glow-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -3;
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .glow-orb:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.4), transparent);
+            top: 10%;
+            left: 10%;
+            animation-duration: 25s;
+        }
+
+        .glow-orb:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.3), transparent);
+            top: 50%;
+            right: 10%;
+            animation-duration: 30s;
+            animation-delay: -10s;
+        }
+
+        .glow-orb:nth-child(3) {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(0, 255, 100, 0.2), transparent);
+            bottom: 20%;
+            left: 30%;
+            animation-duration: 35s;
+            animation-delay: -20s;
+        }
+
+        .glow-orb:nth-child(4) {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(100, 0, 255, 0.25), transparent);
+            top: 70%;
+            right: 30%;
+            animation-duration: 28s;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            75% {
+                transform: translate(20px, 30px) scale(1.05);
+            }
+        }
+
+        /* 扫描线效果 */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+            animation: scanline-move 8s linear infinite;
+        }
+
+        @keyframes scanline-move {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 100;
+            border-bottom: 2px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            animation: logo-glow 2s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1rem;
+            position: relative;
+        }
+
+        .logo::before {
+            content: 'Gemini';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+            animation: logo-glitch 3s infinite;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            color: #ff00ff;
+            text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
+        }
+
+        @keyframes logo-glow {
+            from {
+                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            }
+            to {
+                text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
+            }
+        }
+
+        @keyframes logo-glitch {
+            0%, 90%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            92% {
+                transform: translate(-2px, 2px);
+                opacity: 0.8;
+            }
+            94% {
+                transform: translate(2px, -2px);
+                opacity: 0.8;
+            }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::before {
+            content: '> ';
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        nav a:hover::before {
+            opacity: 1;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .glitch {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            color: #00ffff;
+            letter-spacing: 0.5rem;
+            animation: glitch 1s infinite;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ff00;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0%, 100% {
+                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            }
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 31px, 0); }
+            20% { clip: rect(85px, 9999px, 140px, 0); }
+            40% { clip: rect(20px, 9999px, 80px, 0); }
+            60% { clip: rect(50px, 9999px, 100px, 0); }
+            80% { clip: rect(5px, 9999px, 90px, 0); }
+            100% { clip: rect(70px, 9999px, 110px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 119px, 0); }
+            20% { clip: rect(40px, 9999px, 66px, 0); }
+            40% { clip: rect(90px, 9999px, 138px, 0); }
+            60% { clip: rect(15px, 9999px, 45px, 0); }
+            80% { clip: rect(75px, 9999px, 95px, 0); }
+            100% { clip: rect(30px, 9999px, 60px, 0); }
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: #ff00ff;
+            margin-top: 1rem;
+            letter-spacing: 0.3rem;
+        }
+
+        section {
+            min-height: auto;
+            padding: 4rem 2rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section.hero {
+            min-height: 100vh;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #00ffff;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            text-shadow: 0 0 10px #00ffff;
+            border-left: 5px solid #ff00ff;
+            padding-left: 1rem;
+        }
+
+        .content-box {
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid #00ffff;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .content-box:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .content-box h3 {
+            color: #ff00ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .content-box p {
+            color: #00ff41;
+            line-height: 1.8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #00ff41;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            color: #00ffff;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #00ffff;
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .contact-btn:hover {
+            color: #0a0a0a;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        .contact-btn:hover::before {
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .glitch {
+                letter-spacing: 0.2rem;
+            }
+
+            .subtitle {
+                letter-spacing: 0.1rem;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+
+        /* 技能条 */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #00ff41;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            width: var(--skill-level);
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        .skill-item h4 {
+            color: #00ffff;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-item p {
+            color: #00ff41;
+            font-size: 0.9rem;
+        }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #00ffff;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            color: #ff00ff;
+            font-weight: bold;
+            text-shadow: 0 0 20px #ff00ff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-label {
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 代码块样式 */
+        .code-block {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff41;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            color: #00ff41;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: '> terminal_';
+            display: block;
+            color: #00ffff;
+            margin-bottom: 1rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* 标签云 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: #00ffff;
+            color: #0a0a0a;
+            box-shadow: 0 0 15px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+    </style>
+</head>
+<body>
+    <!-- 图片背景层 -->
+    <div class="bg-images">
+        <div class="bg-image active"></div>
+        <div class="bg-image"></div>
+        <div class="bg-image"></div>
+        <div class="bg-image"></div>
+        <div class="bg-image"></div>
+    </div>
+
+    <!-- 背景光晕效果 -->
+    <div class="glow-orbs">
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+    </div>
+    
+    <!-- 扫描线效果 -->
+    <div class="scanlines"></div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#home" class="logo">Gemini</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="stats.html">Stats</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 class="glitch" data-text="WELCOME TO GEMINI'S HOME">WELCOME TO GEMINI'S HOME</h1>
+        <p class="subtitle">// Enter the Cyberpunk Dimension //</p>
+    </section>
+
+    <section id="about">
+        <h2>[ About ]</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Online</div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h3>&gt; Who Am I?</h3>
+            <p>
+                Welcome to my digital space. This is Gemini's personal domain, a cyberspace that blends code, creativity, and futurism.
+                In this neon-lit digital world, I explore the boundaries of technology and create unique digital experiences.
+            </p>
+            <div class="code-block">
+                <div>$ whoami</div>
+                <div>gemini@cyberpunk:~$ Full-Stack Developer | Digital Artist | Tech Enthusiast</div>
+                <div>$ cat skills.txt</div>
+                <div>Loading... [████████████████████] 100%</div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h3>&gt; My Mission</h3>
+            <p>
+                At the intersection of digital and reality, I'm dedicated to building innovative solutions that transform imagination into reality.
+                Every line of code is a bridge to the future, and every project is an exploration of possibilities.
+            </p>
+            <div class="tags">
+                <span class="tag">#Innovation</span>
+                <span class="tag">#Creativity</span>
+                <span class="tag">#Technology</span>
+                <span class="tag">#Future</span>
+                <span class="tag">#OpenSource</span>
+                <span class="tag">#AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能区域 -->
+    <section id="skills">
+        <h2>[ Skills & Expertise ]</h2>
+        <div class="skills-container">
+            <div class="skill-item" style="--skill-level: 95%;">
+                <h4>&gt; Frontend Development</h4>
+                <p>HTML5, CSS3, JavaScript, React, Vue.js, TypeScript</p>
+            </div>
+            <div class="skill-item" style="--skill-level: 90%;">
+                <h4>&gt; Backend Development</h4>
+                <p>Node.js, Python, Java, PHP, Database Design</p>
+            </div>
+            <div class="skill-item" style="--skill-level: 85%;">
+                <h4>&gt; DevOps & Cloud</h4>
+                <p>Docker, Kubernetes, AWS, CI/CD, Linux</p>
+            </div>
+            <div class="skill-item" style="--skill-level: 88%;">
+                <h4>&gt; UI/UX Design</h4>
+                <p>Figma, Adobe XD, Responsive Design, Prototyping</p>
+            </div>
+            <div class="skill-item" style="--skill-level: 92%;">
+                <h4>&gt; Mobile Development</h4>
+                <p>React Native, Flutter, iOS, Android</p>
+            </div>
+            <div class="skill-item" style="--skill-level: 87%;">
+                <h4>&gt; AI & Machine Learning</h4>
+                <p>TensorFlow, PyTorch, NLP, Computer Vision</p>
+            </div>
+        </div>
+
+        <div class="content-box" style="margin-top: 3rem;">
+            <h3>&gt; Tech Stack</h3>
+            <div class="code-block">
+                <div>const techStack = {</div>
+                <div>  languages: ['JavaScript', 'Python', 'TypeScript', 'Java', 'Go'],</div>
+                <div>  frameworks: ['React', 'Vue', 'Node.js', 'Django', 'Spring'],</div>
+                <div>  databases: ['MongoDB', 'PostgreSQL', 'Redis', 'MySQL'],</div>
+                <div>  tools: ['Git', 'Docker', 'VS Code', 'Figma', 'Postman'],</div>
+                <div>  cloud: ['AWS', 'Azure', 'Google Cloud', 'Vercel']</div>
+                <div>};</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>[ Contact ]</h2>
+        
+        <div class="content-box">
+            <h3>&gt; Get In Touch</h3>
+            <p style="text-align: center; margin: 2rem 0;">
+                Ready to connect to the network? Reach out to me through the following channels.
+                Whether it's project collaboration, technical discussion, or just a simple greeting, I'd love to hear from you.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:gemini@liukun.com" class="contact-btn">Email</a>
+                <a href="https://github.com/ibubble" class="contact-btn" target="_blank">GitHub</a>
+                <a href="https://x.com/iBubbleKun" class="contact-btn" target="_blank">X.com</a>
+                <a href="https://www.facebook.com/iBubbleKun" class="contact-btn" target="_blank">Facebook</a>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h3>&gt; Let's Build Something Amazing</h3>
+            <div class="code-block">
+                <div>$ echo "Available for:"</div>
+                <div>✓ Freelance Projects</div>
+                <div>✓ Technical Consulting</div>
+                <div>✓ Open Source Collaboration</div>
+                <div>✓ Speaking Engagements</div>
+                <div>✓ Mentorship Programs</div>
+                <div style="margin-top: 1rem;">$ status</div>
+                <div style="color: #00ff41;">● Online - Ready to connect</div>
+            </div>
+        </div>
+
+        <div class="stats-grid" style="margin-top: 2rem;">
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Possibilities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Dedication</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Response Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Innovation</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 2px solid #00ffff;">
+            <p style="color: #00ffff; font-size: 0.9rem;">
+                © 2026 Gemini's Cyberpunk Domain | Powered by Innovation & Creativity
+            </p>
+            <p style="color: #ff00ff; font-size: 0.8rem; margin-top: 0.5rem;">
+                "The future is not something we enter. The future is something we create."
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // 背景图片轮播
+        const bgImages = document.querySelectorAll('.bg-image');
+        let currentBg = 0;
+
+        function changeBg() {
+            bgImages[currentBg].classList.remove('active');
+            currentBg = (currentBg + 1) % bgImages.length;
+            bgImages[currentBg].classList.add('active');
+        }
+
+        // 每10秒切换一次背景
+        setInterval(changeBg, 10000);
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#00ffff';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = '#ff00ff';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

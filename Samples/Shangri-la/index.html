@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="迪庆州低空经济+智慧文旅空地一体化建设方案，打造天空之境数智香格里拉">
+    <title>天空之境·数智香格里拉 - 迪庆智慧文旅低空经济方案</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <!-- DNS预解析 -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://d3js.org">
+    
+    <!-- 预连接 -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
+    <!-- 预加载关键图片 -->
+    <link rel="preload" href="images/梅里雪山.png" as="image" type="image/png">
+    
+    <!-- 关键CSS内联或优先加载 -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 字体图标异步加载 -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- 图表库延迟加载 -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" as="script">
+    <link rel="preload" href="https://d3js.org/d3.v7.min.js" as="script">
+</head>
+<body>
+    <!-- 浮动装饰元素 -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    <!-- Page Loader -->
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <img src="favicon.svg" alt="Logo" class="loader-logo">
+            <div class="loader-spinner"></div>
+            <h2>天空之境·数智香格里拉</h2>
+            <p>正在加载...</p>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="favicon.svg" alt="Logo" class="logo-icon">
+                <span>天空之境·数智香格里拉</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview">项目概览</a></li>
+                <li><a href="#scenery">香格里拉</a></li>
+                <li><a href="#architecture">数字基座</a></li>
+                <li><a href="#applications">应用场景</a></li>
+                <li><a href="#stations">智能补给</a></li>
+                <li><a href="#investment">投资收益</a></li>
+                <li><a href="#operations">运营方案</a></li>
+                <li><a href="#timeline">实施路线</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">天空之境·数智香格里拉</h1>
+            <p class="hero-subtitle">迪庆州"低空经济+智慧文旅"空地一体化建设方案</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="23000">0</div>
+                    <div class="stat-label">覆盖面积(km²)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">智能补给站</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">分钟应急响应</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="3.2">0</div>
+                    <div class="stat-label">年投资回报(亿元)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section" id="overview">
+        <div class="container">
+            <h2 class="section-title">项目概览</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>项目愿景</h3>
+                    <p>打造全国首个高原低空经济示范区，实现"天空之境"品牌与数字化文旅深度融合</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>核心架构</h3>
+                    <p>一核三端数字基座：数据中台+游客端+商户端+管理端</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon"><i class="fas fa-plane-up"></i></div>
+                    <h3>低空应用</h3>
+                    <p>共享无人机旅拍、森林防火、农业植保、应急救援等多场景应用</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon"><i class="fas fa-charging-station"></i></div>
+                    <h3>智能补给站</h3>
+                    <p>150个智能补给站覆盖全州，提供充电、维修、应急服务</p>
+                </div>
+            </div>
+
+            <div class="project-background">
+                <h3>项目背景</h3>
+                <div class="background-images">
+                    <img src="images/梅里雪山.avif" alt="梅里雪山" class="bg-image" loading="lazy">
+                    <img src="images/普达措-4.png" alt="普达措国家公园" class="bg-image" loading="lazy">
+                    <img src="images/松赞林寺.avif" alt="松赞林寺" class="bg-image" loading="lazy">
+                </div>
+                <div class="background-content">
+                    <div class="background-item">
+                        <strong>政策支持：</strong>
+                        <p>响应国家低空经济发展战略，云南省"十四五"文旅发展规划重点项目</p>
+                    </div>
+                    <div class="background-item">
+                        <strong>地理优势：</strong>
+                        <p>迪庆州平均海拔3380米，拥有梅里雪山、普达措、虎跳峡等世界级景观资源</p>
+                    </div>
+                    <div class="background-item">
+                        <strong>市场需求：</strong>
+                        <p>年接待游客超2000万人次，高端旅拍、户外探险需求旺盛</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shangri-La Scenery Gallery -->
+    <section class="section" id="scenery">
+        <div class="container">
+            <h2 class="section-title">香格里拉·人间仙境</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">
+                探索世界自然遗产"三江并流"核心区，感受藏地文化与自然奇观的完美融合
+            </p>
+            
+            <div class="scenery-grid">
+                <div class="scenery-card large">
+                    <img src="images/梅里雪山.png" alt="梅里雪山日照金山" loading="eager">
+                    <div class="scenery-overlay">
+                        <h3>梅里雪山</h3>
+                        <p>藏区八大神山之首，海拔6740米的卡瓦格博峰，日照金山奇观震撼人心</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/普达措-4.png" alt="普达措国家公园" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>普达措国家公园</h3>
+                        <p>中国大陆首个国家公园，高原湖泊、原始森林、高山草甸完美结合</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/松赞林寺-1.jpeg" alt="松赞林寺" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>松赞林寺</h3>
+                        <p>云南最大的藏传佛教寺院，有"小布达拉宫"之称，金碧辉煌</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/虎跳峡.avif" alt="虎跳峡" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>虎跳峡</h3>
+                        <p>世界最深峡谷之一，金沙江奔腾咆哮，两岸雪峰耸立，气势磅礴</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/纳帕海-4.avif" alt="纳帕海" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>纳帕海</h3>
+                        <p>高原季节性湖泊，黑颈鹤等珍稀鸟类栖息地，草原与湖泊交织</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/独克宗.avif" alt="独克宗古城" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>独克宗古城</h3>
+                        <p>中国保存最好的藏族古城，1300年历史，茶马古道重镇</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/白水台.avif" alt="白水台" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>白水台</h3>
+                        <p>纳西族东巴教圣地，中国最大的华泉台地，如白玉雕琢的梯田奇观</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/石卡雪山.avif" alt="石卡雪山" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>石卡雪山</h3>
+                        <p>香格里拉第一峰，海拔4449米，可观赏梅里、玉龙等八大雪山全景</p>
+                    </div>
+                </div>
+                
+                <div class="scenery-card">
+                    <img src="images/小中甸-1.avif" alt="小中甸" loading="lazy">
+                    <div class="scenery-overlay">
+                        <h3>小中甸</h3>
+                        <p>高山草甸花海，春夏杜鹃花漫山遍野，秋季狼毒花红遍草原</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scenery-features">
+                <div class="feature-item">
+                    <i class="fas fa-mountain"></i>
+                    <h4>世界自然遗产</h4>
+                    <p>"三江并流"核心区域</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-snowflake"></i>
+                    <h4>雪山冰川</h4>
+                    <p>20余座海拔5000米以上雪峰</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-water"></i>
+                    <h4>高原湖泊</h4>
+                    <p>碧塔海、纳帕海等高原明珠</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-om"></i>
+                    <h4>藏传佛教</h4>
+                    <p>深厚的藏族文化底蕴</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Architecture -->
+    <section class="section bg-light" id="architecture">
+        <div class="container">
+            <h2 class="section-title">数字基座架构</h2>
+            <div class="architecture-diagram">
+                <div class="arch-core">
+                    <h3>数据中台</h3>
+                    <ul>
+                        <li><i class="fas fa-users"></i> 全域客流监测</li>
+                        <li><i class="fas fa-plane"></i> 无人机空域调度</li>
+                        <li><i class="fas fa-warehouse"></i> 补给站库存预警</li>
+                        <li><i class="fas fa-chart-line"></i> 实时数据分析</li>
+                    </ul>
+                </div>
+                <div class="arch-terminals">
+                    <div class="terminal-card">
+                        <h4><i class="fas fa-mobile-alt"></i> 游客端</h4>
+                        <ul>
+                            <li>无人机预约租赁</li>
+                            <li>实时导航导览</li>
+                            <li>旅拍作品分享</li>
+                            <li>应急求助服务</li>
+                        </ul>
+                    </div>
+                    <div class="terminal-card">
+                        <h4><i class="fas fa-store"></i> 商户端</h4>
+                        <ul>
+                            <li>设备运营管理</li>
+                            <li>订单收益统计</li>
+                            <li>客户数据分析</li>
+                            <li>营销推广工具</li>
+                        </ul>
+                    </div>
+                    <div class="terminal-card">
+                        <h4><i class="fas fa-cog"></i> 管理端</h4>
+                        <ul>
+                            <li>空域监管调度</li>
+                            <li>安全合规审查</li>
+                            <li>设施维护调度</li>
+                            <li>数据统计分析</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="section" id="applications">
+        <div class="container">
+            <h2 class="section-title">低空经济应用场景</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tourism">文旅场景</button>
+                <button class="tab-btn" data-tab="industry">行业应用</button>
+            </div>
+            
+            <div class="tab-content active" id="tourism">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <img src="images/纳帕海-1.avif" alt="DJI Neo无人机" loading="lazy">
+                        <h3>共享无人机旅拍</h3>
+                        <p>游客通过APP预约DJI Mini 4K、Air 3、Neo等设备，自助完成4K航拍，AI自动剪辑生成旅行大片</p>
+                        <div class="app-stats">
+                            <span><i class="fas fa-dollar-sign"></i> 预计年收益: 8000万</span>
+                            <span><i class="fas fa-chart-bar"></i> 实施难度: 中</span>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="images/梅里雪山.avif" alt="梅里雪山空中观光" loading="lazy">
+                        <h3>空中观光体验</h3>
+                        <p>定制化低空观光航线，俯瞰梅里雪山、普达措、虎跳峡等世界级景观</p>
+                        <div class="app-stats">
+                            <span><i class="fas fa-dollar-sign"></i> 预计年收益: 6000万</span>
+                            <span><i class="fas fa-chart-bar"></i> 实施难度: 高</span>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="images/白马雪山.avif" alt="应急救援" loading="lazy">
+                        <h3>应急救援服务</h3>
+                        <p>15分钟应急响应圈，提供医疗物资投送、失联人员搜救等服务</p>
+                        <div class="app-stats">
+                            <span><i class="fas fa-dollar-sign"></i> 社会效益为主</span>
+                            <span><i class="fas fa-chart-bar"></i> 实施难度: 中</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="industry">
+                <div class="application-grid">
+                    <div class="app-card">
+                        <img src="images/白水台.avif" alt="森林防火" loading="lazy">
+                        <h3>森林防火监测</h3>
+                        <p>使用Matrice 300 RTK搭载热成像设备，实现24小时森林火情监测预警</p>
+                        <div class="app-stats">
+                            <span><i class="fas fa-dollar-sign"></i> 政府采购</span>
+                            <span><i class="fas fa-chart-bar"></i> 实施难度: 中</span>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="images/纳帕海-2.avif" alt="农业植保" loading="lazy">
+                        <h3>农业植保作业</h3>
+                        <p>高原特色农业植保服务，青稞、藏药材等作物精准施药</p>
+                        <div class="app-stats">
+                            <span><i class="fas fa-dollar-sign"></i> 预计年收益: 2000万</span>
+                            <span><i class="fas fa-chart-bar"></i> 实施难度: 低</span>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <img src="images/石卡雪山.avif" alt="基础设施巡检" loading="lazy">
+                        <h3>基础设施巡检</h3>
+                        <p>电力线路、通信基站、道路桥梁等基础设施智能巡检</p>
+                        <div class="app-stats">
+                            <span><i class="fas fa-dollar-sign"></i> 预计年收益: 1500万</span>
+                            <span><i class="fas fa-chart-bar"></i> 实施难度: 低</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>应用场景经济效益分析</h3>
+                <canvas id="bubbleChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Stations -->
+    <section class="section bg-light" id="stations">
+        <div class="container">
+            <h2 class="section-title">智能补给站</h2>
+            <div class="stations-grid">
+                <div class="station-visual">
+                    <h3>补给站结构</h3>
+                    <div class="station-layers">
+                        <div class="layer">
+                            <div class="layer-icon"><i class="fas fa-solar-panel"></i></div>
+                            <div class="layer-info">
+                                <strong>顶层：</strong>太阳能供电系统 + 气象监测
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <div class="layer-icon"><i class="fas fa-charging-station"></i></div>
+                            <div class="layer-info">
+                                <strong>中层：</strong>无人机充电坞 + 设备存储
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <div class="layer-icon"><i class="fas fa-tools"></i></div>
+                            <div class="layer-info">
+                                <strong>底层：</strong>维修工具 + 应急物资储备
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="station-features">
+                    <h3>核心功能</h3>
+                    <div class="chart-container">
+                        <canvas id="stationPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="station-strategy">
+                <h3>选址策略与覆盖</h3>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h4><i class="fas fa-map-marked-alt"></i> 海拔分布</h4>
+                        <p>2000-3500米: 100个站点<br>3500-4500米: 40个站点<br>4500米以上: 10个站点</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4><i class="fas fa-users"></i> 客流密度</h4>
+                        <p>A级景区周边: 50个<br>交通枢纽: 30个<br>偏远应急点: 70个</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4><i class="fas fa-clock"></i> 服务半径</h4>
+                        <p>15分钟应急响应圈<br>覆盖全州23,000km²<br>无人机续航半径10km</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4><i class="fas fa-robot"></i> 运营模式</h4>
+                        <p>无人值守智能管理<br>远程监控调度<br>定期巡检维护</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment & Revenue -->
+    <section class="section" id="investment">
+        <div class="container">
+            <h2 class="section-title">投资收益分析</h2>
+            
+            <div class="investment-overview">
+                <div class="invest-card highlight">
+                    <h3>总投资规模</h3>
+                    <div class="big-number">4.5亿元</div>
+                    <p>三年分期投入</p>
+                </div>
+                <div class="invest-card highlight-green">
+                    <h3>预计年收益</h3>
+                    <div class="big-number">3.2亿元</div>
+                    <p>第三年达到满负荷运营</p>
+                </div>
+                <div class="invest-card highlight-orange">
+                    <h3>投资回报期</h3>
+                    <div class="big-number">2.8年</div>
+                    <p>含政府补贴与税收优惠</p>
+                </div>
+            </div>
+
+            <div class="investment-details">
+                <div class="detail-section">
+                    <h3>单站投资构成</h3>
+                    <div class="chart-container">
+                        <canvas id="investmentChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>三阶段投资计划</h3>
+                    <table class="investment-table">
+                        <thead>
+                            <tr>
+                                <th>阶段</th>
+                                <th>时间</th>
+                                <th>站点数</th>
+                                <th>投资额</th>
+                                <th>目标</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>试点期</td>
+                                <td>2026 Q1-Q2</td>
+                                <td>3站1中心</td>
+                                <td>380万</td>
+                                <td>虎跳峡-虎香公路低空走廊试点</td>
+                            </tr>
+                            <tr>
+                                <td>扩展期</td>
+                                <td>2026 Q3-2027</td>
+                                <td>90个</td>
+                                <td>2.7亿</td>
+                                <td>覆盖主要景区</td>
+                            </tr>
+                            <tr>
+                                <td>成熟期</td>
+                                <td>2028</td>
+                                <td>150个</td>
+                                <td>1.5亿</td>
+                                <td>全州网络覆盖</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="revenue-forecast">
+                <h3>收益预测趋势 (2026-2028)</h3>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="roi-details">
+                <h3>虎跳峡-虎香公路试点收益测算（3站1中心）</h3>
+                <div class="pilot-info">
+                    <div class="pilot-stations">
+                        <h4><i class="fas fa-map-marked-alt"></i> 站点布局</h4>
+                        <ul class="station-list">
+                            <li><span class="station-badge">A站</span> 虎跳峡镇服务中心 - 运营总部+1号机巢</li>
+                            <li><span class="station-badge">B站</span> 虎跳峡核心景区 - 高频体验站（共享旅拍）</li>
+                            <li><span class="station-badge">C站</span> 虎香公路哈巴雪山段 - 应急补给站</li>
+                        </ul>
+                    </div>
+                    <div class="pilot-investment">
+                        <h4><i class="fas fa-coins"></i> 投资概算</h4>
+                        <div class="investment-breakdown">
+                            <div class="invest-item">
+                                <span class="invest-label">硬件建设（3套智能补给站）</span>
+                                <span class="invest-value">180万元</span>
+                            </div>
+                            <div class="invest-item">
+                                <span class="invest-label">设备配置（6架高海拔无人机）</span>
+                                <span class="invest-value">60万元</span>
+                            </div>
+                            <div class="invest-item">
+                                <span class="invest-label">服务中心软硬件系统</span>
+                                <span class="invest-value">80万元</span>
+                            </div>
+                            <div class="invest-item">
+                                <span class="invest-label">配套设施（电力/光纤）</span>
+                                <span class="invest-value">30万元</span>
+                            </div>
+                            <div class="invest-item">
+                                <span class="invest-label">初期运营（备件/租金）</span>
+                                <span class="invest-value">30万元</span>
+                            </div>
+                            <div class="invest-item total">
+                                <span class="invest-label">总投资</span>
+                                <span class="invest-value">380万元</span>
+                            </div>
+                            <div class="invest-note">
+                                <i class="fas fa-info-circle"></i> 可申请省级20%投资补助（约76万元）
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.5rem; text-align: center;">
+                    <i class="fas fa-calendar-alt"></i> 三个月收益预测
+                </h4>
+                <div class="three-month-revenue">
+                    <div class="month-card month-1">
+                        <div class="month-header">
+                            <span class="month-badge">第1个月</span>
+                            <span class="month-phase">启动期</span>
+                        </div>
+                        <div class="month-amount">5-8万元</div>
+                        <div class="month-desc">设备调试、人员培训</div>
+                    </div>
+                    <div class="month-card month-2">
+                        <div class="month-header">
+                            <span class="month-badge">第2个月</span>
+                            <span class="month-phase">爬坡期</span>
+                        </div>
+                        <div class="month-amount">10万元</div>
+                        <div class="month-desc">社交媒体爆款，转化率提升</div>
+                    </div>
+                    <div class="month-card month-3">
+                        <div class="month-header">
+                            <span class="month-badge">第3个月</span>
+                            <span class="month-phase">稳定期</span>
+                        </div>
+                        <div class="month-amount">12-15万元</div>
+                        <div class="month-desc">业务正轨，现金流稳定</div>
+                    </div>
+                </div>
+                
+                <h4 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--primary-color); font-size: 1.5rem; text-align: center;">
+                    <i class="fas fa-chart-line"></i> 收入来源趋势分析
+                </h4>
+                <div class="revenue-chart-wrapper">
+                    <div class="chart-container">
+                        <canvas id="pilotRevenueChart"></canvas>
+                    </div>
+                    <div class="revenue-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot blue"></span>
+                            <span class="legend-text">📸 共享旅拍 <small>日均60单 × 19.9元</small></span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot orange"></span>
+                            <span class="legend-text">🛒 无人零售 <small>氧气/高能食品</small></span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot green"></span>
+                            <span class="legend-text">🚁 巡检服务 <small>政府购买/交通监控</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operations -->
+    <section class="section bg-light" id="operations">
+        <div class="container">
+            <h2 class="section-title">运营方案</h2>
+            
+            <div class="operations-grid">
+                <div class="ops-section">
+                    <h3><i class="fas fa-sitemap"></i> 运营管理体系</h3>
+                    <div class="ops-content">
+                        <div class="ops-item">
+                            <strong>智能调度中心：</strong>
+                            <p>实时监控150个站点运行状态，AI智能调度无人机资源</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>电子围栏系统：</strong>
+                            <p>自动识别禁飞区，实时预警违规飞行，确保空域安全</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>自动化巡检：</strong>
+                            <p>无人机自主巡检补给站设施，异常情况自动报警</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ops-section">
+                    <h3><i class="fas fa-users-cog"></i> 现场保障体系</h3>
+                    <div class="ops-content">
+                        <div class="ops-item">
+                            <strong>总部远程+本地兼职：</strong>
+                            <p>香格里拉设立运营总部，各站点配备兼职维护人员</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>模块化维护：</strong>
+                            <p>标准化维护流程，快速更换故障模块，减少停机时间</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>应急响应机制：</strong>
+                            <p>15分钟应急响应，24小时技术支持热线</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ops-section">
+                    <h3><i class="fas fa-mountain"></i> 高原环境适配</h3>
+                    <div class="ops-content">
+                        <div class="ops-item">
+                            <strong>动力系统优化：</strong>
+                            <p>高原专用螺旋桨，功率提升20%，适应稀薄空气</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>电池管理：</strong>
+                            <p>低温加热系统，保证-20℃环境下正常工作</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>通信保障：</strong>
+                            <p>4G/5G+卫星通信双备份，确保偏远地区信号稳定</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ops-section">
+                    <h3><i class="fas fa-praying-hands"></i> 文化融合措施</h3>
+                    <div class="ops-content">
+                        <div class="ops-item">
+                            <strong>宗教场所规避：</strong>
+                            <p>寺庙周边500米禁飞，重大宗教活动期间暂停服务</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>民俗引导：</strong>
+                            <p>藏式装饰补给站外观，聘用本地员工，尊重传统习俗</p>
+                        </div>
+                        <div class="ops-item">
+                            <strong>生态保护：</strong>
+                            <p>严格遵守自然保护区规定，最小化环境影响</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="constraints-section">
+                <h3>约束条件与可行性评估</h3>
+                <div class="constraints-grid">
+                    <div class="constraint-map">
+                        <h4>禁飞区分布</h4>
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <span class="color-box" style="background: #dc2626;"></span>
+                                <span>硬性禁飞区 (军事、机场)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-box" style="background: #f59e0b;"></span>
+                                <span>敏感区域 (寺庙、保护区)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-box" style="background: #10b981;"></span>
+                                <span>可飞行区域</span>
+                            </div>
+                        </div>
+                        <p class="constraint-note">全州约15%区域为禁飞区，通过智能规划可有效规避</p>
+                    </div>
+                    <div class="feasibility-radar">
+                        <h4>多维度可行性评估</h4>
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">实施路线图</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026 Q1-Q2</div>
+                        <h3>试点期 - 虎跳峡-虎香公路低空走廊</h3>
+                        <ul>
+                            <li><strong>3站1中心布局：</strong>虎跳峡镇服务中心 + 核心景区体验站 + 虎香公路应急站</li>
+                            <li><strong>设备投放：</strong>6架高海拔适配无人机（旅拍+巡检）</li>
+                            <li><strong>智能补给站：</strong>太空舱型恒温机巢、自动换电、无人零售柜</li>
+                            <li><strong>数字系统：</strong>智慧大屏、5G-A基站接入、中心服务器部署</li>
+                            <li><strong>本地化运营：</strong>招聘3名网格员，15分钟应急响应</li>
+                            <li><strong>政策申报：</strong>争取省级20%投资补助（约76万元）</li>
+                        </ul>
+                        <div class="timeline-goal">
+                            <strong>目标：</strong>3个月内实现月收益12-15万元，验证"低空走廊"商业模式
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026 Q3 - 2027 Q4</div>
+                        <h3>扩展期</h3>
+                        <ul>
+                            <li>覆盖梅里雪山、虎跳峡等主要景区</li>
+                            <li>部署90个补给站，投放500台无人机</li>
+                            <li>开通森林防火、农业植保业务线</li>
+                            <li>建立应急救援服务网络</li>
+                            <li>引入社会资本，启动融资计划</li>
+                        </ul>
+                        <div class="timeline-goal">
+                            <strong>目标：</strong>形成区域网络效应，年收益突破1亿
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2028</div>
+                        <h3>成熟期</h3>
+                        <ul>
+                            <li>完成150个站点全州覆盖</li>
+                            <li>无人机规模达1000台以上</li>
+                            <li>实现全业务线盈利</li>
+                            <li>输出"迪庆模式"到其他高原地区</li>
+                            <li>申报国家级低空经济示范区</li>
+                        </ul>
+                        <div class="timeline-goal">
+                            <strong>目标：</strong>年收益3.2亿，成为全国标杆项目
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="milestones">
+                <h3>关键里程碑</h3>
+                <div class="milestone-grid">
+                    <div class="milestone-card">
+                        <div class="milestone-icon"><i class="fas fa-flag-checkered"></i></div>
+                        <h4>2026年3月</h4>
+                        <p>虎跳峡-虎香公路试点正式运营</p>
+                    </div>
+                    <div class="milestone-card">
+                        <div class="milestone-icon"><i class="fas fa-trophy"></i></div>
+                        <h4>2027年3月</h4>
+                        <p>获得省级示范项目认证</p>
+                    </div>
+                    <div class="milestone-card">
+                        <div class="milestone-icon"><i class="fas fa-rocket"></i></div>
+                        <h4>2027年12月</h4>
+                        <p>实现整体盈亏平衡</p>
+                    </div>
+                    <div class="milestone-card">
+                        <div class="milestone-icon"><i class="fas fa-award"></i></div>
+                        <h4>2028年12月</h4>
+                        <p>申报国家级示范区</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>天空之境·数智香格里拉</h4>
+                    <p>迪庆州低空经济+智慧文旅空地一体化建设方案</p>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p><i class="fas fa-envelope"></i> contact@diqing-skynet.com</p>
+                    <p><i class="fas fa-phone"></i> 0887-8888888</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#overview">项目概览</a></li>
+                        <li><a href="#investment">投资收益</a></li>
+                        <li><a href="#operations">运营方案</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 云南省迪庆藏族自治州</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 图表库必须先加载 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    
+    <!-- 主脚本在图表库之后加载 -->
+    <script src="script.js"></script>
+</body>
+</html>

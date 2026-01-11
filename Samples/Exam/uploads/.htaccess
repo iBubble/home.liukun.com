@@ -1,0 +1,11 @@
+# 禁止执行PHP文件
+<FilesMatch "\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 只允许特定文件类型
+<FilesMatch "\.(xls|xlsx|csv)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

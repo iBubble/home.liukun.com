@@ -1,0 +1,50 @@
+# 启用重写引擎
+RewriteEngine On
+
+# 设置默认首页
+DirectoryIndex index.html index.htm
+
+# 启用Gzip压缩
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# 设置缓存策略
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# 设置MIME类型
+<IfModule mod_mime.c>
+    AddType image/avif .avif
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
+    AddType application/javascript .js
+    AddType text/css .css
+</IfModule>
+
+# 防止目录浏览
+Options -Indexes
+
+# 自定义错误页面
+ErrorDocument 404 /Sample/404.html
+
+# 安全设置
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 字符编码
+AddDefaultCharset UTF-8

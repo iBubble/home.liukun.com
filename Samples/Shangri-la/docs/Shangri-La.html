@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迪庆州低空经济与文旅数智化融合发展研究报告</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <!-- Google Fonts (Noto Sans SC) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f0f4f8;
+            color: #1e293b;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+
+        /* Chart Container Utilities */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 350px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        
+        /* Card Hover Effects */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Palette Definition: Vibrant Cyan/Indigo (Smart Tourism Theme) */
+        .bg-primary { background-color: #0891b2; } /* Cyan 600 */
+        .text-primary { color: #0891b2; }
+        .bg-secondary { background-color: #312e81; } /* Indigo 900 */
+        .text-secondary { color: #312e81; }
+        .bg-accent { background-color: #f43f5e; } /* Rose 500 */
+        .text-accent { color: #f43f5e; }
+        .bg-surface { background-color: #ffffff; }
+
+        /* Custom Grid Lines for Flowcharts */
+        .flow-line {
+            border-left: 2px dashed #cbd5e1;
+            height: 20px;
+            margin: 0 auto;
+            width: 2px;
+        }
+    </style>
+    <!-- 
+    NARRATIVE PLAN:
+    1. Header/Vision: Integrating "Digital Shangri-La" with Low-Altitude Economy.
+    2. Architecture: One Core, Three Ends + The "Low-Altitude" layer.
+    3. Tourism Innovation: Drone sharing, photography, scenic tours.
+    4. Infrastructure: The Smart Supply Station Network (Food + Energy).
+    5. Industrial Application: Forestry & Plant Protection.
+    6. Constraints & Culture: No-Fly Zones vs. Sacred Areas.
+    7. Economic Impact: Revenue projections.
+    -->
+</head>
+<body class="bg-slate-50">
+
+    <!-- Navbar / Header -->
+    <header class="bg-secondary text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🏔️</span>
+                <div>
+                    <h1 class="text-xl font-bold leading-none">迪庆州文旅数智化与低空经济融合方案</h1>
+                    <p class="text-xs text-cyan-300 tracking-wider">DIQING SMART TOURISM & LOW-ALTITUDE ECONOMY</p>
+                </div>
+            </div>
+            <div class="hidden md:block text-sm font-light">
+                <span class="px-2">数字中台</span> | <span class="px-2">无人机旅拍</span> | <span class="px-2">智能补给网</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-12">
+
+        <!-- Section 1: Strategic Vision -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-8 bg-white rounded-2xl shadow-md p-8 border-l-8 border-cyan-600">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">战略愿景：云端视角的“世界的香格里拉”</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    基于《迪庆州文旅产业数智化平台建设》规划，本方案引入<strong>低空经济</strong>作为“数智化”的物理延伸。通过构建“空地一体”的立体化文旅生态，解决高原地形补给难、监管难、体验单一的痛点。
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
+                        <div class="text-4xl font-black text-primary mb-2">2026</div>
+                        <div class="text-sm text-gray-500 font-bold">全面运营目标年</div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
+                        <div class="text-4xl font-black text-accent mb-2">15%</div>
+                        <div class="text-sm text-gray-500 font-bold">预计文旅收入增幅</div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg text-center border border-slate-200">
+                        <div class="text-4xl font-black text-secondary mb-2">80%</div>
+                        <div class="text-sm text-gray-500 font-bold">重点景区覆盖率</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-4 bg-gradient-to-br from-indigo-900 to-cyan-700 rounded-2xl shadow-md p-8 text-white flex flex-col justify-center">
+                <h3 class="text-xl font-bold mb-4">核心驱动力</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="mr-3 text-cyan-300 text-xl">◉</span>
+                        <span><strong>一核三端：</strong>数据中台赋能政府、企业、游客。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-cyan-300 text-xl">◉</span>
+                        <span><strong>低空互联：</strong>无人机物流与文旅体验深度融合。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-cyan-300 text-xl">◉</span>
+                        <span><strong>智能补给：</strong>无人值守站解决高原服务痛点。</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Architecture & Low Altitude Layer -->
+        <section>
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-secondary border-b-2 border-cyan-500 inline-block pb-2">总体架构：数智平台 + 低空应用层</h2>
+                <p class="mt-2 text-gray-600">在原有的“一核三端”基础上，增加物理执行层（无人机/补给站），形成闭环生态。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <!-- User/Tourist End -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover-lift border-t-4 border-accent">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">游客端 (C端)</h3>
+                    <div class="text-sm text-gray-500 mb-4">体验升级</div>
+                    <div class="space-y-2">
+                        <div class="bg-rose-50 text-rose-700 py-2 rounded font-medium">📷 共享无人机旅拍</div>
+                        <div class="bg-rose-50 text-rose-700 py-2 rounded font-medium">📦 徒步物资空投</div>
+                        <div class="bg-rose-50 text-rose-700 py-2 rounded font-medium">🕶️ AR/VR 空中导览</div>
+                    </div>
+                </div>
+
+                <!-- Gov/Management End -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover-lift border-t-4 border-secondary">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">政府监管端 (G端)</h3>
+                    <div class="text-sm text-gray-500 mb-4">安全与调度</div>
+                    <div class="space-y-2">
+                        <div class="bg-indigo-50 text-indigo-700 py-2 rounded font-medium">🚫 禁飞区电子围栏</div>
+                        <div class="bg-indigo-50 text-indigo-700 py-2 rounded font-medium">🌲 林业/防火巡查</div>
+                        <div class="bg-indigo-50 text-indigo-700 py-2 rounded font-medium">🚑 应急救援指挥</div>
+                    </div>
+                </div>
+
+                <!-- Biz/Operation End -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover-lift border-t-4 border-primary">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">企业运营端 (B端)</h3>
+                    <div class="text-sm text-gray-500 mb-4">资产与服务</div>
+                    <div class="space-y-2">
+                        <div class="bg-cyan-50 text-cyan-700 py-2 rounded font-medium">🔋 智能补给站运维</div>
+                        <div class="bg-cyan-50 text-cyan-700 py-2 rounded font-medium">🌾 植保无人机租赁</div>
+                        <div class="bg-cyan-50 text-cyan-700 py-2 rounded font-medium">📊 航拍数据交易</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Low-Altitude Tourism Applications (Chart.js) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Chart: Tourist Interest -->
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">游客对低空文旅项目的需求分析</h3>
+                <p class="text-sm text-gray-500 mb-4">基于高海拔旅游痛点与社交媒体分享需求，"上帝视角"的旅拍与紧急物资配送需求最为强烈。</p>
+                <div class="chart-container">
+                    <canvas id="tourismDemandChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Content: Detailed Scenarios -->
+            <div class="bg-white p-6 rounded-xl shadow-md flex flex-col justify-center">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">核心应用场景落地</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 text-xl">🚁</div>
+                        <div class="ml-4">
+                            <h4 class="text-md font-bold text-gray-900">共享无人机旅拍</h4>
+                            <p class="text-sm text-gray-600 mt-1">在普达措、虎跳峡等景区设立自动机库。游客扫码租用，AI自动跟随拍摄，一键生成Vlog。解决游客携带无人机不便及操作门槛高的问题。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 text-xl">🏔️</div>
+                        <div class="ml-4">
+                            <h4 class="text-md font-bold text-gray-900">景区智能配送</h4>
+                            <p class="text-sm text-gray-600 mt-1">针对梅里雪山雨崩徒步线等车辆难以到达区域，建立无人机物流航线。提供氧气瓶、急救包、热食的“15分钟必达”服务。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 text-xl">🎭</div>
+                        <div class="ml-4">
+                            <h4 class="text-md font-bold text-gray-900">空中演艺与导览</h4>
+                            <p class="text-sm text-gray-600 mt-1">结合夜间经济，在独克宗古城开展小型无人机编队表演；日间提供AR空中导览，标记山峰名称与传说故事。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Infrastructure - Smart Supply Stations -->
+        <section class="bg-slate-100 p-8 rounded-2xl border border-slate-200">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-secondary">智能补给站网络规划：文旅+低空枢纽</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-2">
+                    重新规划补给站功能，打造“有人管理+无人值守”结合的混合网络。补给站不仅服务游客，更是低空经济的能源节点。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Function 1 -->
+                <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-cyan-500">
+                    <h4 class="font-bold text-gray-800">🔋 无人机能源港</h4>
+                    <p class="text-sm text-gray-600 mt-2">提供无人机自动换电/充电服务。延长行业级（巡林）和消费级（旅拍）无人机的作业半径。</p>
+                </div>
+                <!-- Function 2 -->
+                <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-accent">
+                    <h4 class="font-bold text-gray-800">🥪 游客无人补给</h4>
+                    <p class="text-sm text-gray-600 mt-2">自动贩卖机群（热饮、自热食品、氧气）。支持人脸支付。作为偏远徒步线路的“生命补给点”。</p>
+                </div>
+                <!-- Function 3 -->
+                <div class="bg-white p-5 rounded-lg shadow-sm border-l-4 border-indigo-500">
+                    <h4 class="font-bold text-gray-800">📡 数据感知哨兵</h4>
+                    <p class="text-sm text-gray-600 mt-2">集成5G基站、气象监测、客流摄像头。作为文旅数据中台的前端触角。</p>
+                </div>
+            </div>
+
+            <!-- Visualization: Station Deployment Logic -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">补给站选址逻辑分析 (海拔 vs 客流密度)</h3>
+                <p class="text-sm text-gray-500 mb-4">分析显示，补给站应重点部署在海拔3000m-4000m的高客流节点，采用无人值守模式降低运维成本。</p>
+                <div class="chart-container">
+                    <canvas id="supplyStationChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Industrial Applications (Forestry & Plant Protection) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div class="bg-white p-6 rounded-xl shadow-md">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">行业应用：林业与植保效率对比</h3>
+                <p class="text-sm text-gray-500 mb-4">迪庆森林覆盖率高，地形复杂。引入行业级无人机进行巡护和高原农业植保，效率提升显著。</p>
+                <div class="chart-container">
+                    <canvas id="industryEfficiencyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md flex flex-col justify-center">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">多场景行业赋能</h3>
+                <ul class="divide-y divide-gray-100">
+                    <li class="py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-indigo-700">🌲 森林防火巡查</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">效率提升 1200%</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">利用热成像无人机进行24小时火点监测，自动识别烟雾并回传中台。</p>
+                    </li>
+                    <li class="py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-indigo-700">🌾 高原植保作业</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">成本降低 60%</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">针对青稞、葡萄种植区，使用植保无人机进行精准施药，减少农药浪费，保护生态。</p>
+                    </li>
+                    <li class="py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-indigo-700">⚡ 电力/索道巡检</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">安全系数 ⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">替代人工攀爬，对高海拔索道塔架、输电线路进行精细化巡检。</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 6: Constraints & Cultural Harmony (Plotly Radar) -->
+        <section>
+            <div class="bg-indigo-900 text-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4">运营限制与民俗融合</h2>
+                        <p class="text-indigo-200 mb-6">
+                            迪庆州拥有独特的宗教文化与边境地理特征。低空经济的实施必须建立在严格的“电子围栏”与文化尊重之上。
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-indigo-800/50 p-4 rounded-lg border border-indigo-700">
+                                <h4 class="font-bold text-pink-400">🚫 硬性禁飞区 (Red Zone)</h4>
+                                <p class="text-sm text-gray-300 mt-1">香格里拉机场净空区、边境线缓冲区、军事管理区。系统底层强制锁死，无法起飞。</p>
+                            </div>
+                            <div class="bg-indigo-800/50 p-4 rounded-lg border border-indigo-700">
+                                <h4 class="font-bold text-yellow-400">🙏 民俗敏感区 (Yellow Zone)</h4>
+                                <p class="text-sm text-gray-300 mt-1">
+                                    <strong>神山圣湖核心区：</strong> 如梅里雪山主峰、卡瓦格博。禁止低空抵近拍摄，避免打扰神灵（文化禁忌）。<br>
+                                    <strong>寺庙上空：</strong> 松赞林寺等宗教场所。需申请特殊许可，通常建议静音飞行或绕行。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 p-4 rounded-xl">
+                        <h3 class="text-center text-sm text-gray-300 mb-2">低空项目可行性评估维度</h3>
+                        <!-- Plotly Container -->
+                        <div id="constraintsRadar" style="width:100%; height:350px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Economic Impact & Roadmap -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">经济效益预测与实施路线</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="border-t-4 border-gray-300 pt-4">
+                    <div class="font-bold text-lg text-gray-400">2025</div>
+                    <div class="font-bold text-gray-800">顶层设计与试点</div>
+                    <p class="text-sm text-gray-600 mt-1">完成空域规划，选定普达措作为首个无人机物流试点。建设首批5个智能补给站。</p>
+                </div>
+                <div class="border-t-4 border-cyan-500 pt-4">
+                    <div class="font-bold text-lg text-primary">2026</div>
+                    <div class="font-bold text-gray-800">全面建设与运营</div>
+                    <p class="text-sm text-gray-600 mt-1">数智平台上线。铺设30+智能补给站，覆盖主要徒步路线。启动“云端香格里拉”营销。</p>
+                </div>
+                <div class="border-t-4 border-indigo-600 pt-4">
+                    <div class="font-bold text-lg text-secondary">2027+</div>
+                    <div class="font-bold text-gray-800">产业集群形成</div>
+                    <p class="text-sm text-gray-600 mt-1">形成高原低空经济标准。文旅收入显著提升，数据资产交易活跃。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-8 text-center text-sm">
+        <p>© 2025 基于“一核三端”架构深化编制</p>
+        <p class="mt-2"></p>
+    </footer>
+
+    <!-- JavaScript for Charts -->
+    <script>
+        // ---------------------------------------------------------
+        // Utility: Label Wrapper (16 char limit)
+        // ---------------------------------------------------------
+        function wrapLabel(str, maxLen = 16) {
+            if (str.length <= maxLen) return str;
+            const words = str.split(''); // Splitting by char for Chinese, or words for English
+            // Simplified splitting for mixed content logic
+            let lines = [];
+            let currentLine = '';
+            
+            for (let i = 0; i < str.length; i++) {
+                currentLine += str[i];
+                if (currentLine.length >= maxLen) {
+                    lines.push(currentLine);
+                    currentLine = '';
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        }
+
+        // ---------------------------------------------------------
+        // Utility: Common Tooltip Config
+        // ---------------------------------------------------------
+        const commonTooltip = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join('');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // ---------------------------------------------------------
+        // Chart 1: Tourism Demand Analysis (Bar Chart)
+        // ---------------------------------------------------------
+        const ctxDemand = document.getElementById('tourismDemandChart').getContext('2d');
+        new Chart(ctxDemand, {
+            type: 'bar',
+            data: {
+                labels: ['旅拍 (Vlog/Photo)', '高海拔物资配送', '空中观光游览', 'AR/VR 沉浸体验', '应急救援服务'],
+                datasets: [{
+                    label: '游客需求指数 (0-100)',
+                    data: [92, 85, 78, 65, 88],
+                    backgroundColor: [
+                        '#f43f5e', // Pink for visual/fun
+                        '#0891b2', // Cyan for utility
+                        '#312e81', // Indigo for premium
+                        '#64748b', 
+                        '#ef4444'  // Red for safety
+                    ],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltip
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 2: Supply Station Logic (Bubble Chart)
+        // ---------------------------------------------------------
+        // Logic: X=Distance from Town, Y=Altitude, Size=Traffic
+        const ctxSupply = document.getElementById('supplyStationChart').getContext('2d');
+        new Chart(ctxSupply, {
+            type: 'bubble',
+            data: {
+                datasets: [
+                    {
+                        label: '推荐无人补给站',
+                        data: [
+                            { x: 5, y: 3200, r: 15, location: "普达措入口" },
+                            { x: 12, y: 3600, r: 25, location: "雨崩徒步中转点" }, // Large traffic, remote
+                            { x: 25, y: 4100, r: 10, location: "白马雪山垭口" },
+                            { x: 8, y: 3300, r: 20, location: "松赞林寺周边" },
+                            { x: 30, y: 3800, r: 12, location: "哈巴雪山大本营" }
+                        ],
+                        backgroundColor: '#0891b2'
+                    },
+                    {
+                        label: '推荐有人综合服务区',
+                        data: [
+                            { x: 2, y: 3300, r: 30, location: "独克宗古城中心" },
+                            { x: 45, y: 2000, r: 20, location: "虎跳峡游客中心" }
+                        ],
+                        backgroundColor: '#312e81'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.location + 
+                                       `: 海拔${context.raw.y}m, 距离${context.raw.x}km`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: '距离最近城镇 (km)' },
+                        min: 0, max: 50
+                    },
+                    y: {
+                        title: { display: true, text: '海拔高度 (m)' },
+                        min: 1500, max: 5000
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 3: Industry Efficiency (Grouped Bar)
+        // ---------------------------------------------------------
+        const ctxInd = document.getElementById('industryEfficiencyChart').getContext('2d');
+        new Chart(ctxInd, {
+            type: 'bar',
+            data: {
+                labels: ['森林防火巡查(万亩/天)', '农林植保作业(亩/小时)', '高空设施巡检(座/天)'],
+                datasets: [
+                    {
+                        label: '传统人工模式',
+                        data: [0.5, 5, 2],
+                        backgroundColor: '#94a3b8'
+                    },
+                    {
+                        label: '低空无人机模式',
+                        data: [15, 80, 12],
+                        backgroundColor: '#0891b2'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', // Horizontal bar for better label reading
+                plugins: {
+                    tooltip: commonTooltip
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 4: Radar Chart - Constraints Analysis (Plotly)
+        // ---------------------------------------------------------
+        // Using Plotly for better Radar visualization than Chart.js defaults
+        var dataRadar = [{
+            type: 'scatterpolar',
+            r: [90, 40, 80, 30, 70], // Scores
+            theta: ['气象复杂性', '空域合规难度', '地形遮挡', '民俗敏感度', '基建完善度'],
+            fill: 'toself',
+            name: '迪庆低空实施难度',
+            line: { color: '#f43f5e' },
+            fillcolor: 'rgba(244, 63, 94, 0.3)'
+        }];
+
+        var layoutRadar = {
+            polar: {
+                radialaxis: {
+                    visible: true,
+                    range: [0, 100],
+                    tickfont: { color: '#cbd5e1' }
+                },
+                bgcolor: 'rgba(0,0,0,0)',
+                angularaxis: {
+                    tickfont: { color: '#e2e8f0' }, // Light text for dark background
+                    rotation: 90
+                }
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            showlegend: false,
+            margin: { t: 20, b: 20, l: 30, r: 30 },
+            font: { family: 'Noto Sans SC' }
+        };
+        
+        // Ensure Plotly uses Canvas/WebGL (scatterpolar uses SVG but it's a constraint of the library types, however, we avoid general SVG images)
+        Plotly.newPlot('constraintsRadar', dataRadar, layoutRadar, {displayModeBar: false, responsive: true});
+
+
+        // ---------------------------------------------------------
+        // Chart 5: Revenue Projection (Line Chart)
+        // ---------------------------------------------------------
+        const ctxRev = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctxRev, {
+            type: 'line',
+            data: {
+                labels: ['2024(基准)', '2025(建设期)', '2026(运营首年)', '2027(成熟期)', '2028(爆发期)'],
+                datasets: [{
+                    label: '文旅总收入预测 (亿元)',
+                    data: [180, 195, 230, 265, 310],
+                    borderColor: '#312e81',
+                    backgroundColor: 'rgba(49, 46, 129, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    yAxisID: 'y'
+                }, {
+                    label: '低空经济贡献占比 (%)',
+                    data: [0, 1.5, 5.0, 8.5, 12.0],
+                    borderColor: '#f43f5e',
+                    borderDash: [5, 5],
+                    fill: false,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    tooltip: commonTooltip,
+                    title: {
+                        display: true,
+                        text: '数智化平台上线后的经济拉动效应'
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: '总收入 (亿元)' }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: { display: true, text: '低空贡献 (%)' },
+                        grid: { drawOnChartArea: false }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
