@@ -52,3 +52,14 @@ inclusion: always
   - 项目名称、描述、链接
   - 缩略图路径（如有）
 - 确保项目信息与实际部署保持一致
+
+## 8. 根目录文件整理规范
+- **保持根目录清晰简洁**
+- 文档类文件（*.md）放入 `docs/` 目录
+- 测试过程文件（测试脚本、临时html等）放入 `Processes/` 目录
+- 根目录只保留：
+  - 核心页面文件（index.html, projects.html, stats.html, 404.html）
+  - 配置文件（.htaccess, .user.ini, .gitignore）
+  - README.md（项目说明）
+  - favicon.svg（网站图标）
+- 开发过程中生成的文档和测试文件必须及时归类
