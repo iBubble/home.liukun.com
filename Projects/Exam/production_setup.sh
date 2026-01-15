@@ -10,7 +10,7 @@ echo "========================================="
 echo ""
 
 # 项目根目录
-PROJECT_DIR="/www/wwwroot/ibubble.vicp.net/Samples/Exam"
+PROJECT_DIR="/www/wwwroot/ibubble.vicp.net/Projects/Exam"
 cd "$PROJECT_DIR" || exit 1
 
 echo "✓ 当前目录: $PROJECT_DIR"

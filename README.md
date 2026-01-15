@@ -22,7 +22,7 @@
 ├── favicon.svg         # 网站图标
 ├── api/                # API 接口
 │   └── server-stats.php
-├── Samples/            # 子项目目录
+├── Projects/           # 子项目目录
 │   ├── AIMovie/        # 时光大师AI影视平台
 │   ├── Shangri-la/     # 天空之境·数智香格里拉
 │   ├── Proxy/          # 代理测试项目

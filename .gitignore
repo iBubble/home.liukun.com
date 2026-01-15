@@ -29,8 +29,11 @@ package-lock.json
 
 # Vendor 依赖
 vendor/
-Samples/Exam/vendor/
-Samples/AIMovie/node_modules/
+Projects/Exam/vendor/
+Projects/AIMovie/node_modules/
+
+# AIMovie 项目（包含敏感配置，暂不上传）
+Projects/AIMovie/
 
 # 环境变量文件
 .env
@@ -60,12 +63,12 @@ verify-credentials.sh
 **/setup-ssl-*.sh
 
 # 包含敏感信息的文档
-Samples/AIMovie/AI_CREDENTIALS_VERIFICATION_REPORT.md
-Samples/AIMovie/AI_COMPONENTS_STATUS_REPORT.md
-Samples/AIMovie/AI_DEPLOYMENT_COMPLETE_SUMMARY.md
-Samples/AIMovie/QUICK_SETUP_REMAINING_SERVICES.md
-Samples/AIMovie/ecosystem.config.cjs
-Samples/AIMovie/docs/archive/REPLICATE_AI_INTEGRATION.md
+Projects/AIMovie/AI_CREDENTIALS_VERIFICATION_REPORT.md
+Projects/AIMovie/AI_COMPONENTS_STATUS_REPORT.md
+Projects/AIMovie/AI_DEPLOYMENT_COMPLETE_SUMMARY.md
+Projects/AIMovie/QUICK_SETUP_REMAINING_SERVICES.md
+Projects/AIMovie/ecosystem.config.cjs
+Projects/AIMovie/docs/archive/REPLICATE_AI_INTEGRATION.md
 工作记录_*_SSL*.md
 docs/https-cloudflare-setup/setup-ssl*.sh
 

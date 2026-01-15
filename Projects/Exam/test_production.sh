@@ -8,7 +8,7 @@ echo "  Exam项目生产环境测试"
 echo "========================================="
 echo ""
 
-BASE_URL="http://home.liukun.com/Samples/Exam"
+BASE_URL="http://home.liukun.com/Projects/Exam"
 PASS_COUNT=0
 FAIL_COUNT=0
 
@@ -41,7 +41,7 @@ test_database() {
     # 创建临时PHP测试文件
     cat > /tmp/test_db.php << 'EOF'
 <?php
-require_once '/www/wwwroot/ibubble.vicp.net/Samples/Exam/inc/db.inc.php';
+require_once '/www/wwwroot/ibubble.vicp.net/Projects/Exam/inc/db.inc.php';
 try {
     $stmt = $pdo->query("SELECT COUNT(*) FROM students");
     $count = $stmt->fetchColumn();
@@ -106,7 +106,7 @@ echo ""
 
 echo "2. 数据库连接测试"
 echo "-----------------------------------"
-cd /www/wwwroot/ibubble.vicp.net/Samples/Exam
+cd /www/wwwroot/ibubble.vicp.net/Projects/Exam
 test_database
 echo ""
 
@@ -179,8 +179,8 @@ if [ $FAIL_COUNT -eq 0 ]; then
     echo "✓ 所有测试通过！项目可以部署到生产环境。"
     echo ""
     echo "访问地址:"
-    echo "  学生端: http://home.liukun.com/Samples/Exam/"
-    echo "  管理端: http://home.liukun.com/Samples/Exam/admin/"
+    echo "  学生端: http://home.liukun.com/Projects/Exam/"
+    echo "  管理端: http://home.liukun.com/Projects/Exam/admin/"
     exit 0
 else
     echo "✗ 有 $FAIL_COUNT 项测试失败，请检查配置。"

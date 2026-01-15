@@ -12,7 +12,7 @@
 **新增规则**:
 ```markdown
 ## 7. Stats页面项目同步规则
-- **重要**: 在 `Samples/` 目录下增加或删除项目时，必须同步更新 `stats.html` 中的 Deployed Projects 部分
+- **重要**: 在 `Projects/` 目录下增加或删除项目时，必须同步更新 `stats.html` 中的 Deployed Projects 部分
 - 更新内容包括：
   - 项目卡片HTML结构
   - 项目名称、描述、链接
@@ -21,7 +21,7 @@
 ```
 
 **作用**: 
-- 确保以后在Samples目录下增减项目时，AI会自动提醒更新stats.html
+- 确保以后在Projects目录下增减项目时，AI会自动提醒更新stats.html
 - 保持Stats页面与实际部署项目的同步
 
 ### 2. 修复SSL证书状态判断

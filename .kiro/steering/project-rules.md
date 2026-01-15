@@ -21,16 +21,16 @@ inclusion: always
 - 示例：
   - 主站：http://home.liukun.com/
   - Projects页面：http://home.liukun.com/projects.html
-  - 香格里拉项目：http://home.liukun.com/Samples/Shangri-la/
+  - 香格里拉项目：http://home.liukun.com/Projects/Shangri-la/
 
 ## 4. 项目结构
 - 网站根目录：`/www/wwwroot/ibubble.vicp.net/`
 - 主页：`index.html`
 - 项目展示页：`projects.html`
 - 子项目目录：
-  - `Samples/Shangri-la/` - 天空之境·数智香格里拉
-  - `Samples/Proxy/` - 代理测试项目
-  - `Samples/AIMovie/` - 时光大师AI影视平台
+  - `Projects/Shangri-la/` - 天空之境·数智香格里拉
+  - `Projects/Proxy/` - 代理测试项目
+  - `Projects/AIMovie/` - 时光大师AI影视平台
 
 ## 5. 权限管理
 - 用户：`gemini`
@@ -46,7 +46,7 @@ inclusion: always
 - PHP版本：8.2
 
 ## 7. Stats页面项目同步规则
-- **重要**: 在 `Samples/` 目录下增加或删除项目时，必须同步更新 `stats.html` 中的 Deployed Web Projects 部分
+- **重要**: 在 `Projects/` 目录下增加或删除项目时，必须同步更新 `stats.html` 中的 Deployed Web Projects 部分
 - 更新内容包括：
   - 项目卡片HTML结构
   - 项目名称、描述、链接

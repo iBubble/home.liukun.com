@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex布局测试</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900">
+    <div class="min-h-screen bg-gray-800">
+        <div class="mx-auto max-w-[1440px] p-6">
+            <h1 class="text-white text-2xl mb-4">Flex布局测试 - 三栏布局</h1>
+            
+            <div class="flex flex-row flex-nowrap gap-6 border-4 border-yellow-500" style="width: 100%; maxWidth: 1440px">
+                
+                <!-- 左侧：素材库 -->
+                <div class="w-64 flex-shrink-0 rounded-lg border border-gray-700 bg-gray-700 p-4" style="maxHeight: calc(100vh - 250px)">
+                    <h2 class="text-white font-bold mb-2">左侧素材库</h2>
+                    <p class="text-gray-300 text-sm">宽度: w-64 (256px)</p>
+                    <p class="text-gray-300 text-sm">flex-shrink-0</p>
+                </div>
+
+                <!-- 中间：预览和时间线 -->
+                <div class="flex flex-1 flex-col gap-6 border-2 border-green-500" style="minWidth: 0">
+                    <div class="rounded-lg border border-gray-700 bg-gray-700 p-4">
+                        <h3 class="text-white font-bold mb-2">中间容器</h3>
+                        <p class="text-gray-300 text-sm">flex-1 (占据剩余空间)</p>
+                        <p class="text-gray-300 text-sm">minWidth: 0</p>
+                    </div>
+                    
+                    <div class="rounded-lg border border-gray-700 bg-gray-700 p-4">
+                        <p class="text-gray-300 text-sm">预览窗口</p>
+                    </div>
+                    
+                    <div class="rounded-lg border border-gray-700 bg-gray-700 p-4">
+                        <p class="text-gray-300 text-sm">时间线</p>
+                    </div>
+                </div>
+
+                <!-- 右侧：特效面板 -->
+                <div class="w-64 flex-shrink-0 rounded-lg border border-gray-700 bg-gray-700 p-4" style="maxHeight: calc(100vh - 250px)">
+                    <h2 class="text-white font-bold mb-2">右侧特效面板</h2>
+                    <p class="text-gray-300 text-sm">宽度: w-64 (256px)</p>
+                    <p class="text-gray-300 text-sm">flex-shrink-0</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
