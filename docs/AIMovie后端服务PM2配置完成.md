@@ -118,7 +118,7 @@ curl http://localhost:3001/api/health
 应该返回健康检查信息
 
 ### 4. 访问前端
-访问 http://home.liukun.com/Projects/AIMovie/ 验证功能正常
+访问 https://home.liukun.com:8443/Projects/AIMovie/ 验证功能正常
 
 ## 优势
 

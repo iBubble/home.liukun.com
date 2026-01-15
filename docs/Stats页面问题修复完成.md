@@ -120,8 +120,8 @@ API使用以下临时文件：
 
 ## 访问地址
 
-- **Stats页面**: https://home.liukun.com/stats.html
-- **API接口**: https://home.liukun.com/api/server-stats.php
+- **Stats页面**: https://home.liukun.com:8443/stats.html
+- **API接口**: https://home.liukun.com:8443/api/server-stats.php
 
 ## 后续优化建议
 

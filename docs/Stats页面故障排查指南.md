@@ -71,7 +71,7 @@ DOM已加载，立即初始化...
 
 ### Q2: System Status仍显示Error
 **A**: 
-1. 检查API是否正常：访问 https://home.liukun.com/api/server-stats.php
+1. 检查API是否正常：访问 https://home.liukun.com:8443/api/server-stats.php
 2. 查看浏览器Console是否有错误信息
 3. 检查网络连接
 
@@ -90,12 +90,12 @@ DOM已加载，立即初始化...
 
 ### 测试API
 ```bash
-curl -s https://home.liukun.com/api/server-stats.php | python3 -m json.tool
+curl -s https://home.liukun.com:8443/api/server-stats.php | python3 -m json.tool
 ```
 
 ### 测试页面加载
 ```bash
-curl -s https://home.liukun.com/stats.html | grep -E "fetchServerStats|Chart.js|updateUI"
+curl -s https://home.liukun.com:8443/stats.html | grep -E "fetchServerStats|Chart.js|updateUI"
 ```
 
 ### 清除服务器缓存
@@ -105,9 +105,9 @@ sudo rm -f /tmp/server_stats_cache.json
 
 ## 访问地址
 
-- **Stats页面**: https://home.liukun.com/stats.html
-- **API接口**: https://home.liukun.com/api/server-stats.php
-- **测试页面**: https://home.liukun.com/test-stats-api.html
+- **Stats页面**: https://home.liukun.com:8443/stats.html
+- **API接口**: https://home.liukun.com:8443/api/server-stats.php
+- **测试页面**: https://home.liukun.com:8443/test-stats-api.html
 
 ## 预期效果
 

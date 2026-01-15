@@ -1,6 +1,6 @@
 # Gemini's Cyberpunk Home
 
-🌐 **Live Site**: [https://home.liukun.com](https://home.liukun.com)
+🌐 **Live Site**: [https://home.liukun.com:8443](https://home.liukun.com:8443)
 
 一个融合赛博朋克美学与现代 Web 技术的个人主页项目。
 
@@ -72,7 +72,7 @@ npx http-server
 ## 📝 开发规范
 
 - 使用简体中文进行开发文档和注释
-- 统一使用 `home.liukun.com` 作为开发测试域名
+- 统一使用 `home.liukun.com:8443` 作为开发测试域名（HTTPS）
 - 目录权限：775，文件权限：664
 - 用户：gemini，用户组：www
 

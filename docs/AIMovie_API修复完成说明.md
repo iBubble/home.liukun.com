@@ -110,9 +110,9 @@ node server/index.cjs
 
 ### 服务状态
 - ✅ 后端 API: http://localhost:3001
-- ✅ 健康检查: https://home.liukun.com/Projects/AIMovie/api/health
+- ✅ 健康检查: https://home.liukun.com:8443/Projects/AIMovie/api/health
 - ✅ 数据库连接: 正常
-- ✅ 前端访问: https://home.liukun.com/Projects/AIMovie/
+- ✅ 前端访问: https://home.liukun.com:8443/Projects/AIMovie/
 
 ---
 
@@ -151,7 +151,7 @@ node server/index.cjs
 
 1. **访问 AIMovie**
    ```
-   https://home.liukun.com/Projects/AIMovie/
+   https://home.liukun.com:8443/Projects/AIMovie/
    ```
 
 2. **登录系统**

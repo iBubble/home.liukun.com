@@ -145,7 +145,7 @@ document.getElementById('systemLoad').textContent = data.load['1min'];
 
 ## 访问地址
 
-https://home.liukun.com/stats.html
+https://home.liukun.com:8443/stats.html
 
 ## 后续改进建议
 

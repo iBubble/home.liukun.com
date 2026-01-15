@@ -15,13 +15,14 @@ inclusion: always
 - 定期同步本地和全局的信任命令列表
 
 ## 3. 开发测试域名
-- **统一使用 `home.liukun.com` 进行开发和测试**
+- **统一使用 `home.liukun.com:8443` 进行开发和测试（HTTPS）**
 - 避免使用 `192.168.1.40` 或 `ibubble.vicp.net`
-- 所有URL测试、验证、演示均使用 `home.liukun.com`
+- 所有URL测试、验证、演示均使用 `home.liukun.com:8443`
 - 示例：
-  - 主站：http://home.liukun.com/
-  - Projects页面：http://home.liukun.com/projects.html
-  - 香格里拉项目：http://home.liukun.com/Projects/Shangri-la/
+  - 主站：https://home.liukun.com:8443/
+  - Projects页面：https://home.liukun.com:8443/projects.html
+  - 香格里拉项目：https://home.liukun.com:8443/Projects/Shangri-la/
+  - AIMovie项目：https://home.liukun.com:8443/Projects/AIMovie/
 
 ## 4. 项目结构
 - 网站根目录：`/www/wwwroot/ibubble.vicp.net/`
@@ -41,7 +42,7 @@ inclusion: always
 
 ## 6. 服务器环境
 - Web服务器：宝塔面板 + Nginx
-- 80端口：主站 (home.liukun.com)
+- 8443端口：主站 HTTPS (home.liukun.com:8443)
 - 81端口：Shangri_la 备用站点
 - PHP版本：8.2
 

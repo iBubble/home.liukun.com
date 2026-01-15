@@ -204,7 +204,7 @@ function getSslInfo() {
 
 ## 访问地址
 
-https://home.liukun.com/stats.html
+https://home.liukun.com:8443/stats.html
 
 ## 版本历史
 

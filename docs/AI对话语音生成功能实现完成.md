@@ -312,7 +312,7 @@ dialogueAudioRefs.current.set(key, audio)
 ## 测试步骤
 
 ### 1. 基础测试
-1. 访问 http://home.liukun.com/Projects/AIMovie/
+1. 访问 https://home.liukun.com:8443/Projects/AIMovie/
 2. 进入包含对话的项目
 3. 进入视频编辑器
 4. 点击"生成对话语音"按钮

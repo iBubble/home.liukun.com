@@ -104,25 +104,25 @@ node server/index.cjs
 ## ✅ 验证测试
 
 ### 主站访问
-- ✅ https://home.liukun.com/
-- ✅ https://home.liukun.com/projects.html
-- ✅ https://home.liukun.com/stats.html
+- ✅ https://home.liukun.com:8443/
+- ✅ https://home.liukun.com:8443/projects.html
+- ✅ https://home.liukun.com:8443/stats.html
 
 ### 子项目访问
-- ✅ https://home.liukun.com/Projects/Shangri-la/
-- ✅ https://home.liukun.com/Projects/Proxy/
-- ✅ https://home.liukun.com/Projects/Exam/
-- ✅ https://home.liukun.com/Projects/AIMovie/
+- ✅ https://home.liukun.com:8443/Projects/Shangri-la/
+- ✅ https://home.liukun.com:8443/Projects/Proxy/
+- ✅ https://home.liukun.com:8443/Projects/Exam/
+- ✅ https://home.liukun.com:8443/Projects/AIMovie/
 
 ### AIMovie 资源访问
-- ✅ https://home.liukun.com/Projects/AIMovie/assets/vendors.c3495f936dd2ad5ba9f2.js
-- ✅ https://home.liukun.com/Projects/AIMovie/assets/main.3cd406208bf972a1b5b1.js
-- ✅ https://home.liukun.com/Projects/AIMovie/assets/main.ec1e09640fc66375ceca.css
-- ✅ https://home.liukun.com/Projects/AIMovie/favicon.svg
+- ✅ https://home.liukun.com:8443/Projects/AIMovie/assets/vendors.c3495f936dd2ad5ba9f2.js
+- ✅ https://home.liukun.com:8443/Projects/AIMovie/assets/main.3cd406208bf972a1b5b1.js
+- ✅ https://home.liukun.com:8443/Projects/AIMovie/assets/main.ec1e09640fc66375ceca.css
+- ✅ https://home.liukun.com:8443/Projects/AIMovie/favicon.svg
 
 ### AIMovie API 测试
 ```bash
-curl https://home.liukun.com/Projects/AIMovie/api/health
+curl https://home.liukun.com:8443/Projects/AIMovie/api/health
 ```
 
 **响应**:
