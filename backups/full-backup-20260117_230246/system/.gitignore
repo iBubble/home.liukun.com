@@ -1,0 +1,89 @@
+# 日志文件
+*.log
+logs/
+*.log.*
+
+# 备份文件
+backup/
+*.bak
+*.tar.gz
+*.zip
+
+# 临时文件
+*.tmp
+*.temp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# Node modules (如果有的话)
+node_modules/
+package-lock.json
+
+# Vendor 依赖
+vendor/
+Projects/Exam/vendor/
+Projects/AIMovie/node_modules/
+
+# AIMovie 项目（包含敏感配置，暂不上传）
+Projects/AIMovie/
+
+# 环境变量文件
+.env
+.env.local
+.env.production
+.env.production.local
+*.env.production
+
+# SSL 证书和密钥
+*.key
+*.crt
+*.pem
+*.csr
+.well-known/
+
+# 敏感配置
+*.conf
+.user.ini
+apply-letsencrypt.sh
+apply-ssl-simple.sh
+verify-credentials.sh
+**/verify-credentials.sh
+**/verify-ai-credentials.sh
+**/refresh-tts-token.sh
+**/refresh-aliyun-tts-token.sh
+**/get-aliyun-tts-token.sh
+**/setup-ssl-*.sh
+
+# 包含敏感信息的文档
+Projects/AIMovie/AI_CREDENTIALS_VERIFICATION_REPORT.md
+Projects/AIMovie/AI_COMPONENTS_STATUS_REPORT.md
+Projects/AIMovie/AI_DEPLOYMENT_COMPLETE_SUMMARY.md
+Projects/AIMovie/QUICK_SETUP_REMAINING_SERVICES.md
+Projects/AIMovie/ecosystem.config.cjs
+Projects/AIMovie/docs/archive/REPLICATE_AI_INTEGRATION.md
+工作记录_*_SSL*.md
+docs/https-cloudflare-setup/setup-ssl*.sh
+
+# PHP 临时文件
+*.php~
+
+# 测试输出
+test-*.txt
+verification-*.txt
+
+# 构建输出
+dist/
+build/
+
+# 数据库文件
+*.sql
+*.sqlite
+*.db

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Courier New', 'Monaco', monospace;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+  }
+  
+  .font-chinese {
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  
+  .glitch-text {
+    text-shadow: 
+      2px 2px 0 #FF1493,
+      -2px -2px 0 #00FF41;
+    animation: glitch 1s infinite;
+  }
+  
+  @keyframes glitch {
+    0%, 100% {
+      text-shadow: 
+        2px 2px 0 #FF1493,
+        -2px -2px 0 #00FF41;
+    }
+    25% {
+      text-shadow: 
+        -2px 2px 0 #FF1493,
+        2px -2px 0 #00FF41;
+    }
+    50% {
+      text-shadow: 
+        2px -2px 0 #FF1493,
+        -2px 2px 0 #00FF41;
+    }
+    75% {
+      text-shadow: 
+        -2px -2px 0 #FF1493,
+        2px 2px 0 #00FF41;
+    }
+  }
+}

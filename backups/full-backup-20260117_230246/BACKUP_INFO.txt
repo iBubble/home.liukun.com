@@ -1,0 +1,87 @@
+========================================
+完整网站备份信息
+========================================
+
+备份时间: Sat Jan 17 11:02:50 PM CST 2026
+备份目录: /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246
+主机名: ubuntu
+操作系统: Linux ubuntu 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 14:14:30 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+========================================
+备份内容
+========================================
+
+1. 网站文件
+   - 路径: /www/wwwroot/ibubble.vicp.net
+   - 文件: website/site-files.tar.gz
+   - 大小: 32M
+   - 排除: node_modules, .git, backups, dist
+
+2. 数据库
+   - ai_movie: 392K
+   - 其他数据库: 见 databases/ 目录
+
+3. Nginx 配置
+   - 主配置: nginx.conf
+   - 站点配置: nginx/*.conf
+   - 重写规则: nginx/rewrite/
+
+4. SSL 证书
+   - 路径: ssl/
+   - 证书: ibubble.vicp.net
+
+5. PM2 配置
+   - 进程列表: pm2/process-list.txt
+   - 配置文件: pm2/dump.pm2
+
+6. 系统配置
+   - 环境变量: system/env/
+   - Git 信息: system/git-*.txt
+   - 系统信息: system/system-info.txt
+
+========================================
+恢复说明
+========================================
+
+1. 恢复网站文件:
+   cd /www/wwwroot/ibubble.vicp.net
+   tar -xzf /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/website/site-files.tar.gz
+
+2. 恢复数据库:
+   mysql -u root -p'Gl5181081' ai_movie < /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/databases/ai_movie.sql
+
+3. 恢复 Nginx 配置:
+   sudo cp /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/nginx/*.conf /www/server/panel/vhost/nginx/
+   sudo nginx -s reload
+
+4. 恢复 SSL 证书:
+   sudo cp -r /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/ssl/* /www/server/panel/vhost/cert/
+
+5. 恢复 PM2 进程:
+   pm2 resurrect
+
+========================================
+备份文件列表
+========================================
+
+-rw-rw-r-- 1 gemini gemini 32M Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/website/site-files.tar.gz
+-rw-rw-r-- 1 gemini gemini 25 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/databases/database-list.txt
+-rw-rw-r-- 1 gemini gemini 1.3K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/databases/shangri_la.sql
+-rw-rw-r-- 1 gemini gemini 389K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/databases/ai_movie.sql
+-rw-rw-r-- 1 gemini gemini 7.7M Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/databases/exam.sql
+-rw-rw-r-- 1 gemini gemini 6 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/npm-version.txt
+-rw-rw-r-- 1 gemini gemini 1.7K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/listening-ports.txt
+-rw-rw-r-- 1 gemini gemini 198 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/php-version.txt
+-rw-rw-r-- 1 gemini gemini 9 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/node-version.txt
+-rw-rw-r-- 1 gemini gemini 457 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/disk-usage.txt
+-rw-rw-r-- 1 gemini gemini 123 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/git-remote.txt
+-rwxrwxr-x 1 gemini gemini 88 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/env/Projects/AIMovie/.env.production.local
+-rwxrwxr-x 1 gemini gemini 1.9K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/env/Projects/AIMovie/.env.production
+-rw-rw-r-- 1 gemini gemini 121 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/system-info.txt
+-rw-rw-r-- 1 gemini gemini 237 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/git-log.txt
+-rw-rw-r-- 1 gemini gemini 207 Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/memory-info.txt
+-rw-rw-r-- 1 gemini gemini 1.4K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/system/.gitignore
+-rw-r--r-- 1 root root 2.7K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/nginx/nginx.conf
+-rw-rw-r-- 1 gemini gemini 2.0K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/pm2/process-list.txt
+-rw-rw-r-- 1 gemini gemini 23K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/pm2/dump.pm2
+-rw-rw-r-- 1 gemini gemini 4.6K Jan 17 23:02 /www/wwwroot/ibubble.vicp.net/backups/full-backup-20260117_230246/BACKUP_INFO.txt
