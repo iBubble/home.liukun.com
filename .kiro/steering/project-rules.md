@@ -64,3 +64,18 @@ inclusion: always
   - README.md（项目说明）
   - favicon.svg（网站图标）
 - 开发过程中生成的文档和测试文件必须及时归类
+
+## 9. 国内镜像源配置
+- **所有包管理器必须使用国内镜像源以提高下载速度**
+- **Python pip**: 使用清华镜像源
+  - 命令格式：`pip3 install <package> -i https://pypi.tuna.tsinghua.edu.cn/simple`
+  - 或使用：`pip3 install <package> --break-system-packages -i https://pypi.tuna.tsinghua.edu.cn/simple`
+- **Node.js npm**: 使用淘宝镜像源
+  - 命令格式：`npm install <package> --registry=https://registry.npmmirror.com`
+  - 或配置：`npm config set registry https://registry.npmmirror.com`
+- **Node.js pnpm**: 使用淘宝镜像源
+  - 命令格式：`pnpm install <package> --registry=https://registry.npmmirror.com`
+- **Ubuntu apt**: 使用阿里云镜像源
+  - 已配置在 `/etc/apt/sources.list`
+- **Docker**: 使用阿里云/网易镜像源
+  - 配置在 `/etc/docker/daemon.json`
