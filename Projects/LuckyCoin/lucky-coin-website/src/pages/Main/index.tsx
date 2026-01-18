@@ -1,20 +1,23 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useModeStore } from '../../stores/modeStore';
 import { getColors } from '../../styles/colors';
 import ModeToggle from '../../components/ModeToggle';
+import LanguageSwitcher from '../../components/LanguageSwitcher';
 import CursorTrail from '../../components/CursorTrail';
 import GlitchEffect from '../../components/GlitchEffect';
 
 const navItems = [
-  { path: '/main/story', label: '故事板' },
-  { path: '/main/characters', label: '角色' },
-  { path: '/main/director', label: '导演风格' },
-  { path: '/main/crowdfunding', label: '一元预订' },
-  { path: '/main/investor', label: '投资人专区' },
+  { path: '/main/story', labelKey: 'nav.story' },
+  { path: '/main/characters', labelKey: 'nav.characters' },
+  { path: '/main/director', labelKey: 'nav.director' },
+  { path: '/main/crowdfunding', labelKey: 'nav.crowdfunding' },
+  { path: '/main/investor', labelKey: 'nav.investor' },
 ];
 
 export default function Main() {
+  const { t } = useTranslation();
   const { mode } = useModeStore();
   const colors = getColors(mode);
   const location = useLocation();
@@ -24,6 +27,8 @@ export default function Main() {
       <div
         className="min-h-screen transition-colors duration-500"
         style={{ backgroundColor: colors.background }}
+        role="main"
+        aria-label="一元奇梦电影网站主页面"
       >
         <CursorTrail enabled={true} />
         <ModeToggle />
@@ -35,44 +40,55 @@ export default function Main() {
             backgroundColor: `${colors.background}cc`,
             borderBottom: `2px solid ${colors.accent}`,
           }}
+          role="navigation"
+          aria-label="主导航菜单"
         >
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
-              <Link to="/main/story">
+              <Link to="/main/story" aria-label={t('nav.home')}>
                 <motion.h1
                   className="text-3xl md:text-4xl font-bold font-chinese"
                   style={{ color: colors.accent }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  一元奇梦
+                  {t('home.title')}
                 </motion.h1>
               </Link>
 
-              <div className="flex gap-2 md:gap-4 flex-wrap justify-end">
-                {navItems.map((item) => (
-                  <Link key={item.path} to={item.path}>
-                    <motion.button
-                      className="px-3 md:px-6 py-2 rounded-lg font-chinese text-sm md:text-base font-bold transition-all"
-                      style={{
-                        backgroundColor:
-                          location.pathname === item.path
-                            ? colors.accent
-                            : colors.secondary,
-                        color:
-                          location.pathname === item.path
-                            ? mode === 'dream'
-                              ? '#000'
-                              : '#fff'
-                            : colors.text,
-                        border: `2px solid ${colors.accent}`,
-                      }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {item.label}
-                    </motion.button>
-                  </Link>
-                ))}
+              <div className="flex items-center gap-2 md:gap-4">
+                {/* 语言切换器 */}
+                <LanguageSwitcher />
+                
+                {/* 导航菜单 */}
+                <div className="flex gap-2 md:gap-4 flex-wrap justify-end" role="menubar">
+                  {navItems.map((item) => (
+                    <Link key={item.path} to={item.path}>
+                      <motion.button
+                        className="px-3 md:px-6 py-2 rounded-lg font-chinese text-sm md:text-base font-bold transition-all"
+                        style={{
+                          backgroundColor:
+                            location.pathname === item.path
+                              ? colors.accent
+                              : colors.secondary,
+                          color:
+                            location.pathname === item.path
+                              ? mode === 'dream'
+                                ? '#000'
+                                : '#fff'
+                              : colors.text,
+                          border: `2px solid ${colors.accent}`,
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        role="menuitem"
+                        aria-current={location.pathname === item.path ? 'page' : undefined}
+                        aria-label={`${t('common.view')}${t(item.labelKey)}`}
+                      >
+                        {t(item.labelKey)}
+                      </motion.button>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -88,6 +104,8 @@ export default function Main() {
             backgroundColor: colors.secondary,
             borderTop: `2px solid ${colors.accent}`,
           }}
+          role="contentinfo"
+          aria-label="网站页脚信息"
         >
           <div className="max-w-7xl mx-auto text-center space-y-4">
             <p

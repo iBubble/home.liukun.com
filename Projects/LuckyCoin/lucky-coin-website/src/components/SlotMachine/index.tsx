@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useModeStore } from '../../stores/modeStore';
 import type { Mode } from '../../styles/colors';
@@ -9,6 +10,7 @@ interface SlotResult {
 }
 
 export default function SlotMachine({ onResult }: { onResult: (mode: Mode) => void }) {
+  const { t } = useTranslation();
   const [isSpinning, setIsSpinning] = useState(false);
   const [result, setResult] = useState<SlotResult | null>(null);
   const [showEffect, setShowEffect] = useState(false);
@@ -110,7 +112,7 @@ export default function SlotMachine({ onResult }: { onResult: (mode: Mode) => vo
           whileTap={!isSpinning ? { scale: 0.95 } : {}}
         >
           <span className="text-white font-chinese">
-            {isSpinning ? '转动中...' : 'INSERT COIN 投币'}
+            {isSpinning ? t('home.spinning') : t('home.insertCoin')}
           </span>
         </motion.button>
 

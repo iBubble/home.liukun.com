@@ -5,6 +5,7 @@ logs/
 
 # 备份文件
 backup/
+backups/
 *.bak
 *.tar.gz
 *.zip

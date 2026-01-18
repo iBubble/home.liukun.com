@@ -1,4 +1,5 @@
 import { useModeStore } from '../../stores/modeStore';
+import { useTranslation } from 'react-i18next';
 import { getColors } from '../../styles/colors';
 import CharacterCard from '../../components/CharacterCard';
 
@@ -6,7 +7,7 @@ const characters = [
   {
     id: '1',
     name: '主角',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
+    avatar: '/Projects/LuckyCoin/images/characters/protagonist.jpg',
     stats: {
       dream: { label: '做梦能力', value: 'SSS', rank: 'SSS' as const },
       sewing: { label: '缝纫手速', value: 'A', rank: 'A' as const },
@@ -21,7 +22,7 @@ const characters = [
   {
     id: '2',
     name: '意大利房东',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
+    avatar: '/Projects/LuckyCoin/images/characters/landlord.jpg',
     stats: {
       rent: { label: '收租能力', value: 'S', rank: 'S' as const },
       chinese: { label: '中文水平', value: 'B', rank: 'B' as const },
@@ -36,7 +37,7 @@ const characters = [
   {
     id: '3',
     name: '工友老王',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400',
+    avatar: '/Projects/LuckyCoin/images/characters/worker.jpg',
     stats: {
       experience: { label: '工作经验', value: '15年', rank: 'S' as const },
       speed: { label: '缝纫速度', value: 'SS', rank: 'SS' as const },

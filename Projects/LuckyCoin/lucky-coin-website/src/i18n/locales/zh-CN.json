@@ -1,0 +1,441 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "error": "出错了",
+    "submit": "提交",
+    "cancel": "取消",
+    "confirm": "确认",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "prev": "上一步",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "view": "查看",
+    "more": "更多"
+  },
+  "nav": {
+    "home": "首页",
+    "story": "故事板",
+    "characters": "角色",
+    "director": "导演风格",
+    "crowdfunding": "众筹",
+    "investor": "投资人专区"
+  },
+  "mode": {
+    "dream": "梦境模式",
+    "reality": "现实模式",
+    "toggle": "切换模式"
+  },
+  "home": {
+    "title": "一元奇梦",
+    "subtitle": "Lucky Coin",
+    "description": "一枚硬币，两个世界",
+    "insertCoin": "投入一元硬币",
+    "spinning": "转动中...",
+    "result": {
+      "dream": "恭喜！进入梦境世界",
+      "reality": "欢迎来到现实世界"
+    }
+  },
+  "story": {
+    "title": "故事板",
+    "subtitle": "两个世界的对比",
+    "dream": {
+      "title": "梦境世界",
+      "scene1": {
+        "title": "场景一：撒钱庆祝",
+        "description": "在奢华的宴会厅，人们欢呼雀跃，金币如雨般洒落。这是梦境中的狂欢，一切都那么美好。"
+      },
+      "scene2": {
+        "title": "场景二：成功巅峰",
+        "description": "主角站在高楼之巅，俯瞰城市的繁华。在梦境中，他是成功的企业家，拥有一切。"
+      }
+    },
+    "reality": {
+      "title": "现实世界",
+      "scene1": {
+        "title": "场景一：工厂车间",
+        "description": "昏暗的工厂里，工人们重复着机械的动作。这是现实的残酷，日复一日的劳作。"
+      },
+      "scene2": {
+        "title": "场景二：艰难生活",
+        "description": "主角在狭小的出租屋里，为生计发愁。现实中，他只是一个普通的打工者。"
+      }
+    },
+    "irony": "一枚硬币的两面，映射出人生的荒诞与真实"
+  },
+  "characters": {
+    "title": "角色介绍",
+    "subtitle": "每个角色都有两面",
+    "viewDetails": "查看详情",
+    "stats": {
+      "luck": "幸运",
+      "reality": "现实感",
+      "dream": "梦想",
+      "willpower": "意志力"
+    },
+    "ultimate": "必杀技",
+    "list": {
+      "protagonist": {
+        "name": "李明",
+        "dreamTitle": "梦境：成功企业家",
+        "realityTitle": "现实：工厂工人",
+        "dreamDesc": "在梦境中，李明是一位成功的企业家，拥有豪车豪宅，受人尊敬。",
+        "realityDesc": "现实中，李明是一名普通的工厂工人，每天重复着机械的工作。",
+        "ultimate": "双重人生：在梦境与现实间自由切换"
+      },
+      "lover": {
+        "name": "小美",
+        "dreamTitle": "梦境：完美恋人",
+        "realityTitle": "现实：陌生人",
+        "dreamDesc": "在梦境中，小美是李明的完美恋人，温柔体贴，相濡以沫。",
+        "realityDesc": "现实中，小美只是李明在公交车上偶遇的陌生人。",
+        "ultimate": "幻影之爱：创造完美的爱情幻象"
+      },
+      "mentor": {
+        "name": "老王",
+        "dreamTitle": "梦境：智慧导师",
+        "realityTitle": "现实：工友",
+        "dreamDesc": "在梦境中，老王是李明的人生导师，给予他智慧和指引。",
+        "realityDesc": "现实中，老王是李明的工友，一起在工厂打工。",
+        "ultimate": "真理之眼：看穿梦境与现实的本质"
+      }
+    }
+  },
+  "director": {
+    "title": "导演风格",
+    "subtitle": "魔幻现实主义的视觉诗篇",
+    "profile": {
+      "title": "导演简介",
+      "name": "李明",
+      "education": "博洛尼亚大学电影学硕士",
+      "bio": "李明导演擅长将魔幻现实主义与社会批判相结合，用独特的视觉语言讲述普通人的故事。他的作品曾在多个国际电影节获奖，被誉为'新生代最具潜力的华语导演'。"
+    },
+    "awards": {
+      "title": "获奖记录",
+      "list": [
+        {
+          "year": "2023",
+          "festival": "威尼斯电影节",
+          "award": "最佳短片金狮奖",
+          "work": "《硬币的两面》"
+        },
+        {
+          "year": "2022",
+          "festival": "戛纳电影节",
+          "award": "短片单元评审团奖",
+          "work": "《缝纫机》"
+        },
+        {
+          "year": "2021",
+          "festival": "柏林电影节",
+          "award": "新生代单元最佳影片",
+          "work": "《工厂》"
+        },
+        {
+          "year": "2020",
+          "festival": "鹿特丹电影节",
+          "award": "老虎奖提名",
+          "work": "《梦境》"
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "创作理念",
+      "visual": {
+        "title": "视觉美学",
+        "content": "运用强烈的色彩对比和光影变化，营造梦境与现实的视觉差异。金色代表梦境的奢华，灰色象征现实的压抑。"
+      },
+      "narrative": {
+        "title": "叙事结构",
+        "content": "采用非线性叙事，在梦境与现实间自由切换，让观众体验主角的精神状态，思考人生的意义。"
+      },
+      "music": {
+        "title": "音乐设计",
+        "content": "融合电子音乐与传统民乐，创造独特的听觉体验。梦境中的音乐华丽而迷幻，现实中的音乐单调而压抑。"
+      },
+      "culture": {
+        "title": "文化批判",
+        "content": "通过魔幻现实主义的手法，批判当代社会的消费主义和阶级固化，探讨普通人的生存困境。"
+      }
+    },
+    "references": {
+      "title": "参考影片",
+      "subtitle": "影响本片创作的经典作品",
+      "list": [
+        {
+          "title": "《寄生虫》",
+          "director": "奉俊昊",
+          "year": "2019",
+          "influence": "阶级差异的视觉化表达",
+          "awards": "奥斯卡最佳影片、最佳导演、最佳原创剧本、最佳国际影片"
+        },
+        {
+          "title": "《盗梦空间》",
+          "director": "克里斯托弗·诺兰",
+          "year": "2010",
+          "influence": "梦境与现实的叙事结构",
+          "awards": "奥斯卡最佳摄影、最佳音效剪辑、最佳音响效果、最佳视觉效果"
+        },
+        {
+          "title": "《罗马》",
+          "director": "阿方索·卡隆",
+          "year": "2018",
+          "influence": "黑白影像的诗意表达",
+          "awards": "奥斯卡最佳导演、最佳摄影、最佳外语片"
+        }
+      ]
+    },
+    "music": {
+      "title": "音乐小样",
+      "subtitle": "电影原声混音版",
+      "play": "播放",
+      "pause": "暂停",
+      "volume": "音量"
+    },
+    "manifesto": {
+      "title": "导演宣言",
+      "part1": "电影是梦境的艺术，也是现实的镜子。我希望通过《一元奇梦》，让观众看到自己的影子，思考人生的意义。",
+      "part2": "一枚硬币有两面，人生也有两面。我们都在梦境与现实间挣扎，寻找属于自己的答案。",
+      "part3": "这部电影不是为了给出答案，而是为了提出问题。什么是真实？什么是幻象？我们该如何面对人生的荒诞？"
+    }
+  },
+  "crowdfunding": {
+    "title": "众筹支持",
+    "subtitle": "一元预订，共创奇梦",
+    "progress": {
+      "title": "项目进度",
+      "stages": [
+        { "name": "剧本完成", "status": "completed" },
+        { "name": "资金筹集", "status": "current" },
+        { "name": "前期筹备", "status": "pending" },
+        { "name": "拍摄制作", "status": "pending" },
+        { "name": "后期制作", "status": "pending" },
+        { "name": "发行上映", "status": "pending" }
+      ]
+    },
+    "tiers": {
+      "title": "回报档位",
+      "tier1": {
+        "price": "¥1",
+        "name": "梦想支持者",
+        "benefits": [
+          "电影上映通知",
+          "官方感谢名单",
+          "独家幕后花絮"
+        ]
+      },
+      "tier2": {
+        "price": "¥99",
+        "name": "梦境探索者",
+        "benefits": [
+          "包含 ¥1 档所有权益",
+          "电影首映礼邀请函",
+          "限量版电影海报",
+          "导演签名明信片"
+        ]
+      },
+      "tier3": {
+        "price": "¥999",
+        "name": "现实改变者",
+        "benefits": [
+          "包含 ¥99 档所有权益",
+          "片尾字幕鸣谢",
+          "拍摄现场探班机会",
+          "与导演面对面交流",
+          "限量版蓝光收藏版"
+        ]
+      }
+    },
+    "form": {
+      "title": "支持表单",
+      "selectTier": "选择档位",
+      "name": "姓名",
+      "namePlaceholder": "请输入您的姓名",
+      "email": "邮箱",
+      "emailPlaceholder": "请输入您的邮箱",
+      "phone": "手机",
+      "phonePlaceholder": "请输入您的手机号码",
+      "message": "留言",
+      "messagePlaceholder": "想对我们说的话（可选）",
+      "submit": "提交支持",
+      "submitting": "提交中..."
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": {
+        "question": "支持后多久能看到电影？",
+        "answer": "预计 2027 年完成制作并上映，我们会通过邮件及时通知您项目进展。"
+      },
+      "q2": {
+        "question": "如何获得回报？",
+        "answer": "支持成功后，我们会通过您提供的联系方式发送回报。实体回报将在电影完成后统一寄送。"
+      },
+      "q3": {
+        "question": "可以退款吗？",
+        "answer": "项目启动前可以申请退款，项目启动后不支持退款，但可以转让给他人。"
+      },
+      "q4": {
+        "question": "支持的资金用途？",
+        "answer": "所有资金将用于电影制作，包括拍摄、后期、宣发等环节。我们会定期公布资金使用情况。"
+      },
+      "q5": {
+        "question": "如何联系项目方？",
+        "answer": "您可以通过邮箱 contact@luckycoin.film 或微信公众号「一元奇梦」联系我们。"
+      }
+    },
+    "success": {
+      "title": "感谢您的支持！",
+      "message": "我们已收到您的支持申请，稍后会通过邮件与您联系。",
+      "details": "您选择的档位：",
+      "nextSteps": "接下来的步骤：",
+      "step1": "1. 我们会在 24 小时内通过邮件发送支付链接",
+      "step2": "2. 完成支付后，您将收到确认邮件",
+      "step3": "3. 我们会定期发送项目进展更新",
+      "backToHome": "返回首页"
+    }
+  },
+  "investor": {
+    "title": "投资人专区",
+    "subtitle": "专业的电影投资机会",
+    "tabs": {
+      "market": "市场分析",
+      "finance": "财务规划",
+      "team": "核心团队",
+      "distribution": "发行策略"
+    },
+    "market": {
+      "title": "市场分析",
+      "overview": {
+        "title": "市场概况",
+        "data": [
+          { "label": "全球艺术电影市场规模", "value": "€45亿" },
+          { "label": "年增长率", "value": "12%" },
+          { "label": "目标观众群体", "value": "2500万人" },
+          { "label": "平均票房回报率", "value": "180-310%" }
+        ]
+      },
+      "forecast": {
+        "title": "收入预测",
+        "boxOffice": "票房收入",
+        "streaming": "流媒体版权",
+        "merchandise": "衍生品",
+        "awards": "奖项加成"
+      },
+      "roi": {
+        "title": "投资回报率（ROI）",
+        "conservative": "保守估计：180%",
+        "moderate": "中等估计：245%",
+        "optimistic": "乐观估计：310%"
+      }
+    },
+    "finance": {
+      "title": "财务规划",
+      "budget": {
+        "title": "总预算",
+        "amount": "€350万",
+        "breakdown": [
+          { "category": "前期筹备", "amount": "€50万", "percentage": "14%" },
+          { "category": "拍摄制作", "amount": "€150万", "percentage": "43%" },
+          { "category": "后期制作", "amount": "€80万", "percentage": "23%" },
+          { "category": "宣发推广", "amount": "€70万", "percentage": "20%" }
+        ]
+      },
+      "tiers": {
+        "title": "投资档位",
+        "tier1": {
+          "amount": "€50万",
+          "name": "主要投资人",
+          "share": "20%",
+          "benefits": [
+            "20% 票房分成",
+            "制片人署名",
+            "参与重大决策",
+            "优先投资权"
+          ]
+        },
+        "tier2": {
+          "amount": "€20万",
+          "name": "联合投资人",
+          "share": "8%",
+          "benefits": [
+            "8% 票房分成",
+            "联合制片人署名",
+            "定期进展报告",
+            "首映礼邀请"
+          ]
+        },
+        "tier3": {
+          "amount": "€5万",
+          "name": "天使投资人",
+          "share": "2%",
+          "benefits": [
+            "2% 票房分成",
+            "特别鸣谢",
+            "拍摄现场探班",
+            "收藏版蓝光"
+          ]
+        }
+      }
+    },
+    "team": {
+      "title": "核心团队",
+      "members": [
+        {
+          "name": "李明",
+          "role": "导演/编剧",
+          "bio": "博洛尼亚大学电影学硕士，作品曾获威尼斯电影节金狮奖。擅长魔幻现实主义风格，被誉为'新生代最具潜力的华语导演'。"
+        },
+        {
+          "name": "张伟",
+          "role": "制片人",
+          "bio": "资深电影制片人，曾参与制作多部获奖影片。拥有丰富的国际合作经验，擅长艺术电影的商业化运作。"
+        },
+        {
+          "name": "王芳",
+          "role": "摄影指导",
+          "bio": "金马奖最佳摄影得主，作品以独特的视觉风格著称。曾与多位知名导演合作，擅长用光影讲述故事。"
+        },
+        {
+          "name": "刘洋",
+          "role": "音乐总监",
+          "bio": "知名音乐制作人，作品曾获金曲奖。擅长融合电子音乐与传统民乐，创造独特的听觉体验。"
+        }
+      ]
+    },
+    "distribution": {
+      "title": "发行策略",
+      "timeline": [
+        {
+          "phase": "第一阶段：电影节",
+          "period": "2027年Q1-Q2",
+          "details": "参加威尼斯、戛纳、柏林等国际A类电影节，争取奖项和口碑。"
+        },
+        {
+          "phase": "第二阶段：艺术院线",
+          "period": "2027年Q3",
+          "details": "在中国、欧洲、北美的艺术院线上映，建立核心观众群。"
+        },
+        {
+          "phase": "第三阶段：流媒体",
+          "period": "2027年Q4",
+          "details": "与 Netflix、Amazon Prime 等流媒体平台合作，扩大观众覆盖。"
+        },
+        {
+          "phase": "第四阶段：衍生品",
+          "period": "2028年Q1",
+          "details": "开发电影周边、艺术画册、原声专辑等衍生品，延长收益周期。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "如果您对投资本项目感兴趣，请通过以下方式联系我们：",
+      "email": "邮箱：invest@luckycoin.film",
+      "phone": "电话：+86 138-0000-0000",
+      "wechat": "微信：LuckyCoinFilm"
+    }
+  }
+}

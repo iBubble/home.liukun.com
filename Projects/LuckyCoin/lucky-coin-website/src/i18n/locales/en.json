@@ -1,0 +1,441 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "prev": "Previous",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "more": "More"
+  },
+  "nav": {
+    "home": "Home",
+    "story": "Storyboard",
+    "characters": "Characters",
+    "director": "Director's Vision",
+    "crowdfunding": "Crowdfunding",
+    "investor": "Investor Zone"
+  },
+  "mode": {
+    "dream": "Dream Mode",
+    "reality": "Reality Mode",
+    "toggle": "Toggle Mode"
+  },
+  "home": {
+    "title": "Lucky Coin",
+    "subtitle": "一元奇梦",
+    "description": "One Coin, Two Worlds",
+    "insertCoin": "Insert a Coin",
+    "spinning": "Spinning...",
+    "result": {
+      "dream": "Congratulations! Enter the Dream World",
+      "reality": "Welcome to the Real World"
+    }
+  },
+  "story": {
+    "title": "Storyboard",
+    "subtitle": "Contrast Between Two Worlds",
+    "dream": {
+      "title": "Dream World",
+      "scene1": {
+        "title": "Scene 1: Money Rain",
+        "description": "In a luxurious ballroom, people cheer as gold coins rain down. This is the carnival in dreams, where everything is beautiful."
+      },
+      "scene2": {
+        "title": "Scene 2: Peak of Success",
+        "description": "The protagonist stands atop a skyscraper, overlooking the city's prosperity. In dreams, he is a successful entrepreneur with everything."
+      }
+    },
+    "reality": {
+      "title": "Real World",
+      "scene1": {
+        "title": "Scene 1: Factory Floor",
+        "description": "In a dim factory, workers repeat mechanical motions. This is the cruelty of reality, day after day of labor."
+      },
+      "scene2": {
+        "title": "Scene 2: Struggling Life",
+        "description": "The protagonist worries about making ends meet in a cramped rental room. In reality, he's just an ordinary worker."
+      }
+    },
+    "irony": "Two sides of a coin, reflecting life's absurdity and truth"
+  },
+  "characters": {
+    "title": "Characters",
+    "subtitle": "Every Character Has Two Sides",
+    "viewDetails": "View Details",
+    "stats": {
+      "luck": "Luck",
+      "reality": "Reality Sense",
+      "dream": "Dream",
+      "willpower": "Willpower"
+    },
+    "ultimate": "Ultimate Skill",
+    "list": {
+      "protagonist": {
+        "name": "Li Ming",
+        "dreamTitle": "Dream: Successful Entrepreneur",
+        "realityTitle": "Reality: Factory Worker",
+        "dreamDesc": "In dreams, Li Ming is a successful entrepreneur with luxury cars and mansions, respected by all.",
+        "realityDesc": "In reality, Li Ming is an ordinary factory worker, repeating mechanical work every day.",
+        "ultimate": "Dual Life: Freely switch between dream and reality"
+      },
+      "lover": {
+        "name": "Xiao Mei",
+        "dreamTitle": "Dream: Perfect Lover",
+        "realityTitle": "Reality: Stranger",
+        "dreamDesc": "In dreams, Xiao Mei is Li Ming's perfect lover, gentle and caring, sharing life together.",
+        "realityDesc": "In reality, Xiao Mei is just a stranger Li Ming met on the bus.",
+        "ultimate": "Phantom Love: Create perfect love illusions"
+      },
+      "mentor": {
+        "name": "Lao Wang",
+        "dreamTitle": "Dream: Wise Mentor",
+        "realityTitle": "Reality: Coworker",
+        "dreamDesc": "In dreams, Lao Wang is Li Ming's life mentor, giving him wisdom and guidance.",
+        "realityDesc": "In reality, Lao Wang is Li Ming's coworker, working together in the factory.",
+        "ultimate": "Eye of Truth: See through the essence of dreams and reality"
+      }
+    }
+  },
+  "director": {
+    "title": "Director's Vision",
+    "subtitle": "A Visual Poem of Magical Realism",
+    "profile": {
+      "title": "Director Profile",
+      "name": "Li Ming",
+      "education": "Master of Film Studies, University of Bologna",
+      "bio": "Director Li Ming excels at combining magical realism with social criticism, telling stories of ordinary people with unique visual language. His works have won awards at multiple international film festivals and he is hailed as 'the most promising Chinese director of the new generation'."
+    },
+    "awards": {
+      "title": "Awards",
+      "list": [
+        {
+          "year": "2023",
+          "festival": "Venice Film Festival",
+          "award": "Golden Lion for Best Short Film",
+          "work": "Two Sides of a Coin"
+        },
+        {
+          "year": "2022",
+          "festival": "Cannes Film Festival",
+          "award": "Short Film Jury Prize",
+          "work": "Sewing Machine"
+        },
+        {
+          "year": "2021",
+          "festival": "Berlin Film Festival",
+          "award": "Generation Best Film",
+          "work": "Factory"
+        },
+        {
+          "year": "2020",
+          "festival": "Rotterdam Film Festival",
+          "award": "Tiger Award Nomination",
+          "work": "Dream"
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Creative Philosophy",
+      "visual": {
+        "title": "Visual Aesthetics",
+        "content": "Using strong color contrasts and light-shadow changes to create visual differences between dreams and reality. Gold represents luxury in dreams, gray symbolizes oppression in reality."
+      },
+      "narrative": {
+        "title": "Narrative Structure",
+        "content": "Adopting non-linear narrative, freely switching between dreams and reality, allowing audiences to experience the protagonist's mental state and contemplate life's meaning."
+      },
+      "music": {
+        "title": "Music Design",
+        "content": "Fusing electronic music with traditional folk music to create a unique auditory experience. Music in dreams is gorgeous and psychedelic, while in reality it's monotonous and oppressive."
+      },
+      "culture": {
+        "title": "Cultural Criticism",
+        "content": "Through magical realism, criticizing contemporary society's consumerism and class solidification, exploring the survival dilemmas of ordinary people."
+      }
+    },
+    "references": {
+      "title": "Reference Films",
+      "subtitle": "Classic Works Influencing This Film",
+      "list": [
+        {
+          "title": "Parasite",
+          "director": "Bong Joon-ho",
+          "year": "2019",
+          "influence": "Visual expression of class differences",
+          "awards": "Oscar Best Picture, Best Director, Best Original Screenplay, Best International Feature"
+        },
+        {
+          "title": "Inception",
+          "director": "Christopher Nolan",
+          "year": "2010",
+          "influence": "Narrative structure of dreams and reality",
+          "awards": "Oscar Best Cinematography, Best Sound Editing, Best Sound Mixing, Best Visual Effects"
+        },
+        {
+          "title": "Roma",
+          "director": "Alfonso Cuarón",
+          "year": "2018",
+          "influence": "Poetic expression in black and white",
+          "awards": "Oscar Best Director, Best Cinematography, Best Foreign Language Film"
+        }
+      ]
+    },
+    "music": {
+      "title": "Music Sample",
+      "subtitle": "Film Soundtrack Mix",
+      "play": "Play",
+      "pause": "Pause",
+      "volume": "Volume"
+    },
+    "manifesto": {
+      "title": "Director's Statement",
+      "part1": "Cinema is the art of dreams and the mirror of reality. Through 'Lucky Coin', I hope audiences see their own reflections and contemplate life's meaning.",
+      "part2": "A coin has two sides, as does life. We all struggle between dreams and reality, seeking our own answers.",
+      "part3": "This film doesn't aim to provide answers, but to raise questions. What is real? What is illusion? How should we face life's absurdity?"
+    }
+  },
+  "crowdfunding": {
+    "title": "Crowdfunding",
+    "subtitle": "Support with One Yuan, Create Dreams Together",
+    "progress": {
+      "title": "Project Progress",
+      "stages": [
+        { "name": "Script Complete", "status": "completed" },
+        { "name": "Fundraising", "status": "current" },
+        { "name": "Pre-production", "status": "pending" },
+        { "name": "Production", "status": "pending" },
+        { "name": "Post-production", "status": "pending" },
+        { "name": "Distribution", "status": "pending" }
+      ]
+    },
+    "tiers": {
+      "title": "Reward Tiers",
+      "tier1": {
+        "price": "¥1",
+        "name": "Dream Supporter",
+        "benefits": [
+          "Film release notification",
+          "Official thank you list",
+          "Exclusive behind-the-scenes"
+        ]
+      },
+      "tier2": {
+        "price": "¥99",
+        "name": "Dream Explorer",
+        "benefits": [
+          "All ¥1 tier benefits",
+          "Premiere invitation",
+          "Limited edition poster",
+          "Director signed postcard"
+        ]
+      },
+      "tier3": {
+        "price": "¥999",
+        "name": "Reality Changer",
+        "benefits": [
+          "All ¥99 tier benefits",
+          "End credits acknowledgment",
+          "Set visit opportunity",
+          "Meet the director",
+          "Limited Blu-ray collector's edition"
+        ]
+      }
+    },
+    "form": {
+      "title": "Support Form",
+      "selectTier": "Select Tier",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "phone": "Phone",
+      "phonePlaceholder": "Enter your phone number",
+      "message": "Message",
+      "messagePlaceholder": "Your message (optional)",
+      "submit": "Submit Support",
+      "submitting": "Submitting..."
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": {
+        "question": "When can I watch the film after supporting?",
+        "answer": "Expected to complete production and release in 2027. We'll notify you of project progress via email."
+      },
+      "q2": {
+        "question": "How do I receive rewards?",
+        "answer": "After successful support, we'll send rewards through your contact information. Physical rewards will be sent after film completion."
+      },
+      "q3": {
+        "question": "Can I get a refund?",
+        "answer": "Refunds available before project launch. After launch, no refunds but transferable to others."
+      },
+      "q4": {
+        "question": "How will the funds be used?",
+        "answer": "All funds for film production including shooting, post-production, and distribution. We'll regularly publish fund usage."
+      },
+      "q5": {
+        "question": "How to contact the team?",
+        "answer": "Contact us via email contact@luckycoin.film or WeChat official account 'Lucky Coin'."
+      }
+    },
+    "success": {
+      "title": "Thank You for Your Support!",
+      "message": "We've received your support request and will contact you via email shortly.",
+      "details": "Your selected tier:",
+      "nextSteps": "Next steps:",
+      "step1": "1. We'll send payment link via email within 24 hours",
+      "step2": "2. After payment, you'll receive confirmation email",
+      "step3": "3. We'll send regular project updates",
+      "backToHome": "Back to Home"
+    }
+  },
+  "investor": {
+    "title": "Investor Zone",
+    "subtitle": "Professional Film Investment Opportunity",
+    "tabs": {
+      "market": "Market Analysis",
+      "finance": "Financial Planning",
+      "team": "Core Team",
+      "distribution": "Distribution Strategy"
+    },
+    "market": {
+      "title": "Market Analysis",
+      "overview": {
+        "title": "Market Overview",
+        "data": [
+          { "label": "Global Art Film Market Size", "value": "€4.5B" },
+          { "label": "Annual Growth Rate", "value": "12%" },
+          { "label": "Target Audience", "value": "25M" },
+          { "label": "Average Box Office ROI", "value": "180-310%" }
+        ]
+      },
+      "forecast": {
+        "title": "Revenue Forecast",
+        "boxOffice": "Box Office",
+        "streaming": "Streaming Rights",
+        "merchandise": "Merchandise",
+        "awards": "Awards Bonus"
+      },
+      "roi": {
+        "title": "Return on Investment (ROI)",
+        "conservative": "Conservative: 180%",
+        "moderate": "Moderate: 245%",
+        "optimistic": "Optimistic: 310%"
+      }
+    },
+    "finance": {
+      "title": "Financial Planning",
+      "budget": {
+        "title": "Total Budget",
+        "amount": "€3.5M",
+        "breakdown": [
+          { "category": "Pre-production", "amount": "€500K", "percentage": "14%" },
+          { "category": "Production", "amount": "€1.5M", "percentage": "43%" },
+          { "category": "Post-production", "amount": "€800K", "percentage": "23%" },
+          { "category": "Marketing", "amount": "€700K", "percentage": "20%" }
+        ]
+      },
+      "tiers": {
+        "title": "Investment Tiers",
+        "tier1": {
+          "amount": "€500K",
+          "name": "Lead Investor",
+          "share": "20%",
+          "benefits": [
+            "20% box office share",
+            "Producer credit",
+            "Major decision participation",
+            "Priority investment rights"
+          ]
+        },
+        "tier2": {
+          "amount": "€200K",
+          "name": "Co-Investor",
+          "share": "8%",
+          "benefits": [
+            "8% box office share",
+            "Co-producer credit",
+            "Regular progress reports",
+            "Premiere invitation"
+          ]
+        },
+        "tier3": {
+          "amount": "€50K",
+          "name": "Angel Investor",
+          "share": "2%",
+          "benefits": [
+            "2% box office share",
+            "Special thanks",
+            "Set visit",
+            "Collector's Blu-ray"
+          ]
+        }
+      }
+    },
+    "team": {
+      "title": "Core Team",
+      "members": [
+        {
+          "name": "Li Ming",
+          "role": "Director/Screenwriter",
+          "bio": "Master of Film Studies from University of Bologna, won Golden Lion at Venice Film Festival. Specializes in magical realism, hailed as 'most promising Chinese director of new generation'."
+        },
+        {
+          "name": "Zhang Wei",
+          "role": "Producer",
+          "bio": "Veteran film producer, participated in multiple award-winning films. Rich international cooperation experience, excels at commercial operation of art films."
+        },
+        {
+          "name": "Wang Fang",
+          "role": "Cinematographer",
+          "bio": "Golden Horse Award Best Cinematography winner, known for unique visual style. Collaborated with many renowned directors, excels at storytelling through light and shadow."
+        },
+        {
+          "name": "Liu Yang",
+          "role": "Music Director",
+          "bio": "Renowned music producer, won Golden Melody Award. Excels at fusing electronic music with traditional folk music, creating unique auditory experiences."
+        }
+      ]
+    },
+    "distribution": {
+      "title": "Distribution Strategy",
+      "timeline": [
+        {
+          "phase": "Phase 1: Film Festivals",
+          "period": "2027 Q1-Q2",
+          "details": "Participate in A-list international festivals like Venice, Cannes, Berlin for awards and reputation."
+        },
+        {
+          "phase": "Phase 2: Art House Theaters",
+          "period": "2027 Q3",
+          "details": "Release in art house theaters in China, Europe, North America to build core audience."
+        },
+        {
+          "phase": "Phase 3: Streaming",
+          "period": "2027 Q4",
+          "details": "Partner with Netflix, Amazon Prime and other streaming platforms to expand audience reach."
+        },
+        {
+          "phase": "Phase 4: Merchandise",
+          "period": "2028 Q1",
+          "details": "Develop film merchandise, art books, soundtrack albums to extend revenue cycle."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "If you're interested in investing in this project, please contact us:",
+      "email": "Email: invest@luckycoin.film",
+      "phone": "Phone: +86 138-0000-0000",
+      "wechat": "WeChat: LuckyCoinFilm"
+    }
+  }
+}

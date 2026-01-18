@@ -1,20 +1,22 @@
 import { useModeStore } from '../../stores/modeStore';
+import { useTranslation } from 'react-i18next';
 import { getColors } from '../../styles/colors';
 import SliderComparison from '../../components/SliderComparison';
 import GlitchEffect from '../../components/GlitchEffect';
 
 export default function Story() {
+  const { t } = useTranslation();
   const { mode } = useModeStore();
   const colors = getColors(mode);
 
   const dreamContent = {
-    image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800',
-    caption: '普拉托（梦里的）首富，在广场撒钱，周围是超模',
+    image: '/Projects/LuckyCoin/images/story/dream-new.jpg',
+    caption: t('story.dream.scene1.description'),
   };
 
   const realityContent = {
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
-    caption: '温州（现实的）负翁，在车间撒布料，周围是满头大汗的工友',
+    image: '/Projects/LuckyCoin/images/story/reality-new.jpg',
+    caption: t('story.reality.scene1.description'),
   };
 
   return (
@@ -29,13 +31,13 @@ export default function Story() {
               className="text-6xl md:text-8xl font-bold glitch-text font-chinese"
               style={{ color: colors.accent }}
             >
-              荒诞剧场
+              {t('story.title')}
             </h1>
             <p
               className="text-xl md:text-2xl font-chinese"
               style={{ color: colors.text }}
             >
-              拖动滑块，见证梦想与现实的对比
+              {t('story.subtitle')}
             </p>
           </div>
 

@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useModeStore } from '../../stores/modeStore';
-import { getColors } from '../../styles/colors';
 
-interface TrailPoint {
+interface CoinTrail {
+  id: number;
   x: number;
   y: number;
   timestamp: number;
@@ -10,157 +11,112 @@ interface TrailPoint {
 
 interface CursorTrailProps {
   enabled: boolean;
-  maxTrails?: number;
+  maxCoins?: number;
   fadeOutDuration?: number;
 }
 
 export default function CursorTrail({
   enabled,
-  maxTrails = 5,
-  fadeOutDuration = 2500,
+  maxCoins = 8,
+  fadeOutDuration = 1000,
 }: CursorTrailProps) {
-  const [trails, setTrails] = useState<TrailPoint[][]>([]);
-  const [currentTrail, setCurrentTrail] = useState<TrailPoint[]>([]);
-  const [isDrawing, setIsDrawing] = useState(false);
+  const [coins, setCoins] = useState<CoinTrail[]>([]);
+  const coinIdRef = useRef(0);
+  const lastAddTimeRef = useRef(0);
   const { mode } = useModeStore();
-  const colors = getColors(mode);
 
-  const trailColor = mode === 'dream' ? colors.accent : colors.secondary;
+  // 检测是否为移动设备
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
 
   useEffect(() => {
-    if (!enabled) return;
+    // 移动设备禁用轨迹效果
+    if (!enabled || isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      const point: TrailPoint = {
+      const now = Date.now();
+      
+      // 限制添加频率，避免硬币太密集
+      if (now - lastAddTimeRef.current < 50) return;
+      
+      lastAddTimeRef.current = now;
+
+      const newCoin: CoinTrail = {
+        id: coinIdRef.current++,
         x: e.clientX,
         y: e.clientY,
-        timestamp: Date.now(),
+        timestamp: now,
       };
 
-      setCurrentTrail((prev) => [...prev, point]);
-      setIsDrawing(true);
+      setCoins((prev) => {
+        const updated = [...prev, newCoin];
+        // 只保留最新的 maxCoins 个硬币
+        return updated.slice(-maxCoins);
+      });
     };
 
-    const handleMouseStop = () => {
-      if (currentTrail.length > 0) {
-        setTrails((prev) => {
-          const newTrails = [...prev, currentTrail];
-          return newTrails.slice(-maxTrails);
-        });
-        setCurrentTrail([]);
-      }
-      setIsDrawing(false);
-    };
-
-    let timeout: NodeJS.Timeout;
-    const handleMouseMoveWithDelay = (e: MouseEvent) => {
-      handleMouseMove(e);
-      clearTimeout(timeout);
-      timeout = setTimeout(handleMouseStop, 100);
-    };
-
-    window.addEventListener('mousemove', handleMouseMoveWithDelay);
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMoveWithDelay);
-      clearTimeout(timeout);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [enabled, currentTrail, maxTrails]);
+  }, [enabled, maxCoins, isMobile]);
 
-  // 清除过期轨迹
+  // 清除过期硬币
   useEffect(() => {
+    if (!enabled || isMobile) return;
+
     const interval = setInterval(() => {
       const now = Date.now();
-      setTrails((prev) =>
-        prev.filter((trail) => {
-          const lastPoint = trail[trail.length - 1];
-          return now - lastPoint.timestamp < fadeOutDuration;
-        })
+      setCoins((prev) =>
+        prev.filter((coin) => now - coin.timestamp < fadeOutDuration)
       );
-    }, 100);
+    }, 50);
 
     return () => clearInterval(interval);
-  }, [fadeOutDuration]);
+  }, [enabled, fadeOutDuration, isMobile]);
 
-  if (!enabled) return null;
+  // 移动设备不渲染
+  if (!enabled || isMobile) return null;
 
-  const renderPath = (points: TrailPoint[]) => {
-    if (points.length < 2) return '';
-    
-    let path = `M ${points[0].x} ${points[0].y}`;
-    for (let i = 1; i < points.length; i++) {
-      path += ` L ${points[i].x} ${points[i].y}`;
-    }
-    return path;
-  };
-
-  const getOpacity = (trail: TrailPoint[]) => {
-    const lastPoint = trail[trail.length - 1];
-    const age = Date.now() - lastPoint.timestamp;
+  const getOpacity = (coin: CoinTrail) => {
+    const age = Date.now() - coin.timestamp;
     return Math.max(0, 1 - age / fadeOutDuration);
   };
 
+  const getScale = (coin: CoinTrail) => {
+    const age = Date.now() - coin.timestamp;
+    const progress = age / fadeOutDuration;
+    return Math.max(0.3, 1 - progress * 0.7);
+  };
+
   return (
-    <>
-      {/* 自定义光标 */}
-      <style>{`
-        body {
-          cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L12 8 M12 16 L12 22 M2 12 L8 12 M16 12 L22 12' stroke='${encodeURIComponent(trailColor)}' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='3' fill='${encodeURIComponent(trailColor)}'/%3E%3C/svg%3E") 12 12, auto;
-        }
-      `}</style>
+    <div className="fixed inset-0 pointer-events-none z-50">
+      <AnimatePresence>
+        {coins.map((coin) => {
+          const opacity = getOpacity(coin);
+          if (opacity <= 0) return null;
 
-      {/* SVG 轨迹 */}
-      <svg
-        className="fixed inset-0 pointer-events-none z-50"
-        style={{ width: '100vw', height: '100vh' }}
-      >
-        {/* 渲染所有轨迹 */}
-        {trails.map((trail, index) => (
-          <g key={`trail-${index}`} opacity={getOpacity(trail)}>
-            <path
-              d={renderPath(trail)}
-              stroke={trailColor}
-              strokeWidth="2"
-              strokeDasharray="5,5"
-              fill="none"
-              strokeLinecap="round"
-            />
-            {/* 针脚效果 */}
-            {trail.filter((_, i) => i % 10 === 0).map((point, i) => (
-              <circle
-                key={`stitch-${index}-${i}`}
-                cx={point.x}
-                cy={point.y}
-                r="2"
-                fill={trailColor}
-              />
-            ))}
-          </g>
-        ))}
-
-        {/* 当前正在绘制的轨迹 */}
-        {isDrawing && currentTrail.length > 1 && (
-          <g>
-            <path
-              d={renderPath(currentTrail)}
-              stroke={trailColor}
-              strokeWidth="2"
-              strokeDasharray="5,5"
-              fill="none"
-              strokeLinecap="round"
-            />
-            {currentTrail.filter((_, i) => i % 10 === 0).map((point, i) => (
-              <circle
-                key={`current-stitch-${i}`}
-                cx={point.x}
-                cy={point.y}
-                r="2"
-                fill={trailColor}
-              />
-            ))}
-          </g>
-        )}
-      </svg>
-    </>
+          return (
+            <motion.div
+              key={coin.id}
+              className="absolute text-2xl"
+              style={{
+                left: coin.x,
+                top: coin.y,
+                opacity,
+                transform: `translate(-50%, -50%) scale(${getScale(coin)})`,
+              }}
+              initial={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.3, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {mode === 'dream' ? '💰' : '🪡'}
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
+    </div>
   );
 }

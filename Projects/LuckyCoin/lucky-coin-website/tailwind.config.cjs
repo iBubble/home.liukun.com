@@ -5,6 +5,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': '640px',   // 移动端
+      'md': '768px',   // 平板端
+      'lg': '1024px',  // 桌面端
+      'xl': '1280px',  // 大屏幕
+      '2xl': '1536px', // 超大屏幕
+    },
     extend: {
       colors: {
         // 梦境模式色彩（Acid Colors）
