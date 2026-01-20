@@ -32,7 +32,7 @@
 │   └── server-stats.php    # 服务器统计 API
 │
 ├── Projects/               # 子项目目录
-│   ├── AIMovie/            # 时光大师 AI 影视平台
+│   ├── AIMovie/            # 拾光大师 AI 影视平台
 │   ├── Shangri-la/         # 天空之境·数智香格里拉
 │   ├── LuckyCoin/          # 一元奇梦电影项目网站
 │   ├── Exam/               # 在线考试系统
@@ -122,19 +122,20 @@ npx http-server
 
 **技术**: React 18 + TypeScript + Webpack 5 + Tailwind CSS + i18next
 
-### 🎥 时光大师 AI 影视平台
+### 🎥 拾光大师 AI 影视平台
 **访问**: [https://home.liukun.com:8443/Projects/AIMovie/](https://home.liukun.com:8443/Projects/AIMovie/)
 
-基于 AI 技术的影视创作平台。
+基于 AI 技术的影视创作平台，提供从选题到发布的完整创作流程。
 
 **功能**:
-- 剧本生成和编辑
-- 角色设定和匹配
-- 分镜制作
-- 场景设计
+- 选题策划和剧本生成
+- 角色设定和选角匹配
+- 分镜设计和场景规划
+- 视频编辑和特效制作
 - AI 对话和语音生成
+- 资产市场和素材管理
 
-**技术**: React + Node.js + Express + MySQL + AI APIs
+**技术**: React 18 + TypeScript + Redux Toolkit + Webpack 5 + Tailwind CSS
 
 ### 🏔️ 天空之境·数智香格里拉
 **访问**: [https://home.liukun.com:8443/Projects/Shangri-la/](https://home.liukun.com:8443/Projects/Shangri-la/)
@@ -142,10 +143,14 @@ npx http-server
 迪庆州"低空经济+智慧文旅"空地一体化建设方案展示。
 
 **内容**:
-- 项目概览
-- 应用场景
+- 项目概览和建设方案
+- 应用场景展示
 - 投资收益分析
 - 智慧旅游解决方案
+- 应急救援系统（新增）
+- 哈巴雪山营地选址资料
+
+**技术**: HTML5 + CSS3 + JavaScript + Chart.js + D3.js + Pannellum (360全景)
 
 ### 📝 在线考试系统
 **访问**: [https://home.liukun.com:8443/Projects/Exam/](https://home.liukun.com:8443/Projects/Exam/)
