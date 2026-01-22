@@ -4,15 +4,29 @@ inclusion: always
 
 # 项目开发规则
 
+## 0. 开发环境
+- **开发电脑**: MacBook Pro
+- **操作系统**: macOS 26
+- **服务器**: Ubuntu 24.04.3 LTS
+- **远程开发**: 通过SSH连接到服务器进行开发和部署
+
 ## 1. 语言规范
 - **全程使用简体中文对话**
 - 所有交流、文档、注释均使用简体中文
 - 代码注释和文档说明优先使用中文
 
 ## 2. 命令信任设置
-- 将 `.vscode/settings.json` 中 `TrustedCommand` 下添加的 Trusted Commands 添加到全局设置中
-- 确保常用命令被信任，提高开发效率
-- 定期同步本地和全局的信任命令列表
+- Kiro的Trusted Commands配置存储在**用户级别设置**中，自动在所有项目间共享
+- 配置文件位置（macOS）：`~/Library/Application Support/Cursor/User/settings.json`
+- 配置文件位置（Linux）：`~/.config/Code/User/settings.json`
+- 通过UI配置：打开设置（Cmd+,）搜索"Kiro Agent: Trusted Commands"
+- 详细说明参见：`.kiro/TRUSTED-COMMANDS.md`
+- 建议添加的命令：
+  - 包管理：`npm install --registry=https://registry.npmmirror.com`
+  - Git操作：`git pull`, `git push`
+  - 脚本执行：`bash *.sh`, `php *.php`, `python3 *.py`
+  - 权限管理：`chmod 664 *`, `chmod 775 *`, `chmod +x *.sh`
+  - 项目脚本：`bash Projects/Network/start-monitor.sh`, `bash Projects/Network/stop-monitor.sh`
 
 ## 3. 开发测试域名
 - **统一使用 `home.liukun.com:8443` 进行开发和测试（HTTPS）**

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络监测 - Network Monitor</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            text-shadow: 0 0 20px #00ffff;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #ff00ff;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .controls {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #00ffff;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        label {
+            color: #00ffff;
+            font-size: 0.9rem;
+        }
+
+        select, input {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff41;
+            color: #00ff41;
+            padding: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        button {
+            background: rgba(0, 255, 255, 0.2);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: rgba(255, 0, 255, 0.3);
+            border-color: #ff00ff;
+            color: #ff00ff;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+        }
+
+        button.active {
+            background: rgba(0, 255, 0, 0.3);
+            border-color: #00ff41;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-card {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #00ffff;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-card.online {
+            border-color: #00ff41;
+        }
+
+        .status-card.offline {
+            border-color: #ff0000;
+        }
+
+        .status-card.warning {
+            border-color: #ffff00;
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .status-title {
+            font-size: 1.3rem;
+            color: #00ffff;
+            text-transform: uppercase;
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.online {
+            background: #00ff41;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        .status-indicator.offline {
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        .status-indicator.warning {
+            background: #ffff00;
+            box-shadow: 0 0 10px #ffff00;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-info {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .info-label {
+            color: #00ffff;
+        }
+
+        .info-value {
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        .info-value.error {
+            color: #ff0000;
+        }
+
+        .logs-section {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #00ffff;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .logs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logs-title {
+            font-size: 1.5rem;
+            color: #00ffff;
+            text-transform: uppercase;
+        }
+
+        .log-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .log-list {
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border: 1px solid #00ff41;
+        }
+
+        .log-entry {
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #00ffff;
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .log-entry.error {
+            border-left-color: #ff0000;
+            background: rgba(255, 0, 0, 0.05);
+        }
+
+        .log-entry.warning {
+            border-left-color: #ffff00;
+            background: rgba(255, 255, 0, 0.05);
+        }
+
+        .log-time {
+            color: #ff00ff;
+            font-size: 0.85rem;
+        }
+
+        .log-type {
+            color: #00ffff;
+            font-weight: bold;
+            margin: 0 0.5rem;
+        }
+
+        .log-message {
+            color: #00ff41;
+        }
+
+        .stats-section {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #00ffff;
+            padding: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #00ff41;
+        }
+
+        .stat-label {
+            color: #00ffff;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            color: #ff00ff;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>[ 网络监测系统 ]</h1>
+        <p class="subtitle">// Network Monitoring System //</p>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <div class="control-group">
+                <label>监测间隔:</label>
+                <select id="intervalSelect">
+                    <option value="1000">每秒</option>
+                    <option value="5000" selected>每5秒</option>
+                    <option value="10000">每10秒</option>
+                    <option value="60000">每分钟</option>
+                </select>
+            </div>
+            <button id="startBtn">开始监测</button>
+            <button id="stopBtn">停止监测</button>
+            <button id="clearLogsBtn">清除日志</button>
+            <button id="exportLogsBtn">导出日志</button>
+        </div>
+
+        <!-- 状态卡片 -->
+        <div class="status-grid">
+            <!-- 内网状态 -->
+            <div class="status-card" id="lanCard">
+                <div class="status-header">
+                    <div class="status-title">内网 (LAN)</div>
+                    <div class="status-indicator" id="lanIndicator"></div>
+                </div>
+                <div class="status-info">
+                    <div class="info-row">
+                        <span class="info-label">目标:</span>
+                        <span class="info-value">192.168.1.1</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">状态:</span>
+                        <span class="info-value" id="lanStatus">等待中...</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">延迟:</span>
+                        <span class="info-value" id="lanLatency">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">成功率:</span>
+                        <span class="info-value" id="lanSuccess">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">最后检测:</span>
+                        <span class="info-value" id="lanLastCheck">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 国内网络状态 -->
+            <div class="status-card" id="wanCard">
+                <div class="status-header">
+                    <div class="status-title">国内网络 (WAN)</div>
+                    <div class="status-indicator" id="wanIndicator"></div>
+                </div>
+                <div class="status-info">
+                    <div class="info-row">
+                        <span class="info-label">目标:</span>
+                        <span class="info-value">114.114.114.114 (国内DNS)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">状态:</span>
+                        <span class="info-value" id="wanStatus">等待中...</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">延迟:</span>
+                        <span class="info-value" id="wanLatency">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">成功率:</span>
+                        <span class="info-value" id="wanSuccess">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">最后检测:</span>
+                        <span class="info-value" id="wanLastCheck">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 国外网络状态 -->
+            <div class="status-card" id="intlCard">
+                <div class="status-header">
+                    <div class="status-title">国外网络 (INTL)</div>
+                    <div class="status-indicator" id="intlIndicator"></div>
+                </div>
+                <div class="status-info">
+                    <div class="info-row">
+                        <span class="info-label">目标:</span>
+                        <span class="info-value">8.8.8.8 (Google DNS)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">状态:</span>
+                        <span class="info-value" id="intlStatus">等待中...</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">延迟:</span>
+                        <span class="info-value" id="intlLatency">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">成功率:</span>
+                        <span class="info-value" id="intlSuccess">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">最后检测:</span>
+                        <span class="info-value" id="intlLastCheck">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 统计信息 -->
+        <div class="stats-section">
+            <h2 style="color: #00ffff; margin-bottom: 1rem;">统计信息</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">总检测次数</div>
+                    <div class="stat-value" id="totalChecks">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">故障次数</div>
+                    <div class="stat-value" id="totalFailures">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">运行时间</div>
+                    <div class="stat-value" id="uptime">00:00:00</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">内网平均延迟</div>
+                    <div class="stat-value" id="avgLatencyLan">-- ms</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">国内平均延迟</div>
+                    <div class="stat-value" id="avgLatencyWan">-- ms</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">国外平均延迟</div>
+                    <div class="stat-value" id="avgLatencyIntl">-- ms</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 日志区域 -->
+        <div class="logs-section">
+            <div class="logs-header">
+                <div class="logs-title">监测日志</div>
+                <div class="log-controls">
+                    <div class="control-group">
+                        <label>日志会话:</label>
+                        <select id="sessionSelect">
+                            <option value="current">当前会话</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>筛选:</label>
+                        <select id="logFilter">
+                            <option value="all">全部</option>
+                            <option value="error">错误</option>
+                            <option value="warning">警告</option>
+                            <option value="info">信息</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>网络:</label>
+                        <select id="networkFilter">
+                            <option value="all">全部</option>
+                            <option value="lan">内网</option>
+                            <option value="wan">国内</option>
+                            <option value="intl">国外</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="log-list" id="logList">
+                <div class="log-entry">
+                    <span class="log-time">[等待开始]</span>
+                    <span class="log-type">INFO</span>
+                    <span class="log-message">点击"开始监测"按钮启动网络监测...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="monitor.js?v=3"></script>
+</body>
+</html>
