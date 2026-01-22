@@ -45,11 +45,20 @@ switch ($action) {
             $data = json_decode($content, true);
             
             if ($data) {
+                // 计算总故障次数
+                $totalFailureCount = 0;
+                if (isset($data['stats'])) {
+                    $totalFailureCount = ($data['stats']['lan']['failureCount'] ?? 0) +
+                                        ($data['stats']['wan']['failureCount'] ?? 0) +
+                                        ($data['stats']['intl']['failureCount'] ?? 0);
+                }
+                
                 $sessions[] = [
                     'sessionId' => $data['sessionId'],
                     'startTime' => $data['startTime'],
                     'endTime' => $data['endTime'],
-                    'logCount' => count($data['logs'] ?? [])
+                    'logCount' => count($data['logs'] ?? []),
+                    'failureCount' => $totalFailureCount
                 ];
             }
         }

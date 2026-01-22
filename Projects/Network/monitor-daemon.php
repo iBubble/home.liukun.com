@@ -30,10 +30,19 @@ $targets = [
 
 // 统计数据
 $stats = [
-    'lan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => []],
-    'wan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => []],
-    'intl' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => []]
+    'lan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => [], 'failureCount' => 0, 'totalFailureDuration' => 0],
+    'wan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => [], 'failureCount' => 0, 'totalFailureDuration' => 0],
+    'intl' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => [], 'failureCount' => 0, 'totalFailureDuration' => 0]
 ];
+
+// 如果状态文件存在且正在运行，恢复统计数据
+if (file_exists($stateFile)) {
+    $existingState = json_decode(file_get_contents($stateFile), true);
+    if ($existingState['isRunning'] && isset($existingState['stats'])) {
+        $stats = $existingState['stats'];
+        echo "[" . date('Y-m-d H:i:s') . "] 已恢复现有会话的统计数据\n";
+    }
+}
 
 // 日志
 $logs = [];
@@ -67,10 +76,15 @@ while (true) {
             saveSession($state['sessionId'], $state['startTime'], $logs, $stats, $logsDir);
             $logs = [];
             $stats = [
-                'lan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => []],
-                'wan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => []],
-                'intl' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => []]
+                'lan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => [], 'failureCount' => 0, 'totalFailureDuration' => 0],
+                'wan' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => [], 'failureCount' => 0, 'totalFailureDuration' => 0],
+                'intl' => ['total' => 0, 'success' => 0, 'failures' => 0, 'latencies' => [], 'failureCount' => 0, 'totalFailureDuration' => 0]
             ];
+            
+            // 清空状态文件中的统计数据
+            $state['stats'] = $stats;
+            file_put_contents($stateFile, json_encode($state, JSON_PRETTY_PRINT));
+            @chmod($stateFile, 0666);
         }
         
         sleep(5);
@@ -94,6 +108,8 @@ while (true) {
             // 如果之前是故障状态，记录恢复
             if ($failureStates[$type]['isFailing']) {
                 $duration = time() - $failureStates[$type]['startTime'];
+                $stats[$type]['failureCount']++;
+                $stats[$type]['totalFailureDuration'] += $duration * 1000; // 转换为毫秒
                 addLog($logs, 'info', $type, "网络已恢复 (故障持续: " . formatDuration($duration * 1000) . ")");
                 $failureStates[$type]['isFailing'] = false;
                 $failureStates[$type]['startTime'] = null;
@@ -113,6 +129,11 @@ while (true) {
             echo "  [$type] 离线 - {$result['error']}\n";
         }
     }
+    
+    // 更新状态文件中的统计数据
+    $state['stats'] = $stats;
+    file_put_contents($stateFile, json_encode($state, JSON_PRETTY_PRINT));
+    @chmod($stateFile, 0666);
     
     // 定期保存日志（每100条或每5分钟）
     if (count($logs) >= 100 || (count($logs) > 0 && time() % 300 == 0)) {

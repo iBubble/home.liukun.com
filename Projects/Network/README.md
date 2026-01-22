@@ -222,3 +222,32 @@ curl "https://home.liukun.com:8443/api/ping.php?target=8.8.8.8"
 - 实现三网监测功能
 - 添加日志系统
 - 实现统计功能
+
+## 自动启动配置
+
+Network Monitor支持配置为系统服务，实现服务器重启后自动启动。
+
+详细说明请参考：[AUTO-START.md](AUTO-START.md)
+
+### 快速配置
+
+```bash
+# 安装systemd服务（推荐用于生产环境）
+bash install-service.sh
+
+# 查看服务状态
+sudo systemctl status network-monitor
+
+# 如需卸载
+bash uninstall-service.sh
+```
+
+### 手动启动（默认方式）
+
+```bash
+# 启动守护进程
+bash start-monitor.sh
+
+# 停止守护进程
+bash stop-monitor.sh
+```

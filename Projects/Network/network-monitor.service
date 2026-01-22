@@ -1,0 +1,17 @@
+[Unit]
+Description=Network Monitor Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=gemini
+Group=www
+WorkingDirectory=/www/wwwroot/ibubble.vicp.net/Projects/Network
+ExecStart=/usr/bin/php /www/wwwroot/ibubble.vicp.net/Projects/Network/monitor-daemon.php
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

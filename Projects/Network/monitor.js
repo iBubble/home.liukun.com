@@ -9,12 +9,13 @@ class NetworkMonitor {
         this.currentSessionId = null;
         this.stateSyncTimer = null; // 状态同步定时器
         this.heartbeatTimer = null; // 心跳定时器
+        this.failureDurationTimer = null; // 故障时长更新定时器
         
         // 统计数据
         this.stats = {
-            lan: { total: 0, success: 0, failures: 0, latencies: [] },
-            wan: { total: 0, success: 0, failures: 0, latencies: [] },
-            intl: { total: 0, success: 0, failures: 0, latencies: [] }
+            lan: { total: 0, success: 0, failures: 0, latencies: [], failureCount: 0, totalFailureDuration: 0 },
+            wan: { total: 0, success: 0, failures: 0, latencies: [], failureCount: 0, totalFailureDuration: 0 },
+            intl: { total: 0, success: 0, failures: 0, latencies: [], failureCount: 0, totalFailureDuration: 0 }
         };
         
         // 当前会话日志
@@ -43,6 +44,7 @@ class NetworkMonitor {
         this.clearLogsBtn = document.getElementById('clearLogsBtn');
         this.exportLogsBtn = document.getElementById('exportLogsBtn');
         this.intervalSelect = document.getElementById('intervalSelect');
+        this.startTimeDisplay = document.getElementById('startTimeDisplay');
         
         // 状态元素
         this.elements = {
@@ -52,6 +54,8 @@ class NetworkMonitor {
                 status: document.getElementById('lanStatus'),
                 latency: document.getElementById('lanLatency'),
                 success: document.getElementById('lanSuccess'),
+                failureCount: document.getElementById('lanFailureCount'),
+                failureDuration: document.getElementById('lanFailureDuration'),
                 lastCheck: document.getElementById('lanLastCheck')
             },
             wan: {
@@ -60,6 +64,8 @@ class NetworkMonitor {
                 status: document.getElementById('wanStatus'),
                 latency: document.getElementById('wanLatency'),
                 success: document.getElementById('wanSuccess'),
+                failureCount: document.getElementById('wanFailureCount'),
+                failureDuration: document.getElementById('wanFailureDuration'),
                 lastCheck: document.getElementById('wanLastCheck')
             },
             intl: {
@@ -68,6 +74,8 @@ class NetworkMonitor {
                 status: document.getElementById('intlStatus'),
                 latency: document.getElementById('intlLatency'),
                 success: document.getElementById('intlSuccess'),
+                failureCount: document.getElementById('intlFailureCount'),
+                failureDuration: document.getElementById('intlFailureDuration'),
                 lastCheck: document.getElementById('intlLastCheck')
             }
         };
@@ -111,10 +119,21 @@ class NetworkMonitor {
         this.currentSessionId = 'session_' + this.startTime;
         this.logs = [];
         this.stats = {
-            lan: { total: 0, success: 0, failures: 0, latencies: [] },
-            wan: { total: 0, success: 0, failures: 0, latencies: [] },
-            intl: { total: 0, success: 0, failures: 0, latencies: [] }
+            lan: { total: 0, success: 0, failures: 0, latencies: [], failureCount: 0, totalFailureDuration: 0 },
+            wan: { total: 0, success: 0, failures: 0, latencies: [], failureCount: 0, totalFailureDuration: 0 },
+            intl: { total: 0, success: 0, failures: 0, latencies: [], failureCount: 0, totalFailureDuration: 0 }
         };
+        
+        // 更新开始时间显示
+        this.startTimeDisplay.textContent = new Date(this.startTime).toLocaleString('zh-CN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
         
         // 更新服务器状态
         fetch('/api/network-monitor-state.php?action=start', {
@@ -138,6 +157,9 @@ class NetworkMonitor {
                 // 切换到当前会话
                 this.sessionSelect.value = 'current';
                 
+                // 更新会话列表以显示开始时间
+                this.loadSessions();
+                
                 this.addLog('info', 'system', '网络监测已启动');
                 
                 // 立即执行一次检测
@@ -148,6 +170,9 @@ class NetworkMonitor {
                 
                 // 更新运行时间
                 this.uptimeTimer = setInterval(() => this.updateUptime(), 1000);
+                
+                // 更新故障时长（每秒更新）
+                this.failureDurationTimer = setInterval(() => this.updateFailureDurations(), 1000);
                 
                 // 启动心跳（每10秒发送一次）
                 this.heartbeatTimer = setInterval(() => this.sendHeartbeat(), 10000);
@@ -175,6 +200,9 @@ class NetworkMonitor {
                 this.startBtn.classList.remove('active');
                 this.startBtn.textContent = '开始监测';
                 
+                // 清空开始时间显示
+                this.startTimeDisplay.textContent = '--';
+                
                 if (this.timer) {
                     clearInterval(this.timer);
                     this.timer = null;
@@ -183,6 +211,11 @@ class NetworkMonitor {
                 if (this.uptimeTimer) {
                     clearInterval(this.uptimeTimer);
                     this.uptimeTimer = null;
+                }
+                
+                if (this.failureDurationTimer) {
+                    clearInterval(this.failureDurationTimer);
+                    this.failureDurationTimer = null;
                 }
                 
                 if (this.heartbeatTimer) {
@@ -233,6 +266,8 @@ class NetworkMonitor {
                 // 如果之前是故障状态，记录恢复
                 if (this.failureStates[type].isFailing) {
                     const duration = Date.now() - this.failureStates[type].startTime;
+                    stats.failureCount++;
+                    stats.totalFailureDuration += duration;
                     this.addLog('info', type, `网络已恢复 (故障持续: ${this.formatDuration(duration)})`);
                     this.failureStates[type].isFailing = false;
                     this.failureStates[type].startTime = null;
@@ -282,6 +317,9 @@ class NetworkMonitor {
         const successRate = stats.total > 0 ? ((stats.success / stats.total) * 100).toFixed(2) : 0;
         el.success.textContent = successRate + '%';
         
+        // 更新故障次数
+        el.failureCount.textContent = stats.failureCount || 0;
+        
         // 更新最后检测时间
         el.lastCheck.textContent = now;
     }
@@ -323,6 +361,25 @@ class NetworkMonitor {
         
         const duration = Date.now() - this.startTime;
         this.uptimeEl.textContent = this.formatDuration(duration);
+    }
+    
+    updateFailureDurations() {
+        // 更新三个网络的故障时长显示
+        ['lan', 'wan', 'intl'].forEach(type => {
+            const stats = this.stats[type];
+            const el = this.elements[type];
+            
+            let displayDuration = this.formatDuration(stats.totalFailureDuration);
+            
+            // 如果当前正在故障中，加上当前故障的持续时间
+            if (this.failureStates[type].isFailing) {
+                const currentFailureDuration = Date.now() - this.failureStates[type].startTime;
+                const totalDuration = stats.totalFailureDuration + currentFailureDuration;
+                displayDuration = this.formatDuration(totalDuration);
+            }
+            
+            el.failureDuration.textContent = displayDuration;
+        });
     }
     
     formatDuration(ms) {
@@ -487,14 +544,34 @@ class NetworkMonitor {
                 const currentValue = this.sessionSelect.value;
                 
                 // 清空并重建选项
-                this.sessionSelect.innerHTML = '<option value="current">当前会话</option>';
+                // 当前会话显示开始时间
+                let currentSessionText = '当前会话';
+                if (this.startTime) {
+                    const startTimeStr = new Date(this.startTime).toLocaleString('zh-CN', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: false
+                    });
+                    currentSessionText = `当前会话（开始时间：${startTimeStr}）`;
+                }
+                this.sessionSelect.innerHTML = `<option value="current">${currentSessionText}</option>`;
                 
+                // 添加历史会话，跳过与当前会话ID相同的
                 data.sessions.forEach(session => {
+                    // 如果历史会话ID与当前会话ID相同，跳过
+                    if (this.currentSessionId && session.sessionId === this.currentSessionId) {
+                        return;
+                    }
+                    
                     const startTime = new Date(session.startTime).toLocaleString();
                     const endTime = new Date(session.endTime).toLocaleString();
                     const option = document.createElement('option');
                     option.value = session.sessionId;
-                    option.textContent = `${startTime} - ${endTime} (${session.logCount}条)`;
+                    option.textContent = `${startTime} - ${endTime} (故障${session.failureCount || 0}次)`;
                     this.sessionSelect.appendChild(option);
                 });
                 
@@ -532,6 +609,24 @@ class NetworkMonitor {
             // 显示当前会话
             this.renderLogs();
             this.updateStats();
+            
+            // 恢复当前会话的故障次数和故障时长显示
+            ['lan', 'wan', 'intl'].forEach(type => {
+                const el = this.elements[type];
+                const stats = this.stats[type];
+                
+                // 故障次数
+                el.failureCount.textContent = stats.failureCount || 0;
+                
+                // 故障时长（如果正在故障中，会由定时器更新）
+                let displayDuration = this.formatDuration(stats.totalFailureDuration);
+                if (this.failureStates[type].isFailing) {
+                    const currentFailureDuration = Date.now() - this.failureStates[type].startTime;
+                    const totalDuration = stats.totalFailureDuration + currentFailureDuration;
+                    displayDuration = this.formatDuration(totalDuration);
+                }
+                el.failureDuration.textContent = displayDuration;
+            });
         } else {
             // 加载历史会话
             this.getSavedSession(sessionId).then(session => {
@@ -584,6 +679,8 @@ class NetworkMonitor {
     }
     
     displayHistoryStats(stats) {
+        console.log('显示历史统计数据:', stats);
+        
         // 总检测次数
         const totalChecks = stats.lan.total + stats.wan.total + stats.intl.total;
         this.totalChecksEl.textContent = totalChecks;
@@ -613,6 +710,29 @@ class NetworkMonitor {
         } else {
             this.avgLatencyIntlEl.textContent = '-- ms';
         }
+        
+        // 更新三个网络卡片的故障次数和故障时长
+        ['lan', 'wan', 'intl'].forEach(type => {
+            const el = this.elements[type];
+            const typeStat = stats[type];
+            
+            console.log(`${type} 故障数据:`, {
+                failureCount: typeStat.failureCount,
+                totalFailureDuration: typeStat.totalFailureDuration
+            });
+            
+            // 故障次数（兼容旧数据）
+            const failureCount = typeStat.failureCount !== undefined ? typeStat.failureCount : 0;
+            el.failureCount.textContent = failureCount;
+            
+            // 故障时长（兼容旧数据）
+            const duration = typeStat.totalFailureDuration !== undefined ? typeStat.totalFailureDuration : 0;
+            el.failureDuration.textContent = this.formatDuration(duration);
+            
+            // 成功率
+            const successRate = typeStat.total > 0 ? ((typeStat.success / typeStat.total) * 100).toFixed(2) : 0;
+            el.success.textContent = successRate + '%';
+        });
         
         // 运行时间显示为历史会话
         this.uptimeEl.textContent = '历史会话';
@@ -672,25 +792,73 @@ class NetworkMonitor {
         this.currentSessionId = serverState.sessionId;
         this.interval = serverState.interval;
         
-        // 初始化日志（如果为空）
-        if (this.logs.length === 0) {
-            this.addLog('info', 'system', '已同步到正在运行的监测会话');
+        // 更新开始时间显示
+        this.startTimeDisplay.textContent = new Date(this.startTime).toLocaleString('zh-CN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+        
+        // 从服务器同步统计数据
+        if (serverState.stats) {
+            this.stats = serverState.stats;
+            
+            // 检查是否有历史故障记录
+            const totalFailures = (serverState.stats.lan?.failureCount || 0) +
+                                 (serverState.stats.wan?.failureCount || 0) +
+                                 (serverState.stats.intl?.failureCount || 0);
+            
+            if (totalFailures > 0) {
+                this.addLog('info', 'system', `已同步到正在运行的监测会话（历史故障${totalFailures}次）`);
+            } else {
+                this.addLog('info', 'system', '已同步到正在运行的监测会话');
+            }
+        } else {
+            // 初始化日志（如果为空）
+            if (this.logs.length === 0) {
+                this.addLog('info', 'system', '已同步到正在运行的监测会话');
+            }
         }
         
         this.startBtn.classList.add('active');
         this.startBtn.textContent = '监测中...';
         this.sessionSelect.value = 'current';
         
+        // 更新会话列表以显示开始时间
+        this.loadSessions();
+        
+        // 更新统计显示
+        this.updateStats();
+        
         // 立即执行一次检测
         this.checkAll();
         
         // 设置定时器
+        if (this.timer) {
+            clearInterval(this.timer);
+        }
         this.timer = setInterval(() => this.checkAll(), this.interval);
         
         // 更新运行时间
+        if (this.uptimeTimer) {
+            clearInterval(this.uptimeTimer);
+        }
         this.uptimeTimer = setInterval(() => this.updateUptime(), 1000);
         
+        // 更新故障时长（每秒更新）
+        if (this.failureDurationTimer) {
+            clearInterval(this.failureDurationTimer);
+        }
+        this.failureDurationTimer = setInterval(() => this.updateFailureDurations(), 1000);
+        
         // 启动心跳（每10秒发送一次）
+        if (this.heartbeatTimer) {
+            clearInterval(this.heartbeatTimer);
+        }
         this.heartbeatTimer = setInterval(() => this.sendHeartbeat(), 10000);
     }
     
@@ -700,6 +868,9 @@ class NetworkMonitor {
         this.startBtn.classList.remove('active');
         this.startBtn.textContent = '开始监测';
         
+        // 清空开始时间显示
+        this.startTimeDisplay.textContent = '--';
+        
         if (this.timer) {
             clearInterval(this.timer);
             this.timer = null;
@@ -708,6 +879,11 @@ class NetworkMonitor {
         if (this.uptimeTimer) {
             clearInterval(this.uptimeTimer);
             this.uptimeTimer = null;
+        }
+        
+        if (this.failureDurationTimer) {
+            clearInterval(this.failureDurationTimer);
+            this.failureDurationTimer = null;
         }
         
         if (this.heartbeatTimer) {

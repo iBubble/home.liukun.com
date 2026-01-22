@@ -729,6 +729,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['visit_target'])) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>代理检测工具</title>
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 	<style>
 		/* 赛博朋克风格整体样式 */
 		@keyframes neon-glow {
