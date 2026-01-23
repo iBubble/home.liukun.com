@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈巴雪山应急救援基地 - 数字化高原救援先锋</title>
+    <meta name="description" content="哈巴雪山应急救援基地，构建15分钟空中应急响应圈，低空经济与智慧文旅的标杆样板。">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="images/favicon.svg" alt="Logo" style="height: 40px; width: auto;">
+            <div class="logo">
+                <div class="logo-enline">HABA SNOW MOUNTAIN</div>
+                <div class="logo-enline sub">EMERGENCY RESCUE BASE</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#intro">概览</a></li>
+                <li><a href="#arch">空间布局</a></li>
+                <li><a href="#ops">运营体系</a></li>
+                <li><a href="#model">合作模式</a></li>
+                <li><a href="#finance">资金效益</a></li>
+            </ul>
+        </nav>
+        <button class="btn btn-primary"
+            style="background:var(--primary-blue); color:white; border:none; padding:10px 20px; border-radius:50px; font-weight:600; cursor:pointer;">加入我们</button>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>哈巴雪山应急救援基地</h1>
+            <p>构建 15 分钟空中响应圈 · 为生命护航 · 为智慧文旅赋能</p>
+            <div class="hero-btns">
+                <a href="#intro" class="btn btn-primary"
+                    style="background:white; color:var(--primary-dark); padding:15px 40px; border-radius:50px; font-weight:700;">探索基地</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数字统计 -->
+    <div class="stat-grid">
+        <div class="stat-item">
+            <span class="stat-num" data-target="15">0</span>
+            <span class="stat-label">分钟响应圈</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num" data-target="15000">0</span>
+            <span class="stat-label">年巡检里程 (km)</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num" data-target="100">0</span>
+            <span class="stat-label">年均执行任务</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num" data-target="30">0</span>
+            <span class="stat-label">创造就业岗位</span>
+        </div>
+    </div>
+
+    <!-- 项目背景与选址 -->
+    <section id="intro">
+        <div class="section-head reveal">
+            <h2>科学选址与项目背景</h2>
+            <div class="divider"></div>
+            <p style="margin-top:20px; color:var(--text-light);">Site Selection & Project Background</p>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="feature-img">
+                <img src="images/haba_base_site.png" alt="哈巴雪山营地可视化选址">
+            </div>
+            <div class="feature-text">
+                <span
+                    style="color:var(--primary-blue); background:rgba(0,102,255,0.1); padding:6px 16px; border-radius:50px; font-weight:700; font-size:0.75rem; letter-spacing:1px; margin-bottom:20px; display:inline-block;">ECO-SMART
+                    DESIGN</span>
+                <h3>模块化非永久性营地建筑</h3>
+                <p>基地采取全移动式设计，采用高性能航天级集装箱与太空舱模块组装而成，屋顶集成大疆无人机场（Dock 2），实现“不破坏地貌、可快速迁移、全周期自循环”。</p>
+
+                <!-- 核心优势列表 -->
+                <ul
+                    style="margin:25px 0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:15px; color:var(--text-main); font-weight:500; font-size:0.95rem;">
+                    <li><i class="fas fa-hammer" style="color:var(--primary-blue); width:20px;"></i> 零土建 · 无损植被</li>
+                    <li><i class="fas fa-stopwatch" style="color:var(--primary-blue); width:20px;"></i> 45天快速部署</li>
+                    <li><i class="fas fa-recycle" style="color:var(--primary-blue); width:20px;"></i> 100% 可回收材料</li>
+                    <li><i class="fas fa-temperature-arrow-down" style="color:var(--primary-blue); width:20px;"></i>
+                        -30℃ 极端抗寒</li>
+                </ul>
+
+                <!-- 视觉预览区 -->
+                <div style="margin-top:35px; display:flex; gap:20px; align-items:center;">
+                    <div style="position:relative; width:140px; height:90px; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15); border:2px solid white; transition:transform 0.3s; cursor:pointer;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="images/哈巴雪上营地选址360全景图.jpeg" style="width:100%; height:100%; object-fit:cover;">
+                        <div
+                            style="position:absolute; bottom:0; left:0; width:100%; background:rgba(0,0,0,0.6); color:white; font-size:0.65rem; padding:4px 0; text-align:center; backdrop-filter:blur(2px);">
+                            全景漫游 VR</div>
+                    </div>
+                    <div style="position:relative; width:140px; height:90px; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.15); border:2px solid white; transition:transform 0.3s; cursor:pointer;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="images/哈巴雪山营地-1.jpeg" style="width:100%; height:100%; object-fit:cover;">
+                        <div
+                            style="position:absolute; bottom:0; left:0; width:100%; background:rgba(0,0,0,0.6); color:white; font-size:0.65rem; padding:4px 0; text-align:center; backdrop-filter:blur(2px);">
+                            实地勘测图</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="feature-img">
+                <img src="images/香格里拉周边景观.png" alt="周边景观" onerror="this.src='images/梅里雪山.png'">
+            </div>
+            <div class="feature-text">
+                <h3>辐射迪庆全域文旅</h3>
+                <p>从松赞林寺的庄严到梅里雪山的圣洁，本项目作为数字化的枢纽，旨在解决国道周边配套不足的痛点，提升整体区域的旅游品质与安全性。</p>
+                <ul
+                    style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px; color:var(--text-light);">
+                    <li><i class="fas fa-check-circle" style="color:var(--primary-blue)"></i> 云端实时监测</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--primary-blue)"></i> 模块化应急站</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--primary-blue)"></i> 数字化智慧文旅</li>
+                </ul>
+            </div>
+    </section>
+
+    <!-- 空间布局与模块化建筑 -->
+    <section id="arch">
+        <div class="section-head reveal">
+            <h2>空间布局与模块化建筑</h2>
+            <div class="divider"></div>
+            <p style="margin-top:20px; color:var(--text-light);">Spatial Layout & Modular Architecture</p>
+        </div>
+
+        <div class="arch-grid reveal">
+            <!-- 服务中心 -->
+            <div class="arch-node">
+                <div class="icon-box"><i class="fas fa-hubspot"></i></div>
+                <div class="details">
+                    <span class="tag">CORE HUB</span>
+                    <h4>服务中心 (山脚谷地)</h4>
+                    <p style="font-size:0.9rem; color:var(--text-light); margin-bottom:10px;">核心枢纽、指挥调度、游客服务与高端住宿区。</p>
+                    <div class="spec-list">
+                        <span><i class="fas fa-expand"></i> 780㎡ (13模块)</span>
+                        <span><i class="fas fa-bullseye"></i> 辐射半径 15km</span>
+                        <span><i class="fas fa-bed"></i> 9个住宿模块</span>
+                        <span><i class="fas fa-hospital"></i> 专业医务室</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 补给点A -->
+            <div class="arch-node">
+                <div class="icon-box"><i class="fas fa-truck-ramp-box"></i></div>
+                <div class="details">
+                    <span class="tag">SPHERE A</span>
+                    <h4>补给点A (虎跳峡段)</h4>
+                    <p style="font-size:0.9rem; color:var(--text-light); margin-bottom:10px;">道路巡检中继站、快速救援物资补给前置点。</p>
+                    <div class="spec-list">
+                        <span><i class="fas fa-expand"></i> 40㎡ (1模块)</span>
+                        <span><i class="fas fa-bullseye"></i> 辐射半径 10km</span>
+                        <span><i class="fas fa-helicopter"></i> 无人机起降台</span>
+                        <span><i class="fas fa-boxes-stacked"></i> 物资储备库</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 补给点B -->
+            <div class="arch-node">
+                <div class="icon-box"><i class="fas fa-wind"></i></div>
+                <div class="details">
+                    <span class="tag">SPHERE B</span>
+                    <h4>补给点B (G214中段)</h4>
+                    <p style="font-size:0.9rem; color:var(--text-light); margin-bottom:10px;">游客休憩、高原反应急救站、生态保障节点。</p>
+                    <div class="spec-list">
+                        <span><i class="fas fa-expand"></i> 40㎡ (1模块)</span>
+                        <span><i class="fas fa-bullseye"></i> 辐射半径 8km</span>
+                        <span><i class="fas fa-lungs"></i> 弥散式吸氧室</span>
+                        <span><i class="fas fa-restroom"></i> 生态环保厕所</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 补给点C -->
+            <div class="arch-node">
+                <div class="icon-box"><i class="fas fa-mountain"></i></div>
+                <div class="details">
+                    <span class="tag">SPHERE C</span>
+                    <h4>补给点C (高海拔点)</h4>
+                    <p style="font-size:0.9rem; color:var(--text-light); margin-bottom:10px;">山难搜救前置站、登山向导高海拔休息点。</p>
+                    <div class="spec-list">
+                        <span><i class="fas fa-expand"></i> 40㎡ (1模块)</span>
+                        <span><i class="fas fa-bullseye"></i> 辐射半径 12km</span>
+                        <span><i class="fas fa-signal"></i> 通讯中继站</span>
+                        <span><i class="fas fa-person-shelter"></i> 临时救援点</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块详情表格 -->
+        <div class="module-details reveal">
+            <div class="module-header">
+                <h3>服务中心模块化配置详情 (13个模块)</h3>
+            </div>
+            <table class="module-table">
+                <thead>
+                    <tr>
+                        <th>模块功能</th>
+                        <th>面积配置</th>
+                        <th>核心设备与配置</th>
+                        <th>服务能力</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>应急指挥室</strong></td>
+                        <td>40㎡ (1)</td>
+                        <td>大屏显示、司空2终端、卫星/专网通讯设备</td>
+                        <td>24h 全域调度</td>
+                    </tr>
+                    <tr>
+                        <td><strong>基地医务室</strong></td>
+                        <td>40㎡ (1)</td>
+                        <td>AED、呼吸机、自动急救药品库、医疗担架</td>
+                        <td>高原急救响应</td>
+                    </tr>
+                    <tr>
+                        <td><strong>游客综合大厅</strong></td>
+                        <td>100㎡ (1.5)</td>
+                        <td>弥散式制氧、无人机租赁柜、咖啡吧、休息区</td>
+                        <td>综合配套服务</td>
+                    </tr>
+                    <tr>
+                        <td><strong>游客住宿模块</strong></td>
+                        <td>560㎡ (9)</td>
+                        <td>高端太空舱、独立卫浴、智能温控、分体式制氧</td>
+                        <td>18-20人住宿</td>
+                    </tr>
+                    <tr>
+                        <td><strong>职工住宿模块</strong></td>
+                        <td>40㎡ (0.5)</td>
+                        <td>员工宿舍、更衣室、独立卫生间、生活保障</td>
+                        <td>4-6人轮值</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 运营体系 - 深度重绘 -->
+    <section id="ops" style="background:var(--bg-light);">
+        <div class="section-head reveal">
+            <h2>全要素运营体系规划</h2>
+            <div class="divider"></div>
+            <p style="margin-top:20px; color:var(--text-light);">Comprehensive Operation System</p>
+        </div>
+
+        <!-- 1. 人员配置 - 30+人全员编制 -->
+        <!-- 1. 人员配置 - 中国救援团队视觉版 -->
+        <div class="ops-subgroup reveal">
+            <div class="team-container">
+
+                <!-- 管理团队 -->
+                <div class="team-block">
+                    <div class="team-image">
+                        <img src="images/team_mgmt.png" alt="中国救援管理团队">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-meta">
+                            <span>Strategic Management Team</span>
+                            <h3>核心管理团队 (5人)</h3>
+                        </div>
+                        <div class="role-grid">
+                            <div class="role-card">
+                                <h5>项目总经理 <span class="role-count">1人</span></h5>
+                                <p>负责战略统筹与政府对接。高薪储备行业领军人才。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>运营总监 <span class="role-count">1人</span></h5>
+                                <p>负责日常事务标准化及团队绩效。需具备应急文旅复合经验。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>信息技术总监 <span class="role-count">1人</span></h5>
+                                <p>核心管理成员。负责数字化架构、通导一体化链路及救援云平台整体安全。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>救援技术总监 <span class="role-count">1人</span></h5>
+                                <p>负责救援和无人机团队管理。持 AOPA 证，主持无人机云平台运维。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>住宿部经理 <span class="role-count">1人</span></h5>
+                                <p>负责太空舱运营服务标准体系建设与监督。高端酒店背景。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 专业救援 -->
+                <div class="team-block">
+                    <div class="team-content">
+                        <div class="team-meta">
+                            <span>Expert Rescue Force</span>
+                            <h3>专业救援团队 (10人)</h3>
+                        </div>
+                        <div class="role-grid">
+                            <div class="role-card">
+                                <h5>无人机飞手 <span class="role-count">4人</span></h5>
+                                <p>24h 轮值。执行高密度巡检。50% 比例定向培养本地飞手。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>高山救援员 <span class="role-count">4人</span></h5>
+                                <p>持红十字证。负责物资空投精准引导及山地应急接救。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>应急医护 <span class="role-count">2人</span></h5>
+                                <p>负责高原急救、伤员稳态转运。执业医护资质。本地化率 50%。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-image">
+                        <img src="images/team_rescue.png" alt="专业救援队员">
+                    </div>
+                </div>
+
+                <!-- 后勤支持 -->
+                <div class="team-block">
+                    <div class="team-image">
+                        <img src="images/team_support.png" alt="后勤与社区支持">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-meta">
+                            <span>Logistics & Community Support</span>
+                            <h3>后勤与社区支持 (13人)</h3>
+                        </div>
+                        <div class="role-grid">
+                            <div class="role-card">
+                                <h5>客服接待 <span class="role-count">3人</span></h5>
+                                <p>100% 本地化岗位。真诚自然的在地服务，负责接待与租赁引导。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>设备维保员 <span class="role-count">2人</span></h5>
+                                <p>负责无人机充电管理与日常保养。50% 比例聘用返乡青年。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>客房/财务/保洁 <span class="role-count">8人</span></h5>
+                                <p>由村组推荐，承担营地财务、客房与公共区维护。深度利益共荣。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教育支撑 -->
+                <div class="team-block">
+                    <div class="team-content">
+                        <div class="team-meta">
+                            <span>Education & Training Support</span>
+                            <h3>自然教育专项团队 (11人)</h3>
+                        </div>
+                        <div class="role-grid">
+                            <div class="role-card">
+                                <h5>专业讲师 <span class="role-count">6人</span></h5>
+                                <p>涵盖自然教育、应急救护。含核心全职讲师及行业顶尖外聘专家。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>保障与辅导师 <span class="role-count">5人</span></h5>
+                                <p>负责户外拓展带队，提供全周期学员心理保障与安全监督。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-image">
+                        <img src="images/team_edu.png" alt="教育培训专家">
+                    </div>
+                </div>
+
+                <!-- IT支撑团队 -->
+                <div class="team-block">
+                    <div class="team-image">
+                        <img src="images/team_it_china.png" alt="IT支撑与数字化技术团队">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-meta">
+                            <span>IT Support & Digital Innovation</span>
+                            <h3>IT支撑团队 (5人)</h3>
+                        </div>
+                        <div class="role-grid">
+                            <div class="role-card">
+                                <h5>开发人员 <span class="role-count">2人</span></h5>
+                                <p>负责应急响应小程序、3D 实景孪生系统及数据可视化界面开发迭代。</p>
+                            </div>
+                            <div class="role-card">
+                                <h5>运维人员 <span class="role-count">3人</span></h5>
+                                <p>负责基站网络、卫星链路、指挥大屏系统 24h 运行维护与故障排除。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                style="margin-top: 40px; padding: 25px; background: rgba(0,102,255,0.03); border-radius: 20px; text-align: center; border: 1px dashed var(--primary-blue);">
+                <p style="font-size: 1.15rem; color: var(--primary-dark); font-weight: 800;">
+                    全员核心编制 33 人 + 业务支撑讲师 11 人 = 44 人数智化救援标杆力量
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. 核心装备与技术 -->
+        <div class="ops-subgroup reveal">
+            <h4>空地一体化核心装备</h4>
+            <div style="display:flex; gap:40px; align-items:flex-start;">
+                <div style="flex:1;">
+                    <div class="equip-grid">
+                        <div class="equip-item">
+                            <i class="fas fa-microchip"></i>
+                            <div>
+                                <strong>大疆经纬 M350 RTK</strong>
+                                <p style="font-size:0.8rem; opacity:0.7;">主力机型，全天候全方位避障</p>
+                            </div>
+                        </div>
+                        <div class="equip-item">
+                            <i class="fas fa-tower-broadcast"></i>
+                            <div>
+                                <strong>司空 2 云平台</strong>
+                                <p style="font-size:0.8rem; opacity:0.7;">全域态势感知，远程指挥作业</p>
+                            </div>
+                        </div>
+                        <div class="equip-item">
+                            <i class="fas fa-satellite"></i>
+                            <div>
+                                <strong>Starlink/天通卫星链路</strong>
+                                <p style="font-size:0.8rem; opacity:0.7;">保障公网断开时的应急通信</p>
+                            </div>
+                        </div>
+                        <div class="equip-item">
+                            <i class="fas fa-box-open"></i>
+                            <div>
+                                <strong>自动应急抛投系统</strong>
+                                <p style="font-size:0.8rem; opacity:0.7;">集成扩音、爆闪及 10kg级 负载</p>
+                            </div>
+                        </div>
+                        <div class="equip-item">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <strong>热成像观测载荷</strong>
+                                <p style="font-size:0.8rem; opacity:0.7;">针对失温人员的生命体征探测</p>
+                            </div>
+                        </div>
+                        <div class="equip-item">
+                            <i class="fas fa-charging-station"></i>
+                            <div>
+                                <strong>大疆机场 (Dock 2)</strong>
+                                <p style="font-size:0.8rem; opacity:0.7;">无人值守 7x24 快速响应基站</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex:0.8;">
+                    <img src="images/rescue_drone_detail.png"
+                        style="width:100%; border-radius:20px; box-shadow:var(--shadow-strong);">
+                </div>
+            </div>
+        </div>
+
+        <!-- 详细装备配置表 (New) -->
+        <div class="module-details reveal" style="margin-top:40px; margin-bottom:60px;">
+            <div class="module-header" style="background:var(--primary-dark);">
+                <h3 style="color:white; margin:0;"><i class="fas fa-list-check"></i> 基地核心装备配置清单 (Equipment Matrix)</h3>
+            </div>
+            <table class="module-table">
+                <thead>
+                    <tr>
+                        <th>装备类别</th>
+                        <th>设备名称</th>
+                        <th>核心规格/型号</th>
+                        <th>配置数量</th>
+                        <th>维护要求</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 救援类 -->
+                    <tr style="background:rgba(0, 102, 255, 0.03);">
+                        <td rowspan="4" style="font-weight:bold; color:var(--primary-blue);">空中/救援</td>
+                        <td><strong>行业级无人机</strong></td>
+                        <td>DJI Matrice 350 RTK + 司空2</td>
+                        <td>2 架</td>
+                        <td>每月专业检修 / 电池校准</td>
+                    </tr>
+                    <tr style="background:rgba(0, 102, 255, 0.03);">
+                        <td><strong>热成像载荷</strong></td>
+                        <td>DJI H20T (广角/变焦/红外)</td>
+                        <td>2 套</td>
+                        <td>每月镜头清洁 / 固件升级</td>
+                    </tr>
+                    <tr style="background:rgba(0, 102, 255, 0.03);">
+                        <td><strong>应急物资抛投</strong></td>
+                        <td>定制化多段式抛投器 (10kg)</td>
+                        <td>2 套</td>
+                        <td>每周投放精度测试</td>
+                    </tr>
+                    <tr style="background:rgba(0, 102, 255, 0.03);">
+                        <td><strong>自动机场</strong></td>
+                        <td>DJI Dock 2 (野外部署版)</td>
+                        <td>1 套</td>
+                        <td>每日系统自检 / 远程监控</td>
+                    </tr>
+
+                    <!-- 通讯类 -->
+                    <tr>
+                        <td rowspan="3" style="font-weight:bold; color:var(--primary-dark);">通讯/指挥</td>
+                        <td><strong>卫星通讯</strong></td>
+                        <td>铱星/海事卫星电话</td>
+                        <td>4 部</td>
+                        <td>每月信号测试 / 话费充值</td>
+                    </tr>
+                    <tr>
+                        <td><strong>无线互联</strong></td>
+                        <td>高频对讲机 + 中继台</td>
+                        <td>10 部</td>
+                        <td>每周信道测试</td>
+                    </tr>
+                    <tr>
+                        <td><strong>指挥中枢</strong></td>
+                        <td>私有化部署云控平台</td>
+                        <td>1 套</td>
+                        <td>每日数据备份 / 安全审计</td>
+                    </tr>
+
+                    <!-- 医疗类 -->
+                    <tr style="background:rgba(255, 85, 0, 0.03);">
+                        <td rowspan="3" style="font-weight:bold; color:var(--accent-orange);">医疗/急救</td>
+                        <td><strong>生命支持</strong></td>
+                        <td>AED (自动体外除颤器)</td>
+                        <td>2 台</td>
+                        <td>每月电极片检查</td>
+                    </tr>
+                    <tr style="background:rgba(255, 85, 0, 0.03);">
+                        <td><strong>高原供氧</strong></td>
+                        <td>工业级弥散式制氧机</td>
+                        <td>1 套</td>
+                        <td>每月氧浓度检测</td>
+                    </tr>
+                    <tr style="background:rgba(255, 85, 0, 0.03);">
+                        <td><strong>急救转运</strong></td>
+                        <td>铲式担架 + 高原急救药库</td>
+                        <td>4 套</td>
+                        <td>每季度药品有效期检查</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 4. 沉浸式实战场景画廊 (Visual Scenarios) -->
+        <div class="ops-subgroup reveal">
+            <div class="section-head small">
+                <h3>实战场景与生态环境</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Operational Context</p>
+            </div>
+            <div class="scenario-gallery">
+
+                <!-- 核心指挥 (Large) -->
+                <div class="gallery-item large">
+                    <img src="images/gov_monitor.png" alt="数字化指挥中心">
+                    <div class="gallery-overlay">
+                        <h5>数字化指挥中枢</h5>
+                        <p>集成司空2云平台，实现全域 3D 态势感知与实时调度。</p>
+                    </div>
+                </div>
+
+                <!-- 巡检场景 -->
+                <div class="gallery-item">
+                    <img src="images/虎跳峡.avif" alt="高危路段巡检">
+                    <div class="gallery-overlay">
+                        <h5>高危路段巡检</h5>
+                        <p>针对虎跳峡段落石与滑坡隐患的常态化监测。</p>
+                    </div>
+                </div>
+
+                <!-- 生态监测 -->
+                <div class="gallery-item">
+                    <img src="images/普达措-2.avif" alt="高原生态监测">
+                    <div class="gallery-overlay">
+                        <h5>高原生态监测</h5>
+                        <p>纳帕海与普达措区域的野生动植物种群观测。</p>
+                    </div>
+                </div>
+
+                <!-- 无人机特写 (Wide) -->
+                <div class="gallery-item wide">
+                    <img src="images/night_drone.png" alt="M350 RTK 夜间作业">
+                    <div class="gallery-overlay">
+                        <h5>全天候夜视作业</h5>
+                        <p>DJI M350 RTK 搭载热成像，在夜间及暴雪环境下精准搜救。</p>
+                    </div>
+                </div>
+
+                <!-- 景观/旅拍 -->
+                <div class="gallery-item">
+                    <img src="images/梅里雪山.png" alt="雪山旅拍">
+                    <div class="gallery-overlay">
+                        <h5>极致雪山旅拍</h5>
+                        <p>为游客记录不可复制的“日照金山”震撼瞬间。</p>
+                    </div>
+                </div>
+
+                <!-- 游客体验 -->
+                <div class="gallery-item">
+                    <img src="images/visitor_drone.png" alt="科技研学体验">
+                    <div class="gallery-overlay">
+                        <h5>亲子科技研学</h5>
+                        <p>在雪山脚下体验无人机操控，寓教于乐的家庭时光。</p>
+                    </div>
+                </div>
+
+                <!-- 团队保障 -->
+                <div class="gallery-item">
+                    <img src="images/team_mountain.png" alt="专业救援团队">
+                    <div class="gallery-overlay">
+                        <h5>专业保障团队</h5>
+                        <p>高海拔适应性训练与从严治队的专业化保障力量。</p>
+                    </div>
+                </div>
+
+                <!-- 安全科技 -->
+                <div class="gallery-item">
+                    <img src="images/safety_shield.png" alt="数字安全屏障">
+                    <div class="gallery-overlay">
+                        <h5>数字安全屏障</h5>
+                        <p>构建空地一体的数字化安全防护网，守护每一位行者。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 3. 业务流转流程图 (Business Flows) -->
+        <div class="ops-subgroup reveal">
+            <div class="section-head small">
+                <h3>核心业务数智流转图</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Digital Business Flows</p>
+            </div>
+            <div class="biz-tabs">
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="flow-tog">To G (日常巡检)</button>
+                    <button class="tab-btn" data-tab="flow-toc">To C (共享旅拍)</button>
+                    <button class="tab-btn" data-tab="flow-rescue">To G/C (应急搜救)</button>
+                </div>
+
+                <!-- To G Flow -->
+                <div class="tab-content active" id="flow-tog">
+                    <div class="flow-step-container">
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+                            <strong>08:00 计划</strong>
+                            <p style="font-size:0.75rem;">制定巡检航线</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-plane-up"></i></div>
+                            <strong>09:00 起飞</strong>
+                            <p style="font-size:0.75rem;">G214国道沿线巡查</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-brain"></i></div>
+                            <strong>AI 识别</strong>
+                            <p style="font-size:0.75rem;">自动识别落石/塌方</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-share-nodes"></i></div>
+                            <strong>同步政府</strong>
+                            <p style="font-size:0.75rem;">生成报告至交通部门</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- To C Flow -->
+                <div class="tab-content" id="flow-toc">
+                    <div class="flow-step-container">
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-qrcode"></i></div>
+                            <strong>扫码租赁</strong>
+                            <p style="font-size:0.75rem;">身份核验与支付</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-route"></i></div>
+                            <strong>智能航线</strong>
+                            <p style="font-size:0.75rem;">系统推荐最佳拍摄位</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-camera-retro"></i></div>
+                            <strong>自动拍摄</strong>
+                            <p style="font-size:0.75rem;">智能跟拍与作品生成</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                            <strong>一键分享</strong>
+                            <p style="font-size:0.75rem;">下载至手机归还机器</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rescue Flow -->
+                <div class="tab-content" id="flow-rescue">
+                    <div class="flow-step-container">
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-phone-volume"></i></div>
+                            <strong>接警响应</strong>
+                            <p style="font-size:0.75rem;">3分钟内无人机升空</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-eye"></i></div>
+                            <strong>热成像搜索</strong>
+                            <p style="font-size:0.75rem;">精准锁定目标位置</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-parachute-box"></i></div>
+                            <strong>物资投放</strong>
+                            <p style="font-size:0.75rem;">投放急救包/通讯设备</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon"><i class="fas fa-stretcher"></i></div>
+                            <strong>引导救援</strong>
+                            <p style="font-size:0.75rem;">引导地面力量入场</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. 应急响应等级矩阵 (Response Matrix) -->
+        <div class="ops-subgroup reveal">
+            <div class="section-head small">
+                <h3>应急响应等级划分矩阵</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Response Matrix</p>
+            </div>
+            <div class="module-details">
+                <table class="module-table">
+                    <thead>
+                        <tr>
+                            <th>响应等级</th>
+                            <th>触发条件</th>
+                            <th>响应时效</th>
+                            <th>调度资源</th>
+                            <th>指挥层级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color:var(--accent-orange);">一级响应 (重大)</strong></td>
+                            <td>多人伤亡、重大灾害</td>
+                            <td>3 分钟内</td>
+                            <td>全体力量 + 政府增援 + 第三方支援</td>
+                            <td>政府指挥中心主导</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#f1c40f;">二级响应 (一般)</strong></td>
+                            <td>单人伤亡、中度风险</td>
+                            <td>10 分钟内</td>
+                            <td>基地核心救援队 + 无人机集群</td>
+                            <td>基地指挥中心主导</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:var(--primary-blue);">三级响应 (轻微)</strong></td>
+                            <td>人员走失、轻微受伤</td>
+                            <td>30 分钟内</td>
+                            <td>轮值值班人员 + 无人机侦察</td>
+                            <td>值班队长主导</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 5. 数字化高山教育课程体系 (Education Grid) -->
+        <div class="ops-subgroup reveal">
+            <div class="section-head small">
+                <h3>数字化高山自然教育体系</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Education Grid</p>
+            </div>
+            <!-- 目标客群 -->
+            <div class="target-groups" style="display:flex; justify-content:center; gap:20px; margin-bottom:40px;">
+                <span class="tag"
+                    style="background:#e3f2fd; color:#1976d2; padding:8px 20px; border-radius:50px;">中小学生研学团</span>
+                <span class="tag"
+                    style="background:#f1f8e9; color:#388e3c; padding:8px 20px; border-radius:50px;">户外爱好者</span>
+                <span class="tag"
+                    style="background:#fff3e0; color:#f57c00; padding:8px 20px; border-radius:50px;">亲子家庭</span>
+                <span class="tag"
+                    style="background:#ede7f6; color:#512da8; padding:8px 20px; border-radius:50px;">企业定制团建</span>
+            </div>
+            <div class="biz-grid">
+                <div class="biz-card" style="padding: 25px; text-align:left;">
+                    <h5 style="color:var(--primary-blue); margin-bottom:15px;"><i class="fas fa-leaf"></i> 基础自然教育</h5>
+                    <ul style="font-size:0.8rem;">
+                        <li>哈巴雪山垂直生态系统科普</li>
+                        <li>高山冰川遗迹地质考察</li>
+                        <li>高原气象观测与云雾预测</li>
+                        <li>暗夜星空与天文观测课程</li>
+                    </ul>
+                </div>
+                <div class="biz-card" style="padding: 25px; text-align:left;">
+                    <h5 style="color:var(--primary-blue); margin-bottom:15px;"><i class="fas fa-kit-medical"></i> 应急救援科普
+                    </h5>
+                    <ul style="font-size:0.8rem;">
+                        <li>高原反应预防与失温救助</li>
+                        <li>AED 自动体外除颤器实操</li>
+                        <li>野外火种采集与简易庇护所</li>
+                        <li>卫星电话与卫星链路体验</li>
+                    </ul>
+                </div>
+                <div class="biz-card" style="padding: 25px; text-align:left;">
+                    <h5 style="color:var(--primary-blue); margin-bottom:15px;"><i class="fas fa-drone-kit"></i> 无人机技术培训
+                    </h5>
+                    <ul style="font-size:0.8rem;">
+                        <li>低空飞行原理与安全规程</li>
+                        <li>雪山极致构图与航拍剪辑</li>
+                        <li>低空航线规划与建模应用</li>
+                        <li>AOPA 无人机驾驶员考证辅导</li>
+                    </ul>
+                </div>
+                <div class="biz-card" style="padding: 25px; text-align:left;">
+                    <h5 style="color:var(--primary-blue); margin-bottom:15px;"><i
+                            class="fas fa-tent-arrow-down-to-line"></i> 体验式拓展</h5>
+                    <ul style="font-size:0.8rem;">
+                        <li>高海拔极限攀登体能训练</li>
+                        <li>模拟山地任务搜救协同演练</li>
+                        <li>高海拔星空天幕露营体验</li>
+                        <li>“雪山同框”数字化创作营</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. 多维立体安全保障矩阵 -->
+        <div class="ops-subgroup reveal">
+            <div class="section-head small">
+                <h3>多维立体安全保障矩阵</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Multi-dimensional Security Matrix</p>
+            </div>
+            <div class="safety-grid">
+                <div class="safety-box">
+                    <h5 style="color:var(--primary-dark); margin-bottom:10px;"><i class="fas fa-plane-slash"
+                            style="color:var(--accent-orange); margin-right:10px;"></i> 空域冲突管理</h5>
+                    <p style="font-size:0.9rem; color:var(--text-light);">通过 UTM
+                        系统与民航管辖部门实时联动信号。设置电子围栏，强制避让禁飞及临时管制区域，确保飞行合法安全。</p>
+                </div>
+                <div class="safety-box">
+                    <h5 style="color:var(--primary-dark); margin-bottom:10px;"><i class="fas fa-cloud-sun-rain"
+                            style="color:var(--accent-orange); margin-right:10px;"></i> 微气候实时预警</h5>
+                    <p style="font-size:0.9rem; color:var(--text-light);">海拔 4000 米以上布置高精度微气象站，数据每 10
+                        秒回传云端。大风、强对流天气时，系统强制触发无人机返航机制。</p>
+                </div>
+                <div class="safety-box">
+                    <h5 style="color:var(--primary-dark); margin-bottom:10px;"><i class="fas fa-shield-halved"
+                            style="color:var(--accent-orange); margin-right:10px;"></i> 数据加密与隐私</h5>
+                    <p style="font-size:0.9rem; color:var(--text-light);">所有搜救影像、轨迹及 3D 模型存储于政务级专用私有云。严格遵循地理信息保密规定。</p>
+                </div>
+                <div class="safety-box">
+                    <h5 style="color:var(--primary-dark); margin-bottom:10px;"><i class="fas fa-life-ring"
+                            style="color:var(--accent-orange); margin-right:10px;"></i> 双链路备份机制</h5>
+                    <p style="font-size:0.9rem; color:var(--text-light);">基地配备双发电机系统以及卫星+微波双备份链路。极端情况下仍能维持核心指挥中心运作 72
+                        小时。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. 项目实施阶段规划 -->
+        <div class="ops-subgroup reveal">
+            <div class="section-head small">
+                <h3>项目实施阶段规划</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Implementation Roadmap</p>
+            </div>
+            <div class="roadmap-grid">
+                <div class="phase-card">
+                    <div class="phase-num">01</div>
+                    <span class="budget">2026.02.01 - 02.28</span>
+                    <h5>筹备期 (30天)</h5>
+                    <ul>
+                        <li><strong>02/01:</strong> 土地租赁签约 & 许可办理</li>
+                        <li><strong>02/08:</strong> 核心团队组建 (GM/Tech/Ops)</li>
+                        <li><strong>02/22:</strong> 地基平整 & 小程序开发启动</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">02</div>
+                    <span class="budget">2026.03.01 - 04.30</span>
+                    <h5>建设期 (60天)</h5>
+                    <ul>
+                        <li><strong>03/01:</strong> 模块化集装箱进场吊装</li>
+                        <li><strong>03/16:</strong> 核心设备(无人机/通讯)安装</li>
+                        <li><strong>04/16:</strong> 全员入职培训 & 应急演练</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">03</div>
+                    <span class="budget">2026.05.01 - 05.31</span>
+                    <h5>试运营 (31天)</h5>
+                    <ul>
+                        <li><strong>05/01:</strong> 正式开业 & 首批研学团</li>
+                        <li><strong>05/15:</strong> 接入政府应急指控体系</li>
+                        <li><strong>05/31:</strong> 业务SOP优化 & 压力测试</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">04</div>
+                    <span class="budget">2026.06.01 起</span>
+                    <h5>正式运营</h5>
+                    <ul>
+                        <li><strong>长期:</strong> 7x24h 应急值守</li>
+                        <li><strong>每季:</strong> 社区分红结算</li>
+                        <li><strong>年度:</strong> 迪庆低空经济标准输出</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 24小时值班流程 (New) -->
+            <div class="duty-cycle-section" style="margin-top:80px; text-align:center;">
+                <div class="section-head small">
+                    <h3>24小时数智化值守流程</h3>
+                    <div class="divider"></div>
+                    <p style="margin-top:15px; color:var(--text-light);">Daily Operations</p>
+                </div>
+                <div class="duty-timeline">
+                    <div class="duty-node">
+                        <div class="time">08:00</div>
+                        <div class="dot"></div>
+                        <div class="content">
+                            <strong>早班交接 / 设备自检</strong>
+                            <p>交接班记录，无人机/基站开机自查(15min)</p>
+                        </div>
+                    </div>
+                    <div class="duty-node">
+                        <div class="time">09:00</div>
+                        <div class="dot"></div>
+                        <div class="content">
+                            <strong>常态化巡航 (To G)</strong>
+                            <p>G214国道/防火区 自动航线巡逻</p>
+                        </div>
+                    </div>
+                    <div class="duty-node">
+                        <div class="time">14:00</div>
+                        <div class="dot"></div>
+                        <div class="content">
+                            <strong>业务服务高峰 (To C)</strong>
+                            <p>研学教学 / 旅拍服务 / 物资补给响应</p>
+                        </div>
+                    </div>
+                    <div class="duty-node">
+                        <div class="time">20:00</div>
+                        <div class="dot"></div>
+                        <div class="content">
+                            <strong>晚班交接 / 数据归档</strong>
+                            <p>设备回收入库，运营数据上传云端</p>
+                        </div>
+                    </div>
+                    <div class="duty-node">
+                        <div class="time">24H</div>
+                        <div class="dot"></div>
+                        <div class="content">
+                            <strong>应急待命 (Standby)</strong>
+                            <p>AI 哨兵系统值守，3分钟突发响应</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作模式与业务板块 -->
+    <section id="model">
+        <div class="section-head reveal">
+            <h2>合作模式与业务版图</h2>
+            <div class="divider"></div>
+            <p style="margin-top:20px; color:var(--text-light);">Cooperation Model & Business Landscape</p>
+        </div>
+
+        <div class="biz-grid reveal">
+            <!-- To G (政府端) -->
+            <div class="biz-card">
+                <i class="fas fa-building-columns"></i>
+                <h4>To G (政府端)</h4>
+                <ul>
+                    <li>森林防火及关键基础设施智能巡护</li>
+                    <li>低空经济社会应急体系数字底座</li>
+                    <li>迪庆智慧文旅全域安全管理平台</li>
+                </ul>
+            </div>
+
+            <!-- To B (企业端) -->
+            <div class="biz-card">
+                <i class="fas fa-briefcase"></i>
+                <h4>To B (企业端)</h4>
+                <ul>
+                    <li>高海拔赛事保障及保险联防体系</li>
+                    <li>高端企业团建与高海拔适应性培训</li>
+                    <li>无人机厂商高原测试基地与冠名</li>
+                </ul>
+            </div>
+
+            <!-- To C (游客端) -->
+            <div class="biz-card">
+                <i class="fas fa-person-hiking"></i>
+                <h4>To C (游客端)</h4>
+                <ul>
+                    <li>哈巴雪山登山救援保障卡(1/7日)</li>
+                    <li>数字化自然教育及环保研学项目</li>
+                    <li>高海拔科技轻奢太空舱住宿体验</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 政府部门职责分工矩阵 -->
+        <div class="matrix-container reveal" style="margin-top: 60px;">
+            <div class="module-header" style="background: var(--primary-blue);">
+                <h3 style="margin:0;"><i class="fas fa-university"></i> 政府职能协同分工矩阵</h3>
+            </div>
+            <table class="gov-table">
+                <thead>
+                    <tr>
+                        <th style="color:white;">合作维度</th>
+                        <th style="color:white;">政府部门职责</th>
+                        <th style="color:white;">企业职责</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>应急管理部门</strong></td>
+                        <td>纳入应急管理体系、颁发救援资质、政策支持</td>
+                        <td>承担应急值班、提供专业设备、执行救援任务</td>
+                    </tr>
+                    <tr>
+                        <td><strong>交通部门</strong></td>
+                        <td>授权道路巡检权限、提供数据接口、协调设施</td>
+                        <td>执行定期巡检、上报安全隐患、配合处置</td>
+                    </tr>
+                    <tr>
+                        <td><strong>文旅部门</strong></td>
+                        <td>纳入旅游体系、提供宣传渠道、协助申报补贴</td>
+                        <td>提供游客服务、开展研学业务、维护旅游品质</td>
+                    </tr>
+                    <tr>
+                        <td><strong>林草部门</strong></td>
+                        <td>授权森林防火监测权限、提供防火数据</td>
+                        <td>执行防火巡检、进行实时火情预警</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 战略合作伙伴 (New) -->
+        <div class="matrix-container reveal" style="margin-top: 60px;">
+            <div class="module-header" style="background: var(--primary-dark);">
+                <h3 style="margin:0;"><i class="fas fa-handshake"></i> 核心战略合作伙伴</h3>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; padding:30px;">
+                <div style="text-align:center; padding:20px; background:var(--bg-light); border-radius:10px;">
+                    <i class="fas fa-mountain-sun"
+                        style="font-size:2rem; color:var(--primary-blue); margin-bottom:10px;"></i>
+                    <h5 style="margin:0;">香格里拉登山协会</h5>
+                    <p style="font-size:0.75rem; color:var(--text-light); margin-top:5px;">山难搜救技术支持</p>
+                </div>
+                <div style="text-align:center; padding:20px; background:var(--bg-light); border-radius:10px;">
+                    <i class="fas fa-shield-cat" style="font-size:2rem; color:#0EA5E9; margin-bottom:10px;"></i>
+                    <h5 style="margin:0;">蓝天救援云南总队</h5>
+                    <p style="font-size:0.75rem; color:var(--text-light); margin-top:5px;">专业救援增援/演练</p>
+                </div>
+                <div style="text-align:center; padding:20px; background:var(--bg-light); border-radius:10px;">
+                    <i class="fas fa-hospital-user" style="font-size:2rem; color:#EF4444; margin-bottom:10px;"></i>
+                    <h5 style="margin:0;">迪庆州人民医院</h5>
+                    <p style="font-size:0.75rem; color:var(--text-light); margin-top:5px;">医护培训/绿色通道</p>
+                </div>
+                <div style="text-align:center; padding:20px; background:var(--bg-light); border-radius:10px;">
+                    <i class="fas fa-paper-plane" style="font-size:2rem; color:black; margin-bottom:10px;"></i>
+                    <h5 style="margin:0;">大疆创新 (DJI)</h5>
+                    <p style="font-size:0.75rem; color:var(--text-light); margin-top:5px;">司空2平台/设备维保</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 三位一体协同矩阵 (Trinity Synergy) -->
+        <div class="ops-subgroup reveal" style="margin-top:80px;">
+            <div class="section-head small">
+                <h3>三位一体：政、企、民协同矩阵</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Trinity Synergy Matrix</p>
+            </div>
+            <div class="arch-grid">
+                <div class="arch-node">
+                    <div class="icon-box"><i class="fas fa-handshake-angle"></i></div>
+                    <div class="details">
+                        <h4>土地与社区合作 (民)</h4>
+                        <p style="font-size:0.9rem;">深度绑定在地利益，构建可持续共赢机制。</p>
+                        <table class="gov-table"
+                            style="font-size:0.8rem; min-width:auto; margin-top:15px; background:transparent;">
+                            <tr>
+                                <td style="padding:8px 0; border:none; font-weight:bold; width:80px;">合作期限</td>
+                                <td style="padding:8px 0; border:none; color:var(--text-light);">5年一签，自动续约优先权</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 0; border:none; font-weight:bold;">租赁费用</td>
+                                <td style="padding:8px 0; border:none; color:var(--text-light);">5万元/年 (核心站) + 1万元/年×3
+                                    (补给点)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 0; border:none; font-weight:bold;">利润分配</td>
+                                <td style="padding:8px 0; border:none; color:var(--text-light);">年净利润的 15% 作为社区发展基金</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 0; border:none; font-weight:bold;">就业保障</td>
+                                <td style="padding:8px 0; border:none; color:var(--text-light);">强制本地化雇佣比例不低于 30%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 0; border:none; font-weight:bold;">股权激励</td>
+                                <td style="padding:8px 0; border:none; color:var(--text-light);">合作满3年后，社区可优先入股 5%-10%
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="arch-node">
+                    <div class="icon-box"><i class="fas fa-shield-heart"></i></div>
+                    <div class="details">
+                        <h4>政企协同方案 (政)</h4>
+                        <p style="font-size:0.9rem;">纳入应急管理体系，执行公共安全职能。</p>
+                        <ul style="font-size:0.85rem; color:var(--text-light); margin-top:10px; list-style:none;">
+                            <li><i class="fas fa-check" style="color:var(--primary-blue)"></i> 纳入香格里拉市 119/110 调度体系</li>
+                            <li><i class="fas fa-check" style="color:var(--primary-blue)"></i> 争取省级文旅新基建补贴 (约 100万)</li>
+                            <li><i class="fas fa-check" style="color:var(--primary-blue)"></i> 开放低空应急搜救绿色空域通道</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 应急响应时间线 -->
+        <div class="ops-subgroup reveal" style="margin-top:80px;">
+            <div class="section-head small">
+                <h3>响应阶梯：救援协同流程</h3>
+                <div class="divider"></div>
+                <p style="margin-top:15px; color:var(--text-light);">Response Timeline</p>
+            </div>
+            <div class="flow-step-container">
+                <div class="flow-step">
+                    <div class="step-icon"><i class="fas fa-bolt"></i></div>
+                    <strong>15 分钟内</strong>
+                    <p style="font-size:0.8rem; color:var(--text-light); margin-top:10px;">自主响应：基地救援队出动，无人机先遣侦查与精准定位。
+                    </p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-icon"><i class="fas fa-users-rays"></i></div>
+                    <strong>30 分钟内</strong>
+                    <p style="font-size:0.8rem; color:var(--text-light); margin-top:10px;">联合响应：联动蓝天救援队、登山协会等第三方力量入场。
+                    </p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-icon"><i class="fas fa-shield-halved"></i></div>
+                    <strong>60 分钟内</strong>
+                    <p style="font-size:0.8rem; color:var(--text-light); margin-top:10px;">升级响应：政府指挥中心接管，全域医疗与空中支援合围。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container reveal" style="max-width:900px; margin:60px auto 0;">
+            <div style="display:flex; gap:40px; align-items:center;">
+                <div style="flex:1;">
+                    <canvas id="modelChart"></canvas>
+                </div>
+                <div style="flex:1;">
+                    <h3>政企合营 5:5 模式</h3>
+                    <p>政府提供土地、合规性背书与行业监管；运营方投入技术、设备与资金。双方共建共担，确保公益性与商业性的完美平衡。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资金与效益 -->
+    <section id="finance" style="background:var(--primary-dark); color:white;">
+        <div class="section-head reveal">
+            <h2 style="color:white;">资金规划与效益评估</h2>
+            <div class="divider"></div>
+            <p style="margin-top:20px; color:rgba(255,255,255,0.7);">Financial Planning & Benefit Assessment</p>
+        </div>
+
+        <div
+            style="display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-bottom:40px; max-width:1200px; margin-left:auto; margin-right:auto;">
+            <div class="chart-container reveal"
+                style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:30px; border-radius:20px;">
+                <h3 style="color:white; text-align:center; margin-bottom:30px;">500万启动资金分配</h3>
+                <canvas id="financeChart"></canvas>
+            </div>
+            <div class="chart-container reveal"
+                style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:30px; border-radius:20px;">
+                <h3 style="color:white; text-align:center; margin-bottom:30px;">年度营收架构 (总计 699万)</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 4.1 500万启动资金分配方案 (Detailed Table) -->
+        <div class="module-details reveal"
+            style="background:rgba(255,255,255,0.02); border-color:rgba(255,255,255,0.1); margin-bottom:60px; max-width:1200px; margin-left:auto; margin-right:auto;">
+            <div class="module-header"
+                style="background:rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.1);">
+                <h3 style="color:white; margin:0; font-size:1.2rem;">4.1 500万启动资金分配方案 (Total Budget: 500万元)</h3>
+            </div>
+            <table class="module-table" style="color:white; font-size:0.9rem;">
+                <thead>
+                    <tr style="background:rgba(255,255,255,0.03);">
+                        <th style="color:#93c5fd;">支出类别</th>
+                        <th style="color:white;">细分项目</th>
+                        <th style="color:white;">预算 (万)</th>
+                        <th style="color:white;">占比</th>
+                        <th style="color:white;">资金使用时间</th>
+                        <th style="color:rgba(255,255,255,0.7);">预算依据</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 土地相关 -->
+                    <tr>
+                        <td rowspan="2"
+                            style="font-weight:bold; color:#93c5fd; border-bottom:1px solid rgba(255,255,255,0.1);">
+                            土地相关费用</td>
+                        <td>土地租赁 (首年5年)</td>
+                        <td>25</td>
+                        <td>4.5%</td>
+                        <td>第1月</td>
+                        <td style="opacity:0.8;">5万元/年×5年</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">土地平整与基础建设</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">20</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">3.6%</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">第1-2月</td>
+                        <td style="opacity:0.8; border-bottom:1px solid rgba(255,255,255,0.1);">地基处理、停车场、围栏、水电接入</td>
+                    </tr>
+
+                    <!-- 模块式建筑 -->
+                    <tr>
+                        <td rowspan="2"
+                            style="font-weight:bold; color:#93c5fd; border-bottom:1px solid rgba(255,255,255,0.1);">
+                            模块式建筑费用</td>
+                        <td>服务中心 (13模块)</td>
+                        <td>312</td>
+                        <td>56.4%</td>
+                        <td>第2-4月</td>
+                        <td style="opacity:0.8;">24万元/模块×13</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">补给点 (3模块)</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">72</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">13.0%</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">第3-4月</td>
+                        <td style="opacity:0.8; border-bottom:1px solid rgba(255,255,255,0.1);">24万元/模块×3</td>
+                    </tr>
+
+                    <!-- 设备采购 -->
+                    <tr>
+                        <td rowspan="3"
+                            style="font-weight:bold; color:#93c5fd; border-bottom:1px solid rgba(255,255,255,0.1);">
+                            设备采购费用</td>
+                        <td>低空数智系统</td>
+                        <td>90</td>
+                        <td>16.2%</td>
+                        <td>第2-4月</td>
+                        <td style="opacity:0.8;">见设备清单（精简版）</td>
+                    </tr>
+                    <tr>
+                        <td>营地基建设施</td>
+                        <td>25</td>
+                        <td>4.5%</td>
+                        <td>第3-4月</td>
+                        <td style="opacity:0.8;">制氧机、厕所、发电机等</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">应急救援医疗配置</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">30</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">5.4%</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">第4月</td>
+                        <td style="opacity:0.8; border-bottom:1px solid rgba(255,255,255,0.1);">AED、担架、药品库等</td>
+                    </tr>
+
+                    <!-- 人员费用 -->
+                    <tr>
+                        <td rowspan="3"
+                            style="font-weight:bold; color:#93c5fd; border-bottom:1px solid rgba(255,255,255,0.1);">人员费用
+                        </td>
+                        <td>招聘费用</td>
+                        <td>5</td>
+                        <td>0.9%</td>
+                        <td>第2月</td>
+                        <td style="opacity:0.8;">猎头费、背景调查</td>
+                    </tr>
+                    <tr>
+                        <td>培训费用</td>
+                        <td>10</td>
+                        <td>1.8%</td>
+                        <td>第3-4月</td>
+                        <td style="opacity:0.8;">AOPA培训、急救证培训</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">前6个月工资</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">100</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">18.0%</td>
+                        <td style="border-bottom:1px solid rgba(255,255,255,0.1);">第2-7月</td>
+                        <td style="opacity:0.8; border-bottom:1px solid rgba(255,255,255,0.1);">200万/年÷2</td>
+                    </tr>
+
+                    <!-- 运营准备金 -->
+                    <tr>
+                        <td rowspan="3" style="font-weight:bold; color:#93c5fd;">运营准备金</td>
+                        <td>小程序开发</td>
+                        <td>5</td>
+                        <td>0.9%</td>
+                        <td>第2-3月</td>
+                        <td style="opacity:0.8;">租赁系统、支付系统</td>
+                    </tr>
+                    <tr>
+                        <td>物流运输</td>
+                        <td>5</td>
+                        <td>0.9%</td>
+                        <td>第2-4月</td>
+                        <td style="opacity:0.8;">设备运输、建筑吊装</td>
+                    </tr>
+                    <tr>
+                        <td>备用金</td>
+                        <td>25</td>
+                        <td>4.5%</td>
+                        <td>全程</td>
+                        <td style="opacity:0.8;">应急备用</td>
+                    </tr>
+
+                    <!-- 合计 -->
+                    <tr style="background:rgba(0,102,255,0.2); font-weight:bold;">
+                        <td colspan="2" style="text-align:right;">合计</td>
+                        <td style="color:#ffffff; font-size:1.1rem;">500</td>
+                        <td>100%</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 4.2 各项支出详解与依据 (Detailed Cards) -->
+        <div class="ops-subgroup reveal" style="margin-bottom:80px;">
+            <div class="section-head small"
+                style="text-align:left; border-left:4px solid var(--primary-blue); padding-left:20px;">
+                <h3 style="color:white; margin:0;">4.2 各项支出详解与依据</h3>
+                <p style="margin-top:5px; color:rgba(255,255,255,0.6);">Detailed Expenditure Breakdown</p>
+            </div>
+
+            <div class="biz-grid" style="grid-template-columns: repeat(2, 1fr); gap:30px;">
+
+                <!-- 1. 土地与基建 -->
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; text-align:left; padding:30px;">
+                    <h5 style="color:#93c5fd; margin-bottom:20px; font-size:1.1rem;"><i class="fas fa-layer-group"></i>
+                        1. 土地相关费用 (40万)</h5>
+                    <ul style="color:rgba(255,255,255,0.8); font-size:0.9rem; list-style:none; padding:0;">
+                        <li
+                            style="margin-bottom:10px; border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:5px;">
+                            <strong>土地租赁费 (25万):</strong> 服务中心5万/年×5年 + 补给点1万/年×3×5年
+                        </li>
+                        <li
+                            style="margin-bottom:10px; border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:5px;">
+                            <strong>土地平整 (10万):</strong> 地基处理、场地平整、排水系统
+                        </li>
+                        <li>
+                            <strong>基础设施 (5万):</strong> 停车场、围栏、照明、标识系统
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top:15px; background:rgba(0,0,0,0.2); padding:10px; border-radius:8px; font-size:0.8rem; color:rgba(255,255,255,0.6);">
+                        <strong>预算依据：</strong>参考当地土地租赁市场价（一般控制区约5000-10000元/亩/年）；基础建设满足重型设备进场要求。
+                    </div>
+                </div>
+
+                <!-- 2. 模块化建筑 -->
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; text-align:left; padding:30px;">
+                    <h5 style="color:#93c5fd; margin-bottom:20px; font-size:1.1rem;"><i class="fas fa-cubes"></i> 2.
+                        模块式建筑费用 (384万)</h5>
+                    <ul style="color:rgba(255,255,255,0.8); font-size:0.9rem; list-style:none; padding:0;">
+                        <li
+                            style="margin-bottom:10px; border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:5px;">
+                            <strong>服务中心 (312万):</strong> 13个模块 × 24万 (含住宿专用高端配置)
+                        </li>
+                        <li>
+                            <strong>补给点 (72万):</strong> 3个模块 × 24万 (标准化配置)
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top:15px; background:rgba(0,0,0,0.2); padding:10px; border-radius:8px; font-size:0.8rem; color:rgba(255,255,255,0.6);">
+                        <strong>预算依据：</strong>高端定制集装箱单价20-30万；对比传统建筑优势在于节省地基与工期 (1.2万/㎡ vs 8k/㎡)，符合生态合规要求。
+                    </div>
+                </div>
+
+                <!-- 3. 设备采购 -->
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; text-align:left; padding:30px; grid-column: span 2;">
+                    <h5 style="color:#93c5fd; margin-bottom:20px; font-size:1.1rem;"><i
+                            class="fas fa-satellite-dish"></i> 3. 设备采购费用 (145万)</h5>
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;">
+                        <div>
+                            <strong style="display:block; margin-bottom:10px; color:white;">低空数智系统 (90万)</strong>
+                            <ul style="font-size:0.8rem; color:rgba(255,255,255,0.7); padding-left:15px;">
+                                <li>救援无人机: 2架×15万=30万</li>
+                                <li>共享无人机: 20架×0.8万=16万</li>
+                                <li>司空2平台: 15万</li>
+                                <li>租赁机柜/电池柜: 25万</li>
+                                <li>热成像/探照: 4万</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong style="display:block; margin-bottom:10px; color:white;">营地基建设施 (25万)</strong>
+                            <ul style="font-size:0.8rem; color:rgba(255,255,255,0.7); padding-left:15px;">
+                                <li>弥散式制氧机: 5万</li>
+                                <li>太阳能供电: 3万</li>
+                                <li>发电机/厕所: 4.4万</li>
+                                <li>住宿配套: 10.6万</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong style="display:block; margin-bottom:10px; color:white;">医疗配置 (30万)</strong>
+                            <ul style="font-size:0.8rem; color:rgba(255,255,255,0.7); padding-left:15px;">
+                                <li>AED/担架: 8万</li>
+                                <li>卫星电话: 6万</li>
+                                <li>中继通讯: 5万</li>
+                                <li>监护仪/药库: 8万</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 人员与储备 -->
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; text-align:left; padding:30px;">
+                    <h5 style="color:#93c5fd; margin-bottom:20px; font-size:1.1rem;"><i class="fas fa-users-cog"></i> 4.
+                        人员费用 (149万)</h5>
+                    <ul style="color:rgba(255,255,255,0.8); font-size:0.9rem; list-style:none; padding:0;">
+                        <li style="margin-bottom:10px;"><strong>招聘/培训 (15万):</strong> 猎头、背景调查、AOPA/急救证全员持证训练</li>
+                        <li><strong>前6个月薪酬 (134万):</strong> 22人团队 × 1万/月 × 6个月 (含社保，启动期储备)</li>
+                    </ul>
+                </div>
+
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; text-align:left; padding:30px;">
+                    <h5 style="color:#93c5fd; margin-bottom:20px; font-size:1.1rem;"><i class="fas fa-piggy-bank"></i>
+                        5. 运营准备金 (67万)</h5>
+                    <ul style="color:rgba(255,255,255,0.8); font-size:0.9rem; list-style:none; padding:0;">
+                        <li style="margin-bottom:10px;"><strong>系统开发 (8万):</strong> 小程序、租赁/支付/会员系统</li>
+                        <li><strong>备用金 (54万):</strong> 应对设备故障、市场波动及政策风险 (按总投10%预留)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.3 资金使用时间表 (Detailed Timeline) -->
+        <div class="ops-subgroup reveal" style="margin-bottom:80px; text-align:left;">
+            <div class="section-head small"
+                style="text-align:left; border-left:4px solid var(--accent-orange); padding-left:20px;">
+                <h3 style="color:white; margin:0;">4.3 资金使用时间表 (Timeline)</h3>
+                <p style="margin-top:5px; color:rgba(255,255,255,0.6);">Phased Execution Plan</p>
+            </div>
+
+            <div class="roadmap-grid">
+                <!-- Phase 1 -->
+                <div class="phase-card" style="background:white; color:var(--text-main);">
+                    <div class="phase-num" style="color:rgba(0,0,0,0.05);">01</div>
+                    <span class="budget" style="background:var(--bg-light); color:var(--primary-dark);">80万 · 16%</span>
+                    <h5 style="color:var(--primary-dark);">筹备期 (第1-2月)</h5>
+                    <ul style="color:var(--text-light);">
+                        <li><strong>第1月 (40w):</strong> 土地租赁签约、土地平整、招聘启动</li>
+                        <li><strong>第2月 (40w):</strong> 设备采购签约、小程序开发、首批人员入职</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-card" style="background:white; color:var(--text-main);">
+                    <div class="phase-num" style="color:rgba(0,0,0,0.05);">02</div>
+                    <span class="budget" style="background:rgba(0,102,255,0.1); color:var(--primary-blue);">260万 ·
+                        52%</span>
+                    <h5 style="color:var(--primary-dark);">建设期 (第3-4月)</h5>
+                    <ul style="color:var(--text-light);">
+                        <li><strong>第3月 (150w):</strong> 模块化建筑安装、核心设备进场、培训启动</li>
+                        <li><strong>第4月 (110w):</strong> 设备调试、系统联调、人员到位、试运营准备</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-card" style="background:white; color:var(--text-main);">
+                    <div class="phase-num" style="color:rgba(0,0,0,0.05);">03</div>
+                    <span class="budget" style="background:rgba(255,85,0,0.1); color:var(--accent-orange);">100万 ·
+                        20%</span>
+                    <h5 style="color:var(--primary-dark);">试运营期 (第5-6月)</h5>
+                    <ul style="color:var(--text-light);">
+                        <li><strong>第5月 (50w):</strong> 正式开业、市场推广、政府合作启动</li>
+                        <li><strong>第6月 (50w):</strong> 业务优化、数据分析、应急演练</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="phase-card" style="background:white; color:var(--text-main);">
+                    <div class="phase-num" style="color:rgba(0,0,0,0.05);">04</div>
+                    <span class="budget" style="background:var(--bg-light); color:#666;">60万 · 12%</span>
+                    <h5 style="color:var(--primary-dark);">稳定运营 (第7月起)</h5>
+                    <ul style="color:var(--text-light);">
+                        <li><strong>第7-12月 (60w):</strong> 正常运营、设备维护、社区分红、年度考核</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 详细营收与成本表 -->
+        <div class="module-details reveal"
+            style="background:rgba(255,255,255,0.02); border-color:rgba(255,255,255,0.1);">
+            <table class="module-table" style="color:white;">
+                <thead>
+                    <tr style="background:rgba(255,255,255,0.05);">
+                        <th style="color:white;">收益板块</th>
+                        <th style="color:white;">明细项</th>
+                        <th style="color:white;">计算模型</th>
+                        <th style="color:white;">年度预估 (万)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>To C 综合服务</strong></td>
+                        <td>溢价住宿 + 科技研学</td>
+                        <td>1000元/舱 · 60%入住率</td>
+                        <td>240.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>To C 无人机业务</strong></td>
+                        <td>共享旅拍 + 补给租赁</td>
+                        <td>200元/单 · 日均 20 单</td>
+                        <td>160.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>To G 巡护购买</strong></td>
+                        <td>路网、基建巡检</td>
+                        <td>政府公开招标/服务采购</td>
+                        <td>50.0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>To B 培训与赛事</strong></td>
+                        <td>企业团建 + 品牌返利</td>
+                        <td>课程包 + 环境测试费</td>
+                        <td>249.0</td>
+                    </tr>
+                    <tr style="background:rgba(0,102,255,0.1); font-weight:bold;">
+                        <td colspan="3" style="text-align:right;">年度总营收合计：</td>
+                        <td style="color:var(--primary-blue);">699.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 风险控制矩阵 -->
+        <div class="ops-subgroup reveal" style="margin-top:100px;">
+            <div class="section-head small">
+                <h3 style="color:white;">核心风险管控矩阵</h3>
+                <div class="divider" style="background:rgba(255,255,255,0.3);"></div>
+                <p style="margin-top:15px; color:rgba(255,255,255,0.6);">Risk Control</p>
+            </div>
+            <div class="biz-grid">
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <h5 style="color:var(--accent-orange);"><i class="fas fa-gavel"></i> 政策合规风险</h5>
+                    <p style="font-size:0.8rem; opacity:0.8; margin-top:10px;">应对：深度对接迪庆州政研中心，确立低空经济先行示范点地位，确保空域使用的合法性。
+                    </p>
+                </div>
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <h5 style="color:var(--accent-orange);"><i class="fas fa-cloud-bolt"></i> 极端天气风险</h5>
+                    <p style="font-size:0.8rem; opacity:0.8; margin-top:10px;">应对：自建高精度气象探测阵列，无人机系统级冗余设计，极端天气强制停飞避险机制。
+                    </p>
+                </div>
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <h5 style="color:var(--accent-orange);"><i class="fas fa-users-slash"></i> 社区关系冲突</h5>
+                    <p style="font-size:0.8rem; opacity:0.8; margin-top:10px;">应对：实施 15% 利润透明分红机制，维持 30%
+                        以上的强制本地用工指标，构建利益共同体。</p>
+                </div>
+                <div class="biz-card"
+                    style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <h5 style="color:var(--accent-orange);"><i class="fas fa-wrench"></i> 运维链路波动</h5>
+                    <p style="font-size:0.8rem; opacity:0.8; margin-top:10px;">应对：卫星+微波+4/5G
+                        三模冗余链路。基地配备双能源供应系统（市电+大容量储能）。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 社会效益看板 -->
+        <div class="ops-subgroup reveal" style="margin-top:100px; padding-bottom:80px;">
+            <div class="section-head small">
+                <h3 style="color:white;">社会价值与生态效益看板</h3>
+                <div class="divider" style="background:rgba(255,255,255,0.3);"></div>
+                <p style="margin-top:15px; color:rgba(255,255,255,0.6);">Social Impact</p>
+            </div>
+            <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="stat-item">
+                    <div class="stat-num" data-target="15">0</div>
+                    <p>平均响应缩短(min)</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" data-target="15000">0</div>
+                    <p>年巡检总里程(km)</p>
+                </div>
+                <div class="stat-item" style="color:var(--accent-orange);">
+                    <div class="stat-num" data-target="30">0</div>
+                    <p>本地就业岗位(个)</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" data-target="100">0</div>
+                    <p>社区增收(万元/年)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        style="padding:100px 5% 50px; text-align:center; background:var(--bg-light); display: flex; flex-direction: column; align-items: center;">
+        <div class="logo">
+            <div class="logo-enline">HABA SNOW MOUNTAIN</div>
+            <div class="logo-enline sub">EMERGENCY RESCUE BASE</div>
+        </div>
+        <p style="color:var(--text-light); margin:20px 0;">迪庆州 · 哈巴雪山应急救援基地运营办公室</p>
+        <div style="opacity:0.4; font-size:0.8rem;">
+            &copy; 2026 哈巴雪山救援实验室 全权所有
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -299,6 +299,15 @@ nav {
     display: flex;
     gap: 2rem;
     list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .nav-links a {
@@ -328,6 +337,99 @@ nav {
     background: linear-gradient(90deg, var(--tibetan-red), var(--tibetan-gold));
     border-radius: 2px;
     animation: slideIn 0.3s ease;
+}
+
+/* 应急救援链接特殊样式 */
+.nav-links a.emergency-link {
+    background: linear-gradient(135deg, #c41e3a 0%, #dc2626 100%);
+    color: white !important;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a.emergency-link:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.5);
+    transform: translateY(-2px);
+}
+
+.nav-links a.emergency-link i {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* 下拉菜单样式 */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-toggle {
+    cursor: pointer;
+}
+
+.nav-links .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-links .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    color: var(--text-dark) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: white;
+    white-space: nowrap;
+}
+
+.nav-links .dropdown-item:hover {
+    background: linear-gradient(135deg, #c41e3a 0%, #dc2626 100%);
+    color: white !important;
+}
+
+.nav-links .dropdown-item i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-links .dropdown-item span {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 @keyframes slideIn {
