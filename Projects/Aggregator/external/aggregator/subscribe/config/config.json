@@ -1,0 +1,80 @@
+{
+    "domains": [],
+    "crawl": {
+        "enable": true,
+        "exclude": "",
+        "threshold": 3,
+        "singlelink": true,
+        "persist": {
+            "subs": "crawledsubs",
+            "proxies": "crawledproxies"
+        },
+        "config": {
+            "rename": "",
+            "include": "",
+            "exclude": ""
+        },
+        "telegram": {
+            "enable": false,
+            "pages": 50,
+            "exclude": "",
+            "users": {
+                "jichang_list": {
+                    "include": "",
+                    "exclude": "",
+                    "config": {
+                        "rename": ""
+                    },
+                    "push_to": []
+                }
+            }
+        },
+        "google": {
+            "enable": false,
+            "exclude": "",
+            "limits": 0,
+            "notinurl": [],
+            "push_to": []
+        },
+        "yandex": {
+            "enable": false,
+            "exclude": "",
+            "within": 0,
+            "pages": 0,
+            "notinurl": [],
+            "push_to": []
+        },
+        "github": {
+            "enable": true,
+            "pages": 5,
+            "push_to": [],
+            "exclude": "",
+            "spams": []
+        },
+        "twitter": {
+            "enable": false,
+            "users": {
+                "username": {
+                    "enable": false,
+                    "num": 0,
+                    "include": "",
+                    "exclude": "",
+                    "config": {
+                        "rename": ""
+                    },
+                    "push_to": []
+                }
+            }
+        },
+        "repositories": [],
+        "pages": [],
+        "scripts": []
+    },
+    "groups": {},
+    "storage": {
+        "engine": "",
+        "base": "",
+        "domain": "",
+        "items": {}
+    }
+}

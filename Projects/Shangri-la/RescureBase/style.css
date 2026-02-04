@@ -602,6 +602,12 @@ section {
     margin-top: 40px;
 }
 
+/* 强制 3 列布局 (针对合作模式) */
+#coop-model-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    width: 100%;
+}
+
 .biz-card {
     background: white;
     padding: 40px;
@@ -609,18 +615,53 @@ section {
     box-shadow: var(--shadow-soft);
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: 0.3s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.biz-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
 .biz-card:hover {
-    border-color: var(--primary-blue);
-    background: linear-gradient(to bottom, #ffffff, #f0f7ff);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+    border-color: rgba(0, 102, 255, 0.2);
+}
+
+.biz-card:hover::before {
+    transform: scaleX(1);
 }
 
 .biz-card i {
-    font-size: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 102, 255, 0.05);
+    border-radius: 50%;
+    font-size: 2.2rem;
     color: var(--primary-blue);
     margin-bottom: 25px;
+    transition: 0.4s ease;
+}
+
+.biz-card:hover i {
+    background: var(--primary-blue);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
 }
 
 .biz-card h4 {
@@ -649,8 +690,9 @@ section {
 @media (max-width: 1024px) {
 
     .roadmap-grid,
-    .biz-grid {
-        grid-template-columns: 1fr 1fr;
+    .biz-grid,
+    #coop-model-grid {
+        grid-template-columns: 1fr 1fr !important;
     }
 }
 
@@ -930,9 +972,15 @@ section {
     margin-top: 40px;
     background: white;
     border-radius: 20px;
-    overflow-x: auto;
+    overflow: hidden;
     box-shadow: var(--shadow-soft);
     border: var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.matrix-container:hover {
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-3px);
 }
 
 .gov-table {
@@ -942,21 +990,95 @@ section {
 }
 
 .gov-table th {
-    background: var(--primary-dark);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #003366 100%);
     color: white;
-    padding: 15px 20px;
+    padding: 20px 30px;
     text-align: left;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     font-size: 0.9rem;
 }
 
 .gov-table td {
-    padding: 15px 20px;
-    border-bottom: var(--border-light);
-    font-size: 0.9rem;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: background 0.2s;
+    line-height: 1.6;
 }
 
-.gov-table tr:hover {
+.gov-table tr:last-child td {
+    border-bottom: none;
+}
+
+.gov-table tr:hover td {
     background: rgba(0, 102, 255, 0.02);
+    color: var(--primary-dark);
+}
+
+/* 战略合作伙伴样式 */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 40px;
+    background: white;
+}
+
+.partner-card {
+    text-align: center;
+    padding: 35px 20px;
+    background: var(--bg-light);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.partner-card:hover {
+    background: white;
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-8px);
+    border-color: rgba(0, 102, 255, 0.1);
+}
+
+.partner-card i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: var(--primary-blue);
+    transition: transform 0.4s ease;
+}
+
+.partner-card:hover i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.partner-card h5 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.partner-card p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .partner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .partner-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .gov-icon {
@@ -979,4 +1101,184 @@ section {
 
 .ops-subgroup:last-child {
     margin-bottom: 0;
+}
+
+/* 三位一体协同矩阵美化 */
+.synergy-grid,
+.arch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.synergy-card,
+.arch-node {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.synergy-card:hover,
+.arch-node:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.synergy-card .icon-box,
+.arch-node .icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 102, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.synergy-card .details,
+.arch-node .details {
+    flex: 1;
+}
+
+.synergy-card .details h4,
+.arch-node .details h4 {
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.synergy-card .details p,
+.arch-node .details p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* 详情小表格 */
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.detail-table tr {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.detail-table tr:last-child {
+    border-bottom: none;
+}
+
+.detail-table td {
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.detail-table .label {
+    width: 90px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.detail-table .value {
+    color: var(--text-main);
+}
+
+/* 检查清单 */
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.check-list li i {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--primary-blue);
+    font-size: 1em;
+}
+
+@media (max-width: 900px) {
+
+    .synergy-grid,
+    .arch-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 图表区域美化 */
+.chart-container {
+    max-width: 1000px;
+    margin: 60px auto 0;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.chart-canvas-wrapper {
+    flex: 1;
+    position: relative;
+    max-width: 500px;
+}
+
+.chart-text {
+    flex: 0.8;
+}
+
+.chart-text h3 {
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.chart-text p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    background: rgba(0, 102, 255, 0.03);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+    .chart-card {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .chart-text h3 {
+        font-size: 1.5rem;
+    }
 }

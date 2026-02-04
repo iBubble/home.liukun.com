@@ -60,8 +60,8 @@ inclusion: always
 - 81端口：Shangri_la 备用站点
 - PHP版本：8.2
 
-## 7. Stats页面项目同步规则
-- **重要**: 在 `Projects/` 目录下增加或删除项目时，必须同步更新 `stats.html` 中的 Deployed Web Projects 部分
+## 7. Projects页面项目同步规则
+- **重要**: 在 `Projects/` 目录下增加或删除项目时，必须同步更新 `projects.html` 中的 Deployed Web Projects 部分
 - 更新内容包括：
   - 项目卡片HTML结构
   - 项目名称、描述、链接

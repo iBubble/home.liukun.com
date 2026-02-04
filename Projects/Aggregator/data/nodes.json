@@ -1,0 +1,79 @@
+[
+    {
+        "name": "🇹🇼 试用节点-台湾",
+        "type": "ss",
+        "server": "jry.izenny.com",
+        "port": "27689",
+        "location": "台湾",
+        "status": "unknown",
+        "delay": null,
+        "purity": 55,
+        "purity_level": "fair"
+    },
+    {
+        "name": "🇺🇸 试用节点-美国",
+        "type": "ss",
+        "server": "jry.izenny.com",
+        "port": "47831",
+        "location": "美国",
+        "status": "unknown",
+        "delay": null,
+        "purity": 55,
+        "purity_level": "fair"
+    },
+    {
+        "name": "🇸🇬 试用节点-新加坡",
+        "type": "ss",
+        "server": "jry.izenny.com",
+        "port": "57884",
+        "location": "新加坡",
+        "status": "unknown",
+        "delay": null,
+        "purity": 55,
+        "purity_level": "fair"
+    },
+    {
+        "name": "请续费",
+        "type": "vmess",
+        "server": "google.com",
+        "port": "8888",
+        "location": "未知",
+        "status": "unknown",
+        "delay": null,
+        "purity": 95,
+        "purity_level": "excellent"
+    },
+    {
+        "name": "🇩🇪 德国-法兰克福-HY-002",
+        "type": "hysteria2",
+        "server": "85.209.53.178",
+        "port": "8443",
+        "location": "德国",
+        "status": "unknown",
+        "delay": null,
+        "purity": 93,
+        "purity_level": "excellent"
+    },
+    {
+        "name": "🇸🇬 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端",
+        "type": "vmess",
+        "server": "91.149.236.68",
+        "port": "23188",
+        "location": "新加坡",
+        "status": "unknown",
+        "delay": null,
+        "purity": 56,
+        "purity_level": "fair"
+    },
+    {
+        "name": "🇯🇵 试用节点-日本",
+        "type": "ss",
+        "server": "jry.izenny.com",
+        "port": "29571",
+        "location": "日本",
+        "status": "unknown",
+        "delay": null,
+        "purity": 55,
+        "purity_level": "fair"
+    }
+]

@@ -1,0 +1,465 @@
+/* ========================================
+   赛博朋克科幻风格样式
+   ======================================== */
+
+/* 粒子背景容器 */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(0, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: particle-float 10s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* 数据流效果 */
+.data-stream {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 255, 255, 0.8), 
+        transparent);
+    animation: data-flow 3s linear infinite;
+}
+
+/* 节点卡片增强效果 */
+.node-card {
+    position: relative;
+    background: rgba(10, 10, 30, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    animation: card-appear 0.5s ease-out;
+    overflow: hidden;
+}
+
+.node-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(0, 255, 255, 0.1),
+        transparent);
+    transition: left 0.5s;
+}
+
+.node-card:hover::before {
+    left: 100%;
+}
+
+.node-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 
+        0 5px 20px rgba(0, 255, 255, 0.3),
+        0 0 30px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* 检测中状态 */
+.node-card.checking {
+    animation: pulse-glow 1.5s infinite;
+    border-color: rgba(255, 255, 0, 0.6);
+}
+
+.node-card.checking::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border: 3px solid transparent;
+    border-top-color: rgba(255, 255, 0, 0.8);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* 检测成功状态 */
+.node-card.success {
+    border-color: rgba(0, 255, 65, 0.8);
+    background: rgba(0, 50, 20, 0.3);
+    animation: scale-pulse 0.5s ease-out;
+}
+
+.node-card.success::before {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #00ff41;
+    animation: rotate-fade-in 0.5s ease-out;
+}
+
+/* 检测失败状态 */
+.node-card.failed {
+    border-color: rgba(255, 0, 100, 0.8);
+    background: rgba(50, 0, 20, 0.3);
+    animation: shake 0.5s ease-out;
+}
+
+.node-card.failed::before {
+    content: "✗";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #ff0064;
+    animation: rotate-fade-in 0.5s ease-out;
+}
+
+/* 雷达扫描效果 */
+.radar-scanner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+}
+
+.radar-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.radar-sweep {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        rgba(0, 255, 255, 0.8),
+        transparent);
+    transform-origin: right center;
+    animation: radar-scan 2s linear infinite;
+}
+
+/* 波纹效果 */
+.ripple-container {
+    position: relative;
+    display: inline-block;
+}
+
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 1.5s ease-out infinite;
+}
+
+.ripple:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.ripple:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* 全息投影效果 */
+.hologram {
+    position: relative;
+    animation: hologram-flicker 3s infinite;
+}
+
+.hologram::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        transparent 0%,
+        rgba(0, 255, 255, 0.05) 50%,
+        transparent 100%
+    );
+    animation: scan-vertical 2s linear infinite;
+}
+
+/* 能量条 */
+.energy-bar {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.energy-fill {
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(0, 255, 255, 0.6),
+        rgba(0, 255, 255, 0.9),
+        rgba(0, 255, 255, 0.6));
+    background-size: 200% 100%;
+    animation: gradient-shift 2s linear infinite;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* 矩阵雨背景 */
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #00ff41;
+    animation: matrix-rain 10s linear infinite;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+/* 电路板背景 */
+.circuit-board {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.05;
+}
+
+.circuit-line {
+    stroke: #00ffff;
+    stroke-width: 1;
+    fill: none;
+    stroke-dasharray: 1000;
+    animation: circuit-pulse 5s linear infinite;
+}
+
+/* 按钮增强效果 */
+.cyber-button {
+    position: relative;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    padding: 12px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cyber-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(0, 255, 255, 0.3),
+        transparent);
+    transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+    left: 100%;
+}
+
+.cyber-button:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.cyber-button:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.3),
+        inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.cyber-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: pulse-glow 2s infinite;
+}
+
+/* 进度条增强 */
+.progress-container {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(0, 255, 255, 0.3),
+        rgba(0, 255, 255, 0.6),
+        rgba(0, 255, 255, 0.9),
+        rgba(0, 255, 255, 0.6),
+        rgba(0, 255, 255, 0.3));
+    background-size: 200% 100%;
+    animation: gradient-shift 2s linear infinite;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.6),
+        inset 0 0 10px rgba(0, 255, 255, 0.4);
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent);
+    animation: progress-bar 1.5s linear infinite;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ffff;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    z-index: 1;
+}
+
+/* 统计卡片 */
+.stat-card {
+    background: rgba(0, 20, 40, 0.6);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 255, 0.1) 0%,
+        transparent 70%
+    );
+    animation: spin 10s linear infinite;
+}
+
+.stat-card:hover {
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.stat-value {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    animation: number-roll 0.5s ease-out;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: rgba(0, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 255, 255, 0.2);
+    border-top-color: #00ffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* 通知提示 */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 20, 40, 0.95);
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    padding: 15px 20px;
+    color: #00ffff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    animation: slide-in-right 0.5s ease-out;
+    z-index: 10000;
+}
+
+.notification.success {
+    border-color: #00ff41;
+    color: #00ff41;
+}
+
+.notification.error {
+    border-color: #ff0064;
+    color: #ff0064;
+}
+
+.notification.warning {
+    border-color: #ffff00;
+    color: #ffff00;
+}

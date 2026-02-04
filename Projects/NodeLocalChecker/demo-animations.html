@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画效果演示 - NodeLocalChecker</title>
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cyberpunk.css">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            padding: 40px;
+        }
+        .demo-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(10, 10, 30, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        .demo-section h2 {
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .demo-item {
+            padding: 20px;
+            background: rgba(0, 20, 40, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .demo-item:hover {
+            border-color: rgba(0, 255, 255, 0.8);
+            transform: translateY(-5px);
+        }
+        .demo-node-card {
+            background: rgba(10, 10, 30, 0.8);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 48px; text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);">
+        🚀 动画效果演示
+    </h1>
+
+    <!-- 按钮动画 -->
+    <div class="demo-section">
+        <h2>1. 按钮动画</h2>
+        <div class="demo-grid">
+            <button class="cyber-button" onclick="testNotification('success')">成功通知</button>
+            <button class="cyber-button" onclick="testNotification('error')">错误通知</button>
+            <button class="cyber-button" onclick="testNotification('warning')">警告通知</button>
+            <button class="cyber-button" onclick="testNotification('info')">信息通知</button>
+        </div>
+    </div>
+
+    <!-- 节点状态动画 -->
+    <div class="demo-section">
+        <h2>2. 节点状态动画</h2>
+        <div class="demo-node-card" id="demoNode1">
+            <strong>测试节点 1</strong> - 点击测试检测动画
+        </div>
+        <div class="demo-node-card" id="demoNode2">
+            <strong>测试节点 2</strong> - 点击测试成功动画
+        </div>
+        <div class="demo-node-card" id="demoNode3">
+            <strong>测试节点 3</strong> - 点击测试失败动画
+        </div>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="demo-section">
+        <h2>3. 统计卡片</h2>
+        <div class="demo-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="stat1">0</div>
+                <div class="stat-label">总节点数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat2">0</div>
+                <div class="stat-label">已检测</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat3">0</div>
+                <div class="stat-label">可用节点</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat4">0</div>
+                <div class="stat-label">已选择</div>
+            </div>
+        </div>
+        <button class="cyber-button" onclick="animateStats()" style="margin-top: 20px;">
+            开始数字滚动
+        </button>
+    </div>
+
+    <!-- 进度条 -->
+    <div class="demo-section">
+        <h2>4. 进度条动画</h2>
+        <div class="progress-container">
+            <div class="progress-bar" id="demoProgress" style="width: 0%"></div>
+            <div class="progress-text">0%</div>
+        </div>
+        <button class="cyber-button" onclick="animateProgressBar()" style="margin-top: 20px;">
+            开始进度动画
+        </button>
+    </div>
+
+    <!-- 加载动画 -->
+    <div class="demo-section">
+        <h2>5. 加载动画</h2>
+        <div style="text-align: center;">
+            <div class="loading-spinner"></div>
+            <p style="margin-top: 20px;">加载中...</p>
+        </div>
+    </div>
+
+    <!-- 雷达扫描 -->
+    <div class="demo-section">
+        <h2>6. 雷达扫描</h2>
+        <div class="radar-scanner" style="margin: 0 auto;">
+            <div class="radar-circle"></div>
+            <div class="radar-circle" style="width: 70%; height: 70%; margin: 15%;"></div>
+            <div class="radar-circle" style="width: 40%; height: 40%; margin: 30%;"></div>
+            <div class="radar-sweep"></div>
+        </div>
+    </div>
+
+    <!-- 能量条 -->
+    <div class="demo-section">
+        <h2>7. 能量条</h2>
+        <div class="energy-bar">
+            <div class="energy-fill" id="energyFill" style="width: 0%"></div>
+        </div>
+        <button class="cyber-button" onclick="chargeEnergy()" style="margin-top: 20px;">
+            充能
+        </button>
+    </div>
+
+    <!-- 扫描线效果 -->
+    <div class="scanlines"></div>
+
+    <script src="js/animations.js"></script>
+    <script>
+        // 测试通知
+        function testNotification(type) {
+            const messages = {
+                success: '操作成功！',
+                error: '操作失败！',
+                warning: '警告信息！',
+                info: '提示信息！'
+            };
+            CyberpunkAnimations.showNotification(messages[type], type);
+        }
+
+        // 测试节点动画
+        document.getElementById('demoNode1').addEventListener('click', function() {
+            CyberpunkAnimations.animateNodeCheck(this);
+            setTimeout(() => {
+                this.querySelector('.radar-scanner')?.remove();
+            }, 3000);
+        });
+
+        document.getElementById('demoNode2').addEventListener('click', function() {
+            CyberpunkAnimations.animateNodeSuccess(this);
+        });
+
+        document.getElementById('demoNode3').addEventListener('click', function() {
+            CyberpunkAnimations.animateNodeFailed(this);
+        });
+
+        // 数字滚动动画
+        function animateStats() {
+            CyberpunkAnimations.animateNumber(document.getElementById('stat1'), 0, 224, 1000);
+            CyberpunkAnimations.animateNumber(document.getElementById('stat2'), 0, 180, 1200);
+            CyberpunkAnimations.animateNumber(document.getElementById('stat3'), 0, 156, 1400);
+            CyberpunkAnimations.animateNumber(document.getElementById('stat4'), 0, 89, 1600);
+        }
+
+        // 进度条动画
+        function animateProgressBar() {
+            const progress = document.getElementById('demoProgress');
+            const text = progress.nextElementSibling;
+            let percent = 0;
+            
+            const interval = setInterval(() => {
+                percent += 2;
+                progress.style.width = percent + '%';
+                text.textContent = percent + '%';
+                
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progress.style.width = '0%';
+                        text.textContent = '0%';
+                    }, 1000);
+                }
+            }, 50);
+        }
+
+        // 能量条充能
+        function chargeEnergy() {
+            const fill = document.getElementById('energyFill');
+            fill.style.width = '0%';
+            fill.style.transition = 'width 2s ease-out';
+            
+            setTimeout(() => {
+                fill.style.width = '100%';
+            }, 100);
+            
+            setTimeout(() => {
+                fill.style.width = '0%';
+            }, 2500);
+        }
+
+        // 页面加载时自动演示
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                CyberpunkAnimations.showNotification('动画系统已加载！', 'success');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

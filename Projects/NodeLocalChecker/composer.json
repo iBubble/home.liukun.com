@@ -1,0 +1,14 @@
+{
+    "name": "nodelocalchecker/app",
+    "description": "节点本地检测工具",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "symfony/yaml": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

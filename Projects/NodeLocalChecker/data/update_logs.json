@@ -1,0 +1,32 @@
+[
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 82,
+            "updated": 142,
+            "unchanged": 0,
+            "total": 224
+        },
+        "created_at": 1770225777
+    },
+    {
+        "source": "test",
+        "stats": {
+            "added": 2,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 2
+        },
+        "created_at": 1770234558
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 174,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 174
+        },
+        "created_at": 1770234804
+    }
+]

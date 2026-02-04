@@ -1,0 +1,3 @@
+https://subs.3f66.net/api/v1/client/subscribe?token=649feaee7a36ca624f31a38d23150377
+https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=972edf1d7b4f830e1605883d9f7b6a75
+https://bestti.whtjdasha.com/api/v1/client/subscribe?token=9bbab9f9bed7c6f919966a36f77368f5

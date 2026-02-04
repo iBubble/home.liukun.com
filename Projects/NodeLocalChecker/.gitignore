@@ -1,0 +1,32 @@
+# 依赖
+/vendor/
+/node_modules/
+
+# 日志
+/logs/*.log
+
+# 临时文件
+*.tmp
+*.cache
+
+# 上传的配置文件
+/yamls/*.yaml
+/yamls/*.yml
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Composer
+composer.lock
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

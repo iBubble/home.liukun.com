@@ -1,0 +1,45 @@
+# 节点本地检测工具 .htaccess 配置
+
+# 启用 Rewrite 引擎
+RewriteEngine On
+
+# 设置默认首页
+DirectoryIndex index.html
+
+# 允许跨域请求
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# PHP 配置
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# 文件类型 MIME
+AddType application/x-yaml .yaml .yml
+
+# 禁止访问敏感文件
+<FilesMatch "^(composer\.(json|lock)|requirements\.txt|\.git.*|\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 启用 Gzip 压缩
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# 缓存控制
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>

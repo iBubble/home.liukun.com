@@ -1,0 +1,2318 @@
+external-controller: 127.0.0.1:9090
+log-level: silent
+mixed-port: 7890
+mode: Rule
+proxies:
+- chatgpt: true
+  liveness: true
+  name: 日本 3号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 24423
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1C
+  network: ws
+  port: 23188
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=9e138628d036d1023aa5dd74bd9ca748
+  tls: false
+  type: vmess
+  udp: true
+  uuid: be856b1c-f805-4778-90a2-3def19eca034
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港3-1B
+  port: 22226
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港1-1B
+  port: 22224
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - sciencedirect.com
+    method: GET
+    path:
+    - /
+  liveness: true
+  name: WESAW 1.5X
+  network: http
+  port: 59010
+  server: 5.160.198.236
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港5-1B
+  port: 22003
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- auth: 42ba8c67-2849-46fd-852a-563973d232c4
+  down: 100
+  liveness: true
+  name: 套餐到期 2026-02-28-1F
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 42ba8c67-2849-46fd-852a-563973d232c4
+  port: 8080
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=576c19bd6de09be71a3dafa156f1e4ac
+  type: hysteria2
+  udp: true
+  up: 100
+- liveness: true
+  name: BACKUP2
+  network: ws
+  port: 1111
+  server: 5.57.32.116
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: false
+  type: vless
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 新加坡2-1A
+  port: 35217
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- client-fingerprint: chrome
+  liveness: true
+  name: JP-日本-1A
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: "2da72ce6"
+  server: 154.31.114.125
+  servername: navi.bankrate.com
+  sub: https://admin.tianmiao.icu/api/v1/client/subscribe?token=96aba8e04764ddf5ec2a2c4128c59251
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6eb60478-9bed-4e02-87aa-a0b26dc5c10b
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 日本1-1B
+  port: 22235
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- liveness: true
+  name: 中国联通节点1
+  password: eaa8bf68-4205-47ca-a7ba-a4b593cf4855
+  port: 5443
+  server: 115.231.220.33
+  skip-cert-verify: true
+  sni: nodecn1.jiayinetwork.es
+  sub: https://www.yywhale.com/api/v1/client/subscribe?token=dad936befada742a57ffa6cd91d8d144
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生4-1A
+  port: 35208
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1E
+  network: ws
+  port: 23188
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=576c19bd6de09be71a3dafa156f1e4ac
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 42ba8c67-2849-46fd-852a-563973d232c4
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 日本2-1B
+  port: 35218
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 台湾 1号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 32221
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- auth: 205b536a-282b-4f33-a83e-d70e23ee1372
+  down: 100
+  liveness: true
+  name: 套餐到期 2026-02-28-1D
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 205b536a-282b-4f33-a83e-d70e23ee1372
+  port: 8080
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=d1e35360ab89ecc9555897d10310e203
+  type: hysteria2
+  udp: true
+  up: 100
+- liveness: true
+  name: ASD
+  password: 8d00ec83-57e9-469d-a14d-fbd659091374
+  port: 222
+  server: 130.49.160.186
+  skip-cert-verify: true
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  type: anytls
+  udp: true
+- alterId: 0
+  cipher: auto
+  grpc-opts:
+    grpc-service-name: /
+  liveness: true
+  name: 韩国-1B
+  network: grpc
+  port: 443
+  server: sk.aoyate.com
+  servername: sk.aoyate.com
+  sub: https://tizi.bulehu.com/api/v1/client/subscribe?token=c74042fc2c9628bcd7526c69e9569778
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 8e43b5dd-a9b5-42e1-9eea-062bd7f8423c
+- liveness: true
+  name: 套餐到期 2026-02-28-1H
+  password: 2b0b46c7-f065-4604-9ae4-f138b5d25496
+  port: 12053
+  server: us1.anliangjifei.top
+  skip-cert-verify: true
+  sub: https://ossnetwork.furclaw.top/furclaw/network/f2bd867627851c03c15786f51961b445
+  type: anytls
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 台湾 1号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 22231
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 德国1-1A
+  port: 22230
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- liveness: true
+  name: 台湾高速节点
+  password: eaa8bf68-4205-47ca-a7ba-a4b593cf4855
+  port: 443
+  server: 103.137.63.77
+  skip-cert-verify: true
+  sni: node1.yuntongclouds.com
+  sub: https://www.yywhale.com/api/v1/client/subscribe?token=dad936befada742a57ffa6cd91d8d144
+  type: trojan
+  udp: true
+- auth: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  down: 2
+  liveness: true
+  name: 套餐到期 2026-02-28-1A
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  port: 8080
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=518891bccdbd1ec2f94c2907ab72219e
+  type: hysteria2
+  udp: true
+  up: 2
+- chatgpt: true
+  liveness: true
+  name: 日本 2号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 24422
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 日本 2号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 34422
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 邮箱-1A
+  network: ws
+  port: 27126
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=518891bccdbd1ec2f94c2907ab72219e
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 加拿大1-1A
+  port: 22236
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- chatgpt: true
+  liveness: true
+  name: 香港 3号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 21103
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 美国 2号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 25502
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- cipher: aes-256-gcm
+  liveness: true
+  name: KR-IDC-节点1-1B
+  password: 6799a8ba-2970-4d87-9391-669de459cbea
+  port: 30000
+  server: 146.56.132.194
+  sub: https://xbd.iftballs.com/api/v1/client/subscribe?token=8676a99c629cdccc53a07845fbd05caa
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 故障报修邮箱-1A
+  network: ws
+  port: 26125
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=518891bccdbd1ec2f94c2907ab72219e
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  ws-opts:
+    path: /
+- chatgpt: true
+  liveness: true
+  name: 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 23311
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 台湾2-1B
+  port: 35224
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 香港 4号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 31114
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1B
+  network: ws
+  port: 23188
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=5a2ec224975aafd64d06417b34b560ef
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  ws-opts:
+    path: /
+- chatgpt: true
+  liveness: true
+  name: 美国 1号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 35501
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 2号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 21102
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 台湾 1号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 32221
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港6-1A
+  port: 35214
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 故障报修邮箱-1F
+  network: ws
+  port: 26125
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=7cdf26a2110589521d25d84dd645e74e
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  ws-opts:
+    path: /
+- liveness: true
+  name: PC端如无法使用请点-TUN-视频体验-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 443
+  server: cdnfire.xiaomispeed.com
+  sni: cdntwa.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- cipher: aes-256-gcm
+  liveness: true
+  name: KR-IDC-节点2-1A
+  password: e648b17d-8783-464e-9a73-b371597baf8e
+  port: 30001
+  server: 146.56.132.194
+  sub: https://xbd.iftballs.com/api/v1/client/subscribe?token=d20f656ded067a7141f174814fe52697
+  type: ss
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 4号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 21115
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  liveness: true
+  name: 北美高速-1A
+  network: tcp
+  port: 10001
+  reality-opts:
+    public-key: T-5Ud3XMnRKHZ_iDiDh1DA-LcsMd_3j-fmD4OjUVgC4
+  server: 1002.952326.xyz
+  servername: www.python.org
+  sub: https://sub.kingfisher.top/s/5bbe5b20f0929891f7039ae42fc33573
+  tls: true
+  type: vless
+  udp: true
+  uuid: 94da93ac-4ce5-4196-94d9-257d64b56054
+- client-fingerprint: chrome
+  liveness: true
+  name: US-美国-1B
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: "2da72ce6"
+  server: 136.175.178.165
+  servername: navi.bankrate.com
+  sub: https://admin.tianmiao.icu/api/v1/client/subscribe?token=d0e49aed6f382ad386c848bd953b9752
+  tls: true
+  type: vless
+  udp: true
+  uuid: c4ca59ae-b1a6-4479-9c48-fe2960d3e81e
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港6-1B
+  port: 35214
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 邮箱-1B
+  network: ws
+  port: 27126
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=5a2ec224975aafd64d06417b34b560ef
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生4-1B
+  port: 35208
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 日本 3号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 24423
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 1号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 31101
+  server: green2.cdntencentmusic.com
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 邮箱-1D
+  network: ws
+  port: 27126
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=d1e35360ab89ecc9555897d10310e203
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 205b536a-282b-4f33-a83e-d70e23ee1372
+  ws-opts:
+    path: /
+- client-fingerprint: chrome
+  liveness: true
+  name: US-美国-1A
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: "2da72ce6"
+  server: 136.175.178.165
+  servername: navi.bankrate.com
+  sub: https://admin.tianmiao.icu/api/v1/client/subscribe?token=96aba8e04764ddf5ec2a2c4128c59251
+  tls: true
+  type: vless
+  udp: true
+  uuid: 6eb60478-9bed-4e02-87aa-a0b26dc5c10b
+- auth: 02b7a5b4-c8af-4817-97c1-82943e5d1e7f
+  liveness: true
+  name: 北美IPLC专线-1B
+  obfs: salamander
+  obfs-password: VAYpRqMdlHDFG7EA
+  password: 02b7a5b4-c8af-4817-97c1-82943e5d1e7f
+  port: 10000
+  server: 1002.952326.xyz
+  skip-cert-verify: false
+  sni: 1002.kingfisher.us.kg
+  sub: https://sub.kingfisher.top/s/fb3d5edccae0f02b88a29e2336c92301
+  type: hysteria2
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 日本 1号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 24421
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1D
+  network: ws
+  port: 23188
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=d1e35360ab89ecc9555897d10310e203
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 205b536a-282b-4f33-a83e-d70e23ee1372
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生2-1B
+  port: 35209
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 日本 2号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 34422
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港4-1B
+  port: 35213
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- cipher: aes-256-gcm
+  liveness: true
+  name: KR-IDC-节点2-1B
+  password: 6799a8ba-2970-4d87-9391-669de459cbea
+  port: 30001
+  server: 146.56.132.194
+  sub: https://xbd.iftballs.com/api/v1/client/subscribe?token=8676a99c629cdccc53a07845fbd05caa
+  type: ss
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 日本 1号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 34421
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 印度2-1B
+  port: 35223
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- auth: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  down: 2
+  liveness: true
+  name: 德国-法兰克福-HY-002-1B
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  port: 8443
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=5a2ec224975aafd64d06417b34b560ef
+  type: hysteria2
+  udp: true
+  up: 2
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生2-1A
+  port: 35209
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- auth: afd9f7cc-8acf-4b51-88a7-8cce083402b7
+  down: 500
+  liveness: true
+  name: 美国B 01-1A
+  password: afd9f7cc-8acf-4b51-88a7-8cce083402b7
+  port: 51565
+  ports: 50000-55000
+  server: us2.anliangjifei.top
+  skip-cert-verify: true
+  sni: apps.apple.com
+  sub: https://ossnetwork.furclaw.top/furclaw/network/48e1f8256ffc403e948eafe8ea9ee5bf
+  type: hysteria2
+  udp: true
+  up: 200
+- chatgpt: true
+  liveness: true
+  name: 美国 1号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 25501
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 台湾 1号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 22231
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- liveness: true
+  name: 套餐到期 2026-02-28-1E
+  password: afd9f7cc-8acf-4b51-88a7-8cce083402b7
+  port: 12053
+  server: us1.anliangjifei.top
+  skip-cert-verify: true
+  sub: https://ossnetwork.furclaw.top/furclaw/network/48e1f8256ffc403e948eafe8ea9ee5bf
+  type: anytls
+  udp: true
+- auth: 94da93ac-4ce5-4196-94d9-257d64b56054
+  liveness: true
+  name: 北美IPLC专线-1A
+  obfs: salamander
+  obfs-password: VAYpRqMdlHDFG7EA
+  password: 94da93ac-4ce5-4196-94d9-257d64b56054
+  port: 10000
+  server: 1002.952326.xyz
+  skip-cert-verify: false
+  sni: 1002.kingfisher.us.kg
+  sub: https://sub.kingfisher.top/s/5bbe5b20f0929891f7039ae42fc33573
+  type: hysteria2
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生1-1A
+  port: 22000
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 邮箱-1F
+  network: ws
+  port: 27126
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=7cdf26a2110589521d25d84dd645e74e
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  ws-opts:
+    path: /
+- auth: 42ba8c67-2849-46fd-852a-563973d232c4
+  down: 100
+  liveness: true
+  name: 德国-法兰克福-HY-002-1E
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 42ba8c67-2849-46fd-852a-563973d232c4
+  port: 8443
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=576c19bd6de09be71a3dafa156f1e4ac
+  type: hysteria2
+  udp: true
+  up: 100
+- alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - adsl.tci.ir
+    method: GET
+    path:
+    - /
+  liveness: true
+  name: TUNNEL 4 1.5X
+  network: http
+  port: 35000
+  server: 5.160.198.236
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+- chatgpt: true
+  liveness: true
+  name: 美国 1号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 25501
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 美国 2号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 35502
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 德国2-1A
+  port: 35222
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- auth: 205b536a-282b-4f33-a83e-d70e23ee1372
+  down: 100
+  liveness: true
+  name: 德国-法兰克福-HY-002-1D
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 205b536a-282b-4f33-a83e-d70e23ee1372
+  port: 8443
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=d1e35360ab89ecc9555897d10310e203
+  type: hysteria2
+  udp: true
+  up: 100
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 故障报修邮箱-1E
+  network: ws
+  port: 26125
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=576c19bd6de09be71a3dafa156f1e4ac
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 42ba8c67-2849-46fd-852a-563973d232c4
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 故障报修邮箱-1D
+  network: ws
+  port: 26125
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=d1e35360ab89ecc9555897d10310e203
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 205b536a-282b-4f33-a83e-d70e23ee1372
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 德国1-1B
+  port: 22230
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 日本 2号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 24422
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: JP-IDC-NODE1-1A
+  network: ws
+  port: 30003
+  server: 146.56.132.194
+  servername: net.iftballs.com
+  sub: https://xbd.iftballs.com/api/v1/client/subscribe?token=d20f656ded067a7141f174814fe52697
+  tls: true
+  type: vmess
+  udp: true
+  uuid: e648b17d-8783-464e-9a73-b371597baf8e
+  ws-opts:
+    path: /ips30003
+- chatgpt: true
+  liveness: true
+  name: 日本 1号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 24421
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 澳大利亚1-1A
+  port: 22237
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- cipher: chacha20-ietf-poly1305
+  liveness: true
+  name: PC端如无法使用请点-TUN-视频体验-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 28888
+  server: 120.241.40.34
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 德国2-1B
+  port: 35222
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 香港 1号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 21101
+  server: cdnfire.xiaomispeed.com
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港2-1A
+  port: 35212
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- chatgpt: true
+  liveness: true
+  name: 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 33311
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- auth: be856b1c-f805-4778-90a2-3def19eca034
+  down: 100
+  liveness: true
+  name: 德国-法兰克福-HY-002-1C
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: be856b1c-f805-4778-90a2-3def19eca034
+  port: 8443
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=9e138628d036d1023aa5dd74bd9ca748
+  type: hysteria2
+  udp: true
+  up: 100
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港1-1A
+  port: 22224
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 印度2-1A
+  port: 35223
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- chatgpt: true
+  liveness: true
+  name: 香港 1号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 21101
+  server: cdnfire.xiaomispeed.com
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- client-fingerprint: chrome
+  liveness: true
+  name: JP-日本-1B
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: "2da72ce6"
+  server: 154.31.114.125
+  servername: navi.bankrate.com
+  sub: https://admin.tianmiao.icu/api/v1/client/subscribe?token=d0e49aed6f382ad386c848bd953b9752
+  tls: true
+  type: vless
+  udp: true
+  uuid: c4ca59ae-b1a6-4479-9c48-fe2960d3e81e
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港5-1A
+  port: 22003
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 日本2-1A
+  port: 35218
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 澳大利亚2-1B
+  port: 35220
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- liveness: true
+  name: 美国高速节点1
+  password: eaa8bf68-4205-47ca-a7ba-a4b593cf4855
+  port: 1443
+  server: 144.34.178.66
+  skip-cert-verify: true
+  sni: node4.yuntongclouds.com
+  sub: https://www.yywhale.com/api/v1/client/subscribe?token=dad936befada742a57ffa6cd91d8d144
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 美国 2号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 35502
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 3号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 31103
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- auth: 8d00ec83-57e9-469d-a14d-fbd659091374
+  liveness: true
+  name: HY2MCI
+  obfs: salamander
+  obfs-password: vHVB8uSyzTRbV5k3
+  password: 8d00ec83-57e9-469d-a14d-fbd659091374
+  port: 81
+  server: 130.49.160.186
+  skip-cert-verify: true
+  sni: mymci.justfarazmand.ir
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  type: hysteria2
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: JP-IDC-NODE1-1B
+  network: ws
+  port: 30003
+  server: 146.56.132.194
+  servername: net.iftballs.com
+  sub: https://xbd.iftballs.com/api/v1/client/subscribe?token=8676a99c629cdccc53a07845fbd05caa
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 6799a8ba-2970-4d87-9391-669de459cbea
+  ws-opts:
+    path: /ips30003
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 台湾1-1B
+  port: 22240
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 香港 2号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 21102
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - sciencedirect.com
+    method: GET
+    path:
+    - /
+  liveness: true
+  name: WESAW
+  network: http
+  port: 8444
+  server: 82.22.40.45
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+- liveness: true
+  name: TUNNEL2 1.5X
+  network: ws
+  port: 100
+  server: 5.160.198.236
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: false
+  type: vless
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+  ws-opts:
+    path: /
+- auth: be856b1c-f805-4778-90a2-3def19eca034
+  down: 100
+  liveness: true
+  name: 套餐到期 2026-02-28-1C
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: be856b1c-f805-4778-90a2-3def19eca034
+  port: 8080
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=9e138628d036d1023aa5dd74bd9ca748
+  type: hysteria2
+  udp: true
+  up: 100
+- alterId: 0
+  cipher: auto
+  grpc-opts:
+    grpc-service-name: /
+  liveness: true
+  name: 韩国-1A
+  network: grpc
+  port: 443
+  server: sk.aoyate.com
+  servername: sk.aoyate.com
+  sub: https://tizi.bulehu.com/api/v1/client/subscribe?token=9382858ac2a8de682f1e44cccd4ed772
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 018d4817-094e-4e77-b3d4-3de7008cbed9
+- chatgpt: true
+  liveness: true
+  name: 日本 3号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 34423
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- liveness: true
+  name: 台湾高速节点2
+  password: eaa8bf68-4205-47ca-a7ba-a4b593cf4855
+  port: 443
+  server: 118.232.199.29
+  skip-cert-verify: true
+  sni: node2.yuntongclouds.com
+  sub: https://www.yywhale.com/api/v1/client/subscribe?token=dad936befada742a57ffa6cd91d8d144
+  type: trojan
+  udp: true
+- auth: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  down: 2
+  liveness: true
+  name: 德国-法兰克福-HY-002-1A
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  port: 8443
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=518891bccdbd1ec2f94c2907ab72219e
+  type: hysteria2
+  udp: true
+  up: 2
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1A
+  network: ws
+  port: 23188
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=518891bccdbd1ec2f94c2907ab72219e
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 44ffce45-4e8c-464e-be9c-0d58ea4d6b48
+  ws-opts:
+    path: /
+- cipher: chacha20-ietf-poly1305
+  liveness: true
+  name: PC端如无法使用请点-TUN-视频体验-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 28888
+  server: 120.241.40.34
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: ss
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 3号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 21103
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- cipher: aes-256-gcm
+  liveness: true
+  name: KR-IDC-节点1-1A
+  password: e648b17d-8783-464e-9a73-b371597baf8e
+  port: 30000
+  server: 146.56.132.194
+  sub: https://xbd.iftballs.com/api/v1/client/subscribe?token=d20f656ded067a7141f174814fe52697
+  type: ss
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 33311
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港2-1B
+  port: 35212
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - sciencedirect.com
+    method: GET
+    path:
+    - /fdgdfgdsfg
+  liveness: true
+  name: MCI
+  network: http
+  port: 100
+  server: 130.49.160.186
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+- client-fingerprint: edge
+  flow: xtls-rprx-vision
+  liveness: true
+  name: 北美高速-1B
+  network: tcp
+  port: 10001
+  reality-opts:
+    public-key: T-5Ud3XMnRKHZ_iDiDh1DA-LcsMd_3j-fmD4OjUVgC4
+  server: 1002.952326.xyz
+  servername: www.python.org
+  sub: https://sub.kingfisher.top/s/fb3d5edccae0f02b88a29e2336c92301
+  tls: true
+  type: vless
+  udp: true
+  uuid: 02b7a5b4-c8af-4817-97c1-82943e5d1e7f
+- chatgpt: true
+  liveness: true
+  name: 香港 2号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 31102
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 加拿大2-1A
+  port: 35216
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港3-1A
+  port: 22226
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 新加坡2-1B
+  port: 35217
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 香港 4号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 21115
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 美国 2号线 NETFLIX等流媒体解锁 解锁-1A
+  password: 118c0fac-9ea8-476f-88b3-bd4c2f127a5c
+  port: 25502
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=6dfe2202d3ea2e8623ad315006a524b0
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 3号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 31103
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- chatgpt: true
+  liveness: true
+  name: 香港 4号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 31114
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 日本1-1A
+  port: 22235
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- chatgpt: true
+  liveness: true
+  name: 香港 1号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 31101
+  server: green2.cdntencentmusic.com
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- auth: 8d00ec83-57e9-469d-a14d-fbd659091374
+  liveness: true
+  name: HY2-OBFS
+  obfs: salamander
+  obfs-password: F45Hjsv4Hnvewei6
+  password: 8d00ec83-57e9-469d-a14d-fbd659091374
+  port: 82
+  server: 82.22.40.45
+  skip-cert-verify: true
+  sni: hcloud.justfarazmand.ir
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  type: hysteria2
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 2XIEPL专线 香港4-1A
+  port: 35213
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 澳大利亚1-1B
+  port: 22237
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 印度1-1A
+  port: 22238
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 故障报修邮箱-1C
+  network: ws
+  port: 26125
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=9e138628d036d1023aa5dd74bd9ca748
+  tls: false
+  type: vmess
+  udp: true
+  uuid: be856b1c-f805-4778-90a2-3def19eca034
+  ws-opts:
+    path: /
+- chatgpt: true
+  liveness: true
+  name: 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 23311
+  server: cdnfire.xiaomispeed.com
+  skip-cert-verify: true
+  sni: cdnfire.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- auth: afd9f7cc-8acf-4b51-88a7-8cce083402b7
+  down: 500
+  liveness: true
+  name: 美国B 02-1A
+  password: afd9f7cc-8acf-4b51-88a7-8cce083402b7
+  port: 52515
+  ports: 50000-55000
+  server: us2.anliangjifei.top
+  skip-cert-verify: true
+  sni: apps.apple.com
+  sub: https://ossnetwork.furclaw.top/furclaw/network/48e1f8256ffc403e948eafe8ea9ee5bf
+  type: hysteria2
+  udp: true
+  up: 200
+- liveness: true
+  name: PC端如无法使用请点-TUN-视频体验-1B
+  password: 5b026192-c6e0-471b-83f4-17e6203faa4e
+  port: 443
+  server: cdnfire.xiaomispeed.com
+  sni: cdntwa.xiaomispeed.com
+  sub: http://tinnyrick8888.com/api/v1/client/subscribe?token=15ad1f8d43322af2de27e147f16724c8
+  type: trojan
+  udp: true
+- auth: 2b0b46c7-f065-4604-9ae4-f138b5d25496
+  down: 500
+  liveness: true
+  name: 美国B 01-1B
+  password: 2b0b46c7-f065-4604-9ae4-f138b5d25496
+  port: 52429
+  ports: 50000-55000
+  server: us2.anliangjifei.top
+  skip-cert-verify: true
+  sni: apps.apple.com
+  sub: https://ossnetwork.furclaw.top/furclaw/network/f2bd867627851c03c15786f51961b445
+  type: hysteria2
+  udp: true
+  up: 200
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 故障报修邮箱-1B
+  network: ws
+  port: 26125
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=5a2ec224975aafd64d06417b34b560ef
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生3-1B
+  port: 22002
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- chatgpt: true
+  liveness: true
+  name: 香港 2号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 31102
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 新加坡1-1A
+  port: 22231
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- liveness: true
+  name: NJ-FWY
+  password: c252cf64-3738-408e-9768-a574654226b2
+  port: 443
+  server: empty.node
+  skip-cert-verify: false
+  sni: empty.node
+  sub: https://multiserver.multiserveradelshoop.com/api/v1/client/subscribe?token=78f4f2c1c68244441f283102291e6eb6
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生3-1A
+  port: 22002
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- chatgpt: true
+  liveness: true
+  name: 日本 3号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 34423
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- client-fingerprint: ios
+  liveness: true
+  name: WESAW2 1.5X
+  network: tcp
+  port: 59011
+  reality-opts:
+    public-key: ldeBt3CVItG2OqYKAbtNNV7INDe24y_TNSlqQnrMk2M
+    short-id: "bd12f062"
+  server: 5.160.198.236
+  servername: refersion.com
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  tls: true
+  type: vless
+  udp: true
+  uuid: 8d00ec83-57e9-469d-a14d-fbd659091374
+- auth: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  down: 2
+  liveness: true
+  name: 套餐到期 2026-02-28-1G
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  port: 8080
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=7cdf26a2110589521d25d84dd645e74e
+  type: hysteria2
+  udp: true
+  up: 2
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 印度1-1B
+  port: 22238
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 加拿大1-1B
+  port: 22236
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- liveness: true
+  name: 台湾高速节点3
+  password: eaa8bf68-4205-47ca-a7ba-a4b593cf4855
+  port: 443
+  server: 118.232.199.14
+  skip-cert-verify: true
+  sni: node3.yuntongclouds.com
+  sub: https://www.yywhale.com/api/v1/client/subscribe?token=dad936befada742a57ffa6cd91d8d144
+  type: trojan
+  udp: true
+- auth: 2b0b46c7-f065-4604-9ae4-f138b5d25496
+  down: 500
+  liveness: true
+  name: 美国B 02-1B
+  password: 2b0b46c7-f065-4604-9ae4-f138b5d25496
+  port: 53625
+  ports: 50000-55000
+  server: us2.anliangjifei.top
+  skip-cert-verify: true
+  sni: apps.apple.com
+  sub: https://ossnetwork.furclaw.top/furclaw/network/f2bd867627851c03c15786f51961b445
+  type: hysteria2
+  udp: true
+  up: 200
+- auth: 8d00ec83-57e9-469d-a14d-fbd659091374
+  liveness: true
+  name: HY2
+  password: 8d00ec83-57e9-469d-a14d-fbd659091374
+  port: 81
+  server: 45.144.50.13
+  skip-cert-verify: true
+  sni: hcloud.justfarazmand.ir
+  sub: https://de.justfarazmand.ir/s/0e992ce20dffd16e4e1130f4a0a9458f
+  type: hysteria2
+  udp: true
+- auth: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  down: 2
+  liveness: true
+  name: 德国-法兰克福-HY-002-1F
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  port: 8443
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=7cdf26a2110589521d25d84dd645e74e
+  type: hysteria2
+  udp: true
+  up: 2
+- chatgpt: true
+  liveness: true
+  name: 日本 1号线 NETFLIX等流媒体解锁 解锁-1C
+  password: 8043dffa-f7a9-4661-a114-4485b5c8dda2
+  port: 34421
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=c4f9d0d599a9cd16a065aec920768c0e
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 台湾1-1A
+  port: 22240
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 美国原生1-1B
+  port: 22000
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1F
+  network: ws
+  port: 23188
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=7cdf26a2110589521d25d84dd645e74e
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 5dbe11f1-aa5e-4e45-8d6d-54ca13e175a6
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 加拿大2-1B
+  port: 35216
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 澳大利亚2-1A
+  port: 35220
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- auth: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  down: 2
+  liveness: true
+  name: 套餐到期 2026-02-28-1B
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  password: e67ff077-aed8-4993-ae11-fa1507c9b18d
+  port: 8080
+  server: 85.209.53.178
+  skip-cert-verify: true
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=5a2ec224975aafd64d06417b34b560ef
+  type: hysteria2
+  udp: true
+  up: 2
+- chatgpt: true
+  liveness: true
+  name: 美国 1号线 NETFLIX等流媒体解锁 解锁-1D
+  password: b278b533-febc-4e7c-8269-35bbbe8d4981
+  port: 35501
+  server: green2.cdntencentmusic.com
+  skip-cert-verify: true
+  sni: green2.cdntencentmusic.com
+  sub: https://xstar8888.com/api/v1/client/subscribe?token=b00890593fbec0d76e40f78797e4f3f7
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 邮箱-1E
+  network: ws
+  port: 27126
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=576c19bd6de09be71a3dafa156f1e4ac
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 42ba8c67-2849-46fd-852a-563973d232c4
+  ws-opts:
+    path: /
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 台湾2-1A
+  port: 35224
+  server: dzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=6e5634de9f8e807cd629fb6d1d6bb0d4
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 88d97704-8d71-45e8-9e50-f06c3e6d9a0a
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 1.5XIEPL专线 新加坡1-1B
+  port: 22231
+  server: jzgz.tcity8.monster
+  sub: http://8.209.231.35:6868/api/v1/client/subscribe?token=cce9e7e26cbf097dc24ec8482b69f38f
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 9339c554-7228-4f57-9a6b-574d7295827d
+- alterId: 0
+  cipher: auto
+  liveness: true
+  name: 邮箱-1C
+  network: ws
+  port: 27126
+  server: 91.149.236.68
+  sub: https://ttxdb.louwangzhiyu.website/api/v1/client/subscribe?token=9e138628d036d1023aa5dd74bd9ca748
+  tls: false
+  type: vmess
+  udp: true
+  uuid: be856b1c-f805-4778-90a2-3def19eca034
+  ws-opts:
+    path: /
+proxy-groups:
+- interval: 300
+  name: automatic
+  proxies:
+  - BACKUP2
+  - 1.5XIEPL专线 澳大利亚2-1B
+  - KR-IDC-节点1-1B
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 美国原生4-1B
+  - 故障报修邮箱-1A
+  - 邮箱-1A
+  - 故障报修邮箱-1F
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - KR-IDC-节点1-1A
+  - 韩国-1A
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - NJ-FWY
+  - JP-日本-1B
+  - 1.5XIEPL专线 新加坡1-1B
+  - 1.5XIEPL专线 台湾2-1B
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1D
+  - 故障报修邮箱-1B
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1C
+  - WESAW 1.5X
+  - 套餐到期 2026-02-28-1E
+  - 德国-法兰克福-HY-002-1B
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1A
+  - 1.5XIEPL专线 加拿大2-1A
+  - 北美IPLC专线-1B
+  - 邮箱-1E
+  - 2XIEPL专线 日本2-1B
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 2XIEPL专线 日本2-1A
+  - PC端如无法使用请点-TUN-视频体验-1C
+  - 套餐到期 2026-02-28-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 德国1-1B
+  - 美国B 01-1A
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 2XIEPL专线 香港5-1A
+  - 2XIEPL专线 香港6-1A
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1C
+  - 邮箱-1F
+  - 台湾高速节点3
+  - 1.5XIEPL专线 澳大利亚1-1A
+  - 美国B 01-1B
+  - 1.5XIEPL专线 台湾2-1A
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1B
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 美国原生2-1B
+  - 1.5XIEPL专线 美国原生1-1B
+  - 2XIEPL专线 日本1-1B
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 德国2-1B
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - 套餐到期 2026-02-28-1G
+  - 1.5XIEPL专线 新加坡2-1B
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1B
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 美国原生3-1A
+  - 德国-法兰克福-HY-002-1E
+  - WESAW2 1.5X
+  - 1.5XIEPL专线 印度2-1B
+  - 2XIEPL专线 香港2-1B
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1A
+  - 中国联通节点1
+  - US-美国-1A
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1B
+  - 套餐到期 2026-02-28-1D
+  - 2XIEPL专线 香港6-1B
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - TUNNEL 4 1.5X
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1A
+  - KR-IDC-节点2-1B
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1A
+  - 1.5XIEPL专线 德国1-1A
+  - 韩国-1B
+  - JP-日本-1A
+  - 故障报修邮箱-1C
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 加拿大2-1B
+  - 1.5XIEPL专线 印度2-1A
+  - 2XIEPL专线 香港3-1B
+  - 1.5XIEPL专线 美国原生2-1A
+  - PC端如无法使用请点-TUN-视频体验-1B
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1A
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - PC端如无法使用请点-TUN-视频体验-1D
+  - US-美国-1B
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 北美IPLC专线-1A
+  - 德国-法兰克福-HY-002-1A
+  - 1.5XIEPL专线 德国2-1A
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 套餐到期 2026-02-28-1F
+  - 1.5XIEPL专线 加拿大1-1A
+  - 1.5XIEPL专线 澳大利亚2-1A
+  - 1.5XIEPL专线 印度1-1B
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1C
+  - 1.5XIEPL专线 澳大利亚1-1B
+  - 台湾高速节点
+  - 套餐到期 2026-02-28-1B
+  - KR-IDC-节点2-1A
+  - 美国B 02-1B
+  - HY2MCI
+  - 2XIEPL专线 香港1-1A
+  - WESAW
+  - 故障报修邮箱-1E
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1B
+  - 德国-法兰克福-HY-002-1D
+  - 套餐到期 2026-02-28-1C
+  - 德国-法兰克福-HY-002-1C
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1A
+  - 2XIEPL专线 香港1-1B
+  - 2XIEPL专线 香港5-1B
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1C
+  - MCI
+  - HY2
+  - JP-IDC-NODE1-1B
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1E
+  - 故障报修邮箱-1D
+  - 邮箱-1B
+  - 2XIEPL专线 香港2-1A
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 1.5XIEPL专线 新加坡2-1A
+  - PC端如无法使用请点-TUN-视频体验-1A
+  - 1.5XIEPL专线 美国原生3-1B
+  - 北美高速-1B
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1D
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1F
+  - ASD
+  - 1.5XIEPL专线 印度1-1A
+  - TUNNEL2 1.5X
+  - 2XIEPL专线 香港3-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1C
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1C
+  - 台湾高速节点2
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 美国原生4-1A
+  - 北美高速-1A
+  - 1.5XIEPL专线 台湾1-1B
+  - 2XIEPL专线 香港4-1A
+  - 美国B 02-1A
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 新加坡1-1A
+  - 邮箱-1D
+  - 1.5XIEPL专线 美国原生1-1A
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1D
+  - 德国-法兰克福-HY-002-1F
+  - JP-IDC-NODE1-1A
+  - 1.5XIEPL专线 加拿大1-1B
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 1.5XIEPL专线 台湾1-1A
+  - 2XIEPL专线 香港4-1B
+  - 套餐到期 2026-02-28-1H
+  - 邮箱-1C
+  - 美国高速节点1
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1C
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1A
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1D
+  - 2XIEPL专线 日本1-1A
+  - HY2-OBFS
+  type: url-test
+  url: https://www.google.com/favicon.ico
+- name: 🌐 Proxy
+  proxies:
+  - automatic
+  - BACKUP2
+  - 1.5XIEPL专线 澳大利亚2-1B
+  - KR-IDC-节点1-1B
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 美国原生4-1B
+  - 故障报修邮箱-1A
+  - 邮箱-1A
+  - 故障报修邮箱-1F
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - KR-IDC-节点1-1A
+  - 韩国-1A
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - NJ-FWY
+  - JP-日本-1B
+  - 1.5XIEPL专线 新加坡1-1B
+  - 1.5XIEPL专线 台湾2-1B
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1D
+  - 故障报修邮箱-1B
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1C
+  - WESAW 1.5X
+  - 套餐到期 2026-02-28-1E
+  - 德国-法兰克福-HY-002-1B
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1A
+  - 1.5XIEPL专线 加拿大2-1A
+  - 北美IPLC专线-1B
+  - 邮箱-1E
+  - 2XIEPL专线 日本2-1B
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 2XIEPL专线 日本2-1A
+  - PC端如无法使用请点-TUN-视频体验-1C
+  - 套餐到期 2026-02-28-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 德国1-1B
+  - 美国B 01-1A
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 2XIEPL专线 香港5-1A
+  - 2XIEPL专线 香港6-1A
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1C
+  - 邮箱-1F
+  - 台湾高速节点3
+  - 1.5XIEPL专线 澳大利亚1-1A
+  - 美国B 01-1B
+  - 1.5XIEPL专线 台湾2-1A
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1B
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 美国原生2-1B
+  - 1.5XIEPL专线 美国原生1-1B
+  - 2XIEPL专线 日本1-1B
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 德国2-1B
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - 套餐到期 2026-02-28-1G
+  - 1.5XIEPL专线 新加坡2-1B
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1B
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 美国原生3-1A
+  - 德国-法兰克福-HY-002-1E
+  - WESAW2 1.5X
+  - 1.5XIEPL专线 印度2-1B
+  - 2XIEPL专线 香港2-1B
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1A
+  - 中国联通节点1
+  - US-美国-1A
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1B
+  - 套餐到期 2026-02-28-1D
+  - 2XIEPL专线 香港6-1B
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - TUNNEL 4 1.5X
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1A
+  - KR-IDC-节点2-1B
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1A
+  - 1.5XIEPL专线 德国1-1A
+  - 韩国-1B
+  - JP-日本-1A
+  - 故障报修邮箱-1C
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 新加坡 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 加拿大2-1B
+  - 1.5XIEPL专线 印度2-1A
+  - 2XIEPL专线 香港3-1B
+  - 1.5XIEPL专线 美国原生2-1A
+  - PC端如无法使用请点-TUN-视频体验-1B
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1A
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - PC端如无法使用请点-TUN-视频体验-1D
+  - US-美国-1B
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1A
+  - 北美IPLC专线-1A
+  - 德国-法兰克福-HY-002-1A
+  - 1.5XIEPL专线 德国2-1A
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 套餐到期 2026-02-28-1F
+  - 1.5XIEPL专线 加拿大1-1A
+  - 1.5XIEPL专线 澳大利亚2-1A
+  - 1.5XIEPL专线 印度1-1B
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1C
+  - 1.5XIEPL专线 澳大利亚1-1B
+  - 台湾高速节点
+  - 套餐到期 2026-02-28-1B
+  - KR-IDC-节点2-1A
+  - 美国B 02-1B
+  - HY2MCI
+  - 2XIEPL专线 香港1-1A
+  - WESAW
+  - 故障报修邮箱-1E
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1B
+  - 德国-法兰克福-HY-002-1D
+  - 套餐到期 2026-02-28-1C
+  - 德国-法兰克福-HY-002-1C
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1A
+  - 2XIEPL专线 香港1-1B
+  - 2XIEPL专线 香港5-1B
+  - 台湾 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 香港 2号线 NETFLIX等流媒体解锁 解锁-1C
+  - MCI
+  - HY2
+  - JP-IDC-NODE1-1B
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1E
+  - 故障报修邮箱-1D
+  - 邮箱-1B
+  - 2XIEPL专线 香港2-1A
+  - 日本 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 1.5XIEPL专线 新加坡2-1A
+  - PC端如无法使用请点-TUN-视频体验-1A
+  - 1.5XIEPL专线 美国原生3-1B
+  - 北美高速-1B
+  - 美国 2号线 NETFLIX等流媒体解锁 解锁-1D
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1F
+  - ASD
+  - 1.5XIEPL专线 印度1-1A
+  - TUNNEL2 1.5X
+  - 2XIEPL专线 香港3-1A
+  - 香港 3号线 NETFLIX等流媒体解锁 解锁-1C
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1C
+  - 台湾高速节点2
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1D
+  - 1.5XIEPL专线 美国原生4-1A
+  - 北美高速-1A
+  - 1.5XIEPL专线 台湾1-1B
+  - 2XIEPL专线 香港4-1A
+  - 美国B 02-1A
+  - 香港 1号线 NETFLIX等流媒体解锁 解锁-1B
+  - 香港 4号线 NETFLIX等流媒体解锁 解锁-1B
+  - 1.5XIEPL专线 新加坡1-1A
+  - 邮箱-1D
+  - 1.5XIEPL专线 美国原生1-1A
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1D
+  - 德国-法兰克福-HY-002-1F
+  - JP-IDC-NODE1-1A
+  - 1.5XIEPL专线 加拿大1-1B
+  - 美国 1号线 NETFLIX等流媒体解锁 解锁-1C
+  - 1.5XIEPL专线 台湾1-1A
+  - 2XIEPL专线 香港4-1B
+  - 套餐到期 2026-02-28-1H
+  - 邮箱-1C
+  - 美国高速节点1
+  - 免费节点目前仅有HYSTERIA2协议 请使用最新版客户端-1C
+  - 日本 3号线 NETFLIX等流媒体解锁 解锁-1A
+  - 日本 2号线 NETFLIX等流媒体解锁 解锁-1D
+  - 2XIEPL专线 日本1-1A
+  - HY2-OBFS
+  type: select
+rules:
+- MATCH,🌐 Proxy
