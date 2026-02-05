@@ -115,33 +115,119 @@ class NodeStorage {
     
     /**
      * 更新检测结果
+     * 使用文件锁防止并发写入导致JSON损坏
      */
     public function updateCheckResult($nodeHash, $result) {
-        $nodes = $this->getAllNodes();
-        $found = false;
+        error_log("[updateCheckResult] 开始更新: $nodeHash");
+        error_log("[updateCheckResult] 结果数据: " . json_encode($result));
         
-        foreach ($nodes as &$node) {
-            if ($node['node_hash'] === $nodeHash) {
-                $node['available'] = $result['available'] ? 1 : 0;
-                $node['latency'] = $result['latency'] ?? null;
-                $node['real_ip'] = $result['real_ip'] ?? null;
-                $node['purity'] = $result['purity'] ?? null;
-                $node['last_check_time'] = time();
-                $node['check_count'] = ($node['check_count'] ?? 0) + 1;
-                if ($result['available']) {
-                    $node['success_count'] = ($node['success_count'] ?? 0) + 1;
-                }
-                $node['updated_at'] = time();
-                $found = true;
+        // 使用文件锁防止并发写入
+        $fp = fopen($this->dataFile, 'r+');
+        if (!$fp) {
+            error_log("[updateCheckResult] ✗ 无法打开文件");
+            return false;
+        }
+        
+        // 获取独占锁(最多等待5秒)
+        $lockAcquired = false;
+        $maxAttempts = 50; // 50次 * 100ms = 5秒
+        for ($i = 0; $i < $maxAttempts; $i++) {
+            if (flock($fp, LOCK_EX | LOCK_NB)) {
+                $lockAcquired = true;
                 break;
             }
+            usleep(100000); // 等待100ms
         }
         
-        if ($found) {
-            file_put_contents($this->dataFile, json_encode($nodes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        if (!$lockAcquired) {
+            error_log("[updateCheckResult] ✗ 无法获取文件锁(超时5秒)");
+            fclose($fp);
+            return false;
         }
         
-        return $found;
+        try {
+            // 读取数据
+            $content = stream_get_contents($fp);
+            if ($content === false) {
+                error_log("[updateCheckResult] ✗ 读取文件失败");
+                return false;
+            }
+            
+            $nodes = json_decode($content, true);
+            if ($nodes === null) {
+                error_log("[updateCheckResult] ✗ JSON解析失败: " . json_last_error_msg());
+                return false;
+            }
+            
+            // 更新节点
+            $found = false;
+            foreach ($nodes as &$node) {
+                if ($node['node_hash'] === $nodeHash) {
+                    error_log("[updateCheckResult] 找到节点: " . $node['name']);
+                    
+                    $node['available'] = $result['available'] ? 1 : 0;
+                    $node['latency'] = $result['latency'] ?? null;
+                    $node['real_ip'] = $result['real_ip'] ?? null;
+                    $node['purity'] = $result['purity'] ?? null;
+                    
+                    // 同时保存ip_purity_score字段,方便前端排序
+                    if (isset($result['purity']['score'])) {
+                        $node['ip_purity_score'] = $result['purity']['score'];
+                    } else {
+                        $node['ip_purity_score'] = null;
+                    }
+                    
+                    $node['last_check_time'] = date('Y-m-d H:i:s');
+                    $node['check_count'] = ($node['check_count'] ?? 0) + 1;
+                    if ($result['available']) {
+                        $node['success_count'] = ($node['success_count'] ?? 0) + 1;
+                    }
+                    $node['updated_at'] = date('Y-m-d H:i:s');
+                    
+                    error_log("[updateCheckResult] 更新后的节点数据: " . json_encode($node));
+                    
+                    $found = true;
+                    break;
+                }
+            }
+            
+            if ($found) {
+                // JSON编码
+                $jsonData = json_encode($nodes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+                if ($jsonData === false) {
+                    error_log("[updateCheckResult] ✗ JSON编码失败: " . json_last_error_msg());
+                    return false;
+                }
+                
+                // 验证JSON可以解码
+                $verify = json_decode($jsonData, true);
+                if ($verify === null) {
+                    error_log("[updateCheckResult] ✗ JSON验证失败");
+                    return false;
+                }
+                
+                // 写入数据
+                rewind($fp);
+                ftruncate($fp, 0);
+                $written = fwrite($fp, $jsonData);
+                
+                if ($written === false) {
+                    error_log("[updateCheckResult] ✗ 写入失败");
+                    return false;
+                }
+                
+                error_log("[updateCheckResult] ✓ 写入成功: $written bytes");
+            } else {
+                error_log("[updateCheckResult] ✗ 未找到节点: $nodeHash");
+            }
+            
+            return $found;
+            
+        } finally {
+            // 释放锁并关闭文件
+            flock($fp, LOCK_UN);
+            fclose($fp);
+        }
     }
     
     /**

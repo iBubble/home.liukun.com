@@ -38,17 +38,30 @@ try {
         'proxies' => []
     ];
 
-    // 添加节点
+    // 添加节点，并确保名称唯一
+    $usedNames = [];
     foreach ($nodes as $node) {
         if (isset($node['raw'])) {
-            $config['proxies'][] = $node['raw'];
+            $rawNode = $node['raw'];
+            $originalName = $rawNode['name'];
+            
+            // 确保节点名称唯一
+            $uniqueName = $originalName;
+            $counter = 1;
+            while (in_array($uniqueName, $usedNames)) {
+                $uniqueName = $originalName . '_' . $counter;
+                $counter++;
+            }
+            
+            $rawNode['name'] = $uniqueName;
+            $usedNames[] = $uniqueName;
+            
+            $config['proxies'][] = $rawNode;
         }
     }
 
-    // 添加代理组
-    $proxyNames = array_map(function($node) {
-        return $node['name'];
-    }, $nodes);
+    // 添加代理组（使用去重后的名称）
+    $proxyNames = $usedNames;
 
     $config['proxy-groups'] = [
         [

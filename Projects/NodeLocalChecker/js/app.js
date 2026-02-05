@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initUpload();
     checkClashStatus();
     loadNodesFromDatabase(); // 从数据库加载节点
-    startAutoRefresh(); // 启动自动刷新
+    // startAutoRefresh(); // 已禁用自动刷新功能
     
     // 添加按钮点击波纹效果
     document.querySelectorAll('button').forEach(button => {
@@ -265,7 +265,9 @@ async function importFromAggregator() {
         
     } catch (error) {
         console.error('导入失败:', error);
-        alert('导入失败: ' + error.message + '\n\n请查看浏览器控制台获取详细信息');
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification(`✗ 导入失败: ${error.message}`, 'error');
+        }
         importBtn.textContent = originalText;
         importBtn.disabled = false;
     } finally {
@@ -276,7 +278,9 @@ async function importFromAggregator() {
 // 处理文件
 async function handleFile(file) {
     if (!file.name.endsWith('.yaml') && !file.name.endsWith('.yml')) {
-        alert('请上传 YAML 格式的配置文件');
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification('请上传 YAML 格式的配置文件', 'warning');
+        }
         return;
     }
 
@@ -329,30 +333,33 @@ async function handleFileContent(file, yamlContent) {
                 await loadNodesFromDatabase();
                 
                 // 显示合并结果
-                const message = `节点合并完成！\n本次导入: ${stats.total} 个\n新增: ${stats.added} 个\n更新: ${stats.updated} 个\n未变: ${stats.unchanged} 个\n\n数据库总计: ${nodes.length} 个节点`;
+                const message = `节点合并完成！本次导入: ${stats.total} 个，新增: ${stats.added} 个，更新: ${stats.updated} 个，未变: ${stats.unchanged} 个。数据库总计: ${nodes.length} 个节点`;
+                
+                console.log(message);
                 
                 if (window.CyberpunkAnimations) {
-                    CyberpunkAnimations.showNotification(`合并完成: +${stats.added} 个新节点`, 'success');
+                    CyberpunkAnimations.showNotification(`✓ 合并完成: +${stats.added} 个新节点`, 'success');
                 }
                 
-                // 询问是否立即开始检测
-                if (confirm(message + '\n\n是否立即开始检测所有节点?')) {
-                    // 自动全选
-                    selectAll();
-                    
-                    // 延迟500ms后开始检测,让用户看到选中效果
-                    setTimeout(() => {
-                        startCheck();
-                    }, 500);
-                }
+                // 自动全选并开始检测
+                selectAll();
+                setTimeout(() => {
+                    startCheck();
+                }, 500);
             } else {
-                alert('合并失败: ' + mergeResult.error);
+                if (window.CyberpunkAnimations) {
+                    CyberpunkAnimations.showNotification(`✗ 合并失败: ${mergeResult.error}`, 'error');
+                }
             }
         } else {
-            alert('解析失败: ' + result.error);
+            if (window.CyberpunkAnimations) {
+                CyberpunkAnimations.showNotification(`✗ 解析失败: ${result.error}`, 'error');
+            }
         }
     } catch (error) {
-        alert('处理失败: ' + error.message);
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification(`✗ 处理失败: ${error.message}`, 'error');
+        }
     } finally {
         hideLoading();
     }
@@ -409,38 +416,58 @@ function displayNodes() {
         let realIpText = '-';
         let purityHtml = '-';
         
-        if (node.last_check_time) {
-            // 有检测历史
-            if (node.available === 1) {
-                statusBadge = `<span class="status-badge status-success" id="status-${originalIndex}">可用</span>`;
-                latencyText = node.latency || '-';
-                realIpText = node.real_ip || '-';
+        // 检查节点是否已检测（available 为 0 或 1）
+        if (node.available === 1) {
+            // 可用节点
+            statusBadge = `<span class="status-badge status-success" id="status-${originalIndex}">可用</span>`;
+            latencyText = node.latency || '-';
+            realIpText = node.real_ip || '-';
+            
+            // 显示IP纯净度
+            if (node.purity && node.purity.score !== undefined) {
+                const score = node.purity.score;
+                const level = node.purity.level;
+                const type = node.purity.type || '未知';
                 
-                // 显示IP纯净度
-                if (node.purity && node.purity.score !== undefined) {
-                    const score = node.purity.score;
-                    const level = node.purity.level;
-                    const type = node.purity.type || '未知';
-                    
-                    let color = '#888';
-                    if (score >= 90) color = '#0f0';
-                    else if (score >= 75) color = '#0ff';
-                    else if (score >= 60) color = '#ff0';
-                    else if (score >= 40) color = '#f80';
-                    else color = '#f00';
-                    
-                    purityHtml = `
-                        <span style="color: ${color}; font-weight: bold;">${score}分</span>
-                        <span style="color: #888; font-size: 11px;"> (${level})</span>
-                        <br>
-                        <span style="color: #888; font-size: 10px;">${type}</span>
-                    `;
-                }
-            } else if (node.available === 0) {
-                statusBadge = `<span class="status-badge status-failed" id="status-${originalIndex}">不可用</span>`;
+                let color = '#888';
+                if (score >= 90) color = '#0f0';
+                else if (score >= 75) color = '#0ff';
+                else if (score >= 60) color = '#ff0';
+                else if (score >= 40) color = '#f80';
+                else color = '#f00';
+                
+                purityHtml = `
+                    <span style="color: ${color}; font-weight: bold;">${score}分</span>
+                    <span style="color: #888; font-size: 11px;"> (${level})</span>
+                    <br>
+                    <span style="color: #888; font-size: 10px;">${type}</span>
+                `;
+            } else if (node.ip_purity_score !== null && node.ip_purity_score !== undefined) {
+                // 兼容旧数据格式
+                const score = node.ip_purity_score;
+                let level = '未知';
+                if (score >= 90) level = '优秀';
+                else if (score >= 75) level = '良好';
+                else if (score >= 60) level = '一般';
+                else level = '较差';
+                
+                let color = '#888';
+                if (score >= 90) color = '#0f0';
+                else if (score >= 75) color = '#0ff';
+                else if (score >= 60) color = '#ff0';
+                else if (score >= 40) color = '#f80';
+                else color = '#f00';
+                
+                purityHtml = `
+                    <span style="color: ${color}; font-weight: bold;">${score}分</span>
+                    <span style="color: #888; font-size: 11px;"> (${level})</span>
+                `;
             }
+        } else if (node.available === 0) {
+            // 不可用节点
+            statusBadge = `<span class="status-badge status-failed" id="status-${originalIndex}">不可用</span>`;
         } else {
-            // 未检测过
+            // 未检测过（available 为 null 或 undefined）
             statusBadge = `<span class="status-badge status-pending" id="status-${originalIndex}">待检测</span>`;
         }
         
@@ -517,7 +544,9 @@ function showStats() {
 // 开始检测选中节点
 async function startCheck() {
     if (checkingInProgress) {
-        alert('检测正在进行中...');
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification('检测正在进行中...', 'warning');
+        }
         return;
     }
 
@@ -528,7 +557,9 @@ async function startCheck() {
     });
 
     if (selectedIndexes.length === 0) {
-        alert('请至少选择一个节点进行检测');
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification('请至少选择一个节点进行检测', 'warning');
+        }
         return;
     }
 
@@ -582,10 +613,20 @@ async function startCheck() {
             let isAvailable = false;
             
             if (result.success) {
-                node.available = result.available;
-                node.latency = result.latency;
-                node.real_ip = result.real_ip;
-                node.purity = result.purity;
+                // 更新 nodes 数组中的数据
+                node.available = result.available ? 1 : 0;
+                node.latency = result.latency || null;
+                node.real_ip = result.real_ip || null;
+                node.last_check_time = new Date().toISOString().slice(0, 19).replace('T', ' ');
+                
+                // 保存纯净度数据
+                if (result.purity && result.purity.score !== undefined) {
+                    node.ip_purity_score = result.purity.score;
+                    node.purity = result.purity;
+                } else {
+                    node.ip_purity_score = null;
+                    node.purity = null;
+                }
 
                 if (result.available) {
                     isAvailable = true;
@@ -594,11 +635,33 @@ async function startCheck() {
                     updateNodeStatus(index, 'failed', '不可用', '-', '-', null);
                 }
                 
-                // 保存检测结果到数据库
-                saveCheckResult(node.node_hash, result);
+                // 保存检测结果到数据库 (等待保存完成)
+                // 只传递必要的字段
+                const saveData = {
+                    available: result.available,
+                    latency: result.latency,
+                    real_ip: result.real_ip,
+                    purity: result.purity
+                };
+                console.log(`[${index}] 准备保存检测结果:`, saveData);
+                const saved = await saveCheckResult(node.node_hash, saveData);
+                console.log(`[${index}] 保存结果: ${saved ? '成功' : '失败'}`);
             } else {
-                node.available = false;
+                // 检测失败也要保存结果
+                node.available = 0;
+                node.last_check_time = new Date().toISOString().slice(0, 19).replace('T', ' ');
                 updateNodeStatus(index, 'failed', '检测失败', '-', '-', null);
+                
+                // 保存失败结果
+                const saveData = {
+                    available: false,
+                    latency: null,
+                    real_ip: null,
+                    purity: null
+                };
+                console.log(`[${index}] 准备保存失败结果:`, saveData);
+                const saved = await saveCheckResult(node.node_hash, saveData);
+                console.log(`[${index}] 保存结果: ${saved ? '成功' : '失败'}`);
             }
             
             console.log(`[${index}] 检测完成: ${node.name} - ${isAvailable ? '可用' : '不可用'}`);
@@ -658,26 +721,73 @@ async function startCheck() {
         sortNodes();
     }
     
-    // 不需要手动启用按钮,updateSelectedCount() 会根据选中状态自动处理
-    alert(`检测完成！\n检测节点: ${totalToCheck}\n可用节点: ${stats.available}\n总耗时: ${duration}秒`);
+    // 显示完成提示 - 使用通知而不是弹窗
+    console.log(`✓ 检测完成！检测: ${totalToCheck}, 可用: ${stats.available}, 耗时: ${duration}秒`);
+    
+    if (window.CyberpunkAnimations) {
+        CyberpunkAnimations.showNotification(
+            `✓ 检测完成: ${stats.available}/${totalToCheck} 可用 (${duration}秒)`,
+            'success'
+        );
+    }
 }
 
-// 保存检测结果到数据库
-async function saveCheckResult(nodeHash, result) {
-    try {
-        await fetch('api/nodes.php?action=update_check', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                node_hash: nodeHash,
-                result: result
-            })
-        });
-    } catch (error) {
-        console.error('保存检测结果失败:', error);
+// 保存检测结果到数据库 (带重试机制)
+async function saveCheckResult(nodeHash, result, retries = 3) {
+    console.log(`[保存] 开始保存检测结果: ${nodeHash}`, result);
+    
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            const response = await fetch('api/nodes.php?action=update_check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    node_hash: nodeHash,
+                    result: result
+                })
+            });
+            
+            // 检查HTTP状态
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            console.log(`[保存] API响应 (尝试${attempt}/${retries}):`, data);
+            
+            if (!data.success) {
+                throw new Error(data.error || data.message || '未知错误');
+            }
+            
+            console.log(`[保存] ✓ 保存成功: ${nodeHash}`);
+            return true;
+            
+        } catch (error) {
+            console.error(`[保存] ✗ 保存失败 (尝试${attempt}/${retries}):`, error.message);
+            
+            if (attempt < retries) {
+                const delay = 1000 * attempt; // 递增延迟: 1s, 2s, 3s
+                console.log(`[保存] 等待${delay}ms后重试...`);
+                await new Promise(r => setTimeout(r, delay));
+            } else {
+                console.error(`[保存] ✗✗✗ 最终失败,已重试${retries}次:`, nodeHash);
+                
+                // 显示用户提示
+                if (window.CyberpunkAnimations) {
+                    CyberpunkAnimations.showNotification(
+                        `节点 ${nodeHash.substring(0, 8)}... 保存失败,请稍后手动保存`,
+                        'error'
+                    );
+                }
+                
+                return false;
+            }
+        }
     }
+    
+    return false;
 }
 
 // 更新节点状态
@@ -771,8 +881,11 @@ function selectNone() {
 
 // 选择可用节点
 function selectAvailable() {
-    document.querySelectorAll('.node-checkbox').forEach((cb, index) => {
-        cb.checked = nodes[index].available === true;
+    document.querySelectorAll('.node-checkbox').forEach(cb => {
+        const index = parseInt(cb.dataset.index);
+        const node = nodes[index];
+        // available 为 1 表示可用
+        cb.checked = node.available === 1;
     });
     updateSelectedCount();
 }
@@ -810,7 +923,9 @@ async function exportSelected() {
     });
 
     if (selectedIndexes.length === 0) {
-        alert('请至少选择一个节点');
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification('请至少选择一个节点', 'warning');
+        }
         return;
     }
 
@@ -835,9 +950,13 @@ async function exportSelected() {
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
 
-        alert('导出成功！');
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification(`✓ 导出成功: ${selectedNodes.length} 个节点`, 'success');
+        }
     } catch (error) {
-        alert('导出失败: ' + error.message);
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification(`✗ 导出失败: ${error.message}`, 'error');
+        }
     }
 }
 
@@ -851,6 +970,47 @@ function escapeHtml(text) {
 function formatDate() {
     const now = new Date();
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
+
+// 批量保存所有已检测的节点
+async function batchSaveCheckResults() {
+    console.log('=== 开始批量保存检测结果 ===');
+    
+    const nodesToSave = nodes.filter(node => 
+        node.available !== null && 
+        node.latency && 
+        node.last_check_time
+    );
+    
+    if (nodesToSave.length === 0) {
+        console.log('没有需要保存的节点');
+        return { success: 0, failed: 0 };
+    }
+    
+    console.log(`找到 ${nodesToSave.length} 个已检测的节点`);
+    
+    let successCount = 0;
+    let failedCount = 0;
+    
+    for (const node of nodesToSave) {
+        const result = {
+            available: node.available === 1,
+            latency: node.latency,
+            real_ip: node.real_ip,
+            purity: node.purity
+        };
+        
+        const saved = await saveCheckResult(node.node_hash, result, 2); // 2次重试
+        if (saved) {
+            successCount++;
+        } else {
+            failedCount++;
+        }
+    }
+    
+    console.log(`批量保存完成: 成功${successCount}, 失败${failedCount}`);
+    
+    return { success: successCount, failed: failedCount };
 }
 
 function showLoading(message) {
@@ -1032,6 +1192,40 @@ function sortNodes() {
             if (a.available === null && b.available === 0) return -1;
             if (b.available === null && a.available === 0) return 1;
             // 不可用节点排最后,按名称排序
+            return a.name.localeCompare(b.name, 'zh-CN');
+        });
+    } else if (currentSort === 'purity') {
+        // 按纯净度排序
+        nodes.sort((a, b) => {
+            // 获取纯净度分数 (0-100)
+            const purityA = parseFloat(a.ip_purity_score) || -1;
+            const purityB = parseFloat(b.ip_purity_score) || -1;
+            
+            // 有纯净度数据的节点排前面,按分数从高到低
+            if (purityA >= 0 && purityB >= 0) {
+                if (purityB !== purityA) {
+                    return purityB - purityA; // 分数高的排前面
+                }
+                // 分数相同时,按延迟排序
+                const latencyA = parseFloat(a.latency) || 99999;
+                const latencyB = parseFloat(b.latency) || 99999;
+                return latencyA - latencyB;
+            }
+            
+            // 有纯净度数据的排前面
+            if (purityA >= 0) return -1;
+            if (purityB >= 0) return 1;
+            
+            // 都没有纯净度数据时,可用节点排前面
+            if (a.available === 1 && b.available === 1) {
+                const latencyA = parseFloat(a.latency) || 99999;
+                const latencyB = parseFloat(b.latency) || 99999;
+                return latencyA - latencyB;
+            }
+            if (a.available === 1) return -1;
+            if (b.available === 1) return 1;
+            
+            // 按名称排序
             return a.name.localeCompare(b.name, 'zh-CN');
         });
     } else if (currentSort === 'name') {

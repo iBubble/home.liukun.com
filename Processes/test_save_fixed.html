@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试保存修复</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 { color: #0ff; }
+        .success { color: #0f0; }
+        .error { color: #f00; }
+        .info { color: #0ff; }
+        button {
+            background: #0ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background: #0f0; }
+        pre {
+            background: #111;
+            border: 1px solid #333;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .log { margin: 5px 0; padding: 5px; border-left: 3px solid #0ff; }
+    </style>
+</head>
+<body>
+    <h1>🔧 NodeLocalChecker 保存功能修复测试</h1>
+    
+    <div>
+        <button onclick="testConcurrentSave()">🚀 测试并发保存(10个请求)</button>
+        <button onclick="testSingleSave()">📝 测试单个保存</button>
+        <button onclick="clearLogs()">🗑️ 清空日志</button>
+    </div>
+    
+    <div id="logs"></div>
+    
+    <script>
+        const BASE_URL = 'https://home.liukun.com:8443/Projects/NodeLocalChecker';
+        let testNodes = [];
+        
+        function log(message, type = 'info') {
+            const logsDiv = document.getElementById('logs');
+            const entry = document.createElement('div');
+            entry.className = `log ${type}`;
+            entry.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logsDiv.appendChild(entry);
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        function clearLogs() {
+            document.getElementById('logs').innerHTML = '';
+        }
+        
+        async function loadNodes() {
+            try {
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=list`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    testNodes = result.nodes;
+                    log(`✓ 加载 ${testNodes.length} 个节点`, 'success');
+                    return true;
+                } else {
+                    log(`✗ 加载失败: ${result.error}`, 'error');
+                    return false;
+                }
+            } catch (error) {
+                log(`✗ 加载异常: ${error.message}`, 'error');
+                return false;
+            }
+        }
+        
+        async function saveCheckResult(nodeHash, result) {
+            try {
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=update_check`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        node_hash: nodeHash,
+                        result: result
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.error || data.message || '未知错误');
+                }
+                
+                return true;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        async function testSingleSave() {
+            clearLogs();
+            log('========== 测试单个保存 ==========', 'info');
+            
+            if (testNodes.length === 0) {
+                const loaded = await loadNodes();
+                if (!loaded) return;
+            }
+            
+            const node = testNodes[0];
+            log(`测试节点: ${node.name}`, 'info');
+            log(`节点哈希: ${node.node_hash}`, 'info');
+            
+            const testResult = {
+                available: true,
+                latency: Math.floor(Math.random() * 500) + 'ms',
+                real_ip: '8.8.8.8',
+                purity: {
+                    score: Math.floor(Math.random() * 40) + 60,
+                    level: '良好',
+                    type: '测试'
+                }
+            };
+            
+            log('测试数据: ' + JSON.stringify(testResult), 'info');
+            
+            try {
+                const start = Date.now();
+                await saveCheckResult(node.node_hash, testResult);
+                const duration = Date.now() - start;
+                
+                log(`✓ 保存成功 (耗时: ${duration}ms)`, 'success');
+                
+                // 验证
+                await new Promise(r => setTimeout(r, 500));
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=list`);
+                const result = await response.json();
+                const savedNode = result.nodes.find(n => n.node_hash === node.node_hash);
+                
+                if (savedNode && savedNode.latency === testResult.latency) {
+                    log('✓ 验证成功: 数据已正确保存', 'success');
+                } else {
+                    log('✗ 验证失败: 数据不匹配', 'error');
+                }
+                
+            } catch (error) {
+                log(`✗ 保存失败: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testConcurrentSave() {
+            clearLogs();
+            log('========== 测试并发保存(10个请求) ==========', 'info');
+            
+            if (testNodes.length === 0) {
+                const loaded = await loadNodes();
+                if (!loaded) return;
+            }
+            
+            if (testNodes.length < 10) {
+                log('⚠ 节点数量不足10个', 'error');
+                return;
+            }
+            
+            log('准备10个并发保存请求...', 'info');
+            
+            const promises = [];
+            const startTime = Date.now();
+            
+            for (let i = 0; i < 10; i++) {
+                const node = testNodes[i];
+                const testResult = {
+                    available: Math.random() > 0.3,
+                    latency: Math.floor(Math.random() * 500) + 'ms',
+                    real_ip: `8.8.8.${i}`,
+                    purity: {
+                        score: Math.floor(Math.random() * 40) + 60,
+                        level: '良好',
+                        type: '并发测试'
+                    }
+                };
+                
+                const promise = saveCheckResult(node.node_hash, testResult)
+                    .then(() => {
+                        log(`✓ [${i+1}/10] ${node.name.substring(0, 20)}... 保存成功`, 'success');
+                        return { success: true, index: i };
+                    })
+                    .catch(error => {
+                        log(`✗ [${i+1}/10] ${node.name.substring(0, 20)}... 保存失败: ${error.message}`, 'error');
+                        return { success: false, index: i, error: error.message };
+                    });
+                
+                promises.push(promise);
+            }
+            
+            log('发送并发请求...', 'info');
+            const results = await Promise.all(promises);
+            const duration = Date.now() - startTime;
+            
+            const successCount = results.filter(r => r.success).length;
+            const failCount = results.filter(r => !r.success).length;
+            
+            log('', 'info');
+            log('========== 测试结果 ==========', 'info');
+            log(`总请求数: 10`, 'info');
+            log(`成功: ${successCount}`, successCount === 10 ? 'success' : 'error');
+            log(`失败: ${failCount}`, failCount === 0 ? 'success' : 'error');
+            log(`总耗时: ${duration}ms`, 'info');
+            log(`平均耗时: ${Math.floor(duration / 10)}ms/请求`, 'info');
+            
+            if (successCount === 10) {
+                log('', 'info');
+                log('✓✓✓ 并发保存测试通过！文件锁机制工作正常！', 'success');
+            } else {
+                log('', 'info');
+                log('✗✗✗ 部分请求失败，需要进一步检查', 'error');
+            }
+            
+            // 验证JSON文件完整性
+            log('', 'info');
+            log('验证JSON文件完整性...', 'info');
+            try {
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=list`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    log(`✓ JSON文件完整，共 ${result.total} 个节点`, 'success');
+                } else {
+                    log(`✗ JSON文件可能损坏`, 'error');
+                }
+            } catch (error) {
+                log(`✗ JSON验证失败: ${error.message}`, 'error');
+            }
+        }
+        
+        // 页面加载时自动加载节点
+        window.addEventListener('load', async () => {
+            log('页面已加载，准备测试...', 'info');
+            await loadNodes();
+            log('点击按钮开始测试', 'info');
+        });
+    </script>
+</body>
+</html>

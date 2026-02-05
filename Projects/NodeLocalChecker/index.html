@@ -86,8 +86,8 @@
             margin: 0 auto;
             background: rgba(10, 10, 10, 0.85);
             border-radius: 0;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 30px rgba(0, 255, 255, 0.1);
+            border: none;
+            box-shadow: none;
             overflow: hidden;
             position: relative;
         }
@@ -714,6 +714,9 @@
                 <button class="btn btn-success" id="exportBtn" onclick="exportSelected()">
                     导出选中节点
                 </button>
+                <button class="btn btn-info" onclick="batchSaveCheckResults().then(r => alert(`保存完成\\n成功: ${r.success} 个\\n失败: ${r.failed} 个`))" title="手动保存所有检测结果到数据库">
+                    💾 手动保存结果
+                </button>
                 <button class="btn btn-primary" onclick="selectAll()">
                     全选
                 </button>
@@ -740,6 +743,7 @@
                     <label>📊 排序:</label>
                     <select id="sortOrder" onchange="sortNodes()">
                         <option value="latency">按延迟 (快→慢)</option>
+                        <option value="purity">按纯净度 (高→低)</option>
                         <option value="name">按名称 (A→Z)</option>
                         <option value="country">按国家 (A→Z)</option>
                     </select>
@@ -778,7 +782,7 @@
     </div>
 
     <!-- 引入动画脚本 -->
-    <script src="js/animations.js?v=20260205-8"></script>
-    <script src="js/app.js?v=20260205-8"></script>
+    <script src="js/animations.js?v=20260205-17"></script>
+    <script src="js/app.js?v=20260205-17"></script>
 </body>
 </html>

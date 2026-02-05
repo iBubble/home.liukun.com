@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeLocalChecker 浏览器端测试</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 { color: #0ff; }
+        h2 { color: #ff0; margin-top: 30px; }
+        .test-section {
+            background: #111;
+            border: 1px solid #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { color: #0f0; }
+        .error { color: #f00; }
+        .warning { color: #ff0; }
+        .info { color: #0ff; }
+        button {
+            background: #0ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        button:hover {
+            background: #0f0;
+        }
+        pre {
+            background: #000;
+            border: 1px solid #333;
+            padding: 10px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid #0ff;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔬 NodeLocalChecker 浏览器端完整测试</h1>
+    
+    <div class="test-section">
+        <h2>测试控制</h2>
+        <button onclick="runAllTests()">🚀 运行所有测试</button>
+        <button onclick="testLoadNodes()">1️⃣ 测试加载节点</button>
+        <button onclick="testCheckSingleNode()">2️⃣ 测试检测单个节点</button>
+        <button onclick="testSaveResult()">3️⃣ 测试保存结果</button>
+        <button onclick="testVerifyPersistence()">4️⃣ 测试数据持久化</button>
+        <button onclick="clearLogs()">🗑️ 清空日志</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>测试日志</h2>
+        <div id="logs"></div>
+    </div>
+    
+    <script>
+        const BASE_URL = 'https://home.liukun.com:8443/Projects/NodeLocalChecker';
+        let testNodes = [];
+        let testNodeHash = null;
+        
+        function log(message, type = 'info') {
+            const logsDiv = document.getElementById('logs');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logsDiv.appendChild(entry);
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        function clearLogs() {
+            document.getElementById('logs').innerHTML = '';
+        }
+        
+        async function testLoadNodes() {
+            log('========== 测试1: 加载节点列表 ==========', 'info');
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=list`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    testNodes = result.nodes;
+                    log(`✓ 成功加载 ${testNodes.length} 个节点`, 'success');
+                    
+                    const checkedCount = testNodes.filter(n => n.available !== null).length;
+                    const availableCount = testNodes.filter(n => n.available === 1).length;
+                    
+                    log(`  - 已检测: ${checkedCount} 个`, 'info');
+                    log(`  - 可用: ${availableCount} 个`, 'info');
+                    log(`  - 未检测: ${testNodes.length - checkedCount} 个`, 'info');
+                    
+                    return true;
+                } else {
+                    log(`✗ 加载失败: ${result.error}`, 'error');
+                    return false;
+                }
+            } catch (error) {
+                log(`✗ 加载异常: ${error.message}`, 'error');
+                return false;
+            }
+        }
+        
+        async function testCheckSingleNode() {
+            log('========== 测试2: 检测单个节点 ==========', 'info');
+            
+            if (testNodes.length === 0) {
+                log('⚠ 请先运行测试1加载节点', 'warning');
+                return false;
+            }
+            
+            // 找一个未检测的节点
+            const uncheckedNode = testNodes.find(n => n.available === null);
+            
+            if (!uncheckedNode) {
+                log('⚠ 没有未检测的节点，使用第一个节点', 'warning');
+                testNodeHash = testNodes[0].node_hash;
+            } else {
+                testNodeHash = uncheckedNode.node_hash;
+                log(`选择节点: ${uncheckedNode.name}`, 'info');
+                log(`节点哈希: ${testNodeHash}`, 'info');
+            }
+            
+            const nodeToCheck = testNodes.find(n => n.node_hash === testNodeHash);
+            
+            try {
+                log('开始检测...', 'info');
+                const response = await fetch(`${BASE_URL}/api/check.php`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ node: nodeToCheck })
+                });
+                
+                const result = await response.json();
+                
+                log('检测结果:', 'info');
+                log(`<pre>${JSON.stringify(result, null, 2)}</pre>`, 'info');
+                
+                if (result.success) {
+                    log(`✓ 检测成功`, 'success');
+                    log(`  - 可用性: ${result.available ? '可用' : '不可用'}`, result.available ? 'success' : 'error');
+                    log(`  - 延迟: ${result.latency}`, 'info');
+                    log(`  - 真实IP: ${result.real_ip || '无'}`, 'info');
+                    log(`  - 纯净度: ${result.purity ? result.purity.score + '分' : '无'}`, 'info');
+                    
+                    // 保存结果供下一步测试使用
+                    window.lastCheckResult = {
+                        available: result.available,
+                        latency: result.latency,
+                        real_ip: result.real_ip,
+                        purity: result.purity
+                    };
+                    
+                    return true;
+                } else {
+                    log(`✗ 检测失败: ${result.error}`, 'error');
+                    return false;
+                }
+            } catch (error) {
+                log(`✗ 检测异常: ${error.message}`, 'error');
+                return false;
+            }
+        }
+        
+        async function testSaveResult() {
+            log('========== 测试3: 保存检测结果 ==========', 'info');
+            
+            if (!testNodeHash) {
+                log('⚠ 请先运行测试2检测节点', 'warning');
+                return false;
+            }
+            
+            if (!window.lastCheckResult) {
+                log('⚠ 没有检测结果，使用模拟数据', 'warning');
+                window.lastCheckResult = {
+                    available: true,
+                    latency: '123ms',
+                    real_ip: '8.8.8.8',
+                    purity: { score: 85, level: '良好', type: '数据中心' }
+                };
+            }
+            
+            const saveData = window.lastCheckResult;
+            
+            log('保存数据:', 'info');
+            log(`<pre>${JSON.stringify(saveData, null, 2)}</pre>`, 'info');
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=update_check`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        node_hash: testNodeHash,
+                        result: saveData
+                    })
+                });
+                
+                const result = await response.json();
+                
+                log('保存结果:', 'info');
+                log(`<pre>${JSON.stringify(result, null, 2)}</pre>`, 'info');
+                
+                if (result.success) {
+                    log(`✓ 保存成功`, 'success');
+                    return true;
+                } else {
+                    log(`✗ 保存失败: ${result.error || result.message}`, 'error');
+                    return false;
+                }
+            } catch (error) {
+                log(`✗ 保存异常: ${error.message}`, 'error');
+                return false;
+            }
+        }
+        
+        async function testVerifyPersistence() {
+            log('========== 测试4: 验证数据持久化 ==========', 'info');
+            
+            if (!testNodeHash) {
+                log('⚠ 请先运行测试2和测试3', 'warning');
+                return false;
+            }
+            
+            try {
+                log('等待1秒后重新加载数据...', 'info');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                const response = await fetch(`${BASE_URL}/api/nodes.php?action=list`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const savedNode = result.nodes.find(n => n.node_hash === testNodeHash);
+                    
+                    if (!savedNode) {
+                        log(`✗ 未找到节点: ${testNodeHash}`, 'error');
+                        return false;
+                    }
+                    
+                    log('保存后的节点数据:', 'info');
+                    log(`<pre>${JSON.stringify({
+                        name: savedNode.name,
+                        available: savedNode.available,
+                        latency: savedNode.latency,
+                        real_ip: savedNode.real_ip,
+                        ip_purity_score: savedNode.ip_purity_score,
+                        last_check_time: savedNode.last_check_time
+                    }, null, 2)}</pre>`, 'info');
+                    
+                    // 验证数据
+                    const expectedData = window.lastCheckResult;
+                    const expectedAvailable = expectedData.available ? 1 : 0;
+                    
+                    let allMatch = true;
+                    
+                    if (savedNode.available !== expectedAvailable) {
+                        log(`✗ available 不匹配: 期望 ${expectedAvailable}, 实际 ${savedNode.available}`, 'error');
+                        allMatch = false;
+                    } else {
+                        log(`✓ available 匹配: ${savedNode.available}`, 'success');
+                    }
+                    
+                    if (savedNode.latency !== expectedData.latency) {
+                        log(`✗ latency 不匹配: 期望 ${expectedData.latency}, 实际 ${savedNode.latency}`, 'error');
+                        allMatch = false;
+                    } else {
+                        log(`✓ latency 匹配: ${savedNode.latency}`, 'success');
+                    }
+                    
+                    if (savedNode.real_ip !== expectedData.real_ip) {
+                        log(`✗ real_ip 不匹配: 期望 ${expectedData.real_ip}, 实际 ${savedNode.real_ip}`, 'error');
+                        allMatch = false;
+                    } else {
+                        log(`✓ real_ip 匹配: ${savedNode.real_ip}`, 'success');
+                    }
+                    
+                    if (expectedData.purity && expectedData.purity.score) {
+                        if (savedNode.ip_purity_score !== expectedData.purity.score) {
+                            log(`✗ purity_score 不匹配: 期望 ${expectedData.purity.score}, 实际 ${savedNode.ip_purity_score}`, 'error');
+                            allMatch = false;
+                        } else {
+                            log(`✓ purity_score 匹配: ${savedNode.ip_purity_score}`, 'success');
+                        }
+                    }
+                    
+                    if (allMatch) {
+                        log('✓✓✓ 数据持久化验证通过！', 'success');
+                        return true;
+                    } else {
+                        log('✗✗✗ 数据持久化验证失败！', 'error');
+                        return false;
+                    }
+                } else {
+                    log(`✗ 加载失败: ${result.error}`, 'error');
+                    return false;
+                }
+            } catch (error) {
+                log(`✗ 验证异常: ${error.message}`, 'error');
+                return false;
+            }
+        }
+        
+        async function runAllTests() {
+            clearLogs();
+            log('🚀 开始运行所有测试...', 'info');
+            log('', 'info');
+            
+            const test1 = await testLoadNodes();
+            log('', 'info');
+            
+            if (!test1) {
+                log('❌ 测试1失败，停止后续测试', 'error');
+                return;
+            }
+            
+            const test2 = await testCheckSingleNode();
+            log('', 'info');
+            
+            if (!test2) {
+                log('❌ 测试2失败，停止后续测试', 'error');
+                return;
+            }
+            
+            const test3 = await testSaveResult();
+            log('', 'info');
+            
+            if (!test3) {
+                log('❌ 测试3失败，停止后续测试', 'error');
+                return;
+            }
+            
+            const test4 = await testVerifyPersistence();
+            log('', 'info');
+            
+            if (test1 && test2 && test3 && test4) {
+                log('🎉🎉🎉 所有测试通过！', 'success');
+            } else {
+                log('❌ 部分测试失败', 'error');
+            }
+        }
+        
+        // 页面加载完成后自动运行测试
+        window.addEventListener('load', () => {
+            log('测试页面已加载，点击按钮开始测试', 'info');
+        });
+    </script>
+</body>
+</html>
