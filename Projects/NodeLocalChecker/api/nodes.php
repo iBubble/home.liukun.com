@@ -80,6 +80,17 @@ try {
             ], JSON_UNESCAPED_UNICODE);
             break;
             
+        case 'clear_all':
+            // 清除所有节点
+            $deleted = $storage->clearAllNodes();
+            
+            echo json_encode([
+                'success' => true,
+                'deleted' => $deleted,
+                'message' => '所有节点已清除'
+            ], JSON_UNESCAPED_UNICODE);
+            break;
+            
         case 'stats':
             // 获取统计信息
             $stats = $storage->getStats();

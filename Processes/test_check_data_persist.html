@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测数据持久化测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #0ff;
+        }
+        .test-section {
+            background: #1a1a1a;
+            border: 1px solid #0ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #0ff;
+            border-bottom: 2px solid #0ff;
+            padding-bottom: 10px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: #0a0a0a;
+            border-left: 4px solid #0ff;
+        }
+        .success { border-left-color: #0f0; color: #0f0; }
+        .error { border-left-color: #f00; color: #f00; }
+        button {
+            background: #0ff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #0cc;
+        }
+        pre {
+            background: #000;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 NodeLocalChecker 检测数据持久化测试</h1>
+    
+    <div class="test-section">
+        <h2>测试说明</h2>
+        <p>此测试用于验证检测完成后，点击确认对话框时数据是否会消失的问题。</p>
+        <p><strong>问题描述：</strong>检测完毕后能看到各项数值，但点击确认对话框后，各项数值全部消失。</p>
+        <p><strong>修复方案：</strong>确保检测数据正确保存到 nodes 数组，并在重新渲染时正确显示。</p>
+    </div>
+
+    <div class="test-section">
+        <h2>测试步骤</h2>
+        <ol>
+            <li>打开 NodeLocalChecker 页面</li>
+            <li>导入节点配置</li>
+            <li>选择几个节点进行检测</li>
+            <li>等待检测完成，观察延迟、IP、纯净度等数据是否显示</li>
+            <li>点击确认对话框</li>
+            <li><strong>验证：数据是否仍然显示</strong></li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>修复内容</h2>
+        <div class="test-result success">
+            <strong>✓ 修复1：</strong>在 checkNode 函数中，确保检测结果正确保存到 nodes 数组
+            <pre>// 更新 nodes 数组中的数据
+node.available = result.available ? 1 : 0;
+node.latency = result.latency || null;
+node.real_ip = result.real_ip || null;
+node.last_check_time = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+// 保存纯净度数据
+if (result.purity && result.purity.score !== undefined) {
+    node.ip_purity_score = result.purity.score;
+    node.purity = result.purity;
+}</pre>
+        </div>
+        
+        <div class="test-result success">
+            <strong>✓ 修复2：</strong>在 displayNodes 函数中，改进数据显示逻辑
+            <pre>// 检查节点是否已检测（available 为 0 或 1）
+if (node.available === 1) {
+    // 可用节点 - 显示延迟、IP、纯净度
+    statusBadge = '可用';
+    latencyText = node.latency || '-';
+    realIpText = node.real_ip || '-';
+    // ... 显示纯净度数据
+} else if (node.available === 0) {
+    // 不可用节点
+    statusBadge = '不可用';
+} else {
+    // 未检测过
+    statusBadge = '待检测';
+}</pre>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>快速测试</h2>
+        <button onclick="openNodeLocalChecker()">打开 NodeLocalChecker</button>
+        <button onclick="showTestGuide()">显示测试指南</button>
+    </div>
+
+    <div id="testGuide" class="test-section" style="display: none;">
+        <h2>详细测试指南</h2>
+        <ol>
+            <li>
+                <strong>导入节点：</strong>
+                <ul>
+                    <li>点击"一键导入"按钮，从机场聚合器导入节点</li>
+                    <li>或上传本地 YAML 文件</li>
+                </ul>
+            </li>
+            <li>
+                <strong>选择节点：</strong>
+                <ul>
+                    <li>勾选 2-3 个节点（不要太多，方便观察）</li>
+                    <li>或点击"全选"按钮</li>
+                </ul>
+            </li>
+            <li>
+                <strong>开始检测：</strong>
+                <ul>
+                    <li>点击"开始检测"按钮</li>
+                    <li>观察检测进度和状态变化</li>
+                </ul>
+            </li>
+            <li>
+                <strong>检测完成：</strong>
+                <ul>
+                    <li>等待所有节点检测完成</li>
+                    <li>观察表格中是否显示：延迟、真实IP、IP纯净度</li>
+                    <li>记录这些数值</li>
+                </ul>
+            </li>
+            <li>
+                <strong>点击确认：</strong>
+                <ul>
+                    <li>点击弹出对话框的"确定"按钮</li>
+                    <li><strong>关键验证：</strong>检查表格中的数据是否仍然显示</li>
+                    <li>延迟、IP、纯净度应该保持不变</li>
+                </ul>
+            </li>
+            <li>
+                <strong>额外验证：</strong>
+                <ul>
+                    <li>尝试切换排序方式（按延迟、按纯净度等）</li>
+                    <li>尝试切换国家筛选</li>
+                    <li>数据应该始终保持显示</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>预期结果</h2>
+        <div class="test-result success">
+            <strong>✓ 检测完成后：</strong>
+            <ul>
+                <li>延迟数据正常显示（如：123ms）</li>
+                <li>真实IP正常显示（如：1.2.3.4）</li>
+                <li>IP纯净度正常显示（如：85分 (良好)）</li>
+            </ul>
+        </div>
+        
+        <div class="test-result success">
+            <strong>✓ 点击确认后：</strong>
+            <ul>
+                <li>所有数据保持显示，不会消失</li>
+                <li>可以正常排序和筛选</li>
+                <li>刷新页面后数据仍然存在（已保存到数据库）</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openNodeLocalChecker() {
+            window.open('https://home.liukun.com:8443/Projects/NodeLocalChecker/', '_blank');
+        }
+
+        function showTestGuide() {
+            const guide = document.getElementById('testGuide');
+            guide.style.display = guide.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

@@ -105,6 +105,11 @@ while (true) {
             $stats[$type]['success']++;
             $stats[$type]['latencies'][] = $result['latency'];
             
+            // 限制延迟数组大小，只保留最近1000条
+            if (count($stats[$type]['latencies']) > 1000) {
+                $stats[$type]['latencies'] = array_slice($stats[$type]['latencies'], -1000);
+            }
+            
             // 如果之前是故障状态，记录恢复
             if ($failureStates[$type]['isFailing']) {
                 $duration = time() - $failureStates[$type]['startTime'];

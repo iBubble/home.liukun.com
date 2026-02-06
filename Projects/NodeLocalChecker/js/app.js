@@ -144,7 +144,6 @@ async function checkClashStatus() {
         if (result.available) {
             statusEl.innerHTML = `
                 <span style="color: #0f0;">✓ Clash 核心已安装</span>
-                <span style="color: #888; margin-left: 10px;">使用真实代理测试</span>
             `;
         } else {
             statusEl.innerHTML = `
@@ -565,18 +564,21 @@ async function startCheck() {
 
     checkingInProgress = true;
     document.getElementById('startCheckBtn').disabled = true;
-    document.getElementById('progressBar').style.display = 'block';
+    
+    // 显示进度弹窗
+    showCheckProgressModal(selectedIndexes.length);
 
     const totalToCheck = selectedIndexes.length;
     const stats = {
         checked: 0,
-        available: 0
+        available: 0,
+        failed: 0
     };
 
     console.log(`开始并发检测 ${totalToCheck} 个节点...`);
     const startTime = Date.now();
 
-    // 先将所有选中节点状态设置为"检测中"，让用户看到并发效果
+    // 先将所有选中节点状态设置为"检测中"
     selectedIndexes.forEach(index => {
         updateNodeStatus(index, 'checking', '检测中...');
     });
@@ -604,7 +606,6 @@ async function startCheck() {
 
             const result = await response.json();
             
-            // 调试日志
             console.log(`[${index}] API返回结果:`, result);
             if (result.purity) {
                 console.log(`[${index}] IP纯净度数据:`, result.purity);
@@ -635,8 +636,7 @@ async function startCheck() {
                     updateNodeStatus(index, 'failed', '不可用', '-', '-', null);
                 }
                 
-                // 保存检测结果到数据库 (等待保存完成)
-                // 只传递必要的字段
+                // 保存检测结果到数据库
                 const saveData = {
                     available: result.available,
                     latency: result.latency,
@@ -685,8 +685,14 @@ async function startCheck() {
             stats.checked++;
             if (result.available) {
                 stats.available++;
+            } else {
+                stats.failed++;
             }
-            updateProgress(stats.checked, totalToCheck);
+            
+            // 更新进度弹窗
+            updateCheckProgress(stats.checked, totalToCheck, stats.available, stats.failed, startTime);
+            
+            // 更新统计栏
             document.getElementById('checkedNodes').textContent = stats.checked;
             document.getElementById('availableNodes').textContent = stats.available;
             
@@ -716,12 +722,15 @@ async function startCheck() {
 
     checkingInProgress = false;
     
+    // 隐藏进度弹窗
+    hideCheckProgressModal();
+    
     // 检测完成后自动按延迟排序
     if (currentSort === 'latency') {
         sortNodes();
     }
     
-    // 显示完成提示 - 使用通知而不是弹窗
+    // 显示完成提示
     console.log(`✓ 检测完成！检测: ${totalToCheck}, 可用: ${stats.available}, 耗时: ${duration}秒`);
     
     if (window.CyberpunkAnimations) {
@@ -730,6 +739,56 @@ async function startCheck() {
             'success'
         );
     }
+}
+
+// 显示检测进度弹窗
+function showCheckProgressModal(total) {
+    const overlay = document.getElementById('checkProgressOverlay');
+    document.getElementById('progressTotal').textContent = total;
+    document.getElementById('progressChecked').textContent = '0';
+    document.getElementById('progressAvailable').textContent = '0';
+    document.getElementById('progressFailed').textContent = '0';
+    document.getElementById('progressPercentage').textContent = '0%';
+    document.getElementById('progressBarFill').style.width = '0%';
+    document.getElementById('progressETA').textContent = '计算中...';
+    overlay.style.display = 'flex';
+}
+
+// 更新检测进度
+function updateCheckProgress(checked, total, available, failed, startTime) {
+    const percent = (checked / total * 100).toFixed(1);
+    
+    // 更新数字
+    document.getElementById('progressChecked').textContent = checked;
+    document.getElementById('progressAvailable').textContent = available;
+    document.getElementById('progressFailed').textContent = failed;
+    document.getElementById('progressPercentage').textContent = percent + '%';
+    
+    // 更新进度条
+    document.getElementById('progressBarFill').style.width = percent + '%';
+    
+    // 计算预计剩余时间
+    const elapsed = (Date.now() - startTime) / 1000;
+    const avgTime = elapsed / checked;
+    const remaining = (total - checked) * avgTime;
+    
+    if (remaining > 0) {
+        if (remaining < 60) {
+            document.getElementById('progressETA').textContent = `${Math.ceil(remaining)}秒`;
+        } else {
+            const minutes = Math.floor(remaining / 60);
+            const seconds = Math.ceil(remaining % 60);
+            document.getElementById('progressETA').textContent = `${minutes}分${seconds}秒`;
+        }
+    } else {
+        document.getElementById('progressETA').textContent = '即将完成...';
+    }
+}
+
+// 隐藏检测进度弹窗
+function hideCheckProgressModal() {
+    const overlay = document.getElementById('checkProgressOverlay');
+    overlay.style.display = 'none';
 }
 
 // 保存检测结果到数据库 (带重试机制)
@@ -793,7 +852,6 @@ async function saveCheckResult(nodeHash, result, retries = 3) {
 // 更新节点状态
 function updateNodeStatus(index, status, text, latency = '-', realIp = '-', purity = null) {
     const statusEl = document.getElementById(`status-${index}`);
-    const row = statusEl.closest('tr');
     
     // 调试日志
     console.log(`[${index}] updateNodeStatus 调用:`, {
@@ -835,21 +893,7 @@ function updateNodeStatus(index, status, text, latency = '-', realIp = '-', puri
         purityEl.textContent = '-';
     }
     
-    // 添加动画效果
-    if (window.CyberpunkAnimations && row) {
-        if (status === 'checking') {
-            row.classList.add('checking');
-            CyberpunkAnimations.animateNodeCheck(row);
-        } else if (status === 'success') {
-            row.classList.remove('checking');
-            row.classList.add('success');
-            CyberpunkAnimations.animateNodeSuccess(row);
-        } else if (status === 'failed') {
-            row.classList.remove('checking');
-            row.classList.add('failed');
-            CyberpunkAnimations.animateNodeFailed(row);
-        }
-    }
+    // 不再添加每个节点的动画效果，使用统一的进度弹窗
 }
 
 // 更新进度
@@ -888,6 +932,99 @@ function selectAvailable() {
         cb.checked = node.available === 1;
     });
     updateSelectedCount();
+}
+
+// 删除所选节点
+async function deleteSelectedNodes() {
+    // 获取选中的节点
+    const selectedIndexes = [];
+    const selectedHashes = [];
+    
+    document.querySelectorAll('.node-checkbox:checked').forEach(cb => {
+        const index = parseInt(cb.dataset.index);
+        selectedIndexes.push(index);
+        selectedHashes.push(nodes[index].node_hash);
+    });
+    
+    if (selectedHashes.length === 0) {
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification('请先选择要删除的节点', 'warning');
+        } else {
+            alert('请先选择要删除的节点');
+        }
+        return;
+    }
+    
+    // 确认删除
+    const confirmed = confirm(`确定要删除选中的 ${selectedHashes.length} 个节点吗？\n\n此操作不可恢复！`);
+    if (!confirmed) {
+        return;
+    }
+    
+    try {
+        showLoading(`正在删除 ${selectedHashes.length} 个节点...`);
+        
+        // 调用API删除节点
+        const response = await fetch('api/nodes.php?action=delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                node_hashes: selectedHashes
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // 从本地数据中删除
+            nodes = nodes.filter(node => !selectedHashes.includes(node.node_hash));
+            
+            // 重新渲染表格
+            displayNodes();
+            
+            // 更新统计信息
+            showStats();
+            
+            // 如果没有节点了，显示上传区域
+            if (nodes.length === 0) {
+                document.getElementById('controls').style.display = 'none';
+                document.getElementById('statsBar').style.display = 'none';
+                document.getElementById('uploadSection').style.display = 'block';
+                document.getElementById('importSection').style.display = 'block';
+            }
+            
+            // 显示成功提示
+            if (window.CyberpunkAnimations) {
+                CyberpunkAnimations.showNotification(
+                    `✓ 已删除 ${result.deleted} 个节点`,
+                    'success'
+                );
+            }
+            
+            console.log(`已删除 ${result.deleted} 个节点`);
+        } else {
+            throw new Error(result.error || result.message || '删除失败');
+        }
+        
+    } catch (error) {
+        console.error('删除节点失败:', error);
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification(
+                `✗ 删除失败: ${error.message}`,
+                'error'
+            );
+        } else {
+            alert('删除失败: ' + error.message);
+        }
+    } finally {
+        hideLoading();
+    }
 }
 
 // 切换全选

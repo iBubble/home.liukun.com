@@ -247,6 +247,22 @@ class NodeStorage {
     }
     
     /**
+     * 清除所有节点
+     */
+    public function clearAllNodes() {
+        $nodes = $this->getAllNodes();
+        $count = count($nodes);
+        
+        // 写入空数组
+        file_put_contents($this->dataFile, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        
+        // 记录日志
+        error_log("[clearAllNodes] 已清除所有节点，共 $count 个");
+        
+        return $count;
+    }
+    
+    /**
      * 获取统计信息
      */
     public function getStats() {

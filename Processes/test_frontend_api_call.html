@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试前端API调用</title>
+</head>
+<body>
+    <h1>测试NodeLocalChecker前端API调用</h1>
+    <button onclick="testUpdateCheck()">测试update_check接口</button>
+    <pre id="output"></pre>
+
+    <script>
+        const output = document.getElementById('output');
+        
+        function log(msg) {
+            output.textContent += msg + '\n';
+            console.log(msg);
+        }
+        
+        async function testUpdateCheck() {
+            output.textContent = '';
+            log('=== 开始测试 ===\n');
+            
+            try {
+                // 1. 获取第一个节点
+                log('1. 获取节点列表...');
+                const listResponse = await fetch('/Projects/NodeLocalChecker/api/nodes.php?action=list');
+                const listResult = await listResponse.json();
+                
+                if (!listResult.success || listResult.nodes.length === 0) {
+                    log('❌ 无法获取节点列表');
+                    return;
+                }
+                
+                const testNode = listResult.nodes[0];
+                log(`✓ 获取到测试节点: ${testNode.name}`);
+                log(`  节点哈希: ${testNode.node_hash}`);
+                log(`  当前延迟: ${testNode.latency || 'null'}`);
+                log(`  当前IP: ${testNode.real_ip || 'null'}`);
+                log(`  当前纯净度: ${testNode.ip_purity_score || 'null'}\n`);
+                
+                // 2. 准备测试数据
+                const testData = {
+                    node_hash: testNode.node_hash,
+                    result: {
+                        available: true,
+                        latency: '555.55',
+                        real_ip: '5.5.5.5',
+                        purity: {
+                            score: 55,
+                            level: '前端测试',
+                            type: '前端测试IP',
+                            location: {
+                                country: '测试国家'
+                            }
+                        }
+                    }
+                };
+                
+                log('2. 发送update_check请求...');
+                log('发送数据: ' + JSON.stringify(testData, null, 2) + '\n');
+                
+                // 3. 调用update_check API
+                const updateResponse = await fetch('/Projects/NodeLocalChecker/api/nodes.php?action=update_check', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                const updateResult = await updateResponse.json();
+                log('API响应: ' + JSON.stringify(updateResult, null, 2) + '\n');
+                
+                if (!updateResult.success) {
+                    log('❌ API返回失败: ' + (updateResult.error || updateResult.message));
+                    return;
+                }
+                
+                log('✓ API返回成功\n');
+                
+                // 4. 等待1秒后重新读取验证
+                log('3. 等待1秒后验证...');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                const verifyResponse = await fetch('/Projects/NodeLocalChecker/api/nodes.php?action=list');
+                const verifyResult = await verifyResponse.json();
+                const updatedNode = verifyResult.nodes[0];
+                
+                log(`更新后延迟: ${updatedNode.latency || 'null'}`);
+                log(`更新后IP: ${updatedNode.real_ip || 'null'}`);
+                log(`更新后纯净度: ${updatedNode.ip_purity_score || 'null'}\n`);
+                
+                // 5. 判断结果
+                if (updatedNode.latency === '555.55' && 
+                    updatedNode.real_ip === '5.5.5.5' && 
+                    updatedNode.ip_purity_score == 55) {
+                    log('✅ 前端API调用测试成功! 数据已持久化');
+                } else {
+                    log('❌ 前端API调用测试失败! 数据没有变化');
+                    log('\n期望值:');
+                    log('  延迟: 555.55');
+                    log('  IP: 5.5.5.5');
+                    log('  纯净度: 55');
+                    log('\n实际值:');
+                    log(`  延迟: ${updatedNode.latency || 'null'}`);
+                    log(`  IP: ${updatedNode.real_ip || 'null'}`);
+                    log(`  纯净度: ${updatedNode.ip_purity_score || 'null'}`);
+                }
+                
+            } catch (error) {
+                log('❌ 测试失败: ' + error.message);
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

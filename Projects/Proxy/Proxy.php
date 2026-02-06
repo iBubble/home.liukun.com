@@ -698,7 +698,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
 
 // Ensure default form values when not submitted
 if (!isset($type)) $type = 'socks5';
-if (!isset($host)) $host = '216.36.108.150';
+if (!isset($host)) $host = 'us.liukun.com';
 if (!isset($port)) $port = '1080';
 if (!isset($user)) $user = 'Gemini';
 if (!isset($pass)) $pass = 'Gl5181081';
