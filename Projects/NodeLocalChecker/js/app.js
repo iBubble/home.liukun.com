@@ -168,11 +168,15 @@ async function loadNodesFromDatabase() {
         if (result.success && result.nodes.length > 0) {
             const originalCount = result.nodes.length;
             
-            // 按服务器地址去重,保留第一个出现的节点
-            nodes = deduplicateNodesByServer(result.nodes);
+            // 1. 先按名称过滤
+            const filterResult = filterNodesByName(result.nodes);
+            const filteredNodes = filterResult.filtered;
+            
+            // 2. 再按服务器地址去重,保留第一个出现的节点
+            nodes = deduplicateNodesByServer(filteredNodes);
             
             const deduplicatedCount = nodes.length;
-            const removedCount = originalCount - deduplicatedCount;
+            const totalRemoved = originalCount - deduplicatedCount;
             
             updateCountryFilter(); // 更新国家筛选器
             sortNodes(); // 应用排序
@@ -180,14 +184,8 @@ async function loadNodesFromDatabase() {
             document.getElementById('controls').style.display = 'flex';
             document.getElementById('statsBar').style.display = 'flex';
             
-            if (removedCount > 0) {
-                console.log(`✓ 从数据库加载了 ${originalCount} 个节点,去重后剩余 ${deduplicatedCount} 个 (去除 ${removedCount} 个重复)`);
-                if (window.CyberpunkAnimations) {
-                    CyberpunkAnimations.showNotification(
-                        `加载完成: ${deduplicatedCount} 个节点 (已去重 ${removedCount} 个)`,
-                        'success'
-                    );
-                }
+            if (totalRemoved > 0) {
+                console.log(`✓ 从数据库加载了 ${originalCount} 个节点,过滤和去重后剩余 ${deduplicatedCount} 个 (移除 ${totalRemoved} 个)`);
             } else {
                 console.log(`✓ 从数据库加载了 ${nodes.length} 个节点`);
             }
@@ -327,14 +325,26 @@ async function handleFileContent(file, yamlContent) {
         if (result.success) {
             const originalCount = result.nodes.length;
             
-            // 按服务器地址去重,保留第一个出现的节点
-            const newNodes = deduplicateNodesByServer(result.nodes);
+            // 1. 先按名称过滤掉广告/无效节点
+            const filterResult = filterNodesByName(result.nodes);
+            const filteredNodes = filterResult.filtered;
+            const filteredCount = filterResult.removed;
+            
+            // 2. 再按服务器地址去重,保留第一个出现的节点
+            const newNodes = deduplicateNodesByServer(filteredNodes);
             
             const deduplicatedCount = newNodes.length;
-            const removedCount = originalCount - deduplicatedCount;
+            const removedByDedupe = filteredNodes.length - deduplicatedCount;
             
-            if (removedCount > 0) {
-                console.log(`解析到 ${originalCount} 个节点,去重后剩余 ${deduplicatedCount} 个 (去除 ${removedCount} 个重复)`);
+            console.log(`节点处理: 原始 ${originalCount} 个 -> 过滤 ${filteredCount} 个广告节点 -> 去重 ${removedByDedupe} 个重复 -> 剩余 ${deduplicatedCount} 个`);
+            
+            if (filteredCount > 0 || removedByDedupe > 0) {
+                if (window.CyberpunkAnimations) {
+                    CyberpunkAnimations.showNotification(
+                        `已过滤 ${filteredCount} 个广告节点, 去重 ${removedByDedupe} 个重复节点`,
+                        'info'
+                    );
+                }
             }
             
             // 合并到数据库
@@ -408,8 +418,9 @@ function displayNodes() {
         });
     }
     
-    // 显示前再次去重(防止数据不一致)
-    filteredNodes = deduplicateNodesByServer(filteredNodes);
+    // 显示前再次过滤和去重(防止数据不一致)
+    const filterResult = filterNodesByName(filteredNodes);
+    filteredNodes = deduplicateNodesByServer(filterResult.filtered);
     
     if (filteredNodes.length === 0) {
         container.innerHTML = `
@@ -1495,6 +1506,62 @@ function hasNodesChanged(newNodes) {
 }
 
 // ==================== 节点去重功能 ====================
+
+/**
+ * 节点名称黑名单关键词
+ * 包含这些关键词的节点将被过滤掉
+ */
+const NODE_NAME_BLACKLIST = [
+    '购买', '下单', '官网', '失效',
+    '续费', '套餐', '订阅', '充值',
+    '客服', '联系', '加群', 'QQ',
+    '微信', 'Telegram', 'TG群',
+    '过期', '到期', '已到期', '已失效',
+    '广告', '推广', '优惠', '折扣',
+    '注册', '登录', '网址', 'www.',
+    'http://', 'https://', '.com', '.net',
+    '机场', '订购', '购物', '商城'
+];
+
+/**
+ * 检查节点名称是否包含黑名单关键词
+ * @param {string} nodeName - 节点名称
+ * @returns {boolean} true表示应该过滤掉,false表示保留
+ */
+function shouldFilterNode(nodeName) {
+    if (!nodeName) return true; // 没有名称的节点过滤掉
+    
+    const lowerName = nodeName.toLowerCase();
+    
+    for (const keyword of NODE_NAME_BLACKLIST) {
+        if (lowerName.includes(keyword.toLowerCase())) {
+            return true; // 包含黑名单关键词,过滤掉
+        }
+    }
+    
+    return false; // 不包含黑名单关键词,保留
+}
+
+/**
+ * 过滤节点列表,移除包含黑名单关键词的节点
+ * @param {Array} nodeList - 节点列表
+ * @returns {Object} { filtered: 过滤后的节点列表, removed: 被移除的节点数量 }
+ */
+function filterNodesByName(nodeList) {
+    if (!nodeList || nodeList.length === 0) {
+        return { filtered: [], removed: 0 };
+    }
+    
+    const originalCount = nodeList.length;
+    const filtered = nodeList.filter(node => !shouldFilterNode(node.name));
+    const removed = originalCount - filtered.length;
+    
+    if (removed > 0) {
+        console.log(`节点名称过滤: 移除 ${removed} 个广告/无效节点`);
+    }
+    
+    return { filtered, removed };
+}
 
 /**
  * 按服务器地址去重节点
