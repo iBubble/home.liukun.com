@@ -148,5 +148,25 @@
             "total": 227
         },
         "created_at": 1770393604
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 102,
+            "updated": 157,
+            "unchanged": 52,
+            "total": 311
+        },
+        "created_at": 1770415203
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 23,
+            "updated": 220,
+            "unchanged": 53,
+            "total": 296
+        },
+        "created_at": 1770436803
     }
 ]

@@ -749,7 +749,12 @@ function showCheckProgressModal(total) {
     document.getElementById('progressAvailable').textContent = '0';
     document.getElementById('progressFailed').textContent = '0';
     document.getElementById('progressPercentage').textContent = '0%';
-    document.getElementById('progressBarFill').style.width = '0%';
+    
+    // 重置环形进度条
+    const circle = document.getElementById('progressCircle');
+    const circumference = 2 * Math.PI * 90; // 半径为90
+    circle.style.strokeDashoffset = circumference;
+    
     document.getElementById('progressETA').textContent = '计算中...';
     overlay.style.display = 'flex';
 }
@@ -764,8 +769,11 @@ function updateCheckProgress(checked, total, available, failed, startTime) {
     document.getElementById('progressFailed').textContent = failed;
     document.getElementById('progressPercentage').textContent = percent + '%';
     
-    // 更新进度条
-    document.getElementById('progressBarFill').style.width = percent + '%';
+    // 更新环形进度条
+    const circle = document.getElementById('progressCircle');
+    const circumference = 2 * Math.PI * 90; // 半径为90
+    const offset = circumference - (percent / 100) * circumference;
+    circle.style.strokeDashoffset = offset;
     
     // 计算预计剩余时间
     const elapsed = (Date.now() - startTime) / 1000;

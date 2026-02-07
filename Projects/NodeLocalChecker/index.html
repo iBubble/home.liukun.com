@@ -670,27 +670,38 @@
         }
         
         .check-progress-modal {
-            background: linear-gradient(135deg, rgba(0, 20, 30, 0.95) 0%, rgba(0, 10, 20, 0.95) 100%);
-            border: 2px solid #00ffff;
-            border-radius: 0;
-            padding: 30px;
-            max-width: 600px;
-            width: 90%;
+            background: radial-gradient(circle, rgba(0, 20, 30, 0.95) 0%, rgba(0, 10, 20, 0.95) 100%);
+            border: 3px solid #00ffff;
+            border-radius: 50%;
+            padding: 50px;
+            width: 600px;
+            height: 600px;
             box-shadow: 0 0 50px rgba(0, 255, 255, 0.5),
                         inset 0 0 30px rgba(0, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         .check-progress-modal::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
-            animation: scan-horizontal 2s linear infinite;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, #00ffff, transparent);
+            animation: rotate-border 3s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate-border {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .progress-header {
@@ -714,15 +725,17 @@
         
         .progress-visual {
             display: flex;
+            flex-direction: column;
             gap: 30px;
             align-items: center;
+            width: 100%;
         }
         
         /* 雷达动画 */
         .radar-container {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             flex-shrink: 0;
         }
         
@@ -784,7 +797,7 @@
         
         /* 进度信息 */
         .progress-info {
-            flex: 1;
+            width: 100%;
         }
         
         .progress-stats {
@@ -792,7 +805,7 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .stat-item-progress {
@@ -800,7 +813,7 @@
         }
         
         .stat-value-progress {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
             color: #00ffff;
             text-shadow: 0 0 15px #00ffff;
@@ -808,39 +821,45 @@
         }
         
         .stat-label-progress {
-            font-size: 11px;
+            font-size: 10px;
             color: #00ff41;
             margin-top: 5px;
             text-transform: uppercase;
         }
         
         .stat-divider {
-            font-size: 36px;
+            font-size: 28px;
             color: #00ffff;
             opacity: 0.5;
         }
         
+        /* 环形进度条 */
         .progress-bar-container {
             position: relative;
-            width: 100%;
-            height: 30px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid #00ffff;
-            margin-bottom: 20px;
-            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
         }
         
-        .progress-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, 
-                #00ffff 0%, 
-                #00ff41 50%, 
-                #00ffff 100%);
-            background-size: 200% 100%;
-            animation: gradient-shift 2s ease infinite;
-            width: 0%;
-            transition: width 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        .circular-progress {
+            transform: rotate(-90deg);
+        }
+        
+        .circular-progress-bg {
+            fill: none;
+            stroke: rgba(0, 0, 0, 0.5);
+            stroke-width: 15;
+        }
+        
+        .circular-progress-bar {
+            fill: none;
+            stroke: url(#progressGradient);
+            stroke-width: 15;
+            stroke-linecap: round;
+            stroke-dasharray: 565.48;
+            stroke-dashoffset: 565.48;
+            transition: stroke-dashoffset 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
         }
         
         .progress-percentage {
@@ -848,24 +867,27 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 14px;
+            font-size: 32px;
             font-weight: bold;
-            color: #fff;
-            text-shadow: 0 0 10px #000, 0 0 5px #000;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
             z-index: 1;
+            font-family: 'Courier New', monospace;
         }
         
         .progress-details {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
+            max-width: 400px;
+            margin: 0 auto;
         }
         
         .detail-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
+            font-size: 12px;
         }
         
         .detail-label {
@@ -917,18 +939,38 @@
         
         /* 响应式 */
         @media (max-width: 768px) {
+            .check-progress-modal {
+                width: 90vw;
+                height: 90vw;
+                max-width: 500px;
+                max-height: 500px;
+                padding: 30px;
+            }
+            
             .progress-visual {
-                flex-direction: column;
-                gap: 20px;
+                gap: 15px;
             }
             
             .radar-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .progress-bar-container {
                 width: 150px;
                 height: 150px;
             }
             
+            .progress-percentage {
+                font-size: 24px;
+            }
+            
             .stat-value-progress {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            
+            .stat-label-progress {
+                font-size: 9px;
             }
         }
     </style>
@@ -1090,7 +1132,17 @@
                     </div>
                     
                     <div class="progress-bar-container">
-                        <div class="progress-bar-fill" id="progressBarFill"></div>
+                        <svg class="circular-progress" width="200" height="200" viewBox="0 0 200 200">
+                            <defs>
+                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#00ff41;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="circular-progress-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="circular-progress-bar" id="progressCircle" cx="100" cy="100" r="90"></circle>
+                        </svg>
                         <div class="progress-percentage" id="progressPercentage">0%</div>
                     </div>
                     
