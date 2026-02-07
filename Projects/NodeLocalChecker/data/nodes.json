@@ -2101,7 +2101,7 @@
             "servername": "cdnfire.xiaomispeed.com"
         },
         "available": 1,
-        "latency": "303ms",
+        "latency": "289ms",
         "real_ip": "166.0.199.139",
         "purity": {
             "type": "未知",
@@ -2115,11 +2115,11 @@
             "score": 100,
             "level": "优秀"
         },
-        "last_check_time": "2026-02-06 18:01:53",
-        "check_count": 1,
-        "success_count": 1,
+        "last_check_time": "2026-02-07 17:19:37",
+        "check_count": 2,
+        "success_count": 2,
         "created_at": 1770371791,
-        "updated_at": 1770436803,
+        "updated_at": "2026-02-07 17:19:37",
         "ip_purity_score": 100
     },
     {
@@ -8118,8 +8118,8 @@
             }
         },
         "available": 1,
-        "latency": "260ms",
-        "real_ip": "164.52.1.179",
+        "latency": "258ms",
+        "real_ip": "164.52.1.182",
         "purity": {
             "type": "未知",
             "risk_score": 80,
@@ -8132,11 +8132,11 @@
             "score": 90,
             "level": "优秀"
         },
-        "last_check_time": "2026-02-07 17:15:51",
-        "check_count": 4,
-        "success_count": 4,
+        "last_check_time": "2026-02-07 17:19:36",
+        "check_count": 5,
+        "success_count": 5,
         "created_at": 1770322287,
-        "updated_at": "2026-02-07 17:15:51",
+        "updated_at": "2026-02-07 17:19:36",
         "ip_purity_score": 90
     },
     {
@@ -10031,8 +10031,8 @@
             }
         },
         "available": 1,
-        "latency": "186ms",
-        "real_ip": "206.189.199.115",
+        "latency": "177ms",
+        "real_ip": "162.243.115.23",
         "purity": {
             "type": "未知",
             "risk_score": 80,
@@ -10045,11 +10045,11 @@
             "score": 90,
             "level": "优秀"
         },
-        "last_check_time": "2026-02-07 17:15:51",
-        "check_count": 4,
-        "success_count": 4,
+        "last_check_time": "2026-02-07 17:19:36",
+        "check_count": 5,
+        "success_count": 5,
         "created_at": 1770350405,
-        "updated_at": "2026-02-07 17:15:51",
+        "updated_at": "2026-02-07 17:19:36",
         "ip_purity_score": 90
     },
     {
@@ -10545,8 +10545,8 @@
             }
         },
         "available": 1,
-        "latency": "241ms",
-        "real_ip": "2a0f:cdc6:500:1436::2",
+        "latency": "273ms",
+        "real_ip": "35.210.99.51",
         "purity": {
             "type": "未知",
             "risk_score": 50,
@@ -10559,11 +10559,11 @@
             "score": 75,
             "level": "良好"
         },
-        "last_check_time": "2026-02-07 17:15:52",
-        "check_count": 6,
-        "success_count": 6,
+        "last_check_time": "2026-02-07 17:19:37",
+        "check_count": 7,
+        "success_count": 7,
         "created_at": 1770322287,
-        "updated_at": "2026-02-07 17:15:52",
+        "updated_at": "2026-02-07 17:19:37",
         "ip_purity_score": 75
     },
     {
@@ -10593,8 +10593,8 @@
             }
         },
         "available": 1,
-        "latency": "270ms",
-        "real_ip": "104.168.76.144",
+        "latency": "190ms",
+        "real_ip": "23.94.37.117",
         "purity": {
             "type": "未知",
             "risk_score": 50,
@@ -10607,11 +10607,11 @@
             "score": 75,
             "level": "良好"
         },
-        "last_check_time": "2026-02-07 17:15:51",
-        "check_count": 5,
-        "success_count": 5,
+        "last_check_time": "2026-02-07 17:19:36",
+        "check_count": 6,
+        "success_count": 6,
         "created_at": 1770322287,
-        "updated_at": "2026-02-07 17:15:51",
+        "updated_at": "2026-02-07 17:19:36",
         "ip_purity_score": 75
     },
     {
@@ -10641,7 +10641,7 @@
             }
         },
         "available": 1,
-        "latency": "297ms",
+        "latency": "266ms",
         "real_ip": "164.52.1.179",
         "purity": {
             "type": "未知",
@@ -10655,11 +10655,11 @@
             "score": 90,
             "level": "优秀"
         },
-        "last_check_time": "2026-02-06 17:56:38",
-        "check_count": 3,
-        "success_count": 3,
+        "last_check_time": "2026-02-07 17:19:36",
+        "check_count": 4,
+        "success_count": 4,
         "created_at": 1770322287,
-        "updated_at": "2026-02-06 17:56:38",
+        "updated_at": "2026-02-07 17:19:36",
         "ip_purity_score": 90
     },
     {
