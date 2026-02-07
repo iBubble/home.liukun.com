@@ -166,14 +166,31 @@ async function loadNodesFromDatabase() {
         const result = await response.json();
         
         if (result.success && result.nodes.length > 0) {
-            nodes = result.nodes;
+            const originalCount = result.nodes.length;
+            
+            // 按服务器地址去重,保留第一个出现的节点
+            nodes = deduplicateNodesByServer(result.nodes);
+            
+            const deduplicatedCount = nodes.length;
+            const removedCount = originalCount - deduplicatedCount;
+            
             updateCountryFilter(); // 更新国家筛选器
             sortNodes(); // 应用排序
             showStats();
             document.getElementById('controls').style.display = 'flex';
             document.getElementById('statsBar').style.display = 'flex';
             
-            console.log(`✓ 从数据库加载了 ${nodes.length} 个节点`);
+            if (removedCount > 0) {
+                console.log(`✓ 从数据库加载了 ${originalCount} 个节点,去重后剩余 ${deduplicatedCount} 个 (去除 ${removedCount} 个重复)`);
+                if (window.CyberpunkAnimations) {
+                    CyberpunkAnimations.showNotification(
+                        `加载完成: ${deduplicatedCount} 个节点 (已去重 ${removedCount} 个)`,
+                        'success'
+                    );
+                }
+            } else {
+                console.log(`✓ 从数据库加载了 ${nodes.length} 个节点`);
+            }
         } else {
             console.log('数据库中暂无节点');
         }
@@ -308,7 +325,17 @@ async function handleFileContent(file, yamlContent) {
         const result = await response.json();
         
         if (result.success) {
-            const newNodes = result.nodes;
+            const originalCount = result.nodes.length;
+            
+            // 按服务器地址去重,保留第一个出现的节点
+            const newNodes = deduplicateNodesByServer(result.nodes);
+            
+            const deduplicatedCount = newNodes.length;
+            const removedCount = originalCount - deduplicatedCount;
+            
+            if (removedCount > 0) {
+                console.log(`解析到 ${originalCount} 个节点,去重后剩余 ${deduplicatedCount} 个 (去除 ${removedCount} 个重复)`);
+            }
             
             // 合并到数据库
             showLoading('正在合并节点...');
@@ -340,7 +367,11 @@ async function handleFileContent(file, yamlContent) {
                     CyberpunkAnimations.showNotification(`✓ 合并完成: +${stats.added} 个新节点`, 'success');
                 }
                 
-                // 自动全选并开始检测
+                // 先执行去重操作
+                console.log('开始去重操作...');
+                await deduplicateCurrentNodesQuiet(); // 静默去重,不显示通知
+                
+                // 去重后再自动全选并开始检测
                 selectAll();
                 setTimeout(() => {
                     startCheck();
@@ -376,6 +407,9 @@ function displayNodes() {
             return country === currentFilter;
         });
     }
+    
+    // 显示前再次去重(防止数据不一致)
+    filteredNodes = deduplicateNodesByServer(filteredNodes);
     
     if (filteredNodes.length === 0) {
         container.innerHTML = `
@@ -1458,4 +1492,200 @@ function hasNodesChanged(newNodes) {
     }
     
     return false;
+}
+
+// ==================== 节点去重功能 ====================
+
+/**
+ * 按服务器地址去重节点
+ * @param {Array} nodeList - 节点列表
+ * @returns {Array} 去重后的节点列表
+ */
+function deduplicateNodesByServer(nodeList) {
+    if (!nodeList || nodeList.length === 0) {
+        return [];
+    }
+    
+    const serverMap = new Map();
+    const deduplicated = [];
+    
+    nodeList.forEach(node => {
+        const server = node.server;
+        
+        if (!server) {
+            // 没有服务器地址的节点也保留
+            deduplicated.push(node);
+            return;
+        }
+        
+        if (!serverMap.has(server)) {
+            // 第一次出现的服务器地址,保留该节点
+            serverMap.set(server, true);
+            deduplicated.push(node);
+        }
+        // 否则跳过(重复的服务器地址)
+    });
+    
+    return deduplicated;
+}
+
+/**
+ * 对当前已加载的节点执行去重并更新数据库
+ */
+async function deduplicateCurrentNodes() {
+    if (nodes.length === 0) {
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification('当前没有节点', 'warning');
+        }
+        return;
+    }
+    
+    const originalCount = nodes.length;
+    
+    try {
+        showLoading('正在去重节点...');
+        
+        // 找出重复的节点
+        const serverMap = new Map();
+        const duplicateHashes = [];
+        
+        nodes.forEach(node => {
+            const server = node.server;
+            if (!server) return;
+            
+            if (serverMap.has(server)) {
+                // 这是重复节点,记录其hash用于删除
+                duplicateHashes.push(node.node_hash);
+            } else {
+                serverMap.set(server, node);
+            }
+        });
+        
+        if (duplicateHashes.length === 0) {
+            console.log('没有发现重复节点');
+            if (window.CyberpunkAnimations) {
+                CyberpunkAnimations.showNotification('没有发现重复节点', 'info');
+            }
+            return;
+        }
+        
+        console.log(`发现 ${duplicateHashes.length} 个重复节点,准备删除...`);
+        
+        // 调用API删除重复节点
+        const response = await fetch('api/nodes.php?action=delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                node_hashes: duplicateHashes
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // 重新加载节点列表
+            await loadNodesFromDatabase();
+            
+            const newCount = nodes.length;
+            const removedCount = originalCount - newCount;
+            
+            console.log(`✓ 去重完成: 原有 ${originalCount} 个,删除 ${removedCount} 个重复,剩余 ${newCount} 个`);
+            
+            if (window.CyberpunkAnimations) {
+                CyberpunkAnimations.showNotification(
+                    `✓ 去重完成: 删除 ${removedCount} 个重复节点`,
+                    'success'
+                );
+            }
+        } else {
+            throw new Error(result.error || result.message || '去重失败');
+        }
+        
+    } catch (error) {
+        console.error('去重失败:', error);
+        if (window.CyberpunkAnimations) {
+            CyberpunkAnimations.showNotification(
+                `✗ 去重失败: ${error.message}`,
+                'error'
+            );
+        }
+    } finally {
+        hideLoading();
+    }
+}
+
+/**
+ * 静默去重(用于自动流程,不显示通知)
+ */
+async function deduplicateCurrentNodesQuiet() {
+    if (nodes.length === 0) {
+        return { success: false, removed: 0 };
+    }
+    
+    const originalCount = nodes.length;
+    
+    try {
+        // 找出重复的节点
+        const serverMap = new Map();
+        const duplicateHashes = [];
+        
+        nodes.forEach(node => {
+            const server = node.server;
+            if (!server) return;
+            
+            if (serverMap.has(server)) {
+                duplicateHashes.push(node.node_hash);
+            } else {
+                serverMap.set(server, node);
+            }
+        });
+        
+        if (duplicateHashes.length === 0) {
+            console.log('去重检查: 没有发现重复节点');
+            return { success: true, removed: 0 };
+        }
+        
+        console.log(`去重检查: 发现 ${duplicateHashes.length} 个重复节点,正在删除...`);
+        
+        // 调用API删除重复节点
+        const response = await fetch('api/nodes.php?action=delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                node_hashes: duplicateHashes
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // 重新加载节点列表
+            await loadNodesFromDatabase();
+            
+            const newCount = nodes.length;
+            const removedCount = originalCount - newCount;
+            
+            console.log(`✓ 去重完成: 删除 ${removedCount} 个重复节点,剩余 ${newCount} 个`);
+            
+            return { success: true, removed: removedCount };
+        } else {
+            throw new Error(result.error || result.message || '去重失败');
+        }
+        
+    } catch (error) {
+        console.error('静默去重失败:', error);
+        return { success: false, removed: 0, error: error.message };
+    }
 }

@@ -74,8 +74,37 @@ try {
     echo "  - 未变: {$stats['unchanged']} 个\n";
     echo "  - 总计: {$stats['total']} 个\n\n";
     
-    // 4. 清理临时文件
-    echo "[4/4] 清理临时文件...\n";
+    // 4. 去重节点
+    echo "[4/5] 去重节点...\n";
+    $allNodes = $storage->getAllNodes();
+    $originalCount = count($allNodes);
+    
+    // 按服务器地址去重
+    $serverMap = [];
+    $duplicateHashes = [];
+    
+    foreach ($allNodes as $node) {
+        $server = $node['server'] ?? '';
+        if (empty($server)) continue;
+        
+        if (isset($serverMap[$server])) {
+            // 重复节点
+            $duplicateHashes[] = $node['node_hash'];
+        } else {
+            $serverMap[$server] = true;
+        }
+    }
+    
+    if (count($duplicateHashes) > 0) {
+        $storage->deleteNodes($duplicateHashes);
+        $newCount = $originalCount - count($duplicateHashes);
+        echo "✓ 去重完成: 删除 " . count($duplicateHashes) . " 个重复节点,剩余 $newCount 个\n\n";
+    } else {
+        echo "✓ 没有发现重复节点\n\n";
+    }
+    
+    // 5. 清理临时文件
+    echo "[5/5] 清理临时文件...\n";
     if (file_exists($tempFile)) {
         unlink($tempFile);
     }
