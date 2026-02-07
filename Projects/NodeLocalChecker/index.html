@@ -686,6 +686,16 @@
             align-items: center;
         }
         
+        /* 同心圆容器 */
+        .concentric-circles-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         .check-progress-modal::before {
             content: "";
             position: absolute;
@@ -731,12 +741,15 @@
             width: 100%;
         }
         
-        /* 雷达动画 */
+        /* 雷达动画 - 作为背景层，半径增大一倍 */
         .radar-container {
-            position: relative;
-            width: 250px;
-            height: 250px;
-            flex-shrink: 0;
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
         
         .radar-circle {
@@ -798,6 +811,8 @@
         /* 进度信息 */
         .progress-info {
             width: 100%;
+            position: relative;
+            z-index: 3;
         }
         
         .progress-stats {
@@ -806,6 +821,8 @@
             justify-content: center;
             gap: 15px;
             margin-bottom: 25px;
+            position: relative;
+            z-index: 3;
         }
         
         .stat-item-progress {
@@ -833,12 +850,15 @@
             opacity: 0.5;
         }
         
-        /* 环形进度条 */
+        /* 环形进度条 - 位于雷达动画上层，同心圆 */
         .progress-bar-container {
-            position: relative;
+            position: absolute;
             width: 200px;
             height: 200px;
-            margin: 0 auto 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
         }
         
         .circular-progress {
@@ -880,7 +900,9 @@
             flex-direction: column;
             gap: 6px;
             max-width: 400px;
-            margin: 0 auto;
+            margin: 20px auto 0;
+            position: relative;
+            z-index: 3;
         }
         
         .detail-row {
@@ -951,9 +973,14 @@
                 gap: 15px;
             }
             
+            .concentric-circles-container {
+                width: 300px;
+                height: 300px;
+            }
+            
             .radar-container {
-                width: 180px;
-                height: 180px;
+                width: 300px;
+                height: 300px;
             }
             
             .progress-bar-container {
@@ -1108,13 +1135,32 @@
             </div>
             
             <div class="progress-visual">
-                <!-- 雷达扫描动画 -->
-                <div class="radar-container">
-                    <div class="radar-circle radar-circle-1"></div>
-                    <div class="radar-circle radar-circle-2"></div>
-                    <div class="radar-circle radar-circle-3"></div>
-                    <div class="radar-sweep"></div>
-                    <div class="radar-center"></div>
+                <!-- 同心圆容器 -->
+                <div class="concentric-circles-container">
+                    <!-- 雷达扫描动画 (背景层，半径400px) -->
+                    <div class="radar-container">
+                        <div class="radar-circle radar-circle-1"></div>
+                        <div class="radar-circle radar-circle-2"></div>
+                        <div class="radar-circle radar-circle-3"></div>
+                        <div class="radar-sweep"></div>
+                        <div class="radar-center"></div>
+                    </div>
+                    
+                    <!-- 环形进度条 (前景层，半径200px) -->
+                    <div class="progress-bar-container">
+                        <svg class="circular-progress" width="200" height="200" viewBox="0 0 200 200">
+                            <defs>
+                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#00ff41;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="circular-progress-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="circular-progress-bar" id="progressCircle" cx="100" cy="100" r="90"></circle>
+                        </svg>
+                        <div class="progress-percentage" id="progressPercentage">0%</div>
+                    </div>
                 </div>
                 
                 <!-- 进度信息 -->
@@ -1129,21 +1175,6 @@
                             <div class="stat-value-progress" id="progressTotal">0</div>
                             <div class="stat-label-progress">总数</div>
                         </div>
-                    </div>
-                    
-                    <div class="progress-bar-container">
-                        <svg class="circular-progress" width="200" height="200" viewBox="0 0 200 200">
-                            <defs>
-                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
-                                    <stop offset="50%" style="stop-color:#00ff41;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <circle class="circular-progress-bg" cx="100" cy="100" r="90"></circle>
-                            <circle class="circular-progress-bar" id="progressCircle" cx="100" cy="100" r="90"></circle>
-                        </svg>
-                        <div class="progress-percentage" id="progressPercentage">0%</div>
                     </div>
                     
                     <div class="progress-details">
