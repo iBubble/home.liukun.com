@@ -136,11 +136,23 @@ window.addEventListener('beforeunload', function() {
 
 // 检查 Clash 状态
 async function checkClashStatus() {
+    const statusEl = document.getElementById('clashStatus');
     try {
-        const response = await fetch('api/check_clash.php');
+        // 添加超时控制
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5秒超时
+        
+        const response = await fetch('api/check_clash.php', {
+            signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        
         const result = await response.json();
         
-        const statusEl = document.getElementById('clashStatus');
         if (result.available) {
             statusEl.innerHTML = `
                 <span style="color: #0f0;">✓ Clash 核心已安装</span>
@@ -154,6 +166,11 @@ async function checkClashStatus() {
         }
     } catch (error) {
         console.error('检查 Clash 状态失败:', error);
+        // 即使检查失败也显示默认状态，不阻塞页面
+        statusEl.innerHTML = `
+            <span style="color: #f80;">⚠ 无法检查 Clash 状态</span>
+            <span style="color: #888; margin-left: 10px;">将使用默认检测模式</span>
+        `;
     }
 }
 

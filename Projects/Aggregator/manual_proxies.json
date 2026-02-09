@@ -1,0 +1,23 @@
+[
+  {
+    "id": "pmw9zlnj8",
+    "name": "LAX",
+    "type": "vless",
+    "server": "32bit.qzz.io",
+    "port": 443,
+    "uuid": "6f52ef82-8aa5-4397-91d4-573aaa1bd367",
+    "raw": "vless://6f52ef82-8aa5-4397-91d4-573aaa1bd367@32bit.qzz.io:443?type=tcp&encryption=none&security=reality&pbk=c8PyyW6C_gxQENaEwKDGv-GXGnfeB7XTLIX2Tzgsml8&fp=chrome&sni=www.cisco.com&sid=a3ab59&spx=%2F&flow=xtls-rprx-vision#LAX",
+    "tls": true,
+    "skip-cert-verify": true,
+    "network": "tcp",
+    "servername": "www.cisco.com",
+    "flow": "xtls-rprx-vision",
+    "reality-opts": {
+      "public-key": "c8PyyW6C_gxQENaEwKDGv-GXGnfeB7XTLIX2Tzgsml8",
+      "short-id": "a3ab59"
+    },
+    "client-fingerprint": "chrome",
+    "isManual": true,
+    "addedAt": "2026-02-08T08:14:08.935Z"
+  }
+]

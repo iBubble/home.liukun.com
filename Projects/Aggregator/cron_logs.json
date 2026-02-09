@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1770502200030,
+    "startTime": "2026-02-07T22:10:00.030Z",
+    "endTime": "2026-02-07T22:33:40.892Z",
+    "duration": 1421,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 341,
+      "afterCount": 309,
+      "newNodes": -32,
+      "yamlGenerated": true,
+      "connectivity": {
+        "tested": 309,
+        "passed": 304,
+        "failed": 5
+      },
+      "purity": {
+        "checked": 30,
+        "updated": 74
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1770523800031,
+    "startTime": "2026-02-08T04:10:00.031Z",
+    "endTime": "2026-02-08T04:32:29.455Z",
+    "duration": 1349,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 309,
+      "afterCount": 361,
+      "newNodes": 52,
+      "yamlGenerated": true,
+      "connectivity": {
+        "tested": 361,
+        "passed": 347,
+        "failed": 14
+      },
+      "purity": {
+        "checked": 31,
+        "updated": 78
+      }
+    },
+    "error": null
+  }
+]
