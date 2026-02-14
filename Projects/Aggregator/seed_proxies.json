@@ -1,0 +1,579 @@
+[
+  {
+    "id": "p_1770996232671_0_1au8f",
+    "name": "剩余流量：2 GB",
+    "type": "ss",
+    "server": "slur.izenny.com",
+    "port": 55407,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "8f815ff8-cab8-4f6e-b87e-56b6710e1201",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4ZjgxNWZmOC1jYWI4LTRmNmUtYjg3ZS01NmI2NzEwZTEyMDE@slur.izenny.com:55407#%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A2%20GB",
+    "_sourceUrl": "https://slvp.nxxbbf.com/api/v1/client/subscribe?token=5ebaaa26eb14cf4e6088b2e9a4869aa6",
+    "_clashName": "剩余流量：2 GB_1",
+    "latency": 534,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 94,
+    "quality": "excellent",
+    "avgLatency": 132,
+    "testedAt": "2026-02-14T05:16:04.585Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "141.11.219.12"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770974722439_0_4s1ab",
+    "name": "剩余流量：2 GB",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 26535,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "792c8279-9864-4905-adea-2961dee4ae45",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3OTJjODI3OS05ODY0LTQ5MDUtYWRlYS0yOTYxZGVlNGFlNDU@jry.izenny.com:26535#%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A2%20GB",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=ea658b6d70824d00b451f6ee1d80f8e6",
+    "_clashName": "剩余流量：2 GB_2",
+    "latency": 570,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 102,
+    "quality": "excellent",
+    "avgLatency": 132,
+    "testedAt": "2026-02-14T05:16:14.879Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "141.11.219.12"
+    },
+    "failureCount": 2
+  },
+  {
+    "id": "p_1771039424355_0_h40oi",
+    "name": "剩余流量：2 GB",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 26535,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "a52b7d3c-1c7b-41d3-b2fa-74ae32972cb4",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNTJiN2QzYy0xYzdiLTQxZDMtYjJmYS03NGFlMzI5NzJjYjQ@jry.izenny.com:26535#%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A2%20GB",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=8ca2b9c6a1ac36172058498c754bbbb0",
+    "_clashName": "剩余流量：2 GB_1",
+    "latency": 249,
+    "purityScore": 50,
+    "purityInfo": {
+      "score": 50,
+      "error": "Timeout"
+    },
+    "localLatency": 140,
+    "quality": "excellent",
+    "avgLatency": 132,
+    "testedAt": "2026-02-14T05:28:42.441Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "141.11.219.12"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770974722439_8_7sn7c",
+    "name": "试用节点-台湾",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 27689,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "792c8279-9864-4905-adea-2961dee4ae45",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3OTJjODI3OS05ODY0LTQ5MDUtYWRlYS0yOTYxZGVlNGFlNDU@jry.izenny.com:27689#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E5%8F%B0%E6%B9%BE",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=ea658b6d70824d00b451f6ee1d80f8e6",
+    "_clashName": "试用节点-台湾_1",
+    "latency": 644,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 117,
+    "quality": "excellent",
+    "avgLatency": 146,
+    "testedAt": "2026-02-14T05:16:32.088Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "82.152.90.12"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770974714996_8_9yffc",
+    "name": "试用节点-台湾",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 27689,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "f101633c-52db-44a5-93f1-8e2fc3bf314f",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmMTAxNjMzYy01MmRiLTQ0YTUtOTNmMS04ZTJmYzNiZjMxNGY@jry.izenny.com:27689#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E5%8F%B0%E6%B9%BE",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=6e784828fac533b8873d0002020be615",
+    "_clashName": "试用节点-台湾",
+    "latency": 833,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 144,
+    "quality": "excellent",
+    "avgLatency": 146,
+    "testedAt": "2026-02-14T05:16:42.372Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "82.152.90.12"
+    },
+    "failureCount": 2
+  },
+  {
+    "id": "p_1771039421068_8_old7w",
+    "name": "试用节点-台湾",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 27689,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "c14136e0-87c5-49a7-8a63-8e7e991b17c0",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjMTQxMzZlMC04N2M1LTQ5YTctOGE2My04ZTdlOTkxYjE3YzA@jry.izenny.com:27689#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E5%8F%B0%E6%B9%BE",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=94dba6b8055da2234694a9901f6b8c7d",
+    "_clashName": "试用节点-台湾",
+    "latency": 413,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 83,
+    "quality": "excellent",
+    "avgLatency": 154,
+    "testedAt": "2026-02-14T05:17:02.795Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "82.152.90.12"
+    }
+  },
+  {
+    "id": "p_1771039440350_0_i8v6w",
+    "name": "剩余流量：2 GB",
+    "type": "ss",
+    "server": "slur.izenny.com",
+    "port": 55407,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "0a5cd289-0ca6-4bb2-9c54-dfc3a9d0cd25",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowYTVjZDI4OS0wY2E2LTRiYjItOWM1NC1kZmMzYTlkMGNkMjU@slur.izenny.com:55407#%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A2%20GB",
+    "_sourceUrl": "https://slvp.nxxbbf.com/api/v1/client/subscribe?token=fbd2ee0abee0f74bf00dc1876710a9e9",
+    "_clashName": "剩余流量：2 GB_2",
+    "latency": 411,
+    "purityScore": 50,
+    "purityInfo": {
+      "score": 50,
+      "error": "Timeout"
+    },
+    "localLatency": 51,
+    "quality": "excellent",
+    "avgLatency": 162,
+    "testedAt": "2026-02-14T05:16:56.021Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "141.11.219.12"
+    }
+  },
+  {
+    "id": "p_1771039424355_8_hcnol",
+    "name": "试用节点-台湾",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 27689,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "a52b7d3c-1c7b-41d3-b2fa-74ae32972cb4",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNTJiN2QzYy0xYzdiLTQxZDMtYjJmYS03NGFlMzI5NzJjYjQ@jry.izenny.com:27689#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E5%8F%B0%E6%B9%BE",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=8ca2b9c6a1ac36172058498c754bbbb0",
+    "_clashName": "试用节点-台湾_1",
+    "latency": 283,
+    "purityScore": 50,
+    "purityInfo": {
+      "score": 50,
+      "error": "Timeout"
+    },
+    "localLatency": 132,
+    "quality": "excellent",
+    "avgLatency": 163,
+    "testedAt": "2026-02-14T05:16:49.200Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "82.152.91.114"
+    }
+  },
+  {
+    "id": "p_1771039421068_0_xgkjy",
+    "name": "剩余流量：2 GB",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 26535,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "c14136e0-87c5-49a7-8a63-8e7e991b17c0",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjMTQxMzZlMC04N2M1LTQ5YTctOGE2My04ZTdlOTkxYjE3YzA@jry.izenny.com:26535#%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A2%20GB",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=94dba6b8055da2234694a9901f6b8c7d",
+    "_clashName": "剩余流量：2 GB",
+    "latency": 480,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 91,
+    "quality": "excellent",
+    "avgLatency": 201,
+    "testedAt": "2026-02-14T05:16:21.769Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "141.11.219.12"
+    }
+  },
+  {
+    "id": "p_1771039421068_10_jnhlh",
+    "name": "试用节点-日本",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 29571,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "c14136e0-87c5-49a7-8a63-8e7e991b17c0",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjMTQxMzZlMC04N2M1LTQ5YTctOGE2My04ZTdlOTkxYjE3YzA@jry.izenny.com:29571#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E6%97%A5%E6%9C%AC",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=94dba6b8055da2234694a9901f6b8c7d",
+    "_clashName": "试用节点-日本",
+    "latency": 457,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 89,
+    "quality": "excellent",
+    "avgLatency": 238,
+    "testedAt": "2026-02-14T05:17:16.701Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "213.218.254.189"
+    }
+  },
+  {
+    "id": "p_1771039424355_10_7e71t",
+    "name": "试用节点-日本",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 29571,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "a52b7d3c-1c7b-41d3-b2fa-74ae32972cb4",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNTJiN2QzYy0xYzdiLTQxZDMtYjJmYS03NGFlMzI5NzJjYjQ@jry.izenny.com:29571#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E6%97%A5%E6%9C%AC",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=8ca2b9c6a1ac36172058498c754bbbb0",
+    "_clashName": "试用节点-日本_1",
+    "latency": 344,
+    "purityScore": 50,
+    "purityInfo": {
+      "score": 50,
+      "error": "Timeout"
+    },
+    "localLatency": 143,
+    "quality": "excellent",
+    "avgLatency": 283,
+    "testedAt": "2026-02-14T05:17:09.774Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "213.218.254.189"
+    }
+  },
+  {
+    "id": "p_1771017808005_10_yh9m8",
+    "name": "试用节点-日本",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 29571,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "5cf0de27-fa26-4bfe-97f5-8765e9dc8112",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1Y2YwZGUyNy1mYTI2LTRiZmUtOTdmNS04NzY1ZTlkYzgxMTI@jry.izenny.com:29571#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E6%97%A5%E6%9C%AC",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=e8ea52fd004102fb2ec2e013316aeffc",
+    "_clashName": "试用节点-日本",
+    "latency": 487,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 91,
+    "quality": "excellent",
+    "avgLatency": 283,
+    "testedAt": "2026-02-14T05:17:27.084Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "213.218.254.189"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770974722439_10_b71fi",
+    "name": "试用节点-日本",
+    "type": "ss",
+    "server": "jry.izenny.com",
+    "port": 29571,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "792c8279-9864-4905-adea-2961dee4ae45",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3OTJjODI3OS05ODY0LTQ5MDUtYWRlYS0yOTYxZGVlNGFlNDU@jry.izenny.com:29571#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E6%97%A5%E6%9C%AC",
+    "_sourceUrl": "https://bestti.whtjdasha.com/api/v1/client/subscribe?token=ea658b6d70824d00b451f6ee1d80f8e6",
+    "_clashName": "试用节点-日本_1",
+    "latency": 755,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 127,
+    "quality": "excellent",
+    "avgLatency": 283,
+    "testedAt": "2026-02-14T05:17:37.478Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "213.218.254.189"
+    },
+    "failureCount": 2
+  },
+  {
+    "id": "p_1771039440350_38_n60oh",
+    "name": "印度 (广港)1 x1",
+    "type": "ss",
+    "server": "slur.izenny.com",
+    "port": 17254,
+    "cipher": "chacha20-ietf-poly1305",
+    "password": "0a5cd289-0ca6-4bb2-9c54-dfc3a9d0cd25",
+    "raw": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowYTVjZDI4OS0wY2E2LTRiYjItOWM1NC1kZmMzYTlkMGNkMjU@slur.izenny.com:17254#%E5%8D%B0%E5%BA%A6%20%28%E5%B9%BF%E6%B8%AF%291%20x1",
+    "_sourceUrl": "https://slvp.nxxbbf.com/api/v1/client/subscribe?token=fbd2ee0abee0f74bf00dc1876710a9e9",
+    "_clashName": "印度 (广港)1 x1",
+    "latency": 821,
+    "purityScore": 50,
+    "purityInfo": {
+      "score": 50,
+      "error": "Timeout"
+    },
+    "localLatency": 50,
+    "quality": "excellent",
+    "avgLatency": 313,
+    "testedAt": "2026-02-14T05:17:59.187Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "152.67.1.223"
+    }
+  },
+  {
+    "id": "p_1770837386527_4_j42sr",
+    "name": "香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁",
+    "type": "trojan",
+    "server": "cdnfire.xiaomispeed.com",
+    "port": 21115,
+    "password": "523305bc-aa19-4277-aec7-d09912a7c57a",
+    "tls": true,
+    "skip-cert-verify": true,
+    "network": "tcp",
+    "servername": "cdnfire.xiaomispeed.com",
+    "raw": "trojan://523305bc-aa19-4277-aec7-d09912a7c57a@cdnfire.xiaomispeed.com:21115?allowInsecure=1&peer=cdnfire.xiaomispeed.com&sni=cdnfire.xiaomispeed.com#%E9%A6%99%E6%B8%AF%20%C2%B7%204%E5%8F%B7%E7%BA%BF%20%C2%B7%20Netflix%E7%AD%89%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%A3%E9%94%81%20%C2%B7%20ChatGPT%E8%A7%A3%E9%94%81",
+    "_sourceUrl": "http://tinnyrick8888.com/api/v1/client/subscribe?token=a0e18fb683c1addad930935c5c5cc0dc",
+    "_clashName": "香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁_4",
+    "latency": 419,
+    "quality": "excellent",
+    "avgLatency": 323,
+    "testedAt": "2026-02-14T05:18:15.584Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "154.83.84.65"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770828622105_5_6en9x",
+    "name": "台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁",
+    "type": "trojan",
+    "server": "cdnfire.xiaomispeed.com",
+    "port": 22231,
+    "password": "3b16cdf1-5b54-47ea-9b54-dfd33d5195ad",
+    "tls": true,
+    "skip-cert-verify": true,
+    "network": "tcp",
+    "servername": "cdnfire.xiaomispeed.com",
+    "raw": "trojan://3b16cdf1-5b54-47ea-9b54-dfd33d5195ad@cdnfire.xiaomispeed.com:22231?allowInsecure=1&peer=cdnfire.xiaomispeed.com&sni=cdnfire.xiaomispeed.com#%E5%8F%B0%E6%B9%BE%20%C2%B7%201%E5%8F%B7%E7%BA%BF%20%C2%B7%20Netflix%E7%AD%89%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%A3%E9%94%81%20%C2%B7%20ChatGPT%E8%A7%A3%E9%94%81",
+    "_sourceUrl": "http://tinnyrick8888.com/api/v1/client/subscribe?token=e57d1c728371314571bd9449800f30cc",
+    "_clashName": "台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_1",
+    "latency": 727,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "116.54.76.26",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "quality": "excellent",
+    "avgLatency": 377,
+    "testedAt": "2026-02-14T05:17:44.585Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "166.0.199.139"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770837377284_4_mrq7t",
+    "name": "香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁",
+    "type": "trojan",
+    "server": "cdnfire.xiaomispeed.com",
+    "port": 21115,
+    "password": "3b16cdf1-5b54-47ea-9b54-dfd33d5195ad",
+    "tls": true,
+    "skip-cert-verify": true,
+    "network": "tcp",
+    "servername": "cdnfire.xiaomispeed.com",
+    "raw": "trojan://3b16cdf1-5b54-47ea-9b54-dfd33d5195ad@cdnfire.xiaomispeed.com:21115?allowInsecure=1&peer=cdnfire.xiaomispeed.com&sni=cdnfire.xiaomispeed.com#%E9%A6%99%E6%B8%AF%20%C2%B7%204%E5%8F%B7%E7%BA%BF%20%C2%B7%20Netflix%E7%AD%89%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%A3%E9%94%81%20%C2%B7%20ChatGPT%E8%A7%A3%E9%94%81",
+    "_sourceUrl": "http://tinnyrick8888.com/api/v1/client/subscribe?token=e57d1c728371314571bd9449800f30cc",
+    "_clashName": "香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁_2",
+    "latency": 392,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "116.54.76.26",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "quality": "excellent",
+    "avgLatency": 378,
+    "testedAt": "2026-02-14T05:27:02.555Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "154.83.84.65"
+    },
+    "failureCount": 2
+  },
+  {
+    "id": "p_1771017786487_12_1jwin",
+    "name": "英国 V2CROSS.COM",
+    "type": "vmess",
+    "server": "82.198.246.97",
+    "port": 180,
+    "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+    "alterId": 0,
+    "cipher": "auto",
+    "network": "tcp",
+    "tls": false,
+    "skip-cert-verify": true,
+    "servername": "broadcastlv.chat.bilibili.com",
+    "raw": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU4MmYxXHU1NmZkIFYyQ1JPU1MuQ09NIiwgImFkZCI6ICI4Mi4xOTguMjQ2Ljk3IiwgInBvcnQiOiAiMTgwIiwgInR5cGUiOiAibm9uZSIsICJpZCI6ICJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCAiYWlkIjogIjAiLCAibmV0IjogInRjcCIsICJwYXRoIjogIi8iLCAiaG9zdCI6ICJicm9hZGNhc3Rsdi5jaGF0LmJpbGliaWxpLmNvbSIsICJ0bHMiOiAiIn0=",
+    "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "_clashName": "英国 V2CROSS.COM",
+    "latency": 397,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 186,
+    "quality": "excellent",
+    "avgLatency": 396,
+    "testedAt": "2026-02-14T05:29:32.566Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "149.34.251.245"
+    }
+  },
+  {
+    "id": "p_1770837388645_4_dnw54",
+    "name": "香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁",
+    "type": "trojan",
+    "server": "cdnfire.xiaomispeed.com",
+    "port": 21115,
+    "password": "c526213b-d0fc-40d7-9c74-9763ef40381f",
+    "tls": true,
+    "skip-cert-verify": true,
+    "network": "tcp",
+    "servername": "cdnfire.xiaomispeed.com",
+    "raw": "trojan://c526213b-d0fc-40d7-9c74-9763ef40381f@cdnfire.xiaomispeed.com:21115?allowInsecure=1&peer=cdnfire.xiaomispeed.com&sni=cdnfire.xiaomispeed.com#%E9%A6%99%E6%B8%AF%20%C2%B7%204%E5%8F%B7%E7%BA%BF%20%C2%B7%20Netflix%E7%AD%89%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%A3%E9%94%81%20%C2%B7%20ChatGPT%E8%A7%A3%E9%94%81",
+    "_sourceUrl": "http://tinnyrick8888.com/api/v1/client/subscribe?token=234b6106c94984ee99739beb264b9cf2",
+    "_clashName": "香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁_8",
+    "latency": 281,
+    "quality": "excellent",
+    "avgLatency": 473,
+    "testedAt": "2026-02-14T05:17:51.958Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "154.83.84.65"
+    },
+    "failureCount": 1
+  },
+  {
+    "id": "p_1770974722683_2_qufjn",
+    "name": "香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁",
+    "type": "trojan",
+    "server": "green2.cdntencentmusic.com",
+    "port": 31102,
+    "password": "63ae5be4-a419-4b95-bfd1-a381276e60fd",
+    "tls": true,
+    "skip-cert-verify": true,
+    "network": "tcp",
+    "servername": "green2.cdntencentmusic.com",
+    "raw": "trojan://63ae5be4-a419-4b95-bfd1-a381276e60fd@green2.cdntencentmusic.com:31102?allowInsecure=1&peer=green2.cdntencentmusic.com&sni=green2.cdntencentmusic.com#%E9%A6%99%E6%B8%AF%20%C2%B7%202%E5%8F%B7%E7%BA%BF%20%C2%B7%20Netflix%E7%AD%89%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%A3%E9%94%81%20%C2%B7%20ChatGPT%E8%A7%A3%E9%94%81",
+    "_sourceUrl": "https://xstar8888.com/api/v1/client/subscribe?token=f423054a9ef622e76c86639cc1747419",
+    "_clashName": "香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_4",
+    "latency": 3314,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "202.98.76.142",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 246,
+    "quality": "excellent",
+    "avgLatency": 477,
+    "testedAt": "2026-02-14T05:27:11.289Z",
+    "testResults": {
+      "description": "节点可用",
+      "real_ip": "45.39.198.74"
+    },
+    "failureCount": 1
+  }
+]

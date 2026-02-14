@@ -1,0 +1,79 @@
+port: 7902
+socks-port: 7903
+allow-lan: false
+mode: global
+log-level: silent
+proxies:
+  - id: p_1770694145487_105_2bopo
+    name: HK44｜原生/疑似家宽｜非常安全
+    type: trojan
+    server: green2.cdntencentmusic.com
+    port: 31101
+    password: b17cb30b-8379-471b-861e-c5fbf218a8fd
+    tls: true
+    skip-cert-verify: true
+    network: tcp
+    servername: green2.cdntencentmusic.com
+    raw: >-
+      trojan://b17cb30b-8379-471b-861e-c5fbf218a8fd@green2.cdntencentmusic.com:31101?allowInsecure=1&sni=green2.cdntencentmusic.com#HK44%EF%BD%9C%E5%8E%9F%E7%94%9F/%E7%96%91%E4%BC%BC%E5%AE%B6%E5%AE%BD%EF%BD%9C%E9%9D%9E%E5%B8%B8%E5%AE%89%E5%85%A8
+    _sourceUrl: https://cdn.jsdelivr.net/gh/peasoft/NoMoreWalls@master/list.txt
+    _clashName: HK44｜原生/疑似家宽｜非常安全
+    latency: 5991
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 116.54.76.26
+      isp: Chinanet
+      country: CN
+      hosting: false
+    localLatency: 669
+    quality: good
+    avgLatency: 769
+    testedAt: '2026-02-11T05:08:06.965Z'
+    testResults:
+      excellent: 0
+      good: 1
+      basic: 2
+      details:
+        - name: Facebook
+          url: http://www.facebook.com
+          success: false
+          time: 5011
+          error: '502'
+        - name: Twitter
+          url: http://twitter.com
+          success: false
+          time: 15361
+          error: '502'
+        - name: YouTube
+          url: http://www.youtube.com
+          success: false
+          time: 5011
+          error: '502'
+        - name: Google
+          url: http://www.google.com/generate_204
+          success: false
+          time: 5011
+          error: '502'
+        - name: GitHub
+          url: http://github.com
+          success: true
+          time: 1759
+          httpCode: '200'
+        - name: Google204
+          url: http://www.gstatic.com/generate_204
+          success: true
+          time: 179
+          httpCode: '204'
+        - name: Cloudflare
+          url: http://cp.cloudflare.com/generate_204
+          success: true
+          time: 368
+          httpCode: '204'
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - HK44｜原生/疑似家宽｜非常安全
+rules:
+  - MATCH,PROXY

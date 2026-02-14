@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antigravity 机场聚合器 Web 版</title>
+    <title>机场聚合器本地版</title>
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%239333ea'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3Cpath fill='white' transform='scale(0.7) translate(5,5)' d='M2.5,19h19v2h-19V19z M22.07,9.64c-0.21-0.8-1.04-1.28-1.84-1.06L14.92,10l-6.9-6.4C7.65,3.23,7.12,3,6.56,3h-0.03c-0.89,0-1.42,0.92-1.03,1.67L8.71,10L4.22,10L2.1,8.35C1.65,8.02,1.01,8.12,0.67,8.56l0,0c-0.34,0.44-0.25,1.06,0.2,1.39l4.52,3.31C5.82,12.58,6.38,13,7.5,13h12.5c1.1,0,2-0.9,2-2l0,0C22,10.55,22.07,10.09,22.07,9.64z'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://registry.npmmirror.com/vue/3.4.15/files/dist/vue.global.prod.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
@@ -111,18 +111,19 @@
                         class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
                         Airport Aggregator
                     </h1>
-                    <p class="text-slate-400 text-sm">Web Edition • Antigravity</p>
+                    <p class="text-slate-400 text-sm">Local Edition • Antigravity</p>
                 </div>
             </div>
             <div class="flex items-center space-x-3">
                 <!-- Server Uptime Badge -->
-                <div v-if="serverStats.uptime"
-                    class="px-3 py-2 rounded-lg bg-slate-800/80 border border-emerald-500/30 flex items-center space-x-2 text-xs font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" title="服务正常"></span>
-                    <span class="text-emerald-400">运行</span>
-                    <span class="text-slate-300">{{ serverStats.uptime }}</span>
-                    <span class="text-slate-600">|</span>
-                    <span class="text-slate-500 text-[10px]">{{ serverStats.bootTime }}</span>
+                <div v-if="liveUptime || serverStats.uptime"
+                    class="px-4 py-2 rounded-full bg-slate-800/90 border border-slate-600/50 flex items-center text-xs font-mono whitespace-nowrap gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" title="服务正常"></span>
+                    <span class="text-slate-300">运行</span>
+                    <span class="text-cyan-400 font-semibold">{{ liveUptime || formatUptimeDisplay(serverStats.uptime)
+                        }}</span>
+                    <span class="text-slate-500">from</span>
+                    <span class="text-purple-400">{{ serverStats.bootTime.replace(' (北京)', '') }}</span>
                 </div>
                 <!-- Settings Removed as requested -->
                 <a href="Aggregator.yaml" download="Aggregator.yaml" target="_blank"
@@ -134,13 +135,14 @@
                     <div
                         class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
                     </div>
-                    <button @click="showExportModal = true"
-                        class="relative px-6 py-2 bg-slate-900 rounded-lg leading-none flex items-center divide-x divide-gray-600 hover:bg-slate-800 transition">
-                        <span class="flex items-center space-x-2 text-indigo-100">
-                            <span class="material-icons-round text-base">cloud_download</span>
-                            <span class="pr-2">导出配置</span>
-                        </span>
-                        <span class="pl-2 block text-indigo-400 text-xs">Clash / Singbox</span>
+                    <button @click="copySubscriptionUrl"
+                        class="relative px-6 py-2 bg-slate-900 rounded-lg leading-none flex items-center hover:bg-slate-800 transition"
+                        :class="{'!bg-emerald-800': subscriptionCopied}">
+                        <span class="material-icons-round text-base mr-2 text-indigo-100"
+                            :class="{'!text-emerald-300': subscriptionCopied}">{{ subscriptionCopied ? 'check' :
+                            'content_copy' }}</span>
+                        <span class="text-indigo-100" :class="{'!text-emerald-300': subscriptionCopied}">{{
+                            subscriptionCopied ? '已复制！' : '点击复制订阅' }}</span>
                     </button>
                 </div>
             </div>
@@ -165,15 +167,13 @@
                             <span class="material-icons-round text-sm">terminal</span>
                         </button>
                     </div>
-                    <p class="text-xs text-slate-400 mb-4 relative z-10">
-                        自动从 GitHub、公开源抓取免费节点。基于 Aggregator 核心逻辑。
-                    </p>
+
                     <div class="flex flex-col space-y-3">
                         <!-- 主推按钮：全网获取（包含 Github + 分享站 + Linux.do） -->
                         <button @click="fetchAllNodes" :disabled="cloudLoading"
                             class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-purple-500/30 transform transition-all active:scale-95 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed group">
                             <span class="material-icons-round text-xl animate-pulse">public</span>
-                            <span>{{ cloudLoading ? '更新中...' : '🔥 全网获取节点 (Free Style)' }}</span>
+                            <span>{{ cloudLoading ? '更新中...' : '全网获取节点' }}</span>
                         </button>
                         <p class="text-[10px] text-slate-500 text-center -mt-1">包含 Github + 分享站 + Linux.do</p>
 
@@ -199,13 +199,7 @@
                             </div>
                         </div>
 
-                        <!-- 次选按钮：仅 Github -->
-                        <button @click="refreshCloud" :disabled="cloudLoading"
-                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium py-2.5 px-4 rounded-xl shadow-lg transform transition-all active:scale-95 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed group text-sm">
-                            <span
-                                class="material-icons-round text-lg group-hover:rotate-180 transition-transform duration-500">sync</span>
-                            <span>{{ cloudLoading ? '更新中...' : '仅更新 Github 节点' }}</span>
-                        </button>
+
                     </div>
 
                     <div v-if="cloudResult" class="mt-3 text-center text-xs text-emerald-400 animate-fade-in mb-2">
@@ -214,12 +208,11 @@
 
 
                     <div class="mt-3">
-                        <button @click="checkLocalConnectivity" :disabled="isLocalChecking"
-                            class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-medium shadow-lg shadow-emerald-600/20 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center">
-                            <span v-if="isLocalChecking"
-                                class="material-icons-round animate-spin mr-2 text-base">refresh</span>
-                            {{ isLocalChecking ? `测试中 ${localCheckProgress}` : '🚀 服务器直连测试 (Server Test)' }}
-                        </button>
+                        <a href="https://home.liukun.com:8443/Projects/NodeLocalChecker/" target="_blank"
+                            class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-medium shadow-lg shadow-emerald-600/20 transition-all active:scale-95 flex justify-center items-center cursor-pointer">
+                            <span class="material-icons-round mr-2 text-base">rocket_launch</span>
+                            国内节点测试
+                        </a>
                     </div>
                 </div>
 
@@ -253,10 +246,11 @@
                                 class="w-full px-4 py-3 rounded-xl glass-input placeholder-slate-600 text-sm font-mono"></textarea>
                         </div>
 
-                        <button @click="parseContent" :disabled="loading"
+                        <button @click="parseContent" :disabled="isParsing"
                             class="w-full py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-medium transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center">
-                            <span v-if="loading" class="material-icons-round animate-spin mr-2 text-base">refresh</span>
-                            {{ loading ? '解析中...' : '解析并导入' }}
+                            <span v-if="isParsing"
+                                class="material-icons-round animate-spin mr-2 text-base">refresh</span>
+                            {{ isParsing ? '解析中...' : '解析并导入' }}
                         </button>
 
                         <p v-if="errorMsg" class="text-red-400 text-xs mt-2 flex items-center">
@@ -305,19 +299,42 @@
 
             <!-- Main Content / List -->
             <div class="lg:col-span-8">
-                <div v-if="proxies.length === 0 && !loading"
+                <div v-if="proxies.length === 0 && !loading && !pageLoading"
                     class="h-full flex flex-col items-center justify-center text-center p-10 border-2 border-dashed border-slate-700 rounded-3xl opacity-50">
                     <span class="material-icons-round text-6xl text-slate-600 mb-4">dns</span>
                     <h3 class="text-xl font-medium text-slate-300">暂无节点数据</h3>
                     <p class="text-slate-500 mt-2 max-w-sm">请在左侧添加订阅链接或粘贴原始内容以开始使用。</p>
                 </div>
 
-                <div v-else-if="proxies.length === 0 && loading"
-                    class="h-full flex flex-col items-center justify-center text-center p-10">
-                    <div
-                        class="animate-spin rounded-full h-12 w-12 border-4 border-indigo-500 border-t-transparent mb-4">
+                <div v-else-if="proxies.length === 0 && pageLoading"
+                    class="h-full flex flex-col items-center justify-center text-center p-10 space-y-6">
+                    <!-- Tech Loader -->
+                    <div class="relative w-24 h-24">
+                        <div class="absolute inset-0 border-t-4 border-indigo-500 rounded-full animate-spin"></div>
+                        <div
+                            class="absolute inset-2 border-r-4 border-purple-500 rounded-full animate-spin animation-delay-200">
+                        </div>
+                        <div
+                            class="absolute inset-4 border-b-4 border-emerald-500 rounded-full animate-spin animation-delay-500">
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="material-icons-round text-3xl text-white animate-pulse">radar</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-medium text-slate-300">加载中...</h3>
+                    <div class="space-y-2">
+                        <h3
+                            class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                            正在扫描节点网络...
+                        </h3>
+                        <p class="text-slate-500 text-sm font-mono animate-pulse">{{ loadingStatusText || '初始化链路...' }}
+                        </p>
+                    </div>
+                    <!-- Slow loading tip -->
+                    <div v-if="showSlowLoadingTip"
+                        class="text-xs text-yellow-500/80 bg-yellow-500/10 px-4 py-2 rounded-full animate-fade-in-up">
+                        <span class="material-icons-round text-xs mr-1 align-text-bottom">info</span>
+                        响应较慢，正在尝试从备用链路获取...
+                    </div>
                 </div>
 
                 <div v-else class="space-y-4">
@@ -375,7 +392,7 @@
 
                     <div class="flex flex-col md:flex-row justify-between items-end mb-3 px-1 gap-2">
                         <div class="flex items-center space-x-3">
-                            <h3 class="text-slate-400 text-sm font-medium">节点列表 ({{ filteredProxies.length }})</h3>
+                            <h3 class="text-slate-400 text-sm font-medium">节点 ({{ filteredProxies.length }})</h3>
 
                             <!-- Selection Toolbar -->
                             <div class="flex items-center bg-slate-800 rounded-lg p-1 border border-slate-700/50">
@@ -384,7 +401,13 @@
                                     :class="pageSelected ? 'text-indigo-400 font-bold' : 'text-slate-400'">
                                     <span class="material-icons-round text-sm mr-1">{{ pageSelected ? 'check_box' :
                                         'check_box_outline_blank' }}</span>
-                                    全选本页
+                                    本页
+                                </button>
+                                <div class="w-px h-3 bg-slate-700 mx-1"></div>
+                                <button @click="selectAvailableNodes"
+                                    class="px-2 py-1 text-xs rounded hover:bg-emerald-500/20 text-emerald-400 transition flex items-center">
+                                    <span class="material-icons-round text-sm mr-1">done_all</span>
+                                    可用
                                 </button>
                                 <div class="w-px h-3 bg-slate-700 mx-1"></div>
                                 <button @click="clearSelection" v-if="selectedCount > 0"
@@ -398,7 +421,7 @@
                                 :class="hideFailed ? 'text-indigo-400 bg-slate-800 border-indigo-500/30' : 'text-slate-500'">
                                 <span class="material-icons-round text-sm mr-1">{{ hideFailed ? 'visibility_off' :
                                     'visibility' }}</span>
-                                {{ hideFailed ? '隐藏超时' : '含超时' }}
+                                {{ hideFailed ? '隐藏' : '超时' }}
                             </button>
                             <!-- Manual Only Toggle -->
                             <button @click="showManualOnly = !showManualOnly"
@@ -406,7 +429,7 @@
                                 :class="showManualOnly ? 'text-amber-400 bg-slate-800 border-amber-500/30' : 'text-slate-500'">
                                 <span class="material-icons-round text-sm mr-1">{{ showManualOnly ? 'bookmark' :
                                     'bookmark_border' }}</span>
-                                手动添加
+                                手动
                                 <span v-if="manualProxies.length > 0"
                                     class="ml-1 bg-amber-500/20 text-amber-400 px-1 rounded text-[10px]">{{
                                     manualProxies.length }}</span>
@@ -442,7 +465,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                {{ purityChecking ? '检测中...' : '检测纯净度' }}
+                                {{ purityChecking ? '检测中...' : '纯净度' }}
                             </button>
 
                             <!-- Test & Deduplicate -->
@@ -462,7 +485,28 @@
                                         d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
                                     </path>
                                 </svg>
-                                {{ isLocalChecking ? '测试中...' : '测试并去重' }}
+                                {{ isLocalChecking ? '检测中...' : '检测/去重' }}
+                            </button>
+
+                            <!-- Generate YAML -->
+                            <button @click="handleGenerateYaml" :disabled="isGeneratingYaml"
+                                class="ml-3 flex items-center px-3 py-1.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg text-sm transition-colors border border-indigo-500/20"
+                                title="根据当前显示的节点顺序重新生成配置文件">
+                                <svg v-if="isGeneratingYaml" class="animate-spin -ml-1 mr-2 h-4 w-4 text-indigo-400"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                                <svg v-else class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4">
+                                    </path>
+                                </svg>
+                                {{ isGeneratingYaml ? '生成中...' : 'YAML' }}
                             </button>
                         </div>
 
@@ -614,9 +658,10 @@
         <footer class="mt-12 border-t border-slate-800 pt-6 text-center text-slate-500 text-sm">
             <p>&copy; 2026 Antigravity. All rights reserved.</p>
             <p class="text-xs mt-2 text-slate-600">
-                Nodes: {{ proxies.length }} (Cloud: {{ proxies.length - manualProxies.length }}, Manual: {{
-                manualProxies.length }})
-                | Hidden: {{ proxies.length - filteredProxies.length }}
+                Nodes: {{ (proxies || []).length }} (Cloud: {{ ((proxies || []).length || 0) - ((manualProxies ||
+                []).length || 0) }}, Manual: {{
+                (manualProxies || []).length }})
+                | Hidden: {{ ((proxies || []).length || 0) - ((filteredProxies || []).length || 0) }}
             </p>
         </footer>
 
@@ -674,7 +719,7 @@
         <div v-show="showLogModal" class="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity pointer-events-auto"
-                @click="!cloudLoading && (showLogModal = false)"></div>
+                @click="showLogModal = false"></div>
 
             <!-- Draggable Window -->
             <div ref="logWindowEl" :style="modalStyle"
@@ -683,7 +728,7 @@
                 <div @mousedown="startDrag"
                     class="bg-white/5 px-4 py-3 flex items-center justify-between border-b border-white/10 cursor-grab active:cursor-grabbing select-none">
                     <div class="flex items-center space-x-2">
-                        <div @click.stop="!cloudLoading && (showLogModal = false)"
+                        <div @click.stop="showLogModal = false"
                             class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 cursor-pointer flex items-center justify-center group">
                             <span
                                 class="material-icons-round text-[8px] text-black opacity-0 group-hover:opacity-100">close</span>
@@ -897,18 +942,21 @@
         createApp({
             setup() {
                 const inputUrl = ref('');
-                const rawContent = ref('');
+                const rawContent = ref(''); // 恢复这个变量
                 const proxies = ref([]);
-                const loading = ref(false);
+                const manualProxies = ref([]);
+                const loading = ref(false); // Deprecated, but keeping to avoid breaking other refs for now.
+                // Instead, let's reset it to false and use specific flags.
+                const pageLoading = ref(true); // Initial page load
+                const isParsing = ref(false); // For manual parse button
                 const errorMsg = ref('');
                 const searchQuery = ref('');
                 const filterType = ref('all'); // all, vmess, ss, etc
                 const filterCountry = ref('all');
-                const sortMode = ref('latency'); // latency, purity, local
+                const sortMode = ref('latency'); // 修复BUG: 必须是'latency'或'purity'，不能是'delay'
                 const hideFailed = ref(false);
                 const showManualOnly = ref(false); // 只显示手动添加的节点
                 const showForumOnly = ref(false); // 只显示论坛导入的节点
-                const manualProxies = ref([]);	// 手动添加的节点列表
 
                 const isLocalChecking = ref(false);
                 const localCheckProgress = ref('');
@@ -917,6 +965,7 @@
 
                 const showExportModal = ref(false);
                 const showClearModal = ref(false);
+                const subscriptionCopied = ref(false);
                 const showLogModal = ref(false); // Controls visibility of log window
                 const showDedupeModal = ref(false); // 去重确认对话框
                 const dedupeInfo = ref({ removedCount: 0, uniqueNodes: [], targets: [], isSelective: false }); // 去重临时数据
@@ -925,6 +974,9 @@
                 const showCronLogModal = ref(false);
                 const cronLogs = ref([]);
                 const cronNextRun = ref(null);
+
+                const loadingStatusText = ref('');
+                const showSlowLoadingTip = ref(false);
 
                 const serverLogs = ref([]); // Stores logs from server
                 const logWindowRef = ref(null);
@@ -1014,53 +1066,97 @@
                 const pageSize = ref(50); // Render 50 items per page
 
                 // Persistence - 从服务器加载数据
+                // Persistence - Incremental Loading
                 const loadProxies = async () => {
-                    loading.value = true; // Show loading indicator
+                    pageLoading.value = true;
+                    // Reset UI state
+                    errorMsg.value = '';
+                    loadingStatusText.value = '正在扫描云端数据库...';
+                    showSlowLoadingTip.value = false;
+
+                    const loadedCloud = ref([]);
+                    const loadedManual = ref([]);
+
+                    // Slow tip timer
+                    const slowTimer = setTimeout(() => { showSlowLoadingTip.value = true; }, 3000);
+
                     try {
-                        // 从服务器加载云端抓取的节点
-                        const res = await fetch('/api/proxies');
-                        const cloudProxies = await res.json();
+                        const fetchWithTimeout = (url, ms = 30000) => {
+                            return Promise.race([
+                                fetch(url),
+                                new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))
+                            ]);
+                        };
 
-                        // 从服务器加载手动添加的节点
-                        const manualRes = await fetch('/api/manual_proxies');
-                        const manualData = await manualRes.json();
-                        manualProxies.value = manualData;
+                        // Helper to merge and update view
+                        const updateView = () => {
+                            const all = [...loadedCloud.value];
+                            const existingRaw = new Set(all.map(p => p.raw));
 
-                        // 合并节点（去重）
-                        const allProxies = [...cloudProxies];
-                        const existingRaw = new Set(allProxies.map(p => p.raw));
-
-                        for (const mp of manualData) {
-                            if (!existingRaw.has(mp.raw)) {
-                                allProxies.push(mp);
+                            for (const mp of loadedManual.value) {
+                                if (!existingRaw.has(mp.raw)) {
+                                    all.push(mp);
+                                }
                             }
-                        }
 
-                        // 将后端的 purityInfo 映射到前端显示需要的 purity 字段
-                        allProxies.forEach(p => {
-                            if (p.purityInfo && !p.purity) {
-                                p.purity = {
-                                    countryCode: p.purityInfo.country || p.purityInfo.countryCode,
-                                    isp: p.purityInfo.isp || '',
-                                    hosting: p.purityInfo.hosting || false
-                                };
-                            }
-                        });
+                            // Process purity
+                            all.forEach(p => {
+                                if (p.purityInfo && !p.purity) {
+                                    p.purity = {
+                                        countryCode: p.purityInfo.country || p.purityInfo.countryCode,
+                                        isp: p.purityInfo.isp || '',
+                                        hosting: p.purityInfo.hosting || false
+                                    };
+                                }
+                            });
 
-                        proxies.value = allProxies;
-                        console.log(`加载完成: ${cloudProxies.length} 云端 + ${manualData.length} 手动节点`);
+                            proxies.value = all;
+                        };
 
-                        // 自动更新 Aggregator.yaml 配置文件
-                        if (allProxies.length > 0) {
-                            fetch('/api/generate_yaml', { method: 'POST' })
-                                .then(r => r.json())
-                                .then(d => console.log('Aggregator.yaml 已自动更新'))
-                                .catch(e => console.warn('YAML 生成失败:', e));
-                        }
+                        // 1. Fetch Cloud (Async)
+                        const cloudPromise = fetchWithTimeout('api/proxies')
+                            .then(res => {
+                                if (!res.ok) throw new Error(res.status);
+                                return res.json();
+                            })
+                            .then(data => {
+                                loadedCloud.value = Array.isArray(data) ? data : [];
+                                updateView();
+                                loadingStatusText.value = `已加载 ${data.length} 个云端节点...`;
+                                console.log('Cloud loaded');
+                            })
+                            .catch(e => {
+                                console.error('Cloud fetch fail:', e);
+                                errorMsg.value += `Cloud Error: ${e.message} `;
+                            });
+
+                        // 2. Fetch Manual (Async)
+                        const manualPromise = fetchWithTimeout('api/manual_proxies', 5000)
+                            .then(res => {
+                                if (!res.ok) throw new Error(res.status);
+                                return res.json();
+                            })
+                            .then(data => {
+                                loadedManual.value = Array.isArray(data) ? data : [];
+                                updateView();
+                                manualProxies.value = loadedManual.value; // Sync to manualProxies ref
+                                console.log('Manual loaded');
+                            })
+                            .catch(e => {
+                                console.warn('Manual fetch fail:', e);
+                            });
+
+                        // Wait for both to settle (but view updates incrementally)
+                        await Promise.allSettled([cloudPromise, manualPromise]);
+
                     } catch (e) {
-                        console.error('从服务器加载节点失败:', e);
+                        console.error('Core Load Error:', e);
+                        errorMsg.value = e.message;
                     } finally {
-                        loading.value = false; // 隐藏加载指示器
+                        clearTimeout(slowTimer);
+                        pageLoading.value = false;
+                        loadingStatusText.value = '';
+                        loading.value = false; // Ensure global loading is off
                     }
                 };
 
@@ -1085,11 +1181,52 @@
 
                 // --- Computed ---
                 const getCountry = (node) => {
-                    if (node.purity && node.purity.countryCode) return node.purity.countryCode;
-                    // Heuristic: Check for _CN_, _US_, etc in name
-                    const match = node.name.match(/_([A-Z]{2})_/);
-                    if (match) return match[1];
-                    return 'Other';
+                    // 1. 优先使用纯净度检测的国家代码
+                    if (node && node.purity && node.purity.countryCode) return node.purity.countryCode;
+
+                    // 安全检查
+                    if (!node) return 'UN';
+
+                    // 2. 从节点名称中提取国家代码（支持多种格式）
+                    if (node.name && typeof node.name === 'string') {
+                        // 格式1: _CN_, _US_, _JP_ 等
+                        let match = node.name.match(/_([A-Z]{2})_/);
+                        if (match) return match[1];
+
+                        // 格式2: [CN], [US], [JP] 等
+                        match = node.name.match(/\[([A-Z]{2})\]/);
+                        if (match) return match[1];
+
+                        // 格式3: 🇨🇳, 🇺🇸, 🇯🇵 等 emoji 国旗
+                        const flagMap = {
+                            '🇨🇳': 'CN', '🇺🇸': 'US', '🇯🇵': 'JP', '🇰🇷': 'KR', '🇸🇬': 'SG',
+                            '🇭🇰': 'HK', '🇹🇼': 'TW', '🇬🇧': 'GB', '🇩🇪': 'DE', '🇫🇷': 'FR'
+                        };
+                        for (const [flag, code] of Object.entries(flagMap)) {
+                            if (node.name.includes(flag)) return code;
+                        }
+
+                        // 格式4: 中文国家名
+                        const nameMap = {
+                            '香港': 'HK', '台湾': 'TW', '日本': 'JP', '韩国': 'KR', '新加坡': 'SG',
+                            '美国': 'US', '英国': 'GB', '德国': 'DE', '法国': 'FR'
+                        };
+                        for (const [name, code] of Object.entries(nameMap)) {
+                            if (node.name.includes(name)) return code;
+                        }
+                    }
+
+                    // 3. 从IP地址识别国家（简单的IP段识别）
+                    if (node.server && typeof node.server === 'string') {
+                        const ip = node.server;
+                        // 中国大陆常见IP段
+                        if (ip.match(/^(1|14|27|36|39|42|58|59|60|61|101|106|110|111|112|113|114|115|116|117|118|119|120|121|122|123|124|125|180|182|183|210|211|218|219|220|221|222|223)\./)) {
+                            return 'CN';
+                        }
+                    }
+
+                    // 4. 无法识别
+                    return 'UN';
                 };
 
                 // --- Dynamic Stats Logic ---
@@ -1097,7 +1234,11 @@
                 // 1. Base Context: Applies Search & HideFailed (Shared by all views)
                 // This represents the "User's current universe of interesting nodes"
                 const baseContextProxies = computed(() => {
-                    let res = proxies.value;
+                    let res = proxies.value || []; // Ensure not undefined
+                    if (!res) return [];
+
+                    // 强力过滤：只保留有效的对象，防止渲染层崩溃
+                    res = res.filter(p => p && typeof p === 'object' && p.name);
 
                     // 手动添加过滤
                     if (showManualOnly.value) {
@@ -1152,7 +1293,7 @@
 
                 const countries = computed(() => {
                     const s = new Set(proxiesByType.value.map(p => getCountry(p)));
-                    return [...s].filter(c => c !== 'Other').sort();
+                    return [...s].sort(); // 保留所有国家代码
                 });
 
                 const countryStats = computed(() => {
@@ -1204,8 +1345,8 @@
                     // hideFailed is already applied in baseContextProxies
 
 
-                    // Sorting
-                    return res.sort((a, b) => {
+                    // Sorting (修复BUG: 必须创建新数组副本，否则Vue无法检测到变化！)
+                    const sorted = [...res].sort((a, b) => {
                         const latA = (typeof a.latency === 'number') ? a.latency : 99999;
                         const latB = (typeof b.latency === 'number') ? b.latency : 99999;
 
@@ -1220,16 +1361,11 @@
                             return latA - latB;
                         }
 
-                        // Sort by Local Latency (New)
-                        if (sortMode.value === 'local') {
-                            // Fix: Treat -1 (timeout) as Infinity (bottom), and undefined as Infinity
-                            const getVal = (v) => (typeof v === 'number' && v >= 0) ? v : 999999;
-                            return getVal(a.localLatency) - getVal(b.localLatency);
-                        }
-
-                        // Default: Latency
+                        // Default: 按延迟排序 (sortMode === 'latency')
                         return latA - latB;
                     });
+
+                    return sorted;
                 });
 
                 const totalPages = computed(() => Math.ceil(allFilteredProxies.value.length / pageSize.value));
@@ -1255,6 +1391,21 @@
                         filteredProxies.value.forEach(p => s.add(p.id));
                     }
                     selectedIds.value = s;
+                };
+
+                const selectAvailableNodes = () => {
+                    const s = new Set();
+                    allFilteredProxies.value.forEach(p => {
+                        // 逻辑：优先判断本地测试结果，如果没有本地结果，则判断导入时的延迟
+                        const isAvailable = (typeof p.localLatency === 'number' && p.localLatency > 0) ||
+                            (p.localLatency === undefined && p.latency > 0);
+
+                        if (isAvailable) {
+                            s.add(p.id);
+                        }
+                    });
+                    selectedIds.value = s;
+                    showToast(`✅ 已选中 ${s.size} 个可用节点`);
                 };
 
                 const nextPage = () => { if (currentPage.value < totalPages.value) currentPage.value++; };
@@ -1409,7 +1560,8 @@
                 };
 
                 const parseContent = async () => {
-                    loading.value = true;
+                    isParsing.value = true;
+                    // loading.value = true; 
                     errorMsg.value = '';
                     let content = rawContent.value;
 
@@ -1559,7 +1711,7 @@
                         if (added.length > 0) {
                             // 保存到服务器的手动节点文件
                             try {
-                                await fetch('/api/manual_proxies', {
+                                await fetch('api/manual_proxies', {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify({ proxies: added })
@@ -1585,7 +1737,7 @@
                 // 加载手动节点列表
                 const loadManualProxies = async () => {
                     try {
-                        const res = await fetch('/api/manual_proxies');
+                        const res = await fetch('api/manual_proxies');
                         const data = await res.json();
                         manualProxies.value = data;
                     } catch (e) {
@@ -1596,7 +1748,7 @@
                 // 加载计划任务日志
                 const loadCronLogs = async () => {
                     try {
-                        const res = await fetch('/api/cron_logs');
+                        const res = await fetch('api/cron_logs');
                         const data = await res.json();
                         cronLogs.value = data.logs || [];
                         cronNextRun.value = data.nextRun;
@@ -1619,7 +1771,7 @@
                     if (!proxy.id) return;
 
                     try {
-                        await fetch('/api/manual_proxies', {
+                        await fetch('api/manual_proxies', {
                             method: 'DELETE',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ ids: [proxy.id] })
@@ -1646,7 +1798,7 @@
 
                     try {
                         // 1. 触发后台任务
-                        const res = await fetch('/api/import_linuxdo', {
+                        const res = await fetch('api/import_linuxdo', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' }
                         });
@@ -1665,30 +1817,57 @@
                         }
 
                         // 2. 轮询日志直到完成
+                        // 2. 轮询日志直到完成
                         const logPoller = setInterval(async () => {
                             try {
-                                const statusRes = await fetch('/api/status');
+                                const statusRes = await fetch('api/status');
                                 const state = await statusRes.json();
+
+                                // 更新日志
                                 if (state.logs && Array.isArray(state.logs)) {
                                     serverLogs.value = state.logs;
+                                }
 
-                                    const lastLog = state.logs[state.logs.length - 1];
+                                // 检查任务状态 (优先使用 isLinuxDoImporting 标志)
+                                const isTaskRunning = state.isLinuxDoImporting;
+
+                                // 如果明确知道任务已停止 (isTaskRunning === false)，或者通过日志判断已完成
+                                let isFinished = false;
+                                let isSuccess = false;
+
+                                if (isTaskRunning === false) {
+                                    isFinished = true;
+                                    // 检查是否成功
+                                    if (serverLogs.value.some(l => l.msg.includes('导入完成'))) isSuccess = true;
+                                } else {
+                                    // Fallback: 仅通过日志判断 (兼容旧后端)
+                                    const lastLog = serverLogs.value[serverLogs.value.length - 1];
                                     if (lastLog) {
-                                        // 检查完成标志
                                         if (lastLog.msg.includes('导入完成') && lastLog.msg.includes('节点')) {
-                                            clearInterval(logPoller);
-                                            showToast('Linux.do 导入成功！');
-                                            linuxDoLoading.value = false;
-                                            await loadProxies();
-                                            await loadManualProxies();
-                                            // 自动关闭日志窗口
-                                            setTimeout(() => { showLogModal.value = false; }, 3000);
+                                            isFinished = true;
+                                            isSuccess = true;
                                         } else if (lastLog.msg.includes('异常中止')) {
-                                            clearInterval(logPoller);
-                                            showToast('导入任务失败，请查看日志');
-                                            linuxDoLoading.value = false;
+                                            isFinished = true;
+                                            isSuccess = false;
                                         }
                                     }
+                                }
+
+                                if (isFinished) {
+                                    clearInterval(logPoller);
+                                    linuxDoLoading.value = false;
+
+                                    if (isSuccess) {
+                                        showToast('Linux.do 导入成功！');
+                                    } else {
+                                        showToast('导入任务结束/失败');
+                                    }
+
+                                    await loadProxies();
+                                    await loadManualProxies();
+
+                                    // 自动关闭日志窗口 (延迟 2 秒)
+                                    setTimeout(() => { showLogModal.value = false; }, 2000);
                                 }
                             } catch (e) { }
                         }, 1000);
@@ -1708,8 +1887,76 @@
                     return date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
                 };
 
+                // 格式化运行时间为 "Xdays HH:MM:SS" 格式
+                const formatUptimeDisplay = (uptimeStr) => {
+                    if (!uptimeStr || typeof uptimeStr !== 'string') return '0s'; // Null/Safe Check
+                    // 例如: "up 19 hours, 13 minutes" -> "0days 19:13:00"
+                    // 或: "up 2 days, 5 hours, 30 minutes" -> "2days 05:30:00"
+                    let days = 0, hours = 0, minutes = 0, seconds = 0;
+
+                    const dayMatch = uptimeStr.match(/(\d+)\s*day/i);
+                    const hourMatch = uptimeStr.match(/(\d+)\s*hour/i);
+                    const minMatch = uptimeStr.match(/(\d+)\s*min/i);
+                    const secMatch = uptimeStr.match(/(\d+)\s*sec/i);
+
+                    if (dayMatch) days = parseInt(dayMatch[1]);
+                    if (hourMatch) hours = parseInt(hourMatch[1]);
+                    if (minMatch) minutes = parseInt(minMatch[1]);
+                    if (secMatch) seconds = parseInt(secMatch[1]);
+
+                    const hh = String(hours).padStart(2, '0');
+                    const mm = String(minutes).padStart(2, '0');
+                    const ss = String(seconds).padStart(2, '0');
+
+                    return `${days}days ${hh}:${mm}:${ss}`;
+                };
+
                 // 初始化时获取 Telegram 状态
 
+
+                const deleteFailedNodes = async () => {
+                    const initialCount = proxies.value.length;
+                    const keepers = proxies.value.filter(p => p.localLatency !== -1);
+                    const removed = proxies.value.filter(p => p.localLatency === -1);
+
+                    if (removed.length > 0) {
+                        proxies.value = keepers;
+                        showToast(`已暴力移除 ${removed.length} 个超时废物节点 ❤`);
+
+                        // 1. 处理手动节点 (Manual)
+                        const manualIds = new Set(manualProxies.value.map(p => p.id));
+                        const removedManuals = removed.filter(p => manualIds.has(p.id));
+
+                        if (removedManuals.length > 0) {
+                            const idsToDelete = removedManuals.map(p => p.id);
+                            try {
+                                await fetch('api/manual_proxies', {
+                                    method: 'DELETE',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ ids: idsToDelete })
+                                });
+                                manualProxies.value = manualProxies.value.filter(p => !idsToDelete.includes(p.id));
+                            } catch (e) { console.error(e); }
+                        }
+
+                        // 2. 处理云端节点 (Cloud) - 新增逻辑
+                        const removedCloud = removed.filter(p => !manualIds.has(p.id));
+                        if (removedCloud.length > 0) {
+                            const idsToDelete = removedCloud.map(p => p.id);
+                            try {
+                                await fetch('api/proxies', {
+                                    method: 'DELETE',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ ids: idsToDelete })
+                                });
+                                console.log(`已删除 ${idsToDelete.length} 个云端节点`);
+                            } catch (e) { console.error('删除云端节点失败', e); }
+                        }
+
+                    } else {
+                        showToast('没有发现超时节点，好棒棒！');
+                    }
+                };
 
                 const handleTestAndDeduplicate = async () => {
                     if (isLocalChecking.value) return;
@@ -1741,8 +1988,7 @@
 
                     // 先遍历一遍，建立唯一索引
                     targets.forEach(p => {
-                        // 逻辑修正：与后端保持一致，仅当 Server + Port + (UUID/Password) 全都可以匹配时才视为重复
-                        // 原先只匹配 server 会导致多端口节点被误删
+                        // 逻辑修正：恢复 UUID/Password 校验，以防误删同一端口的不同账户节点
                         const server = (p.server || '').trim().toLowerCase();
                         const port = p.port || '';
                         const auth = p.uuid || p.password || '';
@@ -1775,10 +2021,14 @@
                         return; // 等待用户确认
                     }
 
-                    // 无重复时直接开始测试
+                    // 无重复时直接开始测试，测试完成后删除超时节点
                     await checkLocalConnectivity(targets);
+                    // 等待状态更新后删除超时节点
+                    await new Promise(r => setTimeout(r, 100));
+                    await deleteFailedNodes();
                 };
 
+                // 确认去重并测试的回调
                 // 确认去重并测试的回调
                 const confirmDedupe = async () => {
                     showDedupeModal.value = false;
@@ -1802,14 +2052,14 @@
                     // 保存手动/论坛节点
                     const manualNodes = proxies.value.filter(p => p.isManual || p.isFromForum);
                     try {
-                        await fetch('/api/manual_proxies', {
+                        await fetch('api/manual_proxies', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ proxies: manualNodes })
                         });
 
                         // 去重后自动更新 Aggregator.yaml
-                        fetch('/api/generate_yaml', { method: 'POST' })
+                        fetch('api/generate_yaml', { method: 'POST' })
                             .then(() => console.log('去重后 Aggregator.yaml 已更新'))
                             .catch(e => console.warn('YAML 更新失败:', e));
                     } catch (e) {
@@ -1818,6 +2068,65 @@
 
                     // 开始测试
                     await checkLocalConnectivity(targets);
+                    await new Promise(r => setTimeout(r, 100));
+                    await deleteFailedNodes();
+                };
+
+                // YAML 生成
+                const isGeneratingYaml = ref(false);
+                const handleGenerateYaml = async () => {
+                    if (isGeneratingYaml.value) return;
+
+                    let nodes = [];
+                    let message = '';
+
+                    // 1. 如果有选中，只生成选中的 (遵从用户意愿，不做额外过滤)
+                    if (selectedCount.value > 0) {
+                        nodes = allFilteredProxies.value.filter(p => selectedIds.value.has(p.id));
+                        message = `确认使用选中的 ${nodes.length} 个节点生成配置文件吗？`;
+                    } else {
+                        // 2. 如果无选中，生成系统中所有"可用"节点 (忽略当前视图的过滤)
+                        // 定义可用: 有 localLatency 且 > 0，或者 (无 localLatency 且 latency > 0)
+                        nodes = proxies.value.filter(p => {
+                            if (typeof p.localLatency === 'number') return p.localLatency > 0;
+                            return p.latency > 0;
+                        });
+
+                        // 按延迟排序，确保生成的配置文件好看
+                        nodes.sort((a, b) => {
+                            const latA = a.localLatency || a.latency || 99999;
+                            const latB = b.localLatency || b.latency || 99999;
+                            return latA - latB;
+                        });
+
+                        message = `未选中节点，将自动选取所有可用节点 (${nodes.length} 个) 生成配置文件。\n\n确认继续吗？`;
+                    }
+
+                    if (!confirm(message)) return;
+
+                    isGeneratingYaml.value = true;
+                    try {
+                        if (nodes.length === 0) {
+                            showToast('❌ 没有可用节点可生成');
+                            return;
+                        }
+
+                        const res = await fetch('api/generate_yaml', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(nodes)
+                        });
+                        const json = await res.json();
+                        if (json.success) {
+                            showToast('✅ YAML 生成成功');
+                        } else {
+                            showToast(`❌ 生成失败: ${json.message}`);
+                        }
+                    } catch (e) {
+                        showToast(`❌ 请求失败: ${e.message}`);
+                    } finally {
+                        isGeneratingYaml.value = false;
+                    }
                 };
 
                 const checkLocalConnectivity = async (targetNodes = null) => {
@@ -1853,7 +2162,7 @@
 
                         const executeBatch = async (batch) => {
                             try {
-                                const res = await fetch('/api/check_connectivity', {
+                                const res = await fetch('api/check_connectivity', {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify({ proxies: batch.map(p => ({ id: p.id, server: p.server, port: p.port })) })
@@ -1925,7 +2234,7 @@
                 const confirmClear = async () => {
                     try {
                         // 先调用服务器 API 清空所有节点文件
-                        const res = await fetch('/api/clear_all', { method: 'POST' });
+                        const res = await fetch('api/clear_all', { method: 'POST' });
                         const data = await res.json();
 
                         if (data.success) {
@@ -1943,8 +2252,18 @@
                     }
                 };
 
-                const deleteProxy = (id) => {
+                const deleteProxy = async (id) => {
                     proxies.value = proxies.value.filter(p => p.id !== id);
+                    try {
+                        await fetch('api/proxies', {
+                            method: 'DELETE',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ ids: [id] })
+                        });
+                        showToast('节点已从服务器删除');
+                    } catch (e) {
+                        console.error('Delete proxy failed', e);
+                    }
                 };
 
                 // --- Export Logic ---
@@ -2026,7 +2345,45 @@
                     }
                 };
 
+                // 点击复制订阅链接
+                const copySubscriptionUrl = async () => {
+                    try {
+                        // 基于当前页面路径动态构建订阅链接（适配反向代理）
+                        const subUrl = window.location.href.replace(/\/[^\/]*(\?.*)?$/, '/api/subscribe?clash=1');
 
+                        await navigator.clipboard.writeText(subUrl);
+
+                        // 视觉反馈
+                        subscriptionCopied.value = true;
+                        showToast(`✅ 订阅链接已复制：${subUrl}`);
+
+                        // 2秒后恢复按钮状态
+                        setTimeout(() => {
+                            subscriptionCopied.value = false;
+                        }, 2000);
+                    } catch (e) {
+                        // Fallback: 使用旧方法
+                        try {
+                            const subUrl = window.location.href.replace(/\/[^\/]*(\?.*)?$/, '/api/subscribe?clash=1');
+                            const textarea = document.createElement('textarea');
+                            textarea.value = subUrl;
+                            textarea.style.position = 'fixed';
+                            textarea.style.opacity = '0';
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textarea);
+
+                            subscriptionCopied.value = true;
+                            showToast(`✅ 订阅链接已复制：${subUrl}`);
+                            setTimeout(() => {
+                                subscriptionCopied.value = false;
+                            }, 2000);
+                        } catch (e2) {
+                            showToast(`❌ 复制失败: ${e2.message}`);
+                        }
+                    }
+                };
 
 
                 // --- Toast ---
@@ -2041,13 +2398,13 @@
                 const cloudResult = ref('');
 
                 // Show modal automatically when cloud loading starts
-                watch(cloudLoading, (newVal) => {
-                    if (newVal) showLogModal.value = true;
-                });
+                // watch(cloudLoading, (newVal) => {
+                //     if (newVal) showLogModal.value = true;
+                // });
 
                 const fetchCloudProxies = async () => {
                     try {
-                        const res = await fetch('/api/proxies');
+                        const res = await fetch('api/proxies');
                         if (res.ok) {
                             const cloudList = await res.json();
                             if (Array.isArray(cloudList) && cloudList.length > 0) {
@@ -2059,44 +2416,25 @@
                     } catch (e) { console.error('Silent cloud fetch failed', e); }
                 };
 
-                const refreshCloud = async () => {
-                    if (cloudLoading.value) return;
-                    cloudLoading.value = true;
-                    // Reset Logs
-                    serverLogs.value = [];
 
-                    try {
-                        const res = await fetch('/api/refresh', { method: 'POST' });
-                        const json = await res.json();
-
-                        if (!json.success && json.status !== 'fetching' && json.status !== 'testing') {
-                            showToast(`Error: ${json.message}`);
-                            cloudLoading.value = false;
-                            return;
-                        }
-                        pollStatus();
-                    } catch (e) {
-                        showToast(`Network Error: ${e.message}`);
-                        cloudLoading.value = false;
-                    }
-                };
 
                 const fetchAllNodes = async () => {
                     if (cloudLoading.value) return;
                     cloudLoading.value = true;
+                    cloudResult.value = 'Running...';
                     serverLogs.value = [];
-                    showLogModal.value = true; // Show logs immediately
+                    showLogModal.value = true; // 手动点击显示日志窗口
 
                     try {
-                        const res = await fetch('/api/fetch_all', { method: 'POST' });
+                        const res = await fetch('api/fetch_all', { method: 'POST', body: JSON.stringify({ pages: 50 }) });
                         const json = await res.json();
 
-                        if (!json.success) {
+                        if (!json.success && json.status !== 'fetching') {
                             showToast(`Error: ${json.message}`);
                             cloudLoading.value = false;
                             return;
                         }
-                        pollStatus();
+                        // Done. The checkServerStatus interval will handle updates.
                     } catch (e) {
                         showToast(`Network Error: ${e.message}`);
                         cloudLoading.value = false;
@@ -2177,7 +2515,7 @@
                         } else {
                             isForce = false;
                         }
-                        nodesToCheck = filteredProxies.value;
+                        nodesToCheck = allFilteredProxies.value;
                     }
 
                     if (nodesToCheck.length === 0) return showToast('没有节点可检测');
@@ -2203,8 +2541,9 @@
                     const checkChunk = async (chunk) => {
                         chunk.forEach(n => { n.checking = true; n.failedCheck = false; });
                         try {
-                            const ips = chunk.map(n => n.server);
-                            const res = await fetch('/api/check_ip_batch', {
+                            // Deduplicate IPs in the chunk to avoid redundant backend requests
+                            const ips = Array.from(new Set(chunk.map(n => n.server)));
+                            const res = await fetch('api/check_ip_batch', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({ queries: ips, force: force })
@@ -2266,75 +2605,95 @@
                 };
 
                 // --- Server Status Sync ---
-                const serverStats = ref({ total: 0, active: 0, uptime: '', bootTime: '' });
+                const serverStats = ref({ total: 0, active: 0, uptime: '', bootTime: '', bootTimeRaw: null });
+                const liveUptime = ref('');  // 动态更新的运行时间
+
+                // 每秒更新运行时间
+                const updateLiveUptime = () => {
+                    if (!serverStats.value.bootTimeRaw) return;
+                    const bootDate = new Date(serverStats.value.bootTimeRaw);
+                    const now = new Date();
+                    const diff = Math.floor((now - bootDate) / 1000); // 秒
+
+                    const days = Math.floor(diff / 86400);
+                    const hours = Math.floor((diff % 86400) / 3600);
+                    const minutes = Math.floor((diff % 3600) / 60);
+                    const seconds = diff % 60;
+
+                    const hh = String(hours).padStart(2, '0');
+                    const mm = String(minutes).padStart(2, '0');
+                    const ss = String(seconds).padStart(2, '0');
+
+                    liveUptime.value = `${days}days ${hh}:${mm}:${ss}`;
+                };
+
+                // 启动定时器
+                setInterval(updateLiveUptime, 1000);
 
                 const checkServerStatus = async () => {
                     try {
-                        const res = await fetch('/api/status');
+                        const res = await fetch('api/status');
                         const state = await res.json();
 
-                        // 始终更新服务器运行时间（无论服务器状态如何）
+                        // 始终更新服务器运行时间
                         serverStats.value = {
                             ...serverStats.value,
                             uptime: state.serverUptime || '',
                             bootTime: state.serverBootTime || '',
+                            bootTimeRaw: state.serverBootTimeRaw || null,
                             nextUpdate: state.nextAutoUpdate,
                             lastUpdated: state.lastUpdated,
                             total: state.total || serverStats.value.total,
                             active: state.active || serverStats.value.active
                         };
 
+                        // 立即更新一次动态运行时间
+                        updateLiveUptime();
+
+                        // --- 任务状态机逻辑 ---
                         if (state.status !== 'idle') {
-                            // Resume monitoring
-                            cloudLoading.value = true;
-                            serverLogs.value = state.logs || [];
-                            showLogModal.value = true; // Auto-open if running
-                            pollStatus();
+                            // [运行中]
+                            if (!cloudLoading.value) {
+                                // 刚检测到开始运行
+                                cloudLoading.value = true;
+                                serverLogs.value = []; // 清空旧日志
+                                // showLogModal.value = true; // 自动打开日志窗口 (已禁用: 用户希望手动点击才显示)
+                            }
+
+                            // 实时更新日志
+                            if (state.logs && Array.isArray(state.logs)) {
+                                serverLogs.value = state.logs;
+                            }
+                        } else {
+                            // [空闲/结束]
+                            if (cloudLoading.value) {
+                                // 刚检测到运行结束
+                                cloudLoading.value = false;
+                                cloudResult.value = 'Complete';
+                                showToast('云端聚合完成');
+
+                                // 获取最终日志
+                                if (state.logs && Array.isArray(state.logs)) {
+                                    serverLogs.value = state.logs;
+                                }
+
+                                await loadProxies(); // 重新加载节点列表
+
+                                // 自动关闭日志窗口
+                                setTimeout(() => {
+                                    showLogModal.value = false;
+                                }, 1500);
+                            }
                         }
                     } catch (e) {
                         console.error('Failed to sync server status', e);
                     }
                 };
 
-                const pollStatus = () => {
-                    const interval = setInterval(async () => {
-                        try {
-                            const sRes = await fetch('/api/status');
-                            const state = await sRes.json();
+                // Periodically check server status for cloud aggregation task
+                setInterval(checkServerStatus, 1000);
 
-                            // Update Logs Real-time
-                            if (state.logs && Array.isArray(state.logs)) {
-                                serverLogs.value = state.logs;
-                            }
 
-                            // Update Stats
-                            serverStats.value = {
-                                total: state.total || 0,
-                                active: state.active || 0,
-                                nextUpdate: state.nextAutoUpdate,
-                                lastUpdated: state.lastUpdated,
-                                uptime: state.serverUptime || '',
-                                bootTime: state.serverBootTime || ''
-                            };
-
-                            if (state.status === 'idle') {
-                                clearInterval(interval);
-                                cloudResult.value = 'Complete';
-                                showToast('云端聚合完成');
-                                await loadProxies(); // Reload all proxies from server
-                                cloudLoading.value = false;
-
-                                // Auto-close log window after a short delay
-                                setTimeout(() => {
-                                    showLogModal.value = false;
-                                }, 1500);
-                            }
-                        } catch (e) {
-                            clearInterval(interval);
-                            cloudLoading.value = false;
-                        }
-                    }, 1000);
-                };
 
                 onMounted(() => {
                     // 立即开始加载节点（不阻塞）
@@ -2347,28 +2706,38 @@
 
                     // Start Background Worker (Purity Check) - DISABLED due to user request
                     // startAutoChecker();
+
+                    // 强制解锁 loading 状态 (如果卡住的话)
+                    setTimeout(() => {
+                        if (pageLoading.value) {
+                            console.warn('Force unlocking pageLoading state');
+                            pageLoading.value = false;
+                        }
+                    }, 8000);
                 });
 
                 return {
                     inputUrl, rawContent, proxies, loading, errorMsg, searchQuery, sortMode,
-                    showExportModal, showClearModal, showLogModal,
+                    showExportModal, showClearModal, showLogModal, subscriptionCopied, copySubscriptionUrl,
                     toastMsg,
                     parseContent, clearProxies, confirmClear, deleteProxy, exportConfig,
                     filteredProxies, protocols, protocolStats, getProtocolColor, getProtocolBadgeColor,
-                    cloudLoading, cloudResult, refreshCloud, fetchAllNodes, checkNodePurity, autoCheckCount, serverLogs, logWindowRef, // Added logs
+                    cloudLoading, cloudResult, fetchAllNodes, checkNodePurity, autoCheckCount, serverLogs, logWindowRef, // Added logs
                     currentPage, totalPages, nextPage, prevPage,
                     getCountry, proxiesByType,
                     selectedIds, toggleSelection, clearSelection, selectedCount, toggleSelectPage, pageSelected,
                     purityChecking, checkSelectedPurity, handleGlobalPurityCheck, // 纯净度检查相关
+                    isGeneratingYaml, handleGenerateYaml, // YAML 生成
                     filterType, filterCountry, countries, countryStats,
                     isLocalChecking, localCheckProgress, checkLocalConnectivity, hideFailed, totalVisibleCount, pageSize,
-                    modalStyle, startDrag, logWindowEl, serverStats, // Export serverStats
+                    modalStyle, startDrag, logWindowEl, serverStats, liveUptime, // Export serverStats
                     showManualOnly, manualProxies, loadManualProxies, deleteManualProxy, // 手动节点相关
                     showForumOnly, forumProxiesCount, // 论坛搜索相关
                     linuxDoLoading, importFromLinuxDo, // Linux.do 导入
+                    pageLoading, isParsing, // Added to fix rendering crash
                     handleTestAndDeduplicate, // 测试并去重
                     showDedupeModal, dedupeInfo, confirmDedupe, // 去重确认对话框
-                    formatTime,
+                    formatTime, formatUptimeDisplay,
                     // 计划任务日志相关
                     showCronLogModal, cronLogs, cronNextRun, loadCronLogs, formatDuration
                 };

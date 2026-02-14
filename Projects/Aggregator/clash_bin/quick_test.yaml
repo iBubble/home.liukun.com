@@ -1,0 +1,98 @@
+port: 7896
+socks-port: 7897
+allow-lan: false
+mode: global
+log-level: silent
+proxies:
+  - name: US 25.0KB/s
+    type: vmess
+    server: 69.63.210.35
+    port: 24943
+    tfo: true
+    skip-cert-verify: true
+    uuid: a89feda9-ec30-48c1-ae6b-1a6f5b573f6b
+    alterId: 0
+    cipher: auto
+    network: ws
+    servername: www.bing.com
+    ws-opts:
+      path: /a89feda9-ec30-48c1-ae6b-1a6f5b573f6b-vm
+      headers:
+        Host: www.bing.com
+    id: p_1770553708812_0_0bs6v
+    latency: 999
+  - name: US-美国
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 658d122a-2bd8-48dc-8f9c-b645696c1f8b
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_1_j5puo
+    latency: 999
+  - name: US-美国_1
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 17e9a931-45f9-47c0-a5b3-71831af5b1e5
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_2_1rdhc
+    latency: 999
+  - name: US-美国_2
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: e283ae94-ba73-478c-9498-796193972d43
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_3_t51pv
+    latency: 999
+  - name: 美国us
+    type: vless
+    server: 1002.kingfisher.top
+    port: 10000
+    tfo: true
+    skip-cert-verify: true
+    uuid: 635a2fe7-ee4c-4bb4-896a-92be8926e976
+    flow: xtls-rprx-vision
+    network: tcp
+    tls: true
+    servername: www.python.org
+    reality-opts:
+      public-key: xaL947o_X586spUQ-Q956KA7RnEeSAjeONwbAnonGTE
+    client-fingerprint: qq
+    id: p_1770553708812_4_iggcw
+    latency: 999
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - US 25.0KB/s
+      - US-美国
+      - US-美国_1
+      - US-美国_2
+      - 美国us
+rules:
+  - MATCH,PROXY

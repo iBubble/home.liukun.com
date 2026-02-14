@@ -20,13 +20,13 @@ if [ ! -f "$AUTO_UPDATE_SCRIPT" ]; then
 fi
 
 # Cron任务配置
-# 每6小时执行一次: 0 */6 * * *
-CRON_SCHEDULE="0 */6 * * *"
+# 每天4次执行: 02:00, 08:00, 14:00, 20:00
+CRON_SCHEDULE="0 2,8,14,20 * * *"
 CRON_COMMAND="php $AUTO_UPDATE_SCRIPT >> $LOG_FILE 2>&1"
 CRON_ENTRY="$CRON_SCHEDULE $CRON_COMMAND"
 
 echo "计划任务配置:"
-echo "  执行频率: 每6小时"
+echo "  执行频率: 每天4次 (02:00, 08:00, 14:00, 20:00)"
 echo "  执行脚本: $AUTO_UPDATE_SCRIPT"
 echo "  日志文件: $LOG_FILE"
 echo ""
@@ -50,8 +50,8 @@ if [ $? -eq 0 ]; then
     echo "----------------------------------------"
     echo ""
     echo "任务详情:"
-    echo "  - 执行时间: 每天 00:00, 06:00, 12:00, 18:00"
-    echo "  - 下次执行: $(date -d '+6 hours' '+%Y-%m-%d %H:00:00' 2>/dev/null || date -v+6H '+%Y-%m-%d %H:00:00' 2>/dev/null || echo '请手动计算')"
+    echo "  - 执行时间: 每天 02:00, 08:00, 14:00, 20:00"
+    echo "  - 下次执行: 请查看 crontab -l 确认"
     echo "  - 查看日志: tail -f $LOG_FILE"
     echo "  - 查看任务: crontab -l"
     echo "  - 删除任务: crontab -l | grep -v 'auto_update.php' | crontab -"

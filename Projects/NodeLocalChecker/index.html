@@ -903,16 +903,22 @@
             transform: translate(-50%, -50%);
             text-align: center;
             z-index: 1;
+            width: 100%;
+            padding: 0 10px;
         }
         
         .progress-fraction {
-            font-size: 18px;
+            font-size: 16px;
             color: #00ff41;
             font-family: 'Courier New', monospace;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .fraction-divider {
-            margin: 0 5px;
+            margin: 0 3px;
             color: #00ffff;
             opacity: 0.5;
         }

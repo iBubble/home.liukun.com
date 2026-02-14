@@ -780,7 +780,7 @@
       "isp": "Chunghwa Telecom Co., Ltd.",
       "hosting": false
     },
-    "updatedAt": 1770025873211
+    "updatedAt": 1770904571292
   },
   "136.175.178.165": {
     "score": 50,
@@ -888,7 +888,7 @@
       "isp": "Cloudflare, Inc.",
       "hosting": true
     },
-    "updatedAt": 1770007186857
+    "updatedAt": 1770904556513
   },
   "ccc.922922.shop": {
     "score": 50,
@@ -969,7 +969,7 @@
       "isp": "Hoang Dieu Cloud Computing Company Limited",
       "hosting": true
     },
-    "updatedAt": 1770007186857
+    "updatedAt": 1770718947641
   },
   "43.199.77.22": {
     "score": 50,
@@ -1113,7 +1113,7 @@
       "isp": "Chunghwa Telecom Co., Ltd.",
       "hosting": false
     },
-    "updatedAt": 1770025873211
+    "updatedAt": 1770904571292
   },
   "ffc60249-t53wg0-t92wi1-1qkeg.hk2.hyhuawei.com": {
     "score": 100,
@@ -1140,7 +1140,7 @@
       "isp": "Datacamp Limited",
       "hosting": true
     },
-    "updatedAt": 1770025873210
+    "updatedAt": 1770904564904
   },
   "82.38.31.208": {
     "score": 100,
@@ -1168,5 +1168,302 @@
       "hosting": true
     },
     "updatedAt": 1770542343824
+  },
+  "203.198.123.162": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "Pccw Ims Limited",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "jry.izenny.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "China Mobile Communications Corporation",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "v4.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "Sichuan Xiaoteyun Technology Co., Ltd",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "219.76.135.98": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "Pccw Ims Limited",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "nextmi.hajmyab.ir": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "Bigcommerce Inc.",
+      "hosting": false
+    },
+    "updatedAt": 1770904564904
+  },
+  "v33.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "PAN LIAN TECHNOLOGY CO., LIMITED",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "zz.9966663.xyz": {
+    "score": 100,
+    "info": {
+      "countryCode": "TW",
+      "isp": "Chunghwa Telecom Co., Ltd.",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "v30.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "Sichuan Xiaoteyun Technology Co., Ltd",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "v10.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "Pccw Ims Limited",
+      "hosting": false
+    },
+    "updatedAt": 1770904564904
+  },
+  "nl-90w-c.southnetworks.cloud": {
+    "score": 100,
+    "info": {
+      "countryCode": "RU",
+      "isp": "Ooo Sovremennye Setevye Tekhnologii",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "82.39.86.21": {
+    "score": 100,
+    "info": {
+      "countryCode": "NL",
+      "isp": "Matteo Martelloni Trading AS Deluxhost",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "cloudflare.468123.xyz": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "Cloudflare, Inc.",
+      "hosting": true
+    },
+    "updatedAt": 1770718947641
+  },
+  "199.48.247.100": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "Bytevirt LLC",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "108.181.33.49": {
+    "score": 60,
+    "info": {
+      "countryCode": "US",
+      "isp": "Psychz Networks",
+      "hosting": true
+    },
+    "updatedAt": 1770718947641
+  },
+  "156.238.228.167": {
+    "score": 60,
+    "info": {
+      "countryCode": "HK",
+      "isp": "FASTNET DATA INC",
+      "hosting": true
+    },
+    "updatedAt": 1770718947641
+  },
+  "38.246.229.227": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "Cogent Communications, LLC",
+      "hosting": false
+    },
+    "updatedAt": 1770718947641
+  },
+  "20.18.108.81": {
+    "score": 50,
+    "info": {
+      "countryCode": "JP",
+      "isp": "Microsoft Corporation",
+      "hosting": true
+    },
+    "updatedAt": 1770718947641
+  },
+  "176.123.168.79": {
+    "score": 100,
+    "info": {
+      "countryCode": "RU",
+      "isp": "JSC IOT",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "slur.izenny.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "China Mobile Communications Corporation",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "188.114.98.0": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "Cloudflare, Inc.",
+      "hosting": true
+    },
+    "updatedAt": 1770904556513
+  },
+  "dmitv61.616626.xyz": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "Dmit Cloud Services",
+      "hosting": true
+    },
+    "updatedAt": 1770904564904
+  },
+  "20.79.162.37": {
+    "score": 50,
+    "info": {
+      "countryCode": "DE",
+      "isp": "Microsoft Corporation",
+      "hosting": true
+    },
+    "updatedAt": 1770904556513
+  },
+  "135.84.64.229": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "ULTIMATE SOFTWARE GROUP",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "89.169.128.105": {
+    "score": 50,
+    "info": {
+      "countryCode": "RU",
+      "isp": "Yandex.cloud LLC",
+      "hosting": true
+    },
+    "updatedAt": 1770904556513
+  },
+  "v9.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "PAN LIAN TECHNOLOGY CO., LIMITED",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "212.113.123.230": {
+    "score": 100,
+    "info": {
+      "countryCode": "RU",
+      "isp": "JSC TIMEWEB",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "v36.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "PAN LIAN TECHNOLOGY CO., LIMITED",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "47.80.10.52": {
+    "score": 60,
+    "info": {
+      "countryCode": "KR",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "hosting": true
+    },
+    "updatedAt": 1770904556513
+  },
+  "78.153.139.68": {
+    "score": 100,
+    "info": {
+      "countryCode": "FI",
+      "isp": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+      "hosting": false
+    },
+    "updatedAt": 1770904556513
+  },
+  "158.160.105.121": {
+    "score": 50,
+    "info": {
+      "countryCode": "RU",
+      "isp": "Yandex.cloud LLC",
+      "hosting": true
+    },
+    "updatedAt": 1770904556513
+  },
+  "158.160.221.132": {
+    "score": 50,
+    "info": {
+      "countryCode": "RU",
+      "isp": "Yandex.cloud LLC",
+      "hosting": true
+    },
+    "updatedAt": 1770904564904
+  },
+  "v29.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "PAN LIAN TECHNOLOGY CO., LIMITED",
+      "hosting": false
+    },
+    "updatedAt": 1770904564904
+  },
+  "176.109.106.241": {
+    "score": 50,
+    "info": {
+      "countryCode": "RU",
+      "isp": "Cloud Technologies LLC Trading AS Cloud.ru",
+      "hosting": true
+    },
+    "updatedAt": 1770904564904
   }
 }

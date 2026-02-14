@@ -1,0 +1,24 @@
+port: 17899
+socks-port: 17900
+allow-lan: false
+mode: global
+log-level: info
+proxies:
+  - name: (2x)IEPL专线 日本1
+    type: vmess
+    server: jzgz.tcity8.monster
+    port: 22235
+    tfo: false
+    skip-cert-verify: true
+    uuid: e1a98d14-8827-426f-893c-527301073e04
+    alterId: 0
+    cipher: auto
+    network: tcp
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - (2x)IEPL专线 日本1
+rules:
+  - MATCH,PROXY

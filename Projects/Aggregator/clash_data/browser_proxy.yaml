@@ -1,0 +1,66 @@
+port: 7939
+socks-port: 7940
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+  - name: 专线|香港01解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26010
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|香港02解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26011
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|日本01解锁
+    type: vmess
+    server: ppy-jpv2.kunlun02dns.com
+    port: 26006
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|日本02解锁
+    type: vmess
+    server: ppy-jpv2.kunlun02dns.com
+    port: 26007
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|美国01解锁
+    type: vmess
+    server: ppy-usv2.kunlun02dns.com
+    port: 26001
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|美国02解锁
+    type: vmess
+    server: ppy-usv2.kunlun02dns.com
+    port: 26002
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 专线|香港01解锁
+      - 专线|香港02解锁
+      - 专线|日本01解锁
+      - 专线|日本02解锁
+      - 专线|美国01解锁
+      - 专线|美国02解锁
+rules:
+  - MATCH,PROXY

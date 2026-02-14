@@ -1,0 +1,40 @@
+port: 17895
+socks-port: 17896
+allow-lan: false
+mode: global
+log-level: warning
+proxies:
+  - id: p_1770558158448_107_01vc4
+    name: AT_speednode_0003
+    type: vless
+    server: 152.53.131.209
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    servername: sni.111000.indevs.in
+    raw: >-
+      vless://6202b230-417c-4d8e-b624-0f71afa9c75d@152.53.131.209:8443?allowInsecure=0&sni=sni.111000.indevs.in&type=ws&host=sni.111000.indevs.in&path=/?ed=2560fp=chrome&security=tls#AT_speednode_0003
+    ws-opts:
+      path: /?ed=2560fp=chrome
+      headers:
+        Host: sni.111000.indevs.in
+    _sourceUrl: https://cdn.jsdelivr.net/gh/peasoft/NoMoreWalls@master/list.txt
+    _clashName: AT_speednode_0003
+    latency: 1172
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 182.245.77.110
+      isp: Chinanet
+      country: CN
+      hosting: false
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - AT_speednode_0003
+rules:
+  - MATCH,PROXY

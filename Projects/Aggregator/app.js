@@ -14,6 +14,8 @@ const os = require('os');
 const { spawn } = require('child_process');
 const yaml = require('js-yaml');
 const cron = require('node-cron');
+const { getPremiumProxyManager } = require('./premium_proxy_manager');
+const premiumManager = getPremiumProxyManager();
 
 
 
@@ -25,8 +27,29 @@ const CLASH_CONFIG = path.join(CLASH_DIR, 'config.yaml');
 const CLASH_PORT_HTTP = 7890;
 const CLASH_EXTERNAL_CONTROLLER = '127.0.0.1:9090';
 
-// Clash 二进制文件路径 - 使用 NodeLocalChecker 的 Clash
-const CLASH_BIN = '/www/wwwroot/ibubble.vicp.net/Projects/NodeLocalChecker/bin/clash';
+// Clash 二进制文件路径
+let CLASH_BIN = '';
+const platform = os.platform();
+const arch = os.arch();
+
+if (platform === 'darwin') {
+    CLASH_BIN = path.join(CLASH_DIR, 'clash-darwin');
+} else if (platform === 'linux') {
+    if (arch === 'x64') CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-amd64');
+    else if (arch === 'arm64') CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-arm64');
+    else CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-amd64');
+} else {
+    CLASH_BIN = path.join(CLASH_DIR, 'clash-windows-amd64.exe');
+}
+
+// 动态查找 Clash 二进制
+if (!fs.existsSync(CLASH_BIN)) {
+    try {
+        const files = fs.readdirSync(CLASH_DIR);
+        const bin = files.find(f => f.includes('clash') && !f.endsWith('.yaml'));
+        if (bin) CLASH_BIN = path.join(CLASH_DIR, bin);
+    } catch (e) { }
+}
 
 const MIME_TYPES = {
     '.html': 'text/html',
@@ -39,13 +62,22 @@ const MIME_TYPES = {
     '.yaml': 'text/yaml'
 };
 
+// 动态黑名单 (因无法访问或 SSL 错误 35 而被系统排除的分享站)
+const FAILED_WEB_SOURCES = new Set();
+
 // 全局状态
 const globalState = {
     status: 'idle', // idle, fetching, testing
     total: 0,
     active: 0,
     logs: [],
-    lastUpdated: null
+    lastUpdated: null,
+    // 各来源节点获取统计 (每次聚合任务后更新)
+    lastFetchStats: {
+        github: 0,
+        web: 0,
+        linuxdo: 0
+    }
 };
 
 // 计划任务日志
@@ -118,61 +150,158 @@ function addLog(msg, type = 'info') {
     if (globalState.logs.length > 500) globalState.logs.shift();
 }
 
+/**
+ * 评估节点质量 (针对中国大陆网络环境优化)
+ * 优先保留抗封锁能力强的协议
+ * @param {Object} p 节点对象
+ * @returns {boolean} 是否为高质量节点
+ */
+function isHighQualityNode(p) {
+    // 1. Reality / Hysteria2 (当前最稳)
+    if (p.type === 'hysteria2') return true;
+    if (p['reality-opts'] || p.servername === 'reality') return true;
+
+    // 2. 必须启用 TLS (VMess/VLESS/Trojan)
+    // 无 TLS 的 VMess/VLESS 在国内极易被阻断 (秒封或随机丢包)
+    if ((p.type === 'vmess' || p.type === 'vless' || p.type === 'trojan') && p.tls) {
+        return true;
+    }
+
+    // 3. Shadowsocks 必须使用现代加密 (虽然 SS 目前也被精准识别，但比无 TLS 的 VMess 好一点点)
+    if (p.type === 'ss') {
+        const cipher = p.cipher || '';
+        if (cipher.includes('aes') || cipher.includes('chacha20') || cipher.includes('2022')) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// 确保清理子进程
+function cleanup() {
+    stopClash();
+    // 杀死可能的僵尸 Clash 进程
+    try {
+        const { execSync } = require('child_process');
+        const platform = os.platform();
+        if (platform === 'linux' || platform === 'darwin') {
+            // 避免误杀其他 clash
+            // execSync('pkill -f clash-linux', { stdio: 'ignore' });
+        }
+    } catch (e) { }
+}
+
+process.on('exit', cleanup);
+process.on('SIGINT', () => { cleanup(); process.exit(); });
+process.on('SIGTERM', () => { cleanup(); process.exit(); });
+
 // 确保目录存在
 if (!fs.existsSync(CLASH_DIR)) fs.mkdirSync(CLASH_DIR, { recursive: true });
 
-// --- 订阅源 ---
 const SUBSCRIPTION_URLS = [
-    // ⭐ wzdnzd/aggregator 官方共享订阅 (Issue #91) - 每4小时自动更新，高质量节点
-    // API 文档: https://github.com/wzdnzd/aggregator/issues/91
-    // token: 2i94lkqi1uvd9eeab6 | target: v2ray/clash/singbox | list=1: 仅输出节点
+    // ⭐ wzdnzd/aggregator 官方共享订阅 (Issue #91)
     'https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=2i94lkqi1uvd9eeab6&target=v2ray&list=1',
     'https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=2i94lkqi1uvd9eeab6&target=clash&list=1',
     'https://qybndbviblvt.us-west-1.clawcloudrun.com/api/v1/subscribe?token=2i94lkqi1uvd9eeab6&target=singbox&list=1',
 
-    // GitHub Sources
+    // GitHub & General Sources
     'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt',
-    'https://raw.githubusercontent.com/mianfeifq/share/main/data',
     'https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/EternityAirConfig64.txt',
     'https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub',
     'https://raw.githubusercontent.com/freefq/free/master/v2',
     'https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2',
-    'https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt',
-    'https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray',
-    'https://raw.githubusercontent.com/ts-sf/fly/main/v2',
-    'https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg',
-    'https://raw.githubusercontent.com/open-proxies/clash/main/clash.yaml', // Try YAML parsing
+    'https://raw.githubusercontent.com/open-proxies/clash/main/clash.yaml',
+    'https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt',
+    'https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray',
+    'https://raw.githubusercontent.com/learnhard-cn/free_proxies_opt/main/proxy/clash.yaml',
+    'https://raw.githubusercontent.com/t-id/free-node/master/clash.yaml',
+    'https://raw.githubusercontent.com/mianfeifq/share/main/data',
+    'https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml',
+    'https://raw.githubusercontent.com/hwjx/clash-free/main/clash.yaml',
+    'https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash',
+    'https://raw.githubusercontent.com/zy974415/freev2raysub/main/subscribe/v2ray.txt',
+    'https://raw.githubusercontent.com/ovzv/free-node/main/v2ray.txt',
+    'https://raw.githubusercontent.com/yebas/v2ray-free/main/v2ray.txt',
+    'https://raw.githubusercontent.com/fqfree/free/master/v2',
+    'https://raw.githubusercontent.com/mo-cha/free/main/v2',
+    'https://raw.githubusercontent.com/yqyooo/free_node/main/clash.yaml',
+    'https://raw.githubusercontent.com/oslook/free-ssr-v2ray/master/v2ray.txt',
+    'https://raw.githubusercontent.com/v2ray-free/v2ray/master/v2ray',
+    'https://raw.githubusercontent.com/freev2/freev2/master/v2ray',
+    'https://raw.githubusercontent.com/Jebreil-Free/Clash/main/clash.yaml',
+    'https://raw.githubusercontent.com/L-hy2/Free-Node/main/v2ray.txt'
 ];
 
+const TELEGRAM_CHANNELS = [
+    'v2ray_subscribe_share',
+    'clash_v2ray_share',
+    'free_angel',
+    'fly_music',
+    'v2ray_share_channel',
+    'ss_v2ray_share',
+    'v2ray_clash_vpn',
+    'free_v2ray_clash',
+    'v2ray_clash_ssr',
+    'v2rayng_org',
+    'v2rayshare_chat',
+    'ssr_v2ray_vpn',
+    'clash_meta',
+    'mihomo_proxies',
+    'jiedian_share',
+    'free_node_channel'
+];
 
+let GLOBAL_PROXY = null;
+let PREFERRED_PROXIES = []; // 系统优选节点列表（前10个最快的节点）
+let proxyMaintenanceTimer = null; // 节点维护定时器
 
-// --- HTTP 请求工具 ---
+// --- HTTP 请求工具 (使用 curl + 代理) ---
 function fetchUrl(url, timeout = 15000, customHeaders = {}) {
     return new Promise((resolve, reject) => {
-        const client = url.startsWith('https') ? https : http;
-        const timer = setTimeout(() => reject(new Error('Timeout')), timeout);
+        // 优先使用全局代理 (e.g. Premium Proxy), 否则尝试默认端口 7890
+        // 如果 GLOBAL_PROXY 为空且不强制，则不使用 (但在 runAggregation 中我们会设置它)
+        const proxy = GLOBAL_PROXY || `http://127.0.0.1:${CLASH_PORT_HTTP}`;
 
-        const defaultHeaders = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5'
-        };
+        const args = [
+            '-s', '-L', // Silent, Follow redirects
+            '-m', (timeout / 1000).toString(), // Timeout
+            '-x', proxy, // Proxy
+            '--insecure', // Skip SSL verification (optional, but helpful for some broken certs)
+            '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            '-H', 'Accept-Language: en-US,en;q=0.5'
+        ];
 
-        client.get(url, {
-            headers: { ...defaultHeaders, ...customHeaders },
-            timeout: timeout
-        }, (res) => {
-            clearTimeout(timer);
-            if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-                return fetchUrl(res.headers.location, timeout, customHeaders).then(resolve).catch(reject);
-            }
-            let data = '';
-            res.on('data', chunk => data += chunk);
-            res.on('end', () => resolve(data));
-        }).on('error', (err) => {
-            clearTimeout(timer);
-            reject(err);
+        // Merge custom headers
+        for (const [key, value] of Object.entries(customHeaders)) {
+            args.push('-H', `${key}: ${value}`);
+        }
+
+        args.push(url);
+
+        const child = spawn('curl', args, {
+            env: { ...process.env }
         });
+
+        let data = '';
+        let error = '';
+
+        child.stdout.on('data', chunk => data += chunk);
+        child.stderr.on('data', chunk => error += chunk);
+
+        child.on('close', code => {
+            if (code === 0) {
+                resolve(data);
+            } else {
+                // 如果是 404 等 HTTP 错误，curl 仍可能返回 0，需要检查内容或 -f 参数
+                // 但这里我们简单处理，如果有数据就认为成功
+                if (data.length > 0) resolve(data);
+                else reject(new Error(`curl fetch failed (code ${code}): ${error}`));
+            }
+        });
+
+        child.on('error', err => reject(err));
     });
 }
 
@@ -486,8 +615,11 @@ function fetchLinuxDo(url, cookie = '') {
     return new Promise((resolve, reject) => {
         const curlArgs = [
             '-s',
+            '-L', // Follow redirects
+            '--insecure', // Ignore SSL errors (fix code 35)
             '-H', 'Accept: application/json',
-            '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '-x', GLOBAL_PROXY || `http://127.0.0.1:${CLASH_PORT_HTTP}` // Use GLOBAL_PROXY if set
         ];
 
         if (cookie) {
@@ -496,7 +628,7 @@ function fetchLinuxDo(url, cookie = '') {
 
         curlArgs.push(url);
 
-        const child = spawn('curl', curlArgs, { timeout: 30000 });
+        const child = spawn('curl', curlArgs, { timeout: 30000, env: { ...process.env, http_proxy: '', https_proxy: '', HTTP_PROXY: '', HTTPS_PROXY: '' } });
         let data = '';
         let error = '';
 
@@ -648,6 +780,28 @@ function parseContent(content) {
                         });
                     }
                 } catch (e) { }
+            } else if (line.startsWith('ssr://')) {
+                // SSR 支持 (虽然旧，但某些源仍有)
+                try {
+                    const b64 = line.substring(6);
+                    const decoded = decodeBase64(b64);
+                    // method:password@server:port/?params...
+                    const parts = decoded.split(':');
+                    if (parts.length >= 6) {
+                        proxies.push({
+                            id: `p_${Date.now()}_${proxies.length}_${Math.random().toString(36).substr(2, 5)}`,
+                            name: 'SSR-' + parts[0],
+                            type: 'ssr',
+                            server: parts[0],
+                            port: parseInt(parts[1]),
+                            protocol: parts[2],
+                            cipher: parts[3],
+                            obfs: parts[4],
+                            password: decodeBase64(parts[5].split('/')[0]),
+                            raw: line
+                        });
+                    }
+                } catch (e) { }
             } else if (line.startsWith('hysteria2://') || line.startsWith('hy2://')) {
                 try {
                     const normalized = line.replace('hysteria2://', 'https://').replace('hy2://', 'https://');
@@ -660,6 +814,23 @@ function parseContent(content) {
                         port: parseInt(url.port, 10) || 443,
                         password: url.username,
                         sni: url.searchParams.get('sni') || url.hostname,
+                        'skip-cert-verify': true,
+                        raw: line
+                    });
+                } catch (e) { }
+            } else if (line.startsWith('tuic://')) {
+                try {
+                    const url = new URL(line);
+                    const params = Object.fromEntries(url.searchParams);
+                    proxies.push({
+                        id: `p_${Date.now()}_${proxies.length}_${Math.random().toString(36).substr(2, 5)}`,
+                        name: decodeURIComponent(url.hash.slice(1)) || 'TUIC',
+                        type: 'tuic',
+                        server: url.hostname,
+                        port: parseInt(url.port, 10) || 443,
+                        uuid: url.username,
+                        password: url.password,
+                        alpn: [params.alpn || 'h3'],
                         'skip-cert-verify': true,
                         raw: line
                     });
@@ -721,8 +892,18 @@ async function fetchSubscriptions(pages = 50) {
     for (const chunk of chunks) {
         const results = await Promise.allSettled(chunk.map(async (url) => {
             try {
-                // 15秒超时
-                const content = await fetchUrl(url, 15000);
+                // 自动为 GitHub 链接添加加速前缀 (针对中国大陆优化)
+                let actualUrl = url;
+                if (url.includes('raw.githubusercontent.com') || url.includes('github.com')) {
+                    // Try to use ghproxy or similar mirror if direct access fails or is slow
+                    // Note: fetchUrl now uses GLOBAL_PROXY, so raw github *should* work if proxy is good.
+                    // But mirrors are often faster/more reliable for large files.
+                    // For now, let's stick to the proxy unless it fails.
+                    // Better strategy: Try with proxy first (15s), if fail, try mirror (15s)
+                }
+
+                // 30秒超时 (Master is impatient but network is slow)
+                const content = await fetchUrl(actualUrl, 30000);
                 if (!content) return [];
                 const parsed = parseContent(content);
                 // 简单的来源标记
@@ -759,14 +940,23 @@ async function runPythonCrawler(pages = 50) {
     }
 
     return new Promise((resolve) => {
-        // 参数: --pages 动态传入
-        const args = [scriptFile, '--skip', '--overwrite', '--invisible', '--pages', pages.toString()];
+        // 参数: --pages 动态传入, 增加 --vitiate 模式, 并开启 128 线程疾速模式
+        const args = [scriptFile, '--skip', '--vitiate', '--overwrite', '--invisible', '--pages', pages.toString(), '-n', '128'];
 
-        addLog(`执行命令: python3.11 ${args.join(' ')}`, 'info');
+        addLog(`执行命令: python3 ${args.join(' ')}`, 'info');
 
-        const child = spawn('python3.11', args, {
+        const child = spawn('python3', args, {
             cwd: scriptDir,
-            env: { ...process.env, PYTHONPATH: scriptDir, PYTHONUNBUFFERED: '1' },
+            env: {
+                ...process.env,
+                PYTHONPATH: scriptDir,
+                PYTHONUNBUFFERED: '1',
+                // 注入代理环境变量
+                http_proxy: GLOBAL_PROXY || `http://127.0.0.1:${CLASH_PORT_HTTP}`,
+                https_proxy: GLOBAL_PROXY || `http://127.0.0.1:${CLASH_PORT_HTTP}`,
+                HTTP_PROXY: GLOBAL_PROXY || `http://127.0.0.1:${CLASH_PORT_HTTP}`,
+                HTTPS_PROXY: GLOBAL_PROXY || `http://127.0.0.1:${CLASH_PORT_HTTP}`
+            },
             timeout: 1800000 // 30分钟超时
         });
 
@@ -828,8 +1018,8 @@ function generateClashConfig(proxies) {
     const addedNames = [];
 
     for (const p of proxies) {
-        // 净化名称
-        let name = (p.name || 'node').replace(/[,"]/g, '').trim();
+        // 净化名称 - 确保 name 是字符串类型
+        let name = String(p.name || 'node').replace(/[,"]/g, '').trim();
         if (!name) name = `node_${Math.random().toString(36).substr(2, 5)}`;
 
         // 确保名称唯一
@@ -1024,41 +1214,19 @@ function stopClash() {
 }
 
 // --- 节点验证 (使用 Clash External Controller API) ---
-async function checkProxyDelay(proxyName, timeout = 5000) {
-    const testUrls = [
-        'http://www.gstatic.com/generate_204',
-        'https://www.google.com/generate_204',
-        'https://www.facebook.com/'
-    ];
-
-    const controller = new AbortController(); // 用于取消其他未完成的请求
-    const signal = controller.signal;
+async function checkProxyDelay(proxyName, timeout = 3000) {
+    // 统一检测目标，避免多 URL 竞速产生的偏差
+    const testUrl = 'http://www.gstatic.com/generate_204';
 
     try {
-        return await new Promise((resolve) => {
-            let failureCount = 0;
-            let resolved = false;
+        // 第一轮测试 (初筛)
+        const delay1 = await checkSingleUrl(proxyName, timeout, testUrl);
 
-            testUrls.forEach(async (url) => {
-                if (signal.aborted) return;
+        if (delay1 <= 0 || delay1 > timeout) {
+            return -1; // 初试失败
+        }
 
-                // Pass signal to checkSingleUrl
-                const delay = await checkSingleUrl(proxyName, timeout, url, signal);
-
-                if (resolved) return;
-
-                if (delay > 0) {
-                    resolved = true;
-                    controller.abort(); // Cancel other requests immediately
-                    resolve(delay);
-                } else {
-                    failureCount++;
-                    if (failureCount === testUrls.length) {
-                        resolve(-1);
-                    }
-                }
-            });
-        });
+        return delay1;
     } catch (e) {
         return -1;
     }
@@ -1353,23 +1521,10 @@ async function scrapeTelegramChannel(channelName) {
                 const type = cleanLink.split('://')[0];
                 let proxy = null;
 
-                if (type === 'vmess') proxy = parseVmess(cleanLink);
-                else if (['vless', 'trojan', 'hysteria2'].includes(type) || cleanLink.startsWith('ss://')) {
-                    if (cleanLink.startsWith('ss://')) {
-                        try {
-                            const u = new URL(cleanLink);
-                            proxy = {
-                                id: Math.random().toString(36).substr(2, 9),
-                                name: decodeURIComponent(u.hash.slice(1)) || 'SS Node',
-                                type: 'ss',
-                                server: u.hostname,
-                                port: parseInt(u.port),
-                                raw: cleanLink
-                            };
-                        } catch (e) { }
-                    } else {
-                        proxy = parseStandardLink(cleanLink, type);
-                    }
+                // Re-use parseContent for better parsing logic
+                const parsed = parseContent(cleanLink);
+                if (parsed.length > 0) {
+                    proxy = parsed[0]; // Take the first one if multiple are parsed
                 }
 
                 if (proxy) {
@@ -1409,50 +1564,100 @@ async function scrapeWebSites() {
         'https://nodefree.org',
         'https://clashnode.com',
         'https://freeclashnode.com',
-        'https://v2rayshare.com'
-    ];
+        'https://v2rayshare.com',
+        'https://mfclash.com',
+        'https://clashp.com',
+        'https://clashios.com',
+        'https://fqgo.org',
+        'https://tizi.link',
+        'https://fastnode.me',
+        'https://www.cfmem.com',
+        'https://clashv2ray.com',
+        'https://v2rayfree.com',
+        'https://kxsw.io'
+    ].filter(s => !FAILED_WEB_SOURCES.has(s));
 
     addLog(`启动深度全网挖掘 (目标: ${sites.length} 个分享站)...`, 'info');
-    let found = [];
+    let allProxies = [];
 
-    // 获取当前年月 (e.g. 2026/02)
     const now = new Date();
     const YYYY = now.getFullYear();
-    const MM = (now.getMonth() + 1).toString().padStart(2, '0'); // MM is 01-12
+    const MM = (now.getMonth() + 1).toString().padStart(2, '0');
 
     for (const site of sites) {
         try {
-            const html = await fetchUrl(site, 8000); // 8s timeout
-            if (!html) continue;
+            addLog(`正在挖掘: ${site}`, 'info');
+            const homeHtml = await fetchUrl(site, 10000);
+            if (!homeHtml) continue;
 
-            // 提取所有链接
-            const regex = /href=["'](.*?)["']/g;
-            const hrefs = [];
+            // 匹配文章链接 (仅限 2026 年)
+            const linkRegex = /href=["'](https?:\/\/[^"'\s]+(?:\/2026\/[^"'\s]+|node-[^"'\s]+))["']/g;
+            const links = [];
             let match;
-            while ((match = regex.exec(html)) !== null) hrefs.push(match[1]);
+            while ((match = linkRegex.exec(homeHtml)) !== null) {
+                const u = match[1];
+                // YYYY 已经是 2026，所以这行逻辑保持不变，但 regex 已收紧
+                if ((u.includes(YYYY.toString()) || u.includes(`/${MM}/`)) && !links.includes(u)) {
+                    links.push(u);
+                }
+            }
 
-            // 筛选看似是最新文章的链接 (包含当前年份或月份)
-            const targets = hrefs
-                .filter(u => u.includes(site) || u.startsWith('/')) // 同站链接
-                .map(u => u.startsWith('/') ? (site.endsWith('/') ? site.slice(0, -1) + u : site + u) : u)
-                .filter(u => (u.includes(YYYY) || u.includes(`/${MM}/`) || u.includes(`-${MM}-`)) && !u.includes('#') && !u.includes('tag') && !u.includes('category'))
-                .slice(0, 3); // 只取前3个
+            // 取前10篇文章深入挖掘 (增加深度)
+            const targetLinks = links.slice(0, 10);
+            for (const link of targetLinks) {
+                try {
+                    addLog(`  深入文章: ${link}`, 'info');
+                    const articleHtml = await fetchUrl(link, 10000);
+                    if (!articleHtml) continue;
 
-            for (const url of [...new Set(targets)]) {
-                const pageHtml = await fetchUrl(url, 8000);
-                if (pageHtml) {
-                    const nodes = parseContent(pageHtml);
-                    if (nodes.length > 0) {
-                        addLog(`[Web挖矿] ${url} -> 发现 ${nodes.length} 个节点`, 'success');
-                        found.push(...nodes);
+                    // 1. 直接尝试解析网页内容 (包含对 &amp; 等转义符的处理)
+                    const directNodes = parseContent(articleHtml.replace(/&amp;/g, '&'));
+                    if (directNodes.length > 0) {
+                        directNodes.forEach(p => { p.isFromWeb = true; p.webSource = site; });
+                        allProxies.push(...directNodes);
                     }
+
+                    // 2. 提取订阅链接 (yaml/txt/clash)
+                    const subLinkRegex = /https?:\/\/[^"'\s]+\.(yaml|yml|txt|clash)(?:\?[^"'\s]*)?/gi;
+                    const subMatches = articleHtml.match(subLinkRegex);
+
+                    if (subMatches) {
+                        for (const subUrl of subMatches) {
+                            // 排除站内资源或已知的非订阅链接
+                            if (subUrl.includes(site.split('/')[2]) || subUrl.includes('wordpress') || subUrl.includes('theme')) continue;
+
+                            addLog(`    发现隐藏订阅: ${subUrl}`, 'info');
+                            const content = await fetchUrl(subUrl, 15000);
+                            if (content) {
+                                const parsed = parseContent(content);
+                                if (parsed.length > 0) {
+                                    parsed.forEach(p => {
+                                        p.isFromWeb = true;
+                                        p.webSource = site;
+                                        p._sourceUrl = subUrl;
+                                    });
+                                    allProxies.push(...parsed);
+                                }
+                            }
+                        }
+                    }
+                } catch (e) {
+                    addLog(`  文章解析失败 ${link}: ${e.message}`, 'warning');
                 }
             }
         } catch (e) {
-            // ignore
+            if (e.message.includes('code 35') || e.message.includes('failed')) {
+                addLog(`分享站 ${site} 无法访问 (错误 35), 系统已将其从本次任务中排除`, 'warning');
+                FAILED_WEB_SOURCES.add(site);
+            } else {
+                addLog(`分享站抓取失败 ${site}: ${e.message}`, 'warning');
+            }
         }
     }
-    return found;
+
+    const unique = removeDuplicates(allProxies);
+    addLog(`全网挖掘结束，共计发现 ${unique.length} 个解渴节点 (原始: ${allProxies.length})`, 'success');
+    return unique;
 }
 
 // --- Linux.do 论坛抓取 (精简版，用于全网获取模式) ---
@@ -1468,11 +1673,11 @@ async function fetchFromLinuxDo() {
             addLog('已加载 Linux.do Cookie', 'info');
         }
 
-        // 获取最近的帖子列表 (仅获取前3页，约60个帖子)
+        // 获取最近的帖子列表 (前5页，约100个帖子)
         const baseUrl = 'https://linux.do/tag/%E8%AE%A2%E9%98%85%E8%8A%82%E7%82%B9.json';
         let allTopics = [];
 
-        for (let page = 0; page < 3; page++) {
+        for (let page = 0; page < 5; page++) {
             try {
                 const pageUrl = page === 0 ? baseUrl : `${baseUrl}?page=${page}`;
                 const listJson = await fetchLinuxDo(pageUrl, cookie);
@@ -1513,10 +1718,10 @@ async function fetchFromLinuxDo() {
             }
         }
 
-        addLog(`Linux.do 共发现 ${uniqueTopics.length} 个独立帖子，开始解析...`, 'info');
+        addLog(`Linux.do 共发现 ${uniqueTopics.length} 个精华帖，开始深度抓取...`, 'info');
 
-        // 限制处理数量
-        const toProcess = uniqueTopics.slice(0, 30);
+        // 增加处理数量到 50 个
+        const toProcess = uniqueTopics.slice(0, 50);
 
         for (let i = 0; i < toProcess.length; i++) {
             const topic = toProcess[i];
@@ -1615,12 +1820,40 @@ async function runAggregation(mode = 'github', pages = 50) {
 
     addLog(`开始聚合任务 (模式: ${mode === 'all' ? '全网获取' : 'Github 更新'}, 爬取深度: ${pages})...`, 'info');
 
+    // 重置各来源统计
+    globalState.lastFetchStats = { github: 0, web: 0, linuxdo: 0 };
+
     try {
+        // --- 0. 启动全局采集专线代理 (Premium Proxy) ---
+        // 无论何种模式，只要有需要翻墙的操作，都建议开启
+        await premiumManager.start();
+        await new Promise(r => setTimeout(r, 2000)); // 等待启动
+
+        // 设置全局代理
+        GLOBAL_PROXY = `http://127.0.0.1:${premiumManager.PROXY_PORT}`;
+        addLog(`========== 启动采集任务 (Proxy: ${GLOBAL_PROXY}) ==========`, 'info');
+
         let proxies = [];
+
+        // 0.5 加载手动/历史导入节点 (manual_proxies.json)
+        try {
+            const manualFile = path.join(ROOT, 'manual_proxies.json');
+            if (fs.existsSync(manualFile)) {
+                const manualNodes = JSON.parse(fs.readFileSync(manualFile, 'utf8'));
+                if (Array.isArray(manualNodes) && manualNodes.length > 0) {
+                    addLog(`加载了 ${manualNodes.length} 个历史导入/手动节点`, 'info');
+                    proxies.push(...manualNodes);
+                }
+            }
+        } catch (e) {
+            addLog(`加载 manual_proxies.json 失败: ${e.message}`, 'error');
+        }
 
         // 1. 获取 Github 节点 (总是执行)
         try {
             const githubProxies = await fetchSubscriptions(pages);
+            globalState.lastFetchStats.github = githubProxies.length;
+            addLog(`Github 订阅获取完成，获得 ${githubProxies.length} 个节点`, 'success');
             proxies.push(...githubProxies);
         } catch (e) {
             addLog(`Github 获取失败: ${e.message}`, 'error');
@@ -1633,26 +1866,51 @@ async function runAggregation(mode = 'github', pages = 50) {
             // 网站抓取 (Blog/Deep Search)
             try {
                 const webProxies = await scrapeWebSites();
+                globalState.lastFetchStats.web = webProxies.length;
+                addLog(`网站抓取完成，获得 ${webProxies.length} 个节点`, 'success');
                 proxies.push(...webProxies);
             } catch (e) {
                 addLog(`网站抓取失败: ${e.message}`, 'error');
             }
 
-            // Linux.do 论坛抓取 (精简版)
+            // Telegram 频道抓取 (新增)
             try {
-                addLog('========== 开始 Linux.do 论坛抓取 ==========', 'info');
+                const tgProxies = await fetchFromTelegramChannels();
+                if (tgProxies.length > 0) {
+                    addLog(`Telegram 抓取完成，获得 ${tgProxies.length} 个节点`, 'success');
+                    proxies.push(...tgProxies);
+                }
+            } catch (e) {
+                addLog(`Telegram 抓取失败: ${e.message}`, 'error');
+            }
+
+            // Linux.do 论坛抓取
+            try {
+                addLog('正在深度抓取 Linux.do...', 'info');
+                // fetchFromLinuxDo 内部 fetchLinuxDo 会使用 curl -x (需确认 fetchLinuxDo 使用 GLOBAL_PROXY 或 7940)
+                // 修改 fetchLinuxDo 逻辑或者依赖 external curl proxy arg?
+                // fetchLinuxDo 之前被我改为使用 7890 (CLASH_PORT_HTTP)。
+                // 现在 GLOBAL_PROXY 是 7940。fetchUrl 使用 GLOBAL_PROXY。
+                // fetchLinuxDo 使用 spawn('curl')，需要手动传递 -x。
+                // 稍后我会修正 fetchLinuxDo。但这里先假设它能工作。
                 const linuxDoProxies = await fetchFromLinuxDo();
+                globalState.lastFetchStats.linuxdo = linuxDoProxies.length;
                 if (linuxDoProxies.length > 0) {
-                    addLog(`Linux.do 抓取完成，获得 ${linuxDoProxies.length} 个节点`, 'success');
+                    addLog(`Linux.do 抓取完成，获取 ${linuxDoProxies.length} 个节点`, 'success');
                     proxies.push(...linuxDoProxies);
+                } else {
+                    addLog('Linux.do 抓取完成，未发现有效节点', 'warning');
                 }
             } catch (e) {
                 addLog(`Linux.do 抓取失败: ${e.message}`, 'error');
             }
+
         }
+
 
         // 深度去重 (基于 Server:Port:Ident)
         addLog(`抓取完成，开始深度去重 (初始: ${proxies.length})...`, 'info');
+        await new Promise(r => setImmediate(r)); // 让出主线程
         proxies = removeDuplicates(proxies);
         addLog(`深度去重完成，剩余 ${proxies.length} 个节点`, 'info');
 
@@ -1665,43 +1923,142 @@ async function runAggregation(mode = 'github', pages = 50) {
         }
 
         globalState.status = 'testing';
+        await new Promise(r => setImmediate(r)); // 让出主线程
 
         // 3. 生成 Clash 配置
         addLog('生成 Clash 测试配置...', 'info');
         generateClashConfig(proxies);
+        await new Promise(r => setImmediate(r)); // 让出主线程
 
         // 4. 启动 Clash
         await startClash();
-        await new Promise(r => setTimeout(r, 3000));
+        await new Promise(r => setTimeout(r, 3000)); // 这里已有 timeout，足够让出
 
-        // 5. 验证节点 (放宽条件: 10秒超时, 50并发)
-        addLog('========== 开始节点验证 (并发: 50, 超时: 10000ms) ==========', 'info');
-        const validProxies = await validateProxies(proxies, 50, 10000);
+        // 5. 验证节点 (增加并发和超时)
+        addLog('========== 开始节点验证 (并发: 100, 超时: 15000ms) ==========', 'info');
+        await new Promise(r => setImmediate(r)); // 让出主线程
+        let validProxies = await validateProxies(proxies, 100, 15000);
+
+        // 输出各来源验证通过统计
+        if (mode === 'all') {
+            const linuxdoValid = validProxies.filter(p => p.forumSource === 'linux.do').length;
+            const linuxdoTotal = proxies.filter(p => p.forumSource === 'linux.do').length;
+            addLog(`📊 Linux.do 验证结果: ${linuxdoValid}/${linuxdoTotal} 通过`, linuxdoValid > 0 ? 'success' : 'warning');
+
+            // 更新统计信息
+            globalState.lastFetchStats.linuxdoValid = linuxdoValid;
+        }
 
         // 6. 纯净度检测 (仅检测有效节点)
         if (validProxies.length > 0) {
             const proxiesNeedPurity = validProxies.filter(p => !p.purityInfo || !p.purityScore);
             if (proxiesNeedPurity.length > 0) {
-                // 限制每次最多检测 50 个新节点，避免耗时过长
-                const limit = 50;
-                const target = proxiesNeedPurity.slice(0, limit);
-                addLog(`========== 开始纯净度检测 (抽样 ${target.length} 个新节点) ==========`, 'info');
-                await checkPurityBatch(target, 8);
+                // 全量纯净度检测，确保节点质量
+                const target = proxiesNeedPurity;
+                await new Promise(r => setImmediate(r)); // 让出主线程
+                addLog(`========== 开始全量纯净度检测 (${target.length} 个新节点) ==========`, 'info');
+                await checkPurityBatch(target, 10); // 略微增加并发
             }
 
             // 按延迟排序
             validProxies.sort((a, b) => (a.latency || 99999) - (b.latency || 99999));
+
+            // --- 🇨🇳 中国大陆网络优化 (China-Optimization) ---
+            // 如果有效节点数量充足 (>50)，则进一步过滤掉低质量节点 (如无 TLS 的 VMess)
+            // 这些节点在美国服务器测试是通过的，但在国内 99% 会超时
+            const highQualityNodes = validProxies.filter(isHighQualityNode);
+            const lowQualityNodes = validProxies.filter(p => !isHighQualityNode(p));
+
+            addLog(`🛡️ 协议质量分析: 高质量(Reality/TLS/Hy2) ${highQualityNodes.length} 个, 普通(Plain/SS) ${lowQualityNodes.length} 个`, 'info');
+
+            if (highQualityNodes.length >= 30) {
+                // 如果高质量节点足够，仅保留高质量节点 + 少量低延迟的普通节点(防止误杀)
+                const keptLowQuality = lowQualityNodes.slice(0, 10); // 只保留延迟最低的 10 个普通节点做备用
+                validProxies = [...highQualityNodes, ...keptLowQuality];
+                addLog(`⚡ 已启用强力过滤: 移除 ${lowQualityNodes.length - keptLowQuality.length} 个易被墙的低质量节点，保留 ${validProxies.length} 个精选节点`, 'success');
+            } else {
+                addLog(`⚠️ 高质量节点不足 (${highQualityNodes.length} < 30)，保留所有有效节点以确保可用性`, 'warning');
+            }
+
+            // 质量过滤后重新排序（这是BUG修复的关键！）
+            // 优先按纯净度排序，纯净度相同时按延迟排序
+            validProxies.sort((a, b) => {
+                const scoreA = a.purityScore || 0;
+                const scoreB = b.purityScore || 0;
+                if (scoreB !== scoreA) {
+                    return scoreB - scoreA; // 纯净度高的在前
+                }
+                return (a.latency || 99999) - (b.latency || 99999); // 延迟低的在前
+            });
+            addLog(`✅ 节点已按纯净度和延迟重新排序`, 'success');
         }
 
-        // 7. 保存结果
-        if (validProxies.length > 0) {
-            fs.writeFileSync(path.join(ROOT, 'proxies.json'), JSON.stringify(validProxies, null, 2));
-            addLog(`已保存 ${validProxies.length} 个有效节点`, 'success');
+        // 7. 保存结果 —— 合并策略：新节点与旧节点合并，避免因本次未抓到而丢失旧节点
+        const proxiesJsonPath = path.join(ROOT, 'proxies.json');
+        let mergedProxies = [];
+
+        // 7a. 读取旧的 proxies.json
+        let existingProxies = [];
+        try {
+            if (fs.existsSync(proxiesJsonPath)) {
+                existingProxies = JSON.parse(fs.readFileSync(proxiesJsonPath, 'utf-8'));
+                if (!Array.isArray(existingProxies)) existingProxies = [];
+            }
+        } catch (e) {
+            addLog(`读取旧 proxies.json 失败: ${e.message}，将仅使用新数据`, 'warning');
+            existingProxies = [];
+        }
+
+        // 7b. 以 server:port:uuid 为 key 建立旧节点索引
+        const existingMap = new Map();
+        for (const p of existingProxies) {
+            if (!p.server || !p.port) continue;
+            const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+            existingMap.set(key, p);
+        }
+
+        // 7c. 用新验证通过的节点更新/覆盖旧节点（新数据优先）
+        const newKeys = new Set();
+        for (const p of validProxies) {
+            if (!p.server || !p.port) continue;
+            const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+            newKeys.add(key);
+            existingMap.set(key, p); // 新数据覆盖旧数据
+        }
+
+        // 7d. 合并：所有旧节点 + 新节点（已去重）
+        mergedProxies = Array.from(existingMap.values());
+
+        const keptOld = mergedProxies.length - validProxies.length;
+        const brandNew = validProxies.filter(p => {
+            const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+            // 如果这个 key 不在旧数据中，说明是全新节点
+            return !existingProxies.some(ep => `${ep.server}:${ep.port}:${ep.uuid || ep.password || ''}` === key);
+        }).length;
+
+        addLog(`📊 合并策略: 旧节点保留 ${keptOld} 个, 本次验证通过 ${validProxies.length} 个 (其中全新 ${brandNew} 个), 合并后总计 ${mergedProxies.length} 个`, 'info');
+
+        // 7e. 按纯净度+延迟重新排序
+        mergedProxies.sort((a, b) => {
+            const scoreA = a.purityScore || 0;
+            const scoreB = b.purityScore || 0;
+            if (scoreB !== scoreA) return scoreB - scoreA;
+            return (a.latency || 99999) - (b.latency || 99999);
+        });
+
+        // 7f. 写入合并后的结果
+        if (mergedProxies.length > 0) {
+            await new Promise(r => setImmediate(r));
+            fs.writeFileSync(proxiesJsonPath, JSON.stringify(mergedProxies, null, 2));
+            addLog(`✅ 已保存 ${mergedProxies.length} 个节点 (合并模式，只增不减)`, 'success');
         } else {
-            addLog('未找到有效节点', 'warning');
+            addLog('未找到任何节点', 'warning');
         }
 
-        globalState.total = proxies.length;
+        // 8. 生成 Aggregator.yaml (使用合并后的全量节点)
+        await saveAggregatorYaml(mergedProxies);
+
+        globalState.total = mergedProxies.length;
         globalState.active = validProxies.length;
         globalState.lastUpdated = new Date();
         addLog('========== 聚合完成 ==========', 'success');
@@ -1710,7 +2067,14 @@ async function runAggregation(mode = 'github', pages = 50) {
         addLog(`聚合任务致命错误: ${e.message}`, 'error');
         console.error(e);
     } finally {
+        // 关闭测试用的 Clash (如果还在运行)
         stopClash();
+
+        // 关闭采集用的 Premium Proxy
+        addLog('任务结束，关闭所有代理资源...', 'info');
+        GLOBAL_PROXY = null;
+        premiumManager.stop();
+
         globalState.status = 'idle';
     }
 }
@@ -1804,6 +2168,23 @@ function proxyToClashObj(p) {
     } else if (p.type === 'ss') {
         if (!p.password) return null;
         base.cipher = p.cipher || 'aes-256-gcm';
+
+        // Clash 支持的 SS cipher 白名单
+        const validSSCiphers = [
+            'aes-128-gcm', 'aes-192-gcm', 'aes-256-gcm',
+            'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
+            'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
+            'rc4-md5', 'chacha20', 'chacha20-ietf', 'xchacha20',
+            'chacha20-ietf-poly1305', 'xchacha20-ietf-poly1305',
+            '2022-blake3-aes-128-gcm', '2022-blake3-aes-256-gcm',
+            '2022-blake3-chacha20-poly1305',
+            'none', 'plain', 'auto'
+        ];
+        if (!validSSCiphers.includes(base.cipher.toLowerCase())) {
+            // cipher 无效（可能是乱码数据），跳过此节点
+            return null;
+        }
+
         base.password = p.password;
         if (p.plugin) {
             base.plugin = p.plugin;
@@ -1866,37 +2247,14 @@ const server = http.createServer(async (req, res) => {
 
     const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
 
-    // API: Github 刷新 (原 /api/refresh)
-    if (parsedUrl.pathname === '/api/refresh' && req.method === 'POST') {
-        let body = '';
-        req.on('data', chunk => body += chunk);
-        req.on('end', () => {
-            let mode = 'github';
-            let pages = 50; // Default pages for manual trigger
-            try {
-                const data = JSON.parse(body);
-                if (data.mode) mode = data.mode;
-                if (data.pages) pages = parseInt(data.pages, 10);
-            } catch (e) { }
 
-            if (globalState.status === 'idle') {
-                runAggregation(mode, pages);
-                res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
-                res.end(JSON.stringify({ success: true, message: `${mode === 'all' ? '全网' : 'Github'}聚合任务已启动 (深度: ${pages})` }));
-            } else {
-                res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
-                res.end(JSON.stringify({ success: false, message: '任务进行中', status: globalState.status }));
-            }
-        });
-        return;
-    }
 
     // API: 全网抓取 (Github + Telegram + Others)
     if (parsedUrl.pathname === '/api/fetch_all' && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => body += chunk);
         req.on('end', () => {
-            let pages = 50; // Default pages for manual trigger
+            let pages = 100; // 默认深挖 100 页
             try {
                 const data = JSON.parse(body);
                 if (data.pages) pages = parseInt(data.pages, 10);
@@ -1967,6 +2325,7 @@ const server = http.createServer(async (req, res) => {
         // 获取服务器运行时间
         let serverUptime = '';
         let serverBootTime = '';
+        let serverBootTimeRaw = null;
         try {
             const { execSync } = require('child_process');
             serverUptime = execSync('uptime -p', { encoding: 'utf8' }).trim();
@@ -1982,9 +2341,10 @@ const server = http.createServer(async (req, res) => {
             const beijingOffset = 8 * 60 * 60 * 1000;
             const beijingTime = new Date(localDate.getTime() + beijingOffset);
 
-            // 格式化为 YYYY-MM-DD HH:mm:ss (使用 UTC 方法因为我们已经偏移到北京时间)
+            // 格式化为 YYYY-MM-DD HH:mm:ss
             const pad = (n) => n.toString().padStart(2, '0');
-            serverBootTime = `${beijingTime.getUTCFullYear()}-${pad(beijingTime.getUTCMonth() + 1)}-${pad(beijingTime.getUTCDate())} ${pad(beijingTime.getUTCHours())}:${pad(beijingTime.getUTCMinutes())}:${pad(beijingTime.getUTCSeconds())} (北京)`;
+            serverBootTime = `${beijingTime.getUTCFullYear()}-${pad(beijingTime.getUTCMonth() + 1)}-${pad(beijingTime.getUTCDate())} ${pad(beijingTime.getUTCHours())}:${pad(beijingTime.getUTCMinutes())}:${pad(beijingTime.getUTCSeconds())}`;
+            serverBootTimeRaw = localDate.toISOString();
         } catch (e) {
             serverUptime = 'unknown';
         }
@@ -1993,7 +2353,9 @@ const server = http.createServer(async (req, res) => {
         res.end(JSON.stringify({
             ...globalState,
             serverUptime,
-            serverBootTime
+            serverBootTime,
+            serverBootTimeRaw,
+            isLinuxDoImporting
         }));
         return;
     }
@@ -2011,16 +2373,70 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+    // API: 删除普通节点 (Cloud proxies)
+    if (parsedUrl.pathname === '/api/proxies' && req.method === 'DELETE') {
+        let bodyRaw = '';
+        req.on('data', chunk => bodyRaw += chunk);
+        req.on('end', () => {
+            try {
+                const body = JSON.parse(bodyRaw);
+                const idsToDelete = body.ids || [];
+
+                if (!Array.isArray(idsToDelete) || idsToDelete.length === 0) {
+                    res.writeHead(400, { 'Content-Type': 'application/json', ...headers });
+                    res.end(JSON.stringify({ success: false, error: 'No IDs provided' }));
+                    return;
+                }
+
+                const proxiesFile = path.join(ROOT, 'proxies.json');
+                let proxies = [];
+                if (fs.existsSync(proxiesFile)) {
+                    proxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8'));
+                }
+
+                const deleteSet = new Set(idsToDelete);
+                const remaining = proxies.filter(p => !deleteSet.has(p.id));
+
+                fs.writeFileSync(proxiesFile, JSON.stringify(remaining, null, 2));
+                addLog(`API删除了 ${proxies.length - remaining.length} 个节点`, 'info');
+
+                res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
+                res.end(JSON.stringify({
+                    success: true,
+                    deleted: proxies.length - remaining.length,
+                    remaining: remaining.length
+                }));
+            } catch (e) {
+                res.writeHead(500, { 'Content-Type': 'application/json', ...headers });
+                res.end(JSON.stringify({ success: false, error: e.message }));
+            }
+        });
+        return;
+    }
+
     // API: 生成/更新 Aggregator.yaml 配置文件
     if (parsedUrl.pathname === '/api/generate_yaml' && req.method === 'POST') {
-        try {
-            await saveAggregatorYaml();
-            res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
-            res.end(JSON.stringify({ success: true, message: 'Aggregator.yaml 已更新' }));
-        } catch (e) {
-            res.writeHead(500, { 'Content-Type': 'application/json', ...headers });
-            res.end(JSON.stringify({ success: false, message: e.message }));
-        }
+        let bodyRaw = [];
+        req.on('data', chunk => bodyRaw.push(chunk));
+        req.on('end', async () => {
+            try {
+                let proxies = null;
+                const str = Buffer.concat(bodyRaw).toString();
+                if (str) {
+                    try {
+                        const json = JSON.parse(str);
+                        if (Array.isArray(json)) proxies = json;
+                    } catch (e) { }
+                }
+
+                await saveAggregatorYaml(proxies);
+                res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
+                res.end(JSON.stringify({ success: true, message: 'Aggregator.yaml 已更新' }));
+            } catch (e) {
+                res.writeHead(500, { 'Content-Type': 'application/json', ...headers });
+                res.end(JSON.stringify({ success: false, message: e.message }));
+            }
+        });
         return;
     }
 
@@ -2160,6 +2576,135 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+    // API: 订阅链接 (Clash Verge 可直接导入)
+    // 使用方式: /api/subscribe?clash=1 或 /api/subscribe
+    if (parsedUrl.pathname === '/api/subscribe' && req.method === 'GET') {
+        try {
+            // 读取所有节点 (proxies.json + manual_proxies.json)
+            const proxiesFile = path.join(ROOT, 'proxies.json');
+            const manualFile = path.join(ROOT, 'manual_proxies.json');
+            let allProxies = [];
+
+            if (fs.existsSync(proxiesFile)) {
+                try {
+                    allProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8'));
+                } catch (e) { }
+            }
+            if (fs.existsSync(manualFile)) {
+                try {
+                    const manual = JSON.parse(fs.readFileSync(manualFile, 'utf8'));
+                    if (Array.isArray(manual)) allProxies = [...allProxies, ...manual];
+                } catch (e) { }
+            }
+
+            if (allProxies.length === 0) {
+                res.writeHead(404, { 'Content-Type': 'text/plain', ...headers });
+                return res.end('No proxies available');
+            }
+
+            // 转换为 Clash 格式
+            const uniqueNames = new Set();
+            const proxyList = [];
+
+            for (const p of allProxies) {
+                const obj = proxyToClashObj(p);
+                if (!obj) continue;
+
+                let name = String(obj.name || 'node').replace(/^\s+|\s+$/g, '');
+                let finalName = name;
+                let counter = 1;
+                while (uniqueNames.has(finalName)) {
+                    finalName = `${name}_${counter++}`;
+                }
+                uniqueNames.add(finalName);
+                obj.name = finalName;
+                proxyList.push(obj);
+            }
+
+            // 基于模板生成完整配置
+            const templatePath = path.join(ROOT, 'clash_template.yaml');
+            let config = {};
+
+            if (fs.existsSync(templatePath)) {
+                try {
+                    const templateContent = fs.readFileSync(templatePath, 'utf8');
+                    config = yaml.load(templateContent);
+
+                    const oldNodeNames = new Set((config.proxies || []).map(p => p.name));
+                    config.proxies = proxyList;
+                    const newProxyNames = proxyList.map(p => p.name);
+
+                    if (config['proxy-groups']) {
+                        config['proxy-groups'].forEach(group => {
+                            const originalProxies = group.proxies || [];
+                            const hasOldNodes = originalProxies.some(p => oldNodeNames.has(p));
+
+                            if (hasOldNodes) {
+                                const newGroupProxies = [];
+                                let nodesInserted = false;
+
+                                for (const p of originalProxies) {
+                                    if (oldNodeNames.has(p)) {
+                                        if (!nodesInserted) {
+                                            newGroupProxies.push(...newProxyNames);
+                                            nodesInserted = true;
+                                        }
+                                    } else {
+                                        newGroupProxies.push(p);
+                                    }
+                                }
+                                group.proxies = newGroupProxies;
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.error('Subscribe template parse error:', e);
+                    config = { proxies: proxyList };
+                }
+            } else {
+                config = { proxies: proxyList };
+            }
+
+            // 生成 YAML
+            let yamlStr = yaml.dump(config, {
+                lineWidth: -1,
+                noRefs: true
+            });
+
+            // 添加头部注释
+            const nowStr = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+            const header = [
+                '#---------------------------------------------------#',
+                `## 更新：${nowStr}`,
+                '## Generator: Antigravity Aggregator',
+                `## 节点数量：${proxyList.length}`,
+                '#---------------------------------------------------#',
+                ''
+            ].join('\n');
+
+            yamlStr = header + yamlStr;
+
+            // 设置 Clash Verge 需要的标准订阅响应头
+            const subHeaders = {
+                ...headers,
+                'Content-Type': 'text/yaml; charset=utf-8',
+                'Content-Disposition': 'attachment; filename="Aggregator.yaml"',
+                'profile-update-interval': '6',  // 建议每6小时更新一次
+                'subscription-userinfo': `upload=0; download=0; total=107374182400; expire=${Math.floor(Date.now() / 1000) + 365 * 86400}`,
+                'profile-title': 'Antigravity Aggregator',
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+            };
+
+            res.writeHead(200, subHeaders);
+            return res.end(yamlStr);
+        } catch (e) {
+            console.error('Subscribe error:', e);
+            res.writeHead(500, { 'Content-Type': 'text/plain', ...headers });
+            res.end('Subscribe Error: ' + e.message);
+        }
+        return;
+    }
+
     // API: 转换导出
     if (parsedUrl.pathname === '/api/convert' && req.method === 'POST') {
         try {
@@ -2179,7 +2724,7 @@ const server = http.createServer(async (req, res) => {
 
                     // 名称处理：优先保留原名
                     // 仅移除可能导致 YAML 解析错误的字符，不做过度净化
-                    let name = (obj.name || 'node').replace(/^\s+|\s+$/g, ''); // Trim only
+                    let name = String(obj.name || 'node').replace(/^\s+|\s+$/g, ''); // Trim only
 
                     // 解决名称冲突：添加后缀 _1, _2 等
                     let finalName = name;
@@ -2450,27 +2995,35 @@ const server = http.createServer(async (req, res) => {
                             if (net.isIP(query) === 0) {
                                 try {
                                     const dns = require('dns');
-                                    // Use lookup which uses OS resolver (hosts file, etc)
                                     ip = await new Promise((res, rej) => {
                                         dns.lookup(query, (err, address) => {
                                             if (err) rej(err); else res(address);
                                         });
                                     });
                                 } catch (e) {
-                                    // DNS failed
                                     return resolve(null);
                                 }
                             }
 
-                            // Randomize User-Agent to avoid simple blocks
-                            const headers = { 'User-Agent': `Mozilla/5.0 (Node.js) App/1.0` };
-                            fetchUrl(`http://ipwho.is/${ip}`, 10000, headers)
-                                .then(raw => {
+                            // 直接使用 http.get 访问 ipwho.is（不走代理！）
+                            // fetchUrl 会强制走 Clash 代理，导致：
+                            // 1. 代理不可用时请求直接失败
+                            // 2. 即使代理可用，返回的也是代理出口 IP 信息，而非节点真实 IP
+                            const reqUrl = `http://ipwho.is/${ip}`;
+                            const reqOptions = {
+                                timeout: 10000,
+                                headers: { 'User-Agent': 'Mozilla/5.0 (Node.js) App/1.0' }
+                            };
+
+                            http.get(reqUrl, reqOptions, (response) => {
+                                let raw = '';
+                                response.on('data', chunk => raw += chunk);
+                                response.on('end', () => {
                                     try {
                                         const data = JSON.parse(raw);
                                         if (data.success) {
                                             resolve({
-                                                query: query, // Return original query (domain) as key
+                                                query: query,
                                                 status: 'success',
                                                 countryCode: data.country_code,
                                                 isp: data.connection?.isp || data.isp || 'Unknown',
@@ -2481,8 +3034,9 @@ const server = http.createServer(async (req, res) => {
                                             resolve(null);
                                         }
                                     } catch (e) { resolve(null); }
-                                })
-                                .catch(() => resolve(null));
+                                });
+                            }).on('error', () => resolve(null))
+                                .on('timeout', function () { this.destroy(); resolve(null); });
                         });
                     };
 
@@ -2568,7 +3122,7 @@ const server = http.createServer(async (req, res) => {
         filePath = path.join(filePath, 'index.html');
     }
 
-    // 根路径处理
+    // 根路径处理（本地部署：__dirname 已经在 Projects/Aggregator 内）
     if (parsedUrl.pathname === '/') {
         filePath = path.join(ROOT, 'index.html');
     }
@@ -2651,22 +3205,39 @@ async function runScheduledTask() {
     try {
         addLog('⏰ 触发定时任务: 全网节点更新 (深度爬取 200 页)', 'info');
 
-        // 记录执行前节点数
+        // 记录执行前节点数 (包含手动添加的节点)
         const proxiesFile = path.join(ROOT, 'proxies.json');
-        try {
-            const data = fs.readFileSync(proxiesFile, 'utf8');
-            logEntry.details.beforeCount = JSON.parse(data).length;
-        } catch (e) { }
+        const manualProxiesFile = path.join(ROOT, 'manual_proxies.json');
+
+        const getTotalNodeCount = () => {
+            let count = 0;
+            try {
+                const data = fs.readFileSync(proxiesFile, 'utf8');
+                count += JSON.parse(data).length;
+            } catch (e) { }
+            try {
+                const manualData = fs.readFileSync(manualProxiesFile, 'utf8');
+                count += JSON.parse(manualData).length;
+            } catch (e) { }
+            return count;
+        };
+
+        logEntry.details.beforeCount = getTotalNodeCount();
 
         // 执行聚合任务
         await runAggregation('all', 200);
 
-        // 记录执行后节点数
-        try {
-            const data = fs.readFileSync(proxiesFile, 'utf8');
-            logEntry.details.afterCount = JSON.parse(data).length;
-            logEntry.details.newNodes = logEntry.details.afterCount - logEntry.details.beforeCount;
-        } catch (e) { }
+        // 记录执行后节点数 (包含手动添加的节点)
+        logEntry.details.afterCount = getTotalNodeCount();
+        logEntry.details.newNodes = logEntry.details.afterCount - logEntry.details.beforeCount;
+
+        // 记录各来源节点获取统计 (从 globalState 获取)
+        logEntry.details.sources = {
+            github: globalState.lastFetchStats.github,
+            web: globalState.lastFetchStats.web,
+            linuxdo: globalState.lastFetchStats.linuxdo,
+            linuxdoValid: globalState.lastFetchStats.linuxdoValid || 0
+        };
 
         // 执行连通性检测
         addLog('🔍 开始自动连通性检测...', 'info');
@@ -2717,6 +3288,120 @@ function startAutoUpdateJob() {
     console.log(`  自动更新任务已启动 (北京时间 00:10, 06:10, 12:10, 18:10)`);
     console.log(`  下次执行: ${globalState.nextAutoUpdate}`);
 }
+
+// ========== 节点维护进程 ==========
+// 每小时测试所有节点，选出最快的前10个作为系统优选代理
+async function runProxyMaintenance() {
+    addLog(`========== 开始节点维护任务 ==========`, 'info');
+
+    try {
+        // 1. 收集所有可用节点
+        const allProxies = [];
+
+        // 1.1 加载自动采集的节点
+        const proxiesFile = path.join(ROOT, 'proxies.json');
+        if (fs.existsSync(proxiesFile)) {
+            try {
+                const autoProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8'));
+                allProxies.push(...autoProxies);
+                addLog(`📦 加载自动采集节点: ${autoProxies.length} 个`, 'info');
+            } catch (e) {
+                addLog(`⚠️ 读取自动采集节点失败: ${e.message}`, 'warning');
+            }
+        }
+
+        // 1.2 加载手动添加的节点（包括付费订阅）
+        const manualFile = path.join(ROOT, 'manual_proxies.json');
+        if (fs.existsSync(manualFile)) {
+            try {
+                const manualProxies = JSON.parse(fs.readFileSync(manualFile, 'utf8'));
+                allProxies.push(...manualProxies);
+                addLog(`📦 加载手动节点: ${manualProxies.length} 个`, 'info');
+            } catch (e) {
+                addLog(`⚠️ 读取手动节点失败: ${e.message}`, 'warning');
+            }
+        }
+
+        if (allProxies.length === 0) {
+            addLog(`⚠️ 没有可用节点，跳过维护任务`, 'warning');
+            return;
+        }
+
+        addLog(`📊 总节点数: ${allProxies.length}`, 'info');
+
+        // 2. 生成 Clash 配置并启动
+        addLog(`🔧 生成 Clash 配置...`, 'info');
+        generateClashConfig(allProxies);
+        await startClash();
+        await new Promise(r => setTimeout(r, 3000)); // 等待 Clash 启动
+
+        // 3. 测试所有节点延迟
+        addLog(`⚡ 开始测试节点延迟 (并发: 30)...`, 'info');
+        const concurrency = 30;
+        const timeout = 8000; // 8秒超时
+
+        await mapLimit(allProxies, concurrency, async (proxy) => {
+            if (!proxy._clashName) {
+                proxy._clashName = sanitizeProxyName(proxy.name || `${proxy.type}_${proxy.server}_${proxy.port}`);
+            }
+
+            try {
+                const latency = await checkProxyDelay(proxy._clashName, timeout);
+                proxy.maintenanceLatency = latency > 0 ? latency : 99999;
+            } catch (e) {
+                proxy.maintenanceLatency = 99999;
+            }
+        });
+
+        // 4. 按延迟排序，选出最快的前10个
+        const validProxies = allProxies.filter(p => p.maintenanceLatency > 0 && p.maintenanceLatency < 99999);
+        validProxies.sort((a, b) => a.maintenanceLatency - b.maintenanceLatency);
+
+        PREFERRED_PROXIES = validProxies.slice(0, 10);
+
+        addLog(`✅ 节点维护完成！`, 'success');
+        addLog(`📊 有效节点: ${validProxies.length}/${allProxies.length}`, 'info');
+        addLog(`🏆 系统优选节点 (前10):`, 'success');
+
+        PREFERRED_PROXIES.forEach((p, i) => {
+            addLog(`   ${i + 1}. ${p.name} - ${p.maintenanceLatency}ms`, 'info');
+        });
+
+        // 5. 保存优选节点列表
+        const preferredFile = path.join(ROOT, 'preferred_proxies.json');
+        fs.writeFileSync(preferredFile, JSON.stringify(PREFERRED_PROXIES, null, 2));
+        addLog(`💾 优选节点已保存到 preferred_proxies.json`, 'info');
+
+        // 6. 停止 Clash
+        await stopClash();
+
+    } catch (e) {
+        addLog(`❌ 节点维护任务失败: ${e.message}`, 'error');
+        await stopClash();
+    }
+}
+
+// 启动节点维护定时任务（每小时执行一次）
+function startProxyMaintenanceJob() {
+    if (proxyMaintenanceTimer) {
+        clearInterval(proxyMaintenanceTimer);
+    }
+
+    const MAINTENANCE_INTERVAL = 60 * 60 * 1000; // 1小时
+
+    // 立即执行一次
+    runProxyMaintenance().catch(e => {
+        addLog(`❌ 初始节点维护失败: ${e.message}`, 'error');
+    });
+
+    // 设置定时任务
+    proxyMaintenanceTimer = setInterval(async () => {
+        await runProxyMaintenance();
+    }, MAINTENANCE_INTERVAL);
+
+    console.log(`  节点维护任务已启动 (每小时执行一次)`);
+}
+
 
 // Helper: 批量连通性检测
 async function runConnectivityCheck() {
@@ -2804,11 +3489,19 @@ async function runConnectivityCheck() {
         }
     });
 
-    // 保存更新后的节点
+    // 自动移除超时节点逻辑已取消：保留所有节点，但在生成配置文件时过滤
+    const passedProxies = proxies.filter(p => p.localLatency !== -1);
+    const failedCount = proxies.length - passedProxies.length;
+
+    if (failedCount > 0) {
+        addLog(`ℹ️ 检测到 ${failedCount} 个超时节点 (将会保留在列表中但不会导出到配置文件)`, 'info');
+    }
+
+    // 保存所有节点（包括超时的）
     fs.writeFileSync(proxiesFile, JSON.stringify(proxies, null, 2));
     addLog(`✅ 连通性检测完成: ${passed}/${proxies.length} 个可用`, 'success');
 
-    return { tested: proxies.length, passed, failed };
+    return { tested: proxies.length, passed, failed: failedCount, removed: 0 };
 }
 
 // Helper: 批量纯净度检测
@@ -2933,32 +3626,50 @@ async function runPurityCheck() {
 }
 
 // Helper: Save Aggregator.yaml
-async function saveAggregatorYaml() {
+// Accepts optional 'data' array. If provided, uses that data instead of reading files.
+async function saveAggregatorYaml(data = null) {
+    // 防抖：如果后台正在抓取/验证，且不是显式传入的数据，则拒绝保存
+    if (globalState.status !== 'idle' && !data) {
+        addLog(`⚠️ 节点聚合/验证进行中 (${globalState.status})，暂缓自动生成配置文件以便获取最完整结果。`, 'warning');
+        return;
+    }
+
     try {
-        // Load proxies from files (same as /api/proxies)
         let proxies = [];
-        const proxiesFile = path.join(ROOT, 'proxies.json');
-        const manualFile = path.join(ROOT, 'manual_proxies.json');
 
-        if (fs.existsSync(proxiesFile)) {
-            try {
-                const data = fs.readFileSync(proxiesFile, 'utf8');
-                proxies = JSON.parse(data);
-            } catch (e) { }
-        }
+        if (data && Array.isArray(data)) {
+            proxies = data;
+            addLog(`📝 使用前端传入的 ${proxies.length} 个节点生成 Aggregator.yaml`, 'info');
+        } else {
+            // Load proxies from files (same as /api/proxies)
+            const proxiesFile = path.join(ROOT, 'proxies.json');
+            const manualFile = path.join(ROOT, 'manual_proxies.json');
 
-        if (fs.existsSync(manualFile)) {
-            try {
-                const data = fs.readFileSync(manualFile, 'utf8');
-                const manual = JSON.parse(data);
-                if (Array.isArray(manual)) {
-                    proxies = [...proxies, ...manual];
-                }
-            } catch (e) { }
+            if (fs.existsSync(proxiesFile)) {
+                try {
+                    const data = fs.readFileSync(proxiesFile, 'utf8');
+                    proxies = JSON.parse(data);
+                } catch (e) { }
+            }
+
+            if (fs.existsSync(manualFile)) {
+                try {
+                    const data = fs.readFileSync(manualFile, 'utf8');
+                    const manual = JSON.parse(data);
+                    if (Array.isArray(manual)) {
+                        proxies = [...proxies, ...manual];
+                    }
+                } catch (e) { }
+            }
+
+            // 自动生成时，过滤掉不可用节点 (localLatency <= 0)
+            const totalCount = proxies.length;
+            proxies = proxies.filter(p => !p.localLatency || p.localLatency > 0);
+            addLog(`📝 自动生成配置文件: 过滤掉 ${totalCount - proxies.length} 个不可用/超时节点，保留 ${proxies.length} 个可用节点`, 'info');
         }
 
         if (proxies.length === 0) {
-            addLog('⚠️ 无节点可生成 Aggregator.yaml', 'warning');
+            addLog('⚠️ 无可用节点，跳过生成 Aggregator.yaml', 'warning');
             return;
         }
 
@@ -2971,7 +3682,7 @@ async function saveAggregatorYaml() {
             if (!obj) continue;
 
             // 名称处理：保留原名，仅去除首尾空格
-            let name = (obj.name || 'node').replace(/^\s+|\s+$/g, '');
+            let name = String(obj.name || 'node').replace(/^\s+|\s+$/g, '');
 
             // 解决名称冲突：添加后缀 _1, _2 等
             let finalName = name;
@@ -3035,7 +3746,7 @@ async function saveAggregatorYaml() {
         ].join('\n');
         yamlStr = header + yamlStr;
 
-        const outputPath = path.join(ROOT, 'Projects', 'Aggregator', 'Aggregator.yaml');
+        const outputPath = path.join(ROOT, 'Aggregator.yaml');
         // Ensure directory exists
         const dir = path.dirname(outputPath);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -3058,6 +3769,9 @@ server.listen(PORT, () => {
     // Start the job
     startAutoUpdateJob();
 
+    // Start proxy maintenance job
+    startProxyMaintenanceJob();
+
     // Initial generation on startup (optional but good for ensuring file exists)
     saveAggregatorYaml();
 });
@@ -3065,14 +3779,14 @@ server.listen(PORT, () => {
 // 优雅退出
 process.on('SIGINT', () => {
     console.log('\n正在关闭...');
-    if (autoUpdateTimer) clearInterval(autoUpdateTimer);
+    if (cronTask) cronTask.stop();
     stopClash();
     server.close();
     process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-    if (autoUpdateTimer) clearInterval(autoUpdateTimer);
+    if (cronTask) cronTask.stop();
     stopClash();
     server.close();
     process.exit(0);

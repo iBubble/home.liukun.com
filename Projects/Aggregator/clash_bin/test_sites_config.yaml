@@ -1,0 +1,186 @@
+port: 7898
+socks-port: 7899
+allow-lan: false
+mode: global
+log-level: warning
+proxies:
+  - name: US 25.0KB/s
+    type: vmess
+    server: 69.63.210.35
+    port: 24943
+    tfo: true
+    skip-cert-verify: true
+    uuid: a89feda9-ec30-48c1-ae6b-1a6f5b573f6b
+    alterId: 0
+    cipher: auto
+    network: ws
+    servername: www.bing.com
+    ws-opts:
+      path: /a89feda9-ec30-48c1-ae6b-1a6f5b573f6b-vm
+      headers:
+        Host: www.bing.com
+    id: p_1770553708812_0_0bs6v
+    latency: 999
+  - name: US-美国
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 658d122a-2bd8-48dc-8f9c-b645696c1f8b
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_1_j5puo
+    latency: 999
+  - name: US-美国_1
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 17e9a931-45f9-47c0-a5b3-71831af5b1e5
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_2_1rdhc
+    latency: 999
+  - name: US-美国_2
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: e283ae94-ba73-478c-9498-796193972d43
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_3_t51pv
+    latency: 999
+  - name: 美国us
+    type: vless
+    server: 1002.kingfisher.top
+    port: 10000
+    tfo: true
+    skip-cert-verify: true
+    uuid: 635a2fe7-ee4c-4bb4-896a-92be8926e976
+    flow: xtls-rprx-vision
+    network: tcp
+    tls: true
+    servername: www.python.org
+    reality-opts:
+      public-key: xaL947o_X586spUQ-Q956KA7RnEeSAjeONwbAnonGTE
+    client-fingerprint: qq
+    id: p_1770553708812_4_iggcw
+    latency: 999
+  - name: US-美国_3
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: ff7c20eb-f49c-4932-b318-13b14c3a956f
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_5_2xd22
+    latency: 999
+  - name: US-美国_4
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 43fa8255-6a4b-4e76-8ef3-b7c7cf7f757c
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_6_jxuew
+    latency: 999
+  - name: US-美国_5
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 7fbcac12-1cd2-4a35-8a01-35430c3d1be7
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_7_4qsne
+    latency: 999
+  - name: US-美国_6
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: def8a0f9-1e4a-4a36-b710-f8417894aa58
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_8_1q8p3
+    latency: 999
+  - name: US-美国_7
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 42f41130-e967-4861-a138-43f506ac3ecb
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_9_2vzp1
+    latency: 999
+proxy-groups:
+  - name: PROXY
+    type: url-test
+    proxies:
+      - US 25.0KB/s
+      - US-美国
+      - US-美国_1
+      - US-美国_2
+      - 美国us
+      - US-美国_3
+      - US-美国_4
+      - US-美国_5
+      - US-美国_6
+      - US-美国_7
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+rules:
+  - MATCH,PROXY

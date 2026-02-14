@@ -1,0 +1,85 @@
+{
+  "updated_at": "2026-02-10T08:41:03.075Z",
+  "total_subscriptions": 13,
+  "successful_subscriptions": 0,
+  "total_nodes": 0,
+  "subscriptions": [
+    {
+      "url": "https://zhuzhuzhu.whtjdasha.com/api/v1/client/subscribe?token=3877637877d08bab6c1d224740ad0736",
+      "success": false,
+      "error": "curl 失败 (code 28)"
+    },
+    {
+      "url": "https://sni.jpmj.dev/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.indevs.in/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.latonyamadeline.ndjp.net/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.cc.cd/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.de5.net/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.dns.army/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.v6.army/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.v6.navy/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.v6.rocks/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.111000.dynv6.net/sub",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.jpmj.dev/sub?clash",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    },
+    {
+      "url": "https://sni.jpmj.dev/sub?sing-box",
+      "success": false,
+      "error": "无效的订阅格式",
+      "dataSize": 16
+    }
+  ]
+}

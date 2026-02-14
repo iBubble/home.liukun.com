@@ -1,0 +1,37 @@
+port: 17897
+socks-port: 17898
+allow-lan: false
+mode: global
+log-level: warning
+proxies:
+  - id: p_1770558174558_2_hsc8t
+    name: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
+    type: trojan
+    server: cdnfire.xiaomispeed.com
+    port: 21102
+    password: 5474f3aa-a6b1-42f2-9703-4ae83a1e2159
+    tls: true
+    skip-cert-verify: true
+    network: tcp
+    servername: cdnfire.xiaomispeed.com
+    raw: >-
+      trojan://5474f3aa-a6b1-42f2-9703-4ae83a1e2159@cdnfire.xiaomispeed.com:21102?allowInsecure=1&peer=cdnfire.xiaomispeed.com&sni=cdnfire.xiaomispeed.com#%E9%A6%99%E6%B8%AF%20%C2%B7%202%E5%8F%B7%E7%BA%BF%20%C2%B7%20Netflix%E7%AD%89%E6%B5%81%E5%AA%92%E4%BD%93%E8%A7%A3%E9%94%81%20%C2%B7%20ChatGPT%E8%A7%A3%E9%94%81
+    _sourceUrl: >-
+      http://tinnyrick8888.com/api/v1/client/subscribe?token=271af6600fc5c55219d6c634556a7a3f
+    _clashName: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
+    latency: 2829
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 182.245.77.110
+      isp: Chinanet
+      country: CN
+      hosting: false
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
+rules:
+  - MATCH,PROXY

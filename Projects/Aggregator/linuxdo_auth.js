@@ -28,6 +28,9 @@ async function loginLinuxDo() {
     let browser = null;
 
     try {
+        // 使用本地代理（服务器在国内，需要代理访问 linux.do 和 Google）
+        const proxyServer = 'http://127.0.0.1:7940'; // 付费节点代理
+        
         browser = await puppeteer.launch({
             executablePath: CHROME_PATH,
             headless: true, // 使用无头模式 (服务器环境)
@@ -35,9 +38,14 @@ async function loginLinuxDo() {
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
                 '--disable-blink-features=AutomationControlled',
-                '--window-size=1280,800'
+                '--window-size=1280,800',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                `--proxy-server=${proxyServer}` // 通过代理访问
             ]
         });
+        
+        console.log(`使用代理: ${proxyServer}`);
 
         const page = await browser.newPage();
 
@@ -46,7 +54,7 @@ async function loginLinuxDo() {
 
         // 1. 访问登录页
         console.log('Navigating to login page...');
-        await page.goto('https://linux.do/login', { waitUntil: 'networkidle2', timeout: 30000 });
+        await page.goto('https://linux.do/login', { waitUntil: 'domcontentloaded', timeout: 60000 });
 
         // 2. 点击 "使用 Google 登录"
         console.log('Clicking Google Login...');

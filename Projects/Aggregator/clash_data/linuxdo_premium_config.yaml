@@ -1,0 +1,105 @@
+port: 7925
+socks-port: 7926
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:8025
+proxies:
+  - name: 专线|香港01解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26010
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|香港02解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26011
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|香港03解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26012
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|香港04解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26013
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|香港05解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26014
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|香港06解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26015
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|日本01解锁
+    type: vmess
+    server: ppy-jpv2.kunlun02dns.com
+    port: 26006
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|日本02解锁
+    type: vmess
+    server: ppy-jpv2.kunlun02dns.com
+    port: 26007
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|日本03解锁
+    type: vmess
+    server: ppy-jpv2.kunlun02dns.com
+    port: 26008
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 专线|日本04解锁
+    type: vmess
+    server: ppy-jpv2.kunlun02dns.com
+    port: 26009
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 专线|香港01解锁
+      - 专线|香港02解锁
+      - 专线|香港03解锁
+      - 专线|香港04解锁
+      - 专线|香港05解锁
+      - 专线|香港06解锁
+      - 专线|日本01解锁
+      - 专线|日本02解锁
+      - 专线|日本03解锁
+      - 专线|日本04解锁
+rules:
+  - MATCH,PROXY

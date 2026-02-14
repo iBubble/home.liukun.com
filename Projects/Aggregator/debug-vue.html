@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Vue API调试</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Vue API调试</h1>
+        <button @click="testAPI">测试API</button>
+        <pre>{{ result }}</pre>
+    </div>
+    
+    <script>
+        const { createApp, ref } = Vue;
+        
+        createApp({
+            setup() {
+                const result = ref('点击按钮测试');
+                
+                const testAPI = async () => {
+                    result.value = '测试中...\n';
+                    
+                    try {
+                        result.value += '\n测试: fetch("api/status")\n';
+                        const res = await fetch('api/status');
+                        result.value += `状态: ${res.status}\n`;
+                        result.value += `URL: ${res.url}\n`;
+                        const data = await res.json();
+                        result.value += `结果: ${JSON.stringify(data.status)}\n`;
+                        result.value += '\n✅ 成功！';
+                    } catch (e) {
+                        result.value += `\n❌ 错误: ${e.message}`;
+                    }
+                };
+                
+                return { result, testAPI };
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

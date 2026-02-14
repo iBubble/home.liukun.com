@@ -1,0 +1,27 @@
+port: 17893
+socks-port: 17894
+allow-lan: false
+mode: global
+log-level: info
+proxies:
+  - name: AT_speednode_0003
+    type: vless
+    server: 152.53.131.209
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    servername: sni.111000.indevs.in
+    udp: true
+    ws-opts:
+      path: /?ed=2560fp=chrome
+      headers:
+        Host: sni.111000.indevs.in
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - AT_speednode_0003
+rules:
+  - MATCH,PROXY

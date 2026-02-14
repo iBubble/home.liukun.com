@@ -109,19 +109,19 @@ npx http-server
 
 ## 📦 子项目介绍
 
-### 🎬 一元奇梦 Lucky Coin
-**访问**: [https://home.liukun.com:8443/Projects/LuckyCoin/](https://home.liukun.com:8443/Projects/LuckyCoin/)
+### 🛰️ Antigravity 机场聚合 (Aggregator)
+**访问**: [https://home.liukun.com:8443/Projects/Aggregator/index.html](https://home.liukun.com:8443/Projects/Aggregator/index.html)
 
-电影项目展示网站，魔幻现实主义 × 黑色幽默 × 移民叙事。
+跨平台的高性能全自动节点爬取、延迟测试与纯净度检测系统。
 
-**特性**:
-- ✅ 双模式主题系统（梦境/现实）
-- ✅ 创新交互设计（老虎机入口、故障艺术效果）
-- ✅ 多语言支持（中文、英语、意大利语）
-- ✅ 完整的项目展示（故事板、角色、导演风格、众筹、投资人专区）
-- ✅ 响应式设计
+**功能**:
+- ✅ **全网自动采集**: 深度爬取 GitHub、各大分享站及 Linux.do 论坛节点。
+- ✅ **节点维护进程**: 每小时自动进行全量测试，动态选出最快的前 10 个节点作为优选。
+- ✅ **增强国家识别**: 支持 Emoji、IP 段、中文名及纯净度库多重识别逻辑，准确率极高。
+- ✅ **纯净度检测**: 自动过滤数据中心 IP，识别原生住宅 IP 节点并评分。
+- ✅ **连通性追踪**: 实时监测节点可用性，并自动生成 Aggregator.yaml 订阅文件。
 
-**技术**: React 18 + TypeScript + Webpack 5 + Tailwind CSS + i18next
+**技术**: Node.js + Clash Core + Vue 3 + Tailwind CSS + ip-api
 
 ### 🎥 拾光大师 AI 影视平台
 **访问**: [https://home.liukun.com:8443/Projects/AIMovie/](https://home.liukun.com:8443/Projects/AIMovie/)

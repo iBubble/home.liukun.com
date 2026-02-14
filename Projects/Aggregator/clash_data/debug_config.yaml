@@ -1,0 +1,21 @@
+port: 7960
+socks-port: 7961
+allow-lan: false
+mode: global
+log-level: debug
+proxies:
+  - name: 专线|台湾02解锁
+    type: vmess
+    server: ppy-twv2.kunlun02dns.com
+    port: 26060
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 专线|台湾02解锁
+rules:
+  - MATCH,PROXY

@@ -1,0 +1,153 @@
+port: 7894
+socks-port: 7895
+allow-lan: false
+mode: global
+log-level: silent
+proxies:
+  - name: US18｜机房｜低风险
+    type: vmess
+    server: 154.83.2.156
+    port: 2086
+    tfo: true
+    skip-cert-verify: true
+    uuid: 92373ed1-78a8-4cbe-aa06-54af1edd0471
+    alterId: 0
+    cipher: auto
+    network: ws
+    servername: v205.19740822.xyz
+    ws-opts:
+      path: /
+      headers:
+        Host: v205.19740822.xyz
+    id: p_1770553708813_174_l3ru3
+    latency: 999
+  - name: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_16
+    type: trojan
+    server: cdnfire.xiaomispeed.com
+    port: 22231
+    tfo: true
+    skip-cert-verify: true
+    password: 27946462-94bd-469b-81af-462519fc830d
+    network: tcp
+    tls: true
+    servername: cdnfire.xiaomispeed.com
+    id: p_1770553708813_140_a8u8p
+    latency: 999
+  - name: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_6
+    type: trojan
+    server: green2.cdntencentmusic.com
+    port: 31102
+    tfo: true
+    skip-cert-verify: true
+    password: 9c6c3f51-8ec2-40bf-a536-4882448f49b9
+    network: tcp
+    tls: true
+    servername: green2.cdntencentmusic.com
+    id: p_1770553708813_193_udhud
+    latency: 999
+  - name: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_15
+    type: trojan
+    server: cdnfire.xiaomispeed.com
+    port: 22231
+    tfo: true
+    skip-cert-verify: true
+    password: cdcfe841-7f33-4d38-b4fd-594e9a57060e
+    network: tcp
+    tls: true
+    servername: cdnfire.xiaomispeed.com
+    id: p_1770553708813_139_fe55f
+    latency: 999
+  - name: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_7
+    type: trojan
+    server: cdnfire.xiaomispeed.com
+    port: 25502
+    tfo: true
+    skip-cert-verify: true
+    password: 54bf696e-abe7-43c0-84ba-700c555efd35
+    network: tcp
+    tls: true
+    servername: cdnfire.xiaomispeed.com
+    id: p_1770553708813_249_hywdn
+    latency: 999
+  - name: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_20
+    type: trojan
+    server: cdnfire.xiaomispeed.com
+    port: 21101
+    tfo: true
+    skip-cert-verify: true
+    password: d3708811-7b3c-4ab3-ba1f-11f28479afd4
+    network: tcp
+    tls: true
+    servername: cdnfire.xiaomispeed.com
+    id: p_1770553708813_285_fa0j1
+    latency: 999
+  - name: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_22
+    type: trojan
+    server: green2.cdntencentmusic.com
+    port: 35502
+    tfo: true
+    skip-cert-verify: true
+    password: 34c5b82c-df91-4040-abaf-060422d47879
+    network: tcp
+    tls: true
+    servername: green2.cdntencentmusic.com
+    id: p_1770553708813_329_5026p
+    latency: 999
+  - name: 🇨🇦 CA加拿大(mibei77.com 米贝节点分享)
+    type: vmess
+    server: YyYYuUI.iRAn1912.dpDNs.oRG
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 4a7baca1-8048-4a91-8316-595b36657a54
+    alterId: 0
+    cipher: auto
+    network: ws
+    tls: true
+    servername: YYyYUui.iran1912.dpdNS.OrG
+    ws-opts:
+      path: /TaBvkrUbsyvsvinsGGg
+      headers:
+        Host: YYyYUui.iran1912.dpdNS.OrG
+    id: p_1770553708813_231_w7vnd
+    latency: 999
+  - name: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_27
+    type: trojan
+    server: green2.cdntencentmusic.com
+    port: 31102
+    tfo: true
+    skip-cert-verify: true
+    password: 246efb22-5346-4ecb-be24-a2b3cc117bf3
+    network: tcp
+    tls: true
+    servername: green2.cdntencentmusic.com
+    id: p_1770553708813_325_yj9k8
+    latency: 999
+  - name: 英国 V2CROSS.COM
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    tfo: true
+    skip-cert-verify: true
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    network: tcp
+    id: p_1770553708812_56_xgoy2
+    latency: 999
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - US18｜机房｜低风险
+      - 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_16
+      - 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_6
+      - 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_15
+      - 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_7
+      - 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_20
+      - 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_22
+      - 🇨🇦 CA加拿大(mibei77.com 米贝节点分享)
+      - 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_27
+      - 英国 V2CROSS.COM
+rules:
+  - MATCH,PROXY

@@ -1,0 +1,21 @@
+port: 7950
+socks-port: 7951
+allow-lan: false
+mode: global
+log-level: silent
+proxies:
+  - name: 专线|新加坡04解锁
+    type: vmess
+    server: ppy-sgv2.kunlun02dns.com
+    port: 26023
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 专线|新加坡04解锁
+rules:
+  - MATCH,PROXY

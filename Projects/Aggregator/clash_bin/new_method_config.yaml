@@ -1,0 +1,38 @@
+port: 7906
+socks-port: 7907
+allow-lan: false
+mode: rule
+log-level: silent
+proxies:
+  - id: p_1770558159136_20_fxzng
+    name: (2x)IEPL专线 日本2
+    type: vmess
+    server: dzgz.tcity8.monster
+    port: 35218
+    uuid: e1a98d14-8827-426f-893c-527301073e04
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: ''
+    raw: >-
+      vmess://eyJ2IjoiMiIsInBzIjoiKDJ4KUlFUExcdTRlMTNcdTdlYmYgXHU2NWU1XHU2NzJjMiIsImFkZCI6ImR6Z3oudGNpdHk4Lm1vbnN0ZXIiLCJwb3J0IjoiMzUyMTgiLCJpZCI6ImUxYTk4ZDE0LTg4MjctNDI2Zi04OTNjLTUyNzMwMTA3M2UwNCIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIn0=
+    _sourceUrl: >-
+      http://8.209.231.35:6868/api/v1/client/subscribe?token=edd4aeb86315b8c9df3bc52dc9afa98c
+    _clashName: (2x)IEPL专线 日本2
+    latency: 275
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 182.245.77.110
+      isp: Chinanet
+      country: CN
+      hosting: false
+proxy-groups:
+  - name: test
+    type: select
+    proxies:
+      - (2x)IEPL专线 日本2
+rules:
+  - MATCH,test

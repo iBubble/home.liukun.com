@@ -1,0 +1,66 @@
+========================================
+在VNC中获取linux.do Cookie的步骤
+========================================
+
+第1步：在VNC终端启动代理
+--------------------------
+cd /www/wwwroot/ibubble.vicp.net/Projects/Aggregator
+bash start_browser_proxy.sh
+
+（会看到Clash启动日志，保持这个终端运行）
+
+
+第2步：打开新终端，启动Chrome
+--------------------------
+按Ctrl+Alt+T打开新终端，输入：
+
+google-chrome --proxy-server="socks5://127.0.0.1:7940" https://linux.do &
+
+
+第3步：在Chrome中登录linux.do
+--------------------------
+1. 点击右上角"登录"
+2. 选择"使用Google登录"
+3. 邮箱：ibubble@gmail.com
+4. 密码：Gl5181081@gmail
+5. 输入2FA验证码（Google Authenticator）
+
+
+第4步：获取Cookie
+--------------------------
+登录成功后：
+1. 按F12打开开发者工具
+2. 切换到Console标签
+3. 输入：copy(document.cookie)
+4. 按回车
+
+
+第5步：保存Cookie到文件
+--------------------------
+在VNC终端（新开一个）：
+
+cd /www/wwwroot/ibubble.vicp.net/Projects/Aggregator
+gedit cookie_temp.txt
+
+在gedit中粘贴Cookie（Ctrl+V），保存退出
+
+
+第6步：更新Cookie
+--------------------------
+cat cookie_temp.txt > linuxdo_cookie.txt
+rm cookie_temp.txt
+
+
+第7步：验证Cookie
+--------------------------
+node test_specific_topic_1590573.js
+
+如果看到"✅ Cookie 完全有效"，成功！
+
+
+故障排除
+--------------------------
+如果Chrome无法访问：
+1. 检查代理是否运行：netstat -tlnp | grep 7940
+2. 查看Clash日志（第1步的终端）
+3. 尝试重启Clash：Ctrl+C停止，重新运行start_browser_proxy.sh

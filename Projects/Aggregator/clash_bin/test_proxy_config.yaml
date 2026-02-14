@@ -1,0 +1,81 @@
+port: 7891
+socks-port: 7892
+allow-lan: false
+mode: global
+log-level: info
+proxies:
+  - id: p_1770558159136_18_k4fcq
+    name: (1.5x)IEPL专线 新加坡2
+    type: vmess
+    server: dzgz.tcity8.monster
+    port: 35217
+    uuid: e1a98d14-8827-426f-893c-527301073e04
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: ''
+    raw: >-
+      vmess://eyJ2IjoiMiIsInBzIjoiKDEuNXgpSUVQTFx1NGUxM1x1N2ViZiBcdTY1YjBcdTUyYTBcdTU3NjEyIiwiYWRkIjoiZHpnei50Y2l0eTgubW9uc3RlciIsInBvcnQiOiIzNTIxNyIsImlkIjoiZTFhOThkMTQtODgyNy00MjZmLTg5M2MtNTI3MzAxMDczZTA0IiwiYWlkIjoiMCIsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIiLCJ0bHMiOiIifQ==
+    _sourceUrl: >-
+      http://8.209.231.35:6868/api/v1/client/subscribe?token=edd4aeb86315b8c9df3bc52dc9afa98c
+    _clashName: (1.5x)IEPL专线 新加坡2
+    latency: 251
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 182.245.77.110
+      isp: Chinanet
+      country: CN
+      hosting: false
+    quality: good
+    avgLatency: 4884
+    testedAt: '2026-02-08T15:17:20.094Z'
+    testResults:
+      excellent: 0
+      good: 1
+      basic: 2
+      details:
+        - name: Facebook
+          url: http://www.facebook.com
+          success: false
+          time: 5016
+          error: '502'
+        - name: Twitter
+          url: http://twitter.com
+          success: false
+          time: 30014
+          error: '000'
+        - name: YouTube
+          url: http://www.youtube.com
+          success: false
+          time: 5012
+          error: '502'
+        - name: Google
+          url: http://www.google.com/generate_204
+          success: false
+          time: 5011
+          error: '502'
+        - name: GitHub
+          url: http://github.com
+          success: true
+          time: 13498
+          httpCode: '200'
+        - name: Google204
+          url: http://www.gstatic.com/generate_204
+          success: true
+          time: 212
+          httpCode: '204'
+        - name: Cloudflare
+          url: http://cp.cloudflare.com/generate_204
+          success: true
+          time: 941
+          httpCode: '204'
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - (1.5x)IEPL专线 新加坡2
+rules:
+  - MATCH,PROXY

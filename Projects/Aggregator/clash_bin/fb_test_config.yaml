@@ -1,0 +1,38 @@
+port: 7907
+socks-port: 7908
+allow-lan: false
+mode: rule
+log-level: silent
+proxies:
+  - id: p_1770558159136_13_0j57v
+    name: (2x)IEPL专线 香港5
+    type: vmess
+    server: jzgz.tcity8.monster
+    port: 22003
+    uuid: e1a98d14-8827-426f-893c-527301073e04
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: ''
+    raw: >-
+      vmess://eyJ2IjoiMiIsInBzIjoiKDJ4KUlFUExcdTRlMTNcdTdlYmYgXHU5OTk5XHU2ZTJmNSIsImFkZCI6Imp6Z3oudGNpdHk4Lm1vbnN0ZXIiLCJwb3J0IjoiMjIwMDMiLCJpZCI6ImUxYTk4ZDE0LTg4MjctNDI2Zi04OTNjLTUyNzMwMTA3M2UwNCIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIn0=
+    _sourceUrl: >-
+      http://8.209.231.35:6868/api/v1/client/subscribe?token=edd4aeb86315b8c9df3bc52dc9afa98c
+    _clashName: (2x)IEPL专线 香港5
+    latency: 175
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 182.245.77.110
+      isp: Chinanet
+      country: CN
+      hosting: false
+proxy-groups:
+  - name: test
+    type: select
+    proxies:
+      - (2x)IEPL专线 香港5
+rules:
+  - MATCH,test

@@ -1,0 +1,59 @@
+port: 7950
+socks-port: 7951
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+  - id: p_1770714601880_219_qmhba
+    name: 香港4|@ripaojiedian
+    type: trojan
+    server: 203.198.123.162
+    port: 443
+    password: BxceQaOe
+    tls: true
+    skip-cert-verify: true
+    network: tcp
+    servername: t.me/ripaojiedian
+    raw: >-
+      trojan://BxceQaOe@203.198.123.162:443?allowInsecure=1&sni=t.me%2Fripaojiedian#%E9%A6%99%E6%B8%AF4%7C%40ripaojiedian
+    _sourceUrl: https://cdn.jsdelivr.net/gh/peasoft/NoMoreWalls@master/list.txt
+    _clashName: 香港4|@ripaojiedian
+    latency: 454
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 116.54.76.26
+      isp: Chinanet
+      country: CN
+      hosting: false
+  - id: p_1770714602678_8_wkgk9
+    name: 试用节点-台湾
+    type: ss
+    server: jry.izenny.com
+    port: 27689
+    cipher: chacha20-ietf-poly1305
+    password: 5353e9cd-97f0-4f0c-be16-9400a9ed0eb3
+    raw: >-
+      ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1MzUzZTljZC05N2YwLTRmMGMtYmUxNi05NDAwYTllZDBlYjM@jry.izenny.com:27689#%E8%AF%95%E7%94%A8%E8%8A%82%E7%82%B9-%E5%8F%B0%E6%B9%BE
+    _sourceUrl: >-
+      https://bestti.whtjdasha.com/api/v1/client/subscribe?token=117cb84c7109381188bd85641f6528df
+    _clashName: 试用节点-台湾
+    latency: 485
+    purityScore: 100
+    purityInfo:
+      score: 100
+      ip: 116.54.76.26
+      isp: Chinanet
+      country: CN
+      hosting: false
+proxy-groups:
+  - name: PROXY
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 香港4|@ripaojiedian
+      - 试用节点-台湾
+rules:
+  - MATCH,PROXY

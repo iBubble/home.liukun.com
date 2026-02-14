@@ -88,3 +88,19 @@ build/
 *.sql
 *.sqlite
 *.db
+
+# 私密文件与规则
+.secret/
+Projects/Puns/
+AI_RULES.md
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 杂项日志
+wget-log
+
+
+# 隐藏项目
+Projects/XA/

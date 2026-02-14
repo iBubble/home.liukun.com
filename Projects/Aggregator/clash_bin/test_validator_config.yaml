@@ -1,0 +1,29 @@
+port: 7903
+socks-port: 7904
+allow-lan: false
+mode: global
+log-level: silent
+proxies:
+  - name: US-美国_5
+    type: vless
+    server: 136.175.178.165
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 7fbcac12-1cd2-4a35-8a01-35430c3d1be7
+    network: tcp
+    tls: true
+    servername: navi.bankrate.com
+    reality-opts:
+      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+      short-id: 2da72ce6
+    client-fingerprint: chrome
+    id: p_1770553708812_7_4qsne
+    latency: 999
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - US-美国_5
+rules:
+  - MATCH,PROXY

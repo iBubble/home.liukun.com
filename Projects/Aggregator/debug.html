@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>API调试页面</title>
+</head>
+<body>
+    <h1>API调试</h1>
+    <button onclick="testAPI()">测试API</button>
+    <pre id="result"></pre>
+    
+    <script>
+        async function testAPI() {
+            const result = document.getElementById('result');
+            result.textContent = '测试中...\n';
+            
+            // 测试1: 相对路径
+            result.textContent += '\n测试1: fetch("api/status")\n';
+            try {
+                const res1 = await fetch('api/status');
+                result.textContent += `状态: ${res1.status}\n`;
+                result.textContent += `URL: ${res1.url}\n`;
+                const data1 = await res1.json();
+                result.textContent += `结果: ${JSON.stringify(data1).substring(0, 100)}...\n`;
+            } catch (e) {
+                result.textContent += `错误: ${e.message}\n`;
+            }
+            
+            // 测试2: 完整路径
+            result.textContent += '\n测试2: fetch("/Projects/Aggregator/api/status")\n';
+            try {
+                const res2 = await fetch('/Projects/Aggregator/api/status');
+                result.textContent += `状态: ${res2.status}\n`;
+                result.textContent += `URL: ${res2.url}\n`;
+                const data2 = await res2.json();
+                result.textContent += `结果: ${JSON.stringify(data2).substring(0, 100)}...\n`;
+            } catch (e) {
+                result.textContent += `错误: ${e.message}\n`;
+            }
+            
+            // 显示当前页面URL
+            result.textContent += `\n当前页面: ${window.location.href}\n`;
+        }
+    </script>
+</body>
+</html>
