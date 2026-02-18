@@ -2,36 +2,6 @@
     {
         "source": "auto_update",
         "stats": {
-            "added": 82,
-            "updated": 142,
-            "unchanged": 0,
-            "total": 224
-        },
-        "created_at": 1770225777
-    },
-    {
-        "source": "test",
-        "stats": {
-            "added": 2,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 2
-        },
-        "created_at": 1770234558
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 174,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 174
-        },
-        "created_at": 1770234804
-    },
-    {
-        "source": "auto_update",
-        "stats": {
             "added": 0,
             "updated": 0,
             "unchanged": 174,
@@ -578,5 +548,455 @@
             "total": 391
         },
         "created_at": 1771027204
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 224,
+            "updated": 0,
+            "unchanged": 85,
+            "total": 309
+        },
+        "created_at": 1771048803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 224,
+            "updated": 0,
+            "unchanged": 85,
+            "total": 309
+        },
+        "created_at": 1771070403
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 224,
+            "updated": 0,
+            "unchanged": 84,
+            "total": 308
+        },
+        "created_at": 1771092004
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 224,
+            "updated": 0,
+            "unchanged": 84,
+            "total": 308
+        },
+        "created_at": 1771113603
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 224,
+            "updated": 0,
+            "unchanged": 84,
+            "total": 308
+        },
+        "created_at": 1771135203
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 224,
+            "updated": 0,
+            "unchanged": 84,
+            "total": 308
+        },
+        "created_at": 1771156803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 222,
+            "updated": 0,
+            "unchanged": 83,
+            "total": 305
+        },
+        "created_at": 1771178403
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 222,
+            "updated": 0,
+            "unchanged": 83,
+            "total": 305
+        },
+        "created_at": 1771200003
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 219,
+            "updated": 0,
+            "unchanged": 83,
+            "total": 302
+        },
+        "created_at": 1771221602
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 218,
+            "updated": 0,
+            "unchanged": 80,
+            "total": 298
+        },
+        "created_at": 1771351202
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 217,
+            "updated": 0,
+            "unchanged": 80,
+            "total": 297
+        },
+        "created_at": 1771372803
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 8,
+            "updated": 0,
+            "unchanged": 77,
+            "total": 85
+        },
+        "created_at": 1771376376
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 155,
+            "updated": 13,
+            "unchanged": 60,
+            "total": 228
+        },
+        "created_at": 1771394403
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 161,
+            "updated": 9,
+            "unchanged": 57,
+            "total": 227
+        },
+        "created_at": 1771416003
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 5,
+            "updated": 1,
+            "unchanged": 0,
+            "total": 6
+        },
+        "created_at": 1771430156
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 7,
+            "updated": 0,
+            "unchanged": 65,
+            "total": 72
+        },
+        "created_at": 1771430781
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 72,
+            "total": 72
+        },
+        "created_at": 1771430788
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 72,
+            "total": 72
+        },
+        "created_at": 1771430910
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 72,
+            "total": 72
+        },
+        "created_at": 1771431039
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 6,
+            "total": 6
+        },
+        "created_at": 1771431048
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 6,
+            "total": 6
+        },
+        "created_at": 1771431056
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 6,
+            "total": 6
+        },
+        "created_at": 1771431102
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 6,
+            "total": 6
+        },
+        "created_at": 1771431141
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 72,
+            "total": 72
+        },
+        "created_at": 1771431147
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 10,
+            "updated": 0,
+            "unchanged": 73,
+            "total": 83
+        },
+        "created_at": 1771431903
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 11,
+            "updated": 0,
+            "unchanged": 6,
+            "total": 17
+        },
+        "created_at": 1771431911
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 83,
+            "total": 83
+        },
+        "created_at": 1771431920
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 17,
+            "total": 17
+        },
+        "created_at": 1771431925
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 79,
+            "updated": 0,
+            "unchanged": 4,
+            "total": 83
+        },
+        "created_at": 1771431943
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 17,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 17
+        },
+        "created_at": 1771432051
+    },
+    {
+        "source": "AggregatorUS.yaml",
+        "stats": {
+            "added": 83,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 83
+        },
+        "created_at": 1771432087
+    },
+    {
+        "source": "AggregatorCN.yaml",
+        "stats": {
+            "added": 17,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 17
+        },
+        "created_at": 1771432123
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 195,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 195
+        },
+        "created_at": 1771432532
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 213,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 213
+        },
+        "created_at": 1771432543
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 82,
+            "updated": 0,
+            "unchanged": 113,
+            "total": 195
+        },
+        "created_at": 1771432554
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 83,
+            "updated": 0,
+            "unchanged": 112,
+            "total": 195
+        },
+        "created_at": 1771432615
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 82,
+            "updated": 0,
+            "unchanged": 113,
+            "total": 195
+        },
+        "created_at": 1771433738
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 82,
+            "updated": 0,
+            "unchanged": 113,
+            "total": 195
+        },
+        "created_at": 1771433760
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 195,
+            "total": 195
+        },
+        "created_at": 1771433787
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 82,
+            "updated": 0,
+            "unchanged": 113,
+            "total": 195
+        },
+        "created_at": 1771433961
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 83,
+            "updated": 0,
+            "unchanged": 112,
+            "total": 195
+        },
+        "created_at": 1771433973
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 195,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 195
+        },
+        "created_at": 1771434539
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 213,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 213
+        },
+        "created_at": 1771434549
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 195,
+            "updated": 0,
+            "unchanged": 0,
+            "total": 195
+        },
+        "created_at": 1771434558
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 112,
+            "updated": 0,
+            "unchanged": 83,
+            "total": 195
+        },
+        "created_at": 1771437603
     }
 ]

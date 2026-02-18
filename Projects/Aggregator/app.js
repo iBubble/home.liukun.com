@@ -33,11 +33,19 @@ const platform = os.platform();
 const arch = os.arch();
 
 if (platform === 'darwin') {
-    CLASH_BIN = path.join(CLASH_DIR, 'clash-darwin');
+    const localBin = path.join(ROOT, 'bin', 'clash');
+    if (fs.existsSync(localBin)) CLASH_BIN = localBin;
+    else CLASH_BIN = path.join(CLASH_DIR, 'clash-darwin');
 } else if (platform === 'linux') {
-    if (arch === 'x64') CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-amd64');
-    else if (arch === 'arm64') CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-arm64');
-    else CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-amd64');
+    // 优先使用用户指定的 bin/clash
+    const localBin = path.join(ROOT, 'bin', 'clash');
+    if (fs.existsSync(localBin)) {
+        CLASH_BIN = localBin;
+    } else {
+        if (arch === 'x64') CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-amd64');
+        else if (arch === 'arm64') CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-arm64');
+        else CLASH_BIN = path.join(CLASH_DIR, 'clash-linux-amd64');
+    }
 } else {
     CLASH_BIN = path.join(CLASH_DIR, 'clash-windows-amd64.exe');
 }
@@ -1030,53 +1038,24 @@ function generateClashConfig(proxies) {
         }
         uniqueNames.add(finalName);
 
-        // 构建代理对象
-        const proxy = {
-            name: finalName,
-            type: p.type,
-            server: p.server,
-            port: parseInt(p.port, 10) || 443
-        };
+        // 构建代理对象 —— 直接透传原始字段，只覆盖 name 并清理非标准字段
+        // 旧逻辑手动挑选字段导致大量属性丢失（plugin, plugin-opts, sni, alpn, obfs 等），
+        // 使得本来可用的节点在 Clash 中连接失败。
+        const proxy = { ...p };
+        proxy.name = finalName;
+        proxy.port = parseInt(p.port, 10) || 443;
 
-        // 根据类型添加字段
-        if (p.type === 'vmess') {
-            proxy.uuid = p.uuid;
-            proxy.alterId = p.alterId || 0;
-            proxy.cipher = p.cipher || 'auto';
-            if (p.network) proxy.network = p.network;
-            if (p.tls) proxy.tls = true;
-            if (p['skip-cert-verify']) proxy['skip-cert-verify'] = true;
-            if (p.servername) proxy.servername = p.servername;
-            if (p['ws-opts']) proxy['ws-opts'] = p['ws-opts'];
-        } else if (p.type === 'vless') {
-            proxy.uuid = p.uuid;
-            if (p.flow) proxy.flow = p.flow;
-            if (p.network) proxy.network = p.network;
-            if (p.tls) proxy.tls = true;
-            if (p['skip-cert-verify']) proxy['skip-cert-verify'] = true;
-            if (p.servername) proxy.servername = p.servername;
-            if (p['reality-opts']) proxy['reality-opts'] = p['reality-opts'];
-            if (p['client-fingerprint']) proxy['client-fingerprint'] = p['client-fingerprint'];
-            if (p['ws-opts']) proxy['ws-opts'] = p['ws-opts'];
-            if (p['grpc-opts']) proxy['grpc-opts'] = p['grpc-opts'];
-        } else if (p.type === 'trojan') {
-            proxy.password = p.password;
-            if (p.network) proxy.network = p.network;
-            proxy.tls = true;
-            if (p['skip-cert-verify']) proxy['skip-cert-verify'] = true;
-            if (p.servername) proxy.servername = p.servername;
-            if (p['ws-opts']) proxy['ws-opts'] = p['ws-opts'];
-            if (p['grpc-opts']) proxy['grpc-opts'] = p['grpc-opts'];
-        } else if (p.type === 'ss') {
-            proxy.cipher = p.cipher || 'aes-256-gcm';
-            proxy.password = p.password;
-        } else if (p.type === 'hysteria2') {
-            proxy.password = p.password;
-            if (p.sni) proxy.sni = p.sni;
-            if (p['skip-cert-verify']) proxy['skip-cert-verify'] = true;
-        } else {
+        // 检查必要字段
+        const supportedTypes = ['vmess', 'vless', 'trojan', 'ss', 'hysteria2', 'hysteria', 'tuic', 'wireguard', 'snell'];
+        if (!supportedTypes.includes(proxy.type)) {
             continue; // 跳过不支持的类型
         }
+
+        // 清理前端/内部专用字段（不应写入 Clash 配置）
+        const internalKeys = ['id', 'raw', 'latency', 'localLatency', 'purity', 'purityScore',
+            'purityInfo', 'checking', 'failedCheck', 'isFromForum', '_clashName',
+            'country', 'selected', 'isManual'];
+        internalKeys.forEach(k => delete proxy[k]);
 
         // 清理 undefined 值
         Object.keys(proxy).forEach(key => {
@@ -2085,142 +2064,128 @@ function proxyToClashObj(p) {
         return null;
     }
 
-    const base = {
-        name: p.name || 'node',
-        type: p.type,
-        server: p.server,
-        port: parseInt(p.port, 10) || 443,
-        // 通用优化
-        tfo: true,
-        'skip-cert-verify': p['skip-cert-verify'] !== undefined ? p['skip-cert-verify'] : true
-    };
+    // 直接透传所有原始字段，确保属性不丢失 (plugin, sni, alpn, obfs 等)
+    const obj = { ...p };
 
-    if (p.udp) base.udp = true;
+    // 强制/默认设置
+    obj.port = parseInt(p.port, 10);
+    obj.tfo = true;
+    if (obj['skip-cert-verify'] === undefined) obj['skip-cert-verify'] = true;
 
-    if (p.type === 'vmess') {
-        if (!p.uuid) return null;
-        base.uuid = p.uuid;
-        base.alterId = parseInt(p.alterId || 0, 10);
-        base.cipher = p.cipher || 'auto';
+    // 清理前端/内部专用字段（不应出现在导出配置中）
+    const internalKeys = ['id', 'raw', 'latency', 'localLatency', 'purity', 'purityScore',
+        'purityInfo', 'checking', 'failedCheck', 'isFromForum', '_clashName',
+        'country', 'selected', 'isManual', 'addedAt', 'maintenanceLatency'];
+    internalKeys.forEach(k => delete obj[k]);
 
-        if (p.network) base.network = p.network;
-        if (p.tls) base.tls = true;
-
-        if (p.servername) base.servername = p.servername;
-
-        // HTTP Obfuscation (TCP)
-        if (p.network === 'tcp' && p.type === 'vmess' && !p.tls && (p.host || p.path)) {
-            base['http-opts'] = {
-                method: 'GET',
-                path: [p.path || '/'],
-                headers: p.host ? { Host: [p.host] } : undefined
-            };
-        }
-
-        // WS 配置
-        if (p['ws-opts']) {
-            base['ws-opts'] = { ...p['ws-opts'] };
-            // 确保 Host 头部存在
-            if (p.host && !base['ws-opts'].headers) {
-                base['ws-opts'].headers = { Host: p.host };
-            }
-        } else if (p.network === 'ws' && (p.path || p.host)) {
-            base['ws-opts'] = {
-                path: p.path || '/',
-                headers: p.host ? { Host: p.host } : {}
-            };
-        }
-    } else if (p.type === 'vless') {
-        if (!p.uuid) return null;
-        base.uuid = p.uuid;
-        if (p.flow) base.flow = p.flow;
-        if (p.network) base.network = p.network;
-        if (p.tls) base.tls = true;
-
-        if (p.servername) base.servername = p.servername;
-
-        // Reality 关键配置
-        if (p['reality-opts']) {
-            base['reality-opts'] = { ...p['reality-opts'] };
-        }
-
-        // 指纹
-        if (p['client-fingerprint']) {
-            base['client-fingerprint'] = p['client-fingerprint'];
-        }
-
-        if (p['ws-opts']) base['ws-opts'] = p['ws-opts'];
-        if (p['grpc-opts']) base['grpc-opts'] = p['grpc-opts'];
-
-    } else if (p.type === 'trojan') {
-        if (!p.password) return null;
-        base.password = p.password;
-        if (p.network) base.network = p.network;
-        base.tls = true; // Trojan 必须 TLS
-
-        if (p.servername) base.servername = p.servername; // 标准字段
-        if (p.sni && !base.servername) base.servername = p.sni; // 兼容
-
-        if (p['ws-opts']) base['ws-opts'] = p['ws-opts'];
-        if (p['grpc-opts']) base['grpc-opts'] = p['grpc-opts'];
-        if (p['client-fingerprint']) base['client-fingerprint'] = p['client-fingerprint'];
-
-    } else if (p.type === 'ss') {
-        if (!p.password) return null;
-        base.cipher = p.cipher || 'aes-256-gcm';
-
-        // Clash 支持的 SS cipher 白名单
-        const validSSCiphers = [
-            'aes-128-gcm', 'aes-192-gcm', 'aes-256-gcm',
-            'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
-            'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
-            'rc4-md5', 'chacha20', 'chacha20-ietf', 'xchacha20',
-            'chacha20-ietf-poly1305', 'xchacha20-ietf-poly1305',
-            '2022-blake3-aes-128-gcm', '2022-blake3-aes-256-gcm',
-            '2022-blake3-chacha20-poly1305',
-            'none', 'plain', 'auto'
-        ];
-        if (!validSSCiphers.includes(base.cipher.toLowerCase())) {
-            // cipher 无效（可能是乱码数据），跳过此节点
-            return null;
-        }
-
-        base.password = p.password;
-        if (p.plugin) {
-            base.plugin = p.plugin;
-            base['plugin-opts'] = p['plugin-opts'];
-        }
-
-    } else if (p.type === 'hysteria2' || p.type === 'hy2') {
-        if (!p.password) return null;
-        base.type = 'hysteria2';
-        base.password = p.password;
-        // 兼容性字段：很多客户端还需要 auth
-        base.auth = p.password;
-
-        if (p.sni) base.sni = p.sni;
-        if (!base.sni && p.servername) base.sni = p.servername;
-
-        // 混淆
-        if (p.obfs) {
-            base.obfs = p.obfs;
-            if (p['obfs-password']) base['obfs-password'] = p['obfs-password'];
-        }
-
-        if (p.up) base.up = parseInt(p.up);
-        if (p.down) base.down = parseInt(p.down);
-
-        if (p['client-fingerprint']) base['client-fingerprint'] = p['client-fingerprint'];
-    } else {
-        return null;
-    }
-
-    // 清理 undefined
-    Object.keys(base).forEach(key => {
-        if (base[key] === undefined) delete base[key];
+    // 清理 undefined 值
+    Object.keys(obj).forEach(key => {
+        if (obj[key] === undefined) delete obj[key];
     });
 
-    return base;
+    return obj;
+}
+
+// --- Clash 真机测试任务管理 (全局作用域) ---
+const connectivityTasks = new Map();
+
+// 并发控制辅助函数
+async function taskMapLimit(items, limit, iterator) {
+    const results = [];
+    const executing = [];
+    for (const item of items) {
+        const p = Promise.resolve().then(() => iterator(item));
+        results.push(p);
+
+        if (limit <= items.length) {
+            const e = p.then(() => executing.splice(executing.indexOf(e), 1));
+            executing.push(e);
+            if (executing.length >= limit) {
+                await Promise.race(executing);
+            }
+        }
+    }
+    return Promise.all(results);
+}
+
+// --- 核心真机测试逻辑 ---
+async function testProxiesDirectly(proxies, onProgress = null) {
+    if (!proxies || proxies.length === 0) return {};
+
+    const oldStatus = globalState.status;
+    globalState.status = 'testing';
+    addLog(`🚀 启动 Clash 进行真机测试 (并发: 10, 超时: 8s)...`, 'info');
+
+    try {
+        await stopClash();
+
+        // 生成配置 (注意：此操作会修改 proxies 对象，添加 _clashName)
+        generateClashConfig(proxies);
+
+        await startClash();
+        // 等待 Clash 启动完全
+        await new Promise(r => setTimeout(r, 3000));
+
+        const results = {};
+        const concurrency = 10;
+        const timeout = 8000;
+
+        await taskMapLimit(proxies, concurrency, async (p) => {
+            try {
+                const name = p._clashName;
+                if (!name) {
+                    results[p.id] = -1;
+                    return;
+                }
+
+                const latency = await checkProxyDelay(name, timeout);
+                results[p.id] = latency;
+                if (onProgress) onProgress(p.id, latency);
+            } catch (e) {
+                results[p.id] = -1;
+                if (onProgress) onProgress(p.id, -1);
+            }
+        });
+
+        return results;
+
+    } catch (e) {
+        addLog(`❌ 真机测试异常: ${e.message}`, 'error');
+        throw e;
+    } finally {
+        globalState.status = oldStatus;
+    }
+}
+
+async function runConnectivityTask(taskId, proxies) {
+    const task = connectivityTasks.get(taskId);
+    if (!task) return;
+
+    task.status = 'running';
+    task.total = proxies.length;
+    task.startTime = Date.now();
+
+    try {
+        const results = await testProxiesDirectly(proxies, (id, lat) => {
+            task.results[id] = lat;
+            task.progress++;
+        });
+
+        task.status = 'completed';
+        task.endTime = Date.now();
+        addLog(`测试任务 ${taskId} 完成，耗时 ${((task.endTime - task.startTime) / 1000).toFixed(1)}s`, 'success');
+
+    } catch (e) {
+        console.error('Connectivity task failed', e);
+        task.status = 'error';
+        task.message = e.message;
+        addLog(`测试任务 ${taskId} 失败: ${e.message}`, 'error');
+    }
+
+    // 恢复全量节点配置
+    try {
+        await runProxyMaintenance();
+    } catch (e) { }
 }
 
 
@@ -2577,18 +2542,18 @@ const server = http.createServer(async (req, res) => {
     }
 
     // API: 订阅链接 (Clash Verge 可直接导入)
-    // 使用方式: /api/subscribe?clash=1 或 /api/subscribe
+    // 使用方式: /api/subscribe?test=1 或 /api/subscribe
     if (parsedUrl.pathname === '/api/subscribe' && req.method === 'GET') {
         try {
-            // 读取所有节点 (proxies.json + manual_proxies.json)
+            const shouldForceTest = parsedUrl.searchParams.get('test') === '1';
+
+            // 读取所有节点
             const proxiesFile = path.join(ROOT, 'proxies.json');
             const manualFile = path.join(ROOT, 'manual_proxies.json');
             let allProxies = [];
 
             if (fs.existsSync(proxiesFile)) {
-                try {
-                    allProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8'));
-                } catch (e) { }
+                try { allProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8')); } catch (e) { }
             }
             if (fs.existsSync(manualFile)) {
                 try {
@@ -2602,11 +2567,38 @@ const server = http.createServer(async (req, res) => {
                 return res.end('No proxies available');
             }
 
+            // 如果请求了强制测试
+            if (shouldForceTest) {
+                addLog('📥 订阅请求触发强制真机测试...', 'info');
+                try {
+                    const results = await testProxiesDirectly(allProxies);
+                    allProxies.forEach(p => {
+                        const lat = results[p.id];
+                        p.localLatency = (lat && lat > 0) ? lat : -1;
+                    });
+                    // 保存结果供下次直接读取
+                    fs.writeFileSync(proxiesFile, JSON.stringify(allProxies.filter(p => !p.isManual), null, 2));
+                } catch (e) {
+                    addLog(`⚠️ 订阅强制测试失败: ${e.message}`, 'warning');
+                } finally {
+                    await runProxyMaintenance();
+                }
+            }
+
+            // 核心改进：只下发测试成功的节点
+            const validProxies = allProxies.filter(p => (p.localLatency && p.localLatency > 0) || (p.maintenanceLatency && p.maintenanceLatency < 9999));
+
+            if (validProxies.length === 0 && !shouldForceTest) {
+                // 如果没有节点可用，且没测过，则提示用户先测一下
+                res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8', ...headers });
+                return res.end('# 暂无已验证可用的节点，请在面板点击“生成YAML”进行首次强制检测，或者访问 /api/subscribe?test=1 触发实时检测');
+            }
+
             // 转换为 Clash 格式
             const uniqueNames = new Set();
             const proxyList = [];
 
-            for (const p of allProxies) {
+            for (const p of validProxies) {
                 const obj = proxyToClashObj(p);
                 if (!obj) continue;
 
@@ -2658,40 +2650,34 @@ const server = http.createServer(async (req, res) => {
                         });
                     }
                 } catch (e) {
-                    console.error('Subscribe template parse error:', e);
                     config = { proxies: proxyList };
                 }
             } else {
                 config = { proxies: proxyList };
             }
 
-            // 生成 YAML
-            let yamlStr = yaml.dump(config, {
-                lineWidth: -1,
-                noRefs: true
-            });
+            let yamlStr = yaml.dump(config, { lineWidth: -1, noRefs: true });
 
-            // 添加头部注释
             const nowStr = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
             const header = [
                 '#---------------------------------------------------#',
                 `## 更新：${nowStr}`,
-                '## Generator: Antigravity Aggregator',
-                `## 节点数量：${proxyList.length}`,
+                '## Generator: Antigravity Aggregator (Verified)',
+                `## 有效节点：${proxyList.length} / 总计：${allProxies.length}`,
+                '## 提示：仅包含测试成功的低延迟节点',
                 '#---------------------------------------------------#',
                 ''
             ].join('\n');
 
             yamlStr = header + yamlStr;
 
-            // 设置 Clash Verge 需要的标准订阅响应头
             const subHeaders = {
                 ...headers,
                 'Content-Type': 'text/yaml; charset=utf-8',
                 'Content-Disposition': 'attachment; filename="Aggregator.yaml"',
-                'profile-update-interval': '6',  // 建议每6小时更新一次
+                'profile-update-interval': '6',
                 'subscription-userinfo': `upload=0; download=0; total=107374182400; expire=${Math.floor(Date.now() / 1000) + 365 * 86400}`,
-                'profile-title': 'Antigravity Aggregator',
+                'profile-title': `iBubble Aggregator (${proxyList.length})`,
                 'Cache-Control': 'no-cache, no-store, must-revalidate',
             };
 
@@ -2895,43 +2881,65 @@ const server = http.createServer(async (req, res) => {
         // ... (keep existing)
     }
 
-    // API: 服务器端连通性测试 (替代本地真连接测试)
-    if (parsedUrl.pathname === '/api/check_connectivity' && req.method === 'POST') {
+
+    // API: 发起 Clash 真机测试
+    if (parsedUrl.pathname === '/api/check_connectivity_clash' && req.method === 'POST') {
         try {
             const { proxies } = await getBody();
-            if (!Array.isArray(proxies)) throw new Error('Invalid proxies array');
+            if (!Array.isArray(proxies) || proxies.length === 0) {
+                throw new Error('No proxies provided');
+            }
 
-            // Limit concurrency
-            const results = {};
-            const queue = [...proxies];
-            const concurrency = 64; // Increased from 20 for faster batch processing
-            const activeWorkers = [];
+            const taskId = `task_${Date.now()}`;
+            connectivityTasks.set(taskId, {
+                id: taskId,
+                status: 'pending',
+                total: proxies.length,
+                progress: 0,
+                results: {},
+                timestamp: Date.now()
+            });
 
-            const worker = async () => {
-                while (queue.length > 0) {
-                    const p = queue.shift();
-                    if (!p || !p.server || !p.port) continue;
-
-                    try {
-                        const res = await checkTcpConnectivity(p.server, parseInt(p.port));
-                        results[p.id] = res;
-                    } catch (e) {
-                        results[p.id] = { success: false, error: e.message };
-                    }
-                }
-            };
-
-            for (let i = 0; i < concurrency; i++) activeWorkers.push(worker());
-            await Promise.all(activeWorkers);
+            // 异步启动任务
+            runConnectivityTask(taskId, proxies);
 
             res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
-            res.end(JSON.stringify({ success: true, results }));
+            res.end(JSON.stringify({ success: true, taskId, message: 'Task started' }));
         } catch (e) {
             res.writeHead(500, { 'Content-Type': 'application/json', ...headers });
-            res.end(JSON.stringify({ success: false, error: e.message }));
+            res.end(JSON.stringify({ success: false, message: e.message }));
         }
         return;
     }
+
+    // API: 查询任务状态
+    if (parsedUrl.pathname === '/api/check_task_status' && req.method === 'GET') {
+        const taskId = parsedUrl.searchParams.get('taskId');
+        const task = connectivityTasks.get(taskId);
+
+        if (!task) {
+            res.writeHead(404, { 'Content-Type': 'application/json', ...headers });
+            res.end(JSON.stringify({ success: false, message: 'Task not found' }));
+            return;
+        }
+
+        res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
+        res.end(JSON.stringify({
+            success: true,
+            status: task.status,
+            progress: task.progress,
+            total: task.total,
+            results: task.results, // 返回已完成的结果
+            message: task.message
+        }));
+
+        // 如果已完成或出错，稍后清理任务 (保留一会以便前端读取最后状态)
+        if (task.status === 'completed' || task.status === 'error') {
+            // 简单清理策略：依靠 LRU 或定时清理，这里暂不自动立即删除
+        }
+        return;
+    }
+
 
     // API: IP 检测 (批量) - 带缓存
     if (parsedUrl.pathname === '/api/check_ip_batch' && req.method === 'POST') {
@@ -3250,7 +3258,8 @@ async function runScheduledTask() {
         logEntry.details.purity = purityResult;
 
         // Auto-generate Aggregator.yaml
-        await saveAggregatorYaml();
+        // 既然刚才已经运行过 runConnectivityCheck 刷新了 localLatency，这里跳过重复测试
+        await saveAggregatorYaml(null, false);
         logEntry.details.yamlGenerated = true;
 
         logEntry.status = 'success';
@@ -3336,36 +3345,28 @@ async function runProxyMaintenance() {
         await new Promise(r => setTimeout(r, 3000)); // 等待 Clash 启动
 
         // 3. 测试所有节点延迟
-        addLog(`⚡ 开始测试节点延迟 (并发: 30)...`, 'info');
-        const concurrency = 30;
-        const timeout = 8000; // 8秒超时
+        addLog(`⚡ 开始真机测试节点延迟...`, 'info');
+        const results = await testProxiesDirectly(allProxies);
 
-        await mapLimit(allProxies, concurrency, async (proxy) => {
-            if (!proxy._clashName) {
-                proxy._clashName = sanitizeProxyName(proxy.name || `${proxy.type}_${proxy.server}_${proxy.port}`);
-            }
-
-            try {
-                const latency = await checkProxyDelay(proxy._clashName, timeout);
-                proxy.maintenanceLatency = latency > 0 ? latency : 99999;
-            } catch (e) {
-                proxy.maintenanceLatency = 99999;
-            }
+        // 更新延迟结果
+        allProxies.forEach(p => {
+            const lat = results[p.id];
+            p.maintenanceLatency = (lat && lat > 0) ? lat : 99999;
         });
 
-        // 4. 按延迟排序，选出最快的前10个
-        const validProxies = allProxies.filter(p => p.maintenanceLatency > 0 && p.maintenanceLatency < 99999);
-        validProxies.sort((a, b) => a.maintenanceLatency - b.maintenanceLatency);
+        // 4. 重建优选配置
+        const top10 = allProxies
+            .filter(p => p.maintenanceLatency > 0 && p.maintenanceLatency < 9999)
+            .sort((a, b) => a.maintenanceLatency - b.maintenanceLatency)
+            .slice(0, 10);
 
-        PREFERRED_PROXIES = validProxies.slice(0, 10);
+        addLog(`✅ 维护完成: 测试 ${allProxies.length} 个节点，选出 ${top10.length} 个优选节点`, 'success');
 
-        addLog(`✅ 节点维护完成！`, 'success');
-        addLog(`📊 有效节点: ${validProxies.length}/${allProxies.length}`, 'info');
-        addLog(`🏆 系统优选节点 (前10):`, 'success');
+        // 最后再一次 generateClashConfig 生成基于全量节点的最终运行配置
+        generateClashConfig(allProxies);
+        await startClash();
 
-        PREFERRED_PROXIES.forEach((p, i) => {
-            addLog(`   ${i + 1}. ${p.name} - ${p.maintenanceLatency}ms`, 'info');
-        });
+        PREFERRED_PROXIES = top10;
 
         // 5. 保存优选节点列表
         const preferredFile = path.join(ROOT, 'preferred_proxies.json');
@@ -3417,91 +3418,35 @@ async function runConnectivityCheck() {
         return { tested: 0, passed: 0, failed: 0 };
     }
 
-    if (proxies.length === 0) {
-        return { tested: 0, passed: 0, failed: 0 };
-    }
+    if (proxies.length === 0) return { tested: 0, passed: 0, failed: 0 };
 
-    addLog(`🔍 开始连通性检测: ${proxies.length} 个节点`, 'info');
+    addLog(`🔍 每日任务: 开始真机连通性检测 (${proxies.length} 个节点)...`, 'info');
 
-    const concurrency = 64;
-    const queue = [...proxies];
-    const results = {};
-    let passed = 0;
-    let failed = 0;
+    try {
+        const results = await testProxiesDirectly(proxies);
 
-    const worker = async () => {
-        while (queue.length > 0) {
-            const p = queue.shift();
-            if (!p || !p.server || !p.port) continue;
-
-            try {
-                const start = Date.now();
-                const socket = new net.Socket();
-                const timeout = 3000;
-
-                const result = await new Promise((resolve) => {
-                    socket.setTimeout(timeout);
-
-                    socket.on('connect', () => {
-                        const time = Date.now() - start;
-                        socket.destroy();
-                        resolve({ success: true, latency: time });
-                    });
-
-                    socket.on('timeout', () => {
-                        socket.destroy();
-                        resolve({ success: false, error: 'Timeout' });
-                    });
-
-                    socket.on('error', (err) => {
-                        resolve({ success: false, error: err.message });
-                    });
-
-                    try {
-                        socket.connect(parseInt(p.port), p.server);
-                    } catch (e) {
-                        resolve({ success: false, error: e.message });
-                    }
-                });
-
-                results[p.id] = result;
-                if (result.success) passed++;
-                else failed++;
-            } catch (e) {
-                results[p.id] = { success: false, error: e.message };
-                failed++;
-            }
-        }
-    };
-
-    const workers = [];
-    for (let i = 0; i < concurrency; i++) workers.push(worker());
-    await Promise.all(workers);
-
-    // 更新节点数据
-    proxies.forEach(p => {
-        if (results[p.id]) {
-            if (results[p.id].success) {
-                p.localLatency = results[p.id].latency;
+        let passed = 0;
+        proxies.forEach(p => {
+            const lat = results[p.id];
+            if (lat && lat > 0 && lat < 8888) {
+                p.localLatency = lat;
+                passed++;
             } else {
-                p.localLatency = -1; // 表示失败
+                p.localLatency = -1;
             }
-        }
-    });
+        });
 
-    // 自动移除超时节点逻辑已取消：保留所有节点，但在生成配置文件时过滤
-    const passedProxies = proxies.filter(p => p.localLatency !== -1);
-    const failedCount = proxies.length - passedProxies.length;
+        fs.writeFileSync(proxiesFile, JSON.stringify(proxies, null, 2));
+        addLog(`✅ 连通性检测完成: ${passed}/${proxies.length} 个可用`, 'success');
 
-    if (failedCount > 0) {
-        addLog(`ℹ️ 检测到 ${failedCount} 个超时节点 (将会保留在列表中但不会导出到配置文件)`, 'info');
+        return { tested: proxies.length, passed, failed: proxies.length - passed, removed: 0 };
+    } catch (e) {
+        addLog(`❌ 每日连通性检测失败: ${e.message}`, 'error');
+        return { tested: proxies.length, passed: 0, failed: proxies.length };
+    } finally {
+        // 恢复配置
+        await runProxyMaintenance();
     }
-
-    // 保存所有节点（包括超时的）
-    fs.writeFileSync(proxiesFile, JSON.stringify(proxies, null, 2));
-    addLog(`✅ 连通性检测完成: ${passed}/${proxies.length} 个可用`, 'success');
-
-    return { tested: proxies.length, passed, failed: failedCount, removed: 0 };
 }
 
 // Helper: 批量纯净度检测
@@ -3627,10 +3572,10 @@ async function runPurityCheck() {
 
 // Helper: Save Aggregator.yaml
 // Accepts optional 'data' array. If provided, uses that data instead of reading files.
-async function saveAggregatorYaml(data = null) {
-    // 防抖：如果后台正在抓取/验证，且不是显式传入的数据，则拒绝保存
-    if (globalState.status !== 'idle' && !data) {
-        addLog(`⚠️ 节点聚合/验证进行中 (${globalState.status})，暂缓自动生成配置文件以便获取最完整结果。`, 'warning');
+async function saveAggregatorYaml(data = null, forceTest = true) {
+    // 自动触发时的防抖逻辑 (针对 forceTest 情况)
+    if (forceTest && globalState.status !== 'idle' && !data) {
+        addLog(`⚠️ 系统繁忙 (${globalState.status})，暂缓真机测试。`, 'warning');
         return;
     }
 
@@ -3639,33 +3584,44 @@ async function saveAggregatorYaml(data = null) {
 
         if (data && Array.isArray(data)) {
             proxies = data;
-            addLog(`📝 使用前端传入的 ${proxies.length} 个节点生成 Aggregator.yaml`, 'info');
+            addLog(`📝 使用前端传入的 ${proxies.length} 个节点进行检测并生成 Aggregator.yaml`, 'info');
         } else {
-            // Load proxies from files (same as /api/proxies)
+            // Load proxies from files
             const proxiesFile = path.join(ROOT, 'proxies.json');
             const manualFile = path.join(ROOT, 'manual_proxies.json');
 
+            let all = [];
             if (fs.existsSync(proxiesFile)) {
-                try {
-                    const data = fs.readFileSync(proxiesFile, 'utf8');
-                    proxies = JSON.parse(data);
-                } catch (e) { }
+                try { all = JSON.parse(fs.readFileSync(proxiesFile, 'utf8')); } catch (e) { }
             }
-
             if (fs.existsSync(manualFile)) {
                 try {
                     const data = fs.readFileSync(manualFile, 'utf8');
                     const manual = JSON.parse(data);
                     if (Array.isArray(manual)) {
-                        proxies = [...proxies, ...manual];
+                        all = [...all, ...manual];
                     }
                 } catch (e) { }
             }
+            proxies = all;
+            addLog(`📝 准备生成 Aggregator.yaml: 加载 ${proxies.length} 个节点${forceTest ? '进行强行检测' : ''}...`, 'info');
+        }
 
-            // 自动生成时，过滤掉不可用节点 (localLatency <= 0)
-            const totalCount = proxies.length;
-            proxies = proxies.filter(p => !p.localLatency || p.localLatency > 0);
-            addLog(`📝 自动生成配置文件: 过滤掉 ${totalCount - proxies.length} 个不可用/超时节点，保留 ${proxies.length} 个可用节点`, 'info');
+        // 强行注入连通性检测
+        if (proxies.length > 0 && forceTest) {
+            try {
+                const results = await testProxiesDirectly(proxies);
+                const beforeCount = proxies.length;
+                proxies = proxies.filter(p => results[p.id] && results[p.id] > 0 && results[p.id] < 8888);
+                addLog(`✅ 检测完成: 过滤掉 ${beforeCount - proxies.length} 个不通节点，保留 ${proxies.length} 个可用节点`, 'success');
+            } catch (e) {
+                addLog(`⚠️ 强行检测失败，将回退到现有可用状态: ${e.message}`, 'warning');
+                // 回退到基于已有 localLatency 的过滤
+                proxies = proxies.filter(p => p.localLatency && p.localLatency > 0);
+            } finally {
+                // 恢复配置
+                await runProxyMaintenance();
+            }
         }
 
         if (proxies.length === 0) {

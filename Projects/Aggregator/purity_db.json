@@ -861,7 +861,7 @@
       "isp": "Dmit Cloud Services",
       "hosting": true
     },
-    "updatedAt": 1770025873210
+    "updatedAt": 1771428450377
   },
   "162.19.248.238": {
     "score": 60,
@@ -888,7 +888,7 @@
       "isp": "Cloudflare, Inc.",
       "hosting": true
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428442344
   },
   "ccc.922922.shop": {
     "score": 50,
@@ -1050,7 +1050,7 @@
       "isp": "Cloudflare, Inc.",
       "hosting": true
     },
-    "updatedAt": 1770007186857
+    "updatedAt": 1771428446465
   },
   "vc.fly.dev": {
     "score": 100,
@@ -1140,7 +1140,7 @@
       "isp": "Datacamp Limited",
       "hosting": true
     },
-    "updatedAt": 1770904564904
+    "updatedAt": 1771428450377
   },
   "82.38.31.208": {
     "score": 100,
@@ -1185,7 +1185,7 @@
       "isp": "China Mobile Communications Corporation",
       "hosting": false
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428450377
   },
   "v4.hdacd.com": {
     "score": 100,
@@ -1194,7 +1194,7 @@
       "isp": "Sichuan Xiaoteyun Technology Co., Ltd",
       "hosting": false
     },
-    "updatedAt": 1770718947641
+    "updatedAt": 1771428450377
   },
   "219.76.135.98": {
     "score": 100,
@@ -1212,7 +1212,7 @@
       "isp": "Bigcommerce Inc.",
       "hosting": false
     },
-    "updatedAt": 1770904564904
+    "updatedAt": 1771428450377
   },
   "v33.hdacd.com": {
     "score": 100,
@@ -1338,7 +1338,7 @@
       "isp": "China Mobile Communications Corporation",
       "hosting": false
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428450377
   },
   "188.114.98.0": {
     "score": 50,
@@ -1383,7 +1383,7 @@
       "isp": "Yandex.cloud LLC",
       "hosting": true
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428446465
   },
   "v9.hdacd.com": {
     "score": 100,
@@ -1401,7 +1401,7 @@
       "isp": "JSC TIMEWEB",
       "hosting": false
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428446465
   },
   "v36.hdacd.com": {
     "score": 100,
@@ -1428,7 +1428,7 @@
       "isp": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
       "hosting": false
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428450377
   },
   "158.160.105.121": {
     "score": 50,
@@ -1437,7 +1437,7 @@
       "isp": "Yandex.cloud LLC",
       "hosting": true
     },
-    "updatedAt": 1770904556513
+    "updatedAt": 1771428446465
   },
   "158.160.221.132": {
     "score": 50,
@@ -1446,7 +1446,7 @@
       "isp": "Yandex.cloud LLC",
       "hosting": true
     },
-    "updatedAt": 1770904564904
+    "updatedAt": 1771428446465
   },
   "v29.hdacd.com": {
     "score": 100,
@@ -1465,5 +1465,356 @@
       "hosting": true
     },
     "updatedAt": 1770904564904
+  },
+  "183.240.179.207": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "China Mobile Communications Corporation",
+      "hosting": false
+    },
+    "updatedAt": 1771428439638
+  },
+  "120.233.205.20": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "China Mobile Communications Corporation",
+      "hosting": false
+    },
+    "updatedAt": 1771428439638
+  },
+  "111.118.118.177": {
+    "score": 100,
+    "info": {
+      "countryCode": "KR",
+      "isp": "Gyeongbuk Cable TV",
+      "hosting": false
+    },
+    "updatedAt": 1771428439638
+  },
+  "gtm1.ktmwan.net": {
+    "score": 50,
+    "info": {
+      "countryCode": "MY",
+      "isp": "Microsoft Corporation",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "131.145.23.4": {
+    "score": 50,
+    "info": {
+      "countryCode": "GB",
+      "isp": "Microsoft Corporation",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "195.133.47.144": {
+    "score": 60,
+    "info": {
+      "countryCode": "DE",
+      "isp": "Big Data Host LLC",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "142.248.80.157": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "Advin Services LLC",
+      "hosting": false
+    },
+    "updatedAt": 1771428442344
+  },
+  "195.54.175.213": {
+    "score": 60,
+    "info": {
+      "countryCode": "NL",
+      "isp": "Scalaxy B.V.",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "42.2.28.64": {
+    "score": 100,
+    "info": {
+      "countryCode": "HK",
+      "isp": "Pccw Ims Limited",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "104.167.197.27": {
+    "score": 60,
+    "info": {
+      "countryCode": "US",
+      "isp": "Newserverlife LLC",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "199.241.32.132": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "BAGE CLOUD LLC",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "192.144.39.33": {
+    "score": 60,
+    "info": {
+      "countryCode": "LV",
+      "isp": "Sia Serverum",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "a.cdn-bilibili.cn": {
+    "score": 60,
+    "info": {
+      "countryCode": "CN",
+      "isp": "Chinanet Guangdong Province Network",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "nodejs.org": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "Cloudflare, Inc.",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "77.72.19.115": {
+    "score": 100,
+    "info": {
+      "countryCode": "DE",
+      "isp": "Melbikomas Uab",
+      "hosting": false
+    },
+    "updatedAt": 1771428442344
+  },
+  "109.176.229.97": {
+    "score": 60,
+    "info": {
+      "countryCode": "GB",
+      "isp": "Alexandru Vlad Trading AS Freakhosting",
+      "hosting": true
+    },
+    "updatedAt": 1771428442344
+  },
+  "144.31.3.35": {
+    "score": 100,
+    "info": {
+      "countryCode": "PL",
+      "isp": "H NEXUS LTD",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "185.234.57.207": {
+    "score": 100,
+    "info": {
+      "countryCode": "AM",
+      "isp": "Worktitans B.V.",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "turk1.net.net": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "Cloudflare, Inc.",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "45.43.76.218": {
+    "score": 100,
+    "info": {
+      "countryCode": "LV",
+      "isp": "SIA VEESP",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "series-a1.samanehha.co": {
+    "score": 50,
+    "info": {
+      "countryCode": "GB",
+      "isp": "Microsoft Corporation",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "144.31.128.129": {
+    "score": 60,
+    "info": {
+      "countryCode": "AE",
+      "isp": "H NEXUS LTD",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "deu542.globalunlock.org": {
+    "score": 100,
+    "info": {
+      "countryCode": "DE",
+      "isp": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "64.188.64.59": {
+    "score": 100,
+    "info": {
+      "countryCode": "DE",
+      "isp": "PLAY GO INTERNATIONAL LIMITED",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "158.160.223.36": {
+    "score": 50,
+    "info": {
+      "countryCode": "RU",
+      "isp": "Yandex.cloud LLC",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "47.80.11.87": {
+    "score": 60,
+    "info": {
+      "countryCode": "KR",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "v24.hdacd.com": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "Sichuan Xiaoteyun Technology Co., Ltd",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "TM_AZARBAYJAB1.SERV.9.pagES.DEV": {
+    "score": 50,
+    "info": {
+      "countryCode": "US",
+      "isp": "Cloudflare, Inc.",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "47.80.13.85": {
+    "score": 60,
+    "info": {
+      "countryCode": "KR",
+      "isp": "Alibaba us Technology Co., Ltd.",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "198.62.62.199": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "HEALTH MARKET SCIENCE",
+      "hosting": false
+    },
+    "updatedAt": 1771428446465
+  },
+  "150.241.90.13": {
+    "score": 60,
+    "info": {
+      "countryCode": "DE",
+      "isp": "INTERNATIONAL HOSTING COMPANY LIMITED",
+      "hosting": true
+    },
+    "updatedAt": 1771428446465
+  },
+  "185.39.206.226": {
+    "score": 100,
+    "info": {
+      "countryCode": "RU",
+      "isp": "JSC TIMEWEB",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "fr.1323.world": {
+    "score": 100,
+    "info": {
+      "countryCode": "FR",
+      "isp": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "212.192.14.73": {
+    "score": 100,
+    "info": {
+      "countryCode": "RU",
+      "isp": "GLOBAL INTERNET SOLUTIONS LLC",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "dll.avaaaal.ir": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "Bigcommerce Inc.",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "a12.taipeicitygovernment.org.ua": {
+    "score": 100,
+    "info": {
+      "countryCode": "CN",
+      "isp": "China Mobile",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "199.34.230.158": {
+    "score": 100,
+    "info": {
+      "countryCode": "US",
+      "isp": "Weebly, Inc.",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "93.94.51.162": {
+    "score": 100,
+    "info": {
+      "countryCode": "DE",
+      "isp": "GLOBAL CONNECTIVITY SOLUTIONS LLP",
+      "hosting": false
+    },
+    "updatedAt": 1771428450377
+  },
+  "series-a2.samanehha.co": {
+    "score": 50,
+    "info": {
+      "countryCode": "GB",
+      "isp": "Microsoft Corporation",
+      "hosting": true
+    },
+    "updatedAt": 1771428450377
   }
 }

@@ -29,7 +29,7 @@ import struct
 class ComfyUIClient:
     """ComfyUI REST API 客户端"""
 
-    def __init__(self, server_address="192.168.1.141:8188", timeout=300):
+    def __init__(self, server_address="127.0.0.1:8188", timeout=300):
         """
         初始化客户端
 

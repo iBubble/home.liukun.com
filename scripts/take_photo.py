@@ -28,7 +28,7 @@ from comfyui_client import ComfyUIClient
 # ============================================================
 # 配置
 # ============================================================
-COMFYUI_SERVER = "192.168.1.141:8188"
+COMFYUI_SERVER = "127.0.0.1:8188"
 SECRET_DIR = "/www/wwwroot/ibubble.vicp.net/.secret"
 DEFAULT_CHECKPOINT = "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
 

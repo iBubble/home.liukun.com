@@ -27,19 +27,19 @@ class CyberpunkAnimations {
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
-            
+
             // 随机位置
             particle.style.left = Math.random() * 100 + '%';
             particle.style.top = Math.random() * 100 + '%';
-            
+
             // 随机动画延迟
             particle.style.animationDelay = Math.random() * 10 + 's';
-            
+
             // 随机大小
             const size = Math.random() * 3 + 1;
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
-            
+
             container.appendChild(particle);
             this.particles.push(particle);
         }
@@ -54,7 +54,7 @@ class CyberpunkAnimations {
         document.body.appendChild(container);
 
         const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        
+
         // 创建 20 列
         for (let i = 0; i < 20; i++) {
             const column = document.createElement('div');
@@ -62,14 +62,14 @@ class CyberpunkAnimations {
             column.style.left = (i * 5) + '%';
             column.style.animationDelay = Math.random() * 5 + 's';
             column.style.animationDuration = (Math.random() * 5 + 10) + 's';
-            
+
             // 随机字符
             let text = '';
             for (let j = 0; j < 20; j++) {
                 text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
             }
             column.innerHTML = text;
-            
+
             container.appendChild(column);
         }
     }
@@ -143,7 +143,7 @@ class CyberpunkAnimations {
      */
     static animateNodeCheck(element) {
         element.classList.add('checking');
-        
+
         // 创建雷达扫描效果
         const radar = document.createElement('div');
         radar.className = 'radar-scanner';
@@ -164,7 +164,7 @@ class CyberpunkAnimations {
     static animateNodeSuccess(element) {
         element.classList.remove('checking');
         element.classList.add('success');
-        
+
         // 移除雷达
         const radar = element.querySelector('.radar-scanner');
         if (radar) radar.remove();
@@ -190,7 +190,7 @@ class CyberpunkAnimations {
     static animateNodeFailed(element) {
         element.classList.remove('checking');
         element.classList.add('failed');
-        
+
         // 移除雷达
         const radar = element.querySelector('.radar-scanner');
         if (radar) radar.remove();
@@ -205,18 +205,50 @@ class CyberpunkAnimations {
     /**
      * 显示通知
      */
+    /**
+     * 显示通知
+     */
     static showNotification(message, type = 'info') {
+        // 获取或创建通知容器
+        let container = document.getElementById('notification-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'notification-container';
+            container.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 10000;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                pointer-events: none;
+            `;
+            document.body.appendChild(container);
+        }
+
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.textContent = message;
-        document.body.appendChild(notification);
+
+        // 覆盖默认的 fixed 定位，使其在容器内正常堆叠
+        notification.style.position = 'relative';
+        notification.style.top = 'auto';
+        notification.style.right = 'auto';
+        notification.style.pointerEvents = 'auto'; // 允许交互
+
+        container.appendChild(notification);
 
         setTimeout(() => {
             notification.style.animation = 'slide-in-right 0.5s ease-out reverse';
             setTimeout(() => {
                 notification.remove();
+                // 如果容器为空，可以选择移除容器，或者保留
+                if (container.children.length === 0) {
+                    // container.remove(); // 可选：保持容器存在以减少DOM操作
+                }
             }, 500);
-        }, 3000);
+        }, 6000);
     }
 
     /**
@@ -277,7 +309,7 @@ class CyberpunkAnimations {
         element.style.maxHeight = '0';
         element.style.opacity = '0';
         element.style.display = 'block';
-        
+
         requestAnimationFrame(() => {
             element.style.transition = 'all 0.5s ease-out';
             element.style.maxHeight = element.scrollHeight + 'px';
@@ -290,12 +322,12 @@ class CyberpunkAnimations {
      */
     static collapseCard(element) {
         element.style.maxHeight = element.scrollHeight + 'px';
-        
+
         requestAnimationFrame(() => {
             element.style.transition = 'all 0.5s ease-out';
             element.style.maxHeight = '0';
             element.style.opacity = '0';
-            
+
             setTimeout(() => {
                 element.style.display = 'none';
             }, 500);
@@ -350,7 +382,7 @@ class CyberpunkAnimations {
 
         fill.style.width = '0%';
         fill.style.transition = `width ${duration}ms ease-out`;
-        
+
         requestAnimationFrame(() => {
             fill.style.width = '100%';
         });
