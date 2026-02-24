@@ -390,129 +390,100 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:flex-row justify-between items-end mb-3 px-1 gap-2">
-                        <div class="flex items-center space-x-3">
-                            <h3 class="text-slate-400 text-sm font-medium">节点 ({{ filteredProxies.length }})</h3>
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4 pr-2">
+                        <!-- Left Group: Node count + Filters -->
+                        <div class="flex items-center space-x-2 whitespace-nowrap overflow-x-auto no-scrollbar py-1">
+                            <h3 class="text-slate-400 text-sm font-medium mr-2">节点 ({{ filteredProxies.length }})</h3>
 
                             <!-- Selection Toolbar -->
-                            <div class="flex items-center bg-slate-800 rounded-lg p-1 border border-slate-700/50">
+                            <div class="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700/50">
                                 <button @click="toggleSelectPage"
-                                    class="px-2 py-1 text-xs rounded hover:bg-slate-700 transition flex items-center"
+                                    class="px-2 py-1 text-[10px] rounded hover:bg-slate-700 transition flex items-center whitespace-nowrap shrink-0"
                                     :class="pageSelected ? 'text-indigo-400 font-bold' : 'text-slate-400'">
                                     <span class="material-icons-round text-sm mr-1">{{ pageSelected ? 'check_box' :
                                         'check_box_outline_blank' }}</span>
                                     本页
                                 </button>
-                                <div class="w-px h-3 bg-slate-700 mx-1"></div>
+                                <div class="w-px h-3 bg-slate-700 mx-0.5"></div>
                                 <button @click="selectAvailableNodes"
-                                    class="px-2 py-1 text-xs rounded hover:bg-emerald-500/20 text-emerald-400 transition flex items-center">
+                                    class="px-2 py-1 text-[10px] rounded hover:bg-emerald-500/20 text-emerald-400 transition flex items-center whitespace-nowrap shrink-0">
                                     <span class="material-icons-round text-sm mr-1">done_all</span>
                                     可用
                                 </button>
-                                <div class="w-px h-3 bg-slate-700 mx-1"></div>
-                                <button @click="clearSelection" v-if="selectedCount > 0"
-                                    class="px-2 py-1 text-xs rounded hover:bg-red-500/20 text-red-400 transition flex items-center">
-                                    清除 ({{ selectedCount }})
+                            </div>
+
+                            <!-- Filter Toggles -->
+                            <div class="flex items-center space-x-1 ml-2">
+                                <button @click="hideFailed = !hideFailed"
+                                    class="px-2 py-1 text-[10px] rounded hover:bg-slate-700 transition flex items-center border border-transparent whitespace-nowrap shrink-0"
+                                    :class="hideFailed ? 'text-indigo-400 bg-slate-800 border-indigo-500/30' : 'text-slate-500'">
+                                    <span class="material-icons-round text-sm mr-1">{{ hideFailed ? 'visibility_off' :
+                                        'visibility' }}</span>
+                                    超时
+                                </button>
+                                <button @click="showManualOnly = !showManualOnly"
+                                    class="px-2 py-1 text-[10px] rounded hover:bg-slate-700 transition flex items-center border border-transparent whitespace-nowrap shrink-0"
+                                    :class="showManualOnly ? 'text-amber-400 bg-slate-800 border-amber-500/30' : 'text-slate-500'">
+                                    <span class="material-icons-round text-sm mr-1">{{ showManualOnly ? 'bookmark' :
+                                        'bookmark_border' }}</span>
+                                    手动
+                                    <span v-if="manualProxies.length > 0"
+                                        class="ml-1 bg-amber-500/20 p-0.5 rounded text-[8px]">{{ manualProxies.length
+                                        }}</span>
+                                </button>
+                                <button @click="showForumOnly = !showForumOnly"
+                                    class="px-2 py-1 text-[10px] rounded hover:bg-slate-700 transition flex items-center border border-transparent whitespace-nowrap shrink-0"
+                                    :class="showForumOnly ? 'text-purple-400 bg-slate-800 border-purple-500/30' : 'text-slate-500'">
+                                    <span class="material-icons-round text-sm mr-1">{{ showForumOnly ? 'forum' :
+                                        'chat_bubble_outline' }}</span>
+                                    论坛
+                                    <span v-if="forumProxiesCount > 0"
+                                        class="ml-1 bg-purple-500/20 p-0.5 rounded text-[8px]">{{ forumProxiesCount
+                                        }}</span>
                                 </button>
                             </div>
-                            <!-- Hide Failed Toggle -->
-                            <button @click="hideFailed = !hideFailed"
-                                class="px-2 py-1 text-xs rounded hover:bg-slate-700 transition flex items-center border border-transparent"
-                                :class="hideFailed ? 'text-indigo-400 bg-slate-800 border-indigo-500/30' : 'text-slate-500'">
-                                <span class="material-icons-round text-sm mr-1">{{ hideFailed ? 'visibility_off' :
-                                    'visibility' }}</span>
-                                {{ hideFailed ? '隐藏' : '超时' }}
-                            </button>
-                            <!-- Manual Only Toggle -->
-                            <button @click="showManualOnly = !showManualOnly"
-                                class="px-2 py-1 text-xs rounded hover:bg-slate-700 transition flex items-center border border-transparent"
-                                :class="showManualOnly ? 'text-amber-400 bg-slate-800 border-amber-500/30' : 'text-slate-500'">
-                                <span class="material-icons-round text-sm mr-1">{{ showManualOnly ? 'bookmark' :
-                                    'bookmark_border' }}</span>
-                                手动
-                                <span v-if="manualProxies.length > 0"
-                                    class="ml-1 bg-amber-500/20 text-amber-400 px-1 rounded text-[10px]">{{
-                                    manualProxies.length }}</span>
-                            </button>
-                            <!-- Forum (Linux.do) Only Toggle -->
-                            <button @click="showForumOnly = !showForumOnly"
-                                class="px-2 py-1 text-xs rounded hover:bg-slate-700 transition flex items-center border border-transparent"
-                                :class="showForumOnly ? 'text-purple-400 bg-slate-800 border-purple-500/30' : 'text-slate-500'">
-                                <span class="material-icons-round text-sm mr-1">{{ showForumOnly ? 'forum' :
-                                    'chat_bubble_outline' }}</span>
-                                论坛
-                                <span v-if="forumProxiesCount > 0"
-                                    class="ml-1 bg-purple-500/20 text-purple-400 px-1 rounded text-[10px]">{{
-                                    forumProxiesCount }}</span>
-                            </button>
+                        </div>
 
+                        <!-- Right Group: Actions + Status -->
+                        <div class="flex items-center space-x-2 shrink-0">
+                            <!-- Global Status -->
+                            <div v-if="autoCheckCount > 0"
+                                class="text-[10px] text-indigo-400 animate-pulse flex items-center whitespace-nowrap mr-2">
+                                <span class="material-icons-round text-xs animate-spin mr-1">sync</span>
+                                自动检测中: {{ autoCheckCount }}
+                            </div>
 
-                            <!-- Global Purity Check Button -->
-                            <div class="w-px h-3 bg-slate-700 mx-1"></div>
                             <!-- Check Purity -->
                             <button @click="checkSelectedPurity" :disabled="purityChecking"
-                                class="ml-4 flex items-center px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 rounded-lg text-sm transition-colors border border-emerald-500/20">
-                                <svg v-if="purityChecking" class="animate-spin -ml-1 mr-2 h-4 w-4 text-emerald-400"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                                        stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor"
-                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                                    </path>
-                                </svg>
-                                <svg v-else class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
+                                class="flex items-center px-2 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 rounded-lg text-xs transition-colors border border-emerald-500/20 whitespace-nowrap shrink-0">
+                                <span class="material-icons-round text-base mr-1"
+                                    :class="{'animate-spin': purityChecking}">shield</span>
                                 {{ purityChecking ? '检测中...' : '纯净度' }}
                             </button>
 
-                            <!-- Test & Deduplicate -->
-                            <button @click="handleTestAndDeduplicate" :disabled="isLocalChecking"
-                                class="ml-3 flex items-center px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 rounded-lg text-sm transition-colors border border-blue-500/20">
-                                <svg v-if="isLocalChecking" class="animate-spin -ml-1 mr-2 h-4 w-4 text-blue-400"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                                        stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor"
-                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                                    </path>
-                                </svg>
-                                <svg v-else class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
-                                    </path>
-                                </svg>
-                                {{ isLocalChecking ? '检测中 ' + localCheckProgress : '检测/去重' }}
+                            <!-- Deduplicate -->
+                            <button @click="handleDeduplicate"
+                                class="flex items-center px-2 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 rounded-lg text-xs transition-colors border border-amber-500/20 whitespace-nowrap shrink-0">
+                                <span class="material-icons-round text-base mr-1">auto_fix_high</span>
+                                去重
+                            </button>
+
+                            <!-- Test -->
+                            <button @click="handleLocalTest" :disabled="isLocalChecking"
+                                class="flex items-center px-2 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 rounded-lg text-xs transition-colors border border-blue-500/20 whitespace-nowrap shrink-0">
+                                <span class="material-icons-round text-base mr-1"
+                                    :class="{'animate-spin': isLocalChecking}">science</span>
+                                {{ isLocalChecking ? '检测中 ' + localCheckProgress : '本地检测' }}
                             </button>
 
                             <!-- Generate YAML -->
                             <button @click="handleGenerateYaml" :disabled="isGeneratingYaml"
-                                class="ml-3 flex items-center px-3 py-1.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg text-sm transition-colors border border-indigo-500/20"
+                                class="flex items-center px-2 py-1.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg text-xs transition-colors border border-indigo-500/20 whitespace-nowrap shrink-0"
                                 title="根据当前显示的节点顺序重新生成配置文件">
-                                <svg v-if="isGeneratingYaml" class="animate-spin -ml-1 mr-2 h-4 w-4 text-indigo-400"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                                        stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor"
-                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                                    </path>
-                                </svg>
-                                <svg v-else class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4">
-                                    </path>
-                                </svg>
+                                <span class="material-icons-round text-base mr-1"
+                                    :class="{'animate-spin': isGeneratingYaml}">download</span>
                                 {{ isGeneratingYaml ? '生成中...' : 'YAML' }}
                             </button>
-                        </div>
-
-                        <div v-if="autoCheckCount > 0" class="text-xs text-indigo-400 animate-pulse flex items-center">
-                            <span class="material-icons-round text-sm mr-1 animate-spin">sync</span>
-                            自动检测中: 剩余 {{ autoCheckCount }} 个
                         </div>
                     </div>
 
@@ -2095,49 +2066,28 @@
                     }
                 };
 
-                const handleTestAndDeduplicate = async () => {
-                    if (isLocalChecking.value) return;
-
+                const handleDeduplicate = async () => {
                     // 1. 确定目标节点
                     let targets = [];
-                    let isSelective = false;
-
                     if (selectedCount.value > 0) {
-                        const s = selectedIds.value;
-                        targets = proxies.value.filter(p => s.has(p.id));
-                        isSelective = true;
+                        targets = proxies.value.filter(p => selectedIds.value.has(p.id));
                     } else {
-                        // 无勾选：对全部节点操作
                         targets = proxies.value;
                     }
 
-                    if (targets.length === 0) return showToast('没有节点可测试');
-
-                    // 2. 只有在全选或大量操作时才进行强制去重，或者用户明确要求的行为
-                    // 这里按用户需求：测试并且去重
+                    if (targets.length === 0) return showToast('没有节点可操作');
 
                     const beforeCount = targets.length;
-
-                    // 去重逻辑：按 server (IP/Domain) 去重
-                    // 优先保留 '手动添加' 的，或者保留第一个
                     const uniqueMap = new Map();
-                    const duplicates = new Set();
 
-                    // 先遍历一遍，建立唯一索引
                     targets.forEach(p => {
-                        // 逻辑修正：恢复 UUID/Password 校验，以防误删同一端口的不同账户节点
                         const server = (p.server || '').trim().toLowerCase();
                         const port = p.port || '';
                         const auth = p.uuid || p.password || '';
-
                         const key = `${server}:${port}:${auth}`;
 
                         if (!key || !server) return;
-
-                        if (uniqueMap.has(key)) {
-                            // 已存在，通过
-                            duplicates.add(p.id);
-                        } else {
+                        if (!uniqueMap.has(key)) {
                             uniqueMap.set(key, p);
                         }
                     });
@@ -2146,31 +2096,40 @@
                     const removedCount = beforeCount - afterCount;
 
                     if (removedCount > 0) {
-                        // 保存去重信息，显示确认对话框
-                        const uniqueNodes = Array.from(uniqueMap.values());
                         dedupeInfo.value = {
                             removedCount,
-                            uniqueNodes,
+                            uniqueNodes: Array.from(uniqueMap.values()),
                             targets,
-                            isSelective
+                            isSelective: selectedCount.value > 0
                         };
                         showDedupeModal.value = true;
-                        return; // 等待用户确认
+                    } else {
+                        showToast('未发现重复节点');
+                    }
+                };
+
+                const handleLocalTest = async () => {
+                    if (isLocalChecking.value) return;
+
+                    let targets = [];
+                    if (selectedCount.value > 0) {
+                        targets = proxies.value.filter(p => selectedIds.value.has(p.id));
+                    } else {
+                        targets = proxies.value;
                     }
 
-                    // 无重复时直接开始测试，测试完成后删除超时节点
+                    if (targets.length === 0) return showToast('没有节点可测试');
+
                     await checkLocalConnectivity(targets);
-                    // 等待状态更新后删除超时节点
+                    // 等待状态更新
                     await new Promise(r => setTimeout(r, 100));
                     await deleteFailedNodes();
                 };
 
-                // 确认去重并测试的回调
-                // 确认去重并测试的回调
+                // 确认去重后的回调 (不再自动启动检测)
                 const confirmDedupe = async () => {
                     showDedupeModal.value = false;
                     const { removedCount, uniqueNodes, isSelective } = dedupeInfo.value;
-                    let targets = uniqueNodes;
 
                     // 执行移除
                     if (isSelective) {
@@ -2195,18 +2154,13 @@
                             body: JSON.stringify({ proxies: manualNodes })
                         });
 
-                        // 去重后自动更新 Aggregator.yaml
+                        // 自动更新 Aggregator.yaml
                         fetch('api/generate_yaml', { method: 'POST' })
                             .then(() => console.log('去重后 Aggregator.yaml 已更新'))
                             .catch(e => console.warn('YAML 更新失败:', e));
                     } catch (e) {
                         console.error('保存去重结果失败:', e);
                     }
-
-                    // 开始测试
-                    await checkLocalConnectivity(targets);
-                    await new Promise(r => setTimeout(r, 100));
-                    await deleteFailedNodes();
                 };
 
                 // YAML 生成
@@ -2867,7 +2821,7 @@
                     showForumOnly, forumProxiesCount, // 论坛搜索相关
                     linuxDoLoading, importFromLinuxDo, // Linux.do 导入
                     pageLoading, isParsing, // Added to fix rendering crash
-                    handleTestAndDeduplicate, // 测试并去重
+                    handleDeduplicate, handleLocalTest, selectAvailableNodes, // 拆分后的新功能及缺失导出
                     showDedupeModal, dedupeInfo, confirmDedupe, // 去重确认对话框
                     formatTime, formatUptimeDisplay,
                     // 计划任务日志相关

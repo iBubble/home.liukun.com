@@ -1,0 +1,21 @@
+port: 7956
+socks-port: 7957
+allow-lan: false
+mode: rule
+log-level: silent
+proxies:
+  - name: 专线|香港01解锁
+    type: vmess
+    server: ppy-hkv2.kunlun02dns.com
+    port: 26010
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+proxy-groups:
+  - name: test
+    type: select
+    proxies:
+      - 专线|香港01解锁
+rules:
+  - MATCH,test

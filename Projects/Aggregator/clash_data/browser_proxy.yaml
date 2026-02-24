@@ -2,8 +2,120 @@ port: 7939
 socks-port: 7940
 allow-lan: false
 mode: rule
-log-level: info
+log-level: silent
 proxies:
+  - name: 标准|香港01解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26010
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港02解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26011
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港03解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26012
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港04解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26013
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港05解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26014
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港06解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26015
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本01解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26006
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本02解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26007
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本03解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26008
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本04解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26009
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国01解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26001
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国02解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26002
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国03解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26003
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国04解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26004
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: 专线|香港01解锁
     type: vmess
     server: ppy-hkv2.kunlun02dns.com
@@ -12,55 +124,26 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: 专线|香港02解锁
-    type: vmess
-    server: ppy-hkv2.kunlun02dns.com
-    port: 26011
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 专线|日本01解锁
-    type: vmess
-    server: ppy-jpv2.kunlun02dns.com
-    port: 26006
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 专线|日本02解锁
-    type: vmess
-    server: ppy-jpv2.kunlun02dns.com
-    port: 26007
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 专线|美国01解锁
-    type: vmess
-    server: ppy-usv2.kunlun02dns.com
-    port: 26001
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 专线|美国02解锁
-    type: vmess
-    server: ppy-usv2.kunlun02dns.com
-    port: 26002
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
 proxy-groups:
   - name: PROXY
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
     proxies:
+      - 标准|香港01解锁
+      - 标准|香港02解锁
+      - 标准|香港03解锁
+      - 标准|香港04解锁
+      - 标准|香港05解锁
+      - 标准|香港06解锁
+      - 标准|日本01解锁
+      - 标准|日本02解锁
+      - 标准|日本03解锁
+      - 标准|日本04解锁
+      - 标准|美国01解锁
+      - 标准|美国02解锁
+      - 标准|美国03解锁
+      - 标准|美国04解锁
       - 专线|香港01解锁
-      - 专线|香港02解锁
-      - 专线|日本01解锁
-      - 专线|日本02解锁
-      - 专线|美国01解锁
-      - 专线|美国02解锁
 rules:
   - MATCH,PROXY

@@ -5,6 +5,222 @@ mode: rule
 log-level: silent
 external-controller: 127.0.0.1:8040
 proxies:
+  - name: 防失联 https://ppy.369.cyou
+    type: vmess
+    server: 127.0.0.1
+    port: 80
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港01解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26010
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港02解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26011
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港03解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26012
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港04解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26013
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港05解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26014
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|香港06解锁
+    type: vmess
+    server: ppy-hkv1.kunlun02dns.com
+    port: 26015
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本01解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26006
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本02解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26007
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本03解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26008
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|日本04解锁
+    type: vmess
+    server: ppy-jpv1.kunlun02dns.com
+    port: 26009
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国01解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26001
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国02解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26002
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国03解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26003
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|美国04解锁
+    type: vmess
+    server: ppy-usv1.kunlun02dns.com
+    port: 26004
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|韩国01解锁
+    type: vmess
+    server: ppy-krv1.kunlun02dns.com
+    port: 26072
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|韩国02解锁
+    type: vmess
+    server: ppy-krv1.kunlun02dns.com
+    port: 26073
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|韩国03解锁
+    type: vmess
+    server: ppy-krv1.kunlun02dns.com
+    port: 26074
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|韩国04解锁
+    type: vmess
+    server: ppy-krv1.kunlun02dns.com
+    port: 26075
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|台湾01解锁
+    type: vmess
+    server: ppy-twv1.kunlun02dns.com
+    port: 26059
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|台湾02解锁
+    type: vmess
+    server: ppy-twv1.kunlun02dns.com
+    port: 26060
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|台湾03解锁
+    type: vmess
+    server: ppy-twv1.kunlun02dns.com
+    port: 26061
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|台湾04解锁
+    type: vmess
+    server: ppy-twv1.kunlun02dns.com
+    port: 26062
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|新加坡01解锁
+    type: vmess
+    server: ppy-sgv1.kunlun02dns.com
+    port: 26020
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|新加坡02解锁
+    type: vmess
+    server: ppy-sgv1.kunlun02dns.com
+    port: 26021
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|新加坡03解锁
+    type: vmess
+    server: ppy-sgv1.kunlun02dns.com
+    port: 26022
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 标准|新加坡04解锁
+    type: vmess
+    server: ppy-sgv1.kunlun02dns.com
+    port: 26023
+    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: 专线|香港01解锁
     type: vmess
     server: ppy-hkv2.kunlun02dns.com
@@ -397,7 +613,7 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: 专线|加拿��01倍率5
+  - name: 专线|加拿大01倍率5
     type: vmess
     server: ppy-boardv2.kunlun02dns.com
     port: 26114
@@ -613,228 +829,39 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: 防失联 https://ppy.369.cyou
-    type: vmess
-    server: 127.0.0.1
-    port: 80
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|香港01解锁
-    type: vmess
-    server: ppy-hkv1.kunlun02dns.com
-    port: 26010
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|香港02解锁
-    type: vmess
-    server: ppy-hkv1.kunlun02dns.com
-    port: 26011
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|香港03解锁
-    type: vmess
-    server: ppy-hkv1.kunlun02dns.com
-    port: 26012
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|香港04解锁
-    type: vmess
-    server: ppy-hkv1.kunlun02dns.com
-    port: 26013
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|香港05解锁
-    type: vmess
-    server: ppy-hkv1.kunlun02dns.com
-    port: 26014
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|香港06解锁
-    type: vmess
-    server: ppy-hkv1.kunlun02dns.com
-    port: 26015
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|日本01解锁
-    type: vmess
-    server: ppy-jpv1.kunlun02dns.com
-    port: 26006
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|日本02解锁
-    type: vmess
-    server: ppy-jpv1.kunlun02dns.com
-    port: 26007
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|日本03解锁
-    type: vmess
-    server: ppy-jpv1.kunlun02dns.com
-    port: 26008
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|日本04解锁
-    type: vmess
-    server: ppy-jpv1.kunlun02dns.com
-    port: 26009
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|美国01解锁
-    type: vmess
-    server: ppy-usv1.kunlun02dns.com
-    port: 26001
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|美国02解锁
-    type: vmess
-    server: ppy-usv1.kunlun02dns.com
-    port: 26002
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|美国03解锁
-    type: vmess
-    server: ppy-usv1.kunlun02dns.com
-    port: 26003
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|美国04解锁
-    type: vmess
-    server: ppy-usv1.kunlun02dns.com
-    port: 26004
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|韩国01解锁
-    type: vmess
-    server: ppy-krv1.kunlun02dns.com
-    port: 26072
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|韩国02解锁
-    type: vmess
-    server: ppy-krv1.kunlun02dns.com
-    port: 26073
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|韩国03解锁
-    type: vmess
-    server: ppy-krv1.kunlun02dns.com
-    port: 26074
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|韩国04解锁
-    type: vmess
-    server: ppy-krv1.kunlun02dns.com
-    port: 26075
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|台湾01解锁
-    type: vmess
-    server: ppy-twv1.kunlun02dns.com
-    port: 26059
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|台湾02解锁
-    type: vmess
-    server: ppy-twv1.kunlun02dns.com
-    port: 26060
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|台湾03解锁
-    type: vmess
-    server: ppy-twv1.kunlun02dns.com
-    port: 26061
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|台湾04解锁
-    type: vmess
-    server: ppy-twv1.kunlun02dns.com
-    port: 26062
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|新加坡01解锁
-    type: vmess
-    server: ppy-sgv1.kunlun02dns.com
-    port: 26020
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|新加坡02解锁
-    type: vmess
-    server: ppy-sgv1.kunlun02dns.com
-    port: 26021
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|新加坡03解锁
-    type: vmess
-    server: ppy-sgv1.kunlun02dns.com
-    port: 26022
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 标准|新加坡04解锁
-    type: vmess
-    server: ppy-sgv1.kunlun02dns.com
-    port: 26023
-    uuid: f5f26521-6dac-3b14-96b0-f1c7ad47746d
-    alterId: 0
-    cipher: auto
-    udp: true
 proxy-groups:
   - name: PROXY
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
+      - 防失联 https://ppy.369.cyou
+      - 标准|香港01解锁
+      - 标准|香港02解锁
+      - 标准|香港03解锁
+      - 标准|香港04解锁
+      - 标准|香港05解锁
+      - 标准|香港06解锁
+      - 标准|日本01解锁
+      - 标准|日本02解锁
+      - 标准|日本03解锁
+      - 标准|日本04解锁
+      - 标准|美国01解锁
+      - 标准|美国02解锁
+      - 标准|美国03解锁
+      - 标准|美国04解锁
+      - 标准|韩国01解锁
+      - 标准|韩国02解锁
+      - 标准|韩国03解锁
+      - 标准|韩国04解锁
+      - 标准|台湾01解锁
+      - 标准|台湾02解锁
+      - 标准|台湾03解锁
+      - 标准|台湾04解锁
+      - 标准|新加坡01解锁
+      - 标准|新加坡02解锁
+      - 标准|新加坡03解锁
+      - 标准|新加坡04解锁
       - 专线|香港01解锁
       - 专线|香港02解锁
       - 专线|香港03解锁
@@ -884,7 +911,7 @@ proxy-groups:
       - 专线|乌克兰01倍率5
       - 专线|以色列01倍率5
       - 专线|俄罗斯01倍率5
-      - 专线|加拿��01倍率5
+      - 专线|加拿大01倍率5
       - 专线|土耳其01倍率5
       - 专线|墨西哥01倍率5
       - 专线|奥地利01倍率5
@@ -911,32 +938,5 @@ proxy-groups:
       - 专线|马来西亚01倍率5
       - 专线|印度尼西亚01倍率5
       - 专线|沙特阿拉伯01倍率5
-      - 防失联 https://ppy.369.cyou
-      - 标准|香港01解锁
-      - 标准|香港02解锁
-      - 标准|香港03解锁
-      - 标准|香港04解锁
-      - 标准|香港05解锁
-      - 标准|香港06解锁
-      - 标准|日本01解锁
-      - 标准|日本02解锁
-      - 标准|日本03解锁
-      - 标准|日本04解锁
-      - 标准|美国01解锁
-      - 标准|美国02解锁
-      - 标准|美国03解锁
-      - 标准|美国04解锁
-      - 标准|韩国01解锁
-      - 标准|韩国02解锁
-      - 标准|韩国03解锁
-      - 标准|韩国04解锁
-      - 标准|台湾01解锁
-      - 标准|台湾02解锁
-      - 标准|台湾03解锁
-      - 标准|台湾04解锁
-      - 标准|新加坡01解锁
-      - 标准|新加坡02解锁
-      - 标准|新加坡03解锁
-      - 标准|新加坡04解锁
 rules:
   - MATCH,PROXY

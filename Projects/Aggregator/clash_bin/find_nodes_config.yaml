@@ -4,35 +4,37 @@ allow-lan: false
 mode: rule
 log-level: silent
 proxies:
-  - id: p_1770558159136_10_bgczd
-    name: (2x)IEPL专线 香港2
-    type: vmess
-    server: dzgz.tcity8.monster
-    port: 35212
-    uuid: e1a98d14-8827-426f-893c-527301073e04
-    alterId: 0
-    cipher: auto
-    network: tcp
-    tls: false
+  - id: p_1771492915342_128_xh582
+    name: 🇺🇸 机场推荐:dafei.de 美国 28
+    type: vless
+    server: 142.248.80.157
+    port: 443
+    uuid: 4aff5de5-83dc-43c9-a33e-10e6fdb90ed2
+    tls: true
     skip-cert-verify: true
-    servername: ''
+    network: tcp
+    servername: apple.com
+    flow: xtls-rprx-vision
     raw: >-
-      vmess://eyJ2IjoiMiIsInBzIjoiKDJ4KUlFUExcdTRlMTNcdTdlYmYgXHU5OTk5XHU2ZTJmMiIsImFkZCI6ImR6Z3oudGNpdHk4Lm1vbnN0ZXIiLCJwb3J0IjoiMzUyMTIiLCJpZCI6ImUxYTk4ZDE0LTg4MjctNDI2Zi04OTNjLTUyNzMwMTA3M2UwNCIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIn0=
-    _sourceUrl: >-
-      http://8.209.231.35:6868/api/v1/client/subscribe?token=edd4aeb86315b8c9df3bc52dc9afa98c
-    _clashName: (2x)IEPL专线 香港2
-    latency: 168
+      vless://4aff5de5-83dc-43c9-a33e-10e6fdb90ed2@142.248.80.157:443?security=reality&type=tcp&sni=apple.com&fp=chrome&flow=xtls-rprx-vision&pbk=Wvt6tuMcFY9rWF2BsdAD4DXgLAoxQJxHWlao2BPR23Y&encryption=none#%F0%9F%87%BA%F0%9F%87%B8%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E7%BE%8E%E5%9B%BD%2028
+    reality-opts:
+      public-key: Wvt6tuMcFY9rWF2BsdAD4DXgLAoxQJxHWlao2BPR23Y
+    client-fingerprint: chrome
+    _sourceUrl: https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray
+    _clashName: 🇺🇸 机场推荐:dafei.de 美国 28
+    latency: 711
     purityScore: 100
     purityInfo:
       score: 100
-      ip: 182.245.77.110
+      ip: 116.54.77.158
       isp: Chinanet
       country: CN
       hosting: false
+    localLatency: 733
 proxy-groups:
   - name: test
     type: select
     proxies:
-      - (2x)IEPL专线 香港2
+      - 🇺🇸 机场推荐:dafei.de 美国 28
 rules:
   - MATCH,test

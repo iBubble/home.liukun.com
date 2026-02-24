@@ -1,5002 +1,1322 @@
 [
   {
-    "timestamp": "2026-02-18T17:09:33.064Z",
+    "timestamp": "2026-02-24T19:04:19.380Z",
+    "level": "info",
+    "message": "========== 开始节点验证 (第 1 轮) =========="
+  },
+  {
+    "timestamp": "2026-02-24T19:04:19.398Z",
+    "level": "info",
+    "message": "总节点数: 124 (已验证: 20, 新节点: 104)"
+  },
+  {
+    "timestamp": "2026-02-24T19:04:19.399Z",
+    "level": "info",
+    "message": "[1/125] 测试: 🇭🇰 香港S01"
+  },
+  {
+    "timestamp": "2026-02-24T19:04:25.100Z",
     "level": "success",
-    "message": "  ✅ excellent (654ms)"
+    "message": "  ✅ excellent (123ms)"
   },
   {
-    "timestamp": "2026-02-18T17:09:34.066Z",
+    "timestamp": "2026-02-24T19:04:26.101Z",
     "level": "info",
-    "message": "[335/298] 测试: 试用节点-日本"
+    "message": "[2/125] 测试: 🇯🇵日本高速02|转发优化"
   },
   {
-    "timestamp": "2026-02-18T17:09:44.415Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 6 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:09:45.418Z",
-    "level": "info",
-    "message": "[336/298] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:10:04.254Z",
+    "timestamp": "2026-02-24T19:04:32.039Z",
     "level": "success",
-    "message": "  ✅ basic (8464ms)"
+    "message": "  ✅ excellent (268ms)"
   },
   {
-    "timestamp": "2026-02-18T17:10:05.257Z",
+    "timestamp": "2026-02-24T19:04:33.041Z",
     "level": "info",
-    "message": "[337/298] 测试: 🇫🇷 机场推荐:dafei.de 法国 10"
+    "message": "[3/125] 测试: 剩余流量：2 GB"
   },
   {
-    "timestamp": "2026-02-18T17:10:20.179Z",
+    "timestamp": "2026-02-24T19:04:38.937Z",
     "level": "success",
-    "message": "  ✅ basic (3502ms)"
+    "message": "  ✅ excellent (137ms)"
   },
   {
-    "timestamp": "2026-02-18T17:10:21.183Z",
+    "timestamp": "2026-02-24T19:04:39.939Z",
     "level": "info",
-    "message": "[338/298] 测试: 🇭🇰 机场推荐:dafei.de 香港 33"
+    "message": "[4/125] 测试: 🇯🇵日本东京-有限流量"
   },
   {
-    "timestamp": "2026-02-18T17:10:31.090Z",
+    "timestamp": "2026-02-24T19:04:45.812Z",
     "level": "success",
-    "message": "  ✅ good (1129ms)"
+    "message": "  ✅ excellent (245ms)"
   },
   {
-    "timestamp": "2026-02-18T17:10:32.093Z",
+    "timestamp": "2026-02-24T19:04:46.814Z",
     "level": "info",
-    "message": "[339/298] 测试: 试用节点-台湾"
+    "message": "[5/125] 测试: 🇭🇰香港高速02|转发优化"
   },
   {
-    "timestamp": "2026-02-18T17:10:41.637Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
+    "timestamp": "2026-02-24T19:04:53.117Z",
+    "level": "success",
+    "message": "  ✅ excellent (406ms)"
   },
   {
-    "timestamp": "2026-02-18T17:10:42.642Z",
+    "timestamp": "2026-02-24T19:04:54.119Z",
     "level": "info",
-    "message": "[340/298] 测试: 试用节点-日本"
+    "message": "[6/125] 测试: rs1 [vwidf] 3"
   },
   {
-    "timestamp": "2026-02-18T17:10:52.698Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 7 次,已标记为不可用)"
+    "timestamp": "2026-02-24T19:05:00.715Z",
+    "level": "success",
+    "message": "  ✅ excellent (374ms)"
   },
   {
-    "timestamp": "2026-02-18T17:10:52.703Z",
+    "timestamp": "2026-02-24T19:05:01.717Z",
     "level": "info",
-    "message": "进度: 340/356, 有效: 116"
+    "message": "[7/125] 测试: 🇭🇰香港高速01|转发优化"
   },
   {
-    "timestamp": "2026-02-18T17:10:53.706Z",
+    "timestamp": "2026-02-24T19:05:10.161Z",
+    "level": "success",
+    "message": "  ✅ basic (2574ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:11.162Z",
     "level": "info",
-    "message": "[341/298] 测试: 剩余流量：2 GB"
+    "message": "[8/125] 测试: 🇸🇬新加坡高速02|转发优化"
   },
   {
-    "timestamp": "2026-02-18T17:11:03.260Z",
+    "timestamp": "2026-02-24T19:05:17.567Z",
+    "level": "success",
+    "message": "  ✅ excellent (441ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:18.567Z",
+    "level": "info",
+    "message": "[9/125] 测试: 剩余流量：29.99+GB"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:24.962Z",
+    "level": "success",
+    "message": "  ✅ excellent (441ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:25.964Z",
+    "level": "info",
+    "message": "[10/125] 测试: rs1 [f5xvw] 2"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:32.796Z",
+    "level": "success",
+    "message": "  ✅ excellent (559ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:32.802Z",
+    "level": "info",
+    "message": "进度: 10/124, 有效: 10"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:33.802Z",
+    "level": "info",
+    "message": "[11/125] 测试: 🇸🇬新加坡高速06|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:40.211Z",
+    "level": "success",
+    "message": "  ✅ excellent (441ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:41.213Z",
+    "level": "info",
+    "message": "[12/125] 测试: 🇸🇬新加坡高速03|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:47.633Z",
+    "level": "success",
+    "message": "  ✅ excellent (446ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:48.635Z",
+    "level": "info",
+    "message": "[13/125] 测试: 🇸🇬新加坡高速05|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:05:54.210Z",
     "level": "warning",
     "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
   },
   {
-    "timestamp": "2026-02-18T17:11:03.263Z",
+    "timestamp": "2026-02-24T19:05:55.212Z",
     "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
+    "message": "[14/125] 测试: 🇰🇷 机场推荐:dafei.de 韩国 02"
   },
   {
-    "timestamp": "2026-02-18T17:11:04.265Z",
-    "level": "info",
-    "message": "[342/298] 测试: 试用节点-台湾"
+    "timestamp": "2026-02-24T19:06:08.478Z",
+    "level": "success",
+    "message": "  ✅ excellent (736ms)"
   },
   {
-    "timestamp": "2026-02-18T17:11:13.855Z",
+    "timestamp": "2026-02-24T19:06:09.480Z",
+    "level": "info",
+    "message": "[15/125] 测试: 🇺🇸美国圣何塞-1"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:15.990Z",
+    "level": "success",
+    "message": "  ✅ excellent (550ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:16.991Z",
+    "level": "info",
+    "message": "[16/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 10"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:24.251Z",
+    "level": "success",
+    "message": "  ✅ excellent (575ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:25.253Z",
+    "level": "info",
+    "message": "[17/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 11"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:32.541Z",
+    "level": "success",
+    "message": "  ✅ excellent (542ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:33.542Z",
+    "level": "info",
+    "message": "[18/125] 测试: 🇰🇷 机场推荐:dafei.de 韩国 07"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:40.748Z",
+    "level": "success",
+    "message": "  ✅ good (879ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:41.751Z",
+    "level": "info",
+    "message": "[19/125] 测试: 🇲🇴澳门高速01|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:48.139Z",
+    "level": "success",
+    "message": "  ✅ excellent (435ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:06:49.140Z",
+    "level": "info",
+    "message": "[20/125] 测试: 台湾省台中市+中华电信"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:04.952Z",
+    "level": "success",
+    "message": "  ✅ basic (4977ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:04.954Z",
+    "level": "info",
+    "message": "进度: 20/124, 有效: 19"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:05.955Z",
+    "level": "info",
+    "message": "[21/125] 测试: 试用节点-台湾"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:11.700Z",
+    "level": "success",
+    "message": "  ✅ excellent (167ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:12.702Z",
+    "level": "info",
+    "message": "[22/125] 测试: SS"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:18.957Z",
+    "level": "success",
+    "message": "  ✅ excellent (401ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:19.959Z",
+    "level": "info",
+    "message": "[23/125] 测试: 🇸🇬新加坡高速04|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:07:30.099Z",
     "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 6 次,已标记为不可用)"
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
   },
   {
-    "timestamp": "2026-02-18T17:11:14.857Z",
+    "timestamp": "2026-02-24T19:07:31.100Z",
     "level": "info",
-    "message": "[343/298] 测试: 试用节点-日本"
+    "message": "[24/125] 测试: SS"
   },
   {
-    "timestamp": "2026-02-18T17:11:24.589Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 8 次,已标记为不可用)"
+    "timestamp": "2026-02-24T19:07:37.710Z",
+    "level": "success",
+    "message": "  ✅ excellent (502ms)"
   },
   {
-    "timestamp": "2026-02-18T17:11:25.591Z",
+    "timestamp": "2026-02-24T19:07:38.712Z",
     "level": "info",
-    "message": "[344/298] 测试: 试用节点-台湾"
+    "message": "[25/125] 测试: US-美国"
   },
   {
-    "timestamp": "2026-02-18T17:11:35.099Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 7 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:11:36.101Z",
-    "level": "info",
-    "message": "[345/298] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:11:45.641Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:11:45.644Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:11:46.646Z",
-    "level": "info",
-    "message": "[346/298] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:11:56.157Z",
+    "timestamp": "2026-02-24T19:07:48.844Z",
     "level": "warning",
     "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
   },
   {
-    "timestamp": "2026-02-18T17:11:57.162Z",
+    "timestamp": "2026-02-24T19:07:49.845Z",
     "level": "info",
-    "message": "[347/298] 测试: 中转美国1(动态) x1"
+    "message": "[26/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 04"
   },
   {
-    "timestamp": "2026-02-18T17:12:05.608Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 557 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:06.611Z",
-    "level": "info",
-    "message": "[348/298] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:16.401Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 57 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:17.403Z",
-    "level": "info",
-    "message": "[349/298] 测试: 冰岛 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:25.948Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 757 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:26.951Z",
-    "level": "info",
-    "message": "[350/298] 测试: 韩国 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:35.393Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 544 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:35.398Z",
-    "level": "info",
-    "message": "进度: 350/356, 有效: 118"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:36.402Z",
-    "level": "info",
-    "message": "[351/298] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:50.132Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 75 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:12:51.134Z",
-    "level": "info",
-    "message": "[352/298] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:00.743Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:01.746Z",
-    "level": "info",
-    "message": "[353/298] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:12.460Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 74 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:13.463Z",
-    "level": "info",
-    "message": "[354/298] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:24.552Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 56 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:25.555Z",
-    "level": "info",
-    "message": "[355/298] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:35.317Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 9 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:36.320Z",
-    "level": "info",
-    "message": "[356/298] 测试: 试用节点-新加坡"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:45.831Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.840Z",
-    "level": "success",
-    "message": "已更新种子节点: 19 个"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.842Z",
-    "level": "success",
-    "message": "========== 验证完成 =========="
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.844Z",
-    "level": "success",
-    "message": "总测试: 356, 有效: 118 (33%)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.845Z",
-    "level": "success",
-    "message": "excellent: 19, good: 40, basic: 59"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.863Z",
-    "level": "info",
-    "message": "🔄 触发Aggregator.yaml更新..."
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.866Z",
-    "level": "info",
-    "message": "⏳ 5秒后开始下一轮验证..."
-  },
-  {
-    "timestamp": "2026-02-18T17:13:46.889Z",
-    "level": "success",
-    "message": "✅ Aggregator.yaml已更新"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:51.869Z",
-    "level": "info",
-    "message": "========== 开始节点验证 (第 175 轮) =========="
-  },
-  {
-    "timestamp": "2026-02-18T17:13:51.874Z",
-    "level": "info",
-    "message": "总节点数: 204 (已验证: 118, 新节点: 86)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:51.877Z",
-    "level": "info",
-    "message": "[1/269] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:57.544Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:13:58.547Z",
-    "level": "info",
-    "message": "[2/269] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:04.041Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:05.045Z",
-    "level": "info",
-    "message": "[3/269] 测试: 🇬🇧 机场推荐:dafei.de 英国 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:40.195Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:40.198Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:41.200Z",
-    "level": "info",
-    "message": "[4/269] 测试: 英国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:47.346Z",
-    "level": "success",
-    "message": "  ✅ excellent (392ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:48.349Z",
-    "level": "info",
-    "message": "[5/269] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:55.584Z",
-    "level": "success",
-    "message": "  ✅ good (927ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:14:56.587Z",
-    "level": "info",
-    "message": "[6/269] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:06.155Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:06.158Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:07.161Z",
-    "level": "info",
-    "message": "[7/269] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:17.181Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:17.184Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:18.187Z",
-    "level": "info",
-    "message": "[8/269] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:27.725Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:28.729Z",
-    "level": "info",
-    "message": "[9/269] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:38.278Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:39.282Z",
-    "level": "info",
-    "message": "[10/269] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:45.834Z",
-    "level": "success",
-    "message": "  ✅ excellent (368ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:45.838Z",
-    "level": "info",
-    "message": "进度: 10/204, 有效: 6"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:46.842Z",
-    "level": "info",
-    "message": "[11/269] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:56.328Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:56.330Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:15:57.332Z",
-    "level": "info",
-    "message": "[12/269] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:06.900Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:06.904Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:07.907Z",
-    "level": "info",
-    "message": "[13/269] 测试: 爱尔兰+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:15.839Z",
-    "level": "success",
-    "message": "  ✅ good (1702ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:16.842Z",
-    "level": "info",
-    "message": "[14/269] 测试: 新加坡 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:25.840Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:26.842Z",
-    "level": "info",
-    "message": "[15/269] 测试: 新加坡 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:33.323Z",
-    "level": "success",
-    "message": "  ✅ excellent (527ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:34.326Z",
-    "level": "info",
-    "message": "[16/269] 测试: 🇰🇷 机场推荐:dafei.de 韩国 10"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:45.714Z",
-    "level": "success",
-    "message": "  ✅ basic (3615ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:46.715Z",
-    "level": "info",
-    "message": "[17/269] 测试: 🇯🇵 机场推荐:dafei.de 日本 07"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:53.546Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:16:54.549Z",
-    "level": "info",
-    "message": "[18/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 53"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:02.602Z",
-    "level": "success",
-    "message": "  ✅ good (1775ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:03.606Z",
-    "level": "info",
-    "message": "[19/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 36"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:11.037Z",
-    "level": "success",
-    "message": "  ✅ good (1143ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:12.042Z",
-    "level": "info",
-    "message": "[20/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 54"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:21.755Z",
-    "level": "success",
-    "message": "  ✅ basic (3484ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:21.758Z",
-    "level": "info",
-    "message": "进度: 20/204, 有效: 14"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:22.761Z",
-    "level": "info",
-    "message": "[21/269] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:32.895Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:33.898Z",
-    "level": "info",
-    "message": "[22/269] 测试: 🇵🇱 机场推荐:dafei.de 波兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:41.508Z",
-    "level": "success",
-    "message": "  ✅ good (890ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:42.512Z",
-    "level": "info",
-    "message": "[23/269] 测试: 🇵🇱 机场推荐:dafei.de 波兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:51.132Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:51.135Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:52.139Z",
-    "level": "info",
-    "message": "[24/269] 测试: 🇫🇷 机场推荐:dafei.de 法国 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:58.105Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:17:59.108Z",
-    "level": "info",
-    "message": "[25/269] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:12.220Z",
-    "level": "success",
-    "message": "  ✅ basic (3090ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:13.224Z",
-    "level": "info",
-    "message": "[26/269] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:22.203Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:22.206Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:23.209Z",
-    "level": "info",
-    "message": "[27/269] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:29.245Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:29.248Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:30.251Z",
-    "level": "info",
-    "message": "[28/269] 测试: 🇫🇷 机场推荐:dafei.de 法国 02"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:38.198Z",
-    "level": "success",
-    "message": "  ✅ good (1744ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:18:39.202Z",
-    "level": "info",
-    "message": "[29/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 19"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:14.339Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:15.343Z",
-    "level": "info",
-    "message": "[30/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 04"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:23.060Z",
-    "level": "success",
-    "message": "  ✅ good (924ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:23.065Z",
-    "level": "info",
-    "message": "进度: 30/204, 有效: 21"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:24.067Z",
-    "level": "info",
-    "message": "[31/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 04"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:30.397Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:30.400Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:19:31.402Z",
-    "level": "info",
-    "message": "[32/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 14"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:02.302Z",
-    "level": "success",
-    "message": "  ✅ basic (15738ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:03.305Z",
-    "level": "info",
-    "message": "[33/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 15"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:11.824Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:12.827Z",
-    "level": "info",
-    "message": "[34/269] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:22.158Z",
-    "level": "success",
-    "message": "  ✅ good (1501ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:23.160Z",
-    "level": "info",
-    "message": "[35/269] 测试: 🇦🇲 机场推荐:dafei.de 亚美尼亚 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:32.039Z",
-    "level": "success",
-    "message": "  ✅ good (910ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:33.042Z",
-    "level": "info",
-    "message": "[36/269] 测试: 美国 CloudFlare节点"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:49.617Z",
-    "level": "success",
-    "message": "  ✅ good (1404ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:20:50.621Z",
-    "level": "info",
-    "message": "[37/269] 测试: 美国 CloudFlare节点"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:00.762Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:00.764Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:01.767Z",
-    "level": "info",
-    "message": "[38/269] 测试: 美国 CloudFlare节点"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:11.901Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:11.903Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:12.906Z",
-    "level": "info",
-    "message": "[39/269] 测试: 🇨🇳 机场推荐:dafei.de 台湾 21"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:21.332Z",
-    "level": "success",
-    "message": "  ✅ good (1255ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:22.334Z",
-    "level": "info",
-    "message": "[40/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 33"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:32.631Z",
-    "level": "success",
-    "message": "  ✅ excellent (680ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:32.634Z",
-    "level": "info",
-    "message": "进度: 40/204, 有效: 30"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:33.637Z",
-    "level": "info",
-    "message": "[41/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 33"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:41.661Z",
-    "level": "success",
-    "message": "  ✅ excellent (779ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:42.664Z",
-    "level": "info",
-    "message": "[42/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 47"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:52.825Z",
-    "level": "success",
-    "message": "  ✅ basic (2737ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:21:53.828Z",
-    "level": "info",
-    "message": "[43/269] 测试: 🇰🇷 机场推荐:dafei.de 韩国 04"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:03.324Z",
-    "level": "success",
-    "message": "  ✅ good (1088ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:04.326Z",
-    "level": "info",
-    "message": "[44/269] 测试: JP-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:14.461Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:15.464Z",
-    "level": "info",
-    "message": "[45/269] 测试: JP-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:25.600Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:26.602Z",
-    "level": "info",
-    "message": "[46/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:42.687Z",
-    "level": "success",
-    "message": "  ✅ good (915ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:43.690Z",
-    "level": "info",
-    "message": "[47/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 29"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:51.355Z",
-    "level": "success",
-    "message": "  ✅ excellent (717ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:22:52.358Z",
-    "level": "info",
-    "message": "[48/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 07"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:02.495Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:03.497Z",
-    "level": "info",
-    "message": "[49/269] 测试: 🇰🇷 机场推荐:dafei.de 韩国 13"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:12.531Z",
-    "level": "success",
-    "message": "  ✅ good (1545ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:13.534Z",
-    "level": "info",
-    "message": "[50/269] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:23.847Z",
-    "level": "success",
-    "message": "  ✅ good (1475ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:23.851Z",
-    "level": "info",
-    "message": "进度: 50/204, 有效: 37"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:24.855Z",
-    "level": "info",
-    "message": "[51/269] 测试: 美国+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:31.498Z",
-    "level": "success",
-    "message": "  ✅ excellent (576ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:32.502Z",
-    "level": "info",
-    "message": "[52/269] 测试: 🇯🇵 机场推荐:dafei.de 日本 24"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:44.984Z",
-    "level": "success",
-    "message": "  ✅ basic (3701ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:45.988Z",
-    "level": "info",
-    "message": "[53/269] 测试: 🇨🇳 机场推荐:dafei.de 台湾 16"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:52.963Z",
-    "level": "success",
-    "message": "  ✅ excellent (735ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:23:53.967Z",
-    "level": "info",
-    "message": "[54/269] 测试: 🇰🇷 机场推荐:dafei.de 韩国 11"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:03.841Z",
-    "level": "success",
-    "message": "  ✅ good (1950ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:04.843Z",
-    "level": "info",
-    "message": "[55/269] 测试: 欧盟+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:15.108Z",
-    "level": "success",
-    "message": "  ✅ basic (2930ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:16.111Z",
-    "level": "info",
-    "message": "[56/269] 测试: 🇦🇹 机场推荐:dafei.de 奥地利 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:23.077Z",
-    "level": "success",
-    "message": "  ✅ excellent (728ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:24.081Z",
-    "level": "info",
-    "message": "[57/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 19"
-  },
-  {
-    "timestamp": "2026-02-18T17:24:59.238Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:00.241Z",
-    "level": "info",
-    "message": "[58/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 30"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:11.478Z",
-    "level": "success",
-    "message": "  ✅ good (1097ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:12.482Z",
-    "level": "info",
-    "message": "[59/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 11"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:19.985Z",
-    "level": "success",
-    "message": "  ✅ good (943ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:20.988Z",
-    "level": "info",
-    "message": "[60/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:37.109Z",
-    "level": "success",
-    "message": "  ✅ good (954ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:37.114Z",
-    "level": "info",
-    "message": "进度: 60/204, 有效: 46"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:38.117Z",
-    "level": "info",
-    "message": "[61/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:44.851Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:44.854Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:45.856Z",
-    "level": "info",
-    "message": "[62/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:56.036Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:56.039Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:25:57.041Z",
-    "level": "info",
-    "message": "[63/269] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:08.765Z",
-    "level": "success",
-    "message": "  ✅ basic (3888ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:09.769Z",
-    "level": "info",
-    "message": "[64/269] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:20.961Z",
-    "level": "success",
-    "message": "  ✅ basic (3307ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:21.964Z",
-    "level": "info",
-    "message": "[65/269] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:31.499Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:32.502Z",
-    "level": "info",
-    "message": "[66/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 27"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:45.577Z",
-    "level": "success",
-    "message": "  ✅ basic (2938ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:46.580Z",
-    "level": "info",
-    "message": "[67/269] 测试: 🇦🇪 机场推荐:dafei.de 阿联酋 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:55.323Z",
-    "level": "success",
-    "message": "  ✅ good (870ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:26:56.326Z",
-    "level": "info",
-    "message": "[68/269] 测试: 试用节点-新加坡"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:08.660Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:09.664Z",
-    "level": "info",
-    "message": "[69/269] 测试: 试用节点-新加坡"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:18.116Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:19.118Z",
-    "level": "info",
-    "message": "[70/269] 测试: 试用节点-新加坡"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:30.717Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 6 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:30.722Z",
-    "level": "info",
-    "message": "进度: 70/204, 有效: 52"
-  },
-  {
-    "timestamp": "2026-02-18T17:27:31.723Z",
-    "level": "info",
-    "message": "[71/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 18"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:06.871Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:07.875Z",
-    "level": "info",
-    "message": "[72/269] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:24.778Z",
-    "level": "success",
-    "message": "  ✅ basic (5663ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:25.783Z",
-    "level": "info",
-    "message": "[73/269] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:32.188Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:32.192Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:33.194Z",
-    "level": "info",
-    "message": "[74/269] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:40.972Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:40.975Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:41.977Z",
-    "level": "info",
-    "message": "[75/269] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:28:59.940Z",
-    "level": "success",
-    "message": "  ✅ basic (8646ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:00.942Z",
-    "level": "info",
-    "message": "[76/269] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:07.238Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:07.241Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:08.244Z",
-    "level": "info",
-    "message": "[77/269] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:27.905Z",
-    "level": "success",
-    "message": "  ✅ basic (6591ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:28.909Z",
-    "level": "info",
-    "message": "[78/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 30"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:46.200Z",
-    "level": "success",
-    "message": "  ✅ basic (2128ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:47.202Z",
-    "level": "info",
-    "message": "[79/269] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:57.052Z",
-    "level": "success",
-    "message": "  ✅ good (1263ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:29:58.056Z",
-    "level": "info",
-    "message": "[80/269] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:07.832Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 10 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:07.838Z",
-    "level": "info",
-    "message": "进度: 80/204, 有效: 60"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:08.842Z",
-    "level": "info",
-    "message": "[81/269] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:18.932Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 11 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:19.935Z",
-    "level": "info",
-    "message": "[82/269] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:30.048Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 12 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:31.051Z",
-    "level": "info",
-    "message": "[83/269] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:41.635Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 13 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:42.639Z",
-    "level": "info",
-    "message": "[84/269] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:54.546Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 14 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:30:55.549Z",
-    "level": "info",
-    "message": "[85/269] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:05.343Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 15 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:06.346Z",
-    "level": "info",
-    "message": "[86/269] 测试: JP-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:16.481Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:17.484Z",
-    "level": "info",
-    "message": "[87/269] 测试: 🇫🇷 机场推荐:dafei.de 法国 06"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:27.622Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:28.624Z",
-    "level": "info",
-    "message": "[88/269] 测试: 🇫🇷 机场推荐:dafei.de 法国 10"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:38.761Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:39.763Z",
-    "level": "info",
-    "message": "[89/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 09"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:49.903Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:31:50.907Z",
-    "level": "info",
-    "message": "[90/269] 测试: 美国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:01.045Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:01.049Z",
-    "level": "info",
-    "message": "进度: 90/204, 有效: 60"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:02.054Z",
-    "level": "info",
-    "message": "[91/269] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:28.675Z",
-    "level": "success",
-    "message": "  ✅ basic (7893ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:29.679Z",
-    "level": "info",
-    "message": "[92/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 48"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:50.437Z",
-    "level": "success",
-    "message": "  ✅ basic (4405ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:32:51.441Z",
-    "level": "info",
-    "message": "[93/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 15"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:09.603Z",
-    "level": "success",
-    "message": "  ✅ basic (6485ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:10.607Z",
-    "level": "info",
-    "message": "[94/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 60"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:24.015Z",
-    "level": "success",
-    "message": "  ✅ basic (4873ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:25.018Z",
-    "level": "info",
-    "message": "[95/269] 测试: JP-日本"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:39.184Z",
-    "level": "success",
-    "message": "  ✅ good (1933ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:40.189Z",
-    "level": "info",
-    "message": "[96/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 50"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:55.693Z",
-    "level": "success",
-    "message": "  ✅ basic (2968ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:33:56.696Z",
-    "level": "info",
-    "message": "[97/269] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:34:06.120Z",
-    "level": "success",
-    "message": "  ✅ good (1830ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:34:07.123Z",
-    "level": "info",
-    "message": "[98/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 46"
-  },
-  {
-    "timestamp": "2026-02-18T17:34:21.967Z",
-    "level": "success",
-    "message": "  ✅ basic (4723ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:34:22.970Z",
-    "level": "info",
-    "message": "[99/269] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:34:43.528Z",
-    "level": "success",
-    "message": "  ✅ basic (4554ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:34:44.531Z",
-    "level": "info",
-    "message": "[100/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 07"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:06.622Z",
-    "level": "success",
-    "message": "  ✅ basic (5462ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:06.627Z",
-    "level": "info",
-    "message": "进度: 100/204, 有效: 70"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:07.630Z",
-    "level": "info",
-    "message": "[101/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 37"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:24.891Z",
-    "level": "success",
-    "message": "  ✅ basic (5831ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:25.894Z",
-    "level": "info",
-    "message": "[102/269] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:37.031Z",
-    "level": "success",
-    "message": "  ✅ basic (2666ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:38.034Z",
-    "level": "info",
-    "message": "[103/269] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:47.153Z",
-    "level": "success",
-    "message": "  ✅ good (1686ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:35:48.156Z",
-    "level": "info",
-    "message": "[104/269] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:36:05.494Z",
-    "level": "success",
-    "message": "  ✅ basic (6017ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:36:06.498Z",
-    "level": "info",
-    "message": "[105/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 21"
-  },
-  {
-    "timestamp": "2026-02-18T17:36:16.569Z",
-    "level": "success",
-    "message": "  ✅ basic (3340ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:36:17.573Z",
-    "level": "info",
-    "message": "[106/269] 测试: 🇬🇧 机场推荐:dafei.de 英国 08"
-  },
-  {
-    "timestamp": "2026-02-18T17:36:38.090Z",
-    "level": "success",
-    "message": "  ✅ basic (9861ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:36:39.094Z",
-    "level": "info",
-    "message": "[107/269] 测试: 中国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:10.610Z",
-    "level": "success",
-    "message": "  ✅ basic (6880ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:11.613Z",
-    "level": "info",
-    "message": "[108/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 16"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:31.375Z",
-    "level": "success",
-    "message": "  ✅ basic (6484ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:32.378Z",
-    "level": "info",
-    "message": "[109/269] 测试: 🇨🇴 机场推荐:dafei.de 哥伦比亚 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:42.517Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:43.521Z",
-    "level": "info",
-    "message": "[110/269] 测试: 🇨🇳 机场推荐:dafei.de 台湾 29"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:59.087Z",
-    "level": "success",
-    "message": "  ✅ basic (3883ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:37:59.092Z",
-    "level": "info",
-    "message": "进度: 110/204, 有效: 79"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:00.096Z",
-    "level": "info",
-    "message": "[111/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 13"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:16.120Z",
-    "level": "success",
-    "message": "  ✅ basic (3537ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:17.123Z",
-    "level": "info",
-    "message": "[112/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 05"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:33.498Z",
-    "level": "success",
-    "message": "  ✅ good (1200ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:34.501Z",
-    "level": "info",
-    "message": "[113/269] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:48.657Z",
-    "level": "success",
-    "message": "  ✅ basic (5121ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:38:49.660Z",
-    "level": "info",
-    "message": "[114/269] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:39:07.041Z",
-    "level": "success",
-    "message": "  ✅ basic (8937ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:39:08.043Z",
-    "level": "info",
-    "message": "[115/269] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:39:22.186Z",
-    "level": "success",
-    "message": "  ✅ basic (4868ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:39:23.189Z",
-    "level": "info",
-    "message": "[116/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 15"
-  },
-  {
-    "timestamp": "2026-02-18T17:39:58.950Z",
-    "level": "success",
-    "message": "  ✅ basic (29080ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:39:59.953Z",
-    "level": "info",
-    "message": "[117/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 06"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:08.553Z",
-    "level": "success",
-    "message": "  ✅ basic (2283ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:09.556Z",
-    "level": "info",
-    "message": "[118/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 23"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:19.390Z",
-    "level": "success",
-    "message": "  ✅ good (1795ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:20.394Z",
-    "level": "info",
-    "message": "[119/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:31.231Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 58 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:32.233Z",
-    "level": "info",
-    "message": "[120/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:42.064Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 59 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:42.069Z",
-    "level": "info",
-    "message": "进度: 120/204, 有效: 87"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:43.071Z",
-    "level": "info",
-    "message": "[121/269] 测试: 🇺🇦 机场推荐:dafei.de 乌克兰 02"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:49.204Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 157 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:50.207Z",
-    "level": "info",
-    "message": "[122/269] 测试: 🇬🇧 机场推荐:dafei.de 英国 02"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:55.895Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 62 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:40:56.898Z",
-    "level": "info",
-    "message": "[123/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:06.610Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 60 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:07.613Z",
-    "level": "info",
-    "message": "[124/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:17.911Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 61 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:18.914Z",
-    "level": "info",
-    "message": "[125/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:24.533Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 62 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:25.536Z",
-    "level": "info",
-    "message": "[126/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:35.622Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 75 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:36.625Z",
-    "level": "info",
-    "message": "[127/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:44.868Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 63 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:45.871Z",
-    "level": "info",
-    "message": "[128/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:55.642Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 64 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:41:56.645Z",
-    "level": "info",
-    "message": "[129/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:07.066Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 76 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:08.071Z",
-    "level": "info",
-    "message": "[130/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:18.002Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 57 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:18.007Z",
-    "level": "info",
-    "message": "进度: 130/204, 有效: 87"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:19.009Z",
-    "level": "info",
-    "message": "[131/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:29.362Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 77 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:30.365Z",
-    "level": "info",
-    "message": "[132/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:40.156Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 65 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:41.158Z",
-    "level": "info",
-    "message": "[133/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:51.129Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 58 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:42:52.133Z",
-    "level": "info",
-    "message": "[134/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:02.451Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 78 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:03.454Z",
-    "level": "info",
-    "message": "[135/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:13.329Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 59 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:14.332Z",
-    "level": "info",
-    "message": "[136/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 11"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:24.466Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:25.469Z",
-    "level": "info",
-    "message": "[137/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:35.345Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 60 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:36.347Z",
-    "level": "info",
-    "message": "[138/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:46.702Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 61 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:47.705Z",
-    "level": "info",
-    "message": "[139/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:57.635Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 62 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:43:58.639Z",
-    "level": "info",
-    "message": "[140/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 09"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:08.775Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 6 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:08.780Z",
-    "level": "info",
-    "message": "进度: 140/204, 有效: 87"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:09.783Z",
-    "level": "info",
-    "message": "[141/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:15.330Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 63 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:16.336Z",
-    "level": "info",
-    "message": "[142/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:26.801Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 64 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:27.804Z",
-    "level": "info",
-    "message": "[143/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:37.825Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 79 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:44:38.830Z",
-    "level": "info",
-    "message": "[144/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:13.993Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:14.996Z",
-    "level": "info",
-    "message": "[145/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:24.857Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 66 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:25.864Z",
-    "level": "info",
-    "message": "[146/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:36.218Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 80 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:37.221Z",
-    "level": "info",
-    "message": "[147/269] 测试: 🇯🇵 机场推荐:dafei.de 日本 17"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:47.364Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 26 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:48.367Z",
-    "level": "info",
-    "message": "[148/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 25"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:55.354Z",
-    "level": "success",
-    "message": "  ✅ excellent (771ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:45:56.358Z",
-    "level": "info",
-    "message": "[149/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:06.355Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 65 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:07.358Z",
-    "level": "info",
-    "message": "[150/269] 测试: 冰岛 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:14.623Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 758 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:14.630Z",
-    "level": "info",
-    "message": "进度: 150/204, 有效: 88"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:15.633Z",
-    "level": "info",
-    "message": "[151/269] 测试: 中转美国1(动态) x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:24.106Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 558 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:25.109Z",
-    "level": "info",
-    "message": "[152/269] 测试: 🇱🇹 机场推荐:dafei.de 立陶宛 02"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:35.246Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:35.795Z",
-    "level": "warning",
-    "message": "验证任务已在运行中,跳过"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:36.248Z",
-    "level": "info",
-    "message": "[153/269] 测试: 中转美国1(动态) x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:44.778Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 559 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:46:45.782Z",
-    "level": "info",
-    "message": "[154/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 09"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:02.053Z",
-    "level": "success",
-    "message": "  ✅ basic (7397ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:03.056Z",
-    "level": "info",
-    "message": "[155/269] 测试: 中转美国1(动态) x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:12.325Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 560 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:13.328Z",
-    "level": "info",
-    "message": "[156/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:23.386Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 66 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:24.389Z",
-    "level": "info",
-    "message": "[157/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 04"
-  },
-  {
-    "timestamp": "2026-02-18T17:47:59.532Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:00.536Z",
-    "level": "info",
-    "message": "[158/269] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:10.552Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 67 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:11.556Z",
-    "level": "info",
-    "message": "[159/269] 测试: 冰岛 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:20.084Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 759 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:21.087Z",
-    "level": "info",
-    "message": "[160/269] 测试: 中转美国1(动态) x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:30.015Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 561 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:30.020Z",
-    "level": "info",
-    "message": "进度: 160/204, 有效: 89"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:31.067Z",
-    "level": "info",
-    "message": "[161/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:41.543Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 76 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:42.546Z",
-    "level": "info",
-    "message": "[162/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 28"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:52.681Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:48:53.683Z",
-    "level": "info",
-    "message": "[163/269] 测试: 冰岛 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:49:02.165Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 760 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:49:03.168Z",
-    "level": "info",
-    "message": "[164/269] 测试: 🇱🇹 机场推荐:dafei.de 立陶宛 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:49:38.328Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 14 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:49:39.331Z",
-    "level": "info",
-    "message": "[165/269] 测试: 冰岛 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:49:47.804Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 761 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:49:48.806Z",
-    "level": "info",
-    "message": "[166/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:00.894Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 77 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:01.898Z",
-    "level": "info",
-    "message": "[167/269] 测试: 🇭🇺 机场推荐:dafei.de 匈牙利 03"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:08.309Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 78 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:09.313Z",
-    "level": "info",
-    "message": "[168/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 08"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:15.280Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 10 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:16.283Z",
-    "level": "info",
-    "message": "[169/269] 测试: 🇵🇱 机场推荐:dafei.de 波兰 02"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:24.259Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 65 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:25.262Z",
-    "level": "info",
-    "message": "[170/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 13"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:31.616Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 78 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:31.621Z",
-    "level": "info",
-    "message": "进度: 170/204, 有效: 89"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:32.625Z",
-    "level": "info",
-    "message": "[171/269] 测试: 韩国 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:41.171Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 545 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:42.174Z",
-    "level": "info",
-    "message": "[172/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 66"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:52.312Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:53.316Z",
-    "level": "info",
-    "message": "[173/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 10"
-  },
-  {
-    "timestamp": "2026-02-18T17:50:59.969Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 27 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:00.972Z",
-    "level": "info",
-    "message": "[174/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:11.184Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 78 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:12.187Z",
-    "level": "info",
-    "message": "[175/269] 测试: 中转美国1(动态) x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:20.645Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 562 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:21.649Z",
-    "level": "info",
-    "message": "[176/269] 测试: 韩国 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:30.118Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 546 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:31.121Z",
-    "level": "info",
-    "message": "[177/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:41.250Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 81 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:42.254Z",
-    "level": "info",
-    "message": "[178/269] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 04"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:52.393Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 133 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:51:53.396Z",
-    "level": "info",
-    "message": "[179/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:03.482Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 82 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:04.510Z",
-    "level": "info",
-    "message": "[180/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:14.248Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 67 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:14.253Z",
-    "level": "info",
-    "message": "进度: 180/204, 有效: 89"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:15.256Z",
-    "level": "info",
-    "message": "[181/269] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 08"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:25.400Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 11 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:26.405Z",
-    "level": "info",
-    "message": "[182/269] 测试: 🇭🇰 机场推荐:dafei.de 香港 20"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:31.749Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 169 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:32.828Z",
-    "level": "info",
-    "message": "[183/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:42.871Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 83 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:43.875Z",
-    "level": "info",
-    "message": "[184/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 35"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:51.164Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 51 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:52:52.167Z",
-    "level": "info",
-    "message": "[185/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:53:02.382Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 84 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:53:03.384Z",
-    "level": "info",
-    "message": "[186/269] 测试: 俄罗斯+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:53:38.524Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 21 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:53:39.558Z",
-    "level": "info",
-    "message": "[187/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:53:49.657Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 85 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:53:50.661Z",
-    "level": "info",
-    "message": "[188/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 40"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:00.806Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 21 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:01.809Z",
-    "level": "info",
-    "message": "[189/269] 测试: 🇺🇸 机场推荐:dafei.de 美国 25"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:16.049Z",
-    "level": "success",
-    "message": "  ✅ basic (4100ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:17.052Z",
-    "level": "info",
-    "message": "[190/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:27.345Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 79 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:27.350Z",
-    "level": "info",
-    "message": "进度: 190/204, 有效: 90"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:28.353Z",
-    "level": "info",
-    "message": "[191/269] 测试: 🇰🇷 机场推荐:dafei.de 韩国 07"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:35.404Z",
-    "level": "success",
-    "message": "  ✅ excellent (591ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:36.406Z",
-    "level": "info",
-    "message": "[192/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:45.914Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 68 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:46.918Z",
-    "level": "info",
-    "message": "[193/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:57.618Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 80 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:54:58.620Z",
-    "level": "info",
-    "message": "[194/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:08.742Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 81 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:09.746Z",
-    "level": "info",
-    "message": "[195/269] 测试: 新加坡解锁(广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:21.118Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 148 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:22.121Z",
-    "level": "info",
-    "message": "[196/269] 测试: 新加坡解锁(广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:30.404Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 149 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:31.406Z",
-    "level": "info",
-    "message": "[197/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:41.644Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 82 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:42.657Z",
-    "level": "info",
-    "message": "[198/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:53.232Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 83 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:55:54.235Z",
-    "level": "info",
-    "message": "[199/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:04.646Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 84 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:05.650Z",
-    "level": "info",
-    "message": "[200/269] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:15.139Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 69 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:15.144Z",
-    "level": "info",
-    "message": "进度: 200/204, 有效: 91"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:16.146Z",
-    "level": "info",
-    "message": "[201/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:27.362Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 85 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:28.366Z",
-    "level": "info",
-    "message": "[202/269] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:38.805Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 86 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:39.810Z",
-    "level": "info",
-    "message": "[203/269] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:50.515Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 86 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:56:51.518Z",
-    "level": "info",
-    "message": "[204/269] 测试: 🇩🇪 机场推荐:dafei.de 德国 26"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:04.026Z",
-    "level": "success",
-    "message": "  ✅ basic (6006ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.034Z",
-    "level": "success",
-    "message": "已更新种子节点: 16 个"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.036Z",
-    "level": "success",
-    "message": "========== 验证完成 =========="
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.039Z",
-    "level": "success",
-    "message": "总测试: 204, 有效: 92 (45%)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.041Z",
-    "level": "success",
-    "message": "excellent: 16, good: 33, basic: 43"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.043Z",
-    "level": "info",
-    "message": "🔄 触发Aggregator.yaml更新..."
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.046Z",
-    "level": "info",
-    "message": "⏳ 5秒后开始下一轮验证..."
-  },
-  {
-    "timestamp": "2026-02-18T17:57:05.081Z",
-    "level": "success",
-    "message": "✅ Aggregator.yaml已更新"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:10.049Z",
-    "level": "info",
-    "message": "========== 开始节点验证 (第 176 轮) =========="
-  },
-  {
-    "timestamp": "2026-02-18T17:57:10.052Z",
-    "level": "info",
-    "message": "总节点数: 94 (已验证: 92, 新节点: 2)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:10.054Z",
-    "level": "info",
-    "message": "[1/18] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:19.689Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:20.692Z",
-    "level": "info",
-    "message": "[2/18] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:30.013Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:31.016Z",
-    "level": "info",
-    "message": "[3/18] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:40.338Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:41.341Z",
-    "level": "info",
-    "message": "[4/18] 测试: 英国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:47.542Z",
-    "level": "success",
-    "message": "  ✅ excellent (438ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:48.546Z",
-    "level": "info",
-    "message": "[5/18] 测试: 🇬🇧 机场推荐:dafei.de 英国 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:54.687Z",
-    "level": "success",
-    "message": "  ✅ excellent (388ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:57:55.690Z",
-    "level": "info",
-    "message": "[6/18] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:04.977Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 6 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:05.980Z",
-    "level": "info",
-    "message": "[7/18] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:15.318Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 7 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:16.321Z",
-    "level": "info",
-    "message": "[8/18] 测试: 新加坡 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:22.740Z",
-    "level": "success",
-    "message": "  ✅ excellent (465ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:23.743Z",
-    "level": "info",
-    "message": "[9/18] 测试: 美国+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:30.367Z",
-    "level": "success",
-    "message": "  ✅ excellent (578ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:31.370Z",
-    "level": "info",
-    "message": "[10/18] 测试: 🇰🇷 机场推荐:dafei.de 韩国 07"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:40.546Z",
-    "level": "success",
-    "message": "  ✅ good (815ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:40.550Z",
-    "level": "info",
-    "message": "进度: 10/94, 有效: 5"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:41.554Z",
-    "level": "info",
-    "message": "[11/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 33"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:48.581Z",
-    "level": "success",
-    "message": "  ✅ excellent (431ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:49.584Z",
-    "level": "info",
-    "message": "[12/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 29"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:56.355Z",
-    "level": "success",
-    "message": "  ✅ excellent (719ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:58:57.359Z",
-    "level": "info",
-    "message": "[13/18] 测试: 🇦🇹 机场推荐:dafei.de 奥地利 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:06.002Z",
-    "level": "success",
-    "message": "  ✅ good (1586ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:07.005Z",
-    "level": "info",
-    "message": "[14/18] 测试: 🇨🇳 机场推荐:dafei.de 台湾 16"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:31.083Z",
-    "level": "success",
-    "message": "  ✅ basic (8908ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:32.087Z",
-    "level": "info",
-    "message": "[15/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 25"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:39.198Z",
-    "level": "success",
-    "message": "  ✅ good (838ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:40.201Z",
-    "level": "info",
-    "message": "[16/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 33"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:47.139Z",
-    "level": "success",
-    "message": "  ✅ excellent (755ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:48.143Z",
-    "level": "info",
-    "message": "[17/18] 测试: 🇦🇪 机场推荐:dafei.de 阿联酋 01"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:56.353Z",
-    "level": "success",
-    "message": "  ✅ good (1085ms)"
-  },
-  {
-    "timestamp": "2026-02-18T17:59:57.356Z",
-    "level": "info",
-    "message": "[18/18] 测试: 🇵🇱 机场推荐:dafei.de 波兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:04.620Z",
-    "level": "success",
-    "message": "  ✅ good (831ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:05.622Z",
-    "level": "info",
-    "message": "[19/18] 测试: 🇵🇱 机场推荐:dafei.de 波兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:12.998Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:13.000Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:14.004Z",
-    "level": "info",
-    "message": "[20/18] 测试: 🇦🇲 机场推荐:dafei.de 亚美尼亚 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:22.902Z",
-    "level": "success",
-    "message": "  ✅ good (1183ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:22.907Z",
-    "level": "info",
-    "message": "进度: 20/94, 有效: 15"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:23.940Z",
-    "level": "info",
-    "message": "[21/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 03"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:31.664Z",
-    "level": "success",
-    "message": "  ✅ good (868ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:32.668Z",
-    "level": "info",
-    "message": "[22/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 04"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:40.314Z",
-    "level": "success",
-    "message": "  ✅ good (885ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:41.316Z",
-    "level": "info",
-    "message": "[23/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 04"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:49.913Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:49.916Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:00:50.920Z",
-    "level": "info",
-    "message": "[24/18] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:00.527Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 8 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:01.529Z",
-    "level": "info",
-    "message": "[25/18] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 11"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:12.363Z",
-    "level": "success",
-    "message": "  ✅ basic (4387ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:13.366Z",
-    "level": "info",
-    "message": "[26/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:29.515Z",
-    "level": "success",
-    "message": "  ✅ good (976ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:30.518Z",
-    "level": "info",
-    "message": "[27/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:37.505Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:37.509Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:38.513Z",
-    "level": "info",
-    "message": "[28/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:48.676Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:48.679Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:01:49.683Z",
-    "level": "info",
-    "message": "[29/18] 测试: 🇰🇷 机场推荐:dafei.de 韩国 04"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:01.598Z",
-    "level": "success",
-    "message": "  ✅ good (1661ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:02.601Z",
-    "level": "info",
-    "message": "[30/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 30"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:12.750Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:12.772Z",
-    "level": "info",
-    "message": "进度: 30/94, 有效: 23"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:13.777Z",
-    "level": "info",
-    "message": "[31/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 36"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:20.835Z",
-    "level": "success",
-    "message": "  ✅ excellent (778ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:21.838Z",
-    "level": "info",
-    "message": "[32/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 05"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:38.059Z",
-    "level": "success",
-    "message": "  ✅ good (1013ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:39.062Z",
-    "level": "info",
-    "message": "[33/18] 测试: 🇨🇳 机场推荐:dafei.de 台湾 21"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:45.262Z",
-    "level": "success",
-    "message": "  ✅ excellent (562ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:02:46.264Z",
-    "level": "info",
-    "message": "[34/18] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:07.561Z",
-    "level": "success",
-    "message": "  ✅ basic (6115ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:08.564Z",
-    "level": "info",
-    "message": "[35/18] 测试: 美国 CloudFlare节点"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:18.720Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:19.763Z",
-    "level": "info",
-    "message": "[36/18] 测试: 美国 CloudFlare节点"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:30.034Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:31.037Z",
-    "level": "info",
-    "message": "[37/18] 测试: 美国 CloudFlare节点"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:41.172Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:42.175Z",
-    "level": "info",
-    "message": "[38/18] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:03:59.025Z",
-    "level": "success",
-    "message": "  ✅ basic (8700ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:00.028Z",
-    "level": "info",
-    "message": "[39/18] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:06.028Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:06.031Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:07.034Z",
-    "level": "info",
-    "message": "[40/18] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:23.839Z",
-    "level": "success",
-    "message": "  ✅ basic (6775ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:23.843Z",
-    "level": "info",
-    "message": "进度: 40/94, 有效: 30"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:24.845Z",
-    "level": "info",
-    "message": "[41/18] 测试: 🇰🇷 机场推荐:dafei.de 韩国 13"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:32.223Z",
-    "level": "success",
-    "message": "  ✅ good (1397ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:33.228Z",
-    "level": "info",
-    "message": "[42/18] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:44.692Z",
-    "level": "success",
-    "message": "  ✅ basic (2397ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:45.696Z",
-    "level": "info",
-    "message": "[43/18] 测试: 爱尔兰+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:52.978Z",
-    "level": "success",
-    "message": "  ✅ excellent (739ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:04:53.979Z",
-    "level": "info",
-    "message": "[44/18] 测试: 🇫🇷 机场推荐:dafei.de 法国 02"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:01.212Z",
-    "level": "success",
-    "message": "  ✅ excellent (701ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:02.215Z",
-    "level": "info",
-    "message": "[45/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 53"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:10.836Z",
-    "level": "success",
-    "message": "  ✅ good (1377ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:11.839Z",
-    "level": "info",
-    "message": "[46/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 23"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:31.870Z",
-    "level": "success",
-    "message": "  ✅ basic (2210ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:32.873Z",
-    "level": "info",
-    "message": "[47/18] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:45.066Z",
-    "level": "success",
-    "message": "  ✅ basic (3250ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:46.069Z",
-    "level": "info",
-    "message": "[48/18] 测试: JP-日本"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:56.216Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:05:57.220Z",
-    "level": "info",
-    "message": "[49/18] 测试: 🇰🇷 机场推荐:dafei.de 韩国 11"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:04.323Z",
-    "level": "success",
-    "message": "  ✅ excellent (418ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:05.327Z",
-    "level": "info",
-    "message": "[50/18] 测试: 🇩🇪 机场推荐:dafei.de 德国 30"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:30.426Z",
-    "level": "success",
-    "message": "  ✅ basic (9935ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:30.429Z",
-    "level": "info",
-    "message": "进度: 50/94, 有效: 39"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:31.432Z",
-    "level": "info",
-    "message": "[51/18] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:53.149Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:06:54.152Z",
-    "level": "info",
-    "message": "[52/18] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:04.142Z",
-    "level": "success",
-    "message": "  ✅ good (1291ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:05.145Z",
-    "level": "info",
-    "message": "[53/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 47"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:17.654Z",
-    "level": "success",
-    "message": "  ✅ basic (5364ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:18.656Z",
-    "level": "info",
-    "message": "[54/18] 测试: 欧盟+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:40.236Z",
-    "level": "success",
-    "message": "  ✅ basic (12090ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:41.239Z",
-    "level": "info",
-    "message": "[55/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 27"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:50.261Z",
-    "level": "success",
-    "message": "  ✅ good (1362ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:07:51.263Z",
-    "level": "info",
-    "message": "[56/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 50"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:08.433Z",
-    "level": "success",
-    "message": "  ✅ basic (3270ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:09.435Z",
-    "level": "info",
-    "message": "[57/18] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:16.537Z",
-    "level": "success",
-    "message": "  ✅ excellent (788ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:17.540Z",
-    "level": "info",
-    "message": "[58/18] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:24.196Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:24.198Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:25.201Z",
-    "level": "info",
-    "message": "[59/18] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:32.145Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:32.148Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:33.152Z",
-    "level": "info",
-    "message": "[60/18] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:40.711Z",
-    "level": "success",
-    "message": "  ✅ excellent (729ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:40.715Z",
-    "level": "info",
-    "message": "进度: 60/94, 有效: 48"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:41.718Z",
-    "level": "info",
-    "message": "[61/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 21"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:51.057Z",
-    "level": "success",
-    "message": "  ✅ good (1594ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:08:52.060Z",
-    "level": "info",
-    "message": "[62/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 54"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:01.363Z",
-    "level": "success",
-    "message": "  ✅ basic (2015ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:02.367Z",
-    "level": "info",
-    "message": "[63/18] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 13"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:24.460Z",
-    "level": "success",
-    "message": "  ✅ basic (4267ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:25.462Z",
-    "level": "info",
-    "message": "[64/18] 测试: 🇰🇷 机场推荐:dafei.de 韩国 10"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:33.689Z",
-    "level": "success",
-    "message": "  ✅ excellent (661ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:34.692Z",
-    "level": "info",
-    "message": "[65/18] 测试: 🇯🇵 机场推荐:dafei.de 日本 24"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:43.311Z",
-    "level": "success",
-    "message": "  ✅ good (1189ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:44.315Z",
-    "level": "info",
-    "message": "[66/18] 测试: 🇨🇳 机场推荐:dafei.de 台湾 29"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:53.163Z",
-    "level": "success",
-    "message": "  ✅ good (1551ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:09:54.165Z",
-    "level": "info",
-    "message": "[67/18] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:01.489Z",
-    "level": "success",
-    "message": "  ✅ good (1201ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:02.492Z",
-    "level": "info",
-    "message": "[68/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 25"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:12.629Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:12.632Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:13.633Z",
-    "level": "info",
-    "message": "[69/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 48"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:30.297Z",
-    "level": "success",
-    "message": "  ✅ basic (4289ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:31.299Z",
-    "level": "info",
-    "message": "[70/18] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:38.367Z",
-    "level": "success",
-    "message": "  ✅ good (820ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:38.372Z",
-    "level": "info",
-    "message": "进度: 70/94, 有效: 58"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:39.375Z",
-    "level": "info",
-    "message": "[71/18] 测试: 🇭🇰 机场推荐:dafei.de 香港 46"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:54.290Z",
-    "level": "success",
-    "message": "  ✅ basic (2560ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:10:55.294Z",
-    "level": "info",
-    "message": "[72/18] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:11:09.766Z",
-    "level": "success",
-    "message": "  ✅ basic (3220ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:11:10.771Z",
-    "level": "info",
-    "message": "[73/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 60"
-  },
-  {
-    "timestamp": "2026-02-18T18:11:20.964Z",
-    "level": "success",
-    "message": "  ✅ good (1531ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:11:21.967Z",
-    "level": "info",
-    "message": "[74/18] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 03"
-  },
-  {
-    "timestamp": "2026-02-18T18:11:38.795Z",
-    "level": "success",
-    "message": "  ✅ basic (2938ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:11:39.798Z",
-    "level": "info",
-    "message": "[75/18] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 07"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:00.257Z",
-    "level": "success",
-    "message": "  ✅ basic (3601ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:01.260Z",
-    "level": "info",
-    "message": "[76/18] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:09.166Z",
-    "level": "success",
-    "message": "  ✅ good (1275ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:10.245Z",
-    "level": "info",
-    "message": "[77/18] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:16.331Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:16.334Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:17.338Z",
-    "level": "info",
-    "message": "[78/18] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:23.552Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:23.555Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:24.557Z",
-    "level": "info",
-    "message": "[79/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 37"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:32.402Z",
-    "level": "success",
-    "message": "  ✅ good (988ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:12:33.406Z",
-    "level": "info",
-    "message": "[80/18] 测试: 🇩🇪 机场推荐:dafei.de 德国 26"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:08.556Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:08.561Z",
-    "level": "info",
-    "message": "进度: 80/94, 有效: 67"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:09.562Z",
-    "level": "info",
-    "message": "[81/18] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:27.797Z",
-    "level": "success",
-    "message": "  ✅ basic (7383ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:28.801Z",
-    "level": "info",
-    "message": "[82/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 16"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:40.864Z",
-    "level": "success",
-    "message": "  ✅ basic (3850ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:13:41.866Z",
-    "level": "info",
-    "message": "[83/18] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 15"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:00.936Z",
-    "level": "success",
-    "message": "  ✅ basic (5235ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:01.940Z",
-    "level": "info",
-    "message": "[84/18] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:16.384Z",
-    "level": "success",
-    "message": "  ✅ basic (2095ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:17.387Z",
-    "level": "info",
-    "message": "[85/18] 测试: 中国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:34.311Z",
-    "level": "success",
-    "message": "  ✅ basic (2763ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:35.314Z",
-    "level": "info",
-    "message": "[86/18] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 09"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:43.572Z",
-    "level": "success",
-    "message": "  ✅ excellent (706ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:44.576Z",
-    "level": "info",
-    "message": "[87/18] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:53.858Z",
-    "level": "success",
-    "message": "  ✅ basic (2365ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:14:54.862Z",
-    "level": "info",
-    "message": "[88/18] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:03.556Z",
-    "level": "success",
-    "message": "  ✅ basic (2056ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:04.560Z",
-    "level": "info",
-    "message": "[89/18] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:18.746Z",
-    "level": "success",
-    "message": "  ✅ basic (3740ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:19.749Z",
-    "level": "info",
-    "message": "[90/18] 测试: 🇬🇧 机场推荐:dafei.de 英国 08"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:30.214Z",
-    "level": "success",
-    "message": "  ✅ basic (2324ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:30.219Z",
-    "level": "info",
-    "message": "进度: 90/94, 有效: 77"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:31.221Z",
-    "level": "info",
-    "message": "[91/18] 测试: 🇩🇪 机场推荐:dafei.de 德国 14"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:52.412Z",
-    "level": "success",
-    "message": "  ✅ basic (5955ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:15:53.416Z",
-    "level": "info",
-    "message": "[92/18] 测试: 🇩🇪 机场推荐:dafei.de 德国 15"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:24.739Z",
-    "level": "success",
-    "message": "  ✅ basic (24895ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:25.744Z",
-    "level": "info",
-    "message": "[93/18] 测试: 🇺🇸 机场推荐:dafei.de 美国 07"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:35.083Z",
-    "level": "success",
-    "message": "  ✅ basic (2219ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:36.087Z",
-    "level": "info",
-    "message": "[94/18] 测试: 🇫🇷 机场推荐:dafei.de 法国 03"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:42.036Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:43.043Z",
-    "level": "success",
-    "message": "已更新种子节点: 18 个"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:43.045Z",
-    "level": "success",
-    "message": "========== 验证完成 =========="
-  },
-  {
-    "timestamp": "2026-02-18T18:16:43.048Z",
-    "level": "success",
-    "message": "总测试: 94, 有效: 80 (85%)"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:43.050Z",
-    "level": "success",
-    "message": "excellent: 18, good: 30, basic: 32"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:43.053Z",
-    "level": "info",
-    "message": "🔄 触发Aggregator.yaml更新..."
-  },
-  {
-    "timestamp": "2026-02-18T18:16:43.056Z",
-    "level": "info",
-    "message": "⏳ 5秒后开始下一轮验证..."
-  },
-  {
-    "timestamp": "2026-02-18T18:16:48.059Z",
-    "level": "info",
-    "message": "========== 开始节点验证 (第 177 轮) =========="
-  },
-  {
-    "timestamp": "2026-02-18T18:16:48.063Z",
-    "level": "info",
-    "message": "总节点数: 128 (已验证: 80, 新节点: 48)"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:48.065Z",
-    "level": "info",
-    "message": "[1/120] 测试: 🇬🇧 机场推荐:dafei.de 英国 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:51.550Z",
-    "level": "warning",
-    "message": "⚠️ 触发yaml更新失败: socket hang up"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:55.347Z",
-    "level": "success",
-    "message": "  ✅ excellent (436ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:16:56.350Z",
-    "level": "info",
-    "message": "[2/120] 测试: 🇰🇷 机场推荐:dafei.de 韩国 11"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:06.675Z",
-    "level": "success",
-    "message": "  ✅ good (985ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:07.678Z",
-    "level": "info",
-    "message": "[3/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 33"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:17.417Z",
-    "level": "success",
-    "message": "  ✅ basic (3642ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:18.422Z",
-    "level": "info",
-    "message": "[4/120] 测试: 英国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:25.276Z",
-    "level": "success",
-    "message": "  ✅ good (1086ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:26.292Z",
-    "level": "info",
-    "message": "[5/120] 测试: 新加坡 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:31.806Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:31.808Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:32.811Z",
-    "level": "info",
-    "message": "[6/120] 测试: 🇨🇳 机场推荐:dafei.de 台湾 21"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:39.987Z",
-    "level": "success",
-    "message": "  ✅ good (1201ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:40.990Z",
-    "level": "info",
-    "message": "[7/120] 测试: 美国+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:47.631Z",
-    "level": "success",
-    "message": "  ✅ excellent (545ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:48.635Z",
-    "level": "info",
-    "message": "[8/120] 测试: 🇰🇷 机场推荐:dafei.de 韩国 10"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:56.716Z",
-    "level": "success",
-    "message": "  ✅ good (1299ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:17:57.719Z",
-    "level": "info",
-    "message": "[9/120] 测试: 🇫🇷 机场推荐:dafei.de 法国 02"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:04.895Z",
-    "level": "success",
-    "message": "  ✅ good (876ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:05.898Z",
-    "level": "info",
-    "message": "[10/120] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 09"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:18.759Z",
-    "level": "success",
-    "message": "  ✅ basic (6137ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:18.763Z",
-    "level": "info",
-    "message": "进度: 10/128, 有效: 10"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:19.765Z",
-    "level": "info",
-    "message": "[11/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 29"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:26.538Z",
-    "level": "success",
-    "message": "  ✅ excellent (697ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:27.541Z",
-    "level": "info",
-    "message": "[12/120] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:43.484Z",
-    "level": "success",
-    "message": "  ✅ good (1658ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:44.486Z",
-    "level": "info",
-    "message": "[13/120] 测试: 爱尔兰+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:55.334Z",
-    "level": "success",
-    "message": "  ✅ excellent (703ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:18:56.337Z",
-    "level": "info",
-    "message": "[14/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 33"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:03.323Z",
-    "level": "success",
-    "message": "  ✅ excellent (789ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:04.327Z",
-    "level": "info",
-    "message": "[15/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 36"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:11.538Z",
-    "level": "success",
-    "message": "  ✅ good (856ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:12.541Z",
-    "level": "info",
-    "message": "[16/120] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:22.714Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 3 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:23.719Z",
-    "level": "info",
-    "message": "[17/120] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:29.814Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 4 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:30.817Z",
-    "level": "info",
-    "message": "[18/120] 测试: 🏳️‍🌈 Token已失效，请前往 https://github.com/wzdnzd/aggregator/issues/91 获取最新Token"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:37.064Z",
-    "level": "warning",
-    "message": "  ❌ 不可用 (连续失败 5 次,已标记为不可用)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:38.066Z",
-    "level": "info",
-    "message": "[19/120] 测试: 🇰🇷 机场推荐:dafei.de 韩国 07"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:50.572Z",
-    "level": "success",
-    "message": "  ✅ basic (3616ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:51.575Z",
-    "level": "info",
-    "message": "[20/120] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:58.954Z",
-    "level": "success",
-    "message": "  ✅ excellent (700ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:58.958Z",
-    "level": "info",
-    "message": "进度: 20/128, 有效: 17"
-  },
-  {
-    "timestamp": "2026-02-18T18:19:59.960Z",
-    "level": "info",
-    "message": "[21/120] 测试: 🇵🇱 机场推荐:dafei.de 波兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:07.307Z",
-    "level": "success",
-    "message": "  ✅ good (878ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:08.310Z",
-    "level": "info",
-    "message": "[22/120] 测试: 🇵🇱 机场推荐:dafei.de 波兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:15.173Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:15.176Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:16.179Z",
-    "level": "info",
-    "message": "[23/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 25"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:23.147Z",
-    "level": "success",
-    "message": "  ✅ excellent (758ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:24.152Z",
-    "level": "info",
-    "message": "[24/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 25"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:34.308Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:34.311Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 excellent 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:35.314Z",
-    "level": "info",
-    "message": "[25/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 03"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:51.866Z",
-    "level": "success",
-    "message": "  ✅ good (1019ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:20:52.870Z",
-    "level": "info",
-    "message": "[26/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 04"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:09.051Z",
-    "level": "success",
-    "message": "  ✅ good (967ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:10.054Z",
-    "level": "info",
-    "message": "[27/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 04"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:16.685Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:16.688Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:17.692Z",
-    "level": "info",
-    "message": "[28/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:25.938Z",
-    "level": "success",
-    "message": "  ✅ good (907ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:26.944Z",
-    "level": "info",
-    "message": "[29/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:37.162Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:37.165Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:38.168Z",
-    "level": "info",
-    "message": "[30/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 06"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:48.687Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:48.690Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:48.695Z",
-    "level": "info",
-    "message": "进度: 30/128, 有效: 27"
-  },
-  {
-    "timestamp": "2026-02-18T18:21:49.699Z",
-    "level": "info",
-    "message": "[31/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 37"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:01.972Z",
-    "level": "success",
-    "message": "  ✅ basic (5891ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:02.978Z",
-    "level": "info",
-    "message": "[32/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 05"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:21.632Z",
-    "level": "success",
-    "message": "  ✅ basic (3409ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:22.636Z",
-    "level": "info",
-    "message": "[33/120] 测试: 🇦🇪 机场推荐:dafei.de 阿联酋 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:30.178Z",
-    "level": "success",
-    "message": "  ✅ good (899ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:31.180Z",
-    "level": "info",
-    "message": "[34/120] 测试: 🇦🇲 机场推荐:dafei.de 亚美尼亚 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:40.366Z",
-    "level": "success",
-    "message": "  ✅ basic (2601ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:41.370Z",
-    "level": "info",
-    "message": "[35/120] 测试: 🇯🇵 机场推荐:dafei.de 日本 24"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:54.134Z",
-    "level": "success",
-    "message": "  ✅ basic (3889ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:22:55.137Z",
-    "level": "info",
-    "message": "[36/120] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:11.152Z",
-    "level": "success",
-    "message": "  ✅ basic (6520ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:12.155Z",
-    "level": "info",
-    "message": "[37/120] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:27.459Z",
-    "level": "success",
-    "message": "  ✅ basic (4647ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:28.462Z",
-    "level": "info",
-    "message": "[38/120] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:45.484Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:45.487Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:49.322Z",
-    "level": "info",
-    "message": "[39/120] 测试: 台湾省台中市+中华电信"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:56.779Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:56.783Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 basic 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:23:57.787Z",
-    "level": "info",
-    "message": "[40/120] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:24:11.285Z",
-    "level": "success",
-    "message": "  ✅ basic (2282ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:24:11.290Z",
-    "level": "info",
-    "message": "进度: 40/128, 有效: 37"
-  },
-  {
-    "timestamp": "2026-02-18T18:24:12.293Z",
-    "level": "info",
-    "message": "[41/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 27"
-  },
-  {
-    "timestamp": "2026-02-18T18:24:39.646Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:24:41.000Z",
-    "level": "info",
-    "message": "[42/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 53"
-  },
-  {
-    "timestamp": "2026-02-18T18:26:37.799Z",
-    "level": "success",
-    "message": "  ✅ good (896ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:26:38.813Z",
-    "level": "info",
-    "message": "[43/120] 测试: 🇰🇷 机场推荐:dafei.de 韩国 13"
-  },
-  {
-    "timestamp": "2026-02-18T18:26:48.109Z",
-    "level": "success",
-    "message": "  ✅ basic (2396ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:26:49.113Z",
-    "level": "info",
-    "message": "[44/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 60"
-  },
-  {
-    "timestamp": "2026-02-18T18:26:58.990Z",
-    "level": "success",
-    "message": "  ✅ basic (2576ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:26:59.993Z",
-    "level": "info",
-    "message": "[45/120] 测试: 🇨🇳 机场推荐:dafei.de 台湾 29"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:09.163Z",
-    "level": "success",
-    "message": "  ✅ basic (2340ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:10.166Z",
-    "level": "info",
-    "message": "[46/120] 测试: 🇦🇹 机场推荐:dafei.de 奥地利 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:17.076Z",
-    "level": "success",
-    "message": "  ✅ excellent (749ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:18.078Z",
-    "level": "info",
-    "message": "[47/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 21"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:36.804Z",
-    "level": "success",
-    "message": "  ✅ basic (5952ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:37.806Z",
-    "level": "info",
-    "message": "[48/120] 测试: 🇰🇷 机场推荐:dafei.de 韩国 04"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:44.604Z",
-    "level": "success",
-    "message": "  ✅ excellent (420ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:45.608Z",
-    "level": "info",
-    "message": "[49/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 54"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:52.617Z",
-    "level": "success",
-    "message": "  ✅ excellent (762ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:27:53.620Z",
-    "level": "info",
-    "message": "[50/120] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:01.646Z",
-    "level": "success",
-    "message": "  ✅ good (1321ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:01.651Z",
-    "level": "info",
-    "message": "进度: 50/128, 有效: 46"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:02.653Z",
-    "level": "info",
-    "message": "[51/120] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:16.936Z",
-    "level": "success",
-    "message": "  ✅ basic (4531ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:17.940Z",
-    "level": "info",
-    "message": "[52/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 23"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:31.224Z",
-    "level": "success",
-    "message": "  ✅ basic (4475ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:32.227Z",
-    "level": "info",
-    "message": "[53/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 07"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:54.033Z",
-    "level": "success",
-    "message": "  ✅ basic (11661ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:28:55.037Z",
-    "level": "info",
-    "message": "[54/120] 测试: 🇬🇧 机场推荐:dafei.de 英国 08"
-  },
-  {
-    "timestamp": "2026-02-18T18:29:21.107Z",
-    "level": "success",
-    "message": "  ✅ basic (10894ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:29:22.110Z",
-    "level": "info",
-    "message": "[55/120] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:29:39.880Z",
-    "level": "success",
-    "message": "  ✅ basic (7825ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:29:40.882Z",
-    "level": "info",
-    "message": "[56/120] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:29:51.895Z",
-    "level": "success",
-    "message": "  ✅ basic (2359ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:29:52.898Z",
-    "level": "info",
-    "message": "[57/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 46"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:08.002Z",
-    "level": "success",
-    "message": "  ✅ good (1912ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:09.004Z",
-    "level": "info",
-    "message": "[58/120] 测试: 中国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:24.362Z",
-    "level": "success",
-    "message": "  ✅ basic (3767ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:25.366Z",
-    "level": "info",
-    "message": "[59/120] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 03"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:37.488Z",
-    "level": "success",
-    "message": "  ✅ basic (2829ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:38.491Z",
-    "level": "info",
-    "message": "[60/120] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:52.374Z",
-    "level": "success",
-    "message": "  ✅ basic (2665ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:52.378Z",
-    "level": "info",
-    "message": "进度: 60/128, 有效: 56"
-  },
-  {
-    "timestamp": "2026-02-18T18:30:53.380Z",
-    "level": "info",
-    "message": "[61/120] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:31:07.469Z",
-    "level": "success",
-    "message": "  ✅ basic (2592ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:31:08.472Z",
-    "level": "info",
-    "message": "[62/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 50"
-  },
-  {
-    "timestamp": "2026-02-18T18:31:27.097Z",
-    "level": "success",
-    "message": "  ✅ basic (3864ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:31:28.100Z",
-    "level": "info",
-    "message": "[63/120] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 07"
-  },
-  {
-    "timestamp": "2026-02-18T18:31:52.681Z",
-    "level": "success",
-    "message": "  ✅ basic (5947ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:31:53.686Z",
-    "level": "info",
-    "message": "[64/120] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:32:07.364Z",
-    "level": "success",
-    "message": "  ✅ basic (5681ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:32:08.368Z",
-    "level": "info",
-    "message": "[65/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 16"
-  },
-  {
-    "timestamp": "2026-02-18T18:32:26.463Z",
-    "level": "success",
-    "message": "  ✅ basic (6060ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:32:27.467Z",
-    "level": "info",
-    "message": "[66/120] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 13"
-  },
-  {
-    "timestamp": "2026-02-18T18:32:49.701Z",
-    "level": "success",
-    "message": "  ✅ basic (4959ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:32:50.704Z",
-    "level": "info",
-    "message": "[67/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 48"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:06.573Z",
-    "level": "success",
-    "message": "  ✅ basic (4033ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:07.577Z",
-    "level": "info",
-    "message": "[68/120] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 11"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:14.838Z",
-    "level": "success",
-    "message": "  ✅ good (895ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:15.842Z",
-    "level": "info",
-    "message": "[69/120] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 15"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:33.153Z",
-    "level": "success",
-    "message": "  ✅ basic (7133ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:34.155Z",
-    "level": "info",
-    "message": "[70/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 47"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:47.870Z",
-    "level": "success",
-    "message": "  ✅ basic (4327ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:47.875Z",
-    "level": "info",
-    "message": "进度: 70/128, 有效: 66"
-  },
-  {
-    "timestamp": "2026-02-18T18:33:48.879Z",
-    "level": "info",
-    "message": "[71/120] 测试: 🇩🇪 机场推荐:dafei.de 德国 14"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:06.224Z",
-    "level": "success",
-    "message": "  ✅ basic (10923ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:07.227Z",
-    "level": "info",
-    "message": "[72/120] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:17.754Z",
-    "level": "success",
-    "message": "  ✅ basic (2382ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:18.756Z",
-    "level": "info",
-    "message": "[73/120] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:24.857Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:24.860Z",
-    "level": "info",
-    "message": "  🔄 保留之前的 good 状态"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:25.862Z",
-    "level": "info",
-    "message": "[74/120] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:36.333Z",
-    "level": "success",
-    "message": "  ✅ basic (2745ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:37.339Z",
-    "level": "info",
-    "message": "[75/120] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:56.393Z",
-    "level": "success",
-    "message": "  ✅ basic (3708ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:34:57.396Z",
-    "level": "info",
-    "message": "[76/120] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:08.552Z",
-    "level": "success",
-    "message": "  ✅ basic (3015ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:09.555Z",
-    "level": "info",
-    "message": "[77/120] 测试: 🇨🇳 机场推荐:dafei.de 台湾 16"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:16.061Z",
-    "level": "success",
-    "message": "  ✅ excellent (431ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:17.064Z",
-    "level": "info",
-    "message": "[78/120] 测试: 🇩🇪 机场推荐:dafei.de 德国 30"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:33.185Z",
-    "level": "success",
-    "message": "  ✅ good (918ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:34.188Z",
-    "level": "info",
-    "message": "[79/120] 测试: 欧盟+V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:51.429Z",
-    "level": "success",
-    "message": "  ✅ basic (9353ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:35:52.432Z",
-    "level": "info",
-    "message": "[80/120] 测试: 🇩🇪 机场推荐:dafei.de 德国 15"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:02.708Z",
-    "level": "success",
-    "message": "  ✅ basic (3870ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:02.713Z",
-    "level": "info",
-    "message": "进度: 80/128, 有效: 76"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:03.716Z",
-    "level": "info",
-    "message": "[81/120] 测试: 印度 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:11.002Z",
-    "level": "success",
-    "message": "  ✅ good (1111ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:12.005Z",
-    "level": "info",
-    "message": "[82/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:18.066Z",
-    "level": "success",
-    "message": "  ✅ excellent (313ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:19.069Z",
-    "level": "info",
-    "message": "[83/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:25.144Z",
-    "level": "success",
-    "message": "  ✅ excellent (294ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:26.147Z",
-    "level": "info",
-    "message": "[84/120] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:31.993Z",
-    "level": "success",
-    "message": "  ✅ excellent (176ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:32.996Z",
-    "level": "info",
-    "message": "[85/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:39.374Z",
-    "level": "success",
-    "message": "  ✅ excellent (361ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:40.378Z",
-    "level": "info",
-    "message": "[86/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:46.706Z",
-    "level": "success",
-    "message": "  ✅ excellent (332ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:47.709Z",
-    "level": "info",
-    "message": "[87/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:53.893Z",
-    "level": "success",
-    "message": "  ✅ excellent (284ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:36:54.897Z",
-    "level": "info",
-    "message": "[88/120] 测试: 以色列 (广港)1x1"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:01.766Z",
-    "level": "success",
-    "message": "  ✅ excellent (642ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:02.769Z",
-    "level": "info",
-    "message": "[89/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:09.050Z",
-    "level": "success",
-    "message": "  ✅ excellent (356ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:10.054Z",
-    "level": "info",
-    "message": "[90/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:16.131Z",
-    "level": "success",
-    "message": "  ✅ excellent (314ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:16.136Z",
-    "level": "info",
-    "message": "进度: 90/128, 有效: 86"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:17.139Z",
-    "level": "info",
-    "message": "[91/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:23.167Z",
-    "level": "success",
-    "message": "  ✅ excellent (273ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:24.171Z",
-    "level": "info",
-    "message": "[92/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:30.337Z",
-    "level": "success",
-    "message": "  ✅ excellent (366ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:31.340Z",
-    "level": "info",
-    "message": "[93/120] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 01"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:42.374Z",
-    "level": "success",
-    "message": "  ✅ basic (2279ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:43.377Z",
-    "level": "info",
-    "message": "[94/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:49.454Z",
-    "level": "success",
-    "message": "  ✅ excellent (307ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:50.458Z",
-    "level": "info",
-    "message": "[95/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:56.717Z",
-    "level": "success",
-    "message": "  ✅ excellent (348ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:37:57.721Z",
-    "level": "info",
-    "message": "[96/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:04.082Z",
-    "level": "success",
-    "message": "  ✅ excellent (447ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:05.084Z",
-    "level": "info",
-    "message": "[97/120] 测试: 美国 V2CROSS.COM"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:11.811Z",
-    "level": "warning",
-    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:12.813Z",
-    "level": "info",
-    "message": "[98/120] 测试: 🇯🇵 机场推荐:dafei.de 日本 17"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:20.994Z",
-    "level": "success",
-    "message": "  ✅ good (824ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:21.998Z",
-    "level": "info",
-    "message": "[99/120] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:29.874Z",
-    "level": "success",
-    "message": "  ✅ good (1258ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:30.876Z",
-    "level": "info",
-    "message": "[100/120] 测试: 墨西哥 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:41.727Z",
-    "level": "success",
-    "message": "  ✅ excellent (597ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:41.736Z",
-    "level": "info",
-    "message": "进度: 100/128, 有效: 95"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:42.740Z",
-    "level": "info",
-    "message": "[101/120] 测试: 🇩🇪 机场推荐:dafei.de 德国 13"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:54.779Z",
-    "level": "success",
-    "message": "  ✅ basic (5542ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:38:55.784Z",
-    "level": "info",
-    "message": "[102/120] 测试: 🇫🇷 机场推荐:dafei.de 法国 10"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:03.323Z",
-    "level": "success",
-    "message": "  ✅ good (1010ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:04.326Z",
-    "level": "info",
-    "message": "[103/120] 测试: 🇭🇰 机场推荐:dafei.de 香港 36"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:17.987Z",
-    "level": "success",
-    "message": "  ✅ basic (4960ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:18.991Z",
-    "level": "info",
-    "message": "[104/120] 测试: 巴西 (广港)1 x1"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:28.355Z",
-    "level": "success",
-    "message": "  ✅ basic (2066ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:29.360Z",
-    "level": "info",
-    "message": "[105/120] 测试: 🇺🇸 机场推荐:dafei.de 美国 41"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:37.484Z",
-    "level": "success",
-    "message": "  ✅ good (1268ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:38.488Z",
-    "level": "info",
-    "message": "[106/120] 测试: 试用节点-台湾"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:44.409Z",
-    "level": "success",
-    "message": "  ✅ excellent (184ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:45.412Z",
-    "level": "info",
-    "message": "[107/120] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:51.395Z",
-    "level": "success",
-    "message": "  ✅ excellent (275ms)"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:52.398Z",
-    "level": "info",
-    "message": "[108/120] 测试: 剩余流量：2 GB"
-  },
-  {
-    "timestamp": "2026-02-18T18:39:58.244Z",
+    "timestamp": "2026-02-24T19:07:57.030Z",
     "level": "success",
-    "message": "  ✅ excellent (158ms)"
+    "message": "  ✅ excellent (549ms)"
   },
   {
-    "timestamp": "2026-02-18T18:39:59.247Z",
+    "timestamp": "2026-02-24T19:07:58.032Z",
     "level": "info",
-    "message": "[109/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[27/125] 测试: 🇺🇸美国洛杉矶-可下载使用"
   },
   {
-    "timestamp": "2026-02-18T18:40:05.872Z",
+    "timestamp": "2026-02-24T19:08:04.568Z",
     "level": "success",
     "message": "  ✅ excellent (582ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:06.876Z",
+    "timestamp": "2026-02-24T19:08:05.569Z",
     "level": "info",
-    "message": "[110/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[28/125] 测试: rs1 [ifcqx] 1"
   },
   {
-    "timestamp": "2026-02-18T18:40:13.348Z",
+    "timestamp": "2026-02-24T19:08:12.203Z",
     "level": "success",
-    "message": "  ✅ excellent (536ms)"
+    "message": "  ✅ good (814ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:13.355Z",
+    "timestamp": "2026-02-24T19:08:13.204Z",
     "level": "info",
-    "message": "进度: 110/128, 有效: 105"
+    "message": "[29/125] 测试: 🇩🇪 机场推荐:dafei.de 德国 03"
   },
   {
-    "timestamp": "2026-02-18T18:40:14.359Z",
-    "level": "info",
-    "message": "[111/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
-  },
-  {
-    "timestamp": "2026-02-18T18:40:20.447Z",
+    "timestamp": "2026-02-24T19:08:20.359Z",
     "level": "success",
-    "message": "  ✅ excellent (327ms)"
+    "message": "  ✅ excellent (643ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:21.450Z",
+    "timestamp": "2026-02-24T19:08:21.361Z",
     "level": "info",
-    "message": "[112/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[30/125] 测试: 🇩🇪 机场推荐:dafei.de 德国 02"
   },
   {
-    "timestamp": "2026-02-18T18:40:27.720Z",
+    "timestamp": "2026-02-24T19:08:31.505Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:08:31.507Z",
+    "level": "info",
+    "message": "进度: 30/124, 有效: 26"
+  },
+  {
+    "timestamp": "2026-02-24T19:08:32.508Z",
+    "level": "info",
+    "message": "[31/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 11"
+  },
+  {
+    "timestamp": "2026-02-24T19:08:40.123Z",
     "level": "success",
-    "message": "  ✅ excellent (362ms)"
+    "message": "  ✅ excellent (680ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:28.723Z",
+    "timestamp": "2026-02-24T19:08:41.125Z",
     "level": "info",
-    "message": "[113/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[32/125] 测试: 🇩🇪 机场推荐:dafei.de 德国 03"
   },
   {
-    "timestamp": "2026-02-18T18:40:35.172Z",
+    "timestamp": "2026-02-24T19:08:49.277Z",
     "level": "success",
-    "message": "  ✅ excellent (412ms)"
+    "message": "  ✅ good (810ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:36.175Z",
+    "timestamp": "2026-02-24T19:08:50.279Z",
     "level": "info",
-    "message": "[114/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[33/125] 测试: 🇺🇸美国西雅图-可下载使用"
   },
   {
-    "timestamp": "2026-02-18T18:40:42.316Z",
+    "timestamp": "2026-02-24T19:08:56.978Z",
     "level": "success",
-    "message": "  ✅ excellent (353ms)"
+    "message": "  ✅ excellent (652ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:43.319Z",
+    "timestamp": "2026-02-24T19:08:57.979Z",
     "level": "info",
-    "message": "[115/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[34/125] 测试: 🇫🇷 机场推荐:dafei.de 法国 06"
   },
   {
-    "timestamp": "2026-02-18T18:40:49.711Z",
+    "timestamp": "2026-02-24T19:09:12.104Z",
     "level": "success",
-    "message": "  ✅ excellent (403ms)"
+    "message": "  ✅ excellent (712ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:50.714Z",
+    "timestamp": "2026-02-24T19:09:13.107Z",
     "level": "info",
-    "message": "[116/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[35/125] 测试: 剩余流量：29.98+GB"
   },
   {
-    "timestamp": "2026-02-18T18:40:56.961Z",
+    "timestamp": "2026-02-24T19:09:19.525Z",
     "level": "success",
-    "message": "  ✅ excellent (347ms)"
+    "message": "  ✅ excellent (445ms)"
   },
   {
-    "timestamp": "2026-02-18T18:40:57.964Z",
+    "timestamp": "2026-02-24T19:09:20.526Z",
     "level": "info",
-    "message": "[117/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[36/125] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 01"
   },
   {
-    "timestamp": "2026-02-18T18:41:04.216Z",
+    "timestamp": "2026-02-24T19:09:28.296Z",
     "level": "success",
-    "message": "  ✅ excellent (342ms)"
+    "message": "  ✅ excellent (675ms)"
   },
   {
-    "timestamp": "2026-02-18T18:41:05.219Z",
+    "timestamp": "2026-02-24T19:09:29.297Z",
     "level": "info",
-    "message": "[118/120] 测试: 台湾 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[37/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 08"
   },
   {
-    "timestamp": "2026-02-18T18:41:11.486Z",
+    "timestamp": "2026-02-24T19:09:39.520Z",
     "level": "success",
-    "message": "  ✅ excellent (373ms)"
+    "message": "  ✅ excellent (719ms)"
   },
   {
-    "timestamp": "2026-02-18T18:41:12.489Z",
+    "timestamp": "2026-02-24T19:09:40.520Z",
     "level": "info",
-    "message": "[119/120] 测试: 试用节点-台湾"
+    "message": "[38/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 05"
   },
   {
-    "timestamp": "2026-02-18T18:41:20.042Z",
+    "timestamp": "2026-02-24T19:09:48.348Z",
     "level": "success",
-    "message": "  ✅ good (844ms)"
+    "message": "  ✅ excellent (732ms)"
   },
   {
-    "timestamp": "2026-02-18T18:41:21.047Z",
+    "timestamp": "2026-02-24T19:09:49.349Z",
     "level": "info",
-    "message": "[120/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[39/125] 测试: 🇩🇪 机场推荐:dafei.de 德国 02"
   },
   {
-    "timestamp": "2026-02-18T18:41:27.224Z",
+    "timestamp": "2026-02-24T19:10:05.316Z",
     "level": "success",
-    "message": "  ✅ excellent (334ms)"
+    "message": "  ✅ good (805ms)"
   },
   {
-    "timestamp": "2026-02-18T18:41:27.230Z",
+    "timestamp": "2026-02-24T19:10:06.318Z",
     "level": "info",
-    "message": "进度: 120/128, 有效: 115"
+    "message": "[40/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 10"
   },
   {
-    "timestamp": "2026-02-18T18:41:28.234Z",
-    "level": "info",
-    "message": "[121/120] 测试: 试用节点-日本"
-  },
-  {
-    "timestamp": "2026-02-18T18:41:40.167Z",
+    "timestamp": "2026-02-24T19:10:13.806Z",
     "level": "success",
-    "message": "  ✅ basic (3978ms)"
+    "message": "  ✅ excellent (640ms)"
   },
   {
-    "timestamp": "2026-02-18T18:41:41.171Z",
+    "timestamp": "2026-02-24T19:10:13.808Z",
     "level": "info",
-    "message": "[122/120] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "进度: 40/124, 有效: 36"
   },
   {
-    "timestamp": "2026-02-18T18:41:49.677Z",
+    "timestamp": "2026-02-24T19:10:14.809Z",
+    "level": "info",
+    "message": "[41/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 12"
+  },
+  {
+    "timestamp": "2026-02-24T19:10:22.251Z",
     "level": "success",
-    "message": "  ✅ good (1888ms)"
+    "message": "  ✅ excellent (694ms)"
   },
   {
-    "timestamp": "2026-02-18T18:41:50.680Z",
+    "timestamp": "2026-02-24T19:10:23.252Z",
     "level": "info",
-    "message": "[123/120] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[42/125] 测试: 🇨🇦加拿大多伦多-推荐下载使用"
   },
   {
-    "timestamp": "2026-02-18T18:41:59.085Z",
+    "timestamp": "2026-02-24T19:10:30.173Z",
     "level": "success",
-    "message": "  ✅ good (1107ms)"
+    "message": "  ✅ excellent (749ms)"
   },
   {
-    "timestamp": "2026-02-18T18:42:00.089Z",
+    "timestamp": "2026-02-24T19:10:31.175Z",
     "level": "info",
-    "message": "[124/120] 测试: 香港 · 4号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[43/125] 测试: 🇫🇷 机场推荐:dafei.de 法国 03"
   },
   {
-    "timestamp": "2026-02-18T18:42:06.473Z",
+    "timestamp": "2026-02-24T19:10:38.445Z",
     "level": "success",
-    "message": "  ✅ excellent (448ms)"
+    "message": "  ✅ excellent (700ms)"
   },
   {
-    "timestamp": "2026-02-18T18:42:07.476Z",
+    "timestamp": "2026-02-24T19:10:39.447Z",
     "level": "info",
-    "message": "[125/120] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[44/125] 测试: 🇫🇷 机场推荐:dafei.de 法国 05"
   },
   {
-    "timestamp": "2026-02-18T18:42:15.813Z",
+    "timestamp": "2026-02-24T19:10:58.202Z",
     "level": "success",
-    "message": "  ✅ good (1214ms)"
+    "message": "  ✅ basic (3580ms)"
   },
   {
-    "timestamp": "2026-02-18T18:42:16.817Z",
+    "timestamp": "2026-02-24T19:10:59.204Z",
     "level": "info",
-    "message": "[126/120] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+    "message": "[45/125] 测试: 🇩🇪德国纽伦堡"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:06.072Z",
+    "level": "success",
+    "message": "  ✅ excellent (680ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:07.074Z",
+    "level": "info",
+    "message": "[46/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 03"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:15.293Z",
+    "level": "success",
+    "message": "  ✅ excellent (731ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:16.294Z",
+    "level": "info",
+    "message": "[47/125] 测试: 🇺🇸美国德克萨斯州"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:23.288Z",
+    "level": "success",
+    "message": "  ✅ excellent (771ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:24.291Z",
+    "level": "info",
+    "message": "[48/125] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 02"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:40.140Z",
+    "level": "success",
+    "message": "  ✅ excellent (663ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:41.142Z",
+    "level": "info",
+    "message": "[49/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 07"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:54.565Z",
+    "level": "success",
+    "message": "  ✅ basic (2745ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:11:55.566Z",
+    "level": "info",
+    "message": "[50/125] 测试: a1-美国专线03∣a3线路∣1.5X"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:02.234Z",
+    "level": "success",
+    "message": "  ✅ excellent (634ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:02.237Z",
+    "level": "info",
+    "message": "进度: 50/124, 有效: 46"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:03.239Z",
+    "level": "info",
+    "message": "[51/125] 测试: a1-美国专线04∣a4线路∣1.5X"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:15.173Z",
+    "level": "success",
+    "message": "  ✅ good (894ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:16.174Z",
+    "level": "info",
+    "message": "[52/125] 测试: a1-美国专线05∣a5线路∣1.5X"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:22.845Z",
+    "level": "success",
+    "message": "  ✅ excellent (625ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:23.846Z",
+    "level": "info",
+    "message": "[53/125] 测试: a1-美国专线02∣a2线路∣1.5X"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:30.515Z",
+    "level": "success",
+    "message": "  ✅ excellent (625ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:31.517Z",
+    "level": "info",
+    "message": "[54/125] 测试: a1-美国专线06∣a6线路∣1.5X"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:42.284Z",
+    "level": "success",
+    "message": "  ✅ excellent (631ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:43.286Z",
+    "level": "info",
+    "message": "[55/125] 测试: 美国+DXC+Technology"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:50.933Z",
+    "level": "success",
+    "message": "  ✅ excellent (556ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:12:51.936Z",
+    "level": "info",
+    "message": "[56/125] 测试: 🇳🇱荷兰-1"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:02.076Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:03.078Z",
+    "level": "info",
+    "message": "[57/125] 测试: 剩余流量：300 GB"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:10.263Z",
+    "level": "success",
+    "message": "  ✅ good (883ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:11.264Z",
+    "level": "info",
+    "message": "[58/125] 测试: 剩余流量：1000 GB"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:18.405Z",
+    "level": "success",
+    "message": "  ✅ good (801ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:19.407Z",
+    "level": "info",
+    "message": "[59/125] 测试: 🇫🇷 机场推荐:dafei.de 法国 12"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:26.707Z",
+    "level": "success",
+    "message": "  ✅ good (899ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:27.708Z",
+    "level": "info",
+    "message": "[60/125] 测试: 🇮🇷_IR_伊朗->🇱🇹_LT_立陶宛"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:36.460Z",
+    "level": "success",
+    "message": "  ✅ good (943ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:36.463Z",
+    "level": "info",
+    "message": "进度: 60/124, 有效: 55"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:37.464Z",
+    "level": "info",
+    "message": "[61/125] 测试: 🇳🇱荷兰-2"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:44.816Z",
+    "level": "success",
+    "message": "  ✅ good (1037ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:13:45.818Z",
+    "level": "info",
+    "message": "[62/125] 测试: 🇷🇺 机场推荐:dafei.de 俄罗斯 03"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:03.656Z",
+    "level": "success",
+    "message": "  ✅ basic (2666ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:04.658Z",
+    "level": "info",
+    "message": "[63/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 02"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:11.883Z",
+    "level": "success",
+    "message": "  ✅ excellent (691ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:12.885Z",
+    "level": "info",
+    "message": "[64/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 01"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:29.017Z",
+    "level": "success",
+    "message": "  ✅ excellent (654ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:30.018Z",
+    "level": "info",
+    "message": "[65/125] 测试: 🇳🇱 机场推荐:dafei.de 荷兰 09"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:38.456Z",
+    "level": "success",
+    "message": "  ✅ good (813ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:39.458Z",
+    "level": "info",
+    "message": "[66/125] 测试: 🇸🇬新加坡"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:47.358Z",
+    "level": "success",
+    "message": "  ✅ good (1085ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:48.358Z",
+    "level": "info",
+    "message": "[67/125] 测试: 🇫🇷 机场推荐:dafei.de 法国 04"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:56.186Z",
+    "level": "success",
+    "message": "  ✅ good (989ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:14:57.188Z",
+    "level": "info",
+    "message": "[68/125] 测试: 🇸🇬 机场推荐:dafei.de 新加坡 04"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:06.147Z",
+    "level": "success",
+    "message": "  ✅ good (1101ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:07.153Z",
+    "level": "info",
+    "message": "[69/125] 测试: 🇦🇪 机场推荐:dafei.de 阿联酋 02"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:17.169Z",
+    "level": "success",
+    "message": "  ✅ basic (3298ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:18.171Z",
+    "level": "info",
+    "message": "[70/125] 测试: 🇯🇵 机场推荐:dafei.de 日本 02"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:24.585Z",
+    "level": "success",
+    "message": "  ✅ excellent (350ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:24.587Z",
+    "level": "info",
+    "message": "进度: 70/124, 有效: 65"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:25.589Z",
+    "level": "info",
+    "message": "[71/125] 测试: 🇮🇪爱尔兰"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:33.361Z",
+    "level": "success",
+    "message": "  ✅ good (1102ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:34.363Z",
+    "level": "info",
+    "message": "[72/125] 测试: 🇳🇱荷兰"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:42.183Z",
+    "level": "success",
+    "message": "  ✅ good (1325ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:43.184Z",
+    "level": "info",
+    "message": "[73/125] 测试: 🇮🇳印度"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:51.325Z",
+    "level": "success",
+    "message": "  ✅ good (1218ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:52.326Z",
+    "level": "info",
+    "message": "[74/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 03"
+  },
+  {
+    "timestamp": "2026-02-24T19:15:59.908Z",
+    "level": "success",
+    "message": "  ✅ excellent (584ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:00.910Z",
+    "level": "info",
+    "message": "[75/125] 测试: 美国 CloudFlare节点"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:11.057Z",
+    "level": "warning",
+    "message": "  ❌ 不可用 (连续失败 8 次,已标记为不可用)"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:12.059Z",
+    "level": "info",
+    "message": "[76/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 01"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:23.892Z",
+    "level": "success",
+    "message": "  ✅ basic (2271ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:24.903Z",
+    "level": "info",
+    "message": "[77/125] 测试: 🇦🇹奥地利"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:31.746Z",
+    "level": "success",
+    "message": "  ✅ excellent (703ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:32.749Z",
+    "level": "info",
+    "message": "[78/125] 测试: 🇬🇧 机场推荐:dafei.de 英国 04"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:42.946Z",
+    "level": "success",
+    "message": "  ✅ excellent (686ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:43.949Z",
+    "level": "info",
+    "message": "[79/125] 测试: 🇰🇷 机场推荐:dafei.de 韩国 11"
+  },
+  {
+    "timestamp": "2026-02-24T19:16:59.577Z",
+    "level": "success",
+    "message": "  ✅ basic (4314ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:00.579Z",
+    "level": "info",
+    "message": "[80/125] 测试: 🇺🇸 机场推荐:dafei.de 美国 07"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:10.537Z",
+    "level": "success",
+    "message": "  ✅ good (1033ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:10.541Z",
+    "level": "info",
+    "message": "进度: 80/124, 有效: 74"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:11.541Z",
+    "level": "info",
+    "message": "[81/125] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:21.658Z",
+    "level": "success",
+    "message": "  ✅ good (1376ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:22.660Z",
+    "level": "info",
+    "message": "[82/125] 测试: 🇫🇮 机场推荐:dafei.de 芬兰 03"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:32.459Z",
+    "level": "success",
+    "message": "  ✅ basic (2124ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:33.461Z",
+    "level": "info",
+    "message": "[83/125] 测试: 🇭🇰 机场推荐:dafei.de 香港 01"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:42.506Z",
+    "level": "success",
+    "message": "  ✅ good (1115ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:43.507Z",
+    "level": "info",
+    "message": "[84/125] 测试: 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:50.860Z",
+    "level": "success",
+    "message": "  ✅ good (1012ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:51.861Z",
+    "level": "info",
+    "message": "[85/125] 测试: 试用节点-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:57.539Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:17:58.540Z",
+    "level": "info",
+    "message": "[86/125] 测试: 🇮🇷_IR_伊朗->🇱🇹_LT_立陶宛"
+  },
+  {
+    "timestamp": "2026-02-24T19:18:14.726Z",
+    "level": "success",
+    "message": "  ✅ good (1009ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:18:15.728Z",
+    "level": "info",
+    "message": "[87/125] 测试: 中国 V2CROSS.COM"
+  },
+  {
+    "timestamp": "2026-02-24T19:18:36.853Z",
+    "level": "success",
+    "message": "  ✅ basic (4792ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:18:37.855Z",
+    "level": "info",
+    "message": "[88/125] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:18:51.215Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:18:52.216Z",
+    "level": "info",
+    "message": "[89/125] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:15.541Z",
+    "level": "success",
+    "message": "  ✅ basic (13284ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:16.542Z",
+    "level": "info",
+    "message": "[90/125] 测试: 🇺🇸_US_美国"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:23.592Z",
+    "level": "success",
+    "message": "  ✅ good (835ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:23.595Z",
+    "level": "info",
+    "message": "进度: 90/124, 有效: 82"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:24.597Z",
+    "level": "info",
+    "message": "[91/125] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:38.193Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:39.196Z",
+    "level": "info",
+    "message": "[92/125] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:46.857Z",
+    "level": "success",
+    "message": "  ✅ good (961ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:47.858Z",
+    "level": "info",
+    "message": "[93/125] 测试: JP-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:56.414Z",
+    "level": "success",
+    "message": "  ✅ good (1172ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:19:57.415Z",
+    "level": "info",
+    "message": "[94/125] 测试: JP-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:06.198Z",
+    "level": "success",
+    "message": "  ✅ good (1741ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:07.199Z",
+    "level": "info",
+    "message": "[95/125] 测试: JP-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:20.837Z",
+    "level": "success",
+    "message": "  ✅ basic (3500ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:21.839Z",
+    "level": "info",
+    "message": "[96/125] 测试: US-美国"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:31.478Z",
+    "level": "success",
+    "message": "  ✅ good (1627ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:32.481Z",
+    "level": "info",
+    "message": "[97/125] 测试: 试用节点-台湾"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:43.626Z",
+    "level": "success",
+    "message": "  ✅ excellent (149ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:44.629Z",
+    "level": "info",
+    "message": "[98/125] 测试: 🇯🇵日本高速03|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:51.895Z",
+    "level": "success",
+    "message": "  ✅ excellent (291ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:52.898Z",
+    "level": "info",
+    "message": "[99/125] 测试: 🇺🇸美国高速04|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:20:59.517Z",
+    "level": "success",
+    "message": "  ✅ excellent (607ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:00.518Z",
+    "level": "info",
+    "message": "[100/125] 测试: 🇺🇸美国高速06|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:07.119Z",
+    "level": "success",
+    "message": "  ✅ excellent (600ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:07.127Z",
+    "level": "info",
+    "message": "进度: 100/124, 有效: 91"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:08.134Z",
+    "level": "info",
+    "message": "[101/125] 测试: 🇮🇳印度高速03|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:15.222Z",
+    "level": "success",
+    "message": "  ✅ excellent (781ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:16.223Z",
+    "level": "info",
+    "message": "[102/125] 测试: 🇺🇸美国高速02|直链"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:22.680Z",
+    "level": "success",
+    "message": "  ✅ good (841ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:23.682Z",
+    "level": "info",
+    "message": "[103/125] 测试: 🇨🇦加拿大高速02|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:34.577Z",
+    "level": "success",
+    "message": "  ✅ basic (4726ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:35.581Z",
+    "level": "info",
+    "message": "[104/125] 测试: 🇺🇸美国高速01|直链"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:42.252Z",
+    "level": "success",
+    "message": "  ✅ good (1024ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:43.255Z",
+    "level": "info",
+    "message": "[105/125] 测试: 🇳🇱荷兰高速01|直链"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:50.215Z",
+    "level": "success",
+    "message": "  ✅ good (1106ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:51.217Z",
+    "level": "info",
+    "message": "[106/125] 测试: 🇳🇱荷兰 - 下载节点 - 低倍率"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:57.884Z",
+    "level": "success",
+    "message": "  ✅ good (944ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:21:58.885Z",
+    "level": "info",
+    "message": "[107/125] 测试: 🇬🇧英国高速01|直链"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:05.819Z",
+    "level": "success",
+    "message": "  ✅ good (1115ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:06.822Z",
+    "level": "info",
+    "message": "[108/125] 测试: 🇩🇪德国高速01|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:14.291Z",
+    "level": "success",
+    "message": "  ✅ good (947ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:15.292Z",
+    "level": "info",
+    "message": "[109/125] 测试: 🇮🇳印度高速01|直链"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:22.965Z",
+    "level": "success",
+    "message": "  ✅ good (1487ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:23.967Z",
+    "level": "info",
+    "message": "[110/125] 测试: 试用节点-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:32.653Z",
+    "level": "success",
+    "message": "  ✅ basic (2053ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:32.656Z",
+    "level": "info",
+    "message": "进度: 110/124, 有效: 101"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:33.657Z",
+    "level": "info",
+    "message": "[111/125] 测试: JP-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:43.806Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:43.808Z",
+    "level": "info",
+    "message": "  🔄 保留之前的 good 状态"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:44.808Z",
+    "level": "info",
+    "message": "[112/125] 测试: US-美国"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:58.560Z",
+    "level": "success",
+    "message": "  ✅ basic (3601ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:22:59.561Z",
+    "level": "info",
+    "message": "[113/125] 测试: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:23:12.967Z",
+    "level": "success",
+    "message": "  ✅ basic (3738ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:23:13.969Z",
+    "level": "info",
+    "message": "[114/125] 测试: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:23:30.046Z",
+    "level": "success",
+    "message": "  ✅ basic (3543ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:23:31.050Z",
+    "level": "info",
+    "message": "[115/125] 测试: 试用节点-新加坡"
+  },
+  {
+    "timestamp": "2026-02-24T19:23:40.236Z",
+    "level": "success",
+    "message": "  ✅ excellent (762ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:23:41.238Z",
+    "level": "info",
+    "message": "[116/125] 测试: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:13.279Z",
+    "level": "success",
+    "message": "  ✅ basic (14139ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:14.282Z",
+    "level": "info",
+    "message": "[117/125] 测试: US-美国"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:24.422Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:24.423Z",
+    "level": "info",
+    "message": "  🔄 保留之前的 good 状态"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:25.425Z",
+    "level": "info",
+    "message": "[118/125] 测试: US-美国"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:35.564Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 2/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:35.565Z",
+    "level": "info",
+    "message": "  🔄 保留之前的 good 状态"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:36.567Z",
+    "level": "info",
+    "message": "[119/125] 测试: JP-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:48.415Z",
+    "level": "success",
+    "message": "  ✅ basic (3561ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:49.416Z",
+    "level": "info",
+    "message": "[120/125] 测试: JP-日本"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:56.776Z",
+    "level": "success",
+    "message": "  ✅ good (1495ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:56.780Z",
+    "level": "info",
+    "message": "进度: 120/124, 有效: 111"
+  },
+  {
+    "timestamp": "2026-02-24T19:24:57.800Z",
+    "level": "info",
+    "message": "[121/125] 测试: US-美国"
+  },
+  {
+    "timestamp": "2026-02-24T19:25:11.678Z",
+    "level": "success",
+    "message": "  ✅ basic (3732ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:25:12.679Z",
+    "level": "info",
+    "message": "[122/125] 测试: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
+  },
+  {
+    "timestamp": "2026-02-24T19:25:38.210Z",
+    "level": "success",
+    "message": "  ✅ basic (10356ms)"
+  },
+  {
+    "timestamp": "2026-02-24T19:25:39.212Z",
+    "level": "info",
+    "message": "[123/125] 测试: 🇯🇵日本高速01|转发优化"
+  },
+  {
+    "timestamp": "2026-02-24T19:25:49.352Z",
+    "level": "warning",
+    "message": "  ⚠️ 暂时不可用 (失败 1/3 次)"
+  },
+  {
+    "timestamp": "2026-02-24T19:25:50.353Z",
+    "level": "info",
+    "message": "[124/125] 测试: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁"
   }
 ]

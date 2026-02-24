@@ -1,369 +1,5 @@
 [
   {
-    "id": 1770502200030,
-    "startTime": "2026-02-07T22:10:00.030Z",
-    "endTime": "2026-02-07T22:33:40.892Z",
-    "duration": 1421,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 341,
-      "afterCount": 309,
-      "newNodes": -32,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 309,
-        "passed": 304,
-        "failed": 5
-      },
-      "purity": {
-        "checked": 30,
-        "updated": 74
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770523800031,
-    "startTime": "2026-02-08T04:10:00.031Z",
-    "endTime": "2026-02-08T04:32:29.455Z",
-    "duration": 1349,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 309,
-      "afterCount": 361,
-      "newNodes": 52,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 361,
-        "passed": 347,
-        "failed": 14
-      },
-      "purity": {
-        "checked": 31,
-        "updated": 78
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770585000017,
-    "startTime": "2026-02-08T21:10:00.017Z",
-    "endTime": "2026-02-08T21:41:33.187Z",
-    "duration": 1893,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 45,
-      "afterCount": 17,
-      "newNodes": -28,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 17,
-        "passed": 17,
-        "failed": 0
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770606600015,
-    "startTime": "2026-02-09T03:10:00.015Z",
-    "endTime": "2026-02-09T03:31:12.940Z",
-    "duration": 1273,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 17,
-      "afterCount": 14,
-      "newNodes": -3,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 14,
-        "passed": 13,
-        "failed": 1
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770628200576,
-    "startTime": "2026-02-09T09:10:00.576Z",
-    "endTime": "2026-02-09T09:41:05.313Z",
-    "duration": 1865,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 14,
-      "afterCount": 11,
-      "newNodes": -3,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 11,
-        "passed": 10,
-        "failed": 1
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770649800011,
-    "startTime": "2026-02-09T15:10:00.011Z",
-    "endTime": "2026-02-09T15:42:13.504Z",
-    "duration": 1933,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 11,
-      "afterCount": 7,
-      "newNodes": -4,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 7,
-        "passed": 3,
-        "failed": 4
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770671400013,
-    "startTime": "2026-02-09T21:10:00.013Z",
-    "endTime": "2026-02-09T21:39:27.506Z",
-    "duration": 1767,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 7,
-      "afterCount": 7,
-      "newNodes": 0,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 7,
-        "passed": 7,
-        "failed": 0
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770693000013,
-    "startTime": "2026-02-10T03:10:00.013Z",
-    "endTime": "2026-02-10T03:42:05.869Z",
-    "duration": 1926,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 7,
-      "afterCount": 46,
-      "newNodes": 39,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 46,
-        "passed": 45,
-        "failed": 1
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770714600017,
-    "startTime": "2026-02-10T09:10:00.017Z",
-    "endTime": "2026-02-10T09:10:03.425Z",
-    "duration": 3,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 46,
-      "afterCount": 46,
-      "newNodes": 0,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 46,
-        "passed": 45,
-        "failed": 1
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770736200014,
-    "startTime": "2026-02-10T15:10:00.014Z",
-    "endTime": "2026-02-10T15:33:47.372Z",
-    "duration": 1427,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 6,
-      "afterCount": 6,
-      "newNodes": 0,
-      "yamlGenerated": true,
-      "connectivity": {
-        "tested": 6,
-        "passed": 6,
-        "failed": 0
-      },
-      "purity": {
-        "checked": 1,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770757800018,
-    "startTime": "2026-02-10T21:10:00.018Z",
-    "endTime": "2026-02-10T21:29:06.842Z",
-    "duration": 1147,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 40,
-      "afterCount": 43,
-      "newNodes": 3,
-      "yamlGenerated": true,
-      "sources": {
-        "github": 297,
-        "web": 0,
-        "linuxdo": 0,
-        "linuxdoValid": 0
-      },
-      "connectivity": {
-        "tested": 43,
-        "passed": 40,
-        "failed": 3,
-        "removed": 3
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770779400016,
-    "startTime": "2026-02-11T03:10:00.016Z",
-    "endTime": "2026-02-11T03:24:56.448Z",
-    "duration": 896,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 40,
-      "afterCount": 26,
-      "newNodes": -14,
-      "yamlGenerated": true,
-      "sources": {
-        "github": 308,
-        "web": 0,
-        "linuxdo": 0,
-        "linuxdoValid": 0
-      },
-      "connectivity": {
-        "tested": 26,
-        "passed": 23,
-        "failed": 3,
-        "removed": 3
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770801000014,
-    "startTime": "2026-02-11T09:10:00.014Z",
-    "endTime": "2026-02-11T09:25:28.870Z",
-    "duration": 929,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 17,
-      "afterCount": 15,
-      "newNodes": -2,
-      "yamlGenerated": true,
-      "sources": {
-        "github": 287,
-        "web": 0,
-        "linuxdo": 0,
-        "linuxdoValid": 0
-      },
-      "connectivity": {
-        "tested": 15,
-        "passed": 13,
-        "failed": 2,
-        "removed": 2
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
-    "id": 1770822600016,
-    "startTime": "2026-02-11T15:10:00.016Z",
-    "endTime": "2026-02-11T15:10:01.266Z",
-    "duration": 1,
-    "status": "success",
-    "type": "全网节点更新",
-    "details": {
-      "beforeCount": 13,
-      "afterCount": 13,
-      "newNodes": 0,
-      "yamlGenerated": true,
-      "sources": {
-        "github": 0,
-        "web": 0,
-        "linuxdo": 0,
-        "linuxdoValid": 0
-      },
-      "connectivity": {
-        "tested": 13,
-        "passed": 13,
-        "failed": 0,
-        "removed": 0
-      },
-      "purity": {
-        "checked": 0,
-        "updated": 0
-      }
-    },
-    "error": null
-  },
-  {
     "id": 1770844200015,
     "startTime": "2026-02-11T21:10:00.015Z",
     "endTime": "2026-02-11T21:24:36.099Z",
@@ -1160,6 +796,750 @@
         "tested": 541,
         "passed": 294,
         "failed": 247,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771449000013,
+    "startTime": "2026-02-18T21:10:00.013Z",
+    "endTime": "2026-02-18T21:25:57.089Z",
+    "duration": 957,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 120,
+      "afterCount": 166,
+      "newNodes": 46,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 484,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 166,
+        "passed": 137,
+        "failed": 29,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771470600018,
+    "startTime": "2026-02-19T03:10:00.018Z",
+    "endTime": "2026-02-19T03:25:11.567Z",
+    "duration": 912,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 166,
+      "afterCount": 166,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 426,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 166,
+        "passed": 102,
+        "failed": 64,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771492200014,
+    "startTime": "2026-02-19T09:10:00.014Z",
+    "endTime": "2026-02-19T09:32:14.028Z",
+    "duration": 1334,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 166,
+      "afterCount": 182,
+      "newNodes": 16,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 455,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 182,
+        "passed": 60,
+        "failed": 122,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771513800017,
+    "startTime": "2026-02-19T15:10:00.017Z",
+    "endTime": "2026-02-19T15:29:17.378Z",
+    "duration": 1157,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 82,
+      "afterCount": 151,
+      "newNodes": 69,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 104,
+        "failed": 47,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771535400012,
+    "startTime": "2026-02-19T21:10:00.012Z",
+    "endTime": "2026-02-19T21:10:35.680Z",
+    "duration": 36,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 87,
+        "failed": 64,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771557000012,
+    "startTime": "2026-02-20T03:10:00.012Z",
+    "endTime": "2026-02-20T03:10:32.163Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 55,
+        "failed": 96,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771578600010,
+    "startTime": "2026-02-20T09:10:00.010Z",
+    "endTime": "2026-02-20T09:10:32.185Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 48,
+        "failed": 103,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771600200012,
+    "startTime": "2026-02-20T15:10:00.012Z",
+    "endTime": "2026-02-20T15:10:32.186Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 39,
+        "failed": 112,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771621800011,
+    "startTime": "2026-02-20T21:10:00.011Z",
+    "endTime": "2026-02-20T21:10:32.191Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 62,
+        "failed": 89,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771643400010,
+    "startTime": "2026-02-21T03:10:00.010Z",
+    "endTime": "2026-02-21T03:10:32.187Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 55,
+        "failed": 96,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771665000009,
+    "startTime": "2026-02-21T09:10:00.009Z",
+    "endTime": "2026-02-21T09:10:32.194Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 35,
+        "failed": 116,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771686600011,
+    "startTime": "2026-02-21T15:10:00.011Z",
+    "endTime": "2026-02-21T15:10:32.209Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 25,
+        "failed": 126,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771708200012,
+    "startTime": "2026-02-21T21:10:00.012Z",
+    "endTime": "2026-02-21T21:10:32.216Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 51,
+        "failed": 100,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771729800011,
+    "startTime": "2026-02-22T03:10:00.011Z",
+    "endTime": "2026-02-22T03:10:32.218Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 28,
+        "failed": 123,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771751400010,
+    "startTime": "2026-02-22T09:10:00.010Z",
+    "endTime": "2026-02-22T09:10:32.234Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 22,
+        "failed": 129,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771773000013,
+    "startTime": "2026-02-22T15:10:00.013Z",
+    "endTime": "2026-02-22T15:10:32.232Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 19,
+        "failed": 132,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771794600010,
+    "startTime": "2026-02-22T21:10:00.010Z",
+    "endTime": "2026-02-22T21:10:32.245Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 26,
+        "failed": 125,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771816200009,
+    "startTime": "2026-02-23T03:10:00.009Z",
+    "endTime": "2026-02-23T03:10:32.260Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 16,
+        "failed": 135,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771837800012,
+    "startTime": "2026-02-23T09:10:00.012Z",
+    "endTime": "2026-02-23T09:10:35.747Z",
+    "duration": 36,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 10,
+        "failed": 141,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771859400010,
+    "startTime": "2026-02-23T15:10:00.010Z",
+    "endTime": "2026-02-23T15:10:32.270Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 151,
+      "afterCount": 151,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 151,
+        "passed": 10,
+        "failed": 141,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771881000009,
+    "startTime": "2026-02-23T21:10:00.009Z",
+    "endTime": "2026-02-23T21:10:32.225Z",
+    "duration": 32,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 25,
+      "afterCount": 25,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 25,
+        "passed": 20,
+        "failed": 5,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771902600014,
+    "startTime": "2026-02-24T03:10:00.014Z",
+    "endTime": "2026-02-24T03:10:30.278Z",
+    "duration": 30,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 25,
+      "afterCount": 25,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 343,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 25,
+        "passed": 20,
+        "failed": 5,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771924200013,
+    "startTime": "2026-02-24T09:10:00.013Z",
+    "endTime": "2026-02-24T09:27:04.453Z",
+    "duration": 1024,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 25,
+      "afterCount": 79,
+      "newNodes": 54,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 278,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 79,
+        "passed": 60,
+        "failed": 19,
+        "removed": 0
+      },
+      "purity": {
+        "checked": 0,
+        "updated": 0
+      }
+    },
+    "error": null
+  },
+  {
+    "id": 1771945800012,
+    "startTime": "2026-02-24T15:10:00.012Z",
+    "endTime": "2026-02-24T15:10:52.409Z",
+    "duration": 52,
+    "status": "success",
+    "type": "全网节点更新",
+    "details": {
+      "beforeCount": 82,
+      "afterCount": 82,
+      "newNodes": 0,
+      "yamlGenerated": true,
+      "sources": {
+        "github": 0,
+        "web": 0,
+        "linuxdo": 0,
+        "linuxdoValid": 0
+      },
+      "connectivity": {
+        "tested": 48,
+        "passed": 40,
+        "failed": 8,
         "removed": 0
       },
       "purity": {

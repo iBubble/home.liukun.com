@@ -4,35 +4,38 @@ allow-lan: false
 mode: rule
 log-level: silent
 proxies:
-  - id: p_1770558159136_10_bgczd
-    name: (2x)IEPL专线 香港2
-    type: vmess
-    server: dzgz.tcity8.monster
-    port: 35212
-    uuid: e1a98d14-8827-426f-893c-527301073e04
-    alterId: 0
-    cipher: auto
-    network: tcp
-    tls: false
+  - id: p_1771924959672_13_dnguj
+    name: 🇯🇵日本高速02|转发优化
+    type: vless
+    server: jpfast-3.up-pay.xyz
+    port: 4497
+    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
+    tls: true
     skip-cert-verify: true
-    servername: ''
+    network: tcp
+    servername: www.amazon.com
+    flow: xtls-rprx-vision
     raw: >-
-      vmess://eyJ2IjoiMiIsInBzIjoiKDJ4KUlFUExcdTRlMTNcdTdlYmYgXHU5OTk5XHU2ZTJmMiIsImFkZCI6ImR6Z3oudGNpdHk4Lm1vbnN0ZXIiLCJwb3J0IjoiMzUyMTIiLCJpZCI6ImUxYTk4ZDE0LTg4MjctNDI2Zi04OTNjLTUyNzMwMTA3M2UwNCIsImFpZCI6IjAiLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIn0=
-    _sourceUrl: >-
-      http://8.209.231.35:6868/api/v1/client/subscribe?token=edd4aeb86315b8c9df3bc52dc9afa98c
-    _clashName: (2x)IEPL专线 香港2
-    latency: 168
+      vless://b13f9fa5-846c-4b31-889e-c1801d2fd266@jpfast-3.up-pay.xyz:4497?mode=multi&security=reality&encryption=none&type=tcp&flow=xtls-rprx-vision&pbk=c3HflLWDVDkPf9J5kD-R171i16fchUfyFz2SemIh2nc&sid=63795b1c&sni=www.amazon.com&servername=www.amazon.com&spx=%2F&fp=safari#%F0%9F%87%AF%F0%9F%87%B5%E6%97%A5%E6%9C%AC%E9%AB%98%E9%80%9F02%7C%E8%BD%AC%E5%8F%91%E4%BC%98%E5%8C%96
+    reality-opts:
+      public-key: c3HflLWDVDkPf9J5kD-R171i16fchUfyFz2SemIh2nc
+      short-id: 63795b1c
+    client-fingerprint: safari
+    _sourceUrl: https://jc10a1.lada.mom/s/fe7ebb99dd520f7a3a3c5def6c414d13
+    _clashName: 🇯🇵日本高速02|转发优化
+    latency: 261
     purityScore: 100
     purityInfo:
       score: 100
-      ip: 182.245.77.110
+      ip: 182.245.204.190
       isp: Chinanet
       country: CN
       hosting: false
+    localLatency: 329
 proxy-groups:
   - name: test
     type: select
     proxies:
-      - (2x)IEPL专线 香港2
+      - 🇯🇵日本高速02|转发优化
 rules:
   - MATCH,test

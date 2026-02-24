@@ -15,7 +15,7 @@ async function setupProxy() {
     const proxiesFile = path.join(ROOT, 'proxies.json');
     const allProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8'));
     const proxy = allProxies[1];
-    
+
     const config = {
         port: TEST_PORT,
         'socks-port': TEST_PORT + 1,
@@ -30,15 +30,15 @@ async function setupProxy() {
         }],
         rules: ['MATCH,test']
     };
-    
+
     const configPath = path.join(CLASH_DIR, 'specific_topic_config.yaml');
     fs.writeFileSync(configPath, yaml.dump(config));
-    
+
     if (clashProcess) {
         clashProcess.kill('SIGTERM');
         await new Promise(r => setTimeout(r, 500));
     }
-    
+
     clashProcess = spawn(CLASH_BIN, ['-d', CLASH_DIR, '-f', configPath], {
         stdio: 'pipe',
         env: {
@@ -51,7 +51,7 @@ async function setupProxy() {
             all_proxy: ''
         }
     });
-    
+
     await new Promise(r => setTimeout(r, 5000));
 }
 
@@ -60,7 +60,7 @@ function getLinuxDoCookie() {
     if (fs.existsSync(cookieFile)) {
         try {
             return fs.readFileSync(cookieFile, 'utf8').trim();
-        } catch (e) {}
+        } catch (e) { }
     }
     return '';
 }
@@ -74,14 +74,14 @@ function curlWithCookie(url, cookie, timeout = 30) {
             '-H', 'User-Agent: Mozilla/5.0',
             '-x', `http://127.0.0.1:${TEST_PORT}`,
         ];
-        
+
         if (cookie) {
             curlArgs.push('-H', `Cookie: ${cookie}`);
         }
-        
+
         curlArgs.push(url);
-        
-        const child = spawn('curl', curlArgs, { 
+
+        const child = spawn('curl', curlArgs, {
             timeout: (timeout + 2) * 1000,
             env: {
                 ...process.env,
@@ -93,10 +93,10 @@ function curlWithCookie(url, cookie, timeout = 30) {
                 all_proxy: ''
             }
         });
-        
+
         let data = '';
         child.stdout.on('data', chunk => data += chunk);
-        
+
         child.on('close', (code) => {
             if (code === 0 && data) {
                 resolve(data);
@@ -104,7 +104,7 @@ function curlWithCookie(url, cookie, timeout = 30) {
                 reject(new Error(`curl code ${code}`));
             }
         });
-        
+
         child.on('error', reject);
     });
 }
@@ -119,12 +119,12 @@ function extractNodes(content) {
         /hysteria2?:\/\/[A-Za-z0-9@.:_\-?&=%#\/]+/g,
         /hy2:\/\/[A-Za-z0-9@.:_\-?&=%#\/]+/g
     ];
-    
+
     for (const pattern of patterns) {
         const matches = content.match(pattern) || [];
         nodes.push(...matches);
     }
-    
+
     return nodes;
 }
 
@@ -136,7 +136,7 @@ function extractSubscriptions(content) {
         /https?:\/\/[^\s<>"'\)]+\.yaml/gi,
         /https?:\/\/[^\s<>"'\)]+\.txt/gi
     ];
-    
+
     for (const pattern of patterns) {
         const matches = content.match(pattern) || [];
         for (let url of matches) {
@@ -148,43 +148,53 @@ function extractSubscriptions(content) {
             }
         }
     }
-    
+
     return subs;
 }
 
 async function main() {
-    const topicId = 676824;
-    
+    const topicId = 1638381;
+
     console.log('获取主题内容: 长期免费节点分享\n');
-    
+
     try {
         await setupProxy();
         console.log('✅ 代理已设置\n');
-        
+
         const cookie = getLinuxDoCookie();
         const topicUrl = `https://linux.do/t/topic/${topicId}.json`;
-        
+
         console.log(`正在获取: ${topicUrl}\n`);
-        
-        const topicData = JSON.parse(await curlWithCookie(topicUrl, cookie));
-        const posts = topicData.post_stream?.posts || [];
-        
-        console.log(`共 ${posts.length} 个帖子\n`);
+
+        const topicDataStr = await curlWithCookie(`https://linux.do/t/topic/${topicId}`, cookie);
+        console.log(`HTML fetch result length: ${topicDataStr.length}`);
+        console.log(topicDataStr.substring(0, 1000));
+
+        try {
+            const topicData = JSON.parse(await curlWithCookie(topicUrl, cookie));
+            console.log(`topicData keys: `, Object.keys(topicData));
+            if (topicData.errors) console.log(`errors: `, topicData.errors);
+
+            const posts = topicData.post_stream?.posts || [];
+            console.log(`共 ${posts.length} 个帖子\n`);
+        } catch (e) {
+            console.log("JSON Parse Error: " + e.message);
+        }
         console.log('========================================\n');
-        
+
         let totalNodes = 0;
         let totalSubs = 0;
-        
+
         for (let i = 0; i < Math.min(posts.length, 5); i++) {
             const post = posts[i];
             const content = post.cooked || '';
-            
+
             console.log(`--- 帖子 #${i + 1} (作者: ${post.username}) ---\n`);
-            
+
             // 提取节点
             const nodes = extractNodes(content);
             const subs = extractSubscriptions(content);
-            
+
             if (nodes.length > 0) {
                 console.log(`找到 ${nodes.length} 个节点链接:`);
                 nodes.slice(0, 5).forEach(node => {
@@ -198,7 +208,7 @@ async function main() {
                 console.log('');
                 totalNodes += nodes.length;
             }
-            
+
             if (subs.length > 0) {
                 console.log(`找到 ${subs.length} 个订阅链接:`);
                 subs.forEach(sub => {
@@ -207,7 +217,7 @@ async function main() {
                 console.log('');
                 totalSubs += subs.length;
             }
-            
+
             // 显示文本内容摘要
             const textContent = content
                 .replace(/<[^>]+>/g, ' ')
@@ -217,21 +227,21 @@ async function main() {
                 .replace(/&gt;/g, '>')
                 .replace(/\s+/g, ' ')
                 .trim();
-            
+
             if (textContent.length > 0 && nodes.length === 0 && subs.length === 0) {
                 const preview = textContent.substring(0, 200);
                 console.log(`内容摘要: ${preview}${textContent.length > 200 ? '...' : ''}\n`);
             }
-            
+
             console.log('');
         }
-        
+
         console.log('========================================');
         console.log('总结');
         console.log('========================================');
         console.log(`总节点数: ${totalNodes}`);
         console.log(`总订阅数: ${totalSubs}`);
-        
+
     } catch (e) {
         console.log('❌ 错误:', e.message);
     } finally {
