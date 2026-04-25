@@ -1,6 +1,6 @@
 # 3x-ui 统一管理 Dashboard
 
-> 将多台海外服务器的 3x-ui 面板聚合到一个赛博朋克风格的 Web 管理页面。  
+> 将多台海外服务器的 3x-ui 面板聚合到一个赛博朋克风格的 Web 管理页面，并集成自动化全节点网络测速功能。  
 > 在线地址：`https://home.liukun.com/Projects/3xui-Dashboard/`
 
 ---
@@ -9,24 +9,22 @@
 
 ```
 浏览器 ──HTTPS──▶ home.liukun.com/Projects/3xui-Dashboard/
-                       ├── index.html     (前端 SPA)
-                       ├── style.css      (赛博朋克主题)
-                       ├── app.js         (前端逻辑)
+                       ├── index.html       (前端 SPA，包含测速 UI)
+                       ├── style.css        (赛博朋克主题)
+                       ├── app.js           (前端逻辑，包含自动测速引擎)
                        └── api/
-                           ├── config.php (服务器凭据 & Dashboard 密码)
-                           ├── proxy.php  (后端 API 代理层)
-                           └── sub.php    (Clash 订阅生成器)
-                                  │ PHP cURL 转发 (绕过 CORS)
-               ┌──────────────────┼──────────────────┐
-               ▼                  ▼                  ▼
-     hk.liukun.com:9528    sg.liukun.com:9528    us.liukun.com:9528
-     (3x-ui REST API)      (3x-ui REST API)      (3x-ui REST API)
+                           ├── config.php       (服务器凭据 & Dashboard 密码)
+                           ├── proxy.php        (核心 API 代理 & 历史记录存取)
+                           ├── speedproxy.php   (独立的高性能测速数据中继代理)
+                           ├── speedtest.php    (测速页面 iframe 同源桥接层)
+                           ├── speed_history.json (测速历史持久化存储)
+                           └── sub.php          (Clash 订阅生成器)
 ```
 
 ### 核心思路
-- **前端不直连** 3x-ui 面板 → 避免 CORS 和凭据泄露
-- **PHP 后端代理** 统一管理三台服务器的 Session Cookie
-- **Token 鉴权** 保护 Dashboard 和订阅链接
+- **前端不直连**：面板数据和测速数据均通过 PHP 后端代理，完美避开跨域（CORS）限制。
+- **无状态后端**：依靠 PHP cURL 管理各个海外服务器的 Session Cookie，保护真实凭据。
+- **并行与隔离**：主控制面板 API（`proxy.php`）与测速 XHR 中继（`speedproxy.php`）物理隔离，互不阻塞，保证高并发下界面的流畅响应。
 
 ---
 
@@ -34,209 +32,103 @@
 
 | 层 | 技术 | 说明 |
 |:--|:--|:--|
-| 前端 | HTML + Vanilla CSS + JS | 无框架，纯原生，单页应用 |
-| 后端 | PHP 8.3 + cURL | 宝塔面板自带运行时 |
-| API 来源 | 3x-ui REST API | `/panel/api/inbounds/*` |
-| 部署 | Nginx + 宝塔 | 静态文件 + PHP-FPM |
-| 风格 | 赛博朋克 | 与 home.liukun.com 整体风格一致 |
+| 前端 | HTML + Vanilla CSS + JS | 无框架，纯原生，内置图表渲染与消息桥接 |
+| 后端 | PHP 8.3 + cURL | 负责 REST API 转发、跨域代理、数据持久化 |
+| 测速核心 | OpenSpeedTest | 纯 JS 测速引擎，经 iframe 包装注入 |
+| 存储 | JSON 文件 | 轻量级的服务器端测速历史记录存储 |
+| 风格 | 赛博朋克 | 霓虹发光、扫描线动画、深色背景 |
 
 ---
 
 ## 三、文件清单
 
-```
+```text
 3xui-Dashboard/
-├── index.html          # 页面骨架：登录门禁 + Header + 服务器卡片 + Tab + 数据表格
-├── style.css           # 赛博朋克主题（霓虹 cyan/magenta/green、扫描线动画）
-├── app.js              # 前端逻辑：鉴权、API 调用、渲染、自动刷新、订阅链接
+├── index.html          # 页面骨架：登录、服务器卡片、图表区、测速沙盒
+├── style.css           # 赛博朋克 UI 主题
+├── app.js              # 控制流：数据拉取、DOM 渲染、测速队列调度、历史计算
 ├── api/
-│   ├── config.php      # 所有服务器连接配置 + Dashboard 登录凭据
-│   ├── proxy.php       # API 代理层：转发请求、管理 Cookie、处理鉴权
-│   └── sub.php         # Clash 订阅生成器：动态拉取配置输出 YAML
+│   ├── config.php      # 服务器 IP、端口、管理员账号密码等机密信息
+│   ├── proxy.php       # 主代理：登录、获取流量状态、重置流量、历史记录读写
+│   ├── speedproxy.php  # 测速代理：专门处理 OpenSpeedTest 的大文件下载/上传请求
+│   ├── speedtest.php   # 资源代理：将跨域的 SVG/JS 转换到同源环境以绕过 iframe 限制
+│   ├── sub.php         # 订阅代理：提取 VLESS 节点并生成 Clash YAML
+│   └── speed_history.json # 数据层：保存服务器测速的延迟与带宽记录（PHP自动生成）
 └── README.md           # 本文档
 ```
 
 ---
 
-## 四、后端 API 接口
+## 四、核心功能详解
 
-### 4.1 proxy.php（API 代理）
+### 4.1 节点管理与状态聚合
+- **统一登录**：支持 `ALL / HK / SG / US` 等选项卡，一键切换不同区域的服务器。
+- **流量监控**：实时展示入站节点的总流量、上下行消耗，以彩色进度条的形式呈现使用情况。
+- **一键重置**：每个客户端独立操作，提供防误触确认。
+- **Clash 自动订阅**：后台自动爬取并解析 `VLESS + Reality` 节点，包含完整的 SNI 与 Short ID 处理，输出免配置订阅链。
 
-所有请求需携带 Header `X-Auth: base64(用户名:密码)`。
+### 4.2 全自动化网络测速系统（v4）
+Dashboard 内置了基于 `OpenSpeedTest` 魔改的全自动测速队列机制：
+1. **沙盒隔离机制**：使用隐藏的 `<iframe id="speedIframe">` 动态装载测速引擎。
+2. **同源绕过（CORS）**：`speedtest.php` 动态拦截和替换外部域名的资源路径，将其包装为同源请求，从而获得了对 `contentDocument` 注入 DOM 的最高权限。
+3. **高并发中继**：测速期间产生的高频 XHR 请求（下载大垃圾文件、上传大负载）被发送给 `speedproxy.php`，由于没有任何验证负担，它可以全速将网络包中继给目的服务器，**实现准确测算从 Dashboard 主服务器到海外节点的物理宽带**。
+4. **实时桥接通讯**：被注入沙盒的 JS 每秒读取 DOM 中的进度数值，通过 `window.parent.postMessage` 与父页面通讯。
+5. **智能队列调度**：支持自动遍历所有节点，自动触发测速、超时阻断（90s）、结果采集，并最终在“测速结果总览”渲染直观的柱状图。
 
-| action | 方法 | 参数 | 说明 |
+### 4.3 测速历史与智能算法
+- **数据持久化**：每次测速成功后，包含了 `Download`、`Upload`、`Ping`、`Jitter` 以及时间戳的记录会被 POST 给后端。
+- **滚动存储**：`speed_history.json` 为每台服务器自动只保留最近 **20 次** 历史，防止文件无限膨胀。
+- **自动平均值计算**：面板拉取历史记录后，将自动剔除无效数据，计算各项指标的历史均值，并呈现在各节点名称的下方（如 `历史平均: ↓ 65.2 ↑ 36.8 | P: 190ms J: 10ms`）。
+
+---
+
+## 五、后端 API 接口汇总
+
+### 5.1 proxy.php（管理与数据接口）
+*所有请求均需要 Header: `X-Auth: base64(username:password)`*
+
+| action | 方法 | 参数 | 功能 |
 |:--|:--|:--|:--|
-| `login` | GET | `username`, `password` | Dashboard 登录验证 |
-| `get_all` | GET | 无 | 聚合所有服务器的入站列表 + 服务器状态 + 在线连接 |
-| `reset_traffic` | GET | `server`, `id`, `email` | 重置指定客户端流量 |
+| `login` | POST | `{username, password}` | 登录验证 |
+| `get_all` | GET | 无 | 获取所有面板的 Inbounds 列表与主机状态 |
+| `reset_traffic` | GET | `server`, `id`, `email` | 重置目标客户端流量 |
+| `get_speed_history` | GET | 无 | 读取服务器端的 `speed_history.json` |
+| `save_speed_history`| POST | `{server, down, up, ping, jitter}` | 记录一次新的测速结果 |
 
-**`get_all` 返回结构：**
-
-```json
-{
-  "success": true,
-  "time": "2026-04-02 23:00:00",
-  "data": {
-    "hk": {
-      "name": "Hong Kong", "flag": "🇭🇰",
-      "online": true,
-      "inbounds": [/* 3x-ui 入站对象数组 */],
-      "status": {/* 服务器状态：cpu, mem, uptime */},
-      "onlines": ["tv8wwb3l"]  // 当前在线客户端 email 列表
-    },
-    "sg": { /* ... */ },
-    "us": { /* ... */ }
-  }
-}
-```
-
-### 4.2 sub.php（Clash 订阅）
-
-| 参数 | 说明 |
+### 5.2 sub.php（订阅接口）
+| 参数 | 功能 |
 |:--|:--|
-| `token` | `base64(用户名:密码)` 鉴权令牌 |
+| `token` | GET 传入，即 `base64(账号:密码)` |
 
-**订阅链接：**
-```
-https://home.liukun.com/Projects/3xui-Dashboard/api/sub.php?token=R2VtaW5pOkdsNTE4MTA4MQ==
-```
-
-**动态生成逻辑：**
-1. 逐一登录三台 3x-ui → 拉取 VLESS 入站配置
-2. 从 `settings` 提取 UUID、flow
-3. 从 `streamSettings.realitySettings` 提取 SNI、public-key（注意路径在 `.settings.publicKey`）、short-id
-4. 输出标准 Clash YAML：`proxies` → `proxy-groups` → `rules`
-
-**节点命名规则：** `Gemini-HK` / `Gemini-HK1` / `Gemini-SG` / `Gemini-US`（基于服务器 key 生成）
-
----
-
-## 五、3x-ui API 参考
-
-3x-ui 面板通过 REST API 暴露管理接口，需先 POST `/login` 获取 Session Cookie。
-
-| 接口 | 方法 | 说明 |
-|:--|:--|:--|
-| `/login` | POST | 登录，参数 `username` + `password`，返回 Set-Cookie |
-| `/panel/api/inbounds/list` | GET | 获取所有入站及其客户端配置 |
-| `/panel/api/inbounds/onlines` | POST | 获取当前在线连接的客户端 email 列表 |
-| `/panel/api/inbounds/{id}/resetClientTraffic/{email}` | POST | 重置指定客户端流量 |
-| `/server/status` | POST | 获取服务器 CPU/RAM/运行时间 |
-
-**Reality 配置数据路径（重要）：**
-```
-inbound.streamSettings (JSON 字符串) → 解析后：
-  ├── network: "tcp"
-  ├── security: "reality"
-  └── realitySettings:
-        ├── serverNames: ["www.microsoft.com"]
-        ├── shortIds: ["5533c7eacde28fb0", ...]
-        ├── privateKey: "..." (服务端私钥，不用于客户端)
-        └── settings:
-              └── publicKey: "Dgc613Ih9stTC8FYHj0Q3bhKr4IRf9T25WfQ8dbdYGA"
-```
-
----
-
-## 六、前端设计要点
-
-### 6.1 赛博朋克色彩系统
-```css
---cyan: #00ffff;    /* 主色调：标题、边框、交互 */
---magenta: #ff00ff; /* 强调色：Header 底线、入站标题 */
---green: #00ff41;   /* 状态色：在线、数据值 */
---yellow: #ffd700;  /* 警告色：即将过期 */
---red: #ff3333;     /* 错误/危险色 */
-```
-
-### 6.2 关键交互
-- **登录门禁**：sessionStorage 存储 base64 凭据，刷新不丢失
-- **自动刷新**：30 秒轮询 `get_all`，可通过右上角 checkbox 开关
-- **Tab 切换**：ALL / HK / SG / US 筛选入站数据
-- **流量重置**：每个客户端旁的「重置」按钮，confirm 确认后调用 API
-- **订阅复制**：点击「📋 订阅」按钮 → 一键复制 Clash 订阅 URL 到剪贴板
-
-### 6.3 MIXED 入站处理
-MIXED/SOCKS5 协议的入站无命名客户端（`settings.clients` 为空），但入站对象本身有 `up`/`down` 流量字段。前端对此特殊处理：展示入站级流量表格 + 「● 有流量」状态指示。
-
-### 6.4 服务器分组可视化
-同一台服务器的多个入站（如 VLESS + MIXED）被包裹在 `.server-group` 容器中，通过**彩色左边框**区分：
-
-| 服务器 | 左边框颜色 | CSS 变量 |
-|:--|:--|:--|
-| 🇭🇰 Hong Kong | 🟢 绿色 | `var(--green)` |
-| 🇸🇬 Singapore | 🔵 青色 | `var(--cyan)` |
-| 🇺🇸 United States | 🟣 品红色 | `var(--magenta)` |
-
-每组包含标题栏（国旗+名称+入站数+在线数）+ 子入站区块。
-
-### 6.5 图形化流量条状图
-在每个入站 header 行的背景渲染一个**渐变比例条**，直观对比各入站的流量大小：
-- **计算基准**：第一遍扫描全部入站，取最大流量值作为 **50% 宽度基准**
-- **渲染方式**：CSS `linear-gradient(90deg, rgba(颜色,.15) X%, transparent X%)`
-- **颜色映射**：HK=`0,255,65` / SG=`0,255,255` / US=`255,0,255`
-- **流量标签**：header 标题旁显示该入站具体流量值（如 `5.84 GB`）
-
----
-
-## 七、安全机制
-
-| 层 | 措施 |
+### 5.3 speedproxy.php（专线测速代理）
+*无鉴权，专注转发大流量。*
+| 路由参数 | 功能 |
 |:--|:--|
-| Dashboard 访问 | 登录门禁，凭据通过 `X-Auth` Header 传递 |
-| API 代理 | 每个请求校验 `X-Auth`，未授权返回 401 |
-| 订阅链接 | Token 参数鉴权，拒绝无 Token 请求 |
-| 3x-ui 凭据 | 仅存储在服务器端 `config.php`，不对前端暴露 |
-| Cookie 管理 | PHP 端存储在 `sys_get_temp_dir()/3xui_sess/`，按 host 哈希隔离 |
+| `?server={key}&action=download` | 代理 OpenSpeedTest 发往远端的下载块 |
+| `?server={key}&action=upload`   | 代理 OpenSpeedTest 发往远端的上传块 |
+| `?server={key}&action=ping`     | 空白探测响应，用于测量延迟抖动 |
 
 ---
 
-## 八、部署与维护
+## 六、部署指南
 
-### 8.1 部署步骤
-```bash
-# 从本地推送到服务器
-scp -r 3xui-Dashboard/ gemini-server:/www/wwwroot/ibubble.vicp.net/Projects/
-
-# 验证 PHP 可用
-ssh gemini-server "php -v"  # 需要 PHP 8.x + cURL 扩展
-```
-
-### 8.2 修改配置
-编辑 `api/config.php`：
-```php
-define('DASH_USER', 'Gemini');          // Dashboard 登录用户名
-define('DASH_PASS', 'Gl5181081');       // Dashboard 登录密码
-define('SERVERS', [
-    'hk' => ['host'=>'hk.liukun.com', 'port'=>9528, 'basePath'=>'/admin_3x/', ...],
-    'sg' => ['host'=>'sg.liukun.com', ...],
-    'us' => ['host'=>'us.liukun.com', ...],
-]);
-```
-
-### 8.3 新增/删除服务器
-在 `config.php` 的 `SERVERS` 数组中增减条目即可，前端和订阅链接自动适配。
-
-### 8.4 修改分流规则
-编辑 `api/sub.php` 底部的 `RULES` heredoc 区块。
-
-### 8.5 缓存问题
-修改 `app.js` 或 `style.css` 后，需在 `index.html` 中更新版本号：
-```html
-<link rel="stylesheet" href="style.css?v=4">
-<script src="app.js?v=7"></script>
-```
+1. **环境依赖**：
+   - PHP >= 8.1
+   - cURL 扩展
+   - 目标目录需赋予 `www`（或相应的 PHP 进程用户）**读写权限**，以允许创建/写入 `speed_history.json`。
+2. **初始化配置**：
+   编辑 `api/config.php`，配置 Dashboard 的主密码及后端服务器列阵：
+   ```php
+   define('DASH_USER', 'YourUsername');
+   define('DASH_PASS', 'YourPassword');
+   define('SERVERS', [
+       'hk' => ['name'=>'Hong Kong', 'host'=>'hk.example.com', 'port'=>9528, ...],
+   ]);
+   ```
+3. **缓存刷新**：
+   当修改了 `style.css` 或 `app.js`，需要在 `index.html` 底部修改加载版本号 `?v=xx` 以破除浏览器缓存。
 
 ---
 
-## 九、项目入口集成
-
-已在 `home.liukun.com/projects.html` 中新增卡片：
-- 标题：3x-ui 统一管理
-- 描述：海外服务器面板聚合管理
-- 链接：`/Projects/3xui-Dashboard/`
-
----
-
-*文档更新时间：2026-04-03 00:20*  
-*技术栈版本：PHP 8.3 · Nginx · 3x-ui REST API*
+*文档最近更新：2026-04-26*  
+*架构支持：PHP 8.3 / REST API / PostMessage Event Bus*
