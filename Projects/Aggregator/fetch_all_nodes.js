@@ -471,18 +471,27 @@ async function main() {
         if (collectedNodes.length > 0) {
             log(`\n[步骤4] 整理战利品: 共 ${collectedNodes.length} 个节点`);
 
-            // 读取现有
-            let finalNodes = collectedNodes;
+            // 读取现有并合并去重
+            let finalNodes = [];
+            let allNodes = [];
             if (fs.existsSync(PROXIES_FILE)) {
                 try {
                     const existing = JSON.parse(fs.readFileSync(PROXIES_FILE, 'utf8'));
-                    // 去重 (Key: server:port)
-                    const existingKeys = new Set(existing.map(n => `${n.server}:${n.port}`));
-                    const uniqueNew = collectedNodes.filter(n => !existingKeys.has(`${n.server}:${n.port}`));
-                    finalNodes = [...existing, ...uniqueNew];
-                    log(`  (去重后新增 ${uniqueNew.length} 个节点)`);
+                    allNodes.push(...existing);
                 } catch (e) { }
             }
+            allNodes.push(...collectedNodes);
+
+            const map = new Map();
+            for (const n of allNodes) {
+                if (!n.server) continue;
+                // 按相同IP只保留一个节点的规则进行去重
+                if (!map.has(n.server)) {
+                    map.set(n.server, n);
+                }
+            }
+            finalNodes = Array.from(map.values());
+            log(`  (去重后当前列表共 ${finalNodes.length} 个节点)`);
 
             fs.writeFileSync(PROXIES_FILE, JSON.stringify(finalNodes, null, 2));
             log(`💾 数据已保存至 ${PROXIES_FILE}`);

@@ -53,20 +53,14 @@ try {
         '15min' => round($loadavg[2], 2),
     ];
 
-    // 7. 进程信息
-    $stats['processes'] = getProcessInfo();
+    // 7. 进程信息 (已取消)
+    $stats['processes'] = ['total' => -1, 'running' => -1];
 
-    // 8. 服务状态
-    $stats['services'] = [
-        'nginx' => checkService('nginx'),
-        'mysql' => checkService('mysql'),
-        'php-fpm' => checkService('php-fpm8.2') || checkService('php-fpm'),
-        'docker' => checkService('docker'),
-        'fail2ban' => checkService('fail2ban'),
-    ];
+    // 8. 服务状态 (已取消)
+    $stats['services'] = [];
 
-    // 9. 连接数
-    $stats['connections'] = getConnectionInfo();
+    // 9. 连接数 (已取消)
+    $stats['connections'] = ['tcp' => -1, 'udp' => -1, 'time_wait' => -1, 'established' => -1, 'total' => -1];
 
     // 10. SSL证书信息
     $stats['ssl'] = getSslInfo();
@@ -200,7 +194,7 @@ function getCpuUsageFromProc() {
     }
     
     $totalDiff = array_sum(array_slice($currentStat, 0, 7)) - array_sum(array_slice($lastStat, 0, 7));
-    $idleDiff = $currentStat['idle'] - $lastStat['idle'];
+    $idleDiff = ($currentStat['idle'] + $currentStat['iowait']) - ($lastStat['idle'] + $lastStat['iowait']);
     
     if ($totalDiff == 0) return 0;
     
@@ -306,7 +300,9 @@ function getNetworkInfo() {
     
     foreach ($lines as $line) {
         if (strpos($line, ':') === false) continue;
-        if (strpos($line, 'lo:') !== false) continue; // 跳过回环接口
+        
+        // 黑名单：跳过回环、docker桥接、veth对、隧道虚拟网卡，防止流量翻倍计算
+        if (preg_match('/lo|veth|docker|br-|tun|tap|virbr|wg|tailscale/', $line)) continue; 
         
         $parts = preg_split('/\s+/', trim($line));
         if (count($parts) < 10) continue;
@@ -353,33 +349,57 @@ function getNetworkInfo() {
 }
 
 /**
- * 获取进程信息
+ * 缓存/proc信息，避免多次遍历导致CPU占用过高
  */
-function getProcessInfo() {
-    $total = 0;
-    $running = 0;
+$procInfoCache = null;
+function buildProcCache() {
+    global $procInfoCache;
+    if ($procInfoCache !== null) return;
+    
+    $procInfoCache = [
+        'cmdlines' => [],
+        'total' => 0,
+        'running' => 0
+    ];
     
     if (is_dir('/proc')) {
         $dirs = glob('/proc/[0-9]*', GLOB_ONLYDIR);
-        $total = count($dirs);
+        $procInfoCache['total'] = count($dirs);
         
-        // 统计运行中的进程
         foreach ($dirs as $dir) {
+            // Read state
             $statFile = $dir . '/stat';
             if (file_exists($statFile)) {
                 $stat = @file_get_contents($statFile);
                 if ($stat && preg_match('/\)\s+(\w)/', $stat, $matches)) {
                     if ($matches[1] === 'R') {
-                        $running++;
+                        $procInfoCache['running']++;
                     }
+                }
+            }
+            
+            // Read cmdline for checkService
+            $cmdlineFile = $dir . '/cmdline';
+            if (file_exists($cmdlineFile)) {
+                $cmdline = @file_get_contents($cmdlineFile);
+                if ($cmdline) {
+                    $procInfoCache['cmdlines'][] = $cmdline;
                 }
             }
         }
     }
+}
+
+/**
+ * 获取进程信息
+ */
+function getProcessInfo() {
+    buildProcCache();
+    global $procInfoCache;
     
     return [
-        'total' => $total,
-        'running' => $running,
+        'total' => $procInfoCache['total'],
+        'running' => $procInfoCache['running'],
     ];
 }
 
@@ -413,17 +433,12 @@ function getConnectionInfo() {
  * 检查服务状态
  */
 function checkService($service) {
-    // 检查进程是否存在
-    if (is_dir('/proc')) {
-        $dirs = glob('/proc/[0-9]*', GLOB_ONLYDIR);
-        foreach ($dirs as $dir) {
-            $cmdlineFile = $dir . '/cmdline';
-            if (file_exists($cmdlineFile)) {
-                $cmdline = @file_get_contents($cmdlineFile);
-                if ($cmdline && stripos($cmdline, $service) !== false) {
-                    return true;
-                }
-            }
+    buildProcCache();
+    global $procInfoCache;
+    
+    foreach ($procInfoCache['cmdlines'] as $cmdline) {
+        if (stripos($cmdline, $service) !== false) {
+            return true;
         }
     }
     

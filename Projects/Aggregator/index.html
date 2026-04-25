@@ -9,6 +9,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%239333ea'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3Cpath fill='white' transform='scale(0.7) translate(5,5)' d='M2.5,19h19v2h-19V19z M22.07,9.64c-0.21-0.8-1.04-1.28-1.84-1.06L14.92,10l-6.9-6.4C7.65,3.23,7.12,3,6.56,3h-0.03c-0.89,0-1.42,0.92-1.03,1.67L8.71,10L4.22,10L2.1,8.35C1.65,8.02,1.01,8.12,0.67,8.56l0,0c-0.34,0.44-0.25,1.06,0.2,1.39l4.52,3.31C5.82,12.58,6.38,13,7.5,13h12.5c1.1,0,2-0.9,2-2l0,0C22,10.55,22.07,10.09,22.07,9.64z'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://registry.npmmirror.com/vue/3.4.15/files/dist/vue.global.prod.js"></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
@@ -111,7 +112,9 @@
                         class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
                         Airport Aggregator
                     </h1>
-                    <p class="text-slate-400 text-sm">Local Edition • Antigravity</p>
+                    <p class="text-slate-400 text-sm">
+                        Local Edition • Visits: <span id="busuanzi_value_site_pv" class="text-indigo-400 font-mono"><span class="animate-pulse">...</span></span>
+                    </p>
                 </div>
             </div>
             <div class="flex items-center space-x-3">
@@ -173,9 +176,9 @@
                         <button @click="fetchAllNodes" :disabled="cloudLoading"
                             class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-purple-500/30 transform transition-all active:scale-95 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed group">
                             <span class="material-icons-round text-xl animate-pulse">public</span>
-                            <span>{{ cloudLoading ? '更新中...' : '全网获取节点' }}</span>
+                            <span>{{ cloudLoading ? '全链路更新中...' : '手动执行全网更新 (完整闭环)' }}</span>
                         </button>
-                        <p class="text-[10px] text-slate-500 text-center -mt-1">包含 Github + 分享站 + Linux.do</p>
+                        <p class="text-[10px] text-slate-500 text-center -mt-1">全自动化：抓取聚合 ➔ 连通性测试 ➔ 纯净度过滤 ➔ YAML生成</p>
 
                         <!-- 自动更新信息 (紧跟全网获取按钮) -->
                         <div
@@ -204,15 +207,6 @@
 
                     <div v-if="cloudResult" class="mt-3 text-center text-xs text-emerald-400 animate-fade-in mb-2">
                         {{ cloudResult }}
-                    </div>
-
-
-                    <div class="mt-3">
-                        <a href="https://home.liukun.com:8443/Projects/NodeLocalChecker/" target="_blank"
-                            class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-medium shadow-lg shadow-emerald-600/20 transition-all active:scale-95 flex justify-center items-center cursor-pointer">
-                            <span class="material-icons-round mr-2 text-base">rocket_launch</span>
-                            国内节点测试
-                        </a>
                     </div>
                 </div>
 
@@ -815,6 +809,45 @@
                 </div>
             </div>
         </div>
+        <!-- Local Test Result Confirmation Modal -->
+        <div v-if="showTestResultModal" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="showTestResultModal = false"></div>
+            <div
+                class="glass-panel w-full max-w-sm rounded-2xl p-6 relative z-10 animate-fade-in-up border border-red-500/30">
+                <div class="flex items-center mb-4 text-red-400">
+                    <span class="material-icons-round text-3xl mr-2">cleaning_services</span>
+                    <h3 class="text-xl font-bold text-white">清理无效节点</h3>
+                </div>
+                <div class="space-y-4 mb-6">
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        检测完成！共测试了 <span class="font-bold text-blue-400">{{ testResultData.total }}</span> 个节点。
+                    </p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-green-500/10 border border-green-500/20 p-3 rounded-xl text-center">
+                            <div class="text-xs text-green-400/70 mb-1">可用节点</div>
+                            <div class="text-xl font-bold text-green-400">{{ testResultData.valid }}</div>
+                        </div>
+                        <div class="bg-red-500/10 border border-red-500/20 p-3 rounded-xl text-center">
+                            <div class="text-xs text-red-400/70 mb-1">失效节点</div>
+                            <div class="text-xl font-bold text-red-400">{{ testResultData.failed }}</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 italic">
+                        * 确认后将从服务器中永久删除这些失效节点并更新订阅。
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <button @click="confirmDeleteFailedNodes"
+                        class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold shadow-lg shadow-red-600/20 transition active:scale-95">
+                        立即清理失效节点
+                    </button>
+                    <button @click="showTestResultModal = false"
+                        class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition text-sm font-medium">
+                        暂不处理
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- Cron Log Modal (计划任务日志) -->
         <div v-if="showCronLogModal" class="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -848,7 +881,7 @@
                                     <span v-if="log.status === 'success'" class="text-emerald-400">✅</span>
                                     <span v-else-if="log.status === 'error'" class="text-red-400">❌</span>
                                     <span v-else class="text-yellow-400 animate-pulse">⏳</span>
-                                    <span class="font-medium text-white">{{ log.type }}</span>
+                                    <span class="font-medium" :class="log.type.includes('手动') ? 'text-purple-300' : 'text-white'">{{ log.type.includes('(') ? log.type : log.type + '(自动)' }}</span>
                                 </div>
                                 <span class="text-xs text-slate-500">{{ formatTime(log.startTime) }}</span>
                             </div>
@@ -1012,7 +1045,7 @@
                                 <path class="opacity-75" fill="currentColor"
                                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                             </svg>
-                            测试完成后将自动关闭并清理失败节点
+                            测试完成后将弹出确认清理对话框
                         </div>
                     </div>
                 </div>
@@ -1077,6 +1110,9 @@
                 const showLogModal = ref(false); // Controls visibility of log window
                 const showDedupeModal = ref(false); // 去重确认对话框
                 const dedupeInfo = ref({ removedCount: 0, uniqueNodes: [], targets: [], isSelective: false }); // 去重临时数据
+
+                const showTestResultModal = ref(false); // 本地检测结果确认弹窗
+                const testResultData = ref({ total: 0, valid: 0, failed: 0, failedIds: [] }); // 本地检测结果数据
 
                 // 计划任务日志
                 const showCronLogModal = ref(false);
@@ -1198,6 +1234,20 @@
 
                         // Helper to merge and update view
                         const updateView = () => {
+                            // 记录当前节点的本地状态，防止 reload 导致真机测试结果或纯净度检查标记丢失
+                            const localStates = new Map();
+                            proxies.value.forEach(p => {
+                                if (p.id) {
+                                    localStates.set(p.id, {
+                                        localLatency: p.localLatency,
+                                        purity: p.purity,
+                                        purityScore: p.purityScore,
+                                        checking: p.checking,
+                                        failedCheck: p.failedCheck
+                                    });
+                                }
+                            });
+
                             const all = [...loadedCloud.value];
                             const existingRaw = new Set(all.map(p => p.raw));
 
@@ -1207,8 +1257,17 @@
                                 }
                             }
 
-                            // Process purity
+                            // 恢复状态并处理 purity
                             all.forEach(p => {
+                                const state = localStates.get(p.id);
+                                if (state) {
+                                    if (p.localLatency === undefined) p.localLatency = state.localLatency;
+                                    if (!p.purity) p.purity = state.purity;
+                                    if (!p.purityScore) p.purityScore = state.purityScore;
+                                    p.checking = state.checking;
+                                    p.failedCheck = state.failedCheck;
+                                }
+
                                 if (p.purityInfo && !p.purity) {
                                     p.purity = {
                                         countryCode: p.purityInfo.country || p.purityInfo.countryCode,
@@ -1455,8 +1514,13 @@
 
                     // Sorting (修复BUG: 必须创建新数组副本，否则Vue无法检测到变化！)
                     const sorted = [...res].sort((a, b) => {
-                        const latA = (typeof a.latency === 'number') ? a.latency : 99999;
-                        const latB = (typeof b.latency === 'number') ? b.latency : 99999;
+                        const getLat = (p) => {
+                            if (typeof p.localLatency === 'number' && p.localLatency > 0) return p.localLatency;
+                            if (typeof p.latency === 'number' && p.latency > 0) return p.latency;
+                            return 99999;
+                        };
+                        const latA = getLat(a);
+                        const latB = getLat(b);
 
                         if (sortMode.value === 'purity') {
                             const scoreA = (typeof a.purityScore === 'number') ? a.purityScore : -1;
@@ -1678,7 +1742,7 @@
                         try {
                             const target = inputUrl.value;
                             // Use our own proxy to bypass CORS
-                            const proxyUrl = `/api/proxy?url=${encodeURIComponent(target)}`;
+                            const proxyUrl = `api/proxy?url=${encodeURIComponent(target)}`;
                             const res = await fetch(proxyUrl);
                             if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
                             content = await res.text();
@@ -1690,6 +1754,7 @@
                         } catch (e) {
                             errorMsg.value = `Error: ${e.message}`;
                             loading.value = false;
+                            isParsing.value = false;
                             return;
                         }
                     }
@@ -1697,6 +1762,7 @@
                     if (!content) {
                         errorMsg.value = 'Please provide URL or Content.';
                         loading.value = false;
+                        isParsing.value = false;
                         return;
                     }
 
@@ -1840,6 +1906,7 @@
                         }
                     }
                     loading.value = false;
+                    isParsing.value = false;
                 };
 
                 // 加载手动节点列表
@@ -2022,47 +2089,72 @@
                 // 初始化时获取 Telegram 状态
 
 
-                const deleteFailedNodes = async () => {
+                const confirmDeleteFailedNodes = async () => {
+                    showTestResultModal.value = false;
                     const initialCount = proxies.value.length;
-                    const keepers = proxies.value.filter(p => p.localLatency !== -1);
-                    const removed = proxies.value.filter(p => p.localLatency === -1);
 
-                    if (removed.length > 0) {
+                    // 优先使用测试结果中记录的 ID，即使 UI 已重新加载也能正确匹配
+                    const failedIdsSet = new Set(testResultData.value.failedIds || []);
+                    if (failedIdsSet.size === 0) {
+                        // 回退方案：按 localLatency 过滤
+                        proxies.value.filter(p => p.localLatency === -1).forEach(p => failedIdsSet.add(p.id));
+                    }
+
+                    if (failedIdsSet.size > 0) {
+                        const keepers = proxies.value.filter(p => !failedIdsSet.has(p.id));
+                        const removed = proxies.value.filter(p => failedIdsSet.has(p.id));
+
                         proxies.value = keepers;
-                        showToast(`已暴力移除 ${removed.length} 个超时废物节点 ❤`);
+                        showToast(`已成功清理 ${removed.length} 个无效节点，正在更新服务器...`);
 
                         // 1. 处理手动节点 (Manual)
-                        const manualIds = new Set(manualProxies.value.map(p => p.id));
-                        const removedManuals = removed.filter(p => manualIds.has(p.id));
+                        // 由于合并逻辑，有些在 manual_proxies.json 里的节点可能在云端也存在，且在前端去重时被隐藏
+                        // 因此需要通过原始凭证(raw)来揪出潜藏的关联ID一起删除
+                        const removedRaws = new Set(removed.map(p => p.raw).filter(Boolean));
+                        const idsToDeleteManual = new Set();
 
-                        if (removedManuals.length > 0) {
-                            const idsToDelete = removedManuals.map(p => p.id);
-                            try {
-                                await fetch('api/manual_proxies', {
-                                    method: 'DELETE',
-                                    headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ ids: idsToDelete })
-                                });
-                                manualProxies.value = manualProxies.value.filter(p => !idsToDelete.includes(p.id));
-                            } catch (e) { console.error(e); }
+                        manualProxies.value.forEach(p => {
+                            if (failedIdsSet.has(p.id) || removedRaws.has(p.raw)) {
+                                idsToDeleteManual.add(p.id);
+                            }
+                        });
+
+                        const deleteTasks = [];
+                        if (idsToDeleteManual.size > 0) {
+                            const idsArray = Array.from(idsToDeleteManual);
+                            deleteTasks.push(fetch('api/manual_proxies', {
+                                method: 'DELETE',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ ids: idsArray })
+                            }).then(() => {
+                                manualProxies.value = manualProxies.value.filter(p => !idsToDeleteManual.has(p.id));
+                            }));
                         }
 
-                        // 2. 处理云端节点 (Cloud) - 新增逻辑
-                        const removedCloud = removed.filter(p => !manualIds.has(p.id));
-                        if (removedCloud.length > 0) {
-                            const idsToDelete = removedCloud.map(p => p.id);
-                            try {
-                                await fetch('api/proxies', {
-                                    method: 'DELETE',
-                                    headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ ids: idsToDelete })
-                                });
-                                console.log(`已删除 ${idsToDelete.length} 个云端节点`);
-                            } catch (e) { console.error('删除云端节点失败', e); }
+                        // 2. 处理云端节点 (Cloud)
+                        // 把所有要删除的 ID 都发给云端接口，后端没找到的自然会忽略
+                        const idsToDeleteCloud = removed.map(p => p.id);
+                        if (idsToDeleteCloud.length > 0) {
+                            deleteTasks.push(fetch('api/proxies', {
+                                method: 'DELETE',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ ids: idsToDeleteCloud })
+                            }));
+                        }
+
+                        try {
+                            await Promise.all(deleteTasks);
+
+                            // 3. 核心：删除后强制更新 Aggregator.yaml
+                            await fetch('api/generate_yaml', { method: 'POST' });
+                            showToast('✅ 节点清理同步完成');
+                        } catch (e) {
+                            console.error('更新服务器失败', e);
+                            showToast('❌ 同步失败: ' + e.message);
                         }
 
                     } else {
-                        showToast('没有发现超时节点，好棒棒！');
+                        showToast('没有发现超时节点，无需清理');
                     }
                 };
 
@@ -2082,11 +2174,9 @@
 
                     targets.forEach(p => {
                         const server = (p.server || '').trim().toLowerCase();
-                        const port = p.port || '';
-                        const auth = p.uuid || p.password || '';
-                        const key = `${server}:${port}:${auth}`;
+                        const key = `${server}`;
 
-                        if (!key || !server) return;
+                        if (!server) return;
                         if (!uniqueMap.has(key)) {
                             uniqueMap.set(key, p);
                         }
@@ -2121,9 +2211,6 @@
                     if (targets.length === 0) return showToast('没有节点可测试');
 
                     await checkLocalConnectivity(targets);
-                    // 等待状态更新
-                    await new Promise(r => setTimeout(r, 100));
-                    await deleteFailedNodes();
                 };
 
                 // 确认去重后的回调 (不再自动启动检测)
@@ -2131,7 +2218,7 @@
                     showDedupeModal.value = false;
                     const { removedCount, uniqueNodes, isSelective } = dedupeInfo.value;
 
-                    // 执行移除
+                    // 执行本地状态更新
                     if (isSelective) {
                         const uniqueIds = new Set(uniqueNodes.map(p => p.id));
                         proxies.value = proxies.value.filter(p => {
@@ -2143,23 +2230,38 @@
                         proxies.value = uniqueNodes;
                     }
 
-                    showToast(`已移除 ${removedCount} 个重复节点，准备保存...`);
+                    showToast(`已移除 ${removedCount} 个重复节点，正在同步到服务器...`);
 
-                    // 保存手动/论坛节点
-                    const manualNodes = proxies.value.filter(p => p.isManual || p.isFromForum);
                     try {
-                        await fetch('api/manual_proxies', {
+                        // 1. 分离手动节点和云端节点
+                        const manualNodes = proxies.value.filter(p => p.isManual || p.isFromForum);
+                        const cloudNodes = proxies.value.filter(p => !p.isManual && !p.isFromForum);
+
+                        // 2. 同步手动节点 (覆盖模式)
+                        const p1 = fetch('api/manual_proxies', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ proxies: manualNodes })
+                            body: JSON.stringify({ proxies: manualNodes, overwrite: true })
                         });
 
-                        // 自动更新 Aggregator.yaml
+                        // 3. 同步普通云端节点 (覆盖模式 - 新增逻辑)
+                        const p2 = fetch('api/proxies', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ proxies: cloudNodes })
+                        });
+
+                        await Promise.all([p1, p2]);
+
+                        showToast('✅ 去重保存成功');
+
+                        // 4. 自动更新 Aggregator.yaml
                         fetch('api/generate_yaml', { method: 'POST' })
                             .then(() => console.log('去重后 Aggregator.yaml 已更新'))
                             .catch(e => console.warn('YAML 更新失败:', e));
                     } catch (e) {
                         console.error('保存去重结果失败:', e);
+                        showToast('❌ 保存失败: ' + e.message);
                     }
                 };
 
@@ -2291,10 +2393,26 @@
                                         isLocalChecking.value = false;
                                         localCheckProgress.value = '';
 
-                                        showToast(`🎉 测试完成! 可用节点: ${localCheckValidCount.value} / ${total}`);
+                                        // 设置结果数据并显示确弹窗
+                                        const failedCount = total - localCheckValidCount.value;
+                                        const failedIds = [];
+                                        if (results) {
+                                            Object.entries(results).forEach(([id, lat]) => {
+                                                if (lat === -1 || lat >= 99999) failedIds.push(id);
+                                            });
+                                        }
+                                        testResultData.value = {
+                                            total: total,
+                                            valid: localCheckValidCount.value,
+                                            failed: failedCount,
+                                            failedIds: failedIds
+                                        };
 
-                                        // 延迟一秒删除失败节点
-                                        setTimeout(deleteFailedNodes, 1000);
+                                        if (failedCount > 0) {
+                                            showTestResultModal.value = true;
+                                        } else {
+                                            showToast('🎉 测试完成! 所有节点均可用!');
+                                        }
                                     } else if (status === 'error') {
                                         clearInterval(pollInterval);
                                         isLocalChecking.value = false;
@@ -2401,7 +2519,7 @@
 
                     // For Clash / Singbox
                     try {
-                        let endpoint = '/api/convert';
+                        let endpoint = 'api/convert';
                         let body = { proxies: nodesToExport, type: format === 'clash' ? 'clash' : 'singbox' };
 
                         const res = await fetch(endpoint, {
@@ -2823,6 +2941,7 @@
                     pageLoading, isParsing, // Added to fix rendering crash
                     handleDeduplicate, handleLocalTest, selectAvailableNodes, // 拆分后的新功能及缺失导出
                     showDedupeModal, dedupeInfo, confirmDedupe, // 去重确认对话框
+                    showTestResultModal, testResultData, confirmDeleteFailedNodes, // 本地检测确认相关
                     formatTime, formatUptimeDisplay,
                     // 计划任务日志相关
                     showCronLogModal, cronLogs, cronNextRun, loadCronLogs, formatDuration

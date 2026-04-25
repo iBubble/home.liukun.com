@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-24T16:00:04.955Z",
+  "updated_at": "2026-04-25T16:00:08.007Z",
   "source": "https://16412.nginx24ppy.xyz/link/hXvsVfrh8PP0ViD3?clash=1",
   "node_count": 103,
   "nodes": [
@@ -14,7 +14,7 @@
       "udp": true
     },
     {
-      "name": "标准|香港01解锁",
+      "name": "标准 香港01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv1.kunlun02dns.com",
       "port": 26010,
@@ -24,7 +24,7 @@
       "udp": true
     },
     {
-      "name": "标准|香港02解锁",
+      "name": "标准 香港02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv1.kunlun02dns.com",
       "port": 26011,
@@ -34,7 +34,7 @@
       "udp": true
     },
     {
-      "name": "标准|香港03解锁",
+      "name": "标准 香港03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv1.kunlun02dns.com",
       "port": 26012,
@@ -44,7 +44,7 @@
       "udp": true
     },
     {
-      "name": "标准|香港04解锁",
+      "name": "标准 香港04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv1.kunlun02dns.com",
       "port": 26013,
@@ -54,7 +54,7 @@
       "udp": true
     },
     {
-      "name": "标准|香港05解锁",
+      "name": "标准 香港05 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv1.kunlun02dns.com",
       "port": 26014,
@@ -64,7 +64,7 @@
       "udp": true
     },
     {
-      "name": "标准|香港06解锁",
+      "name": "标准 香港06 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv1.kunlun02dns.com",
       "port": 26015,
@@ -74,7 +74,7 @@
       "udp": true
     },
     {
-      "name": "标准|日本01解锁",
+      "name": "标准 日本01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv1.kunlun02dns.com",
       "port": 26006,
@@ -84,7 +84,7 @@
       "udp": true
     },
     {
-      "name": "标准|日本02解锁",
+      "name": "标准 日本02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv1.kunlun02dns.com",
       "port": 26007,
@@ -94,7 +94,7 @@
       "udp": true
     },
     {
-      "name": "标准|日本03解锁",
+      "name": "标准 日本03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv1.kunlun02dns.com",
       "port": 26008,
@@ -104,7 +104,7 @@
       "udp": true
     },
     {
-      "name": "标准|日本04解锁",
+      "name": "标准 日本04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv1.kunlun02dns.com",
       "port": 26009,
@@ -114,7 +114,7 @@
       "udp": true
     },
     {
-      "name": "标准|美国01解锁",
+      "name": "标准 美国01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv1.kunlun02dns.com",
       "port": 26001,
@@ -124,7 +124,7 @@
       "udp": true
     },
     {
-      "name": "标准|美国02解锁",
+      "name": "标准 美国02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv1.kunlun02dns.com",
       "port": 26002,
@@ -134,7 +134,7 @@
       "udp": true
     },
     {
-      "name": "标准|美国03解锁",
+      "name": "标准 美国03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv1.kunlun02dns.com",
       "port": 26003,
@@ -144,7 +144,7 @@
       "udp": true
     },
     {
-      "name": "标准|美国04解锁",
+      "name": "标准 美国04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv1.kunlun02dns.com",
       "port": 26004,
@@ -154,7 +154,7 @@
       "udp": true
     },
     {
-      "name": "标准|韩国01解锁",
+      "name": "标准 韩国01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv1.kunlun02dns.com",
       "port": 26072,
@@ -164,7 +164,7 @@
       "udp": true
     },
     {
-      "name": "标准|韩国02解锁",
+      "name": "标准 韩国02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv1.kunlun02dns.com",
       "port": 26073,
@@ -174,7 +174,7 @@
       "udp": true
     },
     {
-      "name": "标准|韩国03解锁",
+      "name": "标准 韩国03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv1.kunlun02dns.com",
       "port": 26074,
@@ -184,7 +184,7 @@
       "udp": true
     },
     {
-      "name": "标准|韩国04解锁",
+      "name": "标准 韩国04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv1.kunlun02dns.com",
       "port": 26075,
@@ -194,7 +194,7 @@
       "udp": true
     },
     {
-      "name": "标准|台湾01解锁",
+      "name": "标准 台湾01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv1.kunlun02dns.com",
       "port": 26059,
@@ -204,7 +204,7 @@
       "udp": true
     },
     {
-      "name": "标准|台湾02解锁",
+      "name": "标准 台湾02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv1.kunlun02dns.com",
       "port": 26060,
@@ -214,7 +214,7 @@
       "udp": true
     },
     {
-      "name": "标准|台湾03解锁",
+      "name": "标准 台湾03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv1.kunlun02dns.com",
       "port": 26061,
@@ -224,7 +224,7 @@
       "udp": true
     },
     {
-      "name": "标准|台湾04解锁",
+      "name": "标准 台湾04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv1.kunlun02dns.com",
       "port": 26062,
@@ -234,7 +234,7 @@
       "udp": true
     },
     {
-      "name": "标准|新加坡01解锁",
+      "name": "标准 新加坡01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv1.kunlun02dns.com",
       "port": 26020,
@@ -244,7 +244,7 @@
       "udp": true
     },
     {
-      "name": "标准|新加坡02解锁",
+      "name": "标准 新加坡02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv1.kunlun02dns.com",
       "port": 26021,
@@ -254,7 +254,7 @@
       "udp": true
     },
     {
-      "name": "标准|新加坡03解锁",
+      "name": "标准 新加坡03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv1.kunlun02dns.com",
       "port": 26022,
@@ -264,7 +264,7 @@
       "udp": true
     },
     {
-      "name": "标准|新加坡04解锁",
+      "name": "标准 新加坡04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv1.kunlun02dns.com",
       "port": 26023,
@@ -274,7 +274,7 @@
       "udp": true
     },
     {
-      "name": "专线|香港01解锁",
+      "name": "专线 香港01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv2.kunlun02dns.com",
       "port": 26010,
@@ -284,7 +284,7 @@
       "udp": true
     },
     {
-      "name": "专线|香港02解锁",
+      "name": "专线 香港02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv2.kunlun02dns.com",
       "port": 26011,
@@ -294,7 +294,7 @@
       "udp": true
     },
     {
-      "name": "专线|香港03解锁",
+      "name": "专线 香港03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv2.kunlun02dns.com",
       "port": 26012,
@@ -304,7 +304,7 @@
       "udp": true
     },
     {
-      "name": "专线|香港04解锁",
+      "name": "专线 香港04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv2.kunlun02dns.com",
       "port": 26013,
@@ -314,7 +314,7 @@
       "udp": true
     },
     {
-      "name": "专线|香港05解锁",
+      "name": "专线 香港05 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv2.kunlun02dns.com",
       "port": 26014,
@@ -324,7 +324,7 @@
       "udp": true
     },
     {
-      "name": "专线|香港06解锁",
+      "name": "专线 香港06 倍率x1.0",
       "type": "vmess",
       "server": "ppy-hkv2.kunlun02dns.com",
       "port": 26015,
@@ -334,7 +334,7 @@
       "udp": true
     },
     {
-      "name": "专线|日本01解锁",
+      "name": "专线 日本01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv2.kunlun02dns.com",
       "port": 26006,
@@ -344,7 +344,7 @@
       "udp": true
     },
     {
-      "name": "专线|日本02解锁",
+      "name": "专线 日本02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv2.kunlun02dns.com",
       "port": 26007,
@@ -354,7 +354,7 @@
       "udp": true
     },
     {
-      "name": "专线|日本03解锁",
+      "name": "专线 日本03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv2.kunlun02dns.com",
       "port": 26008,
@@ -364,7 +364,7 @@
       "udp": true
     },
     {
-      "name": "专线|日本04解锁",
+      "name": "专线 日本04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-jpv2.kunlun02dns.com",
       "port": 26009,
@@ -374,7 +374,7 @@
       "udp": true
     },
     {
-      "name": "专线|美国01解锁",
+      "name": "专线 美国01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv2.kunlun02dns.com",
       "port": 26001,
@@ -384,7 +384,7 @@
       "udp": true
     },
     {
-      "name": "专线|美国02解锁",
+      "name": "专线 美国02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv2.kunlun02dns.com",
       "port": 26002,
@@ -394,7 +394,7 @@
       "udp": true
     },
     {
-      "name": "专线|美国03解锁",
+      "name": "专线 美国03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv2.kunlun02dns.com",
       "port": 26003,
@@ -404,7 +404,7 @@
       "udp": true
     },
     {
-      "name": "专线|美国04解锁",
+      "name": "专线 美国04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-usv2.kunlun02dns.com",
       "port": 26004,
@@ -414,7 +414,7 @@
       "udp": true
     },
     {
-      "name": "专线|韩国01解锁",
+      "name": "专线 韩国01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv2.kunlun02dns.com",
       "port": 26072,
@@ -424,7 +424,7 @@
       "udp": true
     },
     {
-      "name": "专线|韩国02解锁",
+      "name": "专线 韩国02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv2.kunlun02dns.com",
       "port": 26073,
@@ -434,7 +434,7 @@
       "udp": true
     },
     {
-      "name": "专线|韩国03解锁",
+      "name": "专线 韩国03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv2.kunlun02dns.com",
       "port": 26074,
@@ -444,7 +444,7 @@
       "udp": true
     },
     {
-      "name": "专线|韩国04解锁",
+      "name": "专线 韩国04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-krv2.kunlun02dns.com",
       "port": 26075,
@@ -454,7 +454,7 @@
       "udp": true
     },
     {
-      "name": "专线|台湾01解锁",
+      "name": "专线 台湾01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv2.kunlun02dns.com",
       "port": 26059,
@@ -464,7 +464,7 @@
       "udp": true
     },
     {
-      "name": "专线|台湾02解锁",
+      "name": "专线 台湾02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv2.kunlun02dns.com",
       "port": 26060,
@@ -474,7 +474,7 @@
       "udp": true
     },
     {
-      "name": "专线|台湾03解锁",
+      "name": "专线 台湾03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv2.kunlun02dns.com",
       "port": 26061,
@@ -484,7 +484,7 @@
       "udp": true
     },
     {
-      "name": "专线|台湾04解锁",
+      "name": "专线 台湾04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-twv2.kunlun02dns.com",
       "port": 26062,
@@ -494,7 +494,7 @@
       "udp": true
     },
     {
-      "name": "专线|新加坡01解锁",
+      "name": "专线 新加坡01 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv2.kunlun02dns.com",
       "port": 26020,
@@ -504,7 +504,7 @@
       "udp": true
     },
     {
-      "name": "专线|新加坡02解锁",
+      "name": "专线 新加坡02 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv2.kunlun02dns.com",
       "port": 26021,
@@ -514,7 +514,7 @@
       "udp": true
     },
     {
-      "name": "专线|新加坡03解锁",
+      "name": "专线 新加坡03 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv2.kunlun02dns.com",
       "port": 26022,
@@ -524,7 +524,7 @@
       "udp": true
     },
     {
-      "name": "专线|新加坡04解锁",
+      "name": "专线 新加坡04 倍率x1.0",
       "type": "vmess",
       "server": "ppy-sgv2.kunlun02dns.com",
       "port": 26023,
@@ -534,7 +534,7 @@
       "udp": true
     },
     {
-      "name": "专线|丹麦01倍率5",
+      "name": "专线 丹麦01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26149,
@@ -544,7 +544,7 @@
       "udp": true
     },
     {
-      "name": "专线|南非01倍率5",
+      "name": "专线 南非01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26086,
@@ -554,7 +554,7 @@
       "udp": true
     },
     {
-      "name": "专线|印度01倍率5",
+      "name": "专线 印度01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26132,
@@ -564,7 +564,7 @@
       "udp": true
     },
     {
-      "name": "专线|巴林01倍率5",
+      "name": "专线 巴林01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26138,
@@ -574,7 +574,7 @@
       "udp": true
     },
     {
-      "name": "专线|巴西01倍率5",
+      "name": "专线 巴西01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26134,
@@ -584,7 +584,7 @@
       "udp": true
     },
     {
-      "name": "专线|希腊01倍率5",
+      "name": "专线 希腊01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26130,
@@ -594,7 +594,7 @@
       "udp": true
     },
     {
-      "name": "专线|德国01倍率5",
+      "name": "专线 德国01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26112,
@@ -604,7 +604,7 @@
       "udp": true
     },
     {
-      "name": "专线|挪威01倍率5",
+      "name": "专线 挪威01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26140,
@@ -614,7 +614,7 @@
       "udp": true
     },
     {
-      "name": "专线|捷克01倍率5",
+      "name": "专线 捷克01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26100,
@@ -624,7 +624,7 @@
       "udp": true
     },
     {
-      "name": "专线|智力01倍率5",
+      "name": "专线 智力01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26147,
@@ -634,7 +634,7 @@
       "udp": true
     },
     {
-      "name": "专线|法国01倍率5",
+      "name": "专线 法国01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26143,
@@ -644,7 +644,7 @@
       "udp": true
     },
     {
-      "name": "专线|波兰01倍率5",
+      "name": "专线 波兰01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26096,
@@ -654,7 +654,7 @@
       "udp": true
     },
     {
-      "name": "专线|泰国01倍率5",
+      "name": "专线 泰国01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26108,
@@ -664,7 +664,7 @@
       "udp": true
     },
     {
-      "name": "专线|瑞典01倍率5",
+      "name": "专线 瑞典01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26141,
@@ -674,7 +674,7 @@
       "udp": true
     },
     {
-      "name": "专线|瑞士01倍率5",
+      "name": "专线 瑞士01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26104,
@@ -684,7 +684,7 @@
       "udp": true
     },
     {
-      "name": "专线|秘鲁01倍率5",
+      "name": "专线 秘鲁01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26155,
@@ -694,7 +694,7 @@
       "udp": true
     },
     {
-      "name": "专线|芬兰01倍率5",
+      "name": "专线 芬兰01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26136,
@@ -704,7 +704,7 @@
       "udp": true
     },
     {
-      "name": "专线|英国01倍率5",
+      "name": "专线 英国01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26116,
@@ -714,7 +714,7 @@
       "udp": true
     },
     {
-      "name": "专线|荷兰01倍率5",
+      "name": "专线 荷兰01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26098,
@@ -724,7 +724,7 @@
       "udp": true
     },
     {
-      "name": "专线|越南01倍率5",
+      "name": "专线 越南01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26076,
@@ -734,7 +734,7 @@
       "udp": true
     },
     {
-      "name": "专线|乌克兰01倍率5",
+      "name": "专线 乌克兰01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26106,
@@ -744,7 +744,7 @@
       "udp": true
     },
     {
-      "name": "专线|以色列01倍率5",
+      "name": "专线 以色列01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26145,
@@ -754,7 +754,7 @@
       "udp": true
     },
     {
-      "name": "专线|俄罗斯01倍率5",
+      "name": "专线 俄罗斯01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26090,
@@ -764,7 +764,7 @@
       "udp": true
     },
     {
-      "name": "专线|加拿大01倍率5",
+      "name": "专线 加拿大01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26114,
@@ -774,7 +774,7 @@
       "udp": true
     },
     {
-      "name": "专线|土耳其01倍率5",
+      "name": "专线 土耳其01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26092,
@@ -784,7 +784,7 @@
       "udp": true
     },
     {
-      "name": "专线|墨西哥01倍率5",
+      "name": "专线 墨西哥01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26148,
@@ -794,7 +794,7 @@
       "udp": true
     },
     {
-      "name": "专线|奥地利01倍率5",
+      "name": "专线 奥地利01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26128,
@@ -804,7 +804,7 @@
       "udp": true
     },
     {
-      "name": "专线|意大利01倍率5",
+      "name": "专线 意大利01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26142,
@@ -814,7 +814,7 @@
       "udp": true
     },
     {
-      "name": "专线|柬埔寨01倍率5",
+      "name": "专线 柬埔寨01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26082,
@@ -824,7 +824,7 @@
       "udp": true
     },
     {
-      "name": "专线|比利时01倍率5",
+      "name": "专线 比利时01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26150,
@@ -834,7 +834,7 @@
       "udp": true
     },
     {
-      "name": "专线|爱尔兰01倍率5",
+      "name": "专线 爱尔兰01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26151,
@@ -844,7 +844,7 @@
       "udp": true
     },
     {
-      "name": "专线|立陶宛01倍率5",
+      "name": "专线 立陶宛01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26153,
@@ -854,7 +854,7 @@
       "udp": true
     },
     {
-      "name": "专线|菲律宾01倍率5",
+      "name": "专线 菲律宾01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26080,
@@ -864,7 +864,7 @@
       "udp": true
     },
     {
-      "name": "专线|葡萄牙01倍率5",
+      "name": "专线 葡萄牙01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26154,
@@ -874,7 +874,7 @@
       "udp": true
     },
     {
-      "name": "专线|西班牙01倍率5",
+      "name": "专线 西班牙01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26126,
@@ -884,7 +884,7 @@
       "udp": true
     },
     {
-      "name": "专线|阿根廷01倍率5",
+      "name": "专线 阿根廷01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26122,
@@ -894,7 +894,7 @@
       "udp": true
     },
     {
-      "name": "专线|阿联酋01倍率5",
+      "name": "专线 阿联酋01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26078,
@@ -904,7 +904,7 @@
       "udp": true
     },
     {
-      "name": "专线|保加利亚01倍率5",
+      "name": "专线 保加利亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26094,
@@ -914,7 +914,7 @@
       "udp": true
     },
     {
-      "name": "专线|哥伦比亚01倍率5",
+      "name": "专线 哥伦比亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26124,
@@ -924,7 +924,7 @@
       "udp": true
     },
     {
-      "name": "专线|孟加拉国01倍率5",
+      "name": "专线 孟加拉国01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26084,
@@ -934,7 +934,7 @@
       "udp": true
     },
     {
-      "name": "专线|巴基斯坦01倍率5",
+      "name": "专线 巴基斯坦01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26135,
@@ -944,7 +944,7 @@
       "udp": true
     },
     {
-      "name": "专线|拉脱维亚01倍率5",
+      "name": "专线 拉脱维亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26102,
@@ -954,7 +954,7 @@
       "udp": true
     },
     {
-      "name": "专线|澳大利亚01倍率5",
+      "name": "专线 澳大利亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26110,
@@ -964,7 +964,7 @@
       "udp": true
     },
     {
-      "name": "专线|爱沙尼亚01倍率5",
+      "name": "专线 爱沙尼亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26152,
@@ -974,7 +974,7 @@
       "udp": true
     },
     {
-      "name": "专线|罗马尼亚01倍率5",
+      "name": "专线 罗马尼亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26146,
@@ -984,7 +984,7 @@
       "udp": true
     },
     {
-      "name": "专线|阿塞拜疆01倍率5",
+      "name": "专线 阿塞拜疆01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26139,
@@ -994,7 +994,7 @@
       "udp": true
     },
     {
-      "name": "专线|马斯喀特01倍率5",
+      "name": "专线 马斯喀特01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26133,
@@ -1004,7 +1004,7 @@
       "udp": true
     },
     {
-      "name": "专线|马来西亚01倍率5",
+      "name": "专线 马来西亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26137,
@@ -1014,7 +1014,7 @@
       "udp": true
     },
     {
-      "name": "专线|印度尼西亚01倍率5",
+      "name": "专线 印度尼西亚01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26144,
@@ -1024,7 +1024,7 @@
       "udp": true
     },
     {
-      "name": "专线|沙特阿拉伯01倍率5",
+      "name": "专线 沙特阿拉伯01 倍率x5.0",
       "type": "vmess",
       "server": "ppy-boardv2.kunlun02dns.com",
       "port": 26088,

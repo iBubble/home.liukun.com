@@ -1,6 +1,6 @@
 # Gemini's Cyberpunk Home
 
-🌐 **在线访问**: [https://home.liukun.com:8443](https://home.liukun.com:8443)
+🌐 **在线访问**: [https://home.liukun.com](https://home.liukun.com)
 
 一个融合赛博朋克美学与现代 Web 技术的个人主页项目，展示多个创新 Web 应用。
 
@@ -83,7 +83,7 @@ npx http-server
 
 项目使用 Nginx + 宝塔面板部署：
 
-- **域名**: home.liukun.com:8443
+- **域名**: home.liukun.com
 - **协议**: HTTPS (SSL 证书已配置)
 - **Web 服务器**: Nginx
 - **PHP 版本**: 8.2
@@ -110,7 +110,7 @@ npx http-server
 ## 📦 子项目介绍
 
 ### 🛰️ Antigravity 机场聚合 (Aggregator)
-**访问**: [https://home.liukun.com:8443/Projects/Aggregator/index.html](https://home.liukun.com:8443/Projects/Aggregator/index.html)
+**访问**: [https://home.liukun.com/Projects/Aggregator/index.html](https://home.liukun.com/Projects/Aggregator/index.html)
 
 跨平台的高性能全自动节点爬取、延迟测试与纯净度检测系统。
 
@@ -124,7 +124,7 @@ npx http-server
 **技术**: Node.js + Clash Core + Vue 3 + Tailwind CSS + ip-api
 
 ### 🎥 拾光大师 AI 影视平台
-**访问**: [https://home.liukun.com:8443/Projects/AIMovie/](https://home.liukun.com:8443/Projects/AIMovie/)
+**访问**: [https://home.liukun.com/Projects/AIMovie/](https://home.liukun.com/Projects/AIMovie/)
 
 基于 AI 技术的影视创作平台，提供从选题到发布的完整创作流程。
 
@@ -139,7 +139,7 @@ npx http-server
 **技术**: React 18 + TypeScript + Redux Toolkit + Webpack 5 + Tailwind CSS
 
 ### 🏔️ 天空之境·数智香格里拉
-**访问**: [https://home.liukun.com:8443/Projects/Shangri-la/](https://home.liukun.com:8443/Projects/Shangri-la/)
+**访问**: [https://home.liukun.com/Projects/Shangri-la/](https://home.liukun.com/Projects/Shangri-la/)
 
 迪庆州"低空经济+智慧文旅"空地一体化建设方案展示。
 
@@ -154,7 +154,7 @@ npx http-server
 **技术**: HTML5 + CSS3 + JavaScript + Chart.js + D3.js + Pannellum (360全景)
 
 ### 📝 在线考试系统
-**访问**: [https://home.liukun.com:8443/Projects/Exam/](https://home.liukun.com:8443/Projects/Exam/)
+**访问**: [https://home.liukun.com/Projects/Exam/](https://home.liukun.com/Projects/Exam/)
 
 完整的在线考试管理系统。
 
@@ -165,7 +165,7 @@ npx http-server
 - 成绩统计
 
 ### 🌐 网络监测系统
-**访问**: [https://home.liukun.com:8443/Projects/Network/](https://home.liukun.com:8443/Projects/Network/)
+**访问**: [https://home.liukun.com/Projects/Network/](https://home.liukun.com/Projects/Network/)
 
 实时监测内网、国内、国外网络连通性和延迟的后台监测系统。
 
@@ -185,13 +185,13 @@ npx http-server
 **技术**: PHP 8.2 + JavaScript + fsockopen + 守护进程
 
 ### 🔧 代理测试项目
-**访问**: [https://home.liukun.com:8443/Projects/Proxy/Proxy.php](https://home.liukun.com:8443/Projects/Proxy/Proxy.php)
+**访问**: [https://home.liukun.com/Projects/Proxy/Proxy.php](https://home.liukun.com/Projects/Proxy/Proxy.php)
 
 用于测试和验证代理服务器功能的工具项目。
 
 ## 📊 服务器监控
 
-访问 [Stats 页面](https://home.liukun.com:8443/stats.html) 查看实时服务器状态：
+访问 [Stats 页面](https://home.liukun.com/stats.html) 查看实时服务器状态：
 
 - CPU 使用率
 - 内存使用率
@@ -208,7 +208,7 @@ npx http-server
 - 代码注释优先使用中文
 
 ### 域名规范
-- 统一使用 `home.liukun.com:8443` 作为开发测试域名（HTTPS）
+- 统一使用 `home.liukun.com` 作为开发测试域名（HTTPS）
 - 避免使用 IP 地址或其他域名
 
 ### 权限管理
@@ -267,6 +267,13 @@ pm2 save
 - **技术栈**: 10+ 种
 - **代码行数**: 60,000+ 行
 - **文档数量**: 60+ 份
+
+## 🆕 最近更新 (2026-03-14)
+
+### 网络架构优化
+- ✅ **FRP 端口统一**: 禁用 8443 端口映射，全线回归标准 **443** 端口。
+- ✅ **SSL 证书部署**: 在本地 Nginx 中完成了 `home.liukun.com` 证书的全链路绑定。
+- ✅ **中转服务器迁移**: 成功衔接至新服务器 `47.103.55.200`，穿透效率显著提升。
 
 ## 🆕 最近更新 (2026-01-22)
 

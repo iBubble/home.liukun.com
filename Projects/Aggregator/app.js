@@ -31,7 +31,7 @@ const CLASH_EXTERNAL_CONTROLLER = '127.0.0.1:9090';
 const HOST_PROXY = 'http://192.168.1.102:7897';
 const HOST_PROXY_SOCKS5 = 'socks5h://192.168.1.102:7897'; // SOCKS5 模式（用于 linux.do，绕过 TLS 指纹检测）
 // Ubuntu Firefox User-Agent（必须与获取 cf_clearance Cookie 的浏览器一致）
-const FIREFOX_UA = 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0';
+const FIREFOX_UA = 'Mozilla/5.0 (X11; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0';
 // Firefox Cookie 数据库路径
 const FIREFOX_COOKIE_DB = '/home/gemini/.config/mozilla/firefox/td46m7ln.default-release/cookies.sqlite';
 
@@ -281,13 +281,20 @@ function fetchUrl(url, timeout = 15000, customHeaders = {}) {
 
         const args = [
             '-s', '-L', // Silent, Follow redirects
-            '-m', (timeout / 1000).toString(), // Timeout
-            '-x', proxy, // Proxy
+            '-m', (timeout / 1000).toString() // Timeout
+        ];
+
+        // 避免回环或 SSL 报错问题，自有域名服务不走代理直连本国网络
+        if (!url.includes('liukun.com')) {
+            args.push('-x', proxy);
+        }
+
+        args.push(
             '--insecure', // Skip SSL verification (optional, but helpful for some broken certs)
             '-H', 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             '-H', 'Accept-Language: en-US,en;q=0.5'
-        ];
+        );
 
         // Merge custom headers
         for (const [key, value] of Object.entries(customHeaders)) {
@@ -668,10 +675,16 @@ function fetchLinuxDo(url, cookie = '') {
         const curlArgs = [
             '-s',
             '-L', // Follow redirects
-            '--insecure', // Ignore SSL errors (fix code 35)
-            '-H', 'Accept: application/json',
-            '-H', `User-Agent: ${FIREFOX_UA}`, // 必须与 Ubuntu Firefox 一致以复用 cf_clearance
-            '-x', HOST_PROXY_SOCKS5 // 使用 SOCKS5 代理（绕过 TLS 指纹检测）
+            '--insecure', // Ignore SSL errors
+            '--compressed', // 处理压缩内容
+            '-H', 'Accept: application/json, text/javascript, */*; q=0.01',
+            '-H', 'Accept-Language: en-US,en;q=0.5',
+            '-H', `User-Agent: ${FIREFOX_UA}`,
+            '-H', 'X-Requested-With: XMLHttpRequest',
+            '-H', 'Sec-Fetch-Dest: empty',
+            '-H', 'Sec-Fetch-Mode: cors',
+            '-H', 'Sec-Fetch-Site: same-origin',
+            '-x', HOST_PROXY_SOCKS5 // 使用 SOCKS5 代理
         ];
 
         if (cookie) {
@@ -680,7 +693,10 @@ function fetchLinuxDo(url, cookie = '') {
 
         curlArgs.push(url);
 
-        const child = spawn('curl', curlArgs, { timeout: 30000, env: { ...process.env, http_proxy: '', https_proxy: '', HTTP_PROXY: '', HTTPS_PROXY: '' } });
+        const child = spawn('curl', curlArgs, {
+            timeout: 60000,
+            env: { ...process.env, http_proxy: '', https_proxy: '', HTTP_PROXY: '', HTTPS_PROXY: '' }
+        });
         let data = '';
         let error = '';
 
@@ -804,28 +820,58 @@ function parseContent(content) {
             } else if (line.startsWith('ss://')) {
                 // SS 解析
                 try {
-                    const url = new URL(line);
-                    let tag = url.hash.slice(1);
-                    if (tag) tag = decodeURIComponent(tag);
+                    let fullUrlStr = line;
+                    let tag = '';
+                    if (fullUrlStr.includes('#')) {
+                        const parts = fullUrlStr.split('#');
+                        tag = decodeURIComponent(parts[1]);
+                        fullUrlStr = parts[0];
+                    }
 
-                    // 解析 userinfo (method:password)
-                    let method = 'aes-256-gcm', password = '';
-                    if (url.username) {
-                        const decoded = decodeBase64(url.username);
-                        if (decoded.includes(':')) {
-                            [method, password] = decoded.split(':', 2);
+                    const withoutScheme = fullUrlStr.substring(5);
+                    let parsedUrl;
+
+                    // 1. 处理 ss://BASE64(method:password@host:port) 格式
+                    if (!withoutScheme.includes('@') && !withoutScheme.includes('%40')) {
+                        const decodedStr = decodeBase64(withoutScheme);
+                        if (decodedStr && decodedStr.includes('@')) {
+                            parsedUrl = new URL('ss://' + decodedStr);
                         } else {
-                            password = url.username;
+                            parsedUrl = new URL(fullUrlStr);
+                        }
+                    } else {
+                        parsedUrl = new URL(fullUrlStr);
+                    }
+
+                    // 2. 解析 userinfo
+                    let method = 'aes-256-gcm', password = '';
+
+                    if (parsedUrl.username && parsedUrl.password) {
+                        // 标准明文 ss://method:password@host
+                        method = decodeURIComponent(parsedUrl.username);
+                        password = decodeURIComponent(parsedUrl.password);
+                    } else if (parsedUrl.username) {
+                        // userinfo 可能是 base64 编码的 method:password
+                        const decoded = decodeBase64(parsedUrl.username);
+                        if (decoded && decoded.includes(':')) {
+                            const firstColon = decoded.indexOf(':');
+                            method = decoded.slice(0, firstColon);
+                            password = decoded.slice(firstColon + 1);
+                        } else {
+                            // 兜底：如果不是有效的 base64，当作明文加密算法
+                            method = decodeURIComponent(parsedUrl.username);
                         }
                     }
 
-                    if (url.hostname) {
+                    // 3. 校验最终解析数据
+                    // 保证必须有 password 且 hostname 不会是异常的长字符串（部分异常 base64 被误认作为 hostname）
+                    if (parsedUrl.hostname && password && parsedUrl.hostname.length < 200 && method) {
                         proxies.push({
                             id: `p_${Date.now()}_${proxies.length}_${Math.random().toString(36).substr(2, 5)}`,
                             name: tag || 'SS',
                             type: 'ss',
-                            server: url.hostname,
-                            port: parseInt(url.port, 10) || 443,
+                            server: parsedUrl.hostname,
+                            port: parseInt(parsedUrl.port, 10) || 443,
                             cipher: method,
                             password: password,
                             raw: line
@@ -898,9 +944,9 @@ function parseContent(content) {
 function removeDuplicates(proxies) {
     const map = new Map();
     for (const p of proxies) {
-        if (!p.server || !p.port) continue;
-        // 使用 server:port:uuid/password 作为唯一键
-        const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+        if (!p.server) continue;
+        // 使用 server 作为唯一键 (即 IP 去重)
+        const key = `${p.server}`;
         if (!map.has(key)) {
             map.set(key, p);
         }
@@ -1289,31 +1335,49 @@ async function checkSingleUrl(proxyName, timeout, testUrl, signal = null) {
             signal: signal
         };
 
-        const req = http.get(url, options, (res) => {
+        let isResolved = false;
+        let req;
+        const timer = setTimeout(() => {
+            if (!isResolved) {
+                isResolved = true;
+                if (req) req.destroy();
+                resolve(-1);
+            }
+        }, timeout + 2500); // 强硬绝对超时兜底
+
+        const safeResolve = (val) => {
+            if (!isResolved) {
+                isResolved = true;
+                clearTimeout(timer);
+                resolve(val);
+            }
+        };
+
+        req = http.get(url, options, (res) => {
             let data = '';
             res.on('data', chunk => data += chunk);
             res.on('end', () => {
                 try {
                     const result = JSON.parse(data);
                     if (result.delay && result.delay > 0 && result.delay <= timeout) {
-                        resolve(result.delay);
+                        safeResolve(result.delay);
                     } else {
-                        resolve(-1);
+                        safeResolve(-1);
                     }
                 } catch (e) {
-                    resolve(-1);
+                    safeResolve(-1);
                 }
             });
         });
 
         req.on('error', (e) => {
             // Abort assertions are expected
-            resolve(-1);
+            safeResolve(-1);
         });
 
         req.on('timeout', () => {
             req.destroy();
-            resolve(-1);
+            safeResolve(-1);
         });
     });
 }
@@ -1850,11 +1914,17 @@ async function fetchFromLinuxDo() {
 
 async function runAggregation(mode = 'github', pages = 50) {
     if (globalState.status !== 'idle') {
-        addLog('聚合任务已在运行中', 'warning');
-        return;
+        if (globalState.taskStartTime && Date.now() - globalState.taskStartTime > 3600000) {
+            addLog(`⚠️ 检测到系统长时间维持 ${globalState.status} 状态，疑似死锁，已强行解锁。`, 'warning');
+            globalState.status = 'idle';
+        } else {
+            addLog('聚合任务已在运行中', 'warning');
+            return;
+        }
     }
 
     globalState.status = 'fetching';
+    globalState.taskStartTime = Date.now();
     globalState.logs = [];
     globalState.total = 0;
     globalState.active = 0;
@@ -1862,10 +1932,48 @@ async function runAggregation(mode = 'github', pages = 50) {
     addLog(`开始聚合任务 (模式: ${mode === 'all' ? '全网获取' : 'Github 更新'}, 爬取深度: ${pages})...`, 'info');
 
     // 重置各来源统计
-    globalState.lastFetchStats = { github: 0, web: 0, linuxdo: 0 };
+    globalState.lastFetchStats = { github: 0, web: 0, linuxdo: 0, hk: 0, hk1: 0, sg: 0, us: 0 };
+
+    let proxies = [];
 
     try {
-        // --- 0. 启动全局采集专线代理 (Premium Proxy) ---
+        // --- 0.1 从全球(香港、新加坡、美国)等自定义服务器获取订阅 (最优先执行) ---
+        // 放在最前面执行，通常这些服务器可以直连，速度最快
+        const customServers = [
+            { name: '香港', id: 'hk', url: 'https://hk.liukun.com/api/subscribe?clash=1' },
+            { name: '香港1', id: 'hk1', url: 'https://hk1.liukun.com/api/subscribe?clash=1' },
+            { name: '新加坡', id: 'sg', url: 'https://sg.liukun.com/api/subscribe?clash=1' },
+            { name: '美国', id: 'us', url: 'https://us.liukun.com/api/subscribe?clash=1' }
+        ];
+
+        for (const server of customServers) {
+            try {
+                addLog(`正在从${server.name}服务器获取 Clash 订阅 (${server.url})...`, 'info');
+                // 增加随机时间戳，防止被 Nginx/CDN 或 fetchUrl 内部缓存
+                const fetchUrlWithTime = `${server.url}&_t=${Date.now()}`;
+                const content = await fetchUrl(fetchUrlWithTime, 60000);
+                const parsedProxies = parseContent(content);
+                if (parsedProxies && parsedProxies.length > 0) {
+                    addLog(`${server.name}服务器订阅获取完成，获得 ${parsedProxies.length} 个节点`, 'success');
+                    parsedProxies.forEach(p => p.forumSource = `${server.id}_server`); // 标记来源
+                    proxies.push(...parsedProxies);
+                    globalState.lastFetchStats[server.id] = parsedProxies.length;
+                } else {
+                    addLog(`${server.name}服务器订阅获取完成，未发现有效节点`, 'warning');
+                }
+            } catch (e) {
+                addLog(`${server.name}服务器获取失败: ${e.message}`, 'error');
+            }
+        }
+
+        // 0.2 在获取完自定义服务器节点后进行一次去重
+        if (proxies.length > 0) {
+            const beforeUnique = proxies.length;
+            proxies = removeDuplicates(proxies);
+            addLog(`自定义服务器(香港、香港1、新加坡、美国)节点归集完毕，初步去重：${beforeUnique} -> ${proxies.length} 个不重复节点`, 'info');
+        }
+
+        // --- 0.3 启动全局采集专线代理 (Premium Proxy) ---
         // 无论何种模式，只要有需要翻墙的操作，都建议开启
         await premiumManager.start();
         await new Promise(r => setTimeout(r, 2000)); // 等待启动
@@ -1873,8 +1981,6 @@ async function runAggregation(mode = 'github', pages = 50) {
         // 设置全局代理
         GLOBAL_PROXY = `http://127.0.0.1:${premiumManager.PROXY_PORT}`;
         addLog(`========== 启动采集任务 (Proxy: ${GLOBAL_PROXY}) ==========`, 'info');
-
-        let proxies = [];
 
         // 0.5 加载手动/历史导入节点 (manual_proxies.json)
         try {
@@ -1946,6 +2052,8 @@ async function runAggregation(mode = 'github', pages = 50) {
                 addLog(`Linux.do 抓取失败: ${e.message}`, 'error');
             }
 
+
+
         }
 
 
@@ -1978,6 +2086,7 @@ async function runAggregation(mode = 'github', pages = 50) {
         // 5. 验证节点 (增加并发和超时)
         addLog('========== 开始节点验证 (并发: 100, 超时: 15000ms) ==========', 'info');
         await new Promise(r => setImmediate(r)); // 让出主线程
+        
         let validProxies = await validateProxies(proxies, 100, 15000);
 
         // 输出各来源验证通过统计
@@ -2050,19 +2159,19 @@ async function runAggregation(mode = 'github', pages = 50) {
             existingProxies = [];
         }
 
-        // 7b. 以 server:port:uuid 为 key 建立旧节点索引
+        // 7b. 以 server(IP) 为 key 建立旧节点索引
         const existingMap = new Map();
         for (const p of existingProxies) {
-            if (!p.server || !p.port) continue;
-            const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+            if (!p.server) continue;
+            const key = `${p.server}`;
             existingMap.set(key, p);
         }
 
         // 7c. 用新验证通过的节点更新/覆盖旧节点（新数据优先）
         const newKeys = new Set();
         for (const p of validProxies) {
-            if (!p.server || !p.port) continue;
-            const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+            if (!p.server) continue;
+            const key = `${p.server}`;
             newKeys.add(key);
             existingMap.set(key, p); // 新数据覆盖旧数据
         }
@@ -2072,9 +2181,9 @@ async function runAggregation(mode = 'github', pages = 50) {
 
         const keptOld = mergedProxies.length - validProxies.length;
         const brandNew = validProxies.filter(p => {
-            const key = `${p.server}:${p.port}:${p.uuid || p.password || ''}`;
+            const key = `${p.server}`;
             // 如果这个 key 不在旧数据中，说明是全新节点
-            return !existingProxies.some(ep => `${ep.server}:${ep.port}:${ep.uuid || ep.password || ''}` === key);
+            return !existingProxies.some(ep => `${ep.server}` === key);
         }).length;
 
         addLog(`📊 合并策略: 旧节点保留 ${keptOld} 个, 本次验证通过 ${validProxies.length} 个 (其中全新 ${brandNew} 个), 合并后总计 ${mergedProxies.length} 个`, 'info');
@@ -2113,7 +2222,7 @@ async function runAggregation(mode = 'github', pages = 50) {
 
         // 关闭采集用的 Premium Proxy
         addLog('任务结束，关闭所有代理资源...', 'info');
-        GLOBAL_PROXY = null;
+        GLOBAL_PROXY = HOST_PROXY;
         premiumManager.stop();
 
         globalState.status = 'idle';
@@ -2285,7 +2394,7 @@ const server = http.createServer(async (req, res) => {
             } catch (e) { }
 
             if (globalState.status === 'idle') {
-                runAggregation('all', pages); // Pass mode and pages
+                runScheduledTask(true, pages); // Manual trigger with pages
                 res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
                 res.end(JSON.stringify({ success: true, message: `全网抓取任务已启动 (深度: ${pages})` }));
             } else {
@@ -2397,7 +2506,25 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
-    // API: 删除普通节点 (Cloud proxies)
+    // API: 普通节点 (Cloud proxies) - 保存或删除
+    if (parsedUrl.pathname === '/api/proxies' && req.method === 'POST') {
+        try {
+            const body = await getBody();
+            const proxies = body.proxies || [];
+            const proxiesFile = path.join(ROOT, 'proxies.json');
+
+            fs.writeFileSync(proxiesFile, JSON.stringify(proxies, null, 2));
+            addLog(`API保存了 ${proxies.length} 个普通节点 (覆盖模式)`, 'info');
+
+            res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
+            res.end(JSON.stringify({ success: true, total: proxies.length }));
+        } catch (e) {
+            res.writeHead(500, { 'Content-Type': 'application/json', ...headers });
+            res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+        return;
+    }
+
     if (parsedUrl.pathname === '/api/proxies' && req.method === 'DELETE') {
         let bodyRaw = '';
         req.on('data', chunk => bodyRaw += chunk);
@@ -2497,30 +2624,41 @@ const server = http.createServer(async (req, res) => {
         try {
             const body = await getBody();
             const proxies = body.proxies || [];
+            const overwrite = body.overwrite === true;
 
-            // 读取现有数据
-            let existing = [];
-            if (fs.existsSync(manualFile)) {
-                try {
-                    existing = JSON.parse(fs.readFileSync(manualFile, 'utf8'));
-                } catch (e) { existing = []; }
+            if (overwrite) {
+                // 覆盖模式，直接保存传入的节点
+                fs.writeFileSync(manualFile, JSON.stringify(proxies, null, 2));
+                addLog(`API保存了 ${proxies.length} 个手动节点 (覆盖模式)`, 'info');
+                res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
+                res.end(JSON.stringify({ success: true, total: proxies.length }));
+            } else {
+                // 默认合并模式
+                let existing = [];
+                if (fs.existsSync(manualFile)) {
+                    try {
+                        existing = JSON.parse(fs.readFileSync(manualFile, 'utf8'));
+                    } catch (e) { existing = []; }
+                }
+
+                // 标记为手动添加（如果还没标记）
+                proxies.forEach(p => {
+                    if (!p.isManual) {
+                        p.isManual = true;
+                        p.addedAt = new Date().toISOString();
+                    }
+                });
+
+                // 合并去重 (基于 raw 字段)
+                const existingRaw = new Set(existing.map(p => p.raw));
+                const newProxies = proxies.filter(p => !existingRaw.has(p.raw));
+                const merged = [...existing, ...newProxies];
+
+                fs.writeFileSync(manualFile, JSON.stringify(merged, null, 2));
+
+                res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
+                res.end(JSON.stringify({ success: true, added: newProxies.length, total: merged.length }));
             }
-
-            // 标记为手动添加
-            proxies.forEach(p => {
-                p.isManual = true;
-                p.addedAt = new Date().toISOString();
-            });
-
-            // 合并去重 (基于 raw 字段)
-            const existingRaw = new Set(existing.map(p => p.raw));
-            const newProxies = proxies.filter(p => !existingRaw.has(p.raw));
-            const merged = [...existing, ...newProxies];
-
-            fs.writeFileSync(manualFile, JSON.stringify(merged, null, 2));
-
-            res.writeHead(200, { 'Content-Type': 'application/json', ...headers });
-            res.end(JSON.stringify({ success: true, added: newProxies.length, total: merged.length }));
         } catch (e) {
             res.writeHead(500, { 'Content-Type': 'application/json', ...headers });
             res.end(JSON.stringify({ success: false, error: e.message }));
@@ -2740,7 +2878,7 @@ const server = http.createServer(async (req, res) => {
                     } catch (e) {
                         addLog(`⚠️ 订阅强制测试失败: ${e.message}`, 'warning');
                     } finally {
-                        await runProxyMaintenance();
+                        // 清理由每小时自动任务 runHourlyCleanup 负责
                     }
                 }
             }
@@ -2762,7 +2900,7 @@ const server = http.createServer(async (req, res) => {
                 const sA = a.purityScore || 0;
                 const sB = b.purityScore || 0;
                 if (sB !== sA) return sB - sA;
-                
+
                 const lA = pGetter(a);
                 const lB = pGetter(b);
                 function pGetter(node) {
@@ -2877,7 +3015,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // API: 转换导出
-    if (parsedUrl.pathname === '/api/convert' && req.method === 'POST') {
+    if (parsedUrl.pathname.endsWith('/api/convert') && req.method === 'POST') {
         try {
             const { proxies, type } = await getBody();
             if (!proxies || !Array.isArray(proxies) || proxies.length === 0) {
@@ -2998,7 +3136,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // API: 代理中转
-    if (parsedUrl.pathname === '/api/proxy') {
+    if (parsedUrl.pathname.endsWith('/api/proxy')) {
         const targetUrl = parsedUrl.searchParams.get('url');
         if (!targetUrl) { res.writeHead(400, headers); res.end('Missing url'); return; }
 
@@ -3104,7 +3242,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // API: 查询任务状态
-    if (parsedUrl.pathname === '/api/check_task_status' && req.method === 'GET') {
+    if (parsedUrl.pathname.endsWith('/api/check_task_status') && req.method === 'GET') {
         const taskId = parsedUrl.searchParams.get('taskId');
         const task = connectivityTasks.get(taskId);
 
@@ -3133,7 +3271,7 @@ const server = http.createServer(async (req, res) => {
 
 
     // API: IP 检测 (批量) - 带缓存
-    if (parsedUrl.pathname === '/api/check_ip_batch' && req.method === 'POST') {
+    if (parsedUrl.pathname.endsWith('/api/check_ip_batch') && req.method === 'POST') {
         let body = [];
         req.on('data', chunk => body.push(chunk));
         req.on('end', () => {
@@ -3383,7 +3521,7 @@ function getNextCronRunTime() {
     return formatBeijingTime(tomorrowBeijing);
 }
 
-async function runScheduledTask() {
+async function runScheduledTask(isManual = false, fetchPages = 200) {
     const startTime = new Date();
     const logEntry = {
         id: Date.now(),
@@ -3391,7 +3529,7 @@ async function runScheduledTask() {
         endTime: null,
         duration: null,
         status: 'running',
-        type: '全网节点更新',
+        type: isManual ? '全网节点更新(手动)' : '全网节点更新(自动)',
         details: {
             beforeCount: 0,
             afterCount: 0,
@@ -3402,7 +3540,7 @@ async function runScheduledTask() {
     };
 
     try {
-        addLog('⏰ 触发定时任务: 全网节点更新 (深度爬取 200 页)', 'info');
+        addLog(`⏰ 触发${isManual ? '手动' : '定时'}任务: 全网节点更新 (深度爬取 ${fetchPages} 页)`, 'info');
 
         // 记录执行前节点数 (包含手动添加的节点)
         const proxiesFile = path.join(ROOT, 'proxies.json');
@@ -3424,7 +3562,7 @@ async function runScheduledTask() {
         logEntry.details.beforeCount = getTotalNodeCount();
 
         // 执行聚合任务
-        await runAggregation('all', 200);
+        await runAggregation('all', fetchPages);
 
         // 记录执行后节点数 (包含手动添加的节点)
         logEntry.details.afterCount = getTotalNodeCount();
@@ -3435,7 +3573,11 @@ async function runScheduledTask() {
             github: globalState.lastFetchStats.github,
             web: globalState.lastFetchStats.web,
             linuxdo: globalState.lastFetchStats.linuxdo,
-            linuxdoValid: globalState.lastFetchStats.linuxdoValid || 0
+            linuxdoValid: globalState.lastFetchStats.linuxdoValid || 0,
+            hk: globalState.lastFetchStats.hk,
+            hk1: globalState.lastFetchStats.hk1,
+            sg: globalState.lastFetchStats.sg,
+            us: globalState.lastFetchStats.us
         };
 
         // 执行连通性检测
@@ -3489,91 +3631,172 @@ function startAutoUpdateJob() {
     console.log(`  下次执行: ${globalState.nextAutoUpdate}`);
 }
 
-// ========== 节点维护进程 ==========
-// 每小时测试所有节点，选出最快的前10个作为系统优选代理
-async function runProxyMaintenance() {
+// ========== 每小时自动检测与清理 ==========
+// 每小时对所有节点进行真机连通性检测，自动清除无效节点并更新 YAML
+async function runHourlyCleanup() {
     if (globalState.status !== 'idle') {
-        addLog(`⚠️ 系统繁忙 (${globalState.status})，跳过节点维护任务。`, 'warning');
-        return;
+        if (globalState.taskStartTime && Date.now() - globalState.taskStartTime > 3600000) {
+            addLog(`⚠️ 检测到系统长时间维持 ${globalState.status} 状态，疑似死锁，已强行解锁。`, 'warning');
+            globalState.status = 'idle';
+        } else {
+            addLog(`⚠️ 系统繁忙 (${globalState.status})，跳过每小时自动清理任务。`, 'warning');
+            return;
+        }
     }
+
+    const startTime = new Date();
+    const logEntry = {
+        id: Date.now(),
+        startTime: startTime.toISOString(),
+        endTime: null,
+        duration: null,
+        status: 'running',
+        type: '每小时本地检测(自动)',
+        details: {
+            beforeCount: 0,
+            afterCount: 0,
+            tested: 0,
+            passed: 0,
+            failed: 0,
+            removed: 0,
+            yamlGenerated: false,
+            skippedReason: null
+        },
+        error: null
+    };
 
     const oldStatus = globalState.status;
     globalState.status = 'testing';
-    addLog(`========== 开始节点维护任务 ==========`, 'info');
+    globalState.taskStartTime = Date.now();
+    addLog(`========== 开始每小时自动清理任务 ==========`, 'info');
 
     try {
-        // 1. 收集所有可用节点
-        const allProxies = [];
-
-        // 1.1 加载自动采集的节点
+        // 1. 加载所有节点
         const proxiesFile = path.join(ROOT, 'proxies.json');
+        const manualFile = path.join(ROOT, 'manual_proxies.json');
+
+        let autoProxies = [];
+        let manualProxies = [];
+
         if (fs.existsSync(proxiesFile)) {
-            try {
-                const autoProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8'));
-                allProxies.push(...autoProxies);
-                addLog(`📦 加载自动采集节点: ${autoProxies.length} 个`, 'info');
-            } catch (e) {
-                addLog(`⚠️ 读取自动采集节点失败: ${e.message}`, 'warning');
-            }
+            try { autoProxies = JSON.parse(fs.readFileSync(proxiesFile, 'utf8')); } catch (e) { }
+        }
+        if (fs.existsSync(manualFile)) {
+            try { manualProxies = JSON.parse(fs.readFileSync(manualFile, 'utf8')); } catch (e) { }
         }
 
-        // 1.2 加载手动添加的节点（包括付费订阅）
-        const manualFile = path.join(ROOT, 'manual_proxies.json');
-        if (fs.existsSync(manualFile)) {
-            try {
-                const manualProxies = JSON.parse(fs.readFileSync(manualFile, 'utf8'));
-                allProxies.push(...manualProxies);
-                addLog(`📦 加载手动节点: ${manualProxies.length} 个`, 'info');
-            } catch (e) {
-                addLog(`⚠️ 读取手动节点失败: ${e.message}`, 'warning');
-            }
-        }
+        const allProxies = [...autoProxies, ...manualProxies];
+        logEntry.details.beforeCount = allProxies.length;
 
         if (allProxies.length === 0) {
-            addLog(`⚠️ 没有可用节点，跳过维护任务`, 'warning');
+            addLog(`⚠️ 没有任何节点，跳过自动清理`, 'warning');
+            logEntry.details.skippedReason = '无节点';
+            logEntry.status = 'success';
             return;
         }
 
-        addLog(`📊 总节点数: ${allProxies.length}`, 'info');
+        addLog(`📊 加载 ${allProxies.length} 个节点 (自动: ${autoProxies.length}, 手动: ${manualProxies.length})`, 'info');
 
-        // 2. 测试所有节点延迟 
-        // (testProxiesDirectly 内部会自动执行 generateClashConfig 和 startClash，无需在此重复调用)
-        addLog(`⚡ 开始真机测试节点延迟...`, 'info');
+        // 2. 真机测试所有节点
+        addLog(`⚡ 开始真机连通性检测 (并发: 10, 超时: 8s)...`, 'info');
         const results = await testProxiesDirectly(allProxies);
 
-        // 3. 更新延迟结果
+        // 3. 统计结果
+        let passed = 0;
+        let failed = 0;
+        const failedIds = new Set();
+
         allProxies.forEach(p => {
             const lat = results[p.id];
-            p.maintenanceLatency = (lat && lat > 0) ? lat : 99999;
+            if (lat && lat > 0 && lat < 8888) {
+                p.localLatency = lat;
+                passed++;
+            } else {
+                p.localLatency = -1;
+                failed++;
+                failedIds.add(p.id);
+            }
         });
 
-        // 4. 重建优选配置
+        logEntry.details.tested = allProxies.length;
+        logEntry.details.passed = passed;
+        logEntry.details.failed = failed;
+
+        addLog(`📊 检测结果: ${passed}/${allProxies.length} 可用, ${failed} 个不可用`, passed > 0 ? 'success' : 'warning');
+
+        // 4. 安全检查：如果所有节点都失败，判定为网络问题，不执行清理
+        if (passed === 0) {
+            addLog(`🛡️ 所有 ${allProxies.length} 个节点均不可用，判断为本机网络问题，跳过清理（保留全部节点）`, 'warning');
+            logEntry.details.skippedReason = '全部超时(网络异常)';
+            logEntry.status = 'success';
+            return;
+        }
+
+        // 5. 执行清理：删除无效节点
+        if (failed > 0) {
+            // 5a. 清理 proxies.json
+            const remainingAuto = autoProxies.filter(p => !failedIds.has(p.id));
+            const removedAuto = autoProxies.length - remainingAuto.length;
+            fs.writeFileSync(proxiesFile, JSON.stringify(remainingAuto, null, 2));
+
+            // 5b. 清理 manual_proxies.json
+            const remainingManual = manualProxies.filter(p => !failedIds.has(p.id));
+            const removedManual = manualProxies.length - remainingManual.length;
+            fs.writeFileSync(manualFile, JSON.stringify(remainingManual, null, 2));
+
+            const totalRemoved = removedAuto + removedManual;
+            logEntry.details.removed = totalRemoved;
+            logEntry.details.afterCount = remainingAuto.length + remainingManual.length;
+
+            addLog(`🗑️ 已清理 ${totalRemoved} 个无效节点 (自动: ${removedAuto}, 手动: ${removedManual})`, 'success');
+            addLog(`📦 剩余节点: ${logEntry.details.afterCount} 个 (自动: ${remainingAuto.length}, 手动: ${remainingManual.length})`, 'info');
+
+            // 6. 重新生成 Aggregator.yaml（使用清理后的节点，跳过重复测试）
+            addLog(`📝 正在更新 Aggregator.yaml...`, 'info');
+            const validNodes = [...remainingAuto, ...remainingManual].filter(p => p.localLatency && p.localLatency > 0);
+            await saveAggregatorYaml(validNodes, false);
+            logEntry.details.yamlGenerated = true;
+            addLog(`✅ Aggregator.yaml 已更新 (${validNodes.length} 个可用节点)`, 'success');
+        } else {
+            logEntry.details.afterCount = allProxies.length;
+            logEntry.details.removed = 0;
+            addLog(`🎉 所有 ${allProxies.length} 个节点均可用，无需清理`, 'success');
+
+            // 仍然更新 localLatency 到文件
+            fs.writeFileSync(proxiesFile, JSON.stringify(autoProxies, null, 2));
+            if (manualProxies.length > 0) {
+                fs.writeFileSync(manualFile, JSON.stringify(manualProxies, null, 2));
+            }
+        }
+
+        // 7. 也更新优选节点（保留向前兼容）
         const top10 = allProxies
-            .filter(p => p.maintenanceLatency > 0 && p.maintenanceLatency < 9999)
-            .sort((a, b) => a.maintenanceLatency - b.maintenanceLatency)
+            .filter(p => p.localLatency && p.localLatency > 0 && p.localLatency < 9999)
+            .sort((a, b) => a.localLatency - b.localLatency)
             .slice(0, 10);
-
-        addLog(`✅ 维护完成: 测试 ${allProxies.length} 个节点，选出 ${top10.length} 个优选节点`, 'success');
-
         PREFERRED_PROXIES = top10;
-
-        // 5. 保存优选节点列表
         const preferredFile = path.join(ROOT, 'preferred_proxies.json');
         fs.writeFileSync(preferredFile, JSON.stringify(PREFERRED_PROXIES, null, 2));
-        addLog(`💾 优选节点已保存到 preferred_proxies.json`, 'info');
 
-        // 6. 停止 Clash (测试任务结束)
-        await stopClash();
+        logEntry.status = 'success';
+        addLog(`✅ 每小时自动清理任务完成`, 'success');
 
     } catch (e) {
-        addLog(`❌ 节点维护任务失败: ${e.message}`, 'error');
+        logEntry.status = 'error';
+        logEntry.error = e.message;
+        addLog(`❌ 每小时自动清理任务失败: ${e.message}`, 'error');
         await stopClash();
     } finally {
         globalState.status = oldStatus;
+
+        const endTime = new Date();
+        logEntry.endTime = endTime.toISOString();
+        logEntry.duration = Math.round((endTime - startTime) / 1000);
+        addCronLog(logEntry);
     }
 }
 
-// 启动节点维护定时任务（每小时执行一次）
+// 启动每小时自动清理定时任务
 function startProxyMaintenanceJob() {
     if (proxyMaintenanceTimer) {
         clearInterval(proxyMaintenanceTimer);
@@ -3581,17 +3804,19 @@ function startProxyMaintenanceJob() {
 
     const MAINTENANCE_INTERVAL = 60 * 60 * 1000; // 1小时
 
-    // 立即执行一次
-    runProxyMaintenance().catch(e => {
-        addLog(`❌ 初始节点维护失败: ${e.message}`, 'error');
-    });
+    // 启动后延迟 2 分钟执行首次检测（给系统时间启动其他服务）
+    setTimeout(() => {
+        runHourlyCleanup().catch(e => {
+            addLog(`❌ 初始自动清理失败: ${e.message}`, 'error');
+        });
+    }, 2 * 60 * 1000);
 
-    // 设置定时任务
+    // 设置每小时定时任务
     proxyMaintenanceTimer = setInterval(async () => {
-        await runProxyMaintenance();
+        await runHourlyCleanup();
     }, MAINTENANCE_INTERVAL);
 
-    console.log(`  节点维护任务已启动 (每小时执行一次)`);
+    console.log(`  每小时自动清理任务已启动 (间隔: 1小时, 首次: 2分钟后)`);
 }
 
 

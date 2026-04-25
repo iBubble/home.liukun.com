@@ -1,815 +1,5 @@
 [
     {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 21,
-            "updated": 12,
-            "unchanged": 145,
-            "total": 178
-        },
-        "created_at": 1770583226
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 178,
-            "total": 178
-        },
-        "created_at": 1770586661
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 779,
-            "updated": 38,
-            "unchanged": 160,
-            "total": 977
-        },
-        "created_at": 1770609604
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 55,
-            "updated": 36,
-            "unchanged": 58,
-            "total": 149
-        },
-        "created_at": 1770620679
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 2,
-            "updated": 3,
-            "unchanged": 131,
-            "total": 136
-        },
-        "created_at": 1770623323
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 482,
-            "updated": 5,
-            "unchanged": 136,
-            "total": 623
-        },
-        "created_at": 1770631204
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 932,
-            "updated": 23,
-            "unchanged": 74,
-            "total": 1029
-        },
-        "created_at": 1770652810
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 21,
-            "updated": 8,
-            "unchanged": 82,
-            "total": 111
-        },
-        "created_at": 1770655511
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 703,
-            "updated": 37,
-            "unchanged": 66,
-            "total": 806
-        },
-        "created_at": 1770696003
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 26,
-            "updated": 26,
-            "unchanged": 58,
-            "total": 110
-        },
-        "created_at": 1770723588
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 428,
-            "updated": 5,
-            "unchanged": 110,
-            "total": 543
-        },
-        "created_at": 1770724804
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 664,
-            "updated": 23,
-            "unchanged": 66,
-            "total": 753
-        },
-        "created_at": 1770746404
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 653,
-            "updated": 6,
-            "unchanged": 94,
-            "total": 753
-        },
-        "created_at": 1770768004
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 457,
-            "updated": 21,
-            "unchanged": 62,
-            "total": 540
-        },
-        "created_at": 1770789604
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 442,
-            "updated": 18,
-            "unchanged": 69,
-            "total": 529
-        },
-        "created_at": 1770811203
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 13,
-            "updated": 2,
-            "unchanged": 98,
-            "total": 113
-        },
-        "created_at": 1770818551
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 315,
-            "updated": 28,
-            "unchanged": 57,
-            "total": 400
-        },
-        "created_at": 1770832804
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 307,
-            "updated": 4,
-            "unchanged": 89,
-            "total": 400
-        },
-        "created_at": 1770854403
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 307,
-            "updated": 4,
-            "unchanged": 89,
-            "total": 400
-        },
-        "created_at": 1770876003
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 307,
-            "updated": 2,
-            "unchanged": 90,
-            "total": 399
-        },
-        "created_at": 1770897603
-    },
-    {
-        "source": "Aggregator (2).yaml",
-        "stats": {
-            "added": 5,
-            "updated": 1,
-            "unchanged": 0,
-            "total": 6
-        },
-        "created_at": 1770906032
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 306,
-            "updated": 2,
-            "unchanged": 89,
-            "total": 397
-        },
-        "created_at": 1770919204
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 306,
-            "updated": 2,
-            "unchanged": 89,
-            "total": 397
-        },
-        "created_at": 1770940803
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 306,
-            "updated": 2,
-            "unchanged": 89,
-            "total": 397
-        },
-        "created_at": 1770962403
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 305,
-            "updated": 0,
-            "unchanged": 90,
-            "total": 395
-        },
-        "created_at": 1770984003
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 305,
-            "updated": 0,
-            "unchanged": 88,
-            "total": 393
-        },
-        "created_at": 1771005604
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 305,
-            "updated": 0,
-            "unchanged": 86,
-            "total": 391
-        },
-        "created_at": 1771027204
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 224,
-            "updated": 0,
-            "unchanged": 85,
-            "total": 309
-        },
-        "created_at": 1771048803
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 224,
-            "updated": 0,
-            "unchanged": 85,
-            "total": 309
-        },
-        "created_at": 1771070403
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 224,
-            "updated": 0,
-            "unchanged": 84,
-            "total": 308
-        },
-        "created_at": 1771092004
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 224,
-            "updated": 0,
-            "unchanged": 84,
-            "total": 308
-        },
-        "created_at": 1771113603
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 224,
-            "updated": 0,
-            "unchanged": 84,
-            "total": 308
-        },
-        "created_at": 1771135203
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 224,
-            "updated": 0,
-            "unchanged": 84,
-            "total": 308
-        },
-        "created_at": 1771156803
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 222,
-            "updated": 0,
-            "unchanged": 83,
-            "total": 305
-        },
-        "created_at": 1771178403
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 222,
-            "updated": 0,
-            "unchanged": 83,
-            "total": 305
-        },
-        "created_at": 1771200003
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 219,
-            "updated": 0,
-            "unchanged": 83,
-            "total": 302
-        },
-        "created_at": 1771221602
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 218,
-            "updated": 0,
-            "unchanged": 80,
-            "total": 298
-        },
-        "created_at": 1771351202
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 217,
-            "updated": 0,
-            "unchanged": 80,
-            "total": 297
-        },
-        "created_at": 1771372803
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 8,
-            "updated": 0,
-            "unchanged": 77,
-            "total": 85
-        },
-        "created_at": 1771376376
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 155,
-            "updated": 13,
-            "unchanged": 60,
-            "total": 228
-        },
-        "created_at": 1771394403
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 161,
-            "updated": 9,
-            "unchanged": 57,
-            "total": 227
-        },
-        "created_at": 1771416003
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 5,
-            "updated": 1,
-            "unchanged": 0,
-            "total": 6
-        },
-        "created_at": 1771430156
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 7,
-            "updated": 0,
-            "unchanged": 65,
-            "total": 72
-        },
-        "created_at": 1771430781
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 72,
-            "total": 72
-        },
-        "created_at": 1771430788
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 72,
-            "total": 72
-        },
-        "created_at": 1771430910
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 72,
-            "total": 72
-        },
-        "created_at": 1771431039
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 6,
-            "total": 6
-        },
-        "created_at": 1771431048
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 6,
-            "total": 6
-        },
-        "created_at": 1771431056
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 6,
-            "total": 6
-        },
-        "created_at": 1771431102
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 6,
-            "total": 6
-        },
-        "created_at": 1771431141
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 72,
-            "total": 72
-        },
-        "created_at": 1771431147
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 10,
-            "updated": 0,
-            "unchanged": 73,
-            "total": 83
-        },
-        "created_at": 1771431903
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 11,
-            "updated": 0,
-            "unchanged": 6,
-            "total": 17
-        },
-        "created_at": 1771431911
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 83,
-            "total": 83
-        },
-        "created_at": 1771431920
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 17,
-            "total": 17
-        },
-        "created_at": 1771431925
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 79,
-            "updated": 0,
-            "unchanged": 4,
-            "total": 83
-        },
-        "created_at": 1771431943
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 17,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 17
-        },
-        "created_at": 1771432051
-    },
-    {
-        "source": "AggregatorUS.yaml",
-        "stats": {
-            "added": 83,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 83
-        },
-        "created_at": 1771432087
-    },
-    {
-        "source": "AggregatorCN.yaml",
-        "stats": {
-            "added": 17,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 17
-        },
-        "created_at": 1771432123
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 195,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 195
-        },
-        "created_at": 1771432532
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 213,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 213
-        },
-        "created_at": 1771432543
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 82,
-            "updated": 0,
-            "unchanged": 113,
-            "total": 195
-        },
-        "created_at": 1771432554
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 83,
-            "updated": 0,
-            "unchanged": 112,
-            "total": 195
-        },
-        "created_at": 1771432615
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 82,
-            "updated": 0,
-            "unchanged": 113,
-            "total": 195
-        },
-        "created_at": 1771433738
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 82,
-            "updated": 0,
-            "unchanged": 113,
-            "total": 195
-        },
-        "created_at": 1771433760
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 0,
-            "updated": 0,
-            "unchanged": 195,
-            "total": 195
-        },
-        "created_at": 1771433787
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 82,
-            "updated": 0,
-            "unchanged": 113,
-            "total": 195
-        },
-        "created_at": 1771433961
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 83,
-            "updated": 0,
-            "unchanged": 112,
-            "total": 195
-        },
-        "created_at": 1771433973
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 195,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 195
-        },
-        "created_at": 1771434539
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 213,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 213
-        },
-        "created_at": 1771434549
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 195,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 195
-        },
-        "created_at": 1771434558
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 112,
-            "updated": 0,
-            "unchanged": 83,
-            "total": 195
-        },
-        "created_at": 1771437603
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 123,
-            "updated": 0,
-            "unchanged": 72,
-            "total": 195
-        },
-        "created_at": 1771459203
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 120,
-            "updated": 0,
-            "unchanged": 71,
-            "total": 191
-        },
-        "created_at": 1771480803
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 120,
-            "updated": 0,
-            "unchanged": 71,
-            "total": 191
-        },
-        "created_at": 1771502403
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 120,
-            "updated": 0,
-            "unchanged": 71,
-            "total": 191
-        },
-        "created_at": 1771513374
-    },
-    {
-        "source": "Aggregator.yaml",
-        "stats": {
-            "added": 51,
-            "updated": 0,
-            "unchanged": 0,
-            "total": 51
-        },
-        "created_at": 1771513376
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 0,
-            "updated": 18,
-            "unchanged": 167,
-            "total": 185
-        },
-        "created_at": 1771524003
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 115,
-            "updated": 0,
-            "unchanged": 70,
-            "total": 185
-        },
-        "created_at": 1771545604
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 115,
-            "updated": 0,
-            "unchanged": 70,
-            "total": 185
-        },
-        "created_at": 1771567203
-    },
-    {
-        "source": "auto_update",
-        "stats": {
-            "added": 112,
-            "updated": 0,
-            "unchanged": 70,
-            "total": 182
-        },
-        "created_at": 1771588802
-    },
-    {
         "source": "auto_update",
         "stats": {
             "added": 180,
@@ -998,5 +188,815 @@
             "total": 92
         },
         "created_at": 1771959008
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 0,
+            "updated": 1,
+            "unchanged": 67,
+            "total": 68
+        },
+        "created_at": 1771977603
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 9,
+            "updated": 0,
+            "unchanged": 59,
+            "total": 68
+        },
+        "created_at": 1771999203
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 9,
+            "updated": 0,
+            "unchanged": 59,
+            "total": 68
+        },
+        "created_at": 1772020803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 9,
+            "updated": 0,
+            "unchanged": 59,
+            "total": 68
+        },
+        "created_at": 1772042402
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 9,
+            "updated": 0,
+            "unchanged": 59,
+            "total": 68
+        },
+        "created_at": 1772064002
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 137,
+            "updated": 23,
+            "unchanged": 31,
+            "total": 191
+        },
+        "created_at": 1772085607
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 105,
+            "updated": 0,
+            "unchanged": 86,
+            "total": 191
+        },
+        "created_at": 1772107203
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 221,
+            "updated": 80,
+            "unchanged": 40,
+            "total": 341
+        },
+        "created_at": 1772110635
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 96,
+            "unchanged": 245,
+            "total": 341
+        },
+        "created_at": 1772110956
+    },
+    {
+        "source": "bigo.yaml",
+        "stats": {
+            "added": 98,
+            "updated": 14,
+            "unchanged": 0,
+            "total": 112
+        },
+        "created_at": 1772111039
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 26,
+            "updated": 31,
+            "unchanged": 9,
+            "total": 66
+        },
+        "created_at": 1772111047
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 91,
+            "updated": 70,
+            "unchanged": 37,
+            "total": 198
+        },
+        "created_at": 1772113359
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 5,
+            "updated": 26,
+            "unchanged": 29,
+            "total": 60
+        },
+        "created_at": 1772113438
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 198,
+            "total": 198
+        },
+        "created_at": 1772113452
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 2,
+            "updated": 25,
+            "unchanged": 27,
+            "total": 54
+        },
+        "created_at": 1772118321
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 83,
+            "updated": 47,
+            "unchanged": 20,
+            "total": 150
+        },
+        "created_at": 1772124848
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 60,
+            "updated": 157,
+            "unchanged": 66,
+            "total": 283
+        },
+        "created_at": 1772124858
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 0,
+            "updated": 17,
+            "unchanged": 266,
+            "total": 283
+        },
+        "created_at": 1772128803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 2,
+            "total": 2
+        },
+        "created_at": 1772150402
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 2,
+            "total": 2
+        },
+        "created_at": 1772152932
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 2,
+            "total": 2
+        },
+        "created_at": 1772155570
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 2,
+            "total": 2
+        },
+        "created_at": 1772159079
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 186,
+            "updated": 30,
+            "unchanged": 40,
+            "total": 256
+        },
+        "created_at": 1772167411
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 0,
+            "updated": 155,
+            "unchanged": 62,
+            "total": 217
+        },
+        "created_at": 1772172005
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 31,
+            "updated": 12,
+            "unchanged": 9,
+            "total": 52
+        },
+        "created_at": 1772182662
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 11,
+            "updated": 13,
+            "unchanged": 41,
+            "total": 65
+        },
+        "created_at": 1772182980
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 172,
+            "updated": 18,
+            "unchanged": 43,
+            "total": 233
+        },
+        "created_at": 1772193603
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 31,
+            "updated": 16,
+            "unchanged": 7,
+            "total": 54
+        },
+        "created_at": 1772194259
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 14,
+            "unchanged": 40,
+            "total": 54
+        },
+        "created_at": 1772196101
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 169,
+            "updated": 18,
+            "unchanged": 22,
+            "total": 209
+        },
+        "created_at": 1772215203
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 189,
+            "updated": 16,
+            "unchanged": 35,
+            "total": 240
+        },
+        "created_at": 1772230650
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 86,
+            "updated": 16,
+            "unchanged": 8,
+            "total": 110
+        },
+        "created_at": 1772232028
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 10,
+            "updated": 33,
+            "unchanged": 67,
+            "total": 110
+        },
+        "created_at": 1772234380
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 166,
+            "updated": 13,
+            "unchanged": 45,
+            "total": 224
+        },
+        "created_at": 1772236808
+    },
+    {
+        "source": "Aggregator (1).yaml",
+        "stats": {
+            "added": 551,
+            "updated": 18,
+            "unchanged": 4,
+            "total": 573
+        },
+        "created_at": 1772242262
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 238,
+            "updated": 30,
+            "unchanged": 599,
+            "total": 867
+        },
+        "created_at": 1772258404
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 258,
+            "updated": 27,
+            "unchanged": 581,
+            "total": 866
+        },
+        "created_at": 1772280009
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 232,
+            "updated": 36,
+            "unchanged": 550,
+            "total": 818
+        },
+        "created_at": 1772301604
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 356,
+            "updated": 38,
+            "unchanged": 551,
+            "total": 945
+        },
+        "created_at": 1772323204
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 33,
+            "updated": 8,
+            "unchanged": 491,
+            "total": 532
+        },
+        "created_at": 1772332033
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 11,
+            "updated": 8,
+            "unchanged": 513,
+            "total": 532
+        },
+        "created_at": 1772335918
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 26,
+            "updated": 4,
+            "unchanged": 3,
+            "total": 33
+        },
+        "created_at": 1772337773
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 43,
+            "updated": 4,
+            "unchanged": 3,
+            "total": 50
+        },
+        "created_at": 1772344803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 174,
+            "updated": 19,
+            "unchanged": 19,
+            "total": 212
+        },
+        "created_at": 1772366408
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 164,
+            "updated": 14,
+            "unchanged": 21,
+            "total": 199
+        },
+        "created_at": 1772388004
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 286,
+            "updated": 10,
+            "unchanged": 46,
+            "total": 342
+        },
+        "created_at": 1772409603
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 284,
+            "updated": 0,
+            "unchanged": 58,
+            "total": 342
+        },
+        "created_at": 1772422261
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 13,
+            "updated": 146,
+            "unchanged": 46,
+            "total": 205
+        },
+        "created_at": 1772431203
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 2,
+            "updated": 0,
+            "unchanged": 2,
+            "total": 4
+        },
+        "created_at": 1772434707
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 148,
+            "updated": 1,
+            "unchanged": 54,
+            "total": 203
+        },
+        "created_at": 1772435703
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 4,
+            "total": 4
+        },
+        "created_at": 1772435705
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 0,
+            "unchanged": 203,
+            "total": 203
+        },
+        "created_at": 1772437410
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 2,
+            "updated": 0,
+            "unchanged": 4,
+            "total": 6
+        },
+        "created_at": 1772438264
+    },
+    {
+        "source": "config_clash_2026-03-02.yaml",
+        "stats": {
+            "added": 0,
+            "updated": 6,
+            "unchanged": 59,
+            "total": 65
+        },
+        "created_at": 1772438304
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 113,
+            "updated": 144,
+            "unchanged": 44,
+            "total": 301
+        },
+        "created_at": 1772452803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 217,
+            "updated": 6,
+            "unchanged": 41,
+            "total": 264
+        },
+        "created_at": 1772474403
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 290,
+            "updated": 16,
+            "unchanged": 33,
+            "total": 339
+        },
+        "created_at": 1772496003
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 132,
+            "updated": 1,
+            "unchanged": 1,
+            "total": 134
+        },
+        "created_at": 1772499030
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 289,
+            "updated": 1,
+            "unchanged": 49,
+            "total": 339
+        },
+        "created_at": 1772499044
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 1,
+            "updated": 20,
+            "unchanged": 99,
+            "total": 120
+        },
+        "created_at": 1772514920
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 38,
+            "updated": 0,
+            "unchanged": 82,
+            "total": 120
+        },
+        "created_at": 1772515004
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 150,
+            "updated": 5,
+            "unchanged": 36,
+            "total": 191
+        },
+        "created_at": 1772517603
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 48,
+            "updated": 1,
+            "unchanged": 2,
+            "total": 51
+        },
+        "created_at": 1772518382
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 164,
+            "updated": 13,
+            "unchanged": 30,
+            "total": 207
+        },
+        "created_at": 1772539204
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 95,
+            "updated": 7,
+            "unchanged": 29,
+            "total": 131
+        },
+        "created_at": 1772560803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 256,
+            "updated": 11,
+            "unchanged": 17,
+            "total": 284
+        },
+        "created_at": 1772582403
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 251,
+            "updated": 0,
+            "unchanged": 33,
+            "total": 284
+        },
+        "created_at": 1772588905
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 30,
+            "updated": 122,
+            "unchanged": 29,
+            "total": 181
+        },
+        "created_at": 1772604011
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 308,
+            "updated": 13,
+            "unchanged": 19,
+            "total": 340
+        },
+        "created_at": 1772625603
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 337,
+            "updated": 7,
+            "unchanged": 24,
+            "total": 368
+        },
+        "created_at": 1772647203
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 331,
+            "updated": 0,
+            "unchanged": 37,
+            "total": 368
+        },
+        "created_at": 1772668803
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 388,
+            "updated": 12,
+            "unchanged": 15,
+            "total": 415
+        },
+        "created_at": 1772690405
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 365,
+            "updated": 0,
+            "unchanged": 50,
+            "total": 415
+        },
+        "created_at": 1772712003
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 179,
+            "updated": 1,
+            "unchanged": 1,
+            "total": 181
+        },
+        "created_at": 1772713480
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 364,
+            "updated": 15,
+            "unchanged": 33,
+            "total": 412
+        },
+        "created_at": 1772733603
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 400,
+            "updated": 9,
+            "unchanged": 22,
+            "total": 431
+        },
+        "created_at": 1772755204
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 405,
+            "updated": 9,
+            "unchanged": 19,
+            "total": 433
+        },
+        "created_at": 1772776804
+    },
+    {
+        "source": "auto_update",
+        "stats": {
+            "added": 399,
+            "updated": 0,
+            "unchanged": 34,
+            "total": 433
+        },
+        "created_at": 1772798403
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 399,
+            "updated": 0,
+            "unchanged": 34,
+            "total": 433
+        },
+        "created_at": 1772804788
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 531,
+            "updated": 12,
+            "unchanged": 1,
+            "total": 544
+        },
+        "created_at": 1772804790
+    },
+    {
+        "source": "Aggregator.yaml",
+        "stats": {
+            "added": 411,
+            "updated": 310,
+            "unchanged": 98,
+            "total": 819
+        },
+        "created_at": 1772858738
     }
 ]

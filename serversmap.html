@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servers Map - Gemini's Map</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Courier New', monospace; 
+            background: #0a0a0a; 
+            color: #00ff41; 
+            overflow: hidden; 
+        }
+        
+        /* 导航栏 */
+        nav { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(10, 10, 10, 0.95); 
+            backdrop-filter: blur(10px); 
+            padding: 1rem 2rem; 
+            z-index: 1000; 
+            border-bottom: 2px solid #ff00ff; 
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5); 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+        .logo { font-size: 2rem; font-weight: bold; color: #00ffff; text-shadow: 0 0 10px #00ffff; cursor: pointer; text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: #00ffff; text-decoration: none; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; }
+        
+        /* 地图容器 */
+        #map { 
+            position: absolute; 
+            top: 75px; 
+            bottom: 0; 
+            width: 100%; 
+            z-index: 1; 
+            background: #000; 
+        }
+        
+        /* 自定义闪烁标记 (状态) - 外层保持安静，绝不能用transform，以免覆盖Leaflet的定位 */
+        .pulse-marker {
+            width: 16px; 
+            height: 16px; 
+            border-radius: 50%; 
+        }
+        
+        /* 将发光与缩放动画转移到内部独立的 DOM 元素上 */
+        .pulse-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .inner-online { 
+            background: #00ff41; 
+            box-shadow: 0 0 15px #00ff41; 
+            animation: pulse-online 2s infinite; 
+        }
+        .inner-offline { 
+            background: #ff0000; 
+            box-shadow: 0 0 15px #ff0000; 
+            animation: pulse-offline 4s infinite; 
+            border-color: #ff0000;
+        }
+
+        @keyframes pulse-online { 
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7); } 
+            70% { transform: scale(1.6); box-shadow: 0 0 0 15px rgba(0, 255, 65, 0); } 
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); } 
+        }
+        
+        @keyframes pulse-offline { 
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); } 
+            70% { transform: scale(1.6); box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); } 
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); } 
+        }
+        
+        /* Leaflet 弹出窗美化 */
+        .leaflet-popup-content-wrapper { 
+            background: rgba(20, 20, 20, 0.95) !important; 
+            color: #00ff41 !important; 
+            border: 1px solid #ff00ff; 
+            border-radius: 5px; 
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.4) !important; 
+        }
+        .leaflet-popup-tip { 
+            background: rgba(20, 20, 20, 0.95) !important; 
+        }
+        .popup-title { 
+            font-size: 1.2rem; 
+            color: #ff00ff; 
+            margin-bottom: 8px; 
+            border-bottom: 1px solid rgba(255,0,255,0.3); 
+            padding-bottom: 5px; 
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .popup-stat { 
+            margin: 4px 0; 
+            font-size: 0.9rem;
+            color: #00ffff;
+        }
+        .popup-stat span { 
+            color: #00ff41; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Gemini</a>
+        <ul>
+            <li><a href="servers.html">Servers</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+    
+    <div id="map"></div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // 初始化地图，深色赛博主题，中心点对准太平洋（经度160左右），便于以左右视角同时呈现亚洲和美洲
+        const map = L.map('map').setView([25, 160], 3);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        const markers = {};
+        const geocache = {};
+        const usedCoords = new Set();
+
+        // 默认保底坐标（当获取不到IP或API限制时）
+        const FALLBACKS = {
+            "home.liukun.com": [41.8, 123.4], // Shenyang
+            "hk.liukun.com": [22.3, 114.2],   // Hong Kong
+            "sg.liukun.com": [1.3, 103.8],    // Singapore
+            "us.liukun.com": [37.7, -122.4],  // SF/US
+            "b.liukun.com": [39.9, 116.4],    // Beijing
+            "ubuntu.syhsgis.com": [41.8, 123.4], // Shenyang
+            "frp.syhsgis.com": [41.8, 123.4]     // Shenyang
+        };
+
+        // 服务器的真实精确坐标，通过ipinfo.io事先解析完毕并写固，避免API被墙或被代理节点位置干扰。
+        const LOCATIONS = {
+            "home.liukun.com": [31.2222, 121.4581], // Shanghai
+            "hk.liukun.com": [22.2783, 114.1747],   // Hong Kong
+            "sg.liukun.com": [1.2897, 103.8501],    // Singapore
+            // 为了跨越太平洋显示，避免绕行大西洋，将美洲西海岸经度转换为+360的正值（238.04）
+            "us.liukun.com": [37.3541, 238.0448],  // San Jose, US
+            "b.liukun.com": [23.1167, 113.2500],    // Guangzhou
+            "ubuntu.syhsgis.com": [31.2222, 121.4581], // Shanghai
+            "frp.syhsgis.com": [31.2222, 121.4581]     // Shanghai
+        };
+
+        const IPS = {
+            "home.liukun.com": "47.103.55.200",
+            "hk.liukun.com": "43.99.114.251",
+            "sg.liukun.com": "43.160.228.133",
+            "us.liukun.com": "43.162.116.214",
+            "b.liukun.com": "106.55.179.216",
+            "ubuntu.syhsgis.com": "47.103.55.200", 
+            "frp.syhsgis.com": "47.103.55.200"
+        };
+
+        async function getCoordinates(server) {
+            let coords = LOCATIONS[server] || [39.9, 116.4]; // 默认北京
+            let ip = IPS[server] || 'Unknown IP';
+            
+            // 地理防重叠 (Jitter) 当多个同城的服务器堆叠时做位置偏移
+            let coordsKey = coords[0].toFixed(2) + ',' + coords[1].toFixed(2);
+            if (usedCoords.has(coordsKey)) {
+                coords = [
+                    coords[0] + (Math.random() - 0.5) * 1.5, 
+                    coords[1] + (Math.random() - 0.5) * 1.5
+                ];
+            } else {
+                usedCoords.add(coordsKey);
+            }
+            
+            return { coords, ip };
+        }
+
+        async function fetchServersData() {
+            try {
+                const response = await fetch('/api/servers_cache.json?t=' + new Date().getTime());
+                const data = await response.json();
+                if (data.servers) {
+                    await Promise.all(Object.keys(data.servers).map(async (server) => {
+                        const stats = data.servers[server];
+                        const geo = await getCoordinates(server);
+                        updateMarker(server, stats, geo);
+                    }));
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+        function formatUptime(seconds) {
+            if (!seconds) return 'N/A';
+            const d = Math.floor(seconds / 86400);
+            return d + ' Days';
+        }
+
+        // 渲染或更新 Marker
+        function updateMarker(server, stats, geo) {
+            const isOnline = stats.status === 'Online';
+            const innerClass = isOnline ? 'inner-online' : 'inner-offline';
+            const innerElementHtml = `<div class="pulse-inner ${innerClass}"></div>`;
+
+            // 构造信息弹窗内容
+            const popupHtml = `
+                <div class="popup-title">${server}</div>
+                <div class="popup-stat">IP: <span style="color:#ff00ff">${geo.ip}</span></div>
+                <div class="popup-stat">Status: <span style="color: ${isOnline ? '#00ff41' : '#ff0000'}">${stats.status}</span></div>
+                ${isOnline ? `
+                <div class="popup-stat">Ping: <span>${stats.ping_ms || 0} ms</span></div>
+                <div class="popup-stat">CPU: <span>${stats.cpu_usage || 0}%</span></div>
+                <div class="popup-stat">Mem: <span>${stats.mem_usage || 0}%</span></div>
+                <div class="popup-stat">Disk: <span>${stats.disk_usage || 0}%</span></div>
+                <div class="popup-stat">Uptime: <span>${formatUptime(stats.uptime_secs)}</span></div>
+                ` : `<div class="popup-stat" style="color: #ff0000; text-transform:none;">${stats.error || 'Server is Unreachable'}</div>`}
+            `;
+
+            if (markers[server]) {
+                markers[server].setPopupContent(popupHtml);
+                const icon = L.divIcon({
+                    className: 'pulse-marker',
+                    html: innerElementHtml,
+                    iconSize: [16, 16],
+                    iconAnchor: [8, 8],
+                    popupAnchor: [0, -10]
+                });
+                markers[server].setIcon(icon);
+            } else {
+                // 新建标记，通过 html 注入内层发光 div
+                const icon = L.divIcon({
+                    className: 'pulse-marker',
+                    html: innerElementHtml,
+                    iconSize: [16, 16],
+                    iconAnchor: [8, 8],
+                    popupAnchor: [0, -10]
+                });
+                markers[server] = L.marker(geo.coords, { icon: icon }).addTo(map)
+                    .bindPopup(popupHtml, { minWidth: 200, maxWidth: 300 });
+            }
+        }
+
+        // 初始拉取及每10秒自动更新
+        fetchServersData();
+        setInterval(fetchServersData, 10000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+(async function() {
+    console.log("🚀 启动【强力模式】解析 Linux.do 节点...");
+    
+    function extract(text) {
+        const regex = /(vmess|vless|ss|ssr|trojan|hysteria2):\/\/[^\s"'<]+[^\s"'<]/g;
+        return text.match(regex) || [];
+    }
+
+    let allNodes = [];
+    
+    // 1. 抓取所有链接
+    document.querySelectorAll('a').forEach(a => {
+        if (a.href) allNodes = allNodes.concat(extract(a.href));
+    });
+
+    // 2. 抓取正文文本
+    allNodes = allNodes.concat(extract(document.body.innerText));
+
+    // 3. 尝试探测并解码 Base64 (针对隐藏分享)
+    const b64Regex = /[A-Za-z0-9+/]{50,}/g;
+    const potentials = document.body.innerText.match(b64Regex) || [];
+    potentials.forEach(b64 => {
+        try {
+            const decoded = atob(b64.trim());
+            if (decoded.includes('://')) {
+                console.log("📦 发现 Base64 隐藏节点，已解码");
+                allNodes = allNodes.concat(extract(decoded));
+            }
+        } catch(e) {}
+    });
+
+    // 去重
+    const uniqueNodes = [...new Set(allNodes)];
+    const subs = document.body.innerText.match(/https?:\/\/[^\s"'<]+\.(yaml|txt|conf)/g) || [];
+
+    if (uniqueNodes.length === 0 && subs.length === 0) {
+        console.error("❌ 依然没找到节点。请确保你已经点开了帖子里的“折叠详情”或者“回复可见”内容。");
+        return;
+    }
+
+    console.log(`✅ 成功锁定 ${uniqueNodes.length} 个节点和 ${subs.length} 条订阅`);
+
+    try {
+        const response = await fetch('http://127.0.0.1:3000/api/browser_import', {
+            method: 'POST',
+            body: JSON.stringify({ 
+                nodes: uniqueNodes, 
+                subscriptions: subs,
+                base64Content: potentials.length > 0 ? potentials[0] : null // 传回第一个大块Base64备用
+            })
+        });
+        const result = await response.json();
+        console.log(result.success ? "🎉 已成功推送到后台进行真机测试！" : "❌ 推送失败: " + result.error);
+    } catch (e) {
+        console.error("❌ 网络错误: 请检查浏览器代理是否允许访问 127.0.0.1:3000", e);
+    }
+})();

@@ -60,9 +60,22 @@
         .project-card h3 { color: #00ffff; font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase; }
         .project-card p { color: #00ff41; line-height: 1.6; margin-bottom: 1rem; }
         .project-link {
-            display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: transparent;
-            border: 2px solid #00ffff; color: #00ffff; text-decoration: none; text-transform: uppercase;
-            letter-spacing: 2px; transition: all 0.3s; position: relative; overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
         }
         .project-link::before {
             content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
@@ -78,11 +91,80 @@
             body { padding: 1rem; }
             .projects-grid { grid-template-columns: 1fr; }
         }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 100;
+            border-bottom: 2px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .logo:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 15px #ff00ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        /* 主容器调整 */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            position: relative; 
+            z-index: 1; 
+            padding-top: 80px; /* 为固定导航栏留出空间 */
+        }
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="index.html" class="logo">Gemini</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servers.html">Servers</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <a href="index.html" class="back-link">Back to Home</a>
         <h1>Web Projects</h1>
         <p class="subtitle">// Explore My Test Projects & Demos //</p>
         <div class="projects-grid">
@@ -118,21 +200,27 @@
             </div>
             <div class="project-card">
                 <h3>机场聚合器</h3>
-                <p>基于Web的机场节点聚合工具，自动扫描多平台免费节点，支持测速验证和订阅生成。现代化界面，支持Clash等多种客户端格式。</p>
+                <p>基于Web的机场节点聚合工具，自动扫描多平台免费节点，支持测速验证和订阅生成。现代化界面，支持Clash等多种客户端格式。多节点部署，覆盖国内外网络。</p>
                 <span class="status active">Active</span><br>
-                <a href="https://us.liukun.com:8443/Projects/Aggregator/" class="project-link" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>机场聚合器(国内版)</h3>
-                <p>机场聚合器国内服务器版本，实现各类节点抓取、检测、导出及定时功能。支持LinuxDo、临时邮箱等多种节点源，自动化节点收集和质量检测。</p>
-                <span class="status active">Active</span><br>
-                <a href="/Projects/Aggregator/" class="project-link" target="_blank">View Project</a>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://hk.liukun.com/Agg/" class="project-link" target="_blank">HK</a>
+                    <a href="https://hk1.liukun.com/Agg/" class="project-link" target="_blank">HK1</a>
+                    <a href="https://sg.liukun.com/Agg/" class="project-link" target="_blank">SG</a>
+                    <a href="https://us.liukun.com/Agg/" class="project-link" target="_blank">US</a>
+                    <a href="https://home.liukun.com/Projects/Aggregator/" class="project-link" target="_blank">CN</a>
+                </div>
             </div>
             <div class="project-card">
                 <h3>节点本地检测工具</h3>
                 <p>检测机场聚合器节点的本地连通性和IP纯净度，筛选可用节点并导出Clash配置。赛博朋克风格UI，支持智能排序和国家筛选。</p>
                 <span class="status active">Active</span><br>
                 <a href="/Projects/NodeLocalChecker/" class="project-link" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>3x-ui 统一管理</h3>
+                <p>3x-ui 面板统一管理 Dashboard，支持流量监控、客户端管理、一键操作等功能。</p>
+                <span class="status active">Active</span><br>
+                <a href="Projects/3xui-Dashboard/" class="project-link" target="_blank">View Project</a>
             </div>
             <div class="project-card">
                 <h3>Coming Soon</h3>

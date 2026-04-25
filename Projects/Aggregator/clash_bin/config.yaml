@@ -10,1644 +10,2330 @@ dns:
     - 8.8.8.8
     - 1.1.1.1
 proxies:
-  - name: 试用节点-台湾
+  - name: 🇯🇵 机场推荐:dafei.de 日本 16
     type: ss
-    server: jry.izenny.com
-    port: 27689
-    cipher: chacha20-ietf-poly1305
-    password: 81f36691-f336-4614-862d-a39e8e534987
-  - name: 🇯🇵日本东京-有限流量
-    type: vless
-    server: 154.36.179.18
-    port: 18079
-    uuid: 0a10e535-8e77-464e-838e-730bc49b9c60
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: support.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 8ld0ksnPiES0qa4iGRGqNH-jL6y5R0qw4kNY4da_kDk
-      short-id: c6f57899
-    client-fingerprint: chrome
-  - name: 🇭🇰 香港S01
-    server: n.5.0.7.r.a.s.d.1.hk01-ae5.entry.v51124-6.qpon
-    port: 19276
+    server: 47.76.218.163
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇭🇰 HK
     type: ss
-    cipher: aes-256-gcm
-    password: e354f894-a4bc-3b25-916c-16bd82b97004
-    udp: true
-  - name: 剩余流量：2 GB
+    server: 47.242.145.136
+    port: 8001
+    tfo: true
+    skip-cert-verify: true
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  - name: 🇯🇵 JP 013 | ⬇️ 12MB/s
     type: ss
-    server: jry.izenny.com
-    port: 26535
-    cipher: chacha20-ietf-poly1305
-    password: 81f36691-f336-4614-862d-a39e8e534987
-  - name: 🇰🇷 机场推荐:dafei.de 韩国 02
-    type: vless
-    server: 59.24.1.109
-    port: 50001
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
+    server: 104.18.33.237
+    port: 443
+    tfo: true
     skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: SS
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+  - name: 🇯🇵 JP 195 | ⬇️ 1MB/s
     type: ss
-    server: jp2.qylx.uno
+    server: 172.64.156.45
     port: 443
-    cipher: chacha20-ietf-poly1305
-    password: '114514'
-  - name: 🇸🇬新加坡高速02|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 60474
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
+    tfo: true
     skip-cert-verify: true
-    network: tcp
-    servername: www.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: CNcS-b5tPhgPo_TmUic0r96XPhCjG5dsC-IPJ1a3Wz8
-      short-id: 3d5052
-    client-fingerprint: safari
-  - name: 🇸🇬新加坡高速04|转发优化
-    type: vless
-    server: sg2.up-pay.xyz
-    port: 44635
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: XTJJ-JV3aPL2PuPOJiKVlmEYh8AtU-jv4JUwN8wCzRA
-      short-id: 2eda4e8a34c0
-    client-fingerprint: firefox
-  - name: SS_1
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 10
     type: ss
-    server: 185.151.146.135
-    port: 8469
-    cipher: aes-128-gcm
-    password: 05d926a5-0b6e-4b00-8b8a-fe65d29943d3
-  - name: 🇺🇸美国圣何塞-1
-    type: vless
-    server: 23.142.204.152
-    port: 15335
-    uuid: e4a68227-3fce-48dc-8ac9-bf02f65b66d3
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: tv.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: uupB9uB258RJfMpTkj6-3bB9GsjZuxQHCaLcURfJDXo
-      short-id: 5814b3cd
-    client-fingerprint: chrome
-  - name: rs1 [f5xvw] 2
-    type: vless
-    server: mfa.gov.ua
-    port: 2087
-    uuid: 77777777-6663-4ef2-b26b-ed2d70642678
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: f5xvw5f1v.fx01.ccwu.cc
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: f5xvw5f1v.fx01.ccwu.cc
-  - name: 🇺🇸 机场推荐:dafei.de 美国 10
-    type: vless
-    server: 135.84.73.130
+    server: 198.41.223.145
     port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇸🇬新加坡高速03|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 24236
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: aws.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: UWLfp8JRki0Cn7b4rMi7BE-ipNN1YTsRAVdORpGbV1w
-      short-id: 7a45d5570f1461
-    client-fingerprint: firefox
-  - name: US-美国
-    type: vless
-    server: 174.136.205.68
-    port: 443
-    uuid: 95b4e670-b4a5-4d46-a82f-e3e5b743f91a
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: 🇺🇸 机场推荐:dafei.de 美国 04
-    type: vless
-    server: 199.34.230.66
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇺🇸 机场推荐:dafei.de 美国 11
-    type: vless
-    server: 217.163.76.46
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇺🇸美国洛杉矶-可下载使用
-    type: vless
-    server: 107.172.231.70
-    port: 46794
-    uuid: 881664d9-69cb-4593-9165-1b8c39d641d1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: advertising.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 8inAXYX8cJJ_FGESJdmJ247Gm4iqoaTk7cQ-5O3aLUY
-      short-id: c5ec4ef3
-    client-fingerprint: chrome
-  - name: rs1 [ifcqx] 1
-    type: vless
-    server: cf.9999669.xyz
-    port: 2087
-    uuid: 77777777-6663-4ef2-b26b-ed2d70642678
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: ifcqxk2vv1nrb5.fx01.ccwu.cc
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: ifcqxk2vv1nrb5.fx01.ccwu.cc
-  - name: 🇺🇸 机场推荐:dafei.de 美国 10_1
-    type: vless
-    server: 135.84.74.44
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇩🇪 机场推荐:dafei.de 德国 03
-    type: vless
-    server: 57.129.63.42
-    port: 2053
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇩🇪 机场推荐:dafei.de 德国 02
-    type: vless
-    server: 82.117.245.53
-    port: 2053
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇬🇧 机场推荐:dafei.de 英国 11
-    type: vless
-    server: 57.128.178.79
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇩🇪 机场推荐:dafei.de 德国 03_1
-    type: vless
-    server: 188.241.241.3
-    port: 2053
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: rs1 [vwidf] 3
-    type: vless
-    server: www.shopify.com
-    port: 2087
-    uuid: 77777777-6663-4ef2-b26b-ed2d70642678
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: vwidfx53v1.fx01.ccwu.cc
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: vwidfx53v1.fx01.ccwu.cc
-  - name: 🇺🇸美国西雅图-可下载使用
-    type: vless
-    server: 142.202.4.69
-    port: 45479
-    uuid: 5d06f87d-cf09-4a6f-9fd8-3057f8b0f33a
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: maps.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: f2VzsFswzadcrnXjzSkDW_gdJNYSm0wbcYVd_cZnCnU
-      short-id: 1ea04ffc
-    client-fingerprint: chrome
-  - name: 🇫🇷 机场推荐:dafei.de 法国 06
-    type: vless
-    server: 51.91.249.126
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 剩余流量：29.98+GB
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 53676
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: pUpJrE1iQejx-ycxWAYZujc3RWnl4Z1jhMc4rZjpYw0
-      short-id: 248e4a56f1
-    client-fingerprint: safari
-  - name: 🇳🇱 机场推荐:dafei.de 荷兰 01
-    type: vless
-    server: 185.243.112.61
-    port: 2053
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇬🇧 机场推荐:dafei.de 英国 08
-    type: vless
-    server: 57.128.183.143
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇲🇴澳门高速01|转发优化
-    type: vless
-    server: hk1.up-pay.xyz
-    port: 41234
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: w2ILJpzvlEoZ0k6u-j1S4r3X8LL3G6st4faY3bPjGE0
-      short-id: 733551f28d
-    client-fingerprint: safari
-  - name: 🇬🇧 机场推荐:dafei.de 英国 05
-    type: vless
-    server: 57.129.137.206
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇩🇪 机场推荐:dafei.de 德国 02_1
-    type: vless
-    server: 188.241.241.28
-    port: 2053
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇬🇧 机场推荐:dafei.de 英国 10
-    type: vless
-    server: 57.128.178.36
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇬🇧 机场推荐:dafei.de 英国 12
-    type: vless
-    server: 57.128.183.225
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇨🇦加拿大多伦多-推荐下载使用
-    type: vless
-    server: 165.22.235.48
-    port: 19401
-    uuid: 02e76a24-eb63-4671-af0c-ed011d90b608
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: store.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: ZonQTrVzsxbqfRnOw_9kS9mu2s3CouO6AQ1WbuLSwSg
-      short-id: 3a300517
-    client-fingerprint: chrome
-  - name: 🇫🇷 机场推荐:dafei.de 法国 03
-    type: vless
-    server: 51.91.255.152
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇫🇷 机场推荐:dafei.de 法国 05
-    type: vless
-    server: 95.182.97.125
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇩🇪德国纽伦堡
-    type: vless
-    server: 152.53.85.136
-    port: 55915
-    uuid: 416f1146-a219-4cf6-96b8-5df5c4be4021
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: ads.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: ljmF8D-CwtSKUNaE1OydLwKl0jlN2GwNWX3uziNc43Y
-      short-id: 56c711ca
-    client-fingerprint: chrome
-  - name: 🇬🇧 机场推荐:dafei.de 英国 03
-    type: vless
-    server: 57.128.181.14
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇺🇸美国德克萨斯州
-    type: vless
-    server: 5.83.138.114
-    port: 52017
-    uuid: d96cd3de-3600-47e9-9aba-39d5fb71b494
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: iphone.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: swPpFp9elyL3PCvy2nNbqHrWOmyDMgwagWoVxlmhqB0
-      short-id: 5026df0e
-    client-fingerprint: chrome
-  - name: 🇳🇱 机场推荐:dafei.de 荷兰 02
-    type: vless
-    server: 5.255.102.201
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇺🇸 机场推荐:dafei.de 美国 07
-    type: vless
-    server: 199.241.32.132
-    port: 26978
-    uuid: 9042affd-0ad3-4014-adbc-e52f00891ea2
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: tesla.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: n2w4hj7Q7wN6P21LSJJwIPitfYZbwWh5a2seJHH58SE
-      short-id: 28bf
-    client-fingerprint: chrome
-  - name: a1-美国专线03∣a3线路∣1.5X
-    type: trojan
-    server: a3.tudo002.xyz
-    port: 21642
-    password: cb385d57-93f6-48c3-8917-a9a36abd5aab
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: a3.tudo002.xyz
-  - name: a1-美国专线04∣a4线路∣1.5X
-    type: trojan
-    server: a4.tudo002.xyz
-    port: 21643
-    password: cb385d57-93f6-48c3-8917-a9a36abd5aab
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: a4.tudo002.xyz
-  - name: a1-美国专线05∣a5线路∣1.5X
-    type: trojan
-    server: a5.tudo002.xyz
-    port: 21644
-    password: cb385d57-93f6-48c3-8917-a9a36abd5aab
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: a5.tudo002.xyz
-  - name: a1-美国专线02∣a2线路∣1.5X
-    type: trojan
-    server: a2.tudo002.xyz
-    port: 21641
-    password: cb385d57-93f6-48c3-8917-a9a36abd5aab
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: a2.tudo002.xyz
-  - name: a1-美国专线06∣a6线路∣1.5X
-    type: trojan
-    server: a6.tudo002.xyz
-    port: 21645
-    password: cb385d57-93f6-48c3-8917-a9a36abd5aab
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: a6.tudo002.xyz
-  - name: 美国+DXC+Technology
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 17
     type: ss
-    server: admin.c2.havij.co
+    server: 8.35.211.221
     port: 443
-    cipher: chacha20-ietf-poly1305
-    password: kaQH3hGdcP80XEDI
-  - name: 🇳🇱荷兰-1
-    type: vless
-    server: 5.181.177.119
-    port: 10201
-    uuid: 51ca9749-6c28-4f1d-a3ae-9837d5f48b5b
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: advertising.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: yTSzwZ2hpyxSWHDvjjbveS0MnsqzBEKj8UpcZycj1Tc
-      short-id: 7d3f07cd
-    client-fingerprint: chrome
-  - name: 剩余流量：300 GB
-    type: trojan
-    server: a1.tudo002.xyz
-    port: 21646
-    password: cb385d57-93f6-48c3-8917-a9a36abd5aab
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: a1.tudo002.xyz
-  - name: 剩余流量：1000 GB
-    type: vmess
-    server: sg.ok12345.ggff.net
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 03
+    type: ss
+    server: 198.41.211.222
     port: 443
-    uuid: 0098f994-caae-4d82-b9fc-2ad330bb9e98
-    alterId: 0
-    cipher: auto
-    network: ws
-    tls: true
-    skip-cert-verify: true
-    ws-opts:
-      path: /
-      headers:
-        Host: jp003.japansb3.ggff.net
-    servername: jp003.japansb3.ggff.net
-  - name: 🇫🇷 机场推荐:dafei.de 法国 12
-    type: vless
-    server: fran.scroogethebest.com
-    port: 443
-    uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: fran.scroogethebest.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc
-      short-id: 4fa44664f6a566d3
-    client-fingerprint: chrome
-  - name: 🇰🇷 机场推荐:dafei.de 韩国 07
-    type: vless
-    server: 47.80.11.87
-    port: 443
-    uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: api.company-target.com
-    reality-opts:
-      public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
-    client-fingerprint: chrome
-  - name: 🇮🇷_IR_伊朗->🇱🇹_LT_立陶宛
-    type: vless
-    server: 5.34.211.194
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-    addedAt: '2026-02-24T11:09:49.939Z'
-  - name: 🇳🇱荷兰-2
-    type: vless
-    server: 5.181.177.119
-    port: 10191
-    uuid: 78d0a329-7299-4272-8e9b-9bce507d5587
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: support.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 4TFV3PXkZY1wdb3RnRBJUJ4NGV4uq3S6cqWirO041GE
-      short-id: 549f01ef
-    client-fingerprint: chrome
-  - name: 🇷🇺 机场推荐:dafei.de 俄罗斯 03
-    type: vless
-    server: 212.113.123.230
-    port: 443
-    uuid: e4f5077b-3628-450c-92f9-b129b8a641a7
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: ru.denditop.site
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: sbvKAdRy_0h33iRxgGwHAD1HC62WGwlkWwj0S5ptJEU
-      short-id: 9c2378562188c3cb
-    client-fingerprint: chrome
-  - name: 🇬🇧 机场推荐:dafei.de 英国 02
-    type: vless
-    server: 57.128.181.18
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇬🇧 机场推荐:dafei.de 英国 01
-    type: vless
-    server: 57.128.183.108
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇳🇱 机场推荐:dafei.de 荷兰 09
-    type: vless
-    server: nodejs.org
-    port: 80
-    uuid: 7d4a519b-d270-434e-a42d-d39624577a92
-    tls: false
-    skip-cert-verify: true
-    network: ws
-    servername: BrIgHt-orGaNizaTioNAuhudDhESZ.spoRTlAnd.CoMpANY.
-    ws-opts:
-      path: /?ed
-      headers:
-        Host: BrIgHt-orGaNizaTioNAuhudDhESZ.spoRTlAnd.CoMpANY.
-  - name: 🇸🇬新加坡
-    type: vless
-    server: 152.42.237.96
-    port: 50479
-    uuid: b62840b9-08d5-4039-beac-d52631204f4f
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.bing.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: D-lry9h3VhRF45oObwCdfDZlMmHYDMELb5y1RE56lFM
-      short-id: e5596900
-    client-fingerprint: chrome
-  - name: 🇫🇷 机场推荐:dafei.de 法国 04
-    type: vless
-    server: 51.210.179.47
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇸🇬 机场推荐:dafei.de 新加坡 04
-    type: vless
-    server: 172.104.186.30
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇦🇪 机场推荐:dafei.de 阿联酋 02
-    type: vless
-    server: 83.147.255.191
-    port: 448
-    uuid: 03dd7e7c-8d2a-4cd2-b920-f5ed564fc8c4
-    tls: true
-    skip-cert-verify: true
-    network: grpc
-    servername: eh.vk.ru
-    reality-opts:
-      public-key: wSQIBnAc0cYO9JitaNcgZ2LwkTix0_dXVpDjnZxDrCE
-    client-fingerprint: chrome
-    grpc-opts:
-      grpc-service-name: xyz
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
   - name: 🇯🇵 机场推荐:dafei.de 日本 02
-    type: vless
-    server: 154.31.114.125
+    type: ss
+    server: 162.159.39.207
     port: 443
-    uuid: c7177e53-b04d-4545-8789-3a1441c9f33e
-    tls: true
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 05
+    type: ss
+    server: 108.162.198.203
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 03
+    type: ss
+    server: 162.159.45.114
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 13
+    type: ss
+    server: 162.159.38.139
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 03_1
+    type: ss
+    server: 162.159.45.127
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 17_1
+    type: ss
+    server: 172.64.52.92
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 13_1
+    type: ss
+    server: 162.159.44.19
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 14
+    type: ss
+    server: 162.159.39.7
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 16_1
+    type: ss
+    server: 172.64.53.66
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 07
+    type: ss
+    server: 108.162.198.215
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 01
+    type: ss
+    server: 162.159.38.42
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 06
+    type: ss
+    server: 162.159.45.145
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 02_1
+    type: ss
+    server: 162.159.44.65
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 06_1
+    type: ss
+    server: 172.64.52.252
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 06_2
+    type: ss
+    server: 172.64.52.226
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 18
+    type: ss
+    server: 162.159.38.253
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 21
+    type: ss
+    server: 108.162.198.200
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 01_1
+    type: ss
+    server: 162.159.44.121
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 日本 14
+    type: ss
+    server: 103.133.1.38
+    port: 443
+    tfo: true
     skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: 🇮🇪爱尔兰
-    type: vless
-    server: 192.227.147.161
-    port: 3189
-    uuid: 61d38060-c9fa-4e92-81ba-3e1267c99cc6
-    tls: true
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+  - name: 🇯🇵 机场推荐:dafei.de 日本 21_1
+    type: ss
+    server: 152.69.229.175
+    port: 22558
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇺🇸 美国 16
+    type: ss
+    server: 160.153.137.16
+    port: 443
+    tfo: true
     skip-cert-verify: true
-    network: tcp
-    servername: aws.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 2xWVISJFj2kn4j0Ulsn-FBB6X15sPrFRd9uUuHMHsRs
-    client-fingerprint: chrome
-  - name: 🇳🇱荷兰
-    type: vless
-    server: 92.112.124.125
-    port: 19074
-    uuid: 7939d04a-ee8c-4205-974f-0feef59cd2c7
-    tls: true
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  - name: 🇺🇸 美国 25
+    type: ss
+    server: 50.62.195.16
+    port: 443
+    tfo: true
     skip-cert-verify: true
-    network: tcp
-    servername: community.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: Kq_b9Rt7KAd8KoIklaCwXwWx8LcLfzJ6901AzjwnkXY
-      short-id: 783512d4
-    client-fingerprint: chrome
-  - name: 🇮🇳印度
-    type: vless
-    server: 139.59.3.70
-    port: 19608
-    uuid: 7ff26d3c-311d-4e05-82d0-0ead1c5165f3
-    tls: true
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  - name: 🇯🇵 JP 008 | ⬇️ 3MB/s
+    type: ss
+    server: 104.17.150.140
+    port: 443
+    tfo: true
     skip-cert-verify: true
-    network: tcp
-    servername: advertising.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: UqlVsu1eaaCez46dbofES3fdPbupqNls0VNurQLWXy4
-      short-id: da1eac80
-    client-fingerprint: chrome
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 09
+    type: ss
+    server: 198.41.223.15
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 HK 148 | ⬇️ 2MB/s
+    type: ss
+    server: 45.40.147.16
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 11
+    type: ss
+    server: 172.64.145.69
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 05
+    type: ss
+    server: 172.64.146.11
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 08
+    type: ss
+    server: 198.41.223.119
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 07_1
+    type: ss
+    server: 162.159.23.64
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 12
+    type: ss
+    server: 172.64.159.248
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 06
+    type: ss
+    server: 8.39.125.118
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 01
+    type: ss
+    server: 198.41.223.99
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 09_1
+    type: ss
+    server: 8.39.125.188
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 19
+    type: ss
+    server: 162.159.15.148
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 23
+    type: ss
+    server: 162.159.33.14
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 24
+    type: ss
+    server: 162.159.36.7
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
   - name: 🇺🇸 机场推荐:dafei.de 美国 03
-    type: vless
-    server: 217.163.76.254
+    type: ss
+    server: 162.159.35.81
     port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 16_2
+    type: ss
+    server: 104.18.47.124
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 07_2
+    type: ss
+    server: 104.18.46.154
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 06_1
+    type: ss
+    server: 172.64.33.19
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 02
+    type: ss
+    server: 8.39.125.220
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 14
+    type: ss
+    server: 162.159.11.93
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 17
+    type: ss
+    server: 140.238.51.35
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 13
+    type: ss
+    server: 104.18.33.77
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 11_1
+    type: ss
+    server: 198.41.223.229
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 05_1
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 01_2
+    type: ss
+    server: cf.130519.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 18
+    type: ss
+    server: 116.44.53.251
+    port: 12126
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 17_2
+    type: ss
+    server: saas.sin.fan
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 05_1
+    type: ss
+    server: cf.877774.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 30
+    type: ss
+    server: 104.19.45.141
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 01_3
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 15
+    type: ss
+    server: 104.17.147.127
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 17_3
+    type: ss
+    server: 199.181.197.38
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇭🇰 机场推荐:dafei.de 香港 08
+    type: ss
+    server: 198.12.144.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇭🇰 机场推荐:dafei.de 香港 02
+    type: ss
+    server: 190.93.246.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 17_4
+    type: ss
+    server: 104.19.40.252
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 08_1
+    type: ss
+    server: 50.62.90.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇭🇰 机场推荐:dafei.de 香港 03
+    type: ss
+    server: 45.40.154.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇭🇰 机场推荐:dafei.de 香港 13
+    type: ss
+    server: 69.84.182.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 13_2
+    type: ss
+    server: 104.19.55.1
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 JP 002 | ⬇️ 2MB/s
+    type: ss
+    server: 104.17.153.223
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+  - name: 🇯🇵 机场推荐:dafei.de 日本 05_2
+    type: ss
+    server: 104.17.208.158
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 04
+    type: ss
+    server: 154.194.0.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 12_1
+    type: ss
+    server: 104.17.153.182
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 39
+    type: ss
+    server: 107.174.198.228
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 14_1
+    type: ss
+    server: 128.199.0.28
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 02_2
+    type: hysteria2
+    server: vpn-jp-003.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-jp-003.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇯🇵 机场推荐:dafei.de 日本 18_1
+    type: ss
+    server: 162.159.153.142
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 英国 V2CROSS.COM
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+  - name: 英国 V2CROSS.COM_1
+    type: vmess
+    server: 82.198.246.233
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: ''
+  - name: 英国 V2CROSS.COM_2
+    type: vmess
+    server: 82.198.246.9
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+  - name: 🇯🇵 机场推荐:dafei.de 日本 20
+    type: ss
+    server: 104.26.2.200
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 32
+    type: ss
+    server: 162.159.224.17
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 16_3
+    type: ss
+    server: 188.227.186.84
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 23_1
+    type: ss
+    server: 185.94.164.160
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 22
+    type: ss
+    server: 136.244.80.24
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 22_1
+    type: ss
+    server: 57.128.183.40
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 英国 V2CROSS.COM_3
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: ''
+  - name: 🇯🇵 机场推荐:dafei.de 日本 25
+    type: ss
+    server: 80.92.206.138
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 19_1
+    type: ss
+    server: 18.222.50.18
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 10
+    type: ss
+    server: 57.129.137.51
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 15_1
+    type: ss
+    server: 31.220.31.67
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 04
+    type: ss
+    server: 18.170.77.148
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 24_1
+    type: ss
+    server: 93.185.166.62
+    port: 2053
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 09
+    type: ss
+    server: 104.19.53.254
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 13_3
+    type: ss
+    server: 107.175.245.116
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 13_4
+    type: ss
+    server: 185.94.164.106
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇻🇳 越南家宽 18 [wzdnzd/aggregator]
+    type: ss
+    server: 103.186.155.143
+    port: 38388
+    tfo: true
+    skip-cert-verify: true
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 🇯🇵 机场推荐:dafei.de 日本 15_2
+    type: ss
+    server: 46.246.96.59
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇭🇰 机场推荐:dafei.de 香港 15
+    type: ss
+    server: 94.159.98.140
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 07_3
+    type: ss
+    server: 141.148.1.34
+    port: 38589
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 18_2
+    type: ss
+    server: 209.237.135.93
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 请开启分片功能否则节点可能不通！
+    type: vless
+    server: openai.com
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
+    network: ws
+    tls: true
+    servername: 3-7gj.pages.dev
+    ws-opts:
+      path: /
+      headers:
+        Host: 3-7gj.pages.dev
+  - name: 🇯🇵 机场推荐:dafei.de 日本 29
+    type: ss
+    server: 166.1.160.140
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 28
+    type: ss
+    server: 93.113.171.95
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 23_2
+    type: ss
+    server: 185.193.159.19
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 17_5
+    type: ss
+    server: 185.121.235.251
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 25_1
+    type: ss
+    server: 185.164.163.172
+    port: 2053
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 15_1
+    type: ss
+    server: 50.62.88.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 20_1
+    type: ss
+    server: 5.253.189.215
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 08
+    type: ss
+    server: 185.193.158.67
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 12_2
+    type: ss
+    server: 185.193.159.13
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 15_3
+    type: ss
+    server: 185.193.159.18
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 28_1
+    type: ss
+    server: 195.135.254.173
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 50
+    type: vless
+    server: 110.35.234.200
+    port: 30016
+    uuid: 00000000-0000-4000-8000-000000000000
     tls: true
     skip-cert-verify: true
     network: ws
-    servername: sni.111000.v6.navy
+    servername: rcv3tz9brscasef8i.sate.qzz.io
     ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
+      path: /@Marisa_kristi
       headers:
-        Host: sni.111000.v6.navy
-  - name: 美国 CloudFlare节点
+        Host: rcv3tz9brscasef8i.sate.qzz.io
+  - name: 🚹47@oneclickvpnkeys
+    type: hysteria2
+    server: 163.172.113.118
+    port: 40022
+    tfo: true
+    skip-cert-verify: true
+    password: dongtaiwang.com
+    auth: dongtaiwang.com
+    sni: www.microsoft.com
+  - name: 🇸🇪 瑞典 01 [wzdnzd/aggregator]
+    type: vless
+    server: h7-83w.pages.dev
+    port: 2053
+    tfo: true
+    skip-cert-verify: true
+    uuid: 0f4d41cf-0be1-4fcc-ac41-53b843ba0752
+    network: ws
+    tls: true
+    servername: H7-83W.pAgeS.deV
+    ws-opts:
+      path: /
+      headers:
+        Host: h7-83w.pages.dev
+  - name: 香港 电讯盈科有限公司
     type: vmess
-    server: 104.26.15.137
-    port: 80
-    uuid: 43dcdce1-3cea-4193-bc8d-90b92071d779
+    server: vm51544542.dns8656815.com
+    port: 7754
+    uuid: 7cd96dbe-ecec-4937-9e05-87ab70af2f30
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: vm51544542.dns8656815.com
+  - name: 香港 电讯盈科有限公司_1
+    type: vmess
+    server: efan.dnsefan04881.com
+    port: 7754
+    uuid: 009e558d-3cf4-49d8-b5e4-82c9e14fe1a4
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: false
+    skip-cert-verify: true
+    servername: efan.dnsefan04881.com
+  - name: 🇫🇷_www.panlongid.com_FR_法国_34
+    type: vmess
+    server: 2001:bc8:32d7:302::11
+    port: 44579
+    uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
     alterId: 0
     cipher: auto
     network: ws
     tls: false
     skip-cert-verify: true
+    servername: Azerb.NET
     ws-opts:
-      path: /
+      path: /?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560
       headers:
-        Host: tr1-smart.adelping.com.
-    servername: tr1-smart.adelping.com.
-  - name: 🇺🇸 机场推荐:dafei.de 美国 01
-    type: vless
-    server: 142.248.80.157
-    port: 443
-    uuid: 4aff5de5-83dc-43c9-a33e-10e6fdb90ed2
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: Wvt6tuMcFY9rWF2BsdAD4DXgLAoxQJxHWlao2BPR23Y
-    client-fingerprint: chrome
-  - name: 🇦🇹奥地利
-    type: vless
-    server: 152.53.110.134
-    port: 11461
-    uuid: d862909f-7b71-4784-9d59-ba0eec8ff068
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: files.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: UkB8lqO2sKvhuj2kxekwRDnnZcNjEzzO8HQcnvkfdjg
-      short-id: 0c04fc93
-    client-fingerprint: chrome
-  - name: 🇬🇧 机场推荐:dafei.de 英国 04
-    type: vless
-    server: 57.129.137.241
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇰🇷 机场推荐:dafei.de 韩国 11
-    type: vless
-    server: 47.80.13.85
-    port: 443
-    uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: api.company-target.com
-    reality-opts:
-      public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
-    client-fingerprint: chrome
-  - name: 🇺🇸 机场推荐:dafei.de 美国 07_1
+        Host: Azerb.NET
+  - name: 🇲🇾_MY_马来西亚->🇩🇪_DE_德国
     type: vmess
-    server: v4.hdacd.com
-    port: 30804
+    server: v33.hdacd.com
+    port: 30833
     uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
     alterId: 2
     cipher: auto
-    network: tcp
     tls: false
-    skip-cert-verify: true
-  - name: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 21101
-    password: 24a469fe-5820-414e-a323-0ff299de693e
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 🇫🇮 机场推荐:dafei.de 芬兰 03
-    type: vless
-    server: dns.dressforida.monster
-    port: 443
-    uuid: 79149019-5abe-46f9-91ae-e1e7d1d2c408
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.techradar.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 4YLfHf90V012Oyd2wHbwAXaJNvNUGrKWmatTKc165U8
-      short-id: 174c6cf22e22
-    client-fingerprint: chrome
-  - name: 台湾省台中市+中华电信
-    type: trojan
-    server: 220.130.58.136
-    port: 31101
-    password: 04e5b584-1850-483d-a844-9ad624a4ca8e
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: 220.130.58.136
-  - name: 🇭🇰 机场推荐:dafei.de 香港 01
-    type: vless
-    server: 103.219.194.43
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    servername: sni.111000.v6.navy
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.v6.navy
-  - name: 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01
-    type: vless
-    server: 185.234.57.207
-    port: 443
-    uuid: dd92c4f8-be88-4c61-84eb-d261f798071e
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: teamdocs.su
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: Yu1_Agl1_bJb298G9ukjGuvfksVTUs1X7laYJ3VqwwQ
-      short-id: b5e0cd9ca194c0a5
-    client-fingerprint: chrome
-  - name: 台湾省台中市+中华电信_1
-    type: trojan
-    server: 220.130.58.136
-    port: 35501
-    password: a1a00c82-5356-4a49-8944-1cd0f94168bb
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: 220.130.58.136
-  - name: 试用节点-日本
+    skip-cert-verify: false
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇻🇳 机场推荐:dafei.de 越南 05
     type: ss
-    server: jry.izenny.com
-    port: 29571
-    cipher: chacha20-ietf-poly1305
-    password: 81f36691-f336-4614-862d-a39e8e534987
-  - name: 🇮🇷_IR_伊朗->🇱🇹_LT_立陶宛_1
+    server: 103.186.154.179
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 🇺🇸 机场推荐:dafei.de 美国 07
+    type: hysteria2
+    server: vpn-us-017.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-us-017.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇻🇳 机场推荐:dafei.de 越南 04
+    type: ss
+    server: 103.186.155.213
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 🇻🇳 机场推荐:dafei.de 越南 06
+    type: ss
+    server: 103.186.155.215
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 'A - 🇸🇬 SG 01 TG: @nodpai'
     type: vless
-    server: 5.34.209.231
-    port: 8443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    server: 218.150.86.237
+    port: 37020
+    tfo: true
+    skip-cert-verify: true
+    uuid: 26524cce-d514-4014-a426-365fb266a14d
+    network: ws
+    tls: true
+    servername: ynwta9.api-edge.fgfw.qzz.io
+    ws-opts:
+      path: /danfeng?ed=2560fp=chrome
+      headers:
+        Host: ynwta9.api-edge.fgfw.qzz.io
+  - name: 🇩🇪 机场推荐:dafei.de 德国 01
+    type: hysteria2
+    server: vpn-de-002.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-de-002.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇲🇾_MY_马来西亚->🇫🇷_FR_法国
+    type: vmess
+    server: v35.hdacd.com
+    port: 30835
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: trojan_4
+    type: trojan
+    server: j0436.ruixiangseo.xyz
+    port: 33001
+    tfo: true
+    skip-cert-verify: true
+    password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
+    network: tcp
+    tls: true
+  - name: trojan_42
+    type: trojan
+    server: j0447.ruixiangseo.xyz
+    port: 33001
+    tfo: true
+    skip-cert-verify: true
+    password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
+    network: tcp
+    tls: true
+  - name: trojan_53
+    type: trojan
+    server: j0479.ruixiangseo.xyz
+    port: 33001
+    tfo: true
+    skip-cert-verify: true
+    password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
+    network: tcp
+    tls: true
+  - name: trojan_54
+    type: trojan
+    server: j0412.ruixiangseo.xyz
+    port: 33001
+    tfo: true
+    skip-cert-verify: true
+    password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
+    network: tcp
+    tls: true
+  - name: 🇬🇧 机场推荐:dafei.de 英国 01
+    type: hysteria2
+    server: vpn-uk-002.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-uk-002.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇨🇭 机场推荐:dafei.de 瑞士 01
+    type: vless
+    server: 138.124.9.190
+    port: 16558
+    uuid: 11348c0f-b646-446a-bad7-b2b39c6de767
     tls: true
     skip-cert-verify: true
+    network: tcp
+    servername: gpuopen.com
+    flow: xtls-rprx-vision
+    reality-opts:
+      public-key: vDKgmefC_2JaSrrvQSsb7DU3KBeKUlXG1V0vgdjv_i4
+      short-id: 0a856e071790b1
+    client-fingerprint: chrome
+  - name: 最低月付2块钱1000G_1
+    type: vless
+    server: 125.227.219.98
+    port: 6235
+    tfo: true
+    skip-cert-verify: true
+    udp: true
+    uuid: f6ddddaf-dfd6-4134-9dae-03b93b03d146
     network: ws
-    servername: sni.111000.v6.navy
+    tls: true
+    servername: baidu.com
+    client-fingerprint: chrome
     ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
+      path: /xxxxhttp
       headers:
-        Host: sni.111000.v6.navy
-    addedAt: '2026-02-24T11:09:49.939Z'
-  - name: 中国 V2CROSS.COM
+        Host: baidu.com
+  - name: 🇻🇳 机场推荐:dafei.de 越南 03
+    type: ss
+    server: 103.186.155.123
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 🇻🇳 机场推荐:dafei.de 越南 02
+    type: ss
+    server: 103.186.154.149
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 官网https://kelayun.notepin.co
+    type: vless
+    server: 144.24.74.102
+    port: 50911
+    tfo: true
+    udp: true
+    uuid: 820409af-997a-41c4-9e51-46f373951a39
+    flow: xtls-rprx-vision
+    network: tcp
+    tls: true
+    servername: www.iij.ad.jp
+    reality-opts:
+      public-key: RGQRcZVfFRt6ioLDvH7HOicOXJcwonHFVqOgbix2w3w
+      short-id: ''
+    client-fingerprint: firefox
+  - name: 🇻🇳 越南家宽 16 [wzdnzd/aggregator]
+    type: ss
+    server: 103.186.155.58
+    port: 38388
+    tfo: true
+    skip-cert-verify: true
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: 🇸🇪 瑞典(mibei77.com 米贝节点分享)
+    type: trojan
+    server: 92.246.137.150
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    password: '1234567890'
+    network: tcp
+    tls: true
+    servername: kfm-bn0.pages.dev
+  - name: 下单https://kelayun.notepin.co
+    type: vless
+    server: 216.57.105.74
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 73c0a723-c0ab-4ad8-8f25-799b9bd54e36
+    network: tcp
+    tls: true
+    servername: yahoo.com
+    reality-opts:
+      public-key: A1OvYDljz8ZJr7_1xe4j2H1AHsMuYEKifyjdWhdybzk
+      short-id: '11e2'
+    client-fingerprint: chrome
+  - name: 🇵🇱PL_1|2.1MB/s
+    type: vless
+    server: 178.72.181.87
+    port: 52006
+    tfo: true
+    skip-cert-verify: true
+    uuid: 75807638-6f19-2710-ae08-38492ee85c88
+    flow: xtls-rprx-vision-udp443
+    network: tcp
+    tls: true
+    servername: cluster-de-2.firstvideocdn.ru
+  - name: 🇯🇵 机场推荐:dafei.de 日本 27
+    type: ss
+    server: 67.209.183.236
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 36
+    type: ss
+    server: 162.220.13.14
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 13_5
+    type: ss
+    server: 45.12.69.152
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: SG_speednode_0034
+    type: trojan
+    server: 185.151.146.40
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    password: 3ac6a6ca99f74941b1eaf892818e2ddb
+    network: tcp
+    tls: true
+  - name: 🇩🇪 机场推荐:dafei.de 德国 03
+    type: hysteria2
+    server: vpn-de-001.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-de-001.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇯🇵 机场推荐:dafei.de 日本 21_2
+    type: ss
+    server: 57.128.183.133
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 03_2
+    type: ss
+    server: 185.193.159.5
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇩🇪 DE德国(mibei77.com 米贝节点分享)_77
+    type: trojan
+    server: 86.110.36.87
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    password: '1234567890'
+    network: tcp
+    tls: true
+    servername: kfm-bn0.pages.dev
+  - name: 🇻🇳 机场推荐:dafei.de 越南 08
+    type: ss
+    server: 103.186.155.239
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  - name: TW_speednode_0036
+    type: trojan
+    server: 85.237.206.249
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    password: 3ac6a6ca99f74941b1eaf892818e2ddb
+    network: tcp
+    tls: true
+  - name: 未知21
+    type: trojan
+    server: www.multiplydose.com
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    password: humanity
+    network: ws
+    tls: true
+    servername: www.multiplydose.com
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.multiplydose.com
+  - name: KR_speednode_0012
+    type: vless
+    server: 59.11.151.238
+    port: 12000
+    tfo: true
+    skip-cert-verify: true
+    uuid: 26524cce-d514-4014-a426-365fb266a14d
+    network: ws
+    tls: true
+    servername: s3vz.user-service.chinav.indevs.in
+    ws-opts:
+      path: /danfengfp=chrome
+      headers:
+        Host: s3vz.user-service.chinav.indevs.in
+  - name: 美国 CloudFlare节点_3
     type: vmess
-    server: v12.hdacd.com
-    port: 30812
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    server: ae135.cowjump.site
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 0bf1cead-bdd4-4692-b3d4-6866ccb9f37a
+    alterId: 0
+    cipher: auto
+    network: ws
+    tls: true
+    servername: ae135.cowjump.site
+    ws-opts:
+      path: /
+      headers:
+        Host: ae135.cowjump.site
+  - name: 'C - 🇯🇵 JP 19 TG: @nodpai'
+    type: vless
+    server: cluster-other-1.firstvideocdn.ru
+    port: 52006
+    tfo: true
+    skip-cert-verify: true
+    uuid: 75807638-6f19-0190-ae08-38492ee85c88
+    flow: xtls-rprx-vision-udp443
+    network: tcp
+    tls: true
+    servername: cluster-other-1.firstvideocdn.ru
+  - name: 不限速不限设备不限地区
+    type: vless
+    server: cloudflare-ech.com
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    uuid: 25284107-7424-40a5-8396-cdd0623f4f05
+    network: ws
+    tls: true
+    servername: hscraft.top
+    ws-opts:
+      path: /?ip=ProxyIP.CMLiussss.net
+      headers:
+        Host: hscraft.top
+  - name: MD_speednode_0028
+    type: trojan
+    server: 89.221.225.71
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    password: 3ac6a6ca99f74941b1eaf892818e2ddb
+    network: tcp
+    tls: true
+  - name: 最低月付2块钱1000G_2
+    type: vless
+    server: 188.209.141.114
+    port: 56047
+    tfo: true
+    skip-cert-verify: true
+    uuid: 26524cce-d514-4014-a426-365fb266a14d
+    network: ws
+    tls: true
+    servername: snippet.gfw.qzz.io
+    client-fingerprint: chrome
+    ws-opts:
+      path: /danfeng
+      headers:
+        Host: snippet.gfw.qzz.io
+  - name: 🇯🇵 机场推荐:dafei.de 日本 21_3
+    type: ss
+    server: 8.35.211.116
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 28_2
+    type: ss
+    server: 162.159.45.203
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 07_4
+    type: ss
+    server: 172.64.53.10
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 28_3
+    type: ss
+    server: 172.64.53.219
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇦🇪 机场推荐:dafei.de 阿联酋 02
+    type: ss
+    server: 162.159.39.31
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 22_2
+    type: ss
+    server: 162.159.44.103
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 18_1
+    type: ss
+    server: 115.163.106.137
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 JP 004 | ⬇️ 12MB/s
+    type: ss
+    server: 104.17.19.67
+    port: 443
+    tfo: true
+    skip-cert-verify: true
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+  - name: 🇯🇵 机场推荐:dafei.de 日本 43
+    type: ss
+    server: 108.162.196.23
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26
+    type: ss
+    server: 198.41.223.107
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 02_1
+    type: ss
+    server: 198.41.223.36
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 01_1
+    type: ss
+    server: 198.41.223.160
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01
+    type: ss
+    server: 173.245.59.0
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_1
+    type: ss
+    server: 198.41.211.93
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 31
+    type: ss
+    server: 162.159.11.196
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 29_1
+    type: ss
+    server: 172.64.155.39
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 40
+    type: ss
+    server: 162.159.41.103
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 03_1
+    type: ss
+    server: 173.245.58.225
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_2
+    type: ss
+    server: 198.41.223.55
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 27_1
+    type: ss
+    server: 104.18.44.16
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 07_5
+    type: ss
+    server: 198.41.223.199
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 29_2
+    type: ss
+    server: 104.17.150.209
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇦🇪 机场推荐:dafei.de 阿联酋 01
+    type: ss
+    server: 104.18.4.95
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 07
+    type: ss
+    server: 216.205.52.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 14_2
+    type: ss
+    server: 198.41.209.211
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 23_3
+    type: ss
+    server: 104.17.216.82
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01_1
+    type: ss
+    server: 104.17.124.193
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 48
+    type: ss
+    server: 104.17.133.23
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 23_4
+    type: ss
+    server: 104.17.156.181
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 32_1
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 35
+    type: ss
+    server: 104.17.132.216
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇸🇬 机场推荐:dafei.de 新加坡 09_2
+    type: ss
+    server: 170.114.45.38
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 41
+    type: ss
+    server: 104.19.41.107
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇺🇸 机场推荐:dafei.de 美国 05
+    type: ss
+    server: 104.168.87.41
+    port: 16443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇺🇸 机场推荐:dafei.de 美国 10
+    type: ss
+    server: 104.19.35.79
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 27_2
+    type: ss
+    server: 150.230.33.247
+    port: 19131
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 英国 V2CROSS.COM_4
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     network: tcp
     tls: false
     skip-cert-verify: true
-    servername: v12.hdacd.com
-  - name: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁
+    servername: ''
+  - name: 🇩🇪 机场推荐:dafei.de 德国 02
+    type: ss
+    server: 104.26.9.57
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇳🇱 机场推荐:dafei.de 荷兰 01
+    type: ss
+    server: 89.169.8.223
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 15_4
+    type: ss
+    server: 47.236.119.109
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 32_2
+    type: ss
+    server: 178.208.66.185
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇺🇸 机场推荐:dafei.de 美国 08
+    type: ss
+    server: 172.93.163.177
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 20_2
+    type: ss
+    server: 57.128.182.61
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇲🇩 机场推荐:dafei.de 摩尔多瓦 03
+    type: ss
+    server: 94.131.105.46
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 15_2
+    type: ss
+    server: 135.125.191.9
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 37
+    type: ss
+    server: 185.186.245.90
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇦🇪 机场推荐:dafei.de 阿联酋 02_1
+    type: ss
+    server: 23.227.193.153
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 27_3
+    type: ss
+    server: 188.126.77.155
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇦🇪 机场推荐:dafei.de 阿联酋 01_1
+    type: ss
+    server: 57.128.182.255
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇳🇱 机场推荐:dafei.de 荷兰 02
+    type: ss
+    server: 91.242.229.153
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 46
+    type: ss
+    server: 185.186.245.205
+    port: 81
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_3
+    type: ss
+    server: 23.95.189.91
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 43_1
+    type: ss
+    server: 192.210.143.111
+    port: 28425
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 33
+    type: ss
+    server: 185.209.162.35
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇦🇺 AU澳大利亚(mibei77.com 米贝节点分享)
     type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 21103
-    password: 24a469fe-5820-414e-a323-0ff299de693e
-    tls: true
+    server: steady-lemming.rooster465.autos
+    port: 443
+    tfo: true
     skip-cert-verify: true
+    password: IL37892054
     network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 25501
-    password: 24a469fe-5820-414e-a323-0ff299de693e
     tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 🇺🇸_US_美国
+    servername: steady-lemming.rooster465.autos
+  - name: 🇯🇵 机场推荐:dafei.de 日本 30_1
+    type: ss
+    server: 80.76.34.29
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 28_4
+    type: ss
+    server: 107.175.245.68
+    port: 50242
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇩🇪 机场推荐:dafei.de 德国 06
+    type: ss
+    server: 94.159.110.149
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 45
+    type: ss
+    server: 86.104.72.16
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01_2
+    type: ss
+    server: 37.221.127.254
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 41_1
+    type: ss
+    server: 178.208.90.105
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 30_2
+    type: ss
+    server: 80.209.242.177
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 30_3
+    type: ss
+    server: 107.172.180.73
+    port: 3306
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 38
+    type: ss
+    server: 82.115.5.157
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_4
+    type: ss
+    server: 77.110.124.146
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇺🇸 机场推荐:dafei.de 美国 06
+    type: ss
+    server: 5.161.16.176
+    port: 449
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 27_4
+    type: ss
+    server: 45.144.112.52
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 24_2
+    type: ss
+    server: 5.161.22.2
+    port: 449
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 30_4
+    type: ss
+    server: 185.193.158.68
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 43_2
+    type: ss
+    server: 89.23.105.115
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 20_3
+    type: ss
+    server: 104.19.54.225
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇦🇪 机场推荐:dafei.de 阿联酋 01_2
+    type: ss
+    server: 23.94.94.192
+    port: 42539
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 36_1
+    type: ss
+    server: 185.193.158.76
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_5
+    type: ss
+    server: 194.164.35.86
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 24_3
+    type: ss
+    server: 35.241.172.224
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 21_4
+    type: ss
+    server: 185.193.159.9
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 28_5
+    type: ss
+    server: 104.19.41.195
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 08_1
+    type: ss
+    server: 45.147.248.115
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_6
+    type: ss
+    server: 31.15.19.61
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 18_3
+    type: ss
+    server: 104.238.170.163
+    port: 2053
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 01
+    type: ss
+    server: 78.40.216.169
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇯🇵 机场推荐:dafei.de 日本 26_7
+    type: ss
+    server: 192.145.31.58
+    port: 2083
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇳🇱 机场推荐:dafei.de 荷兰 03
+    type: ss
+    server: 103.45.247.67
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 24_4
+    type: ss
+    server: 194.87.219.31
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 48_1
+    type: ss
+    server: 31.15.19.180
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 31_1
+    type: ss
+    server: 46.32.185.152
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇯🇵 机场推荐:dafei.de 日本 29_3
+    type: ss
+    server: 89.110.78.173
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 11
+    type: ss
+    server: 45.43.88.13
+    port: 2053
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e7557
+  - name: 🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰
+    type: vmess
+    server: v30.hdacd.com
+    port: 30830
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇯🇵 机场推荐:dafei.de 日本 09_1
+    type: ss
+    server: 45.61.137.103
+    port: 2053
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇪🇪 机场推荐:dafei.de 爱沙尼亚 01
     type: vless
-    server: 104.20.1.252
-    port: 2052
-    uuid: f8ae018b-b84d-4c9b-b03b-4642c3a25977
+    server: 95.85.242.196
+    port: 59283
+    uuid: 9037fde7-debb-4fe7-8c73-09f520f3f821
+    tls: true
+    skip-cert-verify: true
+    network: tcp
+    servername: www.amazon.com
+    flow: xtls-rprx-vision
+    reality-opts:
+      public-key: oPsbZoI_Ikl-nC6vS2-Va7Fx11FSgAK5buqI3yBbSWE
+      short-id: 07a0bc
+    client-fingerprint: chrome
+  - name: 🇻🇳_VN_越南_2
+    type: ss
+    server: 103.186.154.58
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇻🇳_VN_越南_2_1
+    type: ss
+    server: 103.186.155.222
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇻🇳_VN_越南_1
+    type: ss
+    server: 103.186.154.191
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇻🇳_VN_越南_7
+    type: ss
+    server: 103.186.155.26
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇻🇳_VN_越南
+    type: ss
+    server: 103.186.154.157
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: trojan_3
+    type: trojan
+    server: j0423.ruixiangseo.xyz
+    port: 33001
+    tfo: true
+    skip-cert-verify: true
+    password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
+    network: tcp
+    tls: true
+  - name: 🇻🇳_VN_越南_8
+    type: ss
+    server: 103.186.155.48
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇷🇺 机场推荐:dafei.de 俄罗斯 01
+    type: vmess
+    server: node-us.connectsuite.org
+    port: 2053
+    uuid: 9b91e960-f8f7-41aa-ac67-f5c7b6b72e74
+    alterId: 0
+    cipher: auto
+    network: tcp
+    tls: true
+    skip-cert-verify: true
+    servername: node-us.connectsuite.org
+  - name: 🇵🇱 机场推荐:dafei.de 波兰 01
+    type: vless
+    server: 144.31.4.166
+    port: 2053
+    uuid: 5b1c5027-5bc6-4ee2-b287-001b05fba219
+    tls: true
+    skip-cert-verify: true
+    network: grpc
+    servername: www.deepl.com
+    reality-opts:
+      public-key: ZHEMPjSWslk6_qD2JNQzd5enUPz8nY9mYRRuM6NkZmU
+      short-id: 0123456789abcdef
+    client-fingerprint: chrome
+    grpc-opts:
+      grpc-service-name: grpc
+  - name: 🇻🇳_VN_越南_14
+    type: ss
+    server: 103.186.155.65
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇻🇳_VN_越南_1_1
+    type: ss
+    server: 103.186.154.155
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇨🇦 机场推荐:dafei.de 加拿大 01
+    type: hysteria2
+    server: vpn-ca-002.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-ca-002.fastervpn.world
+    skip-cert-verify: true
+  - name: trojan_78
+    type: trojan
+    server: j0443.ruixiangseo.xyz
+    port: 33001
+    tfo: true
+    skip-cert-verify: true
+    password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
+    network: tcp
+    tls: true
+  - name: 🇭🇰 机场推荐:dafei.de 香港 06
+    type: ss
+    server: 104.238.70.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇨🇭_CH_瑞士
+    type: vless
+    server: 5.182.36.56
+    port: 45886
+    uuid: 8338171d-2ea7-4015-bdea-492f3d5d4e60
+    servername: yahoo.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0
+      short-id: 94f9
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 美国3
+    type: hysteria2
+    server: usa3.vpnmiao.site
+    port: 10002
+    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
+    sni: usa3.vpnmiao.site
+    skip-cert-verify: true
+  - name: 🇩🇪 机场推荐:dafei.de 德国 13
+    type: vless
+    server: 104.18.12.149
+    port: 80
+    uuid: fc53bae5-92f5-4572-9ce8-9e56901479f1
     tls: false
     skip-cert-verify: true
     network: ws
-    servername: exemplary-milkytsxqiqyso.sportland.company.
+    servername: 尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞3亞團員亞團員.尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞團亞團員亞團員.com.
     ws-opts:
-      path: /?ed
+      path: /amo-mohammad
       headers:
-        Host: exemplary-milkytsxqiqyso.sportland.company.
-    addedAt: '2026-02-24T11:09:49.939Z'
-  - name: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 21102
-    password: 24a469fe-5820-414e-a323-0ff299de693e
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 25502
-    password: 24a469fe-5820-414e-a323-0ff299de693e
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: JP-日本
+        Host: 尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞3亞團員亞團員.尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞團亞團員亞團員.com.
+  - name: 🇺🇸 机场推荐:dafei.de 美国 11
     type: vless
-    server: 154.31.114.125
+    server: pl2-gws4.onnstreaming.ru
     port: 443
-    uuid: cc121afd-d08c-40ba-b355-268704a16945
+    uuid: 19ef3d02-1c55-4fec-9794-6def8cbac396
     tls: true
     skip-cert-verify: true
     network: tcp
-    servername: navi.bankrate.com
+    servername: pl2-gws4.onnstreaming.ru
+    flow: xtls-rprx-vision
     reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
+      public-key: fN3l3mYSDO44IWNPHWOQo2JMUw2isUGoOqrS6hCFfBQ
+      short-id: d1f93724859d75ac
     client-fingerprint: chrome
-  - name: JP-日本_1
+  - name: 🇨🇳 机场推荐:dafei.de 台湾 02
+    type: hysteria2
+    server: vpn-tw-001.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-tw-001.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇵🇱_PL_波兰
     type: vless
-    server: 154.31.114.125
+    server: pl74.mechvpn.online
     port: 443
-    uuid: e0229612-4fe6-422f-bf62-409031f702a7
+    uuid: 6d916d55-fead-4ff3-a3a9-83e175ea8ad7
+    servername: pl74.mechvpn.online
     tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
+    flow: xtls-rprx-vision
     client-fingerprint: chrome
-  - name: JP-日本_2
-    type: vless
-    server: 154.31.114.125
-    port: 443
-    uuid: 95b4e670-b4a5-4d46-a82f-e3e5b743f91a
-    tls: true
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 美国7
+    type: hysteria2
+    server: usa7.vpnmiao.site
+    port: 10000
+    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
+    sni: usa7.vpnmiao.site
     skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: US-美国_1
-    type: vless
-    server: 174.136.205.68
-    port: 443
-    uuid: 236d1836-4038-48d0-b875-9122528b33be
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: 试用节点-台湾_1
+  - name: 🇯🇵 机场推荐:dafei.de 日本 19_2
     type: ss
-    server: jry.izenny.com
-    port: 27689
-    cipher: chacha20-ietf-poly1305
-    password: f484627a-6dab-4461-930b-0f676147d1ce
-  - name: 剩余流量：2 GB_1
+    server: 212.192.20.65
+    port: 8443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇯🇵 机场推荐:dafei.de 日本 16_4
     type: ss
-    server: jry.izenny.com
-    port: 26535
-    cipher: chacha20-ietf-poly1305
-    password: f484627a-6dab-4461-930b-0f676147d1ce
-  - name: 🇯🇵日本高速03|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 57801
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: kPkr66HPlRJbf8MArxyg3HYBF4kI7AG2wnmJcNpehUM
-      short-id: c0049029
-    client-fingerprint: chrome
-  - name: 🇯🇵日本高速02|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 4497
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: c3HflLWDVDkPf9J5kD-R171i16fchUfyFz2SemIh2nc
-      short-id: 63795b1c
-    client-fingerprint: qq
-  - name: 🇭🇰香港高速02|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 51456
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: eaR8CotpIPO2dYW1-GN20e0yX-3qCM1tWGNsfDEcGWw
-      short-id: 2b3275a874d54df8
-    client-fingerprint: chrome
-  - name: 🇭🇰香港高速01|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 27311
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: jhB4k7UOxD8lIyOIImQcEzLCdlrkSKpSBFl8zLa2LT4
-      short-id: 4f05f9baa833
-    client-fingerprint: safari
-  - name: 🇸🇬新加坡高速05|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 50254
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: CsLE441POUHpllga-wuHdzk2W4vXTxAnDnE-IefZFVs
-      short-id: aecdb46ccea076
-    client-fingerprint: ios
-  - name: 🇺🇸美国高速04|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 6511
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: p_I0wbrFv4166QX2y1zmnRtFE29pkme6ze5xoW5mkgs
-      short-id: aaf4e908
-    client-fingerprint: firefox
-  - name: 🇺🇸美国高速06|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 48277
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 9OYlNdt_vC308g-2Uqizkq77tskjunnEU0eLAm_0HjU
-      short-id: c907a46fd26168
-    client-fingerprint: ios
-  - name: 🇮🇳印度高速03|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 35213
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 3sNy9J8VX4KDVvpyMBUi6aPVv7-e-GKjfMViM6uS9WM
-      short-id: 9859bd6770af20
-    client-fingerprint: qq
-  - name: 🇺🇸美国高速02|直链
-    type: hysteria2
-    server: us-loc02.lada.mom
+    server: 80.76.35.90
     port: 443
-    password: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    sni: us-loc02.lada.mom
-    skip-cert-verify: true
-  - name: 🇨🇦加拿大高速02|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 13843
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: aws.amazon.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: q101wM1mXPcfNpZo3sbShOTiwH0OiSdYMP4G163hBlE
-      short-id: fb3d0a0cf37ab1
-    client-fingerprint: edge
-  - name: 🇺🇸美国高速01|直链
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a87
+  - name: 🇭🇰 机场推荐:dafei.de 香港 05
     type: hysteria2
-    server: us-loc01.lada.mom
-    port: 2026
-    password: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    sni: us-loc01.lada.mom
+    server: 45.192.195.52
+    port: 5555
+    password: 3286b74d-a633-401f-8e22-6e8e61c5f1d9
+    sni: 45.192.195.52
     skip-cert-verify: true
-  - name: 🇳🇱荷兰高速01|直链
-    type: hysteria2
-    server: nl-loc02.lada.mom
-    port: 443
-    password: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    sni: nl-loc02.lada.mom
-    skip-cert-verify: true
-  - name: 🇳🇱荷兰 - 下载节点 - 低倍率
-    type: hysteria2
-    server: nl-down1.lada.mom
-    port: 443
-    password: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    sni: nl-down1.lada.mom
-    skip-cert-verify: true
-  - name: 🇬🇧英国高速01|直链
-    type: hysteria2
-    server: gb-loc01.lada.mom
-    port: 443
-    password: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    sni: gb-loc01.lada.mom
-    skip-cert-verify: true
-  - name: 🇩🇪德国高速01|转发优化
-    type: vless
-    server: jpfast-3.up-pay.xyz
-    port: 17591
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: www.apple.com
-    reality-opts:
-      public-key: _6CCNe28TDi7oZGBQUEp8Q3uqmm9gqUVD-PisaiIuTc
-      short-id: 4d7c1431833276
-    client-fingerprint: safari
-  - name: 🇮🇳印度高速01|直链
-    type: hysteria2
-    server: in-loc01.lada.mom
-    port: 48801
-    password: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    sni: in-loc01.lada.mom
-    skip-cert-verify: true
-  - name: 试用节点-日本_1
+  - name: 🇻🇳_VN_越南_1_2
     type: ss
-    server: jry.izenny.com
-    port: 29571
-    cipher: chacha20-ietf-poly1305
-    password: f484627a-6dab-4461-930b-0f676147d1ce
-  - name: JP-日本_3
-    type: vless
-    server: 154.31.114.125
-    port: 443
-    uuid: 78f35805-afe9-4f87-8665-6c2dc89cc02d
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: US-美国_2
-    type: vless
-    server: 174.136.205.68
-    port: 443
-    uuid: 4fbb8049-3675-4800-93ca-61a224694648
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 21101
-    password: 6c605847-2b5c-4518-92b8-3708168e53b1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 25501
-    password: 6c605847-2b5c-4518-92b8-3708168e53b1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 试用节点-新加坡
+    server: 103.186.155.120
+    port: 38388
+    cipher: aes-256-cfb
+    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇭🇰 机场推荐:dafei.de 香港 07_1
     type: ss
-    server: jry.izenny.com
-    port: 57884
-    cipher: chacha20-ietf-poly1305
-    password: f484627a-6dab-4461-930b-0f676147d1ce
-  - name: 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 21103
-    password: 6c605847-2b5c-4518-92b8-3708168e53b1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: US-美国_3
-    type: vless
-    server: 174.136.205.68
+    server: 167.235.224.25
     port: 443
-    uuid: 4b368ea7-c5ee-44a7-9023-599470b8773d
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: US-美国_4
-    type: vless
-    server: 174.136.205.68
-    port: 443
-    uuid: 328d4f87-2e9b-4ce8-8c3e-f747eca3a56c
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: JP-日本_4
-    type: vless
-    server: 154.31.114.125
-    port: 443
-    uuid: 328d4f87-2e9b-4ce8-8c3e-f747eca3a56c
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: JP-日本_5
-    type: vless
-    server: 154.31.114.125
-    port: 443
-    uuid: 1cac20f5-36fd-45bf-88e7-61fb2eb17edf
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: US-美国_5
-    type: vless
-    server: 174.136.205.68
-    port: 443
-    uuid: 320fb131-c108-4ab1-bf19-27b85378637a
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: navi.bankrate.com
-    reality-opts:
-      public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
-      short-id: 2da72ce6
-    client-fingerprint: chrome
-  - name: 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 21102
-    password: 6c605847-2b5c-4518-92b8-3708168e53b1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 🇯🇵日本高速01|转发优化
-    type: vless
-    server: hk1.up-pay.xyz
-    port: 2610
-    uuid: b13f9fa5-846c-4b31-889e-c1801d2fd266
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: apple.com
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: mpMsOIVcHvJCxWfCPIa3dlXOQ-Tby_y6mJ2fMoNFPAw
-      short-id: 855a1af1c60a
-    client-fingerprint: edge
-  - name: 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-    type: trojan
-    server: cdnfire.xiaomispeed.com
-    port: 25502
-    password: 6c605847-2b5c-4518-92b8-3708168e53b1
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: cdnfire.xiaomispeed.com
-  - name: 🇺🇸_US_美国_1
-    type: vless
-    server: 20.79.162.37
-    port: 443
-    uuid: jina
-    tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: jina-207916237-direct.yektanet.co
-    flow: xtls-rprx-vision
-    addedAt: '2026-02-24T11:09:49.939Z'
-  - name: 「🇨🇳」台湾-乱星海 x1
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
+  - name: 🇺🇸 机场推荐:dafei.de 美国 03_1
     type: hysteria2
-    server: e13.hy2yydsapi.top
-    port: 8010
-    password: 879dc0d7-501f-4ba6-b971-e339abf6d470
-    sni: e13.hy2yydsapi.top
+    server: vpn-us-001.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-us-001.fastervpn.world
     skip-cert-verify: true
-  - name: 🇯🇵日本东京-2
+  - name: 🇵🇱_PL_波兰_1
     type: vless
-    server: 137.220.202.78
-    port: 16479
-    uuid: 4baf0f70-833a-427b-9292-2f76fc1f31d3
+    server: pl-1.illusion-vpn.ru
+    port: 443
+    uuid: bf263367-bb63-4663-b4a1-34946107a72e
+    servername: pl-1.illusion-vpn.ru
     tls: true
-    skip-cert-verify: true
-    network: tcp
-    servername: ads.apple.com
     flow: xtls-rprx-vision
-    reality-opts:
-      public-key: '-khaxF4c5ZK2sJizry6oWdP3OH5jV84CRi3LOI3zaD0'
-      short-id: eda90a60
     client-fingerprint: chrome
+    reality-opts:
+      public-key: 5qvcOTHr_izGbsRz-j2xC3BMMdugFMsl7MnANjzwZ0I
+      short-id: b2a1c97a38
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 🇬🇷_GR_希腊
+    type: vless
+    server: 94.131.8.19
+    port: 45448
+    uuid: 96fcf8cc-535d-46c4-b8f9-76058df48e3b
+    servername: yahoo.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: MmEVCRy11fz67vYJQWyA2a_ZPMBzv2le2cus1XSSI0E
+      short-id: 958639bf55e679
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 美国6
+    type: hysteria2
+    server: usa6.vpnmiao.site
+    port: 10005
+    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
+    sni: usa6.vpnmiao.site
+    skip-cert-verify: true
+  - name: 🇷🇴_RO_罗马尼亚
+    type: vless
+    server: 91.199.50.37
+    port: 443
+    uuid: 43488128-319e-f480-64ea-0acdc712e2a8
+    servername: www.alibaba.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: kkRsTNjRh_XrrTM6eZllllldzoL5Z9IqlBkDtmYLMhw
+      short-id: c906f73d3ba8211f
+    isFromWeb: true
+    webSource: https://www.cfmem.com
+  - name: 美国5
+    type: hysteria2
+    server: usa5.vpnmiao.site
+    port: 10004
+    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
+    sni: usa5.vpnmiao.site
+    skip-cert-verify: true
+  - name: 🇫🇷_www.panlongid.com_FR_法国_34_1
+    type: vmess
+    server: 2001:bc8:32d7:302::11
+    port: 44579
+    uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+    alterId: 0
+    cipher: auto
+    network: ws
+    tls: false
+    skip-cert-verify: true
+    servername: Azerb.NET
+    ws-opts:
+      path: /?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560
+      headers:
+        Host: Azerb.NET
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 试用节点-台湾
-      - 🇯🇵日本东京-有限流量
-      - 🇭🇰 香港S01
-      - 剩余流量：2 GB
-      - 🇰🇷 机场推荐:dafei.de 韩国 02
-      - SS
-      - 🇸🇬新加坡高速02|转发优化
-      - 🇸🇬新加坡高速04|转发优化
-      - SS_1
-      - 🇺🇸美国圣何塞-1
-      - rs1 [f5xvw] 2
-      - 🇺🇸 机场推荐:dafei.de 美国 10
-      - 🇸🇬新加坡高速03|转发优化
-      - US-美国
-      - 🇺🇸 机场推荐:dafei.de 美国 04
-      - 🇺🇸 机场推荐:dafei.de 美国 11
-      - 🇺🇸美国洛杉矶-可下载使用
-      - rs1 [ifcqx] 1
-      - 🇺🇸 机场推荐:dafei.de 美国 10_1
-      - 🇩🇪 机场推荐:dafei.de 德国 03
-      - 🇩🇪 机场推荐:dafei.de 德国 02
-      - 🇬🇧 机场推荐:dafei.de 英国 11
-      - 🇩🇪 机场推荐:dafei.de 德国 03_1
-      - rs1 [vwidf] 3
-      - 🇺🇸美国西雅图-可下载使用
-      - 🇫🇷 机场推荐:dafei.de 法国 06
-      - 剩余流量：29.98+GB
-      - 🇳🇱 机场推荐:dafei.de 荷兰 01
-      - 🇬🇧 机场推荐:dafei.de 英国 08
-      - 🇲🇴澳门高速01|转发优化
-      - 🇬🇧 机场推荐:dafei.de 英国 05
-      - 🇩🇪 机场推荐:dafei.de 德国 02_1
-      - 🇬🇧 机场推荐:dafei.de 英国 10
-      - 🇬🇧 机场推荐:dafei.de 英国 12
-      - 🇨🇦加拿大多伦多-推荐下载使用
-      - 🇫🇷 机场推荐:dafei.de 法国 03
-      - 🇫🇷 机场推荐:dafei.de 法国 05
-      - 🇩🇪德国纽伦堡
-      - 🇬🇧 机场推荐:dafei.de 英国 03
-      - 🇺🇸美国德克萨斯州
-      - 🇳🇱 机场推荐:dafei.de 荷兰 02
-      - 🇺🇸 机场推荐:dafei.de 美国 07
-      - a1-美国专线03∣a3线路∣1.5X
-      - a1-美国专线04∣a4线路∣1.5X
-      - a1-美国专线05∣a5线路∣1.5X
-      - a1-美国专线02∣a2线路∣1.5X
-      - a1-美国专线06∣a6线路∣1.5X
-      - 美国+DXC+Technology
-      - 🇳🇱荷兰-1
-      - 剩余流量：300 GB
-      - 剩余流量：1000 GB
-      - 🇫🇷 机场推荐:dafei.de 法国 12
-      - 🇰🇷 机场推荐:dafei.de 韩国 07
-      - 🇮🇷_IR_伊朗->🇱🇹_LT_立陶宛
-      - 🇳🇱荷兰-2
-      - 🇷🇺 机场推荐:dafei.de 俄罗斯 03
-      - 🇬🇧 机场推荐:dafei.de 英国 02
-      - 🇬🇧 机场推荐:dafei.de 英国 01
-      - 🇳🇱 机场推荐:dafei.de 荷兰 09
-      - 🇸🇬新加坡
-      - 🇫🇷 机场推荐:dafei.de 法国 04
-      - 🇸🇬 机场推荐:dafei.de 新加坡 04
-      - 🇦🇪 机场推荐:dafei.de 阿联酋 02
+      - 🇯🇵 机场推荐:dafei.de 日本 16
+      - 🇭🇰 HK
+      - 🇯🇵 JP 013 | ⬇️ 12MB/s
+      - 🇯🇵 JP 195 | ⬇️ 1MB/s
+      - 🇸🇬 机场推荐:dafei.de 新加坡 10
+      - 🇯🇵 机场推荐:dafei.de 日本 17
+      - 🇸🇬 机场推荐:dafei.de 新加坡 03
       - 🇯🇵 机场推荐:dafei.de 日本 02
-      - 🇮🇪爱尔兰
-      - 🇳🇱荷兰
-      - 🇮🇳印度
+      - 🇯🇵 机场推荐:dafei.de 日本 05
+      - 🇯🇵 机场推荐:dafei.de 日本 03
+      - 🇯🇵 机场推荐:dafei.de 日本 13
+      - 🇯🇵 机场推荐:dafei.de 日本 03_1
+      - 🇯🇵 机场推荐:dafei.de 日本 17_1
+      - 🇯🇵 机场推荐:dafei.de 日本 13_1
+      - 🇯🇵 机场推荐:dafei.de 日本 14
+      - 🇯🇵 机场推荐:dafei.de 日本 16_1
+      - 🇯🇵 机场推荐:dafei.de 日本 07
+      - 🇯🇵 机场推荐:dafei.de 日本 01
+      - 🇯🇵 机场推荐:dafei.de 日本 06
+      - 🇯🇵 机场推荐:dafei.de 日本 02_1
+      - 🇯🇵 机场推荐:dafei.de 日本 06_1
+      - 🇯🇵 机场推荐:dafei.de 日本 06_2
+      - 🇯🇵 机场推荐:dafei.de 日本 18
+      - 🇯🇵 机场推荐:dafei.de 日本 21
+      - 🇯🇵 机场推荐:dafei.de 日本 01_1
+      - 🇯🇵 日本 14
+      - 🇯🇵 机场推荐:dafei.de 日本 21_1
+      - 🇺🇸 美国 16
+      - 🇺🇸 美国 25
+      - 🇯🇵 JP 008 | ⬇️ 3MB/s
+      - 🇸🇬 机场推荐:dafei.de 新加坡 09
+      - 🇭🇰 HK 148 | ⬇️ 2MB/s
+      - 🇸🇬 机场推荐:dafei.de 新加坡 11
+      - 🇸🇬 机场推荐:dafei.de 新加坡 05
+      - 🇸🇬 机场推荐:dafei.de 新加坡 08
+      - 🇯🇵 机场推荐:dafei.de 日本 07_1
+      - 🇯🇵 机场推荐:dafei.de 日本 12
+      - 🇸🇬 机场推荐:dafei.de 新加坡 06
+      - 🇸🇬 机场推荐:dafei.de 新加坡 01
+      - 🇸🇬 机场推荐:dafei.de 新加坡 09_1
+      - 🇯🇵 机场推荐:dafei.de 日本 19
+      - 🇯🇵 机场推荐:dafei.de 日本 23
+      - 🇯🇵 机场推荐:dafei.de 日本 24
       - 🇺🇸 机场推荐:dafei.de 美国 03
-      - 美国 CloudFlare节点
-      - 🇺🇸 机场推荐:dafei.de 美国 01
-      - 🇦🇹奥地利
-      - 🇬🇧 机场推荐:dafei.de 英国 04
-      - 🇰🇷 机场推荐:dafei.de 韩国 11
-      - 🇺🇸 机场推荐:dafei.de 美国 07_1
-      - 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁
-      - 🇫🇮 机场推荐:dafei.de 芬兰 03
-      - 台湾省台中市+中华电信
-      - 🇭🇰 机场推荐:dafei.de 香港 01
+      - 🇯🇵 机场推荐:dafei.de 日本 16_2
+      - 🇯🇵 机场推荐:dafei.de 日本 07_2
+      - 🇸🇬 机场推荐:dafei.de 新加坡 06_1
+      - 🇸🇬 机场推荐:dafei.de 新加坡 02
+      - 🇸🇬 机场推荐:dafei.de 新加坡 14
+      - 🇭🇰 机场推荐:dafei.de 香港 17
+      - 🇸🇬 机场推荐:dafei.de 新加坡 13
+      - 🇸🇬 机场推荐:dafei.de 新加坡 11_1
+      - 🇸🇬 机场推荐:dafei.de 新加坡 05_1
+      - 🇯🇵 机场推荐:dafei.de 日本 01_2
+      - 🇭🇰 机场推荐:dafei.de 香港 18
+      - 🇯🇵 机场推荐:dafei.de 日本 17_2
+      - 🇯🇵 机场推荐:dafei.de 日本 05_1
+      - 🇯🇵 机场推荐:dafei.de 日本 30
+      - 🇯🇵 机场推荐:dafei.de 日本 01_3
+      - 🇯🇵 机场推荐:dafei.de 日本 15
+      - 🇯🇵 机场推荐:dafei.de 日本 17_3
+      - 🇭🇰 机场推荐:dafei.de 香港 08
+      - 🇭🇰 机场推荐:dafei.de 香港 02
+      - 🇯🇵 机场推荐:dafei.de 日本 17_4
+      - 🇸🇬 机场推荐:dafei.de 新加坡 08_1
+      - 🇭🇰 机场推荐:dafei.de 香港 03
+      - 🇭🇰 机场推荐:dafei.de 香港 13
+      - 🇯🇵 机场推荐:dafei.de 日本 13_2
+      - 🇯🇵 JP 002 | ⬇️ 2MB/s
+      - 🇯🇵 机场推荐:dafei.de 日本 05_2
+      - 🇭🇰 机场推荐:dafei.de 香港 04
+      - 🇯🇵 机场推荐:dafei.de 日本 12_1
+      - 🇯🇵 机场推荐:dafei.de 日本 39
+      - 🇯🇵 机场推荐:dafei.de 日本 14_1
+      - 🇯🇵 机场推荐:dafei.de 日本 02_2
+      - 🇯🇵 机场推荐:dafei.de 日本 18_1
+      - 英国 V2CROSS.COM
+      - 英国 V2CROSS.COM_1
+      - 英国 V2CROSS.COM_2
+      - 🇯🇵 机场推荐:dafei.de 日本 20
+      - 🇯🇵 机场推荐:dafei.de 日本 32
+      - 🇯🇵 机场推荐:dafei.de 日本 16_3
+      - 🇯🇵 机场推荐:dafei.de 日本 23_1
+      - 🇯🇵 机场推荐:dafei.de 日本 22
+      - 🇯🇵 机场推荐:dafei.de 日本 22_1
+      - 英国 V2CROSS.COM_3
+      - 🇯🇵 机场推荐:dafei.de 日本 25
+      - 🇯🇵 机场推荐:dafei.de 日本 19_1
+      - 🇯🇵 机场推荐:dafei.de 日本 10
+      - 🇯🇵 机场推荐:dafei.de 日本 15_1
+      - 🇯🇵 机场推荐:dafei.de 日本 04
+      - 🇯🇵 机场推荐:dafei.de 日本 24_1
+      - 🇯🇵 机场推荐:dafei.de 日本 09
+      - 🇯🇵 机场推荐:dafei.de 日本 13_3
+      - 🇯🇵 机场推荐:dafei.de 日本 13_4
+      - 🇻🇳 越南家宽 18 [wzdnzd/aggregator]
+      - 🇯🇵 机场推荐:dafei.de 日本 15_2
+      - 🇭🇰 机场推荐:dafei.de 香港 15
+      - 🇯🇵 机场推荐:dafei.de 日本 07_3
+      - 🇯🇵 机场推荐:dafei.de 日本 18_2
+      - 请开启分片功能否则节点可能不通！
+      - 🇯🇵 机场推荐:dafei.de 日本 29
+      - 🇯🇵 机场推荐:dafei.de 日本 28
+      - 🇯🇵 机场推荐:dafei.de 日本 23_2
+      - 🇯🇵 机场推荐:dafei.de 日本 17_5
+      - 🇯🇵 机场推荐:dafei.de 日本 25_1
+      - 🇭🇰 机场推荐:dafei.de 香港 15_1
+      - 🇯🇵 机场推荐:dafei.de 日本 20_1
+      - 🇯🇵 机场推荐:dafei.de 日本 08
+      - 🇯🇵 机场推荐:dafei.de 日本 12_2
+      - 🇯🇵 机场推荐:dafei.de 日本 15_3
+      - 🇯🇵 机场推荐:dafei.de 日本 28_1
+      - 🇯🇵 机场推荐:dafei.de 日本 50
+      - 🚹47@oneclickvpnkeys
+      - 🇸🇪 瑞典 01 [wzdnzd/aggregator]
+      - 香港 电讯盈科有限公司
+      - 香港 电讯盈科有限公司_1
+      - 🇫🇷_www.panlongid.com_FR_法国_34
+      - 🇲🇾_MY_马来西亚->🇩🇪_DE_德国
+      - 🇻🇳 机场推荐:dafei.de 越南 05
+      - 🇺🇸 机场推荐:dafei.de 美国 07
+      - 🇻🇳 机场推荐:dafei.de 越南 04
+      - 🇻🇳 机场推荐:dafei.de 越南 06
+      - 'A - 🇸🇬 SG 01 TG: @nodpai'
+      - 🇩🇪 机场推荐:dafei.de 德国 01
+      - 🇲🇾_MY_马来西亚->🇫🇷_FR_法国
+      - trojan_4
+      - trojan_42
+      - trojan_53
+      - trojan_54
+      - 🇬🇧 机场推荐:dafei.de 英国 01
+      - 🇨🇭 机场推荐:dafei.de 瑞士 01
+      - 最低月付2块钱1000G_1
+      - 🇻🇳 机场推荐:dafei.de 越南 03
+      - 🇻🇳 机场推荐:dafei.de 越南 02
+      - 官网https://kelayun.notepin.co
+      - 🇻🇳 越南家宽 16 [wzdnzd/aggregator]
+      - 🇸🇪 瑞典(mibei77.com 米贝节点分享)
+      - 下单https://kelayun.notepin.co
+      - 🇵🇱PL_1|2.1MB/s
+      - 🇯🇵 机场推荐:dafei.de 日本 27
+      - 🇯🇵 机场推荐:dafei.de 日本 36
+      - 🇯🇵 机场推荐:dafei.de 日本 13_5
+      - SG_speednode_0034
+      - 🇩🇪 机场推荐:dafei.de 德国 03
+      - 🇯🇵 机场推荐:dafei.de 日本 21_2
+      - 🇯🇵 机场推荐:dafei.de 日本 03_2
+      - 🇩🇪 DE德国(mibei77.com 米贝节点分享)_77
+      - 🇻🇳 机场推荐:dafei.de 越南 08
+      - TW_speednode_0036
+      - 未知21
+      - KR_speednode_0012
+      - 美国 CloudFlare节点_3
+      - 'C - 🇯🇵 JP 19 TG: @nodpai'
+      - 不限速不限设备不限地区
+      - MD_speednode_0028
+      - 最低月付2块钱1000G_2
+      - 🇯🇵 机场推荐:dafei.de 日本 21_3
+      - 🇯🇵 机场推荐:dafei.de 日本 28_2
+      - 🇯🇵 机场推荐:dafei.de 日本 07_4
+      - 🇯🇵 机场推荐:dafei.de 日本 28_3
+      - 🇦🇪 机场推荐:dafei.de 阿联酋 02
+      - 🇯🇵 机场推荐:dafei.de 日本 22_2
+      - 🇭🇰 机场推荐:dafei.de 香港 18_1
+      - 🇯🇵 JP 004 | ⬇️ 12MB/s
+      - 🇯🇵 机场推荐:dafei.de 日本 43
+      - 🇯🇵 机场推荐:dafei.de 日本 26
+      - 🇸🇬 机场推荐:dafei.de 新加坡 02_1
+      - 🇸🇬 机场推荐:dafei.de 新加坡 01_1
       - 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01
-      - 台湾省台中市+中华电信_1
-      - 试用节点-日本
-      - 🇮🇷_IR_伊朗->🇱🇹_LT_立陶宛_1
-      - 中国 V2CROSS.COM
-      - 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁
-      - 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁
-      - 🇺🇸_US_美国
-      - 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
-      - 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁
-      - JP-日本
-      - JP-日本_1
-      - JP-日本_2
-      - US-美国_1
-      - 试用节点-台湾_1
-      - 剩余流量：2 GB_1
-      - 🇯🇵日本高速03|转发优化
-      - 🇯🇵日本高速02|转发优化
-      - 🇭🇰香港高速02|转发优化
-      - 🇭🇰香港高速01|转发优化
-      - 🇸🇬新加坡高速05|转发优化
-      - 🇺🇸美国高速04|转发优化
-      - 🇺🇸美国高速06|转发优化
-      - 🇮🇳印度高速03|转发优化
-      - 🇺🇸美国高速02|直链
-      - 🇨🇦加拿大高速02|转发优化
-      - 🇺🇸美国高速01|直链
-      - 🇳🇱荷兰高速01|直链
-      - 🇳🇱荷兰 - 下载节点 - 低倍率
-      - 🇬🇧英国高速01|直链
-      - 🇩🇪德国高速01|转发优化
-      - 🇮🇳印度高速01|直链
-      - 试用节点-日本_1
-      - JP-日本_3
-      - US-美国_2
-      - 香港 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-      - 美国 · 1号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-      - 试用节点-新加坡
-      - 香港 · 3号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-      - US-美国_3
-      - US-美国_4
-      - JP-日本_4
-      - JP-日本_5
-      - US-美国_5
-      - 香港 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-      - 🇯🇵日本高速01|转发优化
-      - 美国 · 2号线 · Netflix等流媒体解锁 · ChatGPT解锁_1
-      - 🇺🇸_US_美国_1
-      - 「🇨🇳」台湾-乱星海 x1
-      - 🇯🇵日本东京-2
+      - 🇯🇵 机场推荐:dafei.de 日本 26_1
+      - 🇯🇵 机场推荐:dafei.de 日本 31
+      - 🇯🇵 机场推荐:dafei.de 日本 29_1
+      - 🇯🇵 机场推荐:dafei.de 日本 40
+      - 🇸🇬 机场推荐:dafei.de 新加坡 03_1
+      - 🇯🇵 机场推荐:dafei.de 日本 26_2
+      - 🇯🇵 机场推荐:dafei.de 日本 27_1
+      - 🇯🇵 机场推荐:dafei.de 日本 07_5
+      - 🇯🇵 机场推荐:dafei.de 日本 29_2
+      - 🇦🇪 机场推荐:dafei.de 阿联酋 01
+      - 🇭🇰 机场推荐:dafei.de 香港 07
+      - 🇯🇵 机场推荐:dafei.de 日本 14_2
+      - 🇯🇵 机场推荐:dafei.de 日本 23_3
+      - 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01_1
+      - 🇯🇵 机场推荐:dafei.de 日本 48
+      - 🇯🇵 机场推荐:dafei.de 日本 23_4
+      - 🇯🇵 机场推荐:dafei.de 日本 32_1
+      - 🇯🇵 机场推荐:dafei.de 日本 35
+      - 🇸🇬 机场推荐:dafei.de 新加坡 09_2
+      - 🇯🇵 机场推荐:dafei.de 日本 41
+      - 🇺🇸 机场推荐:dafei.de 美国 05
+      - 🇺🇸 机场推荐:dafei.de 美国 10
+      - 🇯🇵 机场推荐:dafei.de 日本 27_2
+      - 英国 V2CROSS.COM_4
+      - 🇩🇪 机场推荐:dafei.de 德国 02
+      - 🇳🇱 机场推荐:dafei.de 荷兰 01
+      - 🇯🇵 机场推荐:dafei.de 日本 15_4
+      - 🇯🇵 机场推荐:dafei.de 日本 32_2
+      - 🇺🇸 机场推荐:dafei.de 美国 08
+      - 🇯🇵 机场推荐:dafei.de 日本 20_2
+      - 🇲🇩 机场推荐:dafei.de 摩尔多瓦 03
+      - 🇭🇰 机场推荐:dafei.de 香港 15_2
+      - 🇯🇵 机场推荐:dafei.de 日本 37
+      - 🇦🇪 机场推荐:dafei.de 阿联酋 02_1
+      - 🇯🇵 机场推荐:dafei.de 日本 27_3
+      - 🇦🇪 机场推荐:dafei.de 阿联酋 01_1
+      - 🇳🇱 机场推荐:dafei.de 荷兰 02
+      - 🇯🇵 机场推荐:dafei.de 日本 46
+      - 🇯🇵 机场推荐:dafei.de 日本 26_3
+      - 🇯🇵 机场推荐:dafei.de 日本 43_1
+      - 🇯🇵 机场推荐:dafei.de 日本 33
+      - 🇦🇺 AU澳大利亚(mibei77.com 米贝节点分享)
+      - 🇯🇵 机场推荐:dafei.de 日本 30_1
+      - 🇯🇵 机场推荐:dafei.de 日本 28_4
+      - 🇩🇪 机场推荐:dafei.de 德国 06
+      - 🇯🇵 机场推荐:dafei.de 日本 45
+      - 🇲🇩 机场推荐:dafei.de 摩尔多瓦 01_2
+      - 🇯🇵 机场推荐:dafei.de 日本 41_1
+      - 🇯🇵 机场推荐:dafei.de 日本 30_2
+      - 🇯🇵 机场推荐:dafei.de 日本 30_3
+      - 🇯🇵 机场推荐:dafei.de 日本 38
+      - 🇯🇵 机场推荐:dafei.de 日本 26_4
+      - 🇺🇸 机场推荐:dafei.de 美国 06
+      - 🇯🇵 机场推荐:dafei.de 日本 27_4
+      - 🇯🇵 机场推荐:dafei.de 日本 24_2
+      - 🇯🇵 机场推荐:dafei.de 日本 30_4
+      - 🇯🇵 机场推荐:dafei.de 日本 43_2
+      - 🇯🇵 机场推荐:dafei.de 日本 20_3
+      - 🇦🇪 机场推荐:dafei.de 阿联酋 01_2
+      - 🇯🇵 机场推荐:dafei.de 日本 36_1
+      - 🇯🇵 机场推荐:dafei.de 日本 26_5
+      - 🇯🇵 机场推荐:dafei.de 日本 24_3
+      - 🇯🇵 机场推荐:dafei.de 日本 21_4
+      - 🇯🇵 机场推荐:dafei.de 日本 28_5
+      - 🇭🇰 机场推荐:dafei.de 香港 08_1
+      - 🇯🇵 机场推荐:dafei.de 日本 26_6
+      - 🇯🇵 机场推荐:dafei.de 日本 18_3
+      - 🇭🇰 机场推荐:dafei.de 香港 01
+      - 🇯🇵 机场推荐:dafei.de 日本 26_7
+      - 🇳🇱 机场推荐:dafei.de 荷兰 03
+      - 🇯🇵 机场推荐:dafei.de 日本 24_4
+      - 🇯🇵 机场推荐:dafei.de 日本 48_1
+      - 🇯🇵 机场推荐:dafei.de 日本 31_1
+      - 🇯🇵 机场推荐:dafei.de 日本 29_3
+      - 🇯🇵 机场推荐:dafei.de 日本 11
+      - 🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰
+      - 🇯🇵 机场推荐:dafei.de 日本 09_1
+      - 🇪🇪 机场推荐:dafei.de 爱沙尼亚 01
+      - 🇻🇳_VN_越南_2
+      - 🇻🇳_VN_越南_2_1
+      - 🇻🇳_VN_越南_1
+      - 🇻🇳_VN_越南_7
+      - 🇻🇳_VN_越南
+      - trojan_3
+      - 🇻🇳_VN_越南_8
+      - 🇷🇺 机场推荐:dafei.de 俄罗斯 01
+      - 🇵🇱 机场推荐:dafei.de 波兰 01
+      - 🇻🇳_VN_越南_14
+      - 🇻🇳_VN_越南_1_1
+      - 🇨🇦 机场推荐:dafei.de 加拿大 01
+      - trojan_78
+      - 🇭🇰 机场推荐:dafei.de 香港 06
+      - 🇨🇭_CH_瑞士
+      - 美国3
+      - 🇩🇪 机场推荐:dafei.de 德国 13
+      - 🇺🇸 机场推荐:dafei.de 美国 11
+      - 🇨🇳 机场推荐:dafei.de 台湾 02
+      - 🇵🇱_PL_波兰
+      - 美国7
+      - 🇯🇵 机场推荐:dafei.de 日本 19_2
+      - 🇯🇵 机场推荐:dafei.de 日本 16_4
+      - 🇭🇰 机场推荐:dafei.de 香港 05
+      - 🇻🇳_VN_越南_1_2
+      - 🇭🇰 机场推荐:dafei.de 香港 07_1
+      - 🇺🇸 机场推荐:dafei.de 美国 03_1
+      - 🇵🇱_PL_波兰_1
+      - 🇬🇷_GR_希腊
+      - 美国6
+      - 🇷🇴_RO_罗马尼亚
+      - 美国5
+      - 🇫🇷_www.panlongid.com_FR_法国_34_1
 rules:
   - MATCH,PROXY

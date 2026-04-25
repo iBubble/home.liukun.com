@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servers Cluster - Gemini's Home</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 动态背景 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(10, 10, 30, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(20, 10, 30, 0.2) 0%, transparent 50%);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 100;
+            border-bottom: 2px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 15px #ff00ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #00ffff;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            text-shadow: 0 0 20px #00ffff;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #ff00ff;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            letter-spacing: 0.2rem;
+        }
+
+        /* 服务器卡片网格 */
+        .servers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .server-card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .server-card:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .single-sync-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .server-card:hover .single-sync-btn {
+            opacity: 1;
+        }
+
+        .single-sync-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            color: #ffffff;
+            border-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            transform: rotate(90deg);
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        .spinning {
+            animation: spin 1s linear infinite !important;
+        }
+
+        .server-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            padding-right: 20px; /* Leave space for absolute sync button */
+            min-height: 50px;
+        }
+
+        .server-title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .server-name-row {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff00ff;
+            text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+            word-break: break-all;
+        }
+
+        /* 状态指示器 */
+        .status-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-online {
+            background: #00ff41;
+            box-shadow: 0 0 10px #00ff41;
+            color: #00ff41;
+        }
+
+        .status-offline {
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+            color: #ff0000;
+        }
+        
+        .status-loading {
+            background: #ffff00;
+            box-shadow: 0 0 10px #ffff00;
+            color: #ffff00;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* 服务器详情网格 */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .stat-box {
+            background: rgba(0, 255, 0, 0.05);
+            border: 1px solid rgba(0, 255, 0, 0.1);
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #00ffff;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff00;
+            font-family: monospace;
+        }
+        
+        .error-message {
+            color: #ff0000;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* 更新时间提示 */
+        .last-update {
+            text-align: right;
+            color: rgba(0, 255, 255, 0.6);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .servers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------------- 集成版地图 CSS ---------------- */
+        .cluster-map { 
+            width: 100%; 
+            height: 480px; 
+            margin-bottom: 30px; 
+            border: 1px solid #333; 
+            border-radius: 5px; 
+            background: #000;
+            z-index: 1; 
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .cluster-map:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+
+        /* Leaflet 弹出窗美化 */
+        .leaflet-popup-content-wrapper { 
+            background: rgba(20, 20, 20, 0.95) !important; 
+            color: #00ff41 !important; 
+            border: 1px solid #ff00ff; 
+            border-radius: 4px; 
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3) !important; 
+        }
+        .leaflet-popup-tip { background: rgba(20, 20, 20, 0.95) !important; }
+        .popup-title { font-size: 1.1rem; color: #ff00ff; margin-bottom: 5px; border-bottom: 1px solid rgba(255,0,255,0.3); padding-bottom: 5px; font-weight: bold; text-transform: uppercase; }
+        .popup-stat { margin: 2px 0; font-size: 0.85rem; color: #00ffff; }
+        .popup-stat span { color: #00ff41; font-weight: bold; }
+
+        /* 闪烁标记 */
+        .pulse-marker { width: 14px; height: 14px; border-radius: 50%; }
+        .pulse-inner { width: 100%; height: 100%; border-radius: 50%; border: 2px solid #fff; }
+        .inner-online { background: #00ff41; box-shadow: 0 0 10px #00ff41; animation: pulse-on 2s infinite; }
+        .inner-offline { background: #ff0000; box-shadow: 0 0 10px #ff0000; animation: pulse-off 4s infinite; border-color: #ff0000; }
+        @keyframes pulse-on { 0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7); } 70% { transform: scale(1.6); box-shadow: 0 0 0 10px rgba(0, 255, 65, 0); } 100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); } }
+        @keyframes pulse-off { 0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); } 70% { transform: scale(1.6); box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); } 100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); } }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Gemini</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>[ Global Servers ]</h1>
+        <p class="subtitle">// Distributed Node Status Monitor //</p>
+        
+        <!-- 动态全球节点地图 -->
+        <div id="clusterMap" class="cluster-map"></div>
+
+        <div style="text-align: right; margin-bottom: 20px;">
+            <button id="forceSyncBtn" onclick="triggerForceSync()" style="background: transparent; border: 1px solid #ff00ff; color: #ff00ff; padding: 8px 16px; cursor: pointer; text-transform: uppercase; font-family: monospace; letter-spacing: 2px;">
+                > Force Sync_
+            </button>
+        </div>
+        
+        <div class="last-update" id="lastUpdate">Last Updated: Loading...</div>
+
+        <div class="servers-grid" id="serversGrid">
+            <!-- 卡片由JS动态生成 -->
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // ---------------- MAP LOGIC ----------------
+        // 初始化地图，居中于太平洋
+        const map = L.map('clusterMap').setView([25, 160], 2); // 缩放级别2适合约480px的高宽
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OSM &copy; CARTO',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        const mapMarkers = {};
+        const usedCoords = new Set();
+        
+        const LOCATIONS = {
+            "home.liukun.com": [31.2222, 121.4581], // Shanghai
+            "hk.liukun.com": [22.2783, 114.1747],   // Hong Kong
+            "hk1.liukun.com": [22.2783, 114.1747],  // Hong Kong 1
+            "sg.liukun.com": [1.2897, 103.8501],    // Singapore
+            "us.liukun.com": [37.3541, 238.0448],   // San Jose (+360)
+            "b.liukun.com": [23.1167, 113.2500],    // Guangzhou
+            "ubuntu.syhsgis.com": [31.2222, 121.4581], 
+            "frp.syhsgis.com": [31.2222, 121.4581]     
+        };
+
+        const IPS = {
+            "home.liukun.com": "47.103.55.200",
+            "hk.liukun.com": "43.99.114.251",
+            "hk1.liukun.com": "43.161.246.240",
+            "sg.liukun.com": "43.160.228.133",
+            "us.liukun.com": "43.162.116.214",
+            "b.liukun.com": "106.55.179.216",
+            "ubuntu.syhsgis.com": "47.103.55.200", 
+            "frp.syhsgis.com": "47.103.55.200"
+        };
+
+        async function getMapCoordinates(server) {
+            let coords = LOCATIONS[server] || [39.9, 116.4];
+            let ip = IPS[server] || 'Unknown IP';
+            let coordsKey = coords[0].toFixed(2) + ',' + coords[1].toFixed(2);
+            if (usedCoords.has(coordsKey)) {
+                coords = [
+                    coords[0] + (Math.random() - 0.5) * 1.5,
+                    coords[1] + (Math.random() - 0.5) * 1.5
+                ];
+            } else {
+                usedCoords.add(coordsKey);
+            }
+            return { coords, ip };
+        }
+
+        function updateMapMarker(server, stats, geo) {
+            const isOnline = stats.status === 'Online';
+            const innerClass = isOnline ? 'inner-online' : 'inner-offline';
+            const innerElementHtml = `<div class="pulse-inner ${innerClass}"></div>`;
+
+            const popupHtml = `
+                <div class="popup-title">${server}</div>
+                <div class="popup-stat">IP: <span style="color:#ff00ff">${geo.ip}</span></div>
+                <div class="popup-stat">Status: <span style="color: ${isOnline ? '#00ff41' : '#ff0000'}">${stats.status}</span></div>
+                ${isOnline ? `
+                <div class="popup-stat">Ping: <span>${stats.ping_ms || 0} ms</span></div>
+                <div class="popup-stat">CPU: <span>${stats.cpu_usage || 0}%</span></div>
+                <div class="popup-stat">Mem: <span>${stats.mem_usage || 0}%</span></div>
+                ` : `<div class="popup-stat" style="color: #ff0000; text-transform:none;">${stats.error || 'Server is Unreachable'}</div>`}
+            `;
+
+            if (mapMarkers[server]) {
+                mapMarkers[server].setPopupContent(popupHtml);
+                const icon = L.divIcon({
+                    className: 'pulse-marker',
+                    html: innerElementHtml,
+                    iconSize: [14, 14],
+                    iconAnchor: [7, 7],
+                    popupAnchor: [0, -10]
+                });
+                mapMarkers[server].setIcon(icon);
+            } else {
+                const icon = L.divIcon({
+                    className: 'pulse-marker',
+                    html: innerElementHtml,
+                    iconSize: [14, 14],
+                    iconAnchor: [7, 7],
+                    popupAnchor: [0, -10]
+                });
+                mapMarkers[server] = L.marker(geo.coords, { icon: icon }).addTo(map)
+                    .bindPopup(popupHtml, { minWidth: 200, maxWidth: 300 });
+            }
+        }
+        // -------------------------------------------
+
+        const SERVERS = [
+            "home.liukun.com", 
+            "hk.liukun.com", 
+            "hk1.liukun.com", 
+            "sg.liukun.com", 
+            "us.liukun.com", 
+            "b.liukun.com",
+            "ubuntu.syhsgis.com", 
+            "frp.syhsgis.com"
+        ];
+        
+        const API_URL = '/api/servers_cache.json';
+
+        function createServerCards() {
+            const grid = document.getElementById('serversGrid');
+            grid.innerHTML = '';
+            
+            SERVERS.forEach(server => {
+                const card = document.createElement('div');
+                card.className = 'server-card';
+                card.id = `card-${server}`;
+
+                let osIcon = "🐧"; 
+                if (server.includes('ubuntu')) osIcon = "🟧"; // Ubuntu color block
+                
+                let flag = "🇨🇳"; // Default China
+                if (server.includes('hk')) flag = "🇭🇰";
+                else if (server.includes('sg')) flag = "🇸🇬";
+                else if (server.includes('us')) flag = "🇺🇸";
+
+                const displayName = server === 'ubuntu.syhsgis.com' ? 'ubt.syhsgis.com' : server;
+
+                card.innerHTML = `
+                    <button class="single-sync-btn" id="syncbtn-${server}" onclick="triggerSingleSync('${server}')" title="Force Sync">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 1 0 2.81-6.52L21 8"/></svg>
+                    </button>
+                    <div class="server-header">
+                        <div class="server-title">
+                            <div class="server-name-row">${osIcon} ${displayName} ${flag}</div>
+                            <div id="info-${server}" style="font-size: 0.75rem; color: #00ffff; font-weight: normal; font-family: monospace;"></div>
+                        </div>
+                        <div class="status-container">
+                            <span class="status-indicator status-loading" id="ind-${server}" title="Waiting"></span>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">CPU</div>
+                            <div class="stat-value" id="cpu-${server}">--%</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Memory</div>
+                            <div class="stat-value" id="mem-${server}">--%</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Disk</div>
+                            <div class="stat-value" id="disk-${server}">--%</div>
+                        </div>
+                    </div>
+                    <div class="error-message" id="err-${server}"></div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        async function fetchServersData() {
+            try {
+                const response = await fetch(`${API_URL}?t=${new Date().getTime()}`);
+                if (!response.ok) throw new Error('Failed to fetch cache data');
+                const data = await response.json();
+                
+                document.getElementById('lastUpdate').textContent = `Last Updated: ${data.datetime || new Date().toLocaleString()}`;
+                
+                if (data.servers) {
+                    Object.keys(data.servers).forEach(async server => {
+                        const sData = data.servers[server];
+                        // 更新卡片
+                        updateCard(server, sData);
+                        
+                        // 同步更新地图节点
+                        const geo = await getMapCoordinates(server);
+                        updateMapMarker(server, sData, geo);
+                    });
+                }
+                
+                if (!window.initialSyncTriggered && data.last_update) {
+                    window.initialSyncTriggered = true;
+                    const now = new Date().getTime() / 1000;
+                    if (now - data.last_update > 20) {
+                        triggerForceSync(true); 
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching server stats:', error);
+                document.getElementById('lastUpdate').textContent = 'Backend Error: Please check Python daemon script logs.';
+            }
+        }
+
+        async function triggerForceSync(isSilent = false) {
+            const btn = document.getElementById('forceSyncBtn');
+            if (!isSilent) {
+                btn.textContent = "> Syncing...";
+                btn.style.color = "#ffff00";
+                btn.style.borderColor = "#ffff00";
+            }
+            
+            try {
+                await fetch('/api/force_sync.php?server=ALL');
+                setTimeout(() => {
+                    fetchServersData();
+                    if (!isSilent) {
+                        btn.textContent = "> Force Sync_";
+                        btn.style.color = "#ff00ff";
+                        btn.style.borderColor = "#ff00ff";
+                    }
+                }, 2500);
+            } catch (e) {
+                console.error("Force sync failed: ", e);
+                if (!isSilent) btn.textContent = "> Sync Error";
+            }
+        }
+
+        async function triggerSingleSync(server) {
+            const btn = document.getElementById(`syncbtn-${server}`);
+            btn.classList.add('spinning');
+            btn.style.borderColor = "#ffff00";
+            btn.style.color = "#ffff00";
+            btn.style.opacity = "1";
+            
+            try {
+                await fetch(`/api/force_sync.php?server=${server}`);
+                setTimeout(() => {
+                    fetchServersData();
+                    btn.classList.remove('spinning');
+                    btn.style.borderColor = "";
+                    btn.style.color = "";
+                    btn.style.opacity = "";
+                }, 2500);
+            } catch (e) {
+                console.error("Single sync failed: ", e);
+                btn.classList.remove('spinning');
+                btn.style.borderColor = "#ff0000";
+                btn.style.color = "#ff0000";
+            }
+        }
+
+        // 格式化运行时间 xx Day HH:MM:SS
+        function formatUptime(seconds) {
+            if (!seconds) return '';
+            const d = Math.floor(seconds / 86400);
+            const h = Math.floor((seconds % 86400) / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = Math.floor(seconds % 60);
+            
+            const pad = (num) => num.toString().padStart(2, '0');
+            return `${pad(d)} Day ${pad(h)}:${pad(m)}:${pad(s)}`;
+        }
+
+        function updateCard(server, data) {
+            const ind = document.getElementById(`ind-${server}`);
+            const info = document.getElementById(`info-${server}`);
+            const err = document.getElementById(`err-${server}`);
+            
+            if (!ind) return;
+
+            let infoText = "";
+            if (data.ping_ms !== undefined && data.ping_ms !== null) {
+                infoText += `${data.ping_ms}ms`;
+            }
+            if (data.uptime_secs) {
+                if (infoText) infoText += " | ";
+                infoText += `UP: ${formatUptime(data.uptime_secs)}`;
+            } else if (data.uptime_days !== undefined && data.uptime_days !== null) {
+                if (infoText) infoText += " | ";
+                infoText += `UP: ${data.uptime_days}d`;
+            }
+            if (info) info.textContent = infoText;
+
+            if (data.status === 'Online') {
+                ind.className = 'status-indicator status-online';
+                ind.title = 'Online';
+                err.style.display = 'none';
+
+                document.getElementById(`cpu-${server}`).textContent = `${data.cpu_usage || 0}%`;
+                document.getElementById(`mem-${server}`).textContent = `${data.mem_usage || 0}%`;
+                document.getElementById(`disk-${server}`).textContent = `${data.disk_usage || 0}%`;
+            } else {
+                ind.className = 'status-indicator status-offline';
+                ind.title = 'Offline';
+                if (data.error) {
+                    err.textContent = `Error: ${data.error}`;
+                    err.style.display = 'block';
+                }
+                
+                document.getElementById(`cpu-${server}`).textContent = '--%';
+                document.getElementById(`mem-${server}`).textContent = '--%';
+                document.getElementById(`disk-${server}`).textContent = '--%';
+            }
+        }
+
+        // 初始化
+        createServerCards();
+        fetchServersData();
+        
+        // 由于是缓存页面，前端轮询意义取决于Python脚本频率，我们设为10秒刷新前端即可
+        setInterval(fetchServersData, 10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3x-ui Control Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="海外服务器 3x-ui 面板统一管理 Dashboard">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="style.css?v=15">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <!-- 登录门禁 -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <h2>🔐 ACCESS CONTROL</h2>
+            <input type="text" id="loginUser" placeholder="USERNAME" autocomplete="username">
+            <input type="password" id="loginPass" placeholder="PASSWORD" autocomplete="current-password">
+            <button onclick="doLogin()">AUTHENTICATE</button>
+            <p class="login-err" id="loginErr"></p>
+        </div>
+    </div>
+    <!-- 主界面 -->
+    <header>
+        <div class="header-left">
+            <a href="/projects.html" class="back-btn">← PROJECTS</a>
+            <h1>3x-ui <span class="accent">Control Center</span></h1>
+        </div>
+        <div class="header-right">
+            <span class="last-update" id="lastUpdate">--</span>
+            <button class="btn-cyber btn-sub" id="btnSub" onclick="showSubLink()" title="复制 Clash 订阅链接">📋 订阅</button>
+            <button class="btn-cyber btn-speed" id="btnSpeedTest" onclick="toggleSpeedPanel()" title="网络测速">⚡ 测速</button>
+            <button class="btn-cyber" id="btnRefresh" onclick="loadAllData()">⟳ REFRESH</button>
+            <label class="auto-refresh">
+                <input type="checkbox" id="autoRefresh" checked> AUTO 30s
+            </label>
+        </div>
+    </header>
+    <main>
+        <section class="detail-panel">
+            <div class="tab-bar" id="tabBar">
+                <button class="tab active" data-server="all" onclick="switchTab('all')">ALL</button>
+                <button class="tab" data-server="hk" onclick="switchTab('hk')">🇭🇰 HK</button>
+                <button class="tab" data-server="hk1" onclick="switchTab('hk1')">🇭🇰 HK1</button>
+                <button class="tab" data-server="sg" onclick="switchTab('sg')">🇸🇬 SG</button>
+                <button class="tab" data-server="us" onclick="switchTab('us')">🇺🇸 US</button>
+            </div>
+            <div id="tableContainer" class="grid-mode"></div>
+        </section>
+
+        <!-- 测速面板 -->
+        <section class="speed-panel" id="speedPanel">
+            <div class="speed-panel-header">
+                <div class="speed-title-group">
+                    <h2 class="speed-title">⚡ NETWORK SPEED TEST</h2>
+                    <p class="speed-subtitle">逐一测量各节点上下行带宽 · Powered by OpenSpeedTest™</p>
+                </div>
+                <div class="speed-controls">
+                    <button class="btn-cyber btn-start-all" id="btnStartAll" onclick="startSequentialTest()">▶ 开始全部测速</button>
+                    <button class="btn-cyber btn-close-speed" onclick="toggleSpeedPanel()">✕ 关闭</button>
+                </div>
+            </div>
+
+            <!-- 测速进度条 -->
+            <div class="speed-progress-bar" id="speedProgressBar">
+                <div class="speed-progress-inner" id="speedProgressInner"></div>
+                <span class="speed-progress-text" id="speedProgressText">就绪</span>
+            </div>
+
+            <!-- 服务器测速队列 -->
+            <div class="speed-queue" id="speedQueue"></div>
+
+            <!-- iframe 测速区域 -->
+            <div class="speed-iframe-container" id="speedIframeContainer">
+                <div class="speed-iframe-placeholder" id="speedIframePlaceholder">
+                    <div class="placeholder-icon">🚀</div>
+                    <p>点击「开始全部测速」自动测量各节点上下行带宽</p>
+                </div>
+            </div>
+
+            <!-- 结果可视化 -->
+            <div class="speed-results" id="speedResults">
+                <h3 class="results-title">📊 测速结果总览</h3>
+                <div class="results-chart" id="resultsChart"></div>
+            </div>
+        </section>
+    </main>
+    <script src="app.js?v=19"> </script>
+</body>
+</html>
