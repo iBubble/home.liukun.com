@@ -1,136 +1,37 @@
 {
   "excellent": [
     {
-      "id": "p_1777130635809_16_sb7tz",
-      "name": "🇯🇵 机场推荐:dafei.de 日本 02",
-      "type": "hysteria2",
-      "server": "vpn-jp-003.fastervpn.world",
-      "port": 443,
-      "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-      "sni": "vpn-jp-003.fastervpn.world",
+      "id": "p_1776612159611_7_up2qn",
+      "name": "香港 电讯盈科有限公司",
+      "type": "vmess",
+      "server": "vm51544542.dns8656815.com",
+      "port": 7754,
+      "uuid": "7cd96dbe-ecec-4937-9e05-87ab70af2f30",
+      "alterId": 0,
+      "cipher": "auto",
+      "network": "tcp",
+      "tls": false,
       "skip-cert-verify": true,
-      "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-003.fastervpn.world:443?insecure=1&sni=vpn-jp-003.fastervpn.world#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2002",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇯🇵 机场推荐:dafei.de 日本 02_2",
-      "latency": 374,
+      "servername": "vm51544542.dns8656815.com",
+      "raw": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU5OTk5XHU2ZTJmIFx1NzUzNVx1OGJhZlx1NzZjOFx1NzlkMVx1NjcwOVx1OTY1MFx1NTE2Y1x1NTNmOCIsICJhZGQiOiAidm01MTU0NDU0Mi5kbnM4NjU2ODE1LmNvbSIsICJwb3J0IjogIjc3NTQiLCAidHlwZSI6ICJub25lIiwgImlkIjogIjdjZDk2ZGJlLWVjZWMtNDkzNy05ZTA1LTg3YWI3MGFmMmYzMCIsICJhaWQiOiAiMCIsICJuZXQiOiAidGNwIiwgInBhdGgiOiAiLyIsICJob3N0IjogInZtNTE1NDQ1NDIuZG5zODY1NjgxNS5jb20iLCAidGxzIjogIiJ9",
+      "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+      "_clashName": "香港 电讯盈科有限公司",
+      "latency": 823,
       "purityScore": 100,
       "purityInfo": {
         "score": 100,
-        "ip": "202.98.76.12",
+        "ip": "116.54.76.11",
         "isp": "Chinanet",
         "country": "CN",
         "hosting": false
       },
-      "localLatency": -1,
+      "localLatency": 987,
       "quality": "excellent",
-      "avgLatency": 245,
-      "testedAt": "2026-04-25T19:05:33.074Z",
+      "avgLatency": 184,
+      "testedAt": "2026-04-25T20:11:37.525Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "57.181.37.144"
-      },
-      "failureCount": 2
-    },
-    {
-      "name": "Free v_3",
-      "type": "vless",
-      "server": "mfa.gov.ua",
-      "port": 443,
-      "tfo": true,
-      "skip-cert-verify": true,
-      "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9",
-      "network": "ws",
-      "tls": true,
-      "servername": "2-1ng.pages.dev",
-      "ws-opts": {
-        "path": "/",
-        "headers": {
-          "Host": "2-1ng.pages.dev"
-        }
-      },
-      "id": "p_1775909496106_113_bwx1c",
-      "forumSource": "sg_server",
-      "_clashName": "Free v_3",
-      "latency": 449,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 364,
-      "quality": "excellent",
-      "avgLatency": 390,
-      "testedAt": "2026-04-25T19:05:40.397Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "168.138.165.174"
-      },
-      "failureCount": 1
-    },
-    {
-      "id": "p_1777130635809_18_cmvfc",
-      "name": "🇯🇵 机场推荐:dafei.de 日本 04",
-      "type": "hysteria2",
-      "server": "vpn-jp-004.fastervpn.world",
-      "port": 443,
-      "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-      "sni": "vpn-jp-004.fastervpn.world",
-      "skip-cert-verify": true,
-      "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-004.fastervpn.world:443?insecure=1&sni=vpn-jp-004.fastervpn.world#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2004",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇯🇵 机场推荐:dafei.de 日本 04",
-      "latency": 443,
-      "purityScore": 100,
-      "purityInfo": {
-        "score": 100,
-        "ip": "202.98.76.12",
-        "isp": "Chinanet",
-        "country": "CN",
-        "hosting": false
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 259,
-      "testedAt": "2026-04-25T19:05:51.550Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "18.182.42.44"
-      },
-      "failureCount": 2
-    },
-    {
-      "name": "请开启分片功能否则节点可能不通！",
-      "type": "vless",
-      "server": "openai.com",
-      "port": 443,
-      "tfo": true,
-      "skip-cert-verify": true,
-      "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9",
-      "network": "ws",
-      "tls": true,
-      "servername": "3-7gj.pages.dev",
-      "ws-opts": {
-        "path": "/",
-        "headers": {
-          "Host": "3-7gj.pages.dev"
-        }
-      },
-      "id": "p_1775909496106_107_ok7yz",
-      "forumSource": "sg_server",
-      "_clashName": "请开启分片功能否则节点可能不通！",
-      "latency": 467,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 536,
-      "quality": "excellent",
-      "avgLatency": 309,
-      "testedAt": "2026-04-25T19:05:58.761Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "168.138.165.174"
+        "real_ip": "188.253.126.204"
       },
       "failureCount": 1
     },
@@ -160,34 +61,30 @@
       },
       "localLatency": 344,
       "quality": "excellent",
-      "avgLatency": 188,
-      "testedAt": "2026-04-25T19:06:05.602Z",
+      "avgLatency": 189,
+      "testedAt": "2026-04-25T20:11:51.246Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "188.253.126.204"
       }
     },
     {
-      "name": "Free v_4",
-      "type": "vless",
-      "server": "tajikistan.mfa.gov.ua",
-      "port": 443,
-      "tfo": true,
+      "id": "p_1776612159611_2_ygn2o",
+      "name": "香港 电讯盈科有限公司",
+      "type": "vmess",
+      "server": "efan.dnsefan04881.com",
+      "port": 7754,
+      "uuid": "009e558d-3cf4-49d8-b5e4-82c9e14fe1a4",
+      "alterId": 0,
+      "cipher": "auto",
+      "network": "tcp",
+      "tls": false,
       "skip-cert-verify": true,
-      "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9",
-      "network": "ws",
-      "tls": true,
-      "servername": "3-2h8.pages.dev",
-      "ws-opts": {
-        "path": "/",
-        "headers": {
-          "Host": "3-2h8.pages.dev"
-        }
-      },
-      "id": "p_1776028207376_498_fuj0i",
-      "forumSource": "hk_server",
-      "_clashName": "Free v_4",
-      "latency": 548,
+      "servername": "",
+      "raw": "vmess://eyJhZGQiOiAiZWZhbi5kbnNlZmFuMDQ4ODEuY29tIiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogIiIsICJpZCI6ICIwMDllNTU4ZC0zY2Y0LTQ5ZDgtYjVlNC04MmM5ZTE0ZmUxYTQiLCAibmV0IjogInRjcCIsICJwYXRoIjogIiIsICJwb3J0IjogIjc3NTQiLCAicHMiOiAiXHU5OTk5XHU2ZTJmIFx1NzUzNVx1OGJhZlx1NzZjOFx1NzlkMVx1NjcwOVx1OTY1MFx1NTE2Y1x1NTNmOCIsICJzY3kiOiAiYXV0byIsICJzbmkiOiAiIiwgInRscyI6ICIiLCAidHlwZSI6ICJub25lIiwgInYiOiAiMiIsICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZX0=",
+      "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+      "_clashName": "香港 电讯盈科有限公司_1",
+      "latency": 897,
       "purityScore": 100,
       "purityInfo": {
         "score": 100,
@@ -196,13 +93,13 @@
         "country": "CN",
         "hosting": false
       },
-      "localLatency": 568,
+      "localLatency": 831,
       "quality": "excellent",
-      "avgLatency": 379,
-      "testedAt": "2026-04-25T19:06:12.877Z",
+      "avgLatency": 198,
+      "testedAt": "2026-04-25T20:11:44.391Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "168.138.165.174"
+        "real_ip": "188.253.126.204"
       },
       "failureCount": 1
     },
@@ -237,171 +134,44 @@
       },
       "localLatency": 501,
       "quality": "excellent",
-      "avgLatency": 245,
-      "testedAt": "2026-04-25T19:06:19.884Z",
+      "avgLatency": 309,
+      "testedAt": "2026-04-25T20:13:11.123Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "45.32.122.212"
+        "real_ip": "108.171.108.67"
       },
       "failureCount": 1
     },
     {
-      "id": "p_1776741707551_10_q1xan",
-      "name": "英国 V2CROSS.COM",
-      "type": "vmess",
-      "server": "82.198.246.214",
-      "port": 180,
-      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-      "alterId": 0,
-      "cipher": "auto",
-      "network": "tcp",
-      "tls": false,
+      "id": "p_1777130635809_18_cmvfc",
+      "name": "🇯🇵 机场推荐:dafei.de 日本 04",
+      "type": "hysteria2",
+      "server": "vpn-jp-004.fastervpn.world",
+      "port": 443,
+      "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
+      "sni": "vpn-jp-004.fastervpn.world",
       "skip-cert-verify": true,
-      "raw": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU4MmYxXHU1NmZkIFYyQ1JPU1MuQ09NIiwgImFkZCI6ICI4Mi4xOTguMjQ2LjIxNCIsICJwb3J0IjogIjE4MCIsICJpZCI6ICJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJ0bHMiOiAiIiwgInNraXAtY2VydC12ZXJpZnkiOiB0cnVlfQ==",
-      "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-      "_clashName": "英国 V2CROSS.COM_1",
-      "latency": 388,
+      "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-004.fastervpn.world:443?insecure=1&sni=vpn-jp-004.fastervpn.world#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2004",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇯🇵 机场推荐:dafei.de 日本 04",
+      "latency": 443,
       "purityScore": 100,
       "purityInfo": {
         "score": 100,
-        "ip": "116.54.76.11",
+        "ip": "202.98.76.12",
         "isp": "Chinanet",
         "country": "CN",
         "hosting": false
       },
-      "localLatency": 381,
+      "localLatency": -1,
       "quality": "excellent",
-      "avgLatency": 382,
-      "testedAt": "2026-04-25T19:06:27.049Z",
+      "avgLatency": 315,
+      "testedAt": "2026-04-25T20:12:12.852Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "149.34.251.248"
+        "real_ip": "52.195.234.23"
       },
-      "failureCount": 1
-    },
-    {
-      "name": "🇺🇸_US_美国_1",
-      "type": "vmess",
-      "server": "82.198.246.250",
-      "port": 180,
-      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-      "alterId": 0,
-      "cipher": "auto",
-      "tls": false,
-      "skip-cert-verify": false,
-      "id": "p_1777087457251_13_amfgi",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
-      "_clashName": "🇺🇸_US_美国_1_1",
-      "latency": 386,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 1429,
-      "quality": "excellent",
-      "avgLatency": 386,
-      "testedAt": "2026-04-25T19:06:34.239Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "149.34.251.250"
-      },
-      "failureCount": 1
-    },
-    {
-      "id": "p_1776698546768_69_r8b2a",
-      "name": "🇺🇸 机场推荐:dafei.de 美国 02",
-      "type": "vmess",
-      "server": "82.198.246.37",
-      "port": 180,
-      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-      "alterId": 0,
-      "cipher": "auto",
-      "network": "tcp",
-      "tls": false,
-      "skip-cert-verify": true,
-      "raw": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HuvCfh7gg5py65Zy65o6o6I2QOmRhZmVpLmRlIOe+juWbvSAwMiIsImFkZCI6IjgyLjE5OC4yNDYuMzciLCJwb3J0IjoiMTgwIiwiaWQiOiJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCJhaWQiOiIwIiwic2N5IjoiYWVzLTEyOC1nY20iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIiwiZnAiOiJjaHJvbWUifQ==",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 02",
-      "latency": 1394,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 389,
-      "quality": "excellent",
-      "avgLatency": 381,
-      "testedAt": "2026-04-25T19:06:41.409Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "149.34.251.249"
-      },
-      "failureCount": 1
-    },
-    {
-      "id": "p_1776979342672_71_n0wwu",
-      "name": "🇺🇸 机场推荐:dafei.de 美国 03",
-      "type": "vmess",
-      "server": "82.198.246.214",
-      "port": 180,
-      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-      "alterId": 0,
-      "cipher": "auto",
-      "network": "tcp",
-      "tls": false,
-      "skip-cert-verify": true,
-      "raw": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HuvCfh7gg5py65Zy65o6o6I2QOmRhZmVpLmRlIOe+juWbvSAwMyIsImFkZCI6IjgyLjE5OC4yNDYuMjE0IiwicG9ydCI6IjE4MCIsImlkIjoiZDEzZmMyZjUtM2UwNS00Nzk1LTgxZWItNDQxNDNhMDllNTUyIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIiwiZnAiOiJjaHJvbWUifQ==",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 03_1",
-      "latency": 383,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 387,
-      "quality": "excellent",
-      "avgLatency": 382,
-      "testedAt": "2026-04-25T19:06:48.584Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "149.34.251.248"
-      },
-      "failureCount": 1
-    },
-    {
-      "id": "p_1776698546768_68_6m0db",
-      "name": "🇺🇸 机场推荐:dafei.de 美国 01",
-      "type": "vmess",
-      "server": "82.198.246.9",
-      "port": 180,
-      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
-      "alterId": 0,
-      "cipher": "auto",
-      "network": "tcp",
-      "tls": false,
-      "skip-cert-verify": true,
-      "raw": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HuvCfh7gg5py65Zy65o6o6I2QOmRhZmVpLmRlIOe+juWbvSAwMSIsImFkZCI6IjgyLjE5OC4yNDYuOSIsInBvcnQiOiIxODAiLCJpZCI6ImQxM2ZjMmY1LTNlMDUtNDc5NS04MWViLTQ0MTQzYTA5ZTU1MiIsImFpZCI6IjAiLCJzY3kiOiJhZXMtMTI4LWdjbSIsIm5ldCI6InRjcCIsInR5cGUiOiIiLCJ0bHMiOiIiLCJmcCI6ImNocm9tZSJ9",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 01",
-      "latency": 397,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 413,
-      "quality": "excellent",
-      "avgLatency": 396,
-      "testedAt": "2026-04-25T19:06:55.767Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "149.34.251.247"
-      },
-      "failureCount": 1
+      "failureCount": 2
     },
     {
       "name": "KR_speednode_0012",
@@ -434,358 +204,84 @@
       },
       "localLatency": -1,
       "quality": "excellent",
-      "avgLatency": 444,
-      "testedAt": "2026-04-25T19:07:04.008Z",
+      "avgLatency": 318,
+      "testedAt": "2026-04-25T20:12:06.034Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "164.52.1.182"
       }
     },
     {
-      "name": "🇻🇳_VN_越南_2",
-      "type": "ss",
-      "server": "103.186.154.58",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087459745_12_zcdu0",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-c605c3b6.yaml",
-      "_clashName": "🇻🇳_VN_越南_2",
-      "latency": 768,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 498,
-      "testedAt": "2026-04-25T19:07:11.621Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.154.58"
-      }
-    },
-    {
-      "id": "p_1777087379268_134_o1li6",
-      "name": "🇻🇳 机场推荐:dafei.de 越南 04",
-      "type": "ss",
-      "server": "103.186.155.213",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.213:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2004",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 04",
-      "latency": 798,
-      "purityScore": 100,
-      "purityInfo": {
-        "score": 100,
-        "ip": "116.54.76.11",
-        "isp": "Chinanet",
-        "country": "CN",
-        "hosting": false
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 488,
-      "testedAt": "2026-04-25T19:07:19.355Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.155.213"
-      }
-    },
-    {
-      "name": "🇻🇳_VN_越南_8",
-      "type": "ss",
-      "server": "103.186.155.48",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087457251_10_ani8j",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
-      "_clashName": "🇻🇳_VN_越南_8",
-      "latency": 848,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 514,
-      "testedAt": "2026-04-25T19:07:27.086Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.155.48"
-      }
-    },
-    {
-      "name": "🇻🇳_VN_越南_1",
-      "type": "ss",
-      "server": "103.186.154.191",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087459745_6_mideu",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-c605c3b6.yaml",
-      "_clashName": "🇻🇳_VN_越南_1",
-      "latency": 794,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 460,
-      "testedAt": "2026-04-25T19:07:34.758Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.154.191"
-      }
-    },
-    {
-      "name": "🇻🇳_VN_越南_14",
-      "type": "ss",
-      "server": "103.186.155.65",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087457251_21_tjemq",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
-      "_clashName": "🇻🇳_VN_越南_14",
-      "latency": 880,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 509,
-      "testedAt": "2026-04-25T19:07:48.458Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.155.65"
-      }
-    },
-    {
-      "name": "🇻🇳_VN_越南_1",
-      "type": "ss",
-      "server": "103.186.154.155",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087454418_17_5na7w",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
-      "_clashName": "🇻🇳_VN_越南_1_1",
-      "latency": 890,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 541,
-      "testedAt": "2026-04-25T19:08:05.206Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.154.139"
-      },
-      "failureCount": 1
-    },
-    {
-      "name": "🇰🇷_KR_韩国",
-      "type": "hysteria2",
-      "server": "vpn-kr-001.fastervpn.world",
+      "name": "Free v_3",
+      "type": "vless",
+      "server": "mfa.gov.ua",
       "port": 443,
-      "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-      "sni": "vpn-kr-001.fastervpn.world",
+      "tfo": true,
       "skip-cert-verify": true,
-      "id": "p_1777109000211_16_eywki",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
-      "_clashName": "🇰🇷_KR_韩国",
-      "latency": 618,
-      "purityScore": 100,
-      "purityInfo": {
-        "score": 100,
-        "ip": "202.98.76.12",
-        "isp": "Chinanet",
-        "country": "CN",
-        "hosting": false
+      "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9",
+      "network": "ws",
+      "tls": true,
+      "servername": "2-1ng.pages.dev",
+      "ws-opts": {
+        "path": "/",
+        "headers": {
+          "Host": "2-1ng.pages.dev"
+        }
       },
-      "localLatency": 568,
+      "id": "p_1775909496106_113_bwx1c",
+      "forumSource": "sg_server",
+      "_clashName": "Free v_3",
+      "latency": 449,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 364,
       "quality": "excellent",
-      "avgLatency": 474,
-      "testedAt": "2026-04-25T19:08:12.313Z",
+      "avgLatency": 321,
+      "testedAt": "2026-04-25T20:11:58.486Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "43.201.17.111"
+        "real_ip": "168.138.165.174"
       },
       "failureCount": 1
     },
     {
-      "id": "p_1776612159611_7_up2qn",
-      "name": "香港 电讯盈科有限公司",
-      "type": "vmess",
-      "server": "vm51544542.dns8656815.com",
-      "port": 7754,
-      "uuid": "7cd96dbe-ecec-4937-9e05-87ab70af2f30",
-      "alterId": 0,
-      "cipher": "auto",
-      "network": "tcp",
-      "tls": false,
+      "name": "请开启分片功能否则节点可能不通！",
+      "type": "vless",
+      "server": "openai.com",
+      "port": 443,
+      "tfo": true,
       "skip-cert-verify": true,
-      "servername": "vm51544542.dns8656815.com",
-      "raw": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU5OTk5XHU2ZTJmIFx1NzUzNVx1OGJhZlx1NzZjOFx1NzlkMVx1NjcwOVx1OTY1MFx1NTE2Y1x1NTNmOCIsICJhZGQiOiAidm01MTU0NDU0Mi5kbnM4NjU2ODE1LmNvbSIsICJwb3J0IjogIjc3NTQiLCAidHlwZSI6ICJub25lIiwgImlkIjogIjdjZDk2ZGJlLWVjZWMtNDkzNy05ZTA1LTg3YWI3MGFmMmYzMCIsICJhaWQiOiAiMCIsICJuZXQiOiAidGNwIiwgInBhdGgiOiAiLyIsICJob3N0IjogInZtNTE1NDQ1NDIuZG5zODY1NjgxNS5jb20iLCAidGxzIjogIiJ9",
-      "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-      "_clashName": "香港 电讯盈科有限公司",
-      "latency": 823,
-      "purityScore": 100,
-      "purityInfo": {
-        "score": 100,
-        "ip": "116.54.76.11",
-        "isp": "Chinanet",
-        "country": "CN",
-        "hosting": false
+      "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9",
+      "network": "ws",
+      "tls": true,
+      "servername": "3-7gj.pages.dev",
+      "ws-opts": {
+        "path": "/",
+        "headers": {
+          "Host": "3-7gj.pages.dev"
+        }
       },
-      "localLatency": 987,
+      "id": "p_1775909496106_107_ok7yz",
+      "forumSource": "sg_server",
+      "_clashName": "请开启分片功能否则节点可能不通！",
+      "latency": 467,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 536,
       "quality": "excellent",
-      "avgLatency": 206,
-      "testedAt": "2026-04-25T19:08:45.735Z",
+      "avgLatency": 331,
+      "testedAt": "2026-04-25T20:12:20.227Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "188.253.126.204"
+        "real_ip": "168.138.165.174"
       },
       "failureCount": 1
-    },
-    {
-      "id": "p_1777087379268_136_5ueoz",
-      "name": "🇻🇳 机场推荐:dafei.de 越南 06",
-      "type": "ss",
-      "server": "103.186.155.215",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.215:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2006",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 06",
-      "latency": 802,
-      "purityScore": 100,
-      "purityInfo": {
-        "score": 100,
-        "ip": "116.54.76.11",
-        "isp": "Chinanet",
-        "country": "CN",
-        "hosting": false
-      },
-      "localLatency": 823,
-      "quality": "excellent",
-      "avgLatency": 442,
-      "testedAt": "2026-04-25T19:08:53.370Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.155.215"
-      }
-    },
-    {
-      "name": "🇻🇳_VN_越南_2",
-      "type": "ss",
-      "server": "103.186.155.222",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087454418_20_lltiy",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
-      "_clashName": "🇻🇳_VN_越南_2_1",
-      "latency": 781,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 509,
-      "testedAt": "2026-04-25T19:09:01.044Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.155.222"
-      }
-    },
-    {
-      "name": "🇻🇳_VN_越南_2",
-      "type": "ss",
-      "server": "103.186.155.54",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087457251_2_a1xnn",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
-      "_clashName": "🇻🇳_VN_越南_2_2",
-      "latency": 940,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": -1,
-      "quality": "excellent",
-      "avgLatency": 498,
-      "testedAt": "2026-04-25T19:09:12.194Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "103.186.154.58"
-      },
-      "failureCount": 1
-    },
-    {
-      "name": "🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰",
-      "type": "vmess",
-      "server": "v30.hdacd.com",
-      "port": 30830,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
-      "alterId": 0,
-      "cipher": "auto",
-      "tls": false,
-      "skip-cert-verify": false,
-      "id": "p_1777130728621_7_gcq17",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
-      "_clashName": "🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰",
-      "latency": 700,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 713,
-      "quality": "excellent",
-      "avgLatency": 709,
-      "testedAt": "2026-04-25T19:09:19.982Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "206.189.0.236"
-      }
     },
     {
       "name": "A - 🇸🇬 SG 01 TG: @nodpai",
@@ -818,30 +314,91 @@
       },
       "localLatency": -1,
       "quality": "excellent",
-      "avgLatency": 671,
-      "testedAt": "2026-04-25T19:09:39.147Z",
+      "avgLatency": 356,
+      "testedAt": "2026-04-25T20:12:49.332Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "164.52.1.179"
       }
     },
     {
-      "id": "p_1776612159611_2_ygn2o",
-      "name": "香港 电讯盈科有限公司",
+      "id": "p_1776979342672_71_n0wwu",
+      "name": "🇺🇸 机场推荐:dafei.de 美国 03",
       "type": "vmess",
-      "server": "efan.dnsefan04881.com",
-      "port": 7754,
-      "uuid": "009e558d-3cf4-49d8-b5e4-82c9e14fe1a4",
+      "server": "82.198.246.214",
+      "port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
       "alterId": 0,
       "cipher": "auto",
       "network": "tcp",
       "tls": false,
       "skip-cert-verify": true,
-      "servername": "",
-      "raw": "vmess://eyJhZGQiOiAiZWZhbi5kbnNlZmFuMDQ4ODEuY29tIiwgImFpZCI6ICIwIiwgImFscG4iOiAiIiwgImZwIjogIiIsICJob3N0IjogIiIsICJpZCI6ICIwMDllNTU4ZC0zY2Y0LTQ5ZDgtYjVlNC04MmM5ZTE0ZmUxYTQiLCAibmV0IjogInRjcCIsICJwYXRoIjogIiIsICJwb3J0IjogIjc3NTQiLCAicHMiOiAiXHU5OTk5XHU2ZTJmIFx1NzUzNVx1OGJhZlx1NzZjOFx1NzlkMVx1NjcwOVx1OTY1MFx1NTE2Y1x1NTNmOCIsICJzY3kiOiAiYXV0byIsICJzbmkiOiAiIiwgInRscyI6ICIiLCAidHlwZSI6ICJub25lIiwgInYiOiAiMiIsICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZX0=",
+      "raw": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HuvCfh7gg5py65Zy65o6o6I2QOmRhZmVpLmRlIOe+juWbvSAwMyIsImFkZCI6IjgyLjE5OC4yNDYuMjE0IiwicG9ydCI6IjE4MCIsImlkIjoiZDEzZmMyZjUtM2UwNS00Nzk1LTgxZWItNDQxNDNhMDllNTUyIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIiwiZnAiOiJjaHJvbWUifQ==",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 03_1",
+      "latency": 383,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 387,
+      "quality": "excellent",
+      "avgLatency": 369,
+      "testedAt": "2026-04-25T20:12:27.463Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "149.34.251.248"
+      },
+      "failureCount": 1
+    },
+    {
+      "id": "p_1776698546768_69_r8b2a",
+      "name": "🇺🇸 机场推荐:dafei.de 美国 02",
+      "type": "vmess",
+      "server": "82.198.246.37",
+      "port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "alterId": 0,
+      "cipher": "auto",
+      "network": "tcp",
+      "tls": false,
+      "skip-cert-verify": true,
+      "raw": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HuvCfh7gg5py65Zy65o6o6I2QOmRhZmVpLmRlIOe+juWbvSAwMiIsImFkZCI6IjgyLjE5OC4yNDYuMzciLCJwb3J0IjoiMTgwIiwiaWQiOiJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCJhaWQiOiIwIiwic2N5IjoiYWVzLTEyOC1nY20iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIiwiZnAiOiJjaHJvbWUifQ==",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 02",
+      "latency": 1394,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 389,
+      "quality": "excellent",
+      "avgLatency": 372,
+      "testedAt": "2026-04-25T20:12:34.618Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "149.34.251.249"
+      },
+      "failureCount": 1
+    },
+    {
+      "id": "p_1776741707551_10_q1xan",
+      "name": "英国 V2CROSS.COM",
+      "type": "vmess",
+      "server": "82.198.246.214",
+      "port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "alterId": 0,
+      "cipher": "auto",
+      "network": "tcp",
+      "tls": false,
+      "skip-cert-verify": true,
+      "raw": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU4MmYxXHU1NmZkIFYyQ1JPU1MuQ09NIiwgImFkZCI6ICI4Mi4xOTguMjQ2LjIxNCIsICJwb3J0IjogIjE4MCIsICJpZCI6ICJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJ0bHMiOiAiIiwgInNraXAtY2VydC12ZXJpZnkiOiB0cnVlfQ==",
       "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-      "_clashName": "香港 电讯盈科有限公司_1",
-      "latency": 897,
+      "_clashName": "英国 V2CROSS.COM_1",
+      "latency": 388,
       "purityScore": 100,
       "purityInfo": {
         "score": 100,
@@ -850,15 +407,354 @@
         "country": "CN",
         "hosting": false
       },
-      "localLatency": 831,
+      "localLatency": 381,
       "quality": "excellent",
-      "avgLatency": 222,
-      "testedAt": "2026-04-25T19:09:46.116Z",
+      "avgLatency": 373,
+      "testedAt": "2026-04-25T20:12:41.750Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "188.253.126.204"
+        "real_ip": "149.34.251.248"
       },
       "failureCount": 1
+    },
+    {
+      "name": "🇺🇸_US_美国_1",
+      "type": "vmess",
+      "server": "82.198.246.250",
+      "port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "alterId": 0,
+      "cipher": "auto",
+      "tls": false,
+      "skip-cert-verify": false,
+      "id": "p_1777087457251_13_amfgi",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇺🇸_US_美国_1_1",
+      "latency": 386,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 1429,
+      "quality": "excellent",
+      "avgLatency": 380,
+      "testedAt": "2026-04-25T20:13:18.289Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "149.34.251.250"
+      },
+      "failureCount": 1
+    },
+    {
+      "name": "Free v_4",
+      "type": "vless",
+      "server": "tajikistan.mfa.gov.ua",
+      "port": 443,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "uuid": "ce069292-c8bf-40dd-a6b1-87818a1e64e9",
+      "network": "ws",
+      "tls": true,
+      "servername": "3-2h8.pages.dev",
+      "ws-opts": {
+        "path": "/",
+        "headers": {
+          "Host": "3-2h8.pages.dev"
+        }
+      },
+      "id": "p_1776028207376_498_fuj0i",
+      "forumSource": "hk_server",
+      "_clashName": "Free v_4",
+      "latency": 548,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 568,
+      "quality": "excellent",
+      "avgLatency": 405,
+      "testedAt": "2026-04-25T20:13:03.824Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "168.138.165.174"
+      },
+      "failureCount": 1
+    },
+    {
+      "id": "p_1776698546768_68_6m0db",
+      "name": "🇺🇸 机场推荐:dafei.de 美国 01",
+      "type": "vmess",
+      "server": "82.198.246.9",
+      "port": 180,
+      "uuid": "d13fc2f5-3e05-4795-81eb-44143a09e552",
+      "alterId": 0,
+      "cipher": "auto",
+      "network": "tcp",
+      "tls": false,
+      "skip-cert-verify": true,
+      "raw": "vmess://eyJ2IjoiMiIsInBzIjoi8J+HuvCfh7gg5py65Zy65o6o6I2QOmRhZmVpLmRlIOe+juWbvSAwMSIsImFkZCI6IjgyLjE5OC4yNDYuOSIsInBvcnQiOiIxODAiLCJpZCI6ImQxM2ZjMmY1LTNlMDUtNDc5NS04MWViLTQ0MTQzYTA5ZTU1MiIsImFpZCI6IjAiLCJzY3kiOiJhZXMtMTI4LWdjbSIsIm5ldCI6InRjcCIsInR5cGUiOiIiLCJ0bHMiOiIiLCJmcCI6ImNocm9tZSJ9",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 01",
+      "latency": 397,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 413,
+      "quality": "excellent",
+      "avgLatency": 410,
+      "testedAt": "2026-04-25T20:12:56.587Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "149.34.251.247"
+      },
+      "failureCount": 1
+    },
+    {
+      "name": "最低月付2块钱1000G_1",
+      "type": "vless",
+      "server": "125.227.219.98",
+      "port": 6235,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "udp": true,
+      "uuid": "f6ddddaf-dfd6-4134-9dae-03b93b03d146",
+      "network": "ws",
+      "tls": true,
+      "servername": "baidu.com",
+      "client-fingerprint": "chrome",
+      "ws-opts": {
+        "path": "/xxxxhttp",
+        "headers": {
+          "Host": "baidu.com"
+        }
+      },
+      "id": "p_1777108200535_100_nbxgx",
+      "forumSource": "hk_server",
+      "_clashName": "最低月付2块钱1000G_1",
+      "latency": 897,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 2741,
+      "quality": "excellent",
+      "avgLatency": 426,
+      "testedAt": "2026-04-25T20:19:51.534Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "125.227.219.98"
+      }
+    },
+    {
+      "id": "p_1777087379268_135_lpm90",
+      "name": "🇻🇳 机场推荐:dafei.de 越南 05",
+      "type": "ss",
+      "server": "103.186.154.179",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.179:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2005",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 05",
+      "latency": 760,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 788,
+      "quality": "excellent",
+      "avgLatency": 438,
+      "testedAt": "2026-04-25T20:15:34.553Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.179"
+      }
+    },
+    {
+      "id": "p_1777087379268_133_anwuz",
+      "name": "🇻🇳 机场推荐:dafei.de 越南 03",
+      "type": "ss",
+      "server": "103.186.155.123",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.123:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2003",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 03",
+      "latency": 898,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 894,
+      "quality": "excellent",
+      "avgLatency": 454,
+      "testedAt": "2026-04-25T20:14:01.301Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.123"
+      }
+    },
+    {
+      "name": "🇻🇳 越南家宽 18 [wzdnzd/aggregator]",
+      "type": "ss",
+      "server": "103.186.155.143",
+      "port": 38388,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777129803580_185_780gf",
+      "forumSource": "sg_server",
+      "_clashName": "🇻🇳 越南家宽 18 [wzdnzd/aggregator]",
+      "latency": 504,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 459,
+      "testedAt": "2026-04-25T20:13:53.617Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.143"
+      }
+    },
+    {
+      "name": "🇻🇳_VN_越南_2",
+      "type": "ss",
+      "server": "103.186.154.58",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087459745_12_zcdu0",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-c605c3b6.yaml",
+      "_clashName": "🇻🇳_VN_越南_2",
+      "latency": 768,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 468,
+      "testedAt": "2026-04-25T20:15:50.758Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.58"
+      }
+    },
+    {
+      "name": "🇻🇳_VN_越南_2",
+      "type": "ss",
+      "server": "103.186.155.54",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087457251_2_a1xnn",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇻🇳_VN_越南_2_2",
+      "latency": 940,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 468,
+      "testedAt": "2026-04-25T20:16:01.903Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.58"
+      },
+      "failureCount": 1
+    },
+    {
+      "name": "🇻🇳_VN_越南_1",
+      "type": "ss",
+      "server": "103.186.154.155",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087454418_17_5na7w",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
+      "_clashName": "🇻🇳_VN_越南_1_1",
+      "latency": 890,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 477,
+      "testedAt": "2026-04-25T20:15:00.191Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.139"
+      },
+      "failureCount": 1
+    },
+    {
+      "name": "🇻🇳_VN_越南_14",
+      "type": "ss",
+      "server": "103.186.155.65",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087457251_21_tjemq",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇻🇳_VN_越南_14",
+      "latency": 880,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 477,
+      "testedAt": "2026-04-25T20:15:43.074Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.65"
+      }
     },
     {
       "name": "🇻🇳 越南家宽 16 [wzdnzd/aggregator]",
@@ -883,11 +779,151 @@
       },
       "localLatency": -1,
       "quality": "excellent",
-      "avgLatency": 730,
-      "testedAt": "2026-04-25T19:09:54.183Z",
+      "avgLatency": 485,
+      "testedAt": "2026-04-25T20:14:27.278Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "103.186.155.58"
+      }
+    },
+    {
+      "name": "🇻🇳_VN_越南_1",
+      "type": "ss",
+      "server": "103.186.155.120",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087457251_1_hswxo",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇻🇳_VN_越南_1_2",
+      "latency": 1738,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 490,
+      "testedAt": "2026-04-25T20:14:19.615Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.120"
+      },
+      "failureCount": 2
+    },
+    {
+      "name": "🇻🇳_VN_越南",
+      "type": "ss",
+      "server": "103.186.154.157",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087457251_0_8cbaa",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇻🇳_VN_越南",
+      "latency": 819,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 1928,
+      "quality": "excellent",
+      "avgLatency": 497,
+      "testedAt": "2026-04-25T20:15:08.053Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.139"
+      }
+    },
+    {
+      "id": "p_1777087379268_132_gp9sx",
+      "name": "🇻🇳 机场推荐:dafei.de 越南 02",
+      "type": "ss",
+      "server": "103.186.154.149",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.149:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2002",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 02",
+      "latency": 948,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 491,
+      "quality": "excellent",
+      "avgLatency": 504,
+      "testedAt": "2026-04-25T20:14:36.812Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.139"
+      }
+    },
+    {
+      "id": "p_1777087379268_134_o1li6",
+      "name": "🇻🇳 机场推荐:dafei.de 越南 04",
+      "type": "ss",
+      "server": "103.186.155.213",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.213:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2004",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 04",
+      "latency": 798,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 505,
+      "testedAt": "2026-04-25T20:14:52.366Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.213"
+      }
+    },
+    {
+      "name": "🇻🇳_VN_越南_1",
+      "type": "ss",
+      "server": "103.186.154.191",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087459745_6_mideu",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-c605c3b6.yaml",
+      "_clashName": "🇻🇳_VN_越南_1",
+      "latency": 794,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 511,
+      "testedAt": "2026-04-25T20:14:44.592Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.154.191"
       }
     },
     {
@@ -921,11 +957,112 @@
       },
       "localLatency": 875,
       "quality": "excellent",
-      "avgLatency": 769,
-      "testedAt": "2026-04-25T19:10:17.146Z",
+      "avgLatency": 566,
+      "testedAt": "2026-04-25T20:16:42.718Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "153.232.108.200"
+      }
+    },
+    {
+      "name": "🇸🇪 瑞典 01 [wzdnzd/aggregator]",
+      "type": "vless",
+      "server": "h7-83w.pages.dev",
+      "port": 2053,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "uuid": "0f4d41cf-0be1-4fcc-ac41-53b843ba0752",
+      "network": "ws",
+      "tls": true,
+      "servername": "H7-83W.pAgeS.deV",
+      "ws-opts": {
+        "path": "/",
+        "headers": {
+          "Host": "h7-83w.pages.dev"
+        }
+      },
+      "id": "p_1777129803581_926_pv0h5",
+      "forumSource": "sg_server",
+      "_clashName": "🇸🇪 瑞典 01 [wzdnzd/aggregator]",
+      "latency": 686,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 630,
+      "testedAt": "2026-04-25T20:17:38.608Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "194.180.188.241"
+      }
+    },
+    {
+      "id": "p_1777087379269_138_5g7wj",
+      "name": "🇻🇳 机场推荐:dafei.de 越南 08",
+      "type": "ss",
+      "server": "103.186.155.239",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.239:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2008",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 08",
+      "latency": 1893,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": -1,
+      "quality": "excellent",
+      "avgLatency": 675,
+      "testedAt": "2026-04-25T20:15:15.855Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.239"
+      }
+    },
+    {
+      "name": "🇳🇱_NL_荷兰",
+      "type": "vless",
+      "server": "45.149.234.236",
+      "port": 443,
+      "uuid": "9f7a44b8-617c-46de-bbe0-152e52570d69",
+      "servername": "linksys.com",
+      "tls": true,
+      "flow": "xtls-rprx-vision",
+      "client-fingerprint": "chrome",
+      "reality-opts": {
+        "public-key": "BagDycRtQvlxTnortyehYkwB6e-SJwboi2STJLKKAX8",
+        "short-id": "99a9b78d171c04cb"
+      },
+      "id": "p_1777130726168_15_y2e4a",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-c01cc767.yaml",
+      "_clashName": "🇳🇱_NL_荷兰",
+      "latency": 943,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 2430,
+      "quality": "excellent",
+      "avgLatency": 707,
+      "testedAt": "2026-04-25T20:16:58.432Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "45.149.234.236"
       }
     },
     {
@@ -966,47 +1103,13 @@
         "hosting": false
       },
       "quality": "excellent",
-      "avgLatency": 716,
-      "testedAt": "2026-04-25T19:10:25.014Z",
+      "avgLatency": 708,
+      "testedAt": "2026-04-25T20:16:33.377Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "62.210.113.151"
       },
       "failureCount": 1
-    },
-    {
-      "name": "🇳🇱_NL_荷兰",
-      "type": "vless",
-      "server": "45.149.234.236",
-      "port": 443,
-      "uuid": "9f7a44b8-617c-46de-bbe0-152e52570d69",
-      "servername": "linksys.com",
-      "tls": true,
-      "flow": "xtls-rprx-vision",
-      "client-fingerprint": "chrome",
-      "reality-opts": {
-        "public-key": "BagDycRtQvlxTnortyehYkwB6e-SJwboi2STJLKKAX8",
-        "short-id": "99a9b78d171c04cb"
-      },
-      "id": "p_1777130726168_15_y2e4a",
-      "isFromWeb": true,
-      "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-c01cc767.yaml",
-      "_clashName": "🇳🇱_NL_荷兰",
-      "latency": 943,
-      "purityScore": 50,
-      "purityInfo": {
-        "score": 50,
-        "error": "Unexpected end of JSON input"
-      },
-      "localLatency": 2430,
-      "quality": "excellent",
-      "avgLatency": 738,
-      "testedAt": "2026-04-25T19:10:44.144Z",
-      "testResults": {
-        "description": "节点可用",
-        "real_ip": "45.149.234.236"
-      }
     },
     {
       "id": "p_1777130635810_94_hvowi",
@@ -1032,27 +1135,34 @@
       },
       "localLatency": 1887,
       "quality": "excellent",
-      "avgLatency": 725,
-      "testedAt": "2026-04-25T19:10:52.066Z",
+      "avgLatency": 726,
+      "testedAt": "2026-04-25T20:17:14.393Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "45.89.53.115"
       }
-    }
-  ],
-  "good": [
+    },
     {
-      "id": "p_1777087379268_135_lpm90",
-      "name": "🇻🇳 机场推荐:dafei.de 越南 05",
-      "type": "ss",
-      "server": "103.186.154.179",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.154.179:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2005",
-      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 05",
-      "latency": 760,
+      "name": "不限速不限设备不限地区",
+      "type": "vless",
+      "server": "cloudflare-ech.com",
+      "port": 443,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "uuid": "25284107-7424-40a5-8396-cdd0623f4f05",
+      "network": "ws",
+      "tls": true,
+      "servername": "hscraft.top",
+      "ws-opts": {
+        "path": "/?ip=ProxyIP.CMLiussss.net",
+        "headers": {
+          "Host": "hscraft.top"
+        }
+      },
+      "id": "p_1777086602432_381_g3zyu",
+      "forumSource": "sg_server",
+      "_clashName": "不限速不限设备不限地区",
+      "latency": 2689,
       "purityScore": 100,
       "purityInfo": {
         "score": 100,
@@ -1061,44 +1171,753 @@
         "country": "CN",
         "hosting": false
       },
-      "localLatency": 788,
-      "quality": "good",
-      "avgLatency": 1518,
-      "testedAt": "2026-04-25T19:07:57.244Z",
+      "localLatency": 2026,
+      "quality": "excellent",
+      "avgLatency": 741,
+      "testedAt": "2026-04-25T20:16:50.521Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "103.186.154.179"
+        "real_ip": "107.150.25.185"
       }
     },
     {
-      "name": "🇻🇳_VN_越南",
-      "type": "ss",
-      "server": "103.186.154.157",
-      "port": 38388,
-      "cipher": "aes-256-cfb",
-      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
-      "id": "p_1777087457251_0_8cbaa",
+      "name": "🇺🇸_US_美国_1",
+      "type": "vmess",
+      "server": "node-us.connectsuite.org",
+      "port": 2053,
+      "uuid": "9b91e960-f8f7-41aa-ac67-f5c7b6b72e74",
+      "alterId": 0,
+      "cipher": "auto",
+      "tls": true,
+      "skip-cert-verify": false,
+      "id": "p_1777087454418_10_cqzlj",
       "isFromWeb": true,
       "webSource": "https://www.cfmem.com",
-      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
-      "_clashName": "🇻🇳_VN_越南",
-      "latency": 819,
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
+      "_clashName": "🇺🇸_US_美国_1",
+      "latency": 894,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 869,
+      "quality": "excellent",
+      "avgLatency": 744,
+      "testedAt": "2026-04-25T20:17:22.247Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "45.89.53.115"
+      }
+    },
+    {
+      "id": "p_1776590566381_57_yzru0",
+      "name": "🇪🇪 机场推荐:dafei.de 爱沙尼亚 01",
+      "type": "vless",
+      "server": "95.85.242.196",
+      "port": 59283,
+      "uuid": "9037fde7-debb-4fe7-8c73-09f520f3f821",
+      "tls": true,
+      "skip-cert-verify": true,
+      "network": "tcp",
+      "servername": "www.amazon.com",
+      "flow": "xtls-rprx-vision",
+      "raw": "vless://9037fde7-debb-4fe7-8c73-09f520f3f821@95.85.242.196:59283?security=reality&type=tcp&sni=www.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=07a0bc&pbk=oPsbZoI_Ikl-nC6vS2-Va7Fx11FSgAK5buqI3yBbSWE#%F0%9F%87%AA%F0%9F%87%AA%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E7%88%B1%E6%B2%99%E5%B0%BC%E4%BA%9A%2001",
+      "reality-opts": {
+        "public-key": "oPsbZoI_Ikl-nC6vS2-Va7Fx11FSgAK5buqI3yBbSWE",
+        "short-id": "07a0bc"
+      },
+      "client-fingerprint": "chrome",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇪🇪 机场推荐:dafei.de 爱沙尼亚 01",
+      "latency": 757,
       "purityScore": 50,
       "purityInfo": {
         "score": 50,
         "error": "Unexpected end of JSON input"
       },
-      "localLatency": 1928,
-      "quality": "good",
-      "avgLatency": 1490,
-      "testedAt": "2026-04-25T19:08:32.306Z",
+      "localLatency": 5963,
+      "quality": "excellent",
+      "avgLatency": 745,
+      "testedAt": "2026-04-25T20:17:06.476Z",
       "testResults": {
         "description": "节点可用",
-        "real_ip": "103.186.154.139"
+        "real_ip": "95.85.242.196"
+      }
+    },
+    {
+      "name": "官网https://kelayun.notepin.co",
+      "type": "vless",
+      "server": "144.24.74.102",
+      "port": 50911,
+      "tfo": true,
+      "skip-cert-verify": null,
+      "udp": true,
+      "uuid": "820409af-997a-41c4-9e51-46f373951a39",
+      "flow": "xtls-rprx-vision",
+      "network": "tcp",
+      "tls": true,
+      "servername": "www.iij.ad.jp",
+      "reality-opts": {
+        "public-key": "RGQRcZVfFRt6ioLDvH7HOicOXJcwonHFVqOgbix2w3w",
+        "short-id": ""
+      },
+      "client-fingerprint": "firefox",
+      "id": "p_1777086600438_500_qol2m",
+      "forumSource": "hk_server",
+      "_clashName": "官网https://kelayun.notepin.co",
+      "latency": 505,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 475,
+      "quality": "excellent",
+      "avgLatency": 756,
+      "testedAt": "2026-04-25T20:13:26.031Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "144.24.74.102"
+      }
+    },
+    {
+      "id": "p_1775964355192_65_hvoxo",
+      "name": "🇩🇪 机场推荐:dafei.de 德国 01",
+      "type": "vless",
+      "server": "93.94.51.101",
+      "port": 443,
+      "uuid": "405ba2d6-7fcb-4cdd-9c77-4ecc616d77c8",
+      "tls": true,
+      "skip-cert-verify": true,
+      "network": "tcp",
+      "servername": "deu549.worldbypass.org",
+      "flow": "xtls-rprx-vision",
+      "raw": "vless://405ba2d6-7fcb-4cdd-9c77-4ecc616d77c8@93.94.51.101:443?security=tls&type=tcp&sni=deu549.worldbypass.org&fp=chrome&flow=xtls-rprx-vision#%F0%9F%87%A9%F0%9F%87%AA%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%BE%B7%E5%9B%BD%2001",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇩🇪 机场推荐:dafei.de 德国 01",
+      "latency": 841,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Timeout"
+      },
+      "localLatency": 2152,
+      "quality": "excellent",
+      "avgLatency": 773,
+      "testedAt": "2026-04-25T20:17:30.295Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "93.94.51.101"
       }
     }
   ],
+  "good": [
+    {
+      "name": "🇵🇱PL_1|2.1MB/s",
+      "type": "vless",
+      "server": "178.72.181.87",
+      "port": 52006,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "uuid": "75807638-6f19-2710-ae08-38492ee85c88",
+      "flow": "xtls-rprx-vision-udp443",
+      "network": "tcp",
+      "tls": true,
+      "servername": "cluster-de-2.firstvideocdn.ru",
+      "id": "p_1777129800509_1224_36rxp",
+      "forumSource": "hk_server",
+      "_clashName": "🇵🇱PL_1|2.1MB/s",
+      "latency": 1184,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 1878,
+      "quality": "good",
+      "avgLatency": 817,
+      "testedAt": "2026-04-25T20:17:46.861Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "144.31.4.23"
+      }
+    },
+    {
+      "name": "🇷🇴_RO_罗马尼亚",
+      "type": "vless",
+      "server": "91.199.50.37",
+      "port": 443,
+      "uuid": "43488128-319e-f480-64ea-0acdc712e2a8",
+      "servername": "www.alibaba.com",
+      "tls": true,
+      "flow": "xtls-rprx-vision",
+      "client-fingerprint": "chrome",
+      "reality-opts": {
+        "public-key": "kkRsTNjRh_XrrTM6eZllllldzoL5Z9IqlBkDtmYLMhw",
+        "short-id": "c906f73d3ba8211f"
+      },
+      "id": "p_1777109002988_4_0rbma",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇷🇴_RO_罗马尼亚",
+      "latency": 920,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 915,
+      "quality": "good",
+      "avgLatency": 929,
+      "testedAt": "2026-04-25T20:17:55.229Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "91.199.50.37"
+      }
+    },
+    {
+      "name": "🇲🇾_MY_马来西亚->🇩🇪_DE_德国",
+      "type": "vmess",
+      "server": "v33.hdacd.com",
+      "port": 30833,
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
+      "alterId": 2,
+      "cipher": "auto",
+      "tls": false,
+      "skip-cert-verify": false,
+      "id": "p_1777109000211_6_e05ku",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
+      "_clashName": "🇲🇾_MY_马来西亚->🇩🇪_DE_德国",
+      "latency": 748,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 952,
+      "quality": "good",
+      "avgLatency": 938,
+      "testedAt": "2026-04-25T20:19:26.115Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "172.104.138.4"
+      }
+    },
+    {
+      "id": "p_1777087379269_141_eb57r",
+      "name": "🇨🇭 机场推荐:dafei.de 瑞士 01",
+      "type": "vless",
+      "server": "138.124.9.190",
+      "port": 16558,
+      "uuid": "11348c0f-b646-446a-bad7-b2b39c6de767",
+      "tls": true,
+      "skip-cert-verify": true,
+      "network": "tcp",
+      "servername": "gpuopen.com",
+      "flow": "xtls-rprx-vision",
+      "raw": "vless://11348c0f-b646-446a-bad7-b2b39c6de767@138.124.9.190:16558?security=reality&type=tcp&sni=gpuopen.com&fp=chrome&flow=xtls-rprx-vision&sid=0a856e071790b1&pbk=vDKgmefC_2JaSrrvQSsb7DU3KBeKUlXG1V0vgdjv_i4#%F0%9F%87%A8%F0%9F%87%AD%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E7%91%9E%E5%A3%AB%2001",
+      "reality-opts": {
+        "public-key": "vDKgmefC_2JaSrrvQSsb7DU3KBeKUlXG1V0vgdjv_i4",
+        "short-id": "0a856e071790b1"
+      },
+      "client-fingerprint": "chrome",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇨🇭 机场推荐:dafei.de 瑞士 01",
+      "latency": 870,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 916,
+      "quality": "good",
+      "avgLatency": 951,
+      "testedAt": "2026-04-25T20:18:13.236Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "138.124.9.190"
+      }
+    },
+    {
+      "id": "p_1776720096568_127_nkkx6",
+      "name": "🇵🇱 机场推荐:dafei.de 波兰 01",
+      "type": "vless",
+      "server": "144.31.4.166",
+      "port": 2053,
+      "uuid": "5b1c5027-5bc6-4ee2-b287-001b05fba219",
+      "tls": true,
+      "skip-cert-verify": true,
+      "network": "grpc",
+      "servername": "www.deepl.com",
+      "raw": "vless://5b1c5027-5bc6-4ee2-b287-001b05fba219@144.31.4.166:2053?security=reality&type=grpc&mode=gun&serviceName=grpc&sni=www.deepl.com&fp=chrome&sid=0123456789abcdef&pbk=ZHEMPjSWslk6_qD2JNQzd5enUPz8nY9mYRRuM6NkZmU#%F0%9F%87%B5%F0%9F%87%B1%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%B3%A2%E5%85%B0%2001",
+      "reality-opts": {
+        "public-key": "ZHEMPjSWslk6_qD2JNQzd5enUPz8nY9mYRRuM6NkZmU",
+        "short-id": "0123456789abcdef"
+      },
+      "client-fingerprint": "chrome",
+      "grpc-opts": {
+        "grpc-service-name": "grpc"
+      },
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇵🇱 机场推荐:dafei.de 波兰 01",
+      "latency": 874,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Timeout"
+      },
+      "localLatency": 886,
+      "quality": "good",
+      "avgLatency": 976,
+      "testedAt": "2026-04-25T20:19:44.099Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "144.31.4.166"
+      }
+    },
+    {
+      "id": "p_1776892901790_45_if36u",
+      "name": "🇺🇸 机场推荐:dafei.de 美国 11",
+      "type": "vless",
+      "server": "pl2-gws4.onnstreaming.ru",
+      "port": 443,
+      "uuid": "19ef3d02-1c55-4fec-9794-6def8cbac396",
+      "tls": true,
+      "skip-cert-verify": true,
+      "network": "tcp",
+      "servername": "pl2-gws4.onnstreaming.ru",
+      "flow": "xtls-rprx-vision",
+      "raw": "vless://19ef3d02-1c55-4fec-9794-6def8cbac396@pl2-gws4.onnstreaming.ru:443?security=reality&type=tcp&sni=pl2-gws4.onnstreaming.ru&fp=chrome&flow=xtls-rprx-vision&sid=d1f93724859d75ac&pbk=fN3l3mYSDO44IWNPHWOQo2JMUw2isUGoOqrS6hCFfBQ#%F0%9F%87%BA%F0%9F%87%B8%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E7%BE%8E%E5%9B%BD%2011",
+      "reality-opts": {
+        "public-key": "fN3l3mYSDO44IWNPHWOQo2JMUw2isUGoOqrS6hCFfBQ",
+        "short-id": "d1f93724859d75ac"
+      },
+      "client-fingerprint": "chrome",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇺🇸 机场推荐:dafei.de 美国 11",
+      "latency": 1117,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 2259,
+      "quality": "good",
+      "avgLatency": 978,
+      "testedAt": "2026-04-25T20:18:04.802Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "144.31.240.15"
+      }
+    },
+    {
+      "name": "🇨🇭_CH_瑞士",
+      "type": "vless",
+      "server": "5.182.36.56",
+      "port": 45886,
+      "uuid": "8338171d-2ea7-4015-bdea-492f3d5d4e60",
+      "servername": "yahoo.com",
+      "tls": true,
+      "client-fingerprint": "chrome",
+      "reality-opts": {
+        "public-key": "zJeLZDPHoHMcAzBJh38tSavofNlkBrpADFx9jVVPil0",
+        "short-id": "94f9"
+      },
+      "id": "p_1777044349905_19_j7xax",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇨🇭_CH_瑞士",
+      "latency": 1594,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 920,
+      "quality": "good",
+      "avgLatency": 1007,
+      "testedAt": "2026-04-25T20:18:21.790Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "5.182.36.56"
+      }
+    },
+    {
+      "id": "p_1776871396057_67_kkbd9",
+      "name": "🇩🇪 机场推荐:dafei.de 德国 13",
+      "type": "vless",
+      "server": "104.18.12.149",
+      "port": 80,
+      "uuid": "fc53bae5-92f5-4572-9ce8-9e56901479f1",
+      "tls": false,
+      "skip-cert-verify": true,
+      "network": "ws",
+      "servername": "尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞3亞團員亞團員.尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞團亞團員亞團員.com.",
+      "raw": "vless://fc53bae5-92f5-4572-9ce8-9e56901479f1@104.18.12.149:80?security=none&type=ws&path=%2Famo-mohammad&host=%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%93%A11%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%93%A12%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%93%A13%E5%B0%BC%E4%BA%9E%E5%9C%98%E4%BA%9E%E5%9C%98%E5%93%A1%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%B0%BC%E4%BA%9E%E5%9C%98%E4%BA%9E%E5%9C%98%E5%93%A1%E4%BA%9E%E5%9C%98%E5%93%A1%E5%93%A1%E4%BA%9E3%E4%BA%9E%E5%9C%98%E5%93%A1%E4%BA%9E%E5%9C%98%E5%93%A1.%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%93%A11%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%93%A12%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%93%A13%E5%B0%BC%E4%BA%9E%E5%9C%98%E4%BA%9E%E5%9C%98%E5%93%A1%E5%B0%BC%E4%BA%9E%E5%9C%98%E5%B0%BC%E4%BA%9E%E5%9C%98%E4%BA%9E%E5%9C%98%E5%93%A1%E4%BA%9E%E5%9C%98%E5%93%A1%E5%93%A1%E4%BA%9E%E5%9C%98%E4%BA%9E%E5%9C%98%E5%93%A1%E4%BA%9E%E5%9C%98%E5%93%A1.com.&fp=chrome#%F0%9F%87%A9%F0%9F%87%AA%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%BE%B7%E5%9B%BD%2013",
+      "ws-opts": {
+        "path": "/amo-mohammad",
+        "headers": {
+          "Host": "尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞3亞團員亞團員.尼亞團員1尼亞團員2尼亞團員3尼亞團亞團員尼亞團尼亞團亞團員亞團員員亞團亞團員亞團員.com."
+        }
+      },
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇩🇪 机场推荐:dafei.de 德国 13",
+      "latency": 1077,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Timeout"
+      },
+      "localLatency": 1056,
+      "quality": "good",
+      "avgLatency": 1050,
+      "testedAt": "2026-04-25T20:18:39.539Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "193.26.159.70"
+      }
+    },
+    {
+      "name": "🇬🇷_GR_希腊",
+      "type": "vless",
+      "server": "94.131.8.19",
+      "port": 45448,
+      "uuid": "96fcf8cc-535d-46c4-b8f9-76058df48e3b",
+      "servername": "yahoo.com",
+      "tls": true,
+      "client-fingerprint": "chrome",
+      "reality-opts": {
+        "public-key": "MmEVCRy11fz67vYJQWyA2a_ZPMBzv2le2cus1XSSI0E",
+        "short-id": "958639bf55e679"
+      },
+      "id": "p_1776957892475_16_mpbkw",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260423/free-node-share-e4dfdd22.yaml",
+      "_clashName": "🇬🇷_GR_希腊",
+      "latency": 1134,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Timeout"
+      },
+      "localLatency": 1060,
+      "quality": "good",
+      "avgLatency": 1114,
+      "testedAt": "2026-04-25T20:19:07.180Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "94.131.8.19"
+      }
+    },
+    {
+      "name": "🇻🇳_VN_越南_8",
+      "type": "ss",
+      "server": "103.186.155.48",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087457251_10_ani8j",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-6ceeafd4.yaml",
+      "_clashName": "🇻🇳_VN_越南_8",
+      "latency": 848,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "good",
+      "avgLatency": 1269,
+      "testedAt": "2026-04-25T20:16:25.531Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.48"
+      }
+    },
+    {
+      "name": "C - 🇯🇵 JP 19 TG: @nodpai",
+      "type": "vless",
+      "server": "cluster-other-1.firstvideocdn.ru",
+      "port": 52006,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "uuid": "75807638-6f19-0190-ae08-38492ee85c88",
+      "flow": "xtls-rprx-vision-udp443",
+      "network": "tcp",
+      "tls": true,
+      "servername": "cluster-other-1.firstvideocdn.ru",
+      "id": "p_1777129800510_1507_unsa2",
+      "forumSource": "hk_server",
+      "_clashName": "C - 🇯🇵 JP 19 TG: @nodpai",
+      "latency": 2605,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 1476,
+      "quality": "good",
+      "avgLatency": 1296,
+      "testedAt": "2026-04-25T20:19:35.893Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "147.45.220.114"
+      }
+    },
+    {
+      "id": "p_1777087379268_136_5ueoz",
+      "name": "🇻🇳 机场推荐:dafei.de 越南 06",
+      "type": "ss",
+      "server": "103.186.155.215",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "raw": "ss://YWVzLTI1Ni1jZmI6WG44aktkbURNMDBJZU8lIyQjZkpBTXRzRUFFVU9wSC9ZV1l0WXFERm5UMFNW@103.186.155.215:38388#%F0%9F%87%BB%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%B6%8A%E5%8D%97%2006",
+      "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+      "_clashName": "🇻🇳 机场推荐:dafei.de 越南 06",
+      "latency": 802,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 823,
+      "quality": "good",
+      "avgLatency": 1332,
+      "testedAt": "2026-04-25T20:18:48.172Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.215"
+      }
+    },
+    {
+      "name": "🇻🇳_VN_越南_2",
+      "type": "ss",
+      "server": "103.186.155.222",
+      "port": 38388,
+      "cipher": "aes-256-cfb",
+      "password": "Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV",
+      "id": "p_1777087454418_20_lltiy",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
+      "_clashName": "🇻🇳_VN_越南_2_1",
+      "latency": 781,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": -1,
+      "quality": "good",
+      "avgLatency": 1481,
+      "testedAt": "2026-04-25T20:13:45.885Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "103.186.155.222"
+      }
+    },
+    {
+      "name": "🇲🇾_MY_马来西亚->🇫🇷_FR_法国",
+      "type": "vmess",
+      "server": "v35.hdacd.com",
+      "port": 30835,
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
+      "alterId": 2,
+      "cipher": "auto",
+      "tls": false,
+      "skip-cert-verify": false,
+      "id": "p_1777109000211_9_srref",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
+      "_clashName": "🇲🇾_MY_马来西亚->🇫🇷_FR_法国",
+      "latency": 827,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 810,
+      "quality": "good",
+      "avgLatency": 1743,
+      "testedAt": "2026-04-25T20:31:08.523Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "88.218.78.132"
+      }
+    },
+    {
+      "name": "🇵🇱_PL_波兰",
+      "type": "vless",
+      "server": "pl-1.illusion-vpn.ru",
+      "port": 443,
+      "uuid": "bf263367-bb63-4663-b4a1-34946107a72e",
+      "servername": "pl-1.illusion-vpn.ru",
+      "tls": true,
+      "flow": "xtls-rprx-vision",
+      "client-fingerprint": "chrome",
+      "reality-opts": {
+        "public-key": "5qvcOTHr_izGbsRz-j2xC3BMMdugFMsl7MnANjzwZ0I",
+        "short-id": "b2a1c97a38"
+      },
+      "id": "p_1777044366214_16_s9inr",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260422/free-node-share-d6e7a822.yaml",
+      "_clashName": "🇵🇱_PL_波兰_1",
+      "latency": 2289,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 1459,
+      "quality": "good",
+      "avgLatency": 1795,
+      "testedAt": "2026-04-25T20:18:31.053Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "45.144.51.31"
+      },
+      "failureCount": 1
+    }
+  ],
   "basic": [
+    {
+      "name": "未知21",
+      "type": "trojan",
+      "server": "www.multiplydose.com",
+      "port": 443,
+      "tfo": true,
+      "skip-cert-verify": true,
+      "password": "humanity",
+      "network": "ws",
+      "tls": true,
+      "servername": "www.multiplydose.com",
+      "ws-opts": {
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.multiplydose.com"
+        }
+      },
+      "id": "p_1777129800507_67_79lux",
+      "forumSource": "hk_server",
+      "_clashName": "未知21",
+      "latency": 1927,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "202.98.76.12",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": -1,
+      "quality": "basic",
+      "avgLatency": 2688,
+      "testedAt": "2026-04-25T20:18:58.428Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "51.158.237.37"
+      }
+    },
+    {
+      "name": "🇵🇱_PL_波兰",
+      "type": "vless",
+      "server": "pl74.mechvpn.online",
+      "port": 443,
+      "uuid": "6d916d55-fead-4ff3-a3a9-83e175ea8ad7",
+      "servername": "pl74.mechvpn.online",
+      "tls": true,
+      "flow": "xtls-rprx-vision",
+      "client-fingerprint": "chrome",
+      "id": "p_1777044354296_8_mlnn2",
+      "isFromWeb": true,
+      "webSource": "https://www.cfmem.com",
+      "_sourceUrl": "https://v2rayse.com/fs/public/20260424/free-node-share-c605c3b6.yaml",
+      "_clashName": "🇵🇱_PL_波兰",
+      "latency": 1241,
+      "purityScore": 50,
+      "purityInfo": {
+        "score": 50,
+        "error": "Unexpected end of JSON input"
+      },
+      "localLatency": 2261,
+      "quality": "basic",
+      "avgLatency": 3463,
+      "testedAt": "2026-04-25T20:19:18.091Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "144.31.4.74"
+      }
+    },
+    {
+      "id": "p_1776612159611_1_t0f01",
+      "name": "亚太地区 V2CROSS.COM",
+      "type": "vmess",
+      "server": "103.181.164.145",
+      "port": 51556,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "alterId": 0,
+      "cipher": "auto",
+      "network": "tcp",
+      "tls": false,
+      "skip-cert-verify": true,
+      "servername": "",
+      "raw": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU0ZTlhXHU1OTJhXHU1NzMwXHU1MzNhIFYyQ1JPU1MuQ09NIiwgImFkZCI6ICIxMDMuMTgxLjE2NC4xNDUiLCAicG9ydCI6ICI1MTU1NiIsICJpZCI6ICI0MTgwNDhhZi1hMjkzLTRiOTktOWIwYy05OGNhMzU4MGRkMjQiLCAiYWlkIjogMCwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJhdXRvIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiIiwgInRscyI6ICIifQ==",
+      "_sourceUrl": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+      "_clashName": "亚太地区 V2CROSS.COM",
+      "latency": 592,
+      "purityScore": 100,
+      "purityInfo": {
+        "score": 100,
+        "ip": "116.54.76.11",
+        "isp": "Chinanet",
+        "country": "CN",
+        "hosting": false
+      },
+      "localLatency": 2116,
+      "quality": "basic",
+      "avgLatency": 3835,
+      "testedAt": "2026-04-25T20:14:11.971Z",
+      "testResults": {
+        "description": "节点可用",
+        "real_ip": "134.122.133.84"
+      }
+    },
     {
       "name": "🇻🇳_VN_越南_7",
       "type": "ss",
@@ -1119,15 +1938,15 @@
       },
       "localLatency": -1,
       "quality": "basic",
-      "avgLatency": 2926,
-      "testedAt": "2026-04-25T19:08:23.434Z",
+      "avgLatency": 7685,
+      "testedAt": "2026-04-25T20:16:17.089Z",
       "testResults": {
         "description": "节点可用",
         "real_ip": "103.186.155.26"
       }
     }
   ],
-  "lastUpdate": "2026-04-25T19:05:22.929Z",
-  "totalTested": 40,
-  "totalValid": 35
+  "lastUpdate": "2026-04-25T20:11:31.689Z",
+  "totalTested": 273,
+  "totalValid": 59
 }

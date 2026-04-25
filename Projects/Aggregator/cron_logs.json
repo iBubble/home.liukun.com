@@ -1,43 +1,5 @@
 [
   {
-    "id": 1776964238997,
-    "startTime": "2026-04-23T17:10:38.997Z",
-    "endTime": "2026-04-23T17:11:11.266Z",
-    "duration": 32,
-    "status": "success",
-    "type": "每小时本地检测(自动)",
-    "details": {
-      "beforeCount": 341,
-      "afterCount": 339,
-      "tested": 341,
-      "passed": 339,
-      "failed": 2,
-      "removed": 2,
-      "yamlGenerated": true,
-      "skippedReason": null
-    },
-    "error": null
-  },
-  {
-    "id": 1776967838999,
-    "startTime": "2026-04-23T18:10:38.999Z",
-    "endTime": "2026-04-23T18:11:08.593Z",
-    "duration": 30,
-    "status": "success",
-    "type": "每小时本地检测(自动)",
-    "details": {
-      "beforeCount": 339,
-      "afterCount": 330,
-      "tested": 339,
-      "passed": 330,
-      "failed": 9,
-      "removed": 9,
-      "yamlGenerated": true,
-      "skippedReason": null
-    },
-    "error": null
-  },
-  {
     "id": 1776971438999,
     "startTime": "2026-04-23T19:10:38.999Z",
     "endTime": "2026-04-23T19:11:12.072Z",
@@ -1072,6 +1034,44 @@
       "passed": 281,
       "failed": 8,
       "removed": 8,
+      "yamlGenerated": true,
+      "skippedReason": null
+    },
+    "error": null
+  },
+  {
+    "id": 1777144239059,
+    "startTime": "2026-04-25T19:10:39.059Z",
+    "endTime": "2026-04-25T19:11:09.805Z",
+    "duration": 31,
+    "status": "success",
+    "type": "每小时本地检测(自动)",
+    "details": {
+      "beforeCount": 281,
+      "afterCount": 266,
+      "tested": 281,
+      "passed": 266,
+      "failed": 15,
+      "removed": 15,
+      "yamlGenerated": true,
+      "skippedReason": null
+    },
+    "error": null
+  },
+  {
+    "id": 1777147839060,
+    "startTime": "2026-04-25T20:10:39.060Z",
+    "endTime": "2026-04-25T20:10:56.077Z",
+    "duration": 17,
+    "status": "success",
+    "type": "每小时本地检测(自动)",
+    "details": {
+      "beforeCount": 266,
+      "afterCount": 265,
+      "tested": 266,
+      "passed": 265,
+      "failed": 1,
+      "removed": 1,
       "yamlGenerated": true,
       "skippedReason": null
     },

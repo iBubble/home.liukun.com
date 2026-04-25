@@ -472,13 +472,6 @@ proxies:
     port: 443
     cipher: none
     password: 79960b0b-7d31-4263-8915-6511b0e137a87
-  - name: 🇯🇵 机场推荐:dafei.de 日本 02_2
-    type: hysteria2
-    server: vpn-jp-003.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-jp-003.fastervpn.world
-    skip-cert-verify: true
   - name: 🇯🇵 机场推荐:dafei.de 日本 18_1
     type: ss
     server: 162.159.153.142
@@ -742,15 +735,6 @@ proxies:
       path: /@Marisa_kristi
       headers:
         Host: rcv3tz9brscasef8i.sate.qzz.io
-  - name: 🚹47@oneclickvpnkeys
-    type: hysteria2
-    server: 163.172.113.118
-    port: 40022
-    tfo: true
-    skip-cert-verify: true
-    password: dongtaiwang.com
-    auth: dongtaiwang.com
-    sni: www.microsoft.com
   - name: 🇸🇪 瑞典 01 [wzdnzd/aggregator]
     type: vless
     server: h7-83w.pages.dev
@@ -819,13 +803,6 @@ proxies:
     port: 38388
     cipher: aes-256-cfb
     password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  - name: 🇺🇸 机场推荐:dafei.de 美国 07
-    type: hysteria2
-    server: vpn-us-017.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-us-017.fastervpn.world
-    skip-cert-verify: true
   - name: 🇻🇳 机场推荐:dafei.de 越南 04
     type: ss
     server: 103.186.155.213
@@ -852,13 +829,6 @@ proxies:
       path: /danfeng?ed=2560fp=chrome
       headers:
         Host: ynwta9.api-edge.fgfw.qzz.io
-  - name: 🇩🇪 机场推荐:dafei.de 德国 01
-    type: hysteria2
-    server: vpn-de-002.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-de-002.fastervpn.world
-    skip-cert-verify: true
   - name: 🇲🇾_MY_马来西亚->🇫🇷_FR_法国
     type: vmess
     server: v35.hdacd.com
@@ -906,13 +876,6 @@ proxies:
     password: 26737904%3A8b4404a1-71f7-4fc2-9996-2ebc6f29d817
     network: tcp
     tls: true
-  - name: 🇬🇧 机场推荐:dafei.de 英国 01
-    type: hysteria2
-    server: vpn-uk-002.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-uk-002.fastervpn.world
-    skip-cert-verify: true
   - name: 🇨🇭 机场推荐:dafei.de 瑞士 01
     type: vless
     server: 138.124.9.190
@@ -1040,13 +1003,6 @@ proxies:
     password: 3ac6a6ca99f74941b1eaf892818e2ddb
     network: tcp
     tls: true
-  - name: 🇩🇪 机场推荐:dafei.de 德国 03
-    type: hysteria2
-    server: vpn-de-001.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-de-001.fastervpn.world
-    skip-cert-verify: true
   - name: 🇯🇵 机场推荐:dafei.de 日本 21_2
     type: ss
     server: 57.128.183.133
@@ -1112,22 +1068,6 @@ proxies:
       path: /danfengfp=chrome
       headers:
         Host: s3vz.user-service.chinav.indevs.in
-  - name: 美国 CloudFlare节点_3
-    type: vmess
-    server: ae135.cowjump.site
-    port: 443
-    tfo: true
-    skip-cert-verify: true
-    uuid: 0bf1cead-bdd4-4692-b3d4-6866ccb9f37a
-    alterId: 0
-    cipher: auto
-    network: ws
-    tls: true
-    servername: ae135.cowjump.site
-    ws-opts:
-      path: /
-      headers:
-        Host: ae135.cowjump.site
   - name: 'C - 🇯🇵 JP 19 TG: @nodpai'
     type: vless
     server: cluster-other-1.firstvideocdn.ru
@@ -1716,17 +1656,6 @@ proxies:
     port: 2053
     cipher: none
     password: 3e96ef7d-8637-42c2-ac73-75182196e7557
-  - name: 🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰
-    type: vmess
-    server: v30.hdacd.com
-    port: 30830
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    isFromWeb: true
-    webSource: https://www.cfmem.com
   - name: 🇯🇵 机场推荐:dafei.de 日本 09_1
     type: ss
     server: 45.61.137.103
@@ -1846,13 +1775,6 @@ proxies:
     password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
     isFromWeb: true
     webSource: https://www.cfmem.com
-  - name: 🇨🇦 机场推荐:dafei.de 加拿大 01
-    type: hysteria2
-    server: vpn-ca-002.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-ca-002.fastervpn.world
-    skip-cert-verify: true
   - name: trojan_78
     type: trojan
     server: j0443.ruixiangseo.xyz
@@ -1881,13 +1803,6 @@ proxies:
       short-id: 94f9
     isFromWeb: true
     webSource: https://www.cfmem.com
-  - name: 美国3
-    type: hysteria2
-    server: usa3.vpnmiao.site
-    port: 10002
-    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
-    sni: usa3.vpnmiao.site
-    skip-cert-verify: true
   - name: 🇩🇪 机场推荐:dafei.de 德国 13
     type: vless
     server: 104.18.12.149
@@ -1915,13 +1830,6 @@ proxies:
       public-key: fN3l3mYSDO44IWNPHWOQo2JMUw2isUGoOqrS6hCFfBQ
       short-id: d1f93724859d75ac
     client-fingerprint: chrome
-  - name: 🇨🇳 机场推荐:dafei.de 台湾 02
-    type: hysteria2
-    server: vpn-tw-001.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-tw-001.fastervpn.world
-    skip-cert-verify: true
   - name: 🇵🇱_PL_波兰
     type: vless
     server: pl74.mechvpn.online
@@ -1933,13 +1841,6 @@ proxies:
     client-fingerprint: chrome
     isFromWeb: true
     webSource: https://www.cfmem.com
-  - name: 美国7
-    type: hysteria2
-    server: usa7.vpnmiao.site
-    port: 10000
-    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
-    sni: usa7.vpnmiao.site
-    skip-cert-verify: true
   - name: 🇯🇵 机场推荐:dafei.de 日本 19_2
     type: ss
     server: 212.192.20.65
@@ -1952,13 +1853,6 @@ proxies:
     port: 443
     cipher: none
     password: 79960b0b-7d31-4263-8915-6511b0e137a87
-  - name: 🇭🇰 机场推荐:dafei.de 香港 05
-    type: hysteria2
-    server: 45.192.195.52
-    port: 5555
-    password: 3286b74d-a633-401f-8e22-6e8e61c5f1d9
-    sni: 45.192.195.52
-    skip-cert-verify: true
   - name: 🇻🇳_VN_越南_1_2
     type: ss
     server: 103.186.155.120
@@ -1973,13 +1867,6 @@ proxies:
     port: 443
     cipher: none
     password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b7
-  - name: 🇺🇸 机场推荐:dafei.de 美国 03_1
-    type: hysteria2
-    server: vpn-us-001.fastervpn.world
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vpn-us-001.fastervpn.world
-    skip-cert-verify: true
   - name: 🇵🇱_PL_波兰_1
     type: vless
     server: pl-1.illusion-vpn.ru
@@ -2007,13 +1894,6 @@ proxies:
       short-id: 958639bf55e679
     isFromWeb: true
     webSource: https://www.cfmem.com
-  - name: 美国6
-    type: hysteria2
-    server: usa6.vpnmiao.site
-    port: 10005
-    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
-    sni: usa6.vpnmiao.site
-    skip-cert-verify: true
   - name: 🇷🇴_RO_罗马尼亚
     type: vless
     server: 91.199.50.37
@@ -2028,13 +1908,6 @@ proxies:
       short-id: c906f73d3ba8211f
     isFromWeb: true
     webSource: https://www.cfmem.com
-  - name: 美国5
-    type: hysteria2
-    server: usa5.vpnmiao.site
-    port: 10004
-    password: 94ad0e88-cc6b-467a-b1c3-e38c3eb8301f
-    sni: usa5.vpnmiao.site
-    skip-cert-verify: true
   - name: 🇫🇷_www.panlongid.com_FR_法国_34_1
     type: vmess
     server: 2001:bc8:32d7:302::11
@@ -2128,7 +2001,6 @@ proxy-groups:
       - 🇯🇵 机场推荐:dafei.de 日本 12_1
       - 🇯🇵 机场推荐:dafei.de 日本 39
       - 🇯🇵 机场推荐:dafei.de 日本 14_1
-      - 🇯🇵 机场推荐:dafei.de 日本 02_2
       - 🇯🇵 机场推荐:dafei.de 日本 18_1
       - 英国 V2CROSS.COM
       - 英国 V2CROSS.COM_1
@@ -2167,24 +2039,20 @@ proxy-groups:
       - 🇯🇵 机场推荐:dafei.de 日本 15_3
       - 🇯🇵 机场推荐:dafei.de 日本 28_1
       - 🇯🇵 机场推荐:dafei.de 日本 50
-      - 🚹47@oneclickvpnkeys
       - 🇸🇪 瑞典 01 [wzdnzd/aggregator]
       - 香港 电讯盈科有限公司
       - 香港 电讯盈科有限公司_1
       - 🇫🇷_www.panlongid.com_FR_法国_34
       - 🇲🇾_MY_马来西亚->🇩🇪_DE_德国
       - 🇻🇳 机场推荐:dafei.de 越南 05
-      - 🇺🇸 机场推荐:dafei.de 美国 07
       - 🇻🇳 机场推荐:dafei.de 越南 04
       - 🇻🇳 机场推荐:dafei.de 越南 06
       - 'A - 🇸🇬 SG 01 TG: @nodpai'
-      - 🇩🇪 机场推荐:dafei.de 德国 01
       - 🇲🇾_MY_马来西亚->🇫🇷_FR_法国
       - trojan_4
       - trojan_42
       - trojan_53
       - trojan_54
-      - 🇬🇧 机场推荐:dafei.de 英国 01
       - 🇨🇭 机场推荐:dafei.de 瑞士 01
       - 最低月付2块钱1000G_1
       - 🇻🇳 机场推荐:dafei.de 越南 03
@@ -2198,7 +2066,6 @@ proxy-groups:
       - 🇯🇵 机场推荐:dafei.de 日本 36
       - 🇯🇵 机场推荐:dafei.de 日本 13_5
       - SG_speednode_0034
-      - 🇩🇪 机场推荐:dafei.de 德国 03
       - 🇯🇵 机场推荐:dafei.de 日本 21_2
       - 🇯🇵 机场推荐:dafei.de 日本 03_2
       - 🇩🇪 DE德国(mibei77.com 米贝节点分享)_77
@@ -2206,7 +2073,6 @@ proxy-groups:
       - TW_speednode_0036
       - 未知21
       - KR_speednode_0012
-      - 美国 CloudFlare节点_3
       - 'C - 🇯🇵 JP 19 TG: @nodpai'
       - 不限速不限设备不限地区
       - MD_speednode_0028
@@ -2299,7 +2165,6 @@ proxy-groups:
       - 🇯🇵 机场推荐:dafei.de 日本 31_1
       - 🇯🇵 机场推荐:dafei.de 日本 29_3
       - 🇯🇵 机场推荐:dafei.de 日本 11
-      - 🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰
       - 🇯🇵 机场推荐:dafei.de 日本 09_1
       - 🇪🇪 机场推荐:dafei.de 爱沙尼亚 01
       - 🇻🇳_VN_越南_2
@@ -2313,27 +2178,19 @@ proxy-groups:
       - 🇵🇱 机场推荐:dafei.de 波兰 01
       - 🇻🇳_VN_越南_14
       - 🇻🇳_VN_越南_1_1
-      - 🇨🇦 机场推荐:dafei.de 加拿大 01
       - trojan_78
       - 🇭🇰 机场推荐:dafei.de 香港 06
       - 🇨🇭_CH_瑞士
-      - 美国3
       - 🇩🇪 机场推荐:dafei.de 德国 13
       - 🇺🇸 机场推荐:dafei.de 美国 11
-      - 🇨🇳 机场推荐:dafei.de 台湾 02
       - 🇵🇱_PL_波兰
-      - 美国7
       - 🇯🇵 机场推荐:dafei.de 日本 19_2
       - 🇯🇵 机场推荐:dafei.de 日本 16_4
-      - 🇭🇰 机场推荐:dafei.de 香港 05
       - 🇻🇳_VN_越南_1_2
       - 🇭🇰 机场推荐:dafei.de 香港 07_1
-      - 🇺🇸 机场推荐:dafei.de 美国 03_1
       - 🇵🇱_PL_波兰_1
       - 🇬🇷_GR_希腊
-      - 美国6
       - 🇷🇴_RO_罗马尼亚
-      - 美国5
       - 🇫🇷_www.panlongid.com_FR_法国_34_1
 rules:
   - MATCH,PROXY

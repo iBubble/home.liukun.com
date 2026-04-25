@@ -19,7 +19,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 66
+    "localLatency": 115
   },
   {
     "name": "🇭🇰 HK",
@@ -42,7 +42,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 86
+    "localLatency": 74
   },
   {
     "name": "🇯🇵 JP 013 | ⬇️ 12MB/s",
@@ -65,7 +65,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 68
+    "localLatency": 95
   },
   {
     "name": "🇯🇵 JP 195 | ⬇️ 1MB/s",
@@ -88,7 +88,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 72
+    "localLatency": 70
   },
   {
     "id": "p_1776698546767_9_if5a6",
@@ -110,7 +110,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 229
+    "localLatency": 142
   },
   {
     "id": "p_1776633710821_40_2s2ua",
@@ -132,7 +132,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 190
+    "localLatency": 193
   },
   {
     "id": "p_1776698546767_2_u5nsd",
@@ -154,7 +154,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 183
+    "localLatency": 185
   },
   {
     "id": "p_1776720096566_19_pdcit",
@@ -176,7 +176,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 155
+    "localLatency": 150
   },
   {
     "id": "p_1776720096566_22_mxrxu",
@@ -198,7 +198,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 155
+    "localLatency": 149
   },
   {
     "id": "p_1776655355551_2_kq3qs",
@@ -220,7 +220,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 149
+    "localLatency": 154
   },
   {
     "id": "p_1776655355551_12_p6j4y",
@@ -242,7 +242,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 145
+    "localLatency": 155
   },
   {
     "id": "p_1776720096566_20_eufs5",
@@ -264,7 +264,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 160
+    "localLatency": 155
   },
   {
     "id": "p_1776720096567_34_ojdpd",
@@ -286,7 +286,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 152
+    "localLatency": 149
   },
   {
     "id": "p_1776288131228_11_7j3wf",
@@ -308,7 +308,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 150
+    "localLatency": 155
   },
   {
     "id": "p_1776633710821_37_k310i",
@@ -330,7 +330,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 149
+    "localLatency": 152
   },
   {
     "id": "p_1776720096567_33_0ex7d",
@@ -352,7 +352,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 153
+    "localLatency": 156
   },
   {
     "id": "p_1776720096566_24_jahnq",
@@ -374,7 +374,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 147
+    "localLatency": 148
   },
   {
     "id": "p_1776331359046_0_lnf8b",
@@ -396,7 +396,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 150
+    "localLatency": 147
   },
   {
     "id": "p_1776288131228_5_jeiwj",
@@ -418,7 +418,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 145
+    "localLatency": 144
   },
   {
     "id": "p_1776396188270_1_r48q4",
@@ -440,7 +440,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 150
+    "localLatency": 157
   },
   {
     "id": "p_1776396188270_5_otklo",
@@ -462,7 +462,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 151
+    "localLatency": 150
   },
   {
     "id": "p_1776720096566_23_s9kiv",
@@ -484,7 +484,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 144
+    "localLatency": 151
   },
   {
     "id": "p_1776720096567_35_74gtt",
@@ -506,7 +506,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 153
+    "localLatency": 150
   },
   {
     "id": "p_1776590566380_20_s97qw",
@@ -528,7 +528,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 148
+    "localLatency": 146
   },
   {
     "id": "p_1776590566379_0_qfxmp",
@@ -550,7 +550,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 146
+    "localLatency": 156
   },
   {
     "name": "🇯🇵 日本 14",
@@ -573,7 +573,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 191
+    "localLatency": 169
   },
   {
     "id": "p_1776288131229_19_o2b8z",
@@ -595,7 +595,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 183
+    "localLatency": 151
   },
   {
     "name": "🇺🇸 美国 16",
@@ -618,7 +618,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 211
+    "localLatency": 171
   },
   {
     "name": "🇺🇸 美国 25",
@@ -641,7 +641,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 224
+    "localLatency": 175
   },
   {
     "name": "🇯🇵 JP 008 | ⬇️ 3MB/s",
@@ -664,7 +664,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 177
+    "localLatency": 174
   },
   {
     "id": "p_1776698546767_8_ypg3r",
@@ -686,7 +686,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 188
+    "localLatency": 142
   },
   {
     "name": "🇭🇰 HK 148 | ⬇️ 2MB/s",
@@ -709,7 +709,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 177
+    "localLatency": 176
   },
   {
     "id": "p_1776698546767_10_6gjf6",
@@ -731,7 +731,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 191
+    "localLatency": 236
   },
   {
     "id": "p_1776698546767_4_bqjwm",
@@ -753,7 +753,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 188
+    "localLatency": 187
   },
   {
     "id": "p_1776698546767_7_7nbgv",
@@ -775,7 +775,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 179
+    "localLatency": 225
   },
   {
     "id": "p_1776655355551_6_8xizh",
@@ -797,7 +797,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 183
+    "localLatency": 136
   },
   {
     "id": "p_1776612160680_35_pait9",
@@ -819,7 +819,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 224
+    "localLatency": 140
   },
   {
     "id": "p_1776245066171_29_e3eed",
@@ -841,7 +841,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 137
+    "localLatency": 184
   },
   {
     "id": "p_1776028958702_0_76xyh",
@@ -863,7 +863,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 182
+    "localLatency": 137
   },
   {
     "id": "p_1776201760281_23_ajyo0",
@@ -885,7 +885,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 229
+    "localLatency": 185
   },
   {
     "id": "p_1776158555970_18_5casm",
@@ -907,7 +907,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 233
+    "localLatency": 185
   },
   {
     "id": "p_1776288131229_21_va58k",
@@ -929,7 +929,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 138
+    "localLatency": 230
   },
   {
     "id": "p_1775979063468_22_5hpjk",
@@ -951,7 +951,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 226
+    "localLatency": 155
   },
   {
     "id": "p_1776028958703_38_7ibc5",
@@ -973,7 +973,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 185
+    "localLatency": 142
   },
   {
     "id": "p_1776158555970_15_l0gj7",
@@ -995,7 +995,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 189
+    "localLatency": 179
   },
   {
     "id": "p_1776331359046_6_fqwfy",
@@ -1017,7 +1017,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 180
+    "localLatency": 186
   },
   {
     "id": "p_1776201760281_20_bft7j",
@@ -1039,7 +1039,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 228
+    "localLatency": 227
   },
   {
     "id": "p_1776201760281_16_qhfj7",
@@ -1061,7 +1061,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 185
+    "localLatency": 136
   },
   {
     "id": "p_1776201760281_28_sds8n",
@@ -1083,7 +1083,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 178
+    "localLatency": 181
   },
   {
     "id": "p_1776806526510_46_kew92",
@@ -1105,7 +1105,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 289
+    "localLatency": 275
   },
   {
     "id": "p_1776201760281_27_pj2qj",
@@ -1127,7 +1127,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 179
+    "localLatency": 149
   },
   {
     "id": "p_1776201760281_25_v71my",
@@ -1149,7 +1149,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 230
+    "localLatency": 237
   },
   {
     "id": "p_1777065709460_4_yym3j",
@@ -1171,7 +1171,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 309
+    "localLatency": 328
   },
   {
     "id": "p_1776698546767_18_1nfcd",
@@ -1193,7 +1193,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 314
+    "localLatency": 320
   },
   {
     "id": "p_1776806526510_47_kq42j",
@@ -1215,7 +1215,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 490
+    "localLatency": 281
   },
   {
     "id": "p_1776158555970_16_rwv0w",
@@ -1237,7 +1237,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 290
+    "localLatency": 316
   },
   {
     "id": "p_1776396188270_4_agpto",
@@ -1259,7 +1259,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 273
+    "localLatency": 300
   },
   {
     "id": "p_1776331359046_28_qciom",
@@ -1281,7 +1281,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 731
+    "localLatency": 353
   },
   {
     "id": "p_1777087379265_0_h12ru",
@@ -1303,7 +1303,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 275
+    "localLatency": 344
   },
   {
     "id": "p_1776396188270_14_oq5i3",
@@ -1325,7 +1325,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1351
+    "localLatency": 344
   },
   {
     "id": "p_1777130635809_31_f2vb6",
@@ -1347,7 +1347,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 405
+    "localLatency": 344
   },
   {
     "id": "p_1776763298972_21_vlmec",
@@ -1369,7 +1369,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1400
+    "localLatency": 355
   },
   {
     "id": "p_1776763298972_15_owpti",
@@ -1391,7 +1391,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 411
+    "localLatency": 342
   },
   {
     "id": "p_1776396188270_16_jr8lw",
@@ -1413,7 +1413,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 373
+    "localLatency": 343
   },
   {
     "id": "p_1776806526510_20_mmb9o",
@@ -1435,7 +1435,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 356
+    "localLatency": 342
   },
   {
     "id": "p_1776763298972_16_xz540",
@@ -1457,7 +1457,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 343
+    "localLatency": 331
   },
   {
     "id": "p_1777130635809_45_u5z3r",
@@ -1479,7 +1479,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 359
+    "localLatency": 344
   },
   {
     "id": "p_1776396188270_12_widlb",
@@ -1501,7 +1501,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 383
+    "localLatency": 348
   },
   {
     "name": "🇯🇵 JP 002 | ⬇️ 2MB/s",
@@ -1524,7 +1524,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 174
+    "localLatency": 172
   },
   {
     "id": "p_1776245066171_48_6evhg",
@@ -1546,7 +1546,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 366
+    "localLatency": 341
   },
   {
     "id": "p_1776763298972_17_gm160",
@@ -1568,7 +1568,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 365
+    "localLatency": 344
   },
   {
     "id": "p_1776590566380_11_d5hfy",
@@ -1590,7 +1590,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 356
+    "localLatency": 344
   },
   {
     "id": "p_1776698546768_56_hmkyf",
@@ -1612,7 +1612,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1383
+    "localLatency": 371
   },
   {
     "id": "p_1776158555970_13_wuzpp",
@@ -1634,30 +1634,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 406
-  },
-  {
-    "id": "p_1777130635809_16_sb7tz",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 02",
-    "type": "hysteria2",
-    "server": "vpn-jp-003.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-jp-003.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-003.fastervpn.world:443?insecure=1&sni=vpn-jp-003.fastervpn.world#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2002",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 02_2",
-    "latency": 374,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "202.98.76.12",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 378
+    "localLatency": 362
   },
   {
     "id": "p_1775921376875_17_3vc17",
@@ -1679,7 +1656,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 401
+    "localLatency": 441
   },
   {
     "id": "p_1777130634923_9_j8wkn",
@@ -1705,7 +1682,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 394
+    "localLatency": 387
   },
   {
     "id": "p_1777130634923_5_te19b",
@@ -1758,7 +1735,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 395
+    "localLatency": 420
   },
   {
     "id": "p_1776590566380_19_p188f",
@@ -1780,7 +1757,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1460
+    "localLatency": 433
   },
   {
     "id": "p_1776698546768_49_mlgwx",
@@ -1802,7 +1779,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 411
+    "localLatency": 407
   },
   {
     "id": "p_1776374486422_15_urbgq",
@@ -1824,7 +1801,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 461
+    "localLatency": 501
   },
   {
     "id": "p_1776698546768_40_e0wlv",
@@ -1846,7 +1823,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 426
+    "localLatency": 414
   },
   {
     "id": "p_1776590566380_21_o8pbt",
@@ -1868,7 +1845,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 446
+    "localLatency": 419
   },
   {
     "id": "p_1776698546768_39_p2uyi",
@@ -1890,7 +1867,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 463
+    "localLatency": 439
   },
   {
     "id": "p_1777130634923_3_k7eg0",
@@ -1917,7 +1894,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 406
+    "localLatency": 380
   },
   {
     "id": "p_1776612160680_47_52cv3",
@@ -1939,7 +1916,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 498
+    "localLatency": 508
   },
   {
     "id": "p_1776288131228_17_lq0ra",
@@ -1961,7 +1938,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 474
+    "localLatency": 465
   },
   {
     "id": "p_1776763298972_11_wsnle",
@@ -1983,7 +1960,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 468
+    "localLatency": 455
   },
   {
     "id": "p_1776590566380_14_omwly",
@@ -2005,7 +1982,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 451
+    "localLatency": 436
   },
   {
     "id": "p_1776698546767_21_9ueta",
@@ -2027,7 +2004,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 420
+    "localLatency": 434
   },
   {
     "id": "p_1776698546768_41_s2a8s",
@@ -2049,7 +2026,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 484
+    "localLatency": 471
   },
   {
     "id": "p_1776590566380_8_g5ob7",
@@ -2071,7 +2048,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 421
+    "localLatency": 352
   },
   {
     "id": "p_1776331359046_12_n83qc",
@@ -2093,7 +2070,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 474
+    "localLatency": 486
   },
   {
     "id": "p_1776590566380_12_vcp8v",
@@ -2115,7 +2092,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 469
+    "localLatency": 465
   },
   {
     "name": "🇻🇳 越南家宽 18 [wzdnzd/aggregator]",
@@ -2138,7 +2115,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 450
+    "localLatency": 471
   },
   {
     "id": "p_1776612160680_38_x578r",
@@ -2160,7 +2137,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 879
+    "localLatency": 486
   },
   {
     "id": "p_1776612160680_22_u4fuf",
@@ -2182,7 +2159,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 500
+    "localLatency": 443
   },
   {
     "id": "p_1776158555970_6_hvgle",
@@ -2204,7 +2181,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 516
+    "localLatency": 492
   },
   {
     "id": "p_1776158555970_17_9x5b9",
@@ -2226,7 +2203,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 487
+    "localLatency": 465
   },
   {
     "name": "请开启分片功能否则节点可能不通！",
@@ -2257,7 +2234,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 459
+    "localLatency": 491
   },
   {
     "id": "p_1776331359046_27_86xcq",
@@ -2279,7 +2256,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 501
+    "localLatency": 532
   },
   {
     "id": "p_1776331359046_26_87fvu",
@@ -2301,7 +2278,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 448
+    "localLatency": 438
   },
   {
     "id": "p_1776612160680_46_7icx5",
@@ -2323,7 +2300,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 546
+    "localLatency": 522
   },
   {
     "id": "p_1776331359046_16_k09es",
@@ -2345,7 +2322,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 551
+    "localLatency": 545
   },
   {
     "id": "p_1776331359046_23_jj9ah",
@@ -2367,7 +2344,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 551
+    "localLatency": 601
   },
   {
     "id": "p_1777108948412_95_y6kky",
@@ -2389,7 +2366,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 379
+    "localLatency": 343
   },
   {
     "id": "p_1776612160680_43_wr0gi",
@@ -2411,7 +2388,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 540
+    "localLatency": 579
   },
   {
     "id": "p_1776245066171_51_j8xbu",
@@ -2433,7 +2410,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 553
+    "localLatency": 532
   },
   {
     "id": "p_1776331359046_11_k9ik9",
@@ -2455,7 +2432,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 842
+    "localLatency": 590
   },
   {
     "id": "p_1776331359046_14_hxq4n",
@@ -2477,7 +2454,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 583
+    "localLatency": 526
   },
   {
     "id": "p_1776612160680_50_nl93k",
@@ -2499,7 +2476,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1654
+    "localLatency": 625
   },
   {
     "id": "p_1777108948412_47_3w99y",
@@ -2530,31 +2507,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1048
-  },
-  {
-    "name": "🚹47@oneclickvpnkeys",
-    "type": "hysteria2",
-    "server": "163.172.113.118",
-    "port": 40022,
-    "tfo": true,
-    "skip-cert-verify": true,
-    "password": "dongtaiwang.com",
-    "auth": "dongtaiwang.com",
-    "sni": "www.microsoft.com",
-    "id": "p_1777129800509_1354_dthva",
-    "forumSource": "hk_server",
-    "_clashName": "🚹47@oneclickvpnkeys",
-    "latency": 679,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "202.98.76.12",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 657
+    "localLatency": 717
   },
   {
     "name": "🇸🇪 瑞典 01 [wzdnzd/aggregator]",
@@ -2585,7 +2538,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1527
+    "localLatency": 666
   },
   {
     "id": "p_1777130634923_2_ocfj7",
@@ -2612,7 +2565,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 5188
+    "localLatency": 341
   },
   {
     "id": "p_1777065708669_0_tlioc",
@@ -2639,7 +2592,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 4549
+    "localLatency": 364
   },
   {
     "id": "nql9l03ha",
@@ -2672,7 +2625,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1662,
+    "localLatency": 689,
     "purity": {
       "countryCode": "CN",
       "isp": "Chinanet",
@@ -2703,7 +2656,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 792
+    "localLatency": 1244
   },
   {
     "id": "p_1777087379268_135_lpm90",
@@ -2725,30 +2678,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1046
-  },
-  {
-    "id": "p_1777108948412_110_8ur7a",
-    "name": "🇺🇸 机场推荐:dafei.de 美国 07",
-    "type": "hysteria2",
-    "server": "vpn-us-017.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-us-017.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-us-017.fastervpn.world:443?insecure=1&sni=vpn-us-017.fastervpn.world#%F0%9F%87%BA%F0%9F%87%B8%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E7%BE%8E%E5%9B%BD%2007",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇺🇸 机场推荐:dafei.de 美国 07",
-    "latency": 789,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "202.98.76.12",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 846
+    "localLatency": 450
   },
   {
     "id": "p_1777087379268_134_o1li6",
@@ -2770,7 +2700,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 488
+    "localLatency": 463
   },
   {
     "id": "p_1777087379268_136_5ueoz",
@@ -2792,7 +2722,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 453
+    "localLatency": 475
   },
   {
     "name": "A - 🇸🇬 SG 01 TG: @nodpai",
@@ -2823,30 +2753,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 596
-  },
-  {
-    "id": "p_1777130635809_48_pbulw",
-    "name": "🇩🇪 机场推荐:dafei.de 德国 01",
-    "type": "hysteria2",
-    "server": "vpn-de-002.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-de-002.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-de-002.fastervpn.world:443?insecure=1&sni=vpn-de-002.fastervpn.world#%F0%9F%87%A9%F0%9F%87%AA%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%BE%B7%E5%9B%BD%2001",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇩🇪 机场推荐:dafei.de 德国 01",
-    "latency": 827,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "202.98.76.12",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 833
+    "localLatency": 391
   },
   {
     "name": "🇲🇾_MY_马来西亚->🇫🇷_FR_法国",
@@ -2872,7 +2779,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1534
+    "localLatency": 810
   },
   {
     "name": "trojan_4",
@@ -2896,7 +2803,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 894,
+    "localLatency": 857,
     "purity": {
       "countryCode": "CN",
       "isp": "Chinanet",
@@ -2925,7 +2832,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 765,
+    "localLatency": 774,
     "purity": {
       "countryCode": "CN",
       "isp": "Chinanet",
@@ -2954,7 +2861,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 792,
+    "localLatency": 766,
     "purity": {
       "countryCode": "CN",
       "isp": "Chinanet",
@@ -2983,35 +2890,12 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 784,
+    "localLatency": 875,
     "purity": {
       "countryCode": "CN",
       "isp": "Chinanet",
       "hosting": false
     }
-  },
-  {
-    "id": "p_1777130635809_32_3w7ez",
-    "name": "🇬🇧 机场推荐:dafei.de 英国 01",
-    "type": "hysteria2",
-    "server": "vpn-uk-002.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-uk-002.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-uk-002.fastervpn.world:443?insecure=1&sni=vpn-uk-002.fastervpn.world#%F0%9F%87%AC%F0%9F%87%A7%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E8%8B%B1%E5%9B%BD%2001",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇬🇧 机场推荐:dafei.de 英国 01",
-    "latency": 856,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "202.98.76.12",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 904
   },
   {
     "id": "p_1777108948413_141_jmtal",
@@ -3042,7 +2926,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 899
+    "localLatency": 928
   },
   {
     "name": "最低月付2块钱1000G_1",
@@ -3075,7 +2959,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 5642
+    "localLatency": 1429
   },
   {
     "id": "p_1777087379268_133_anwuz",
@@ -3097,7 +2981,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 461
+    "localLatency": 1065
   },
   {
     "id": "p_1777087379268_132_gp9sx",
@@ -3119,7 +3003,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1540
+    "localLatency": 934
   },
   {
     "name": "官网https://kelayun.notepin.co",
@@ -3151,7 +3035,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 411
+    "localLatency": 403
   },
   {
     "name": "🇻🇳 越南家宽 16 [wzdnzd/aggregator]",
@@ -3174,7 +3058,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1495
+    "localLatency": 478
   },
   {
     "name": "🇸🇪 瑞典(mibei77.com 米贝节点分享)",
@@ -3199,7 +3083,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1060
+    "localLatency": 1118
   },
   {
     "name": "下单https://kelayun.notepin.co",
@@ -3229,7 +3113,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 2730
+    "localLatency": 1095
   },
   {
     "name": "🇵🇱PL_1|2.1MB/s",
@@ -3255,7 +3139,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 849
+    "localLatency": 841
   },
   {
     "id": "p_1776698546768_44_uf63s",
@@ -3277,7 +3161,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 376
+    "localLatency": 362
   },
   {
     "id": "p_1776698546768_53_lgowb",
@@ -3299,7 +3183,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1398
+    "localLatency": 395
   },
   {
     "id": "p_1776158555970_12_ftoxg",
@@ -3321,7 +3205,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 545
+    "localLatency": 473
   },
   {
     "name": "SG_speednode_0034",
@@ -3345,30 +3229,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 937
-  },
-  {
-    "id": "p_1777130635809_50_yf42n",
-    "name": "🇩🇪 机场推荐:dafei.de 德国 03",
-    "type": "hysteria2",
-    "server": "vpn-de-001.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-de-001.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-de-001.fastervpn.world:443?insecure=1&sni=vpn-de-001.fastervpn.world#%F0%9F%87%A9%F0%9F%87%AA%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%BE%B7%E5%9B%BD%2003",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇩🇪 机场推荐:dafei.de 德国 03",
-    "latency": 1478,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "202.98.76.12",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 844
+    "localLatency": 1052
   },
   {
     "id": "p_1776612160680_44_d6te5",
@@ -3390,7 +3251,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 472
+    "localLatency": 466
   },
   {
     "id": "p_1776245066171_46_hhicx",
@@ -3412,7 +3273,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 587
+    "localLatency": 533
   },
   {
     "name": "🇩🇪 DE德国(mibei77.com 米贝节点分享)_77",
@@ -3437,7 +3298,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1078
+    "localLatency": 933
   },
   {
     "id": "p_1777087379269_138_5g7wj",
@@ -3459,7 +3320,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 521
+    "localLatency": 480
   },
   {
     "name": "TW_speednode_0036",
@@ -3483,7 +3344,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 965
+    "localLatency": 960
   },
   {
     "name": "未知21",
@@ -3514,7 +3375,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1355
+    "localLatency": 1062
   },
   {
     "name": "KR_speednode_0012",
@@ -3545,40 +3406,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 534
-  },
-  {
-    "name": "美国 CloudFlare节点_3",
-    "type": "vmess",
-    "server": "ae135.cowjump.site",
-    "port": 443,
-    "tfo": true,
-    "skip-cert-verify": true,
-    "uuid": "0bf1cead-bdd4-4692-b3d4-6866ccb9f37a",
-    "alterId": 0,
-    "cipher": "auto",
-    "network": "ws",
-    "tls": true,
-    "servername": "ae135.cowjump.site",
-    "ws-opts": {
-      "path": "/",
-      "headers": {
-        "Host": "ae135.cowjump.site"
-      }
-    },
-    "id": "p_1777086602433_731_utvte",
-    "forumSource": "sg_server",
-    "_clashName": "美国 CloudFlare节点_3",
-    "latency": 2231,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "116.54.76.11",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 4385
+    "localLatency": 413
   },
   {
     "name": "C - 🇯🇵 JP 19 TG: @nodpai",
@@ -3604,7 +3432,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1814
+    "localLatency": 1613
   },
   {
     "name": "不限速不限设备不限地区",
@@ -3635,7 +3463,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 2099
+    "localLatency": 612
   },
   {
     "name": "MD_speednode_0028",
@@ -3659,7 +3487,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 1638
+    "localLatency": 816
   },
   {
     "name": "最低月付2块钱1000G_2",
@@ -3691,7 +3519,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 514
+    "localLatency": 3823
   },
   {
     "id": "p_1776698546768_38_kpjm9",
@@ -3710,7 +3538,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 151
+    "localLatency": 230
   },
   {
     "id": "p_1776590566380_27_27bjt",
@@ -3729,7 +3557,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 146
+    "localLatency": 151
   },
   {
     "id": "p_1776547313845_6_co6uc",
@@ -3748,7 +3576,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 148
+    "localLatency": 152
   },
   {
     "id": "p_1776158555970_26_3sy9n",
@@ -3767,7 +3595,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 147
+    "localLatency": 153
   },
   {
     "id": "p_1776655355553_82_j5zvi",
@@ -3786,7 +3614,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 147
+    "localLatency": 150
   },
   {
     "id": "p_1776245066171_65_ghm7g",
@@ -3805,7 +3633,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 152
+    "localLatency": 155
   },
   {
     "id": "p_1776892901789_14_31xiz",
@@ -3824,7 +3652,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 174
+    "localLatency": 166
   },
   {
     "name": "🇯🇵 JP 004 | ⬇️ 12MB/s",
@@ -3844,7 +3672,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 184
+    "localLatency": 174
   },
   {
     "id": "p_1775964355192_40_7n2d4",
@@ -3863,7 +3691,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 141
+    "localLatency": 230
   },
   {
     "id": "p_1776655355551_25_frc7h",
@@ -3882,7 +3710,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 230
+    "localLatency": 179
   },
   {
     "id": "p_1776396188270_41_izi2q",
@@ -3901,7 +3729,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 182
+    "localLatency": 224
   },
   {
     "id": "p_1776288131229_57_2reky",
@@ -3920,7 +3748,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 179
+    "localLatency": 132
   },
   {
     "id": "p_1776201760282_137_7jfr9",
@@ -3939,7 +3767,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 225
+    "localLatency": 148
   },
   {
     "id": "p_1776115366554_25_x4qzb",
@@ -3958,7 +3786,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 186
+    "localLatency": 184
   },
   {
     "id": "p_1776115366554_30_08tsy",
@@ -3977,7 +3805,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 229
+    "localLatency": 230
   },
   {
     "id": "p_1776590566380_28_ihd1s",
@@ -3996,7 +3824,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 145
+    "localLatency": 184
   },
   {
     "id": "p_1776072160943_38_so7bp",
@@ -4015,7 +3843,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 231
+    "localLatency": 141
   },
   {
     "id": "p_1776396188270_42_hz73m",
@@ -4034,7 +3862,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 183
+    "localLatency": 182
   },
   {
     "id": "p_1776288131229_24_4q4nj",
@@ -4053,7 +3881,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 189
+    "localLatency": 183
   },
   {
     "id": "p_1776158555970_25_rcfmt",
@@ -4072,7 +3900,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 223
+    "localLatency": 185
   },
   {
     "id": "p_1776028958702_15_3hfoa",
@@ -4091,7 +3919,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 153
+    "localLatency": 181
   },
   {
     "id": "p_1776396188270_26_ybovb",
@@ -4110,7 +3938,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 421
+    "localLatency": 389
   },
   {
     "id": "p_1776590566381_68_31orp",
@@ -4129,7 +3957,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 612
+    "localLatency": 362
   },
   {
     "id": "p_1775942762400_89_x6pf2",
@@ -4148,7 +3976,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 614
+    "localLatency": 350
   },
   {
     "id": "p_1776245066171_57_60zaq",
@@ -4167,7 +3995,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 637
+    "localLatency": 486
   },
   {
     "id": "p_1776374486422_21_rbjo6",
@@ -4186,7 +4014,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 354
+    "localLatency": 471
   },
   {
     "id": "p_1776396188271_62_n4ipa",
@@ -4205,7 +4033,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 429
+    "localLatency": 455
   },
   {
     "id": "p_1776201760282_81_tbcxx",
@@ -4224,7 +4052,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 361
+    "localLatency": 396
   },
   {
     "id": "p_1776590566380_22_9uhas",
@@ -4243,7 +4071,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 676
+    "localLatency": 348
   },
   {
     "id": "p_1776288131229_30_9b44n",
@@ -4262,7 +4090,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 279
+    "localLatency": 336
   },
   {
     "id": "p_1776158555970_33_jjhik",
@@ -4281,7 +4109,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 566
+    "localLatency": 350
   },
   {
     "id": "p_1776374486423_39_02l79",
@@ -4300,7 +4128,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 348
+    "localLatency": 347
   },
   {
     "id": "p_1776698546768_58_njlhn",
@@ -4319,7 +4147,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 362
+    "localLatency": 347
   },
   {
     "id": "p_1776288131229_39_4ph50",
@@ -4338,7 +4166,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 378
+    "localLatency": 371
   },
   {
     "id": "p_1776374486423_57_5i0z6",
@@ -4357,7 +4185,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 779
+    "localLatency": 353
   },
   {
     "id": "p_1776288131229_25_e8yl5",
@@ -4376,7 +4204,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 384
+    "localLatency": 390
   },
   {
     "id": "p_1777130634923_8_d2ajs",
@@ -4400,7 +4228,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1442
+    "localLatency": 387
   },
   {
     "id": "p_1776201760282_119_hzthl",
@@ -4419,7 +4247,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 446
+    "localLatency": 445
   },
   {
     "id": "p_1776374486424_93_lqm9f",
@@ -4438,7 +4266,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 450
+    "localLatency": 451
   },
   {
     "id": "p_1776892901791_96_r4gsr",
@@ -4457,7 +4285,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 469
+    "localLatency": 460
   },
   {
     "id": "p_1776158555970_30_7ea0l",
@@ -4476,7 +4304,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 486
+    "localLatency": 499
   },
   {
     "id": "p_1776374486423_55_xzpal",
@@ -4495,7 +4323,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 467
+    "localLatency": 431
   },
   {
     "id": "p_1776396188270_19_jys53",
@@ -4514,7 +4342,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 464
+    "localLatency": 459
   },
   {
     "id": "p_1776396188271_64_qpbrg",
@@ -4533,7 +4361,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 450
+    "localLatency": 436
   },
   {
     "id": "p_1776789659453_44_svyzn",
@@ -4552,7 +4380,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 425
+    "localLatency": 408
   },
   {
     "id": "p_1776158555970_35_c748w",
@@ -4571,7 +4399,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 443
+    "localLatency": 433
   },
   {
     "id": "p_1776288131229_101_h2vbk",
@@ -4590,7 +4418,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 470
+    "localLatency": 453
   },
   {
     "id": "p_1776590566380_26_jz4pf",
@@ -4609,7 +4437,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 529
+    "localLatency": 556
   },
   {
     "id": "p_1776288131229_100_lrk5t",
@@ -4628,7 +4456,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 469
+    "localLatency": 459
   },
   {
     "id": "p_1776201760282_121_7yia1",
@@ -4647,7 +4475,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 513
+    "localLatency": 441
   },
   {
     "id": "p_1776201760282_79_05wts",
@@ -4666,7 +4494,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 1098
+    "localLatency": 451
   },
   {
     "id": "p_1776201760281_59_ktez6",
@@ -4685,7 +4513,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 584
+    "localLatency": 484
   },
   {
     "id": "p_1776201760282_76_xx6l1",
@@ -4704,7 +4532,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 460
+    "localLatency": 410
   },
   {
     "id": "p_1776288131229_31_8y7zk",
@@ -4723,7 +4551,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1470
+    "localLatency": 416
   },
   {
     "name": "🇦🇺 AU澳大利亚(mibei77.com 米贝节点分享)",
@@ -4745,7 +4573,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 503
+    "localLatency": 501
   },
   {
     "id": "p_1776245066171_72_0bz5o",
@@ -4764,7 +4592,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 461
+    "localLatency": 462
   },
   {
     "id": "p_1776374486422_26_6figz",
@@ -4783,7 +4611,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 487
+    "localLatency": 478
   },
   {
     "id": "p_1776892901790_62_cgkhh",
@@ -4802,7 +4630,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 742
+    "localLatency": 509
   },
   {
     "id": "p_1776698546768_62_kyjza",
@@ -4821,7 +4649,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 490
+    "localLatency": 473
   },
   {
     "id": "p_1776331359048_69_qoep4",
@@ -4840,7 +4668,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 468
+    "localLatency": 453
   },
   {
     "id": "p_1776201760282_74_blpne",
@@ -4859,7 +4687,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 482
+    "localLatency": 448
   },
   {
     "id": "p_1776158555970_28_7t2n8",
@@ -4878,7 +4706,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1804
+    "localLatency": 516
   },
   {
     "id": "p_1776698546768_47_utajj",
@@ -4897,7 +4725,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 477
+    "localLatency": 511
   },
   {
     "id": "p_1776698546768_55_2goza",
@@ -4916,7 +4744,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 431
+    "localLatency": 496
   },
   {
     "id": "p_1776245066171_69_5pplr",
@@ -4935,7 +4763,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 515
+    "localLatency": 508
   },
   {
     "id": "p_1776288131229_40_k02q5",
@@ -4954,7 +4782,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 481
+    "localLatency": 478
   },
   {
     "id": "p_1776201760281_60_mcryc",
@@ -4973,7 +4801,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 533
+    "localLatency": 496
   },
   {
     "id": "p_1776245066171_67_7fw8x",
@@ -4992,7 +4820,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 506
+    "localLatency": 501
   },
   {
     "id": "p_1776590566380_29_v09ry",
@@ -5011,7 +4839,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 573
+    "localLatency": 522
   },
   {
     "id": "p_1776698546768_60_c8k1c",
@@ -5030,7 +4858,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 506
+    "localLatency": 475
   },
   {
     "id": "p_1776245066171_63_z8w8z",
@@ -5049,7 +4877,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 744
+    "localLatency": 348
   },
   {
     "id": "p_1776331359048_68_1yq56",
@@ -5068,7 +4896,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 497
+    "localLatency": 501
   },
   {
     "id": "p_1776201760282_69_ft29f",
@@ -5087,7 +4915,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 578
+    "localLatency": 582
   },
   {
     "id": "p_1776158555970_24_kqwnw",
@@ -5106,7 +4934,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 536
+    "localLatency": 596
   },
   {
     "id": "p_1776201760281_57_uu29t",
@@ -5125,7 +4953,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 573
+    "localLatency": 553
   },
   {
     "id": "p_1776374486422_19_l5f79",
@@ -5144,7 +4972,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 554
+    "localLatency": 525
   },
   {
     "id": "p_1776245066171_71_ps4am",
@@ -5163,7 +4991,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 724
+    "localLatency": 338
   },
   {
     "id": "p_1776396188270_34_j6g7h",
@@ -5182,7 +5010,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 601
+    "localLatency": 519
   },
   {
     "id": "p_1776374486422_24_p584i",
@@ -5201,7 +5029,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 613
+    "localLatency": 550
   },
   {
     "id": "p_1776245066171_61_mi40e",
@@ -5220,7 +5048,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 983
+    "localLatency": 599
   },
   {
     "id": "p_1776590566381_60_64n4d",
@@ -5239,7 +5067,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 932
+    "localLatency": 583
   },
   {
     "id": "p_1776590566380_25_wthgx",
@@ -5258,7 +5086,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 535
+    "localLatency": 596
   },
   {
     "id": "p_1776201760282_122_nzfom",
@@ -5277,7 +5105,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 535
+    "localLatency": 579
   },
   {
     "id": "p_1776158555970_22_eofrb",
@@ -5296,7 +5124,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 594
+    "localLatency": 555
   },
   {
     "id": "p_1776698546768_65_ivpqy",
@@ -5315,7 +5143,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 551
+    "localLatency": 538
   },
   {
     "id": "p_1776698546768_48_8ogux",
@@ -5334,7 +5162,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1622
+    "localLatency": 590
   },
   {
     "id": "p_1776374486422_27_3ak1c",
@@ -5353,7 +5181,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 613
+    "localLatency": 532
   },
   {
     "id": "p_1775489295487_40_3wv39",
@@ -5372,30 +5200,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 560
-  },
-  {
-    "name": "🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰",
-    "type": "vmess",
-    "server": "v30.hdacd.com",
-    "port": 30830,
-    "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
-    "alterId": 0,
-    "cipher": "auto",
-    "tls": false,
-    "skip-cert-verify": false,
-    "id": "p_1777130728621_7_gcq17",
-    "isFromWeb": true,
-    "webSource": "https://www.cfmem.com",
-    "_sourceUrl": "https://v2rayse.com/fs/public/20260425/free-node-share-21a06fd2.yaml",
-    "_clashName": "🇲🇾_MY_马来西亚->🇳🇱_NL_荷兰",
-    "latency": 700,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 721
+    "localLatency": 567
   },
   {
     "id": "p_1775910155890_32_mi7dc",
@@ -5414,7 +5219,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 556
+    "localLatency": 599
   },
   {
     "id": "p_1776590566381_57_yzru0",
@@ -5442,7 +5247,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 813
+    "localLatency": 835
   },
   {
     "name": "🇻🇳_VN_越南_2",
@@ -5462,7 +5267,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 491
+    "localLatency": 1266
   },
   {
     "name": "🇻🇳_VN_越南_2",
@@ -5482,7 +5287,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 437
+    "localLatency": 466
   },
   {
     "name": "🇻🇳_VN_越南_1",
@@ -5502,7 +5307,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 482
+    "localLatency": 453
   },
   {
     "name": "🇻🇳_VN_越南_7",
@@ -5522,7 +5327,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 648
+    "localLatency": 516
   },
   {
     "name": "🇻🇳_VN_越南",
@@ -5542,7 +5347,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 471
+    "localLatency": 1539
   },
   {
     "name": "trojan_3",
@@ -5563,7 +5368,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 794,
+    "localLatency": 732,
     "purity": {
       "isp": "",
       "hosting": false
@@ -5587,7 +5392,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 463
+    "localLatency": 565
   },
   {
     "id": "p_1777130635810_94_hvowi",
@@ -5611,7 +5416,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1890
+    "localLatency": 861
   },
   {
     "id": "p_1776720096568_127_nkkx6",
@@ -5641,7 +5446,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 2262
+    "localLatency": 892
   },
   {
     "name": "🇻🇳_VN_越南_14",
@@ -5661,7 +5466,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 443
+    "localLatency": 486
   },
   {
     "name": "🇻🇳_VN_越南_1",
@@ -5681,27 +5486,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 510
-  },
-  {
-    "id": "p_1777130635810_82_iu3gf",
-    "name": "🇨🇦 机场推荐:dafei.de 加拿大 01",
-    "type": "hysteria2",
-    "server": "vpn-ca-002.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-ca-002.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-ca-002.fastervpn.world:443?insecure=1&sni=vpn-ca-002.fastervpn.world#%F0%9F%87%A8%F0%9F%87%A6%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%8A%A0%E6%8B%BF%E5%A4%A7%2001",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇨🇦 机场推荐:dafei.de 加拿大 01",
-    "latency": 911,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 952
+    "localLatency": 523
   },
   {
     "name": "trojan_78",
@@ -5722,7 +5507,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 723,
+    "localLatency": 680,
     "purity": {
       "isp": "",
       "hosting": false
@@ -5745,7 +5530,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 567
+    "localLatency": 355
   },
   {
     "name": "🇨🇭_CH_瑞士",
@@ -5771,27 +5556,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 951
-  },
-  {
-    "id": "p_1777130643708_2_pyvsw",
-    "name": "美国3",
-    "type": "hysteria2",
-    "server": "usa3.vpnmiao.site",
-    "port": 10002,
-    "password": "94ad0e88-cc6b-467a-b1c3-e38c3eb8301f",
-    "sni": "usa3.vpnmiao.site",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://94ad0e88-cc6b-467a-b1c3-e38c3eb8301f@usa3.vpnmiao.site:10002?insecure=0#%E7%BE%8E%E5%9B%BD3",
-    "_sourceUrl": "https://subcrib.vpnmiao.site/s/ca4610ba545c4b52f9c40c96082152fc",
-    "_clashName": "美国3",
-    "latency": 1054,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 1092
+    "localLatency": 1025
   },
   {
     "id": "p_1776871396057_67_kkbd9",
@@ -5819,7 +5584,7 @@
       "score": 50,
       "error": "Timeout"
     },
-    "localLatency": 1325
+    "localLatency": 1052
   },
   {
     "id": "p_1776892901790_45_if36u",
@@ -5847,27 +5612,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1035
-  },
-  {
-    "id": "p_1777130635810_77_xcsx3",
-    "name": "🇨🇳 机场推荐:dafei.de 台湾 02",
-    "type": "hysteria2",
-    "server": "vpn-tw-001.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-tw-001.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-tw-001.fastervpn.world:443?insecure=1&sni=vpn-tw-001.fastervpn.world#%F0%9F%87%A8%F0%9F%87%B3%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E5%8F%B0%E6%B9%BE%2002",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇨🇳 机场推荐:dafei.de 台湾 02",
-    "latency": 1175,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 2729
+    "localLatency": 1043
   },
   {
     "name": "🇵🇱_PL_波兰",
@@ -5890,27 +5635,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 962
-  },
-  {
-    "id": "p_1777130643708_6_xan8r",
-    "name": "美国7",
-    "type": "hysteria2",
-    "server": "usa7.vpnmiao.site",
-    "port": 10000,
-    "password": "94ad0e88-cc6b-467a-b1c3-e38c3eb8301f",
-    "sni": "usa7.vpnmiao.site",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://94ad0e88-cc6b-467a-b1c3-e38c3eb8301f@usa7.vpnmiao.site:10000?insecure=0#%E7%BE%8E%E5%9B%BD7",
-    "_sourceUrl": "https://subcrib.vpnmiao.site/s/ca4610ba545c4b52f9c40c96082152fc",
-    "_clashName": "美国7",
-    "latency": 1403,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 972
+    "localLatency": 945
   },
   {
     "id": "p_1776396188270_18_pero5",
@@ -5929,7 +5654,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 478
+    "localLatency": 502
   },
   {
     "id": "p_1776245066171_59_gylas",
@@ -5948,27 +5673,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 449
-  },
-  {
-    "id": "p_1777130635809_38_k17wm",
-    "name": "🇭🇰 机场推荐:dafei.de 香港 05",
-    "type": "hysteria2",
-    "server": "45.192.195.52",
-    "port": 5555,
-    "password": "3286b74d-a633-401f-8e22-6e8e61c5f1d9",
-    "sni": "45.192.195.52",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://3286b74d-a633-401f-8e22-6e8e61c5f1d9@45.192.195.52:5555?insecure=1#%F0%9F%87%AD%F0%9F%87%B0%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E9%A6%99%E6%B8%AF%2005",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇭🇰 机场推荐:dafei.de 香港 05",
-    "latency": 1539,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 1325
+    "localLatency": 440
   },
   {
     "name": "🇻🇳_VN_越南_1",
@@ -5988,7 +5693,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 472
+    "localLatency": 478
   },
   {
     "id": "p_1776698546769_96_idddz",
@@ -6007,27 +5712,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 450
-  },
-  {
-    "id": "p_1777130635810_67_3mz2b",
-    "name": "🇺🇸 机场推荐:dafei.de 美国 03",
-    "type": "hysteria2",
-    "server": "vpn-us-001.fastervpn.world",
-    "port": 443,
-    "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-    "sni": "vpn-us-001.fastervpn.world",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-us-001.fastervpn.world:443?insecure=1&sni=vpn-us-001.fastervpn.world#%F0%9F%87%BA%F0%9F%87%B8%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E7%BE%8E%E5%9B%BD%2003",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇺🇸 机场推荐:dafei.de 美国 03_1",
-    "latency": 2195,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 928
+    "localLatency": 461
   },
   {
     "name": "🇵🇱_PL_波兰",
@@ -6054,7 +5739,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 2416
+    "localLatency": 1041
   },
   {
     "name": "🇬🇷_GR_希腊",
@@ -6080,27 +5765,7 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 1101
-  },
-  {
-    "id": "p_1777130643708_5_a20gu",
-    "name": "美国6",
-    "type": "hysteria2",
-    "server": "usa6.vpnmiao.site",
-    "port": 10005,
-    "password": "94ad0e88-cc6b-467a-b1c3-e38c3eb8301f",
-    "sni": "usa6.vpnmiao.site",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://94ad0e88-cc6b-467a-b1c3-e38c3eb8301f@usa6.vpnmiao.site:10005?insecure=0#%E7%BE%8E%E5%9B%BD6",
-    "_sourceUrl": "https://subcrib.vpnmiao.site/s/ca4610ba545c4b52f9c40c96082152fc",
-    "_clashName": "美国6",
-    "latency": 2613,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 1349
+    "localLatency": 1195
   },
   {
     "name": "🇷🇴_RO_罗马尼亚",
@@ -6127,26 +5792,6 @@
       "score": 50,
       "error": "Unexpected end of JSON input"
     },
-    "localLatency": 935
-  },
-  {
-    "id": "p_1777130643708_4_sunbr",
-    "name": "美国5",
-    "type": "hysteria2",
-    "server": "usa5.vpnmiao.site",
-    "port": 10004,
-    "password": "94ad0e88-cc6b-467a-b1c3-e38c3eb8301f",
-    "sni": "usa5.vpnmiao.site",
-    "skip-cert-verify": true,
-    "raw": "hysteria2://94ad0e88-cc6b-467a-b1c3-e38c3eb8301f@usa5.vpnmiao.site:10004?insecure=0#%E7%BE%8E%E5%9B%BD5",
-    "_sourceUrl": "https://subcrib.vpnmiao.site/s/ca4610ba545c4b52f9c40c96082152fc",
-    "_clashName": "美国5",
-    "latency": 6522,
-    "purityScore": 50,
-    "purityInfo": {
-      "score": 50,
-      "error": "Unexpected end of JSON input"
-    },
-    "localLatency": 1140
+    "localLatency": 916
   }
 ]

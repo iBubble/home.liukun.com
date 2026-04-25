@@ -9,6 +9,7 @@ function checkAuth() {
     if (authToken) {
         document.getElementById('loginOverlay').classList.add('hidden');
         loadAllData();
+        loadSpeedHistory();
         startAutoRefresh();
     }
 }
@@ -29,6 +30,7 @@ async function doLogin() {
             sessionStorage.setItem('3xui_auth', authToken);
             document.getElementById('loginOverlay').classList.add('hidden');
             loadAllData();
+            loadSpeedHistory();
             startAutoRefresh();
         } else { errEl.textContent = '认证失败，请重试'; }
     } catch (e) { errEl.textContent = '网络错误: ' + e.message; }
@@ -253,6 +255,59 @@ const SPEED_SERVERS = [
 const SPEED_PORT = 8989;
 let speedResults = {}, speedTestRunning = false;
 
+// === 历史记录管理（服务器端持久化） ===
+let serverSpeedHistory = {};
+
+async function loadSpeedHistory() {
+    try {
+        const r = await fetch(API + '?action=get_speed_history', { headers: { 'X-Auth': authToken } });
+        const j = await r.json();
+        if (j.success && j.data) {
+            serverSpeedHistory = j.data;
+            renderSpeedQueue(); // 确保数据回来后刷新卡片平均值
+        }
+    } catch(e) {}
+}
+
+async function saveSpeedHistory(srvKey, down, up, ping, jitter) {
+    if (!down && !up) return;
+    // 乐观更新本地
+    if (!serverSpeedHistory[srvKey]) serverSpeedHistory[srvKey] = [];
+    serverSpeedHistory[srvKey].push({ down, up, ping, jitter, ts: Date.now() });
+    if (serverSpeedHistory[srvKey].length > 20) serverSpeedHistory[srvKey].shift();
+    renderSpeedQueue(); // 立刻更新卡片上的平均值
+
+    try {
+        const r = await fetch(API + '?action=save_speed_history', {
+            method: 'POST',
+            headers: { 'X-Auth': authToken, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ server: srvKey, down, up, ping, jitter })
+        });
+        const j = await r.json();
+        if (j.success && j.data) serverSpeedHistory = j.data;
+    } catch(e) {}
+}
+
+function calcAvgSpeed(srvKey) {
+    const hist = serverSpeedHistory[srvKey] || [];
+    if (!hist.length) return { down: 0, up: 0, ping: 0, jitter: 0, count: 0 };
+    let td = 0, tu = 0, tp = 0, tj = 0;
+    let cd = 0, cu = 0, cp = 0, cj = 0;
+    hist.forEach(h => {
+        if (h.down > 0) { td += h.down; cd++; }
+        if (h.up > 0) { tu += h.up; cu++; }
+        if (h.ping > 0) { tp += h.ping; cp++; }
+        if (h.jitter > 0) { tj += h.jitter; cj++; }
+    });
+    return {
+        down: cd > 0 ? (td / cd).toFixed(1) : 0,
+        up: cu > 0 ? (tu / cu).toFixed(1) : 0,
+        ping: cp > 0 ? Math.round(tp / cp) : 0,
+        jitter: cj > 0 ? Math.round(tj / cj) : 0,
+        count: hist.length
+    };
+}
+
 // === 面板开关 ===
 function toggleSpeedPanel() {
     const panel = document.getElementById('speedPanel');
@@ -277,6 +332,7 @@ function renderSpeedQueue() {
                 <span class="queue-item-status ${st}">${labels[st]||st}</span>
             </div>
             <div class="queue-item-name">${srv.name}</div>
+            ${calcAvgSpeed(srv.key).count > 0 ? `<div class="queue-item-avg">历史平均: ↓ ${calcAvgSpeed(srv.key).down} ↑ ${calcAvgSpeed(srv.key).up} | P: ${calcAvgSpeed(srv.key).ping}ms J: ${calcAvgSpeed(srv.key).jitter}ms</div>` : ''}
             ${r.liveInfo ? `<div class="queue-live-speed">${r.liveInfo}</div>` : ''}
             <div class="queue-item-results">
                 <div class="queue-result-cell">
@@ -367,6 +423,9 @@ function testOneServer(srv) {
             if (doneTimer) clearTimeout(doneTimer);
 
             if (success && lastResult) {
+                // 保存到本地历史记录
+                saveSpeedHistory(srv.key, lastResult.download, lastResult.upload, lastResult.ping, lastResult.jitter);
+
                 speedResults[srv.key] = {
                     status: 'done',
                     download: lastResult.download || null,

@@ -102,6 +102,34 @@ switch ($action) {
         echo json_encode(['success' => $result['success'] ?? false, 'msg' => $result['msg'] ?? '']);
         break;
 
+    case 'get_speed_history':
+        if (!checkAuth()) { echo json_encode(['success' => false, 'msg' => '未授权']); break; }
+        $file = __DIR__ . '/speed_history.json';
+        $data = file_exists($file) ? (json_decode(file_get_contents($file), true) ?: []) : [];
+        echo json_encode(['success' => true, 'data' => $data]);
+        break;
+
+    case 'save_speed_history':
+        if (!checkAuth()) { echo json_encode(['success' => false, 'msg' => '未授权']); break; }
+        $input = json_decode(file_get_contents('php://input'), true);
+        $srvKey = $input['server'] ?? '';
+        $down = $input['down'] ?? 0;
+        $up = $input['up'] ?? 0;
+        $ping = $input['ping'] ?? 0;
+        $jitter = $input['jitter'] ?? 0;
+        if (!$srvKey || (!$down && !$up)) { echo json_encode(['success' => false]); break; }
+        
+        $file = __DIR__ . '/speed_history.json';
+        $history = file_exists($file) ? (json_decode(file_get_contents($file), true) ?: []) : [];
+        if (!isset($history[$srvKey])) $history[$srvKey] = [];
+        
+        $history[$srvKey][] = ['down' => $down, 'up' => $up, 'ping' => $ping, 'jitter' => $jitter, 'ts' => time() * 1000];
+        if (count($history[$srvKey]) > 20) array_shift($history[$srvKey]);
+        
+        file_put_contents($file, json_encode($history));
+        echo json_encode(['success' => true, 'data' => $history]);
+        break;
+
     default:
         echo json_encode(['success' => false, 'msg' => '未知操作: ' . $action]);
 }

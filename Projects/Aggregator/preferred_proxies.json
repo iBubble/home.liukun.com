@@ -1,50 +1,5 @@
 [
   {
-    "id": "p_1776633710821_39_6nu21",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 16",
-    "type": "ss",
-    "server": "47.76.218.163",
-    "port": 443,
-    "cipher": "none",
-    "password": "3e96ef7d-8637-42c2-ac73-75182196e7557",
-    "raw": "ss://bm9uZTozZTk2ZWY3ZC04NjM3LTQyYzItYWM3My03NTE4MjE5NmU3NTU=@47.76.218.163:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostmfvpn.fuchen.indevs.in%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2016",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 16",
-    "latency": 68,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "116.54.76.11",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 66
-  },
-  {
-    "name": "🇯🇵 JP 013 | ⬇️ 12MB/s",
-    "type": "ss",
-    "server": "104.18.33.237",
-    "port": 443,
-    "tfo": true,
-    "skip-cert-verify": true,
-    "cipher": "none",
-    "password": "79960b0b-7d31-4263-8915-6511b0e137a8",
-    "id": "p_1776438607407_487_8zytd",
-    "forumSource": "hk_server",
-    "_clashName": "🇯🇵 JP 013 | ⬇️ 12MB/s",
-    "latency": 113,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "116.54.76.11",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 68
-  },
-  {
     "name": "🇯🇵 JP 195 | ⬇️ 1MB/s",
     "type": "ss",
     "server": "172.64.156.45",
@@ -65,7 +20,7 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 72
+    "localLatency": 70
   },
   {
     "name": "🇭🇰 HK",
@@ -88,20 +43,128 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 86
+    "localLatency": 74
   },
   {
-    "id": "p_1776245066171_29_e3eed",
-    "name": "🇸🇬 机场推荐:dafei.de 新加坡 06",
+    "name": "🇯🇵 JP 013 | ⬇️ 12MB/s",
     "type": "ss",
-    "server": "8.39.125.118",
+    "server": "104.18.33.237",
+    "port": 443,
+    "tfo": true,
+    "skip-cert-verify": true,
+    "cipher": "none",
+    "password": "79960b0b-7d31-4263-8915-6511b0e137a8",
+    "id": "p_1776438607407_487_8zytd",
+    "forumSource": "hk_server",
+    "_clashName": "🇯🇵 JP 013 | ⬇️ 12MB/s",
+    "latency": 113,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "116.54.76.11",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 95
+  },
+  {
+    "id": "p_1776633710821_39_6nu21",
+    "name": "🇯🇵 机场推荐:dafei.de 日本 16",
+    "type": "ss",
+    "server": "47.76.218.163",
+    "port": 443,
+    "cipher": "none",
+    "password": "3e96ef7d-8637-42c2-ac73-75182196e7557",
+    "raw": "ss://bm9uZTozZTk2ZWY3ZC04NjM3LTQyYzItYWM3My03NTE4MjE5NmU3NTU=@47.76.218.163:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostmfvpn.fuchen.indevs.in%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2016",
+    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 16",
+    "latency": 68,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "116.54.76.11",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 115
+  },
+  {
+    "id": "p_1776288131229_57_2reky",
+    "name": "🇸🇬 机场推荐:dafei.de 新加坡 01",
+    "type": "ss",
+    "server": "198.41.223.160",
     "port": 443,
     "cipher": "none",
     "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
-    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@8.39.125.118:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Btls#%F0%9F%87%B8%F0%9F%87%AC%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%96%B0%E5%8A%A0%E5%9D%A1%2006",
+    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@198.41.223.160:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Btls#%F0%9F%87%B8%F0%9F%87%AC%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%96%B0%E5%8A%A0%E5%9D%A1%2001",
     "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇸🇬 机场推荐:dafei.de 新加坡 06",
+    "_clashName": "🇸🇬 机场推荐:dafei.de 新加坡 01_1",
     "latency": 225,
+    "purityScore": 50,
+    "purityInfo": {
+      "score": 50,
+      "error": "Unexpected end of JSON input"
+    },
+    "localLatency": 132
+  },
+  {
+    "id": "p_1776655355551_6_8xizh",
+    "name": "🇯🇵 机场推荐:dafei.de 日本 07",
+    "type": "ss",
+    "server": "162.159.23.64",
+    "port": 443,
+    "cipher": "none",
+    "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
+    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@162.159.23.64:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostwoshinidie-et3.pages.dev%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2007",
+    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 07_1",
+    "latency": 190,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "116.54.76.11",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 136
+  },
+  {
+    "id": "p_1776201760281_16_qhfj7",
+    "name": "🇸🇬 机场推荐:dafei.de 新加坡 02",
+    "type": "ss",
+    "server": "8.39.125.220",
+    "port": 443,
+    "cipher": "none",
+    "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
+    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@8.39.125.220:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Btls#%F0%9F%87%B8%F0%9F%87%AC%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%96%B0%E5%8A%A0%E5%9D%A1%2002",
+    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+    "_clashName": "🇸🇬 机场推荐:dafei.de 新加坡 02",
+    "latency": 233,
+    "purityScore": 100,
+    "purityInfo": {
+      "score": 100,
+      "ip": "116.54.76.11",
+      "isp": "Chinanet",
+      "country": "CN",
+      "hosting": false
+    },
+    "localLatency": 136
+  },
+  {
+    "id": "p_1776028958702_0_76xyh",
+    "name": "🇸🇬 机场推荐:dafei.de 新加坡 01",
+    "type": "ss",
+    "server": "198.41.223.99",
+    "port": 443,
+    "cipher": "none",
+    "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
+    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@198.41.223.99:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Btls#%F0%9F%87%B8%F0%9F%87%AC%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%96%B0%E5%8A%A0%E5%9D%A1%2001",
+    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
+    "_clashName": "🇸🇬 机场推荐:dafei.de 新加坡 01",
+    "latency": 226,
     "purityScore": 100,
     "purityInfo": {
       "score": 100,
@@ -113,17 +176,17 @@
     "localLatency": 137
   },
   {
-    "id": "p_1776288131229_21_va58k",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 23",
+    "id": "p_1776612160680_35_pait9",
+    "name": "🇯🇵 机场推荐:dafei.de 日本 12",
     "type": "ss",
-    "server": "162.159.33.14",
+    "server": "172.64.159.248",
     "port": 443,
     "cipher": "none",
     "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
-    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@162.159.33.14:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostwoshinidie-et3.pages.dev%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2023",
+    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@172.64.159.248:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostwoshinidie-et3.pages.dev%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2012",
     "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 23",
-    "latency": 228,
+    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 12",
+    "latency": 197,
     "purityScore": 100,
     "purityInfo": {
       "score": 100,
@@ -132,91 +195,25 @@
       "country": "CN",
       "hosting": false
     },
-    "localLatency": 138
+    "localLatency": 140
   },
   {
-    "id": "p_1775964355192_40_7n2d4",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 43",
+    "id": "p_1776072160943_38_so7bp",
+    "name": "🇯🇵 机场推荐:dafei.de 日本 40",
     "type": "ss",
-    "server": "108.162.196.23",
+    "server": "162.159.41.103",
     "port": 443,
     "cipher": "none",
     "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
-    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@108.162.196.23:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostwoshinidie-et3.pages.dev%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2043",
+    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@162.159.41.103:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostwoshinidie-et3.pages.dev%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2040",
     "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 43",
-    "latency": 184,
+    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 40",
+    "latency": 230,
     "purityScore": 50,
     "purityInfo": {
       "score": 50,
-      "error": "Timeout"
+      "error": "Unexpected end of JSON input"
     },
     "localLatency": 141
-  },
-  {
-    "id": "p_1776720096566_23_s9kiv",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 06",
-    "type": "ss",
-    "server": "172.64.52.226",
-    "port": 443,
-    "cipher": "none",
-    "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
-    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@172.64.52.226:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2006",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 06_2",
-    "latency": 154,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "116.54.76.11",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 144
-  },
-  {
-    "id": "p_1776655355551_12_p6j4y",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 13",
-    "type": "ss",
-    "server": "162.159.38.139",
-    "port": 443,
-    "cipher": "none",
-    "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
-    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@162.159.38.139:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Bobfs-hostwoshinidie-et3.pages.dev%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2013",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 13",
-    "latency": 147,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "116.54.76.11",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 145
-  },
-  {
-    "id": "p_1776288131228_5_jeiwj",
-    "name": "🇯🇵 机场推荐:dafei.de 日本 06",
-    "type": "ss",
-    "server": "162.159.45.145",
-    "port": 443,
-    "cipher": "none",
-    "password": "79960b0b-7d31-4263-8915-6511b0e137a87",
-    "raw": "ss://bm9uZTo3OTk2MGIwYi03ZDMxLTQyNjMtODkxNS02NTExYjBlMTM3YTg=@162.159.45.145:443/?plugin=v2ray-plugin%3Bobfs%3Dwebsocket%3Btls#%F0%9F%87%AF%F0%9F%87%B5%20%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%3Adafei.de%20%E6%97%A5%E6%9C%AC%2006",
-    "_sourceUrl": "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",
-    "_clashName": "🇯🇵 机场推荐:dafei.de 日本 06",
-    "latency": 152,
-    "purityScore": 100,
-    "purityInfo": {
-      "score": 100,
-      "ip": "116.54.76.11",
-      "isp": "Chinanet",
-      "country": "CN",
-      "hosting": false
-    },
-    "localLatency": 145
   }
 ]

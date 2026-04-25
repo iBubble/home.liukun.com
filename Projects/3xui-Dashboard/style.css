@@ -467,6 +467,14 @@ main { padding:.8rem 1.5rem; max-width:1400px; margin:0 auto; }
     font-weight: 500;
     margin-bottom: 0.6rem;
 }
+.queue-item-avg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--yellow);
+    opacity: 0.8;
+    margin-top: -0.4rem;
+    margin-bottom: 0.5rem;
+}
 .queue-item-results {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -596,6 +604,7 @@ main { padding:.8rem 1.5rem; max-width:1400px; margin:0 auto; }
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     padding: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 .speed-results.visible { display: block; animation: speedPanelIn 0.4s ease-out; }
 .results-title {
