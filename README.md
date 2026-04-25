@@ -123,6 +123,20 @@ npx http-server
 
 **技术**: Node.js + Clash Core + Vue 3 + Tailwind CSS + ip-api
 
+### ⚡ 3x-ui 统一管理 (Dashboard)
+**访问**: [https://home.liukun.com/Projects/3xui-Dashboard/](https://home.liukun.com/Projects/3xui-Dashboard/)
+
+将多台海外服务器的 3x-ui 面板聚合到一个赛博朋克风格的 Web 管理页面，并集成自动化全节点网络测速功能。
+
+**功能**:
+- ✅ **状态聚合**: 实时监控多台海外服务器节点的流量消耗与在线状态。
+- ✅ **自动订阅**: 动态抓取 VLESS + Reality 节点，一键生成 Clash 订阅配置。
+- ✅ **全网测速**: 纯原生 JS 实现并行调度，无缝桥接 OpenSpeedTest 进行精准测速。
+- ✅ **历史持久化**: 后端代理持久化测速数据，计算多维网络质量（Down/Up/Ping/Jitter）。
+- ✅ **极致解耦**: 采用独立 `speedproxy.php` 管道彻底绕过浏览器的跨域拦截与性能瓶颈。
+
+**技术**: PHP 8.3 + Vanilla JS + cURL + iframe PostMessage 桥接
+
 ### 🎥 拾光大师 AI 影视平台
 **访问**: [https://home.liukun.com/Projects/AIMovie/](https://home.liukun.com/Projects/AIMovie/)
 
@@ -262,13 +276,21 @@ pm2 save
 
 ## 📈 项目统计
 
-- **总项目数**: 6 个
-- **在线项目**: 6 个
+- **总项目数**: 7 个
+- **在线项目**: 7 个
 - **技术栈**: 10+ 种
-- **代码行数**: 60,000+ 行
+- **代码行数**: 65,000+ 行
 - **文档数量**: 60+ 份
 
-## 🆕 最近更新 (2026-03-14)
+## 🆕 最近更新 (2026-04-26)
+
+### 3x-ui 统一管理系统上线与重构
+- ✅ **测速架构升级**: 重构 `3xui-Dashboard`，引入独立的 PHP 跨域中继代理，解决 iframe 及跨域资源访问限制。
+- ✅ **自动化队列引擎**: 实现智能顺序测速调度，完美解决多节点轮询阻断与重试逻辑。
+- ✅ **历史记录计算**: 新增基于后端的 JSON 测速历史持久化存储，实时计算下载/上传、Ping 和 Jitter 平均值。
+- ✅ **全站资产同步**: 确保所有核心逻辑、后端 API 及界面升级100%自动同步至 GitHub 仓库备份。
+
+## 🆕 历史更新 (2026-03-14)
 
 ### 网络架构优化
 - ✅ **FRP 端口统一**: 禁用 8443 端口映射，全线回归标准 **443** 端口。
